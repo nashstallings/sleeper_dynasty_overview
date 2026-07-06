@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sleeper Trade Finder</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="app-header">
+  <h1>🏈 Sleeper Trade Finder</h1>
+  <p class="subtitle">Track your fantasy team and find trade targets, powered by the Sleeper API.</p>
+</header>
+
+<section id="setup" class="card">
+  <h2>Connect your Sleeper account</h2>
+  <form id="setup-form">
+    <div class="field-row">
+      <label for="username">Sleeper username</label>
+      <input id="username" type="text" placeholder="e.g. nashstallings" autocomplete="off" required />
+    </div>
+    <div class="field-row">
+      <label for="season">Season</label>
+      <input id="season" type="number" placeholder="2026" />
+    </div>
+    <button type="submit" id="load-leagues-btn">Find my leagues</button>
+  </form>
+
+  <div id="league-picker" class="field-row hidden">
+    <label for="league-select">League</label>
+    <select id="league-select"></select>
+    <button type="button" id="load-league-btn">Load league</button>
+  </div>
+
+  <p id="setup-status" class="status"></p>
+</section>
+
+<nav id="app-nav" class="tabs hidden">
+  <button class="tab-btn active" data-tab="dashboard">My Team</button>
+  <button class="tab-btn" data-tab="standings">Standings</button>
+  <button class="tab-btn" data-tab="trades">Trade Finder</button>
+  <button id="change-league-btn" class="tab-btn tab-btn-secondary">Switch league</button>
+</nav>
+
+<main id="app-main" class="hidden">
+
+  <section id="dashboard" class="tab-panel active">
+    <div id="matchup-card" class="card"></div>
+    <div class="grid-2">
+      <div id="starters-card" class="card"></div>
+      <div id="bench-card" class="card"></div>
+    </div>
+  </section>
+
+  <section id="standings" class="tab-panel">
+    <div id="standings-card" class="card"></div>
+  </section>
+
+  <section id="trades" class="tab-panel">
+    <div id="needs-card" class="card"></div>
+    <div id="targets-card" class="card"></div>
+  </section>
+
+</main>
+
+<p id="global-error" class="status error hidden"></p>
+
+<footer>
+  <p>Data from the public <a href="https://docs.sleeper.com/" target="_blank" rel="noopener">Sleeper API</a>. Nothing you enter leaves your browser &mdash; there is no backend and no login required.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

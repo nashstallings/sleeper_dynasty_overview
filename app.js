@@ -1,0 +1,558 @@
+const API_BASE = "https://api.sleeper.app/v1";
+const SKILL_POSITIONS = ["QB", "RB", "WR", "TE"];
+const PLAYERS_CACHE_KEY = "sleeper_tf_players_cache_v1";
+const PLAYERS_CACHE_MAX_AGE_MS = 12 * 60 * 60 * 1000; // 12h
+const SESSION_KEY = "sleeper_tf_session_v1";
+
+const state = {
+  username: null,
+  userId: null,
+  season: null,
+  leagues: [],
+  leagueId: null,
+  league: null,
+  rosters: [],
+  users: [],
+  players: {},
+  myRosterId: null,
+  currentWeek: null,
+};
+
+// ---------- low-level helpers ----------
+
+async function api(path) {
+  const res = await fetch(`${API_BASE}${path}`);
+  if (!res.ok) {
+    throw new Error(`Sleeper API error (${res.status}) on ${path}`);
+  }
+  return res.json();
+}
+
+function showError(message) {
+  const el = document.getElementById("global-error");
+  el.textContent = message;
+  el.classList.remove("hidden");
+  console.error(message);
+}
+
+function clearError() {
+  const el = document.getElementById("global-error");
+  el.textContent = "";
+  el.classList.add("hidden");
+}
+
+function setStatus(message) {
+  document.getElementById("setup-status").textContent = message || "";
+}
+
+function saveSession() {
+  localStorage.setItem(
+    SESSION_KEY,
+    JSON.stringify({
+      username: state.username,
+      userId: state.userId,
+      season: state.season,
+      leagueId: state.leagueId,
+    })
+  );
+}
+
+function loadSession() {
+  try {
+    return JSON.parse(localStorage.getItem(SESSION_KEY) || "null");
+  } catch {
+    return null;
+  }
+}
+
+// ---------- player database (cached) ----------
+
+async function loadPlayers() {
+  const cached = JSON.parse(localStorage.getItem(PLAYERS_CACHE_KEY) || "null");
+  if (cached && Date.now() - cached.ts < PLAYERS_CACHE_MAX_AGE_MS) {
+    state.players = cached.data;
+    return;
+  }
+  setStatus("Downloading NFL player database (first load only, ~5MB)...");
+  const data = await api("/players/nfl");
+  state.players = data;
+  try {
+    localStorage.setItem(PLAYERS_CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
+  } catch {
+    // localStorage quota exceeded is fine, just skip caching
+  }
+}
+
+function player(id) {
+  return state.players[id] || { full_name: `Unknown (${id})`, position: "?", team: null };
+}
+
+function playerRank(p) {
+  const r = p && p.search_rank;
+  return typeof r === "number" && r > 0 ? r : 9999;
+}
+
+function playerPosition(p) {
+  return (p && p.position) || (p && p.fantasy_positions && p.fantasy_positions[0]) || "FLEX";
+}
+
+function playerDisplay(p) {
+  if (!p) return "Empty";
+  if (p.position === "DEF") return p.full_name || p.team;
+  return p.full_name || `${p.first_name || ""} ${p.last_name || ""}`.trim();
+}
+
+// ---------- setup flow ----------
+
+async function findLeagues(username, season) {
+  clearError();
+  setStatus("Looking up Sleeper user...");
+  const user = await api(`/user/${encodeURIComponent(username)}`);
+  if (!user || !user.user_id) throw new Error(`No Sleeper user found for "${username}".`);
+  state.username = user.username || username;
+  state.userId = user.user_id;
+  state.season = season;
+
+  setStatus("Fetching leagues...");
+  const leagues = await api(`/user/${state.userId}/leagues/nfl/${season}`);
+  state.leagues = leagues || [];
+  if (state.leagues.length === 0) {
+    throw new Error(`No leagues found for ${state.username} in ${season}.`);
+  }
+
+  const select = document.getElementById("league-select");
+  select.innerHTML = "";
+  state.leagues.forEach((lg) => {
+    const opt = document.createElement("option");
+    opt.value = lg.league_id;
+    opt.textContent = `${lg.name} (${lg.season})`;
+    select.appendChild(opt);
+  });
+  document.getElementById("league-picker").classList.remove("hidden");
+  setStatus(`Found ${state.leagues.length} league(s). Pick one and load it.`);
+}
+
+async function loadLeague(leagueId) {
+  clearError();
+  setStatus("Loading league data...");
+  document.getElementById("load-league-btn").disabled = true;
+
+  try {
+    await loadPlayers();
+
+    const [league, rosters, users, nflState] = await Promise.all([
+      api(`/league/${leagueId}`),
+      api(`/league/${leagueId}/rosters`),
+      api(`/league/${leagueId}/users`),
+      api(`/state/nfl`),
+    ]);
+
+    state.leagueId = leagueId;
+    state.league = league;
+    state.rosters = rosters || [];
+    state.users = users || [];
+    state.currentWeek = nflState && nflState.week ? nflState.week : null;
+
+    state.myRosterId = null;
+    const myRoster = state.rosters.find((r) => r.owner_id === state.userId);
+    if (myRoster) state.myRosterId = myRoster.roster_id;
+
+    saveSession();
+    setStatus("");
+    document.getElementById("setup").classList.add("hidden");
+    document.getElementById("app-nav").classList.remove("hidden");
+    document.getElementById("app-main").classList.remove("hidden");
+
+    renderDashboard();
+    renderStandings();
+    renderTradeFinder();
+  } catch (err) {
+    showError(err.message || String(err));
+    setStatus("Failed to load league.");
+  } finally {
+    document.getElementById("load-league-btn").disabled = false;
+  }
+}
+
+function teamNameForOwner(ownerId) {
+  const u = state.users.find((x) => x.user_id === ownerId);
+  if (!u) return "Unclaimed team";
+  return (u.metadata && u.metadata.team_name) || u.display_name || "Unnamed team";
+}
+
+function rosterLabel(roster) {
+  if (!roster) return "Unknown team";
+  return teamNameForOwner(roster.owner_id);
+}
+
+// ---------- Dashboard ----------
+
+function renderDashboard() {
+  renderMatchup();
+  renderStarters();
+  renderBench();
+}
+
+async function renderMatchup() {
+  const card = document.getElementById("matchup-card");
+  const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
+  if (!myRoster) {
+    card.innerHTML = `<p class="empty-note">You don't own a team in this league.</p>`;
+    return;
+  }
+  if (!state.currentWeek) {
+    card.innerHTML = `<h2>This week's matchup</h2><p class="empty-note">No active NFL week right now (likely offseason).</p>`;
+    return;
+  }
+
+  card.innerHTML = `<h2>Week ${state.currentWeek} matchup</h2><p class="spinner-note">Loading matchup...</p>`;
+  try {
+    const matchups = await api(`/league/${state.leagueId}/matchups/${state.currentWeek}`);
+    const mine = matchups.find((m) => m.roster_id === state.myRosterId);
+    if (!mine) {
+      card.innerHTML = `<h2>Week ${state.currentWeek} matchup</h2><p class="empty-note">No matchup found yet for this week.</p>`;
+      return;
+    }
+    const opponent = matchups.find(
+      (m) => m.matchup_id === mine.matchup_id && m.roster_id !== mine.roster_id
+    );
+    const oppRoster = opponent && state.rosters.find((r) => r.roster_id === opponent.roster_id);
+
+    card.innerHTML = `
+      <h2>Week ${state.currentWeek} matchup</h2>
+      <table>
+        <tr>
+          <td><strong>${rosterLabel(myRoster)}</strong> (you)</td>
+          <td>${(mine.points || 0).toFixed(2)}</td>
+        </tr>
+        <tr>
+          <td>${oppRoster ? rosterLabel(oppRoster) : "Bye / TBD"}</td>
+          <td>${opponent ? (opponent.points || 0).toFixed(2) : "-"}</td>
+        </tr>
+      </table>`;
+  } catch (err) {
+    card.innerHTML = `<h2>Week ${state.currentWeek} matchup</h2><p class="empty-note">Couldn't load matchup data.</p>`;
+  }
+}
+
+function playerRow(pid, { showRank = true } = {}) {
+  if (!pid || pid === "0") {
+    return `<tr><td colspan="3" class="empty-note">Empty slot</td></tr>`;
+  }
+  const p = player(pid);
+  const pos = playerPosition(p);
+  const injury =
+    p.injury_status && p.injury_status !== "Healthy"
+      ? `<span class="injury">${p.injury_status}</span>`
+      : "";
+  const rank = showRank ? `<span class="rank-tag">#${playerRank(p)}</span>` : "";
+  return `
+    <tr>
+      <td><span class="badge badge-${pos}">${pos}</span></td>
+      <td>
+        <span class="player-name">${playerDisplay(p)}</span>${injury}<br/>
+        <span class="player-meta">${p.team || "FA"}</span>
+      </td>
+      <td>${rank}</td>
+    </tr>`;
+}
+
+function renderStarters() {
+  const card = document.getElementById("starters-card");
+  const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
+  if (!myRoster) {
+    card.innerHTML = `<h2>Starters</h2><p class="empty-note">You don't own a team in this league.</p>`;
+    return;
+  }
+  const rows = (myRoster.starters || []).map((pid) => playerRow(pid)).join("");
+  card.innerHTML = `<h2>Starters</h2><table><tbody>${rows}</tbody></table>`;
+}
+
+function renderBench() {
+  const card = document.getElementById("bench-card");
+  const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
+  if (!myRoster) {
+    card.innerHTML = `<h2>Bench</h2>`;
+    return;
+  }
+  const starterSet = new Set(myRoster.starters || []);
+  const bench = (myRoster.players || [])
+    .filter((pid) => !starterSet.has(pid))
+    .sort((a, b) => playerRank(player(a)) - playerRank(player(b)));
+  const rows = bench.length
+    ? bench.map((pid) => playerRow(pid)).join("")
+    : `<tr><td class="empty-note">No bench players</td></tr>`;
+  card.innerHTML = `<h2>Bench</h2><table><tbody>${rows}</tbody></table>`;
+}
+
+// ---------- Standings ----------
+
+function renderStandings() {
+  const card = document.getElementById("standings-card");
+  const rows = [...state.rosters]
+    .sort((a, b) => {
+      const aw = (a.settings && a.settings.wins) || 0;
+      const bw = (b.settings && b.settings.wins) || 0;
+      if (bw !== aw) return bw - aw;
+      const afpts = fpts(a);
+      const bfpts = fpts(b);
+      return bfpts - afpts;
+    })
+    .map((r, i) => {
+      const s = r.settings || {};
+      const isMe = r.roster_id === state.myRosterId;
+      return `
+        <tr class="${isMe ? "me-row" : ""}">
+          <td>${i + 1}</td>
+          <td>${rosterLabel(r)}${isMe ? " (you)" : ""}</td>
+          <td>${s.wins || 0}-${s.losses || 0}-${s.ties || 0}</td>
+          <td>${fpts(r).toFixed(1)}</td>
+          <td>${fptsAgainst(r).toFixed(1)}</td>
+        </tr>`;
+    })
+    .join("");
+
+  card.innerHTML = `
+    <h2>Standings</h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Team</th><th>Record</th><th>PF</th><th>PA</th></tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+}
+
+function fpts(roster) {
+  const s = roster.settings || {};
+  return (s.fpts || 0) + (s.fpts_decimal || 0) / 100;
+}
+function fptsAgainst(roster) {
+  const s = roster.settings || {};
+  return (s.fpts_against || 0) + (s.fpts_against_decimal || 0) / 100;
+}
+
+// ---------- Trade Finder ----------
+
+function startingSlotCounts() {
+  const positions = (state.league && state.league.roster_positions) || [];
+  const counts = {};
+  positions.forEach((slot) => {
+    if (["BN", "IR", "TAXI"].includes(slot)) return;
+    counts[slot] = (counts[slot] || 0) + 1;
+  });
+  return counts;
+}
+
+// best (lowest) search_rank at each skill position, per roster
+function bestRankByPosition() {
+  const result = {}; // position -> { rosterId -> bestRank }
+  SKILL_POSITIONS.forEach((pos) => (result[pos] = {}));
+
+  state.rosters.forEach((r) => {
+    const seen = {};
+    (r.players || []).forEach((pid) => {
+      const p = player(pid);
+      const pos = playerPosition(p);
+      if (!SKILL_POSITIONS.includes(pos)) return;
+      const rank = playerRank(p);
+      if (seen[pos] === undefined || rank < seen[pos]) seen[pos] = rank;
+    });
+    SKILL_POSITIONS.forEach((pos) => {
+      result[pos][r.roster_id] = seen[pos] !== undefined ? seen[pos] : 9999;
+    });
+  });
+  return result;
+}
+
+function computeNeeds() {
+  if (!state.myRosterId) return [];
+  const totalTeams = state.rosters.length;
+  const byPos = bestRankByPosition();
+  const needs = [];
+
+  SKILL_POSITIONS.forEach((pos) => {
+    const standings = state.rosters
+      .map((r) => ({ rosterId: r.roster_id, rank: byPos[pos][r.roster_id] }))
+      .sort((a, b) => a.rank - b.rank);
+    const placement = standings.findIndex((s) => s.rosterId === state.myRosterId) + 1;
+    const percentile = placement / totalTeams;
+
+    let severity = null;
+    if (percentile > 0.66) severity = "high";
+    else if (percentile > 0.5) severity = "med";
+    if (severity) {
+      needs.push({ position: pos, placement, totalTeams, severity });
+    }
+  });
+
+  const order = { high: 0, med: 1, low: 2 };
+  return needs.sort((a, b) => order[a.severity] - order[b.severity]);
+}
+
+function computeTargets(needs) {
+  if (!needs.length) return [];
+  const needPositions = new Set(needs.map((n) => n.position));
+  const candidates = [];
+
+  state.rosters.forEach((r) => {
+    if (r.roster_id === state.myRosterId) return;
+    const starterSet = new Set(r.starters || []);
+    (r.players || []).forEach((pid) => {
+      const p = player(pid);
+      const pos = playerPosition(p);
+      if (!needPositions.has(pos)) return;
+      if (p.injury_status === "IR") return;
+      candidates.push({
+        pid,
+        pos,
+        rank: playerRank(p),
+        isBench: !starterSet.has(pid),
+        ownerRoster: r,
+      });
+    });
+  });
+
+  candidates.sort((a, b) => {
+    if (a.isBench !== b.isBench) return a.isBench ? -1 : 1; // bench players first
+    return a.rank - b.rank;
+  });
+
+  const byPosition = {};
+  candidates.forEach((c) => {
+    byPosition[c.pos] = byPosition[c.pos] || [];
+    if (byPosition[c.pos].length < 5) byPosition[c.pos].push(c);
+  });
+  return byPosition;
+}
+
+function renderTradeFinder() {
+  const needsCard = document.getElementById("needs-card");
+  const targetsCard = document.getElementById("targets-card");
+
+  if (!state.myRosterId) {
+    needsCard.innerHTML = `<h2>Team needs</h2><p class="empty-note">You don't own a team in this league.</p>`;
+    targetsCard.innerHTML = "";
+    return;
+  }
+
+  const needs = computeNeeds();
+  if (!needs.length) {
+    needsCard.innerHTML = `<h2>Team needs</h2><p class="empty-note">Your roster looks solid at QB/RB/WR/TE relative to the rest of the league &mdash; no glaring needs detected.</p>`;
+    targetsCard.innerHTML = "";
+    return;
+  }
+
+  needsCard.innerHTML = `
+    <h2>Team needs</h2>
+    <p class="player-meta">Based on how your best player at each position ranks (Sleeper's overall rank) against the rest of the league.</p>
+    ${needs
+      .map(
+        (n) => `
+      <span class="need-chip">
+        <span class="badge badge-${n.position}">${n.position}</span>
+        <span class="sev-${n.severity}">${n.severity.toUpperCase()} need</span>
+        <span class="player-meta">(${n.placement}/${n.totalTeams} in league)</span>
+      </span>`
+      )
+      .join("")}
+  `;
+
+  const targets = computeTargets(needs);
+  const sections = Object.keys(targets)
+    .map((pos) => {
+      const rows = targets[pos]
+        .map((c) => {
+          const p = player(c.pid);
+          return `
+          <tr>
+            <td><span class="badge badge-${pos}">${pos}</span></td>
+            <td>
+              <span class="player-name">${playerDisplay(p)}</span><br/>
+              <span class="player-meta">${p.team || "FA"} &middot; ${c.isBench ? "Bench" : "Starter"}</span>
+            </td>
+            <td><span class="rank-tag">#${c.rank}</span></td>
+            <td>${rosterLabel(c.ownerRoster)}</td>
+          </tr>`;
+        })
+        .join("");
+      return `
+        <h3>${pos} targets</h3>
+        <table>
+          <thead><tr><th>Pos</th><th>Player</th><th>Rank</th><th>Owned by</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>`;
+    })
+    .join("");
+
+  targetsCard.innerHTML = `<h2>Suggested trade targets</h2>${sections}`;
+}
+
+// ---------- tabs ----------
+
+function setupTabs() {
+  document.querySelectorAll(".tab-btn[data-tab]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tab-btn[data-tab]").forEach((b) => b.classList.remove("active"));
+      document.querySelectorAll(".tab-panel").forEach((p) => p.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById(btn.dataset.tab).classList.add("active");
+    });
+  });
+
+  document.getElementById("change-league-btn").addEventListener("click", () => {
+    document.getElementById("app-nav").classList.add("hidden");
+    document.getElementById("app-main").classList.add("hidden");
+    document.getElementById("setup").classList.remove("hidden");
+  });
+}
+
+// ---------- wiring ----------
+
+function init() {
+  setupTabs();
+
+  const seasonInput = document.getElementById("season");
+  seasonInput.value = new Date().getFullYear();
+
+  document.getElementById("setup-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const username = document.getElementById("username").value.trim();
+    const season = document.getElementById("season").value.trim() || String(new Date().getFullYear());
+    if (!username) return;
+    document.getElementById("load-leagues-btn").disabled = true;
+    try {
+      await findLeagues(username, season);
+    } catch (err) {
+      showError(err.message || String(err));
+      setStatus("");
+    } finally {
+      document.getElementById("load-leagues-btn").disabled = false;
+    }
+  });
+
+  document.getElementById("load-league-btn").addEventListener("click", () => {
+    const leagueId = document.getElementById("league-select").value;
+    if (leagueId) loadLeague(leagueId);
+  });
+
+  const saved = loadSession();
+  if (saved && saved.username && saved.leagueId) {
+    document.getElementById("username").value = saved.username;
+    seasonInput.value = saved.season || seasonInput.value;
+    state.username = saved.username;
+    state.userId = saved.userId;
+    state.season = saved.season;
+    setStatus("Restoring your last session...");
+    findLeagues(saved.username, saved.season)
+      .then(() => {
+        document.getElementById("league-select").value = saved.leagueId;
+        return loadLeague(saved.leagueId);
+      })
+      .catch((err) => {
+        showError(err.message || String(err));
+        setStatus("");
+      });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", init);

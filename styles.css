@@ -1,0 +1,164 @@
+:root {
+  --bg: #0f1420;
+  --panel: #171d2b;
+  --panel-border: #262f42;
+  --text: #e8ecf4;
+  --text-dim: #9aa5b8;
+  --accent: #4f9dff;
+  --accent-dim: #2c5fa8;
+  --good: #3ecf8e;
+  --warn: #f2b84b;
+  --bad: #f2604b;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.app-header {
+  padding: 24px 16px 8px;
+  text-align: center;
+}
+.app-header h1 { margin: 0 0 4px; font-size: 1.6rem; }
+.subtitle { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 12px auto;
+  max-width: 900px;
+}
+
+#setup { max-width: 480px; }
+
+.field-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.field-row label { font-size: 0.85rem; color: var(--text-dim); }
+.field-row input, .field-row select {
+  background: #0c111c;
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+button:hover { background: var(--accent-dim); }
+button:disabled { opacity: 0.5; cursor: default; }
+
+.status { text-align: center; color: var(--text-dim); min-height: 1.2em; font-size: 0.9rem; }
+.status.error { color: var(--bad); }
+
+.hidden { display: none !important; }
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 8px 16px;
+}
+.tab-btn {
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--panel-border);
+  font-weight: 500;
+}
+.tab-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.tab-btn-secondary { margin-left: auto; }
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 700px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+h2 { margin-top: 0; font-size: 1.15rem; }
+h3 { font-size: 1rem; color: var(--text-dim); margin: 16px 0 8px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--panel-border); }
+th { color: var(--text-dim); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; }
+tr:last-child td { border-bottom: none; }
+tr.me-row { background: rgba(79, 157, 255, 0.12); }
+
+.badge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.badge-QB { background: #6c4fd6; }
+.badge-RB { background: #3ecf8e; color: #06281c; }
+.badge-WR { background: #4f9dff; }
+.badge-TE { background: #f2b84b; color: #3a2a02; }
+.badge-K { background: #7a8296; }
+.badge-DEF { background: #7a8296; }
+.badge-FLEX { background: #555; }
+
+.injury { color: var(--bad); font-size: 0.78rem; margin-left: 6px; }
+.rank-tag { color: var(--text-dim); font-size: 0.8rem; }
+
+.player-name { font-weight: 600; }
+.player-meta { color: var(--text-dim); font-size: 0.8rem; }
+
+.need-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0c111c;
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  margin: 4px 6px 4px 0;
+  font-size: 0.85rem;
+}
+.need-chip .sev-high { color: var(--bad); font-weight: 700; }
+.need-chip .sev-med { color: var(--warn); font-weight: 700; }
+.need-chip .sev-low { color: var(--good); font-weight: 700; }
+
+.empty-note { color: var(--text-dim); font-style: italic; }
+
+footer {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  padding: 24px 16px 40px;
+}
+footer a { color: var(--accent); }
+
+.spinner-note { color: var(--text-dim); font-size: 0.85rem; }
