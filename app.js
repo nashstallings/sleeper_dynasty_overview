@@ -185,6 +185,41 @@ function rosterLabel(roster) {
   return teamNameForOwner(roster.owner_id);
 }
 
+const AVATAR_COLORS = ["#5b8cff", "#34d399", "#fbbf24", "#f87171", "#a882ff", "#ec6fbb", "#38bdf8", "#fb923c"];
+
+function colorForName(name) {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) >>> 0;
+  return AVATAR_COLORS[hash % AVATAR_COLORS.length];
+}
+
+window.handleAvatarError = function (img) {
+  const span = document.createElement("span");
+  span.className = `avatar-fallback${img.dataset.sizeClass || ""}`;
+  span.style.background = img.dataset.color;
+  span.textContent = img.dataset.initial;
+  img.replaceWith(span);
+};
+
+function avatarHtml(ownerId, { size = "" } = {}) {
+  const name = teamNameForOwner(ownerId);
+  const u = state.users.find((x) => x.user_id === ownerId);
+  const initial = (name[0] || "?").toUpperCase();
+  const color = colorForName(name);
+  const sizeClass = size ? ` avatar-${size}` : "";
+  if (u && u.avatar) {
+    return `<img class="avatar${sizeClass}" src="https://sleepercdn.com/avatars/thumbs/${u.avatar}" alt=""
+      data-initial="${initial}" data-color="${color}" data-size-class="${sizeClass}"
+      onerror="handleAvatarError(this)" />`;
+  }
+  return `<span class="avatar-fallback${sizeClass}" style="background:${color}">${initial}</span>`;
+}
+
+function teamCellHtml(roster, { size = "", suffix = "" } = {}) {
+  if (!roster) return `<div class="team-cell">${avatarHtml(null, { size })}<span>Unknown team</span></div>`;
+  return `<div class="team-cell">${avatarHtml(roster.owner_id, { size })}<span>${rosterLabel(roster)}</span>${suffix}</div>`;
+}
+
 // ---------- Dashboard ----------
 
 function renderDashboard() {
@@ -193,15 +228,19 @@ function renderDashboard() {
   renderBench();
 }
 
+function emptyState(emoji, text) {
+  return `<div class="empty-state"><span class="empty-emoji">${emoji}</span><p class="empty-note">${text}</p></div>`;
+}
+
 async function renderMatchup() {
   const card = document.getElementById("matchup-card");
   const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
   if (!myRoster) {
-    card.innerHTML = `<p class="empty-note">You don't own a team in this league.</p>`;
+    card.innerHTML = emptyState("🤷", "You don't own a team in this league.");
     return;
   }
   if (!state.currentWeek) {
-    card.innerHTML = `<h2>This week's matchup</h2><p class="empty-note">No active NFL week right now (likely offseason).</p>`;
+    card.innerHTML = `<h2>This week's matchup</h2>${emptyState("🌴", "No active NFL week right now (likely offseason).")}`;
     return;
   }
 
@@ -210,34 +249,43 @@ async function renderMatchup() {
     const matchups = await api(`/league/${state.leagueId}/matchups/${state.currentWeek}`);
     const mine = matchups.find((m) => m.roster_id === state.myRosterId);
     if (!mine) {
-      card.innerHTML = `<h2>Week ${state.currentWeek} matchup</h2><p class="empty-note">No matchup found yet for this week.</p>`;
+      card.innerHTML = `<h2>Week ${state.currentWeek} matchup</h2>${emptyState("📭", "No matchup found yet for this week.")}`;
       return;
     }
     const opponent = matchups.find(
       (m) => m.matchup_id === mine.matchup_id && m.roster_id !== mine.roster_id
     );
     const oppRoster = opponent && state.rosters.find((r) => r.roster_id === opponent.roster_id);
+    const myPts = (mine.points || 0).toFixed(2);
+    const oppPts = opponent ? (opponent.points || 0).toFixed(2) : "-";
+    const myWinning = opponent && mine.points > opponent.points;
+    const oppWinning = opponent && opponent.points > mine.points;
 
     card.innerHTML = `
       <h2>Week ${state.currentWeek} matchup</h2>
-      <table>
-        <tr>
-          <td><strong>${rosterLabel(myRoster)}</strong> (you)</td>
-          <td>${(mine.points || 0).toFixed(2)}</td>
-        </tr>
-        <tr>
-          <td>${oppRoster ? rosterLabel(oppRoster) : "Bye / TBD"}</td>
-          <td>${opponent ? (opponent.points || 0).toFixed(2) : "-"}</td>
-        </tr>
-      </table>`;
+      <div class="matchup-row">
+        <div class="matchup-side">
+          ${avatarHtml(myRoster.owner_id, { size: "lg" })}
+          <span class="matchup-name">${rosterLabel(myRoster)} <span class="player-meta">(you)</span></span>
+        </div>
+        <span class="matchup-points" style="color:${myWinning ? "var(--good)" : "inherit"}">${myPts}</span>
+      </div>
+      <div class="matchup-vs">VS</div>
+      <div class="matchup-row">
+        <div class="matchup-side">
+          ${oppRoster ? avatarHtml(oppRoster.owner_id, { size: "lg" }) : ""}
+          <span class="matchup-name">${oppRoster ? rosterLabel(oppRoster) : "Bye / TBD"}</span>
+        </div>
+        <span class="matchup-points" style="color:${oppWinning ? "var(--good)" : "inherit"}">${oppPts}</span>
+      </div>`;
   } catch (err) {
-    card.innerHTML = `<h2>Week ${state.currentWeek} matchup</h2><p class="empty-note">Couldn't load matchup data.</p>`;
+    card.innerHTML = `<h2>Week ${state.currentWeek} matchup</h2>${emptyState("⚠️", "Couldn't load matchup data.")}`;
   }
 }
 
 function playerRow(pid, { showRank = true } = {}) {
   if (!pid || pid === "0") {
-    return `<tr><td colspan="3" class="empty-note">Empty slot</td></tr>`;
+    return `<tr><td colspan="3" class="empty-note">&mdash; Empty slot &mdash;</td></tr>`;
   }
   const p = player(pid);
   const pos = playerPosition(p);
@@ -261,7 +309,7 @@ function renderStarters() {
   const card = document.getElementById("starters-card");
   const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
   if (!myRoster) {
-    card.innerHTML = `<h2>Starters</h2><p class="empty-note">You don't own a team in this league.</p>`;
+    card.innerHTML = `<h2>Starters</h2>${emptyState("🤷", "You don't own a team in this league.")}`;
     return;
   }
   const rows = (myRoster.starters || []).map((pid) => playerRow(pid)).join("");
@@ -281,7 +329,7 @@ function renderBench() {
     .sort((a, b) => playerRank(player(a)) - playerRank(player(b)));
   const rows = bench.length
     ? bench.map((pid) => playerRow(pid)).join("")
-    : `<tr><td class="empty-note">No bench players</td></tr>`;
+    : `<tr><td>${emptyState("🪑", "No bench players")}</td></tr>`;
   card.innerHTML = `<h2>Bench</h2><table><tbody>${rows}</tbody></table>`;
 }
 
@@ -304,7 +352,7 @@ function renderStandings() {
       return `
         <tr class="${isMe ? "me-row" : ""}">
           <td>${i + 1}</td>
-          <td>${rosterLabel(r)}${isMe ? " (you)" : ""}</td>
+          <td>${teamCellHtml(r, { suffix: isMe ? '<span class="player-meta">you</span>' : "" })}</td>
           <td>${s.wins || 0}-${s.losses || 0}-${s.ties || 0}</td>
           <td>${fpts(r).toFixed(1)}</td>
           <td>${fptsAgainst(r).toFixed(1)}</td>
@@ -430,28 +478,28 @@ function renderTradeFinder() {
   const targetsCard = document.getElementById("targets-card");
 
   if (!state.myRosterId) {
-    needsCard.innerHTML = `<h2>Team needs</h2><p class="empty-note">You don't own a team in this league.</p>`;
+    needsCard.innerHTML = `<h2>Team needs</h2>${emptyState("🤷", "You don't own a team in this league.")}`;
     targetsCard.innerHTML = "";
     return;
   }
 
   const needs = computeNeeds();
   if (!needs.length) {
-    needsCard.innerHTML = `<h2>Team needs</h2><p class="empty-note">Your roster looks solid at QB/RB/WR/TE relative to the rest of the league &mdash; no glaring needs detected.</p>`;
+    needsCard.innerHTML = `<h2>Team needs</h2>${emptyState("✅", "Your roster looks solid at QB/RB/WR/TE relative to the rest of the league &mdash; no glaring needs detected.")}`;
     targetsCard.innerHTML = "";
     return;
   }
 
   needsCard.innerHTML = `
     <h2>Team needs</h2>
-    <p class="player-meta">Based on how your best player at each position ranks (Sleeper's overall rank) against the rest of the league.</p>
+    <p class="player-meta" style="margin-bottom:14px">Based on how your best player at each position ranks (Sleeper's overall rank) against the rest of the league.</p>
     ${needs
       .map(
         (n) => `
-      <span class="need-chip">
+      <span class="need-chip sev-${n.severity}">
         <span class="badge badge-${n.position}">${n.position}</span>
-        <span class="sev-${n.severity}">${n.severity.toUpperCase()} need</span>
-        <span class="player-meta">(${n.placement}/${n.totalTeams} in league)</span>
+        <span class="sev-label">${n.severity} need</span>
+        <span class="player-meta">${n.placement}/${n.totalTeams} in league</span>
       </span>`
       )
       .join("")}
@@ -471,7 +519,7 @@ function renderTradeFinder() {
               <span class="player-meta">${p.team || "FA"} &middot; ${c.isBench ? "Bench" : "Starter"}</span>
             </td>
             <td><span class="rank-tag">#${c.rank}</span></td>
-            <td>${rosterLabel(c.ownerRoster)}</td>
+            <td>${teamCellHtml(c.ownerRoster)}</td>
           </tr>`;
         })
         .join("");
