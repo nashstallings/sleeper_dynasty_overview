@@ -8,6 +8,9 @@ football account and helps you:
 - **Find trade targets** &mdash; flags your weakest roster positions (relative to the
   rest of the league) and surfaces bench players on other rosters who could fill
   those needs.
+- **Spot risers** &mdash; a Trending tab surfaces players whose snap share, target
+  share, and receiving/rushing efficiency are climbing week over week, and shows
+  whether they're on your roster, a rival's, or unrostered in your league.
 
 There is no backend, no build step, and no login. It's plain HTML/CSS/JS that
 talks directly to Sleeper's public, read-only API from your browser. Nothing
@@ -19,7 +22,7 @@ you type is sent anywhere except Sleeper's API.
 2. Enter your Sleeper **username** and the **season** (e.g. `2026`), then click
    "Find my leagues".
 3. Pick one of your leagues from the dropdown and click "Load league".
-4. Use the tabs to browse **My Team**, **Standings**, and **Trade Finder**.
+4. Use the tabs to browse **My Team**, **Standings**, **Trade Finder**, and **Trending**.
 
 Your username and chosen league are remembered in your browser (`localStorage`)
 so you won't have to re-enter them next time. Use "Switch league" to pick a
@@ -41,6 +44,48 @@ them.
 This is a heuristic based on roster construction, not weekly projections or
 trade values, so use it as a starting point for research, not gospel.
 
+## How Trending works
+
+Sleeper's API doesn't expose advanced usage/efficiency stats (no snap counts,
+no target share, no routes run), so this tab is backed by a second, separate
+data source: [nflverse](https://nflreadr.nflverse.com/) play-by-play data,
+pre-aggregated into [`data/rising_metrics.json`](data/rising_metrics.json) by
+a scheduled job (see below) rather than fetched live in the browser.
+
+For each metric, every player's most recent 4 weeks are compared to the 4
+weeks before that, and the biggest positive movers are listed:
+
+- **Snap share** &mdash; share of offensive snaps played.
+- **Target share** &mdash; share of team targets.
+- **WOPR** &mdash; Weighted Opportunity Rating, a target-share + air-yards-share
+  usage blend.
+- **Yards / target** &mdash; the closest proxy this data source supports for
+  yards-per-route-run efficiency. True YPRR needs routes-run charting (e.g.
+  PFF), which isn't part of the free nflverse feed, so treat this as a
+  stand-in, not the real thing.
+- **Yards / carry** &mdash; RBs only.
+
+Each riser is cross-referenced against the league you loaded: if Sleeper
+knows the player and they're on a roster in your league, you'll see whose
+(with "Your roster" called out); otherwise they're marked a free agent, or
+"Not in Sleeper's DB" for deep-roster/practice-squad players Sleeper doesn't
+track.
+
+### Keeping the trending data fresh
+
+`.github/workflows/refresh-rising-metrics.yml` re-runs the aggregation
+weekly (Tuesday mornings, after Monday Night Football) via
+`scripts/refresh_rising_metrics.py`, which queries a BigQuery project
+(`ff-python-api.nflreadpy`) populated by a companion daily job and commits
+the refreshed `data/rising_metrics.json` back to the repo.
+
+For the scheduled refresh to run, this repo needs a `GCP_SA_KEY` repository
+secret: a service account JSON key with BigQuery read access to that project
+(Settings -> Secrets and variables -> Actions). Without it, the workflow
+fails but the site keeps serving whatever snapshot is already committed. You
+can also trigger a refresh manually from the Actions tab
+("Run workflow" on "Refresh Rising Metrics").
+
 ## Running it
 
 **Option 1 &mdash; GitHub Pages (recommended):** In this repo's Settings ->
@@ -53,9 +98,11 @@ the app at `https://<your-username>.github.io/<repo-name>/`.
 python3 -m http.server 8000
 ```
 
-then open `http://localhost:8000`. (Opening `index.html` directly via
-`file://` also works in most browsers, since Sleeper's API allows
-cross-origin requests.)
+then open `http://localhost:8000`. My Team / Standings / Trade Finder also
+work opening `index.html` directly via `file://`, since Sleeper's API allows
+cross-origin requests &mdash; but the Trending tab needs a real HTTP server,
+since browsers block `fetch()` of local files (like `data/rising_metrics.json`)
+from a `file://` page.
 
 ## Notes & limitations
 
@@ -69,3 +116,7 @@ cross-origin requests.)
   final answer.
 - Kickers and defenses are intentionally excluded from the needs/trade-finder
   logic; they're low-value and easily streamed.
+- Trending data reflects whatever season/weeks the BigQuery source has most
+  recently loaded (regular season only). During the offseason it'll show
+  last season's final weeks until the new season's games start generating
+  data.

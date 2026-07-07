@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-07-07T00:00:00Z",
+  "season": 2025,
+  "season_type": "REG",
+  "recent_weeks": [15, 16, 17, 18],
+  "prior_weeks": [11, 12, 13, 14],
+  "metrics": {
+    "snap_share": {
+      "label": "Snap Share",
+      "format": "pct",
+      "description": "Share of offensive snaps played, last 4 weeks vs. the 4 weeks before that.",
+      "leaders": [
+        {"name": "Efton Chism III", "position": "WR", "team": "NE", "gsis_id": "00-0040563", "prior": 0.05, "recent": 0.53, "delta": 0.48},
+        {"name": "Adam Thielen", "position": "WR", "team": "MIN", "gsis_id": "00-0030035", "prior": 0.233, "recent": 0.635, "delta": 0.402},
+        {"name": "JuJu Smith-Schuster", "position": "WR", "team": "KC", "gsis_id": "00-0033857", "prior": 0.38, "recent": 0.755, "delta": 0.375},
+        {"name": "Blake Whiteheart", "position": "TE", "team": "CLE", "gsis_id": "00-0038710", "prior": 0.265, "recent": 0.635, "delta": 0.37},
+        {"name": "Olamide Zaccheaus", "position": "WR", "team": "CHI", "gsis_id": "00-0035208", "prior": 0.473, "recent": 0.84, "delta": 0.367},
+        {"name": "Dante Pettis", "position": "WR", "team": "NO", "gsis_id": "00-0034860", "prior": 0.05, "recent": 0.407, "delta": 0.357},
+        {"name": "Matthew Golden", "position": "WR", "team": "GB", "gsis_id": "00-0040667", "prior": 0.22, "recent": 0.547, "delta": 0.328},
+        {"name": "Malik Davis", "position": "RB", "team": "DAL", "gsis_id": "00-0037563", "prior": 0.142, "recent": 0.457, "delta": 0.314},
+        {"name": "Gunner Olszewski", "position": "WR", "team": "NYG", "gsis_id": "00-0035645", "prior": 0.04, "recent": 0.34, "delta": 0.3},
+        {"name": "Darius Cooper", "position": "WR", "team": "PHI", "gsis_id": "00-0040024", "prior": 0.183, "recent": 0.483, "delta": 0.3},
+        {"name": "Jalen Tolbert", "position": "WR", "team": "DAL", "gsis_id": "00-0037666", "prior": 0.215, "recent": 0.5, "delta": 0.285},
+        {"name": "Josh Whyle", "position": "TE", "team": "GB", "gsis_id": "00-0038589", "prior": 0.425, "recent": 0.685, "delta": 0.26}
+      ]
+    },
+    "target_share": {
+      "label": "Target Share",
+      "format": "pct",
+      "description": "Share of team targets, last 4 weeks vs. the 4 weeks before that.",
+      "leaders": [
+        {"name": "Ricky Pearsall", "position": "WR", "team": "SF", "gsis_id": "00-0039916", "prior": 0.112, "recent": 0.246, "delta": 0.134},
+        {"name": "Mack Hollins", "position": "WR", "team": "NE", "gsis_id": "00-0033555", "prior": 0.156, "recent": 0.289, "delta": 0.133},
+        {"name": "Isaiah Williams", "position": "WR", "team": "NYJ", "gsis_id": "00-0039451", "prior": 0.07, "recent": 0.203, "delta": 0.133},
+        {"name": "Bijan Robinson", "position": "RB", "team": "ATL", "gsis_id": "00-0038542", "prior": 0.142, "recent": 0.273, "delta": 0.131},
+        {"name": "Amon-Ra St. Brown", "position": "WR", "team": "DET", "gsis_id": "00-0036963", "prior": 0.251, "recent": 0.378, "delta": 0.127},
+        {"name": "Jalen Tolbert", "position": "WR", "team": "DAL", "gsis_id": "00-0037666", "prior": 0.016, "recent": 0.133, "delta": 0.117},
+        {"name": "Chig Okonkwo", "position": "TE", "team": "TEN", "gsis_id": "00-0037809", "prior": 0.103, "recent": 0.218, "delta": 0.115},
+        {"name": "Darius Slayton", "position": "WR", "team": "NYG", "gsis_id": "00-0035535", "prior": 0.092, "recent": 0.204, "delta": 0.112},
+        {"name": "Michael Mayer", "position": "TE", "team": "LV", "gsis_id": "00-0039066", "prior": 0.063, "recent": 0.171, "delta": 0.108},
+        {"name": "Gunner Olszewski", "position": "WR", "team": "NYG", "gsis_id": "00-0035645", "prior": 0.0, "recent": 0.105, "delta": 0.105},
+        {"name": "Trey McBride", "position": "TE", "team": "ARI", "gsis_id": "00-0037744", "prior": 0.215, "recent": 0.319, "delta": 0.103},
+        {"name": "Quinshon Judkins", "position": "RB", "team": "CLE", "gsis_id": "00-0040784", "prior": 0.072, "recent": 0.176, "delta": 0.103}
+      ]
+    },
+    "wopr": {
+      "label": "WOPR (Opportunity Score)",
+      "format": "num",
+      "description": "Weighted Opportunity Rating — combines target share and air yards share into one usage score. Last 4 weeks vs. the 4 weeks before that.",
+      "leaders": [
+        {"name": "Quentin Johnston", "position": "WR", "team": "LAC", "gsis_id": "00-0038544", "prior": 0.279, "recent": 0.69, "delta": 0.411},
+        {"name": "Ricky Pearsall", "position": "WR", "team": "SF", "gsis_id": "00-0039916", "prior": 0.268, "recent": 0.64, "delta": 0.372},
+        {"name": "Mack Hollins", "position": "WR", "team": "NE", "gsis_id": "00-0033555", "prior": 0.405, "recent": 0.71, "delta": 0.305},
+        {"name": "Marquise Brown", "position": "WR", "team": "KC", "gsis_id": "00-0035662", "prior": 0.166, "recent": 0.458, "delta": 0.292},
+        {"name": "Isaiah Williams", "position": "WR", "team": "NYJ", "gsis_id": "00-0039451", "prior": 0.133, "recent": 0.415, "delta": 0.283},
+        {"name": "Jalen Tolbert", "position": "WR", "team": "DAL", "gsis_id": "00-0037666", "prior": 0.052, "recent": 0.313, "delta": 0.261},
+        {"name": "Gunner Olszewski", "position": "WR", "team": "NYG", "gsis_id": "00-0035645", "prior": 0.0, "recent": 0.259, "delta": 0.259},
+        {"name": "Jaxon Smith-Njigba", "position": "WR", "team": "SEA", "gsis_id": "00-0038543", "prior": 0.692, "recent": 0.951, "delta": 0.259},
+        {"name": "Darius Slayton", "position": "WR", "team": "NYG", "gsis_id": "00-0035535", "prior": 0.253, "recent": 0.501, "delta": 0.248},
+        {"name": "Parker Washington", "position": "WR", "team": "JAX", "gsis_id": "00-0038606", "prior": 0.359, "recent": 0.601, "delta": 0.242},
+        {"name": "Pat Bryant", "position": "WR", "team": "DEN", "gsis_id": "00-0040134", "prior": 0.365, "recent": 0.601, "delta": 0.236},
+        {"name": "Treylon Burks", "position": "WR", "team": "WAS", "gsis_id": "00-0037742", "prior": 0.182, "recent": 0.413, "delta": 0.231}
+      ]
+    },
+    "yards_per_target": {
+      "label": "Yards / Target",
+      "format": "num",
+      "description": "Receiving yards per target — the closest proxy Sleeper's free data supports for yards-per-route-run efficiency (routes-run charting isn't publicly available). Min. 3 targets/week in the recent window.",
+      "leaders": [
+        {"name": "Quentin Johnston", "position": "WR", "team": "LAC", "gsis_id": "00-0038544", "prior": 3.44, "recent": 16.52, "delta": 13.08},
+        {"name": "Romeo Doubs", "position": "WR", "team": "GB", "gsis_id": "00-0037816", "prior": 4.82, "recent": 15.56, "delta": 10.73},
+        {"name": "Daniel Bellinger", "position": "TE", "team": "NYG", "gsis_id": "00-0038115", "prior": 0.0, "recent": 10.47, "delta": 10.47},
+        {"name": "Ricky Pearsall", "position": "WR", "team": "SF", "gsis_id": "00-0039916", "prior": 2.06, "recent": 12.17, "delta": 10.11},
+        {"name": "Terrance Ferguson", "position": "TE", "team": "LA", "gsis_id": "00-0040737", "prior": 0.0, "recent": 8.25, "delta": 8.25},
+        {"name": "Elic Ayomanor", "position": "WR", "team": "TEN", "gsis_id": "00-0040170", "prior": 2.5, "recent": 10.45, "delta": 7.95},
+        {"name": "DeVonta Smith", "position": "WR", "team": "PHI", "gsis_id": "00-0036912", "prior": 5.08, "recent": 12.06, "delta": 6.98},
+        {"name": "Terry McLaurin", "position": "WR", "team": "WAS", "gsis_id": "00-0035659", "prior": 6.85, "recent": 13.44, "delta": 6.59},
+        {"name": "Juwan Johnson", "position": "TE", "team": "NO", "gsis_id": "00-0036040", "prior": 6.8, "recent": 13.33, "delta": 6.53},
+        {"name": "Van Jefferson", "position": "WR", "team": "TEN", "gsis_id": "00-0036415", "prior": 5.85, "recent": 11.98, "delta": 6.13},
+        {"name": "Ladd McConkey", "position": "WR", "team": "LAC", "gsis_id": "00-0039915", "prior": 4.05, "recent": 9.78, "delta": 5.73},
+        {"name": "Ashton Jeanty", "position": "RB", "team": "LV", "gsis_id": "00-0040122", "prior": 4.09, "recent": 9.77, "delta": 5.67}
+      ]
+    },
+    "yards_per_carry": {
+      "label": "Yards / Carry",
+      "format": "num",
+      "description": "Rushing yards per carry, RBs only. Min. 3 carries/week in the recent window.",
+      "leaders": [
+        {"name": "Rhamondre Stevenson", "position": "RB", "team": "NE", "gsis_id": "00-0036875", "prior": 2.08, "recent": 9.82, "delta": 7.74},
+        {"name": "Rachaad White", "position": "RB", "team": "TB", "gsis_id": "00-0037256", "prior": 4.71, "recent": 9.32, "delta": 4.61},
+        {"name": "Tyjae Spears", "position": "RB", "team": "TEN", "gsis_id": "00-0039032", "prior": 0.99, "recent": 5.42, "delta": 4.43},
+        {"name": "Bhayshul Tuten", "position": "RB", "team": "JAX", "gsis_id": "00-0040719", "prior": 3.0, "recent": 5.8, "delta": 2.8},
+        {"name": "Derrick Henry", "position": "RB", "team": "BAL", "gsis_id": "00-0032764", "prior": 4.63, "recent": 7.13, "delta": 2.49},
+        {"name": "Jaylen Warren", "position": "RB", "team": "PIT", "gsis_id": "00-0037228", "prior": 3.78, "recent": 5.75, "delta": 1.98},
+        {"name": "Ashton Jeanty", "position": "RB", "team": "LV", "gsis_id": "00-0040122", "prior": 2.29, "recent": 4.08, "delta": 1.79},
+        {"name": "Tyler Allgeier", "position": "RB", "team": "ATL", "gsis_id": "00-0037263", "prior": 3.15, "recent": 4.63, "delta": 1.48},
+        {"name": "Jaleel McLaughlin", "position": "RB", "team": "DEN", "gsis_id": "00-0038794", "prior": 4.22, "recent": 5.49, "delta": 1.26},
+        {"name": "James Cook", "position": "RB", "team": "BUF", "gsis_id": "00-0037248", "prior": 4.69, "recent": 5.84, "delta": 1.15},
+        {"name": "Tyrone Tracy Jr.", "position": "RB", "team": "NYG", "gsis_id": "00-0039384", "prior": 3.78, "recent": 4.81, "delta": 1.04},
+        {"name": "Breece Hall", "position": "RB", "team": "NYJ", "gsis_id": "00-0038120", "prior": 3.39, "recent": 4.41, "delta": 1.02}
+      ]
+    }
+  }
+}

@@ -16,6 +16,7 @@ const state = {
   players: {},
   myRosterId: null,
   currentWeek: null,
+  risingMetrics: null,
 };
 
 // ---------- low-level helpers ----------
@@ -166,6 +167,7 @@ async function loadLeague(leagueId) {
     renderDashboard();
     renderStandings();
     renderTradeFinder();
+    renderTrending();
   } catch (err) {
     showError(err.message || String(err));
     setStatus("Failed to load league.");
@@ -533,6 +535,87 @@ function renderTradeFinder() {
     .join("");
 
   targetsCard.innerHTML = `<h2>Suggested trade targets</h2>${sections}`;
+}
+
+// ---------- Trending (rising metrics from nflverse/BigQuery) ----------
+
+function gsisToSleeperMap() {
+  const map = {};
+  Object.entries(state.players).forEach(([pid, p]) => {
+    if (p && p.gsis_id) map[p.gsis_id] = pid;
+  });
+  return map;
+}
+
+function leagueStatusForGsis(gsisId, gsisMap) {
+  const sleeperId = gsisId && gsisMap[gsisId];
+  if (!sleeperId) return { label: "Not in Sleeper's DB", html: `<span class="player-meta">Not in Sleeper's DB</span>` };
+  const roster = state.rosters.find((r) => (r.players || []).includes(sleeperId));
+  if (!roster) return { label: "Free agent", html: `<span class="player-meta">Free agent</span>` };
+  if (roster.roster_id === state.myRosterId) {
+    return { label: "Your roster", html: `<span class="player-meta" style="color:var(--good)">Your roster</span>` };
+  }
+  return { label: "Rostered", html: teamCellHtml(roster) };
+}
+
+function formatMetricValue(val, format) {
+  if (val === null || val === undefined) return "&mdash;";
+  if (format === "pct") return `${(val * 100).toFixed(1)}%`;
+  return val.toFixed(2);
+}
+
+async function renderTrending() {
+  const card = document.getElementById("trending-card");
+  card.innerHTML = `<h2>Rising metrics</h2><p class="spinner-note">Loading trend data...</p>`;
+
+  try {
+    if (!state.risingMetrics) {
+      const res = await fetch("data/rising_metrics.json");
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      state.risingMetrics = await res.json();
+    }
+    const data = state.risingMetrics;
+    const gsisMap = gsisToSleeperMap();
+
+    const metricSections = Object.entries(data.metrics)
+      .map(([key, metric]) => {
+        const rows = metric.leaders
+          .map((l) => {
+            const status = leagueStatusForGsis(l.gsis_id, gsisMap);
+            return `
+            <tr>
+              <td><span class="badge badge-${l.position}">${l.position}</span></td>
+              <td>
+                <span class="player-name">${l.name}</span><br/>
+                <span class="player-meta">${l.team}</span>
+              </td>
+              <td class="player-meta">${formatMetricValue(l.prior, metric.format)} &rarr; <strong>${formatMetricValue(l.recent, metric.format)}</strong></td>
+              <td><span class="rank-tag" style="color:var(--good);border-color:rgba(52,211,153,0.35)">&#9650; ${formatMetricValue(l.delta, metric.format)}</span></td>
+              <td>${status.html}</td>
+            </tr>`;
+          })
+          .join("");
+        return `
+          <h3>${metric.label}</h3>
+          <p class="player-meta" style="margin:-4px 0 10px">${metric.description}</p>
+          <table>
+            <thead><tr><th>Pos</th><th>Player</th><th>Prior &rarr; Recent</th><th>&Delta;</th><th>League status</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>`;
+      })
+      .join("");
+
+    card.innerHTML = `
+      <h2>Rising metrics</h2>
+      <p class="player-meta" style="margin-bottom:16px">
+        Weeks ${data.recent_weeks[0]}&ndash;${data.recent_weeks[data.recent_weeks.length - 1]} vs.
+        weeks ${data.prior_weeks[0]}&ndash;${data.prior_weeks[data.prior_weeks.length - 1]}, ${data.season} season.
+        Sourced from <a href="https://nflreadr.nflverse.com/" target="_blank" rel="noopener">nflverse</a> play-by-play data (refreshed weekly), cross-referenced against this league's rosters.
+      </p>
+      ${metricSections}`;
+  } catch (err) {
+    card.innerHTML = `<h2>Rising metrics</h2>${emptyState("📉", "Couldn't load trend data (data/rising_metrics.json missing or unreachable).")}`;
+  }
 }
 
 // ---------- tabs ----------
