@@ -30,7 +30,9 @@ WITH bounds AS (
 ),
 stats AS (
   SELECT
-    ps.player_id, pl.gsis_id, ps.player_display_name AS name, ps.position, ps.team, ps.week,
+    ps.player_id, pl.gsis_id,
+    CASE WHEN pl.sleeper_id IS NOT NULL THEN CAST(CAST(pl.sleeper_id AS INT64) AS STRING) END AS sleeper_id,
+    ps.player_display_name AS name, ps.position, ps.team, ps.week,
     ps.target_share, ps.wopr, ps.targets, ps.carries,
     SAFE_DIVIDE(ps.receiving_yards, NULLIF(ps.targets, 0)) AS ypt,
     SAFE_DIVIDE(ps.rushing_yards, NULLIF(ps.carries, 0)) AS ypc,
@@ -46,7 +48,8 @@ stats AS (
 ),
 windows AS (
   SELECT
-    player_id, ANY_VALUE(gsis_id) gsis_id, ANY_VALUE(name) name, ANY_VALUE(position) position, ANY_VALUE(team) team,
+    player_id, ANY_VALUE(gsis_id) gsis_id, ANY_VALUE(sleeper_id) sleeper_id,
+    ANY_VALUE(name) name, ANY_VALUE(position) position, ANY_VALUE(team) team,
     AVG(IF(week > (SELECT max_wk FROM bounds) - 4, snap_pct, NULL)) recent_snap_pct,
     AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, snap_pct, NULL)) prior_snap_pct,
     AVG(IF(week > (SELECT max_wk FROM bounds) - 4, target_share, NULL)) recent_target_share,
@@ -74,31 +77,31 @@ qualified AS (
   FROM windows
   WHERE recent_games >= 2 AND prior_games >= 2
 )
-SELECT 'snap_share' AS metric, name, position, team, gsis_id,
+SELECT 'snap_share' AS metric, name, position, team, gsis_id, sleeper_id,
   ROUND(prior_snap_pct, 3) AS prior_val, ROUND(recent_snap_pct, 3) AS recent_val, ROUND(snap_pct_delta, 3) AS delta
 FROM qualified WHERE recent_snap_pct IS NOT NULL AND prior_snap_pct IS NOT NULL
 QUALIFY ROW_NUMBER() OVER (ORDER BY snap_pct_delta DESC) <= 12
 
 UNION ALL
-SELECT 'target_share', name, position, team, gsis_id,
+SELECT 'target_share', name, position, team, gsis_id, sleeper_id,
   ROUND(prior_target_share, 3), ROUND(recent_target_share, 3), ROUND(target_share_delta, 3)
 FROM qualified WHERE recent_target_share IS NOT NULL AND prior_target_share IS NOT NULL
 QUALIFY ROW_NUMBER() OVER (ORDER BY target_share_delta DESC) <= 12
 
 UNION ALL
-SELECT 'yards_per_target', name, position, team, gsis_id,
+SELECT 'yards_per_target', name, position, team, gsis_id, sleeper_id,
   ROUND(prior_ypt, 2), ROUND(recent_ypt, 2), ROUND(ypt_delta, 2)
 FROM qualified WHERE recent_ypt IS NOT NULL AND prior_ypt IS NOT NULL AND recent_targets_avg >= 3
 QUALIFY ROW_NUMBER() OVER (ORDER BY ypt_delta DESC) <= 12
 
 UNION ALL
-SELECT 'wopr', name, position, team, gsis_id,
+SELECT 'wopr', name, position, team, gsis_id, sleeper_id,
   ROUND(prior_wopr, 3), ROUND(recent_wopr, 3), ROUND(wopr_delta, 3)
 FROM qualified WHERE recent_wopr IS NOT NULL AND prior_wopr IS NOT NULL
 QUALIFY ROW_NUMBER() OVER (ORDER BY wopr_delta DESC) <= 12
 
 UNION ALL
-SELECT 'yards_per_carry', name, position, team, gsis_id,
+SELECT 'yards_per_carry', name, position, team, gsis_id, sleeper_id,
   ROUND(prior_ypc, 2), ROUND(recent_ypc, 2), ROUND(ypc_delta, 2)
 FROM qualified WHERE recent_ypc IS NOT NULL AND prior_ypc IS NOT NULL AND position = 'RB' AND recent_carries_avg >= 3
 QUALIFY ROW_NUMBER() OVER (ORDER BY ypc_delta DESC) <= 12
@@ -165,6 +168,7 @@ def main():
                 "position": row.position,
                 "team": row.team,
                 "gsis_id": row.gsis_id,
+                "sleeper_id": row.sleeper_id,
                 "prior": row.prior_val,
                 "recent": row.recent_val,
                 "delta": row.delta,

@@ -540,17 +540,10 @@ function renderTradeFinder() {
 
 // ---------- Trending (rising metrics from nflverse/BigQuery) ----------
 
-function gsisToSleeperMap() {
-  const map = {};
-  Object.entries(state.players).forEach(([pid, p]) => {
-    if (p && p.gsis_id) map[p.gsis_id] = pid;
-  });
-  return map;
-}
-
-function leagueStatusForGsis(gsisId, gsisMap) {
-  const sleeperId = gsisId && gsisMap[gsisId];
-  if (!sleeperId) return { label: "Not in Sleeper's DB", html: `<span class="player-meta">Not in Sleeper's DB</span>` };
+function leagueStatusForSleeperId(sleeperId) {
+  if (!sleeperId || !state.players[sleeperId]) {
+    return { label: "Not in Sleeper's DB", html: `<span class="player-meta">Not in Sleeper's DB</span>` };
+  }
   const roster = state.rosters.find((r) => (r.players || []).includes(sleeperId));
   if (!roster) return { label: "Free agent", html: `<span class="player-meta">Free agent</span>` };
   if (roster.roster_id === state.myRosterId) {
@@ -576,13 +569,12 @@ async function renderTrending() {
       state.risingMetrics = await res.json();
     }
     const data = state.risingMetrics;
-    const gsisMap = gsisToSleeperMap();
 
     const metricSections = Object.entries(data.metrics)
       .map(([key, metric]) => {
         const rows = metric.leaders
           .map((l) => {
-            const status = leagueStatusForGsis(l.gsis_id, gsisMap);
+            const status = leagueStatusForSleeperId(l.sleeper_id);
             return `
             <tr>
               <td><span class="badge badge-${l.position}">${l.position}</span></td>
