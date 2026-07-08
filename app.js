@@ -598,13 +598,18 @@ async function renderTrending() {
       })
       .join("");
 
+    const injuryNote = data.injury_filter
+      ? `<p class="player-meta" style="margin-bottom:16px">${data.injury_filter.description}</p>`
+      : "";
+
     card.innerHTML = `
       <h2>Rising metrics</h2>
-      <p class="player-meta" style="margin-bottom:16px">
+      <p class="player-meta" style="margin-bottom:8px">
         Weeks ${data.recent_weeks[0]}&ndash;${data.recent_weeks[data.recent_weeks.length - 1]} vs.
         weeks ${data.prior_weeks[0]}&ndash;${data.prior_weeks[data.prior_weeks.length - 1]}, ${data.season} season.
         Sourced from <a href="https://nflreadr.nflverse.com/" target="_blank" rel="noopener">nflverse</a> play-by-play data (refreshed weekly), cross-referenced against this league's rosters.
       </p>
+      ${injuryNote}
       ${metricSections}`;
   } catch (err) {
     card.innerHTML = `<h2>Rising metrics</h2>${emptyState("Couldn't load trend data (data/rising_metrics.json missing or unreachable).")}`;

@@ -5,6 +5,14 @@ Computes, per player, the delta between their most recent 4 weeks and the
 the top risers per metric to a static JSON file that the front-end fetches
 directly (no client-side BigQuery access / credentials needed).
 
+No injury-report data is loaded into BigQuery, so weeks a player was
+playing hurt (or barely played) are approximated instead of detected
+directly: a week is excluded for a player if their snap share that week
+fell below INJURY_DROP_THRESHOLD of their own peak snap share over the
+8-week window, and only for players whose peak was at least
+INJURY_MIN_PEAK_SNAP_PCT (i.e. real weekly contributors, so bench/depth
+players with naturally low, variable snaps aren't misflagged).
+
 Requires GCP_SA_KEY env var: a JSON service account key with BigQuery
 read access to the ff-python-api project (same key used by the sibling
 contract_dynasty_draft repo's daily refresh job works fine here too).
@@ -22,13 +30,16 @@ PROJECT_ID = "ff-python-api"
 DATASET = "nflreadpy"
 OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "rising_metrics.json"
 
+INJURY_MIN_PEAK_SNAP_PCT = 0.5
+INJURY_DROP_THRESHOLD = 0.25
+
 QUERY = f"""
 WITH bounds AS (
   SELECT MAX(week) AS max_wk, MAX(season) AS season
   FROM `{PROJECT_ID}.{DATASET}.player_stats`
   WHERE season_type = 'REG'
 ),
-stats AS (
+raw_stats AS (
   SELECT
     ps.player_id, pl.gsis_id,
     CASE WHEN pl.sleeper_id IS NOT NULL THEN CAST(CAST(pl.sleeper_id AS INT64) AS STRING) END AS sleeper_id,
@@ -45,6 +56,21 @@ stats AS (
   WHERE ps.season = bounds.season AND ps.season_type = 'REG'
     AND ps.position IN ('WR', 'TE', 'RB')
     AND ps.week > bounds.max_wk - 8
+),
+-- a player's own peak snap share over the window stands in for their "healthy" role
+baseline AS (
+  SELECT player_id, MAX(snap_pct) AS peak_snap_pct
+  FROM raw_stats
+  GROUP BY player_id
+),
+-- drop weeks that look like the player was playing hurt / clearly limited
+stats AS (
+  SELECT r.*
+  FROM raw_stats r
+  JOIN baseline b USING (player_id)
+  WHERE b.peak_snap_pct < {INJURY_MIN_PEAK_SNAP_PCT}
+     OR r.snap_pct IS NULL
+     OR r.snap_pct >= {INJURY_DROP_THRESHOLD} * b.peak_snap_pct
 ),
 windows AS (
   SELECT
