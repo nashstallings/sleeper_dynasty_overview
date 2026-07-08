@@ -162,6 +162,7 @@ async function loadLeague(leagueId) {
     setStatus("");
     document.getElementById("setup").classList.add("hidden");
     document.getElementById("app-nav").classList.remove("hidden");
+    document.getElementById("change-league-btn").classList.remove("hidden");
     document.getElementById("app-main").classList.remove("hidden");
 
     renderDashboard();
@@ -230,19 +231,19 @@ function renderDashboard() {
   renderBench();
 }
 
-function emptyState(emoji, text) {
-  return `<div class="empty-state"><span class="empty-emoji">${emoji}</span><p class="empty-note">${text}</p></div>`;
+function emptyState(text) {
+  return `<div class="empty-state"><p class="empty-note">${text}</p></div>`;
 }
 
 async function renderMatchup() {
   const card = document.getElementById("matchup-card");
   const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
   if (!myRoster) {
-    card.innerHTML = emptyState("🤷", "You don't own a team in this league.");
+    card.innerHTML = emptyState("You don't own a team in this league.");
     return;
   }
   if (!state.currentWeek) {
-    card.innerHTML = `<h2>This week's matchup</h2>${emptyState("🌴", "No active NFL week right now (likely offseason).")}`;
+    card.innerHTML = `<h2>This week's matchup</h2>${emptyState("No active NFL week right now (likely offseason).")}`;
     return;
   }
 
@@ -251,7 +252,7 @@ async function renderMatchup() {
     const matchups = await api(`/league/${state.leagueId}/matchups/${state.currentWeek}`);
     const mine = matchups.find((m) => m.roster_id === state.myRosterId);
     if (!mine) {
-      card.innerHTML = `<h2>Week ${state.currentWeek} matchup</h2>${emptyState("📭", "No matchup found yet for this week.")}`;
+      card.innerHTML = `<h2>Week ${state.currentWeek} matchup</h2>${emptyState("No matchup found yet for this week.")}`;
       return;
     }
     const opponent = matchups.find(
@@ -281,7 +282,7 @@ async function renderMatchup() {
         <span class="matchup-points" style="color:${oppWinning ? "var(--good)" : "inherit"}">${oppPts}</span>
       </div>`;
   } catch (err) {
-    card.innerHTML = `<h2>Week ${state.currentWeek} matchup</h2>${emptyState("⚠️", "Couldn't load matchup data.")}`;
+    card.innerHTML = `<h2>Week ${state.currentWeek} matchup</h2>${emptyState("Couldn't load matchup data.")}`;
   }
 }
 
@@ -311,7 +312,7 @@ function renderStarters() {
   const card = document.getElementById("starters-card");
   const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
   if (!myRoster) {
-    card.innerHTML = `<h2>Starters</h2>${emptyState("🤷", "You don't own a team in this league.")}`;
+    card.innerHTML = `<h2>Starters</h2>${emptyState("You don't own a team in this league.")}`;
     return;
   }
   const rows = (myRoster.starters || []).map((pid) => playerRow(pid)).join("");
@@ -331,7 +332,7 @@ function renderBench() {
     .sort((a, b) => playerRank(player(a)) - playerRank(player(b)));
   const rows = bench.length
     ? bench.map((pid) => playerRow(pid)).join("")
-    : `<tr><td>${emptyState("🪑", "No bench players")}</td></tr>`;
+    : `<tr><td>${emptyState("No bench players")}</td></tr>`;
   card.innerHTML = `<h2>Bench</h2><table><tbody>${rows}</tbody></table>`;
 }
 
@@ -480,14 +481,14 @@ function renderTradeFinder() {
   const targetsCard = document.getElementById("targets-card");
 
   if (!state.myRosterId) {
-    needsCard.innerHTML = `<h2>Team needs</h2>${emptyState("🤷", "You don't own a team in this league.")}`;
+    needsCard.innerHTML = `<h2>Team needs</h2>${emptyState("You don't own a team in this league.")}`;
     targetsCard.innerHTML = "";
     return;
   }
 
   const needs = computeNeeds();
   if (!needs.length) {
-    needsCard.innerHTML = `<h2>Team needs</h2>${emptyState("✅", "Your roster looks solid at QB/RB/WR/TE relative to the rest of the league &mdash; no glaring needs detected.")}`;
+    needsCard.innerHTML = `<h2>Team needs</h2>${emptyState("Your roster looks solid at QB/RB/WR/TE relative to the rest of the league &mdash; no glaring needs detected.")}`;
     targetsCard.innerHTML = "";
     return;
   }
@@ -590,7 +591,7 @@ async function renderTrending() {
                 <span class="player-meta">${l.team}</span>
               </td>
               <td class="player-meta">${formatMetricValue(l.prior, metric.format)} &rarr; <strong>${formatMetricValue(l.recent, metric.format)}</strong></td>
-              <td><span class="rank-tag" style="color:var(--good);border-color:rgba(52,211,153,0.35)">&#9650; ${formatMetricValue(l.delta, metric.format)}</span></td>
+              <td><span class="delta-tag">+${formatMetricValue(l.delta, metric.format)}</span></td>
               <td>${status.html}</td>
             </tr>`;
           })
@@ -614,7 +615,7 @@ async function renderTrending() {
       </p>
       ${metricSections}`;
   } catch (err) {
-    card.innerHTML = `<h2>Rising metrics</h2>${emptyState("📉", "Couldn't load trend data (data/rising_metrics.json missing or unreachable).")}`;
+    card.innerHTML = `<h2>Rising metrics</h2>${emptyState("Couldn't load trend data (data/rising_metrics.json missing or unreachable).")}`;
   }
 }
 
@@ -632,6 +633,7 @@ function setupTabs() {
 
   document.getElementById("change-league-btn").addEventListener("click", () => {
     document.getElementById("app-nav").classList.add("hidden");
+    document.getElementById("change-league-btn").classList.add("hidden");
     document.getElementById("app-main").classList.add("hidden");
     document.getElementById("setup").classList.remove("hidden");
   });

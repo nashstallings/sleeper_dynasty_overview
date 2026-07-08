@@ -4,28 +4,40 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Sleeper Trade Finder</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%88%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B8CFF'/%3E%3Crect x='8' y='17' width='4' height='9' rx='1' fill='white'/%3E%3Crect x='14' y='12' width='4' height='14' rx='1' fill='white'/%3E%3Crect x='20' y='7' width='4' height='19' rx='1' fill='white'/%3E%3C/svg%3E" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <div class="bg-glow" aria-hidden="true"></div>
 
-<header class="app-header">
-  <div class="container">
+<header class="topbar">
+  <div class="container topbar-inner">
     <div class="brand">
-      <span class="brand-mark">🏈</span>
-      <div>
-        <h1>Sleeper Trade Finder</h1>
-        <p class="subtitle">Track your fantasy team and scout trade targets, powered by the Sleeper API.</p>
-      </div>
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
+          <rect x="3" y="17" width="5" height="12" rx="1.5" fill="currentColor" opacity="0.55"/>
+          <rect x="13.5" y="10" width="5" height="19" rx="1.5" fill="currentColor" opacity="0.8"/>
+          <rect x="24" y="3" width="5" height="26" rx="1.5" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="wordmark">Sleeper Trade Finder</span>
     </div>
+
+    <nav id="app-nav" class="tab-nav hidden">
+      <button class="tab-btn active" data-tab="dashboard">My Team</button>
+      <button class="tab-btn" data-tab="standings">Standings</button>
+      <button class="tab-btn" data-tab="trades">Trade Finder</button>
+      <button class="tab-btn" data-tab="trending">Trending</button>
+    </nav>
+
+    <button id="change-league-btn" class="btn-ghost hidden">Switch league</button>
   </div>
 </header>
 
 <section id="setup" class="card hero-card">
   <h2>Connect your Sleeper account</h2>
-  <p class="hero-copy">No login, no API key &mdash; just your public Sleeper username.</p>
+  <p class="hero-copy">Track your team, scout the league, and find trade targets. No login, no API key &mdash; just your public Sleeper username.</p>
   <form id="setup-form">
     <div class="field-row">
       <label for="username">Sleeper username</label>
@@ -46,18 +58,6 @@
 
   <p id="setup-status" class="status"></p>
 </section>
-
-<nav id="app-nav" class="tabs hidden">
-  <div class="container tabs-inner">
-    <div class="tab-group">
-      <button class="tab-btn active" data-tab="dashboard"><span class="tab-icon">👤</span>My Team</button>
-      <button class="tab-btn" data-tab="standings"><span class="tab-icon">🏆</span>Standings</button>
-      <button class="tab-btn" data-tab="trades"><span class="tab-icon">🔄</span>Trade Finder</button>
-      <button class="tab-btn" data-tab="trending"><span class="tab-icon">📈</span>Trending</button>
-    </div>
-    <button id="change-league-btn" class="tab-btn tab-btn-secondary">Switch league</button>
-  </div>
-</nav>
 
 <main id="app-main" class="hidden">
   <div class="container">
