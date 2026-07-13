@@ -52,18 +52,29 @@ data source: [nflverse](https://nflreadr.nflverse.com/) play-by-play data,
 pre-aggregated into [`data/rising_metrics.json`](data/rising_metrics.json) by
 a scheduled job (see below) rather than fetched live in the browser.
 
-For each metric, every player's most recent 4 weeks are compared to the 4
-weeks before that, and the biggest positive movers are listed:
+The tab is split into position sub-tabs &mdash; **QB, RB, WR, TE, FLEX**
+(RB/WR/TE combined), and **SFlex** (QB/RB/WR/TE combined, for superflex
+leagues) &mdash; each showing only the metrics relevant to that group:
 
-- **Snap share** &mdash; share of offensive snaps played.
-- **Target share** &mdash; share of team targets.
+- **Snap share** &mdash; share of offensive snaps played (QB/RB/WR/TE). Only
+  shown for players currently above 50% snap share, so a backup buried on
+  the depth chart doesn't clutter the list.
+- **Target share** &mdash; share of team targets (RB/WR/TE).
 - **WOPR** &mdash; Weighted Opportunity Rating, a target-share + air-yards-share
-  usage blend.
+  usage blend (RB/WR/TE).
 - **Yards / target** &mdash; the closest proxy this data source supports for
-  yards-per-route-run efficiency. True YPRR needs routes-run charting (e.g.
-  PFF), which isn't part of the free nflverse feed, so treat this as a
-  stand-in, not the real thing.
-- **Yards / carry** &mdash; RBs only.
+  yards-per-route-run efficiency (RB/WR/TE). True YPRR needs routes-run
+  charting (e.g. PFF), which isn't part of the free nflverse feed, so treat
+  this as a stand-in, not the real thing.
+- **Yards / carry** &mdash; rushing efficiency (QB/RB).
+- **Yards / attempt** &mdash; passing efficiency (QB only).
+- **Passing EPA / attempt** &mdash; Expected Points Added per pass attempt, a
+  situation-aware passing efficiency metric (QB only).
+
+For each metric, every player's most recent 4 weeks are compared to the 4
+weeks before that, and the biggest positive movers are listed (max 12 per
+table, minimum weekly volume required &mdash; see the description shown
+above each table in the app for exact thresholds).
 
 Each riser is cross-referenced against the league you loaded: if Sleeper
 knows the player and they're on a roster in your league, you'll see whose

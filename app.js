@@ -4,6 +4,15 @@ const PLAYERS_CACHE_KEY = "sleeper_tf_players_cache_v1";
 const PLAYERS_CACHE_MAX_AGE_MS = 12 * 60 * 60 * 1000; // 12h
 const SESSION_KEY = "sleeper_tf_session_v1";
 
+const POSITION_TABS = [
+  { key: "QB", label: "QB", positions: ["QB"] },
+  { key: "RB", label: "RB", positions: ["RB"] },
+  { key: "WR", label: "WR", positions: ["WR"] },
+  { key: "TE", label: "TE", positions: ["TE"] },
+  { key: "FLEX", label: "FLEX", positions: ["RB", "WR", "TE"] },
+  { key: "SFLEX", label: "SFlex", positions: ["QB", "RB", "WR", "TE"] },
+];
+
 const state = {
   username: null,
   userId: null,
@@ -17,6 +26,7 @@ const state = {
   myRosterId: null,
   currentWeek: null,
   risingMetrics: null,
+  trendingPosTab: "FLEX",
 };
 
 // ---------- low-level helpers ----------
@@ -568,52 +578,69 @@ async function renderTrending() {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       state.risingMetrics = await res.json();
     }
-    const data = state.risingMetrics;
-
-    const metricSections = Object.entries(data.metrics)
-      .map(([key, metric]) => {
-        const rows = metric.leaders
-          .map((l) => {
-            const status = leagueStatusForSleeperId(l.sleeper_id);
-            return `
-            <tr>
-              <td><span class="badge badge-${l.position}">${l.position}</span></td>
-              <td>
-                <span class="player-name">${l.name}</span><br/>
-                <span class="player-meta">${l.team}</span>
-              </td>
-              <td class="player-meta">${formatMetricValue(l.prior, metric.format)} &rarr; <strong>${formatMetricValue(l.recent, metric.format)}</strong></td>
-              <td><span class="delta-tag">+${formatMetricValue(l.delta, metric.format)}</span></td>
-              <td>${status.html}</td>
-            </tr>`;
-          })
-          .join("");
-        return `
-          <h3>${metric.label}</h3>
-          <p class="player-meta" style="margin:-4px 0 10px">${metric.description}</p>
-          <table>
-            <thead><tr><th>Pos</th><th>Player</th><th>Prior &rarr; Recent</th><th>&Delta;</th><th>League status</th></tr></thead>
-            <tbody>${rows}</tbody>
-          </table>`;
-      })
-      .join("");
-
-    const injuryNote = data.injury_filter
-      ? `<p class="player-meta" style="margin-bottom:16px">${data.injury_filter.description}</p>`
-      : "";
-
-    card.innerHTML = `
-      <h2>Rising metrics</h2>
-      <p class="player-meta" style="margin-bottom:8px">
-        Weeks ${data.recent_weeks[0]}&ndash;${data.recent_weeks[data.recent_weeks.length - 1]} vs.
-        weeks ${data.prior_weeks[0]}&ndash;${data.prior_weeks[data.prior_weeks.length - 1]}, ${data.season} season.
-        Sourced from <a href="https://nflreadr.nflverse.com/" target="_blank" rel="noopener">nflverse</a> play-by-play data (refreshed weekly), cross-referenced against this league's rosters.
-      </p>
-      ${injuryNote}
-      ${metricSections}`;
+    renderTrendingContent();
   } catch (err) {
     card.innerHTML = `<h2>Rising metrics</h2>${emptyState("Couldn't load trend data (data/rising_metrics.json missing or unreachable).")}`;
   }
+}
+
+function renderTrendingContent() {
+  const card = document.getElementById("trending-card");
+  const data = state.risingMetrics;
+  const tab = POSITION_TABS.find((t) => t.key === state.trendingPosTab) || POSITION_TABS[0];
+
+  const relevantMetrics = Object.entries(data.metric_defs).filter(([, def]) =>
+    def.positions.some((p) => tab.positions.includes(p))
+  );
+
+  const metricSections = relevantMetrics
+    .map(([key, def]) => {
+      const leaders = data.players
+        .filter(
+          (p) => tab.positions.includes(p.position) && def.positions.includes(p.position) && p.metrics[key]
+        )
+        .map((p) => ({ ...p, m: p.metrics[key] }))
+        .filter((p) => p.m.delta > 0)
+        .sort((a, b) => b.m.delta - a.m.delta)
+        .slice(0, 12);
+
+      if (!leaders.length) return "";
+
+      const rows = leaders
+        .map((l) => {
+          const status = leagueStatusForSleeperId(l.sleeper_id);
+          return `
+          <tr>
+            <td><span class="badge badge-${l.position}">${l.position}</span></td>
+            <td>
+              <span class="player-name">${l.name}</span><br/>
+              <span class="player-meta">${l.team}</span>
+            </td>
+            <td class="player-meta">${formatMetricValue(l.m.prior, def.format)} &rarr; <strong>${formatMetricValue(l.m.recent, def.format)}</strong></td>
+            <td><span class="delta-tag">+${formatMetricValue(l.m.delta, def.format)}</span></td>
+            <td>${status.html}</td>
+          </tr>`;
+        })
+        .join("");
+
+      return `
+        <h3>${def.label}</h3>
+        <p class="player-meta" style="margin:-4px 0 10px">${def.description}</p>
+        <table>
+          <thead><tr><th>Pos</th><th>Player</th><th>Prior &rarr; Recent</th><th>&Delta;</th><th>League status</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>`;
+    })
+    .join("");
+
+  card.innerHTML = `
+    <h2>Rising metrics</h2>
+    <p class="player-meta" style="margin-bottom:16px">
+      Weeks ${data.recent_weeks[0]}&ndash;${data.recent_weeks[data.recent_weeks.length - 1]} vs.
+      weeks ${data.prior_weeks[0]}&ndash;${data.prior_weeks[data.prior_weeks.length - 1]}, ${data.season} season.
+      Sourced from <a href="https://nflreadr.nflverse.com/" target="_blank" rel="noopener">nflverse</a> play-by-play data (refreshed weekly), cross-referenced against this league's rosters.
+    </p>
+    ${metricSections || emptyState("No qualifying risers for this position group yet.")}`;
 }
 
 // ---------- tabs ----------
@@ -633,6 +660,15 @@ function setupTabs() {
     document.getElementById("change-league-btn").classList.add("hidden");
     document.getElementById("app-main").classList.add("hidden");
     document.getElementById("setup").classList.remove("hidden");
+  });
+
+  document.querySelectorAll(".sub-tab-btn[data-postab]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".sub-tab-btn[data-postab]").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      state.trendingPosTab = btn.dataset.postab;
+      if (state.risingMetrics) renderTrendingContent();
+    });
   });
 }
 

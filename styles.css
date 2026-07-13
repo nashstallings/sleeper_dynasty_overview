@@ -177,6 +177,34 @@ body {
 .hero-card { text-align: left; }
 .hero-copy { color: var(--text-dim); font-size: 0.88rem; margin: -4px 0 18px; }
 
+.sub-tab-nav {
+  display: flex;
+  gap: 4px;
+  max-width: var(--content-w);
+  margin: 14px auto 8px;
+  padding: 4px;
+  background: var(--panel-soft);
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.sub-tab-nav::-webkit-scrollbar { display: none; }
+.sub-tab-btn {
+  flex-shrink: 0;
+  background: transparent;
+  color: var(--text-dim);
+  border: none;
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 7px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.sub-tab-btn:hover { color: var(--text); background: transparent; }
+.sub-tab-btn.active { background: var(--accent); color: #fff; }
+.sub-tab-btn.active:hover { background: var(--accent); color: #fff; }
+
 .field-row {
   display: flex;
   flex-direction: column;
