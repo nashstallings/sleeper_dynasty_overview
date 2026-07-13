@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T00:00:00Z",
+  "generated_at": "2026-07-10T00:00:00Z",
   "season": 2025,
   "season_type": "REG",
   "recent_weeks": [
@@ -85,6 +85,23 @@
         "QB"
       ],
       "description": "Expected Points Added per pass attempt \u2014 a play-by-play efficiency metric that accounts for down, distance, and situation. Min. 10 attempts/week in the recent window. Excludes weeks a player's snap share cratered to under a quarter of their own peak (a proxy for playing hurt/limited, since no injury-report data is loaded)."
+    },
+    "cpoe": {
+      "label": "CPOE",
+      "format": "num",
+      "positions": [
+        "QB"
+      ],
+      "description": "Completion % Over Expected \u2014 passing accuracy adjusted for throw difficulty, independent of scheme or receiver play. Min. 10 attempts/week in the recent window. Excludes weeks a player's snap share cratered to under a quarter of their own peak (a proxy for playing hurt/limited, since no injury-report data is loaded)."
+    },
+    "air_yards_share": {
+      "label": "Air Yards Share",
+      "format": "pct",
+      "positions": [
+        "WR",
+        "TE"
+      ],
+      "description": "Share of the team's total air yards (downfield distance thrown, not yards after catch) \u2014 a signal of a growing vertical/red-zone role. Min. 3 targets/week in the recent window. Excludes weeks a player's snap share cratered to under a quarter of their own peak (a proxy for playing hurt/limited, since no injury-report data is loaded)."
     }
   },
   "players": [
@@ -119,6 +136,11 @@
           "prior": -0.021,
           "recent": 0.131,
           "delta": 0.152
+        },
+        "cpoe": {
+          "prior": -8.71,
+          "recent": 0.28,
+          "delta": 8.99
         }
       }
     },
@@ -143,6 +165,11 @@
           "prior": 7.39,
           "recent": 5.59,
           "delta": -1.8
+        },
+        "air_yards_share": {
+          "prior": 0.202,
+          "recent": 0.175,
+          "delta": -0.027
         }
       }
     },
@@ -172,6 +199,11 @@
           "prior": 5.82,
           "recent": 4.32,
           "delta": -1.5
+        },
+        "air_yards_share": {
+          "prior": 0.194,
+          "recent": 0.264,
+          "delta": 0.07
         }
       }
     },
@@ -220,6 +252,11 @@
           "prior": 7.57,
           "recent": 12.87,
           "delta": 5.3
+        },
+        "air_yards_share": {
+          "prior": 0.135,
+          "recent": 0.165,
+          "delta": 0.03
         }
       }
     },
@@ -244,6 +281,11 @@
           "prior": 10.0,
           "recent": 5.42,
           "delta": -4.58
+        },
+        "air_yards_share": {
+          "prior": 0.284,
+          "recent": 0.248,
+          "delta": -0.036
         }
       }
     },
@@ -311,6 +353,11 @@
           "prior": 11.16,
           "recent": 2.38,
           "delta": -8.78
+        },
+        "air_yards_share": {
+          "prior": 0.132,
+          "recent": 0.15,
+          "delta": 0.018
         }
       }
     },
@@ -335,6 +382,11 @@
           "prior": 18.5,
           "recent": 16.58,
           "delta": -1.92
+        },
+        "air_yards_share": {
+          "prior": 0.057,
+          "recent": 0.05,
+          "delta": -0.007
         }
       }
     },
@@ -412,6 +464,11 @@
           "prior": 10.39,
           "recent": 9.63,
           "delta": -0.76
+        },
+        "air_yards_share": {
+          "prior": 0.196,
+          "recent": 0.108,
+          "delta": -0.088
         }
       }
     },
@@ -436,6 +493,11 @@
           "prior": 4.5,
           "recent": 6.72,
           "delta": 2.22
+        },
+        "air_yards_share": {
+          "prior": 0.061,
+          "recent": 0.032,
+          "delta": -0.029
         }
       }
     },
@@ -489,6 +551,11 @@
           "prior": 4.2,
           "recent": 4.46,
           "delta": 0.26
+        },
+        "air_yards_share": {
+          "prior": 0.029,
+          "recent": 0.094,
+          "delta": 0.065
         }
       }
     },
@@ -518,6 +585,11 @@
           "prior": 10.79,
           "recent": 9.43,
           "delta": -1.36
+        },
+        "air_yards_share": {
+          "prior": 0.27,
+          "recent": 0.202,
+          "delta": -0.068
         }
       }
     },
@@ -552,6 +624,11 @@
           "prior": 3.71,
           "recent": 3.28,
           "delta": -0.43
+        },
+        "air_yards_share": {
+          "prior": -0.046,
+          "recent": -0.027,
+          "delta": 0.019
         }
       }
     },
@@ -710,6 +787,11 @@
           "prior": 7.85,
           "recent": 6.4,
           "delta": -1.45
+        },
+        "air_yards_share": {
+          "prior": 0.245,
+          "recent": 0.395,
+          "delta": 0.15
         }
       }
     },
@@ -796,6 +878,11 @@
           "prior": 6.46,
           "recent": 7.38,
           "delta": 0.92
+        },
+        "air_yards_share": {
+          "prior": 0.074,
+          "recent": 0.316,
+          "delta": 0.242
         }
       }
     },
@@ -825,6 +912,11 @@
           "prior": 6.74,
           "recent": 7.0,
           "delta": 0.26
+        },
+        "air_yards_share": {
+          "prior": 0.164,
+          "recent": 0.165,
+          "delta": 0.001
         }
       }
     },
@@ -854,6 +946,11 @@
           "prior": 8.24,
           "recent": 7.63,
           "delta": -0.61
+        },
+        "air_yards_share": {
+          "prior": 0.161,
+          "recent": 0.108,
+          "delta": -0.053
         }
       }
     },
@@ -931,6 +1028,11 @@
           "prior": 7.97,
           "recent": 6.24,
           "delta": -1.73
+        },
+        "air_yards_share": {
+          "prior": 0.341,
+          "recent": 0.438,
+          "delta": 0.097
         }
       }
     },
@@ -960,6 +1062,11 @@
           "prior": 7.34,
           "recent": 7.33,
           "delta": -0.01
+        },
+        "air_yards_share": {
+          "prior": 0.096,
+          "recent": 0.145,
+          "delta": 0.049
         }
       }
     },
@@ -989,6 +1096,11 @@
           "prior": 5.01,
           "recent": 9.61,
           "delta": 4.6
+        },
+        "air_yards_share": {
+          "prior": 0.141,
+          "recent": 0.168,
+          "delta": 0.027
         }
       }
     },
@@ -1032,6 +1144,11 @@
           "prior": 4.76,
           "recent": 6.17,
           "delta": 1.41
+        },
+        "air_yards_share": {
+          "prior": 0.118,
+          "recent": 0.211,
+          "delta": 0.093
         }
       }
     },
@@ -1061,6 +1178,11 @@
           "prior": 4.17,
           "recent": 2.03,
           "delta": -2.14
+        },
+        "air_yards_share": {
+          "prior": 0.091,
+          "recent": 0.056,
+          "delta": -0.035
         }
       }
     },
@@ -1133,6 +1255,11 @@
           "prior": 4.3,
           "recent": 8.27,
           "delta": 3.97
+        },
+        "air_yards_share": {
+          "prior": 0.178,
+          "recent": 0.252,
+          "delta": 0.074
         }
       }
     },
@@ -1210,6 +1337,11 @@
           "prior": 9.48,
           "recent": 6.86,
           "delta": -2.62
+        },
+        "air_yards_share": {
+          "prior": 0.238,
+          "recent": 0.224,
+          "delta": -0.014
         }
       }
     },
@@ -1239,6 +1371,11 @@
           "prior": 4.89,
           "recent": 3.3,
           "delta": -1.59
+        },
+        "air_yards_share": {
+          "prior": 0.049,
+          "recent": 0.153,
+          "delta": 0.104
         }
       }
     },
@@ -1268,6 +1405,11 @@
           "prior": 6.27,
           "recent": 7.6,
           "delta": 1.33
+        },
+        "air_yards_share": {
+          "prior": 0.137,
+          "recent": 0.118,
+          "delta": -0.019
         }
       }
     },
@@ -1374,6 +1516,11 @@
           "prior": 3.65,
           "recent": 6.27,
           "delta": 2.62
+        },
+        "air_yards_share": {
+          "prior": 0.164,
+          "recent": 0.137,
+          "delta": -0.027
         }
       }
     },
@@ -1398,6 +1545,11 @@
           "prior": 4.5,
           "recent": 6.53,
           "delta": 2.03
+        },
+        "air_yards_share": {
+          "prior": 0.037,
+          "recent": 0.134,
+          "delta": 0.097
         }
       }
     },
@@ -1427,6 +1579,11 @@
           "prior": 12.58,
           "recent": 6.27,
           "delta": -6.31
+        },
+        "air_yards_share": {
+          "prior": 0.164,
+          "recent": 0.278,
+          "delta": 0.114
         }
       }
     },
@@ -1523,6 +1680,11 @@
           "prior": 6.9,
           "recent": 11.5,
           "delta": 4.6
+        },
+        "air_yards_share": {
+          "prior": 0.473,
+          "recent": 0.336,
+          "delta": -0.137
         }
       }
     },
@@ -1571,6 +1733,11 @@
           "prior": 6.85,
           "recent": 13.44,
           "delta": 6.59
+        },
+        "air_yards_share": {
+          "prior": 0.372,
+          "recent": 0.358,
+          "delta": -0.014
         }
       }
     },
@@ -1600,6 +1767,11 @@
           "prior": 11.88,
           "recent": 6.78,
           "delta": -5.1
+        },
+        "air_yards_share": {
+          "prior": 0.104,
+          "recent": 0.307,
+          "delta": 0.203
         }
       }
     },
@@ -1629,6 +1801,11 @@
           "prior": 8.54,
           "recent": 12.71,
           "delta": 4.17
+        },
+        "air_yards_share": {
+          "prior": 0.395,
+          "recent": 0.359,
+          "delta": -0.036
         }
       }
     },
@@ -1682,6 +1859,11 @@
           "prior": 8.05,
           "recent": 6.75,
           "delta": -1.3
+        },
+        "air_yards_share": {
+          "prior": 0.228,
+          "recent": 0.093,
+          "delta": -0.135
         }
       }
     },
@@ -1735,6 +1917,11 @@
           "prior": 7.63,
           "recent": 9.59,
           "delta": 1.96
+        },
+        "air_yards_share": {
+          "prior": 0.07,
+          "recent": 0.13,
+          "delta": 0.06
         }
       }
     },
@@ -1764,6 +1951,11 @@
           "prior": 6.8,
           "recent": 13.33,
           "delta": 6.53
+        },
+        "air_yards_share": {
+          "prior": 0.159,
+          "recent": 0.17,
+          "delta": 0.011
         }
       }
     },
@@ -1817,6 +2009,11 @@
           "prior": 3.97,
           "recent": 3.16,
           "delta": -0.81
+        },
+        "air_yards_share": {
+          "prior": -0.055,
+          "recent": -0.084,
+          "delta": -0.029
         }
       }
     },
@@ -1908,6 +2105,11 @@
           "prior": 8.5,
           "recent": 2.93,
           "delta": -5.57
+        },
+        "air_yards_share": {
+          "prior": 0.189,
+          "recent": 0.144,
+          "delta": -0.045
         }
       }
     },
@@ -1942,6 +2144,11 @@
           "prior": 3.73,
           "recent": 2.89,
           "delta": -0.84
+        },
+        "air_yards_share": {
+          "prior": -0.022,
+          "recent": 0.007,
+          "delta": 0.029
         }
       }
     },
@@ -1971,6 +2178,11 @@
           "prior": 7.26,
           "recent": 7.17,
           "delta": -0.09
+        },
+        "air_yards_share": {
+          "prior": 0.021,
+          "recent": 0.1,
+          "delta": 0.079
         }
       }
     },
@@ -2000,6 +2212,11 @@
           "prior": 4.4,
           "recent": 4.92,
           "delta": 0.52
+        },
+        "air_yards_share": {
+          "prior": 0.274,
+          "recent": 0.173,
+          "delta": -0.101
         }
       }
     },
@@ -2029,6 +2246,11 @@
           "prior": 7.12,
           "recent": 8.89,
           "delta": 1.77
+        },
+        "air_yards_share": {
+          "prior": 0.299,
+          "recent": 0.207,
+          "delta": -0.092
         }
       }
     },
@@ -2087,6 +2309,11 @@
           "prior": 9.5,
           "recent": 5.58,
           "delta": -3.92
+        },
+        "air_yards_share": {
+          "prior": 0.082,
+          "recent": 0.06,
+          "delta": -0.022
         }
       }
     },
@@ -2116,6 +2343,11 @@
           "prior": 9.01,
           "recent": 8.09,
           "delta": -0.92
+        },
+        "air_yards_share": {
+          "prior": 0.326,
+          "recent": 0.256,
+          "delta": -0.07
         }
       }
     },
@@ -2145,6 +2377,11 @@
           "prior": 4.55,
           "recent": 7.14,
           "delta": 2.59
+        },
+        "air_yards_share": {
+          "prior": 0.349,
+          "recent": 0.351,
+          "delta": 0.002
         }
       }
     },
@@ -2212,6 +2449,11 @@
           "prior": 10.95,
           "recent": 6.75,
           "delta": -4.2
+        },
+        "air_yards_share": {
+          "prior": 0.323,
+          "recent": 0.245,
+          "delta": -0.078
         }
       }
     },
@@ -2241,6 +2483,11 @@
           "prior": 9.43,
           "recent": 4.76,
           "delta": -4.67
+        },
+        "air_yards_share": {
+          "prior": 0.285,
+          "recent": 0.409,
+          "delta": 0.124
         }
       }
     },
@@ -2270,6 +2517,11 @@
           "prior": 7.14,
           "recent": 12.3,
           "delta": 5.16
+        },
+        "air_yards_share": {
+          "prior": 0.334,
+          "recent": 0.377,
+          "delta": 0.043
         }
       }
     },
@@ -2299,6 +2551,11 @@
           "prior": 5.85,
           "recent": 11.98,
           "delta": 6.13
+        },
+        "air_yards_share": {
+          "prior": 0.144,
+          "recent": 0.307,
+          "delta": 0.163
         }
       }
     },
@@ -2376,6 +2633,11 @@
           "prior": 13.11,
           "recent": 14.02,
           "delta": 0.91
+        },
+        "air_yards_share": {
+          "prior": 0.334,
+          "recent": 0.341,
+          "delta": 0.007
         }
       }
     },
@@ -2448,6 +2710,11 @@
           "prior": 7.08,
           "recent": 4.83,
           "delta": -2.25
+        },
+        "air_yards_share": {
+          "prior": 0.58,
+          "recent": 0.273,
+          "delta": -0.307
         }
       }
     },
@@ -2587,6 +2854,11 @@
           "prior": 2.08,
           "recent": 9.82,
           "delta": 7.74
+        },
+        "air_yards_share": {
+          "prior": 0.028,
+          "recent": 0.056,
+          "delta": 0.028
         }
       }
     },
@@ -2616,6 +2888,11 @@
           "prior": 9.44,
           "recent": 9.2,
           "delta": -0.24
+        },
+        "air_yards_share": {
+          "prior": 0.027,
+          "recent": 0.207,
+          "delta": 0.18
         }
       }
     },
@@ -2645,6 +2922,11 @@
           "prior": 5.45,
           "recent": 8.61,
           "delta": 3.16
+        },
+        "air_yards_share": {
+          "prior": 0.305,
+          "recent": 0.408,
+          "delta": 0.103
         }
       }
     },
@@ -2674,6 +2956,11 @@
           "prior": 5.08,
           "recent": 11.75,
           "delta": 6.67
+        },
+        "air_yards_share": {
+          "prior": 0.301,
+          "recent": 0.315,
+          "delta": 0.014
         }
       }
     },
@@ -2708,6 +2995,11 @@
           "prior": 4.9,
           "recent": 4.36,
           "delta": -0.54
+        },
+        "air_yards_share": {
+          "prior": -0.065,
+          "recent": 0.018,
+          "delta": 0.083
         }
       }
     },
@@ -2742,6 +3034,11 @@
           "prior": 4.08,
           "recent": 4.16,
           "delta": 0.08
+        },
+        "air_yards_share": {
+          "prior": 0.011,
+          "recent": 0.008,
+          "delta": -0.003
         }
       }
     },
@@ -2771,6 +3068,11 @@
           "prior": 8.39,
           "recent": 7.4,
           "delta": -0.99
+        },
+        "air_yards_share": {
+          "prior": 0.523,
+          "recent": 0.381,
+          "delta": -0.142
         }
       }
     },
@@ -2800,6 +3102,11 @@
           "prior": 7.23,
           "recent": 7.99,
           "delta": 0.76
+        },
+        "air_yards_share": {
+          "prior": 0.285,
+          "recent": 0.248,
+          "delta": -0.037
         }
       }
     },
@@ -2834,6 +3141,11 @@
           "prior": 3.9,
           "recent": 3.14,
           "delta": -0.76
+        },
+        "air_yards_share": {
+          "prior": -0.007,
+          "recent": -0.002,
+          "delta": 0.005
         }
       }
     },
@@ -3007,6 +3319,11 @@
           "prior": 6.03,
           "recent": 9.84,
           "delta": 3.81
+        },
+        "air_yards_share": {
+          "prior": 0.467,
+          "recent": 0.5,
+          "delta": 0.033
         }
       }
     },
@@ -3036,6 +3353,11 @@
           "prior": 9.41,
           "recent": 10.69,
           "delta": 1.28
+        },
+        "air_yards_share": {
+          "prior": 0.346,
+          "recent": 0.293,
+          "delta": -0.053
         }
       }
     },
@@ -3065,6 +3387,11 @@
           "prior": 10.05,
           "recent": 9.64,
           "delta": -0.41
+        },
+        "air_yards_share": {
+          "prior": 0.404,
+          "recent": 0.17,
+          "delta": -0.234
         }
       }
     },
@@ -3099,6 +3426,11 @@
           "prior": 4.69,
           "recent": 5.29,
           "delta": 0.6
+        },
+        "air_yards_share": {
+          "prior": -0.017,
+          "recent": 0.04,
+          "delta": 0.057
         }
       }
     },
@@ -3123,6 +3455,11 @@
           "prior": 10.06,
           "recent": 13.94,
           "delta": 3.88
+        },
+        "air_yards_share": {
+          "prior": 0.1,
+          "recent": 0.104,
+          "delta": 0.004
         }
       }
     },
@@ -3176,6 +3513,11 @@
           "prior": 4.15,
           "recent": 8.27,
           "delta": 4.12
+        },
+        "air_yards_share": {
+          "prior": 0.078,
+          "recent": 0.084,
+          "delta": 0.006
         }
       }
     },
@@ -3363,6 +3705,11 @@
           "prior": 7.73,
           "recent": 6.12,
           "delta": -1.61
+        },
+        "air_yards_share": {
+          "prior": 0.143,
+          "recent": 0.171,
+          "delta": 0.028
         }
       }
     },
@@ -3392,6 +3739,11 @@
           "prior": 12.87,
           "recent": 14.09,
           "delta": 1.22
+        },
+        "air_yards_share": {
+          "prior": 0.363,
+          "recent": 0.27,
+          "delta": -0.093
         }
       }
     },
@@ -3416,6 +3768,11 @@
           "prior": 0.0,
           "recent": 1.94,
           "delta": 1.94
+        },
+        "air_yards_share": {
+          "prior": 0.041,
+          "recent": 0.162,
+          "delta": 0.121
         }
       }
     },
@@ -3445,6 +3802,11 @@
           "prior": 6.63,
           "recent": 3.11,
           "delta": -3.52
+        },
+        "air_yards_share": {
+          "prior": 0.086,
+          "recent": 0.19,
+          "delta": 0.104
         }
       }
     },
@@ -3474,6 +3836,11 @@
           "prior": 0.63,
           "recent": 3.63,
           "delta": 3.0
+        },
+        "air_yards_share": {
+          "prior": 0.111,
+          "recent": 0.225,
+          "delta": 0.114
         }
       }
     },
@@ -3503,6 +3870,11 @@
           "prior": 8.48,
           "recent": 6.91,
           "delta": -1.57
+        },
+        "air_yards_share": {
+          "prior": 0.214,
+          "recent": 0.219,
+          "delta": 0.005
         }
       }
     },
@@ -3599,6 +3971,11 @@
           "prior": 11.12,
           "recent": 4.81,
           "delta": -6.31
+        },
+        "air_yards_share": {
+          "prior": 0.119,
+          "recent": 0.075,
+          "delta": -0.044
         }
       }
     },
@@ -3628,6 +4005,11 @@
           "prior": 4.82,
           "recent": 15.56,
           "delta": 10.74
+        },
+        "air_yards_share": {
+          "prior": 0.162,
+          "recent": 0.222,
+          "delta": 0.06
         }
       }
     },
@@ -3652,6 +4034,11 @@
           "prior": 6.92,
           "recent": 5.29,
           "delta": -1.63
+        },
+        "air_yards_share": {
+          "prior": 0.137,
+          "recent": 0.141,
+          "delta": 0.004
         }
       }
     },
@@ -3710,6 +4097,11 @@
           "prior": 5.85,
           "recent": 5.08,
           "delta": -0.77
+        },
+        "air_yards_share": {
+          "prior": 0.008,
+          "recent": 0.023,
+          "delta": 0.015
         }
       }
     },
@@ -3739,6 +4131,11 @@
           "prior": 6.87,
           "recent": 3.56,
           "delta": -3.31
+        },
+        "air_yards_share": {
+          "prior": 0.064,
+          "recent": 0.059,
+          "delta": -0.005
         }
       }
     },
@@ -3806,6 +4203,11 @@
           "prior": 0.0,
           "recent": 10.47,
           "delta": 10.47
+        },
+        "air_yards_share": {
+          "prior": 0.033,
+          "recent": 0.052,
+          "delta": 0.019
         }
       }
     },
@@ -3835,6 +4237,11 @@
           "prior": 6.46,
           "recent": 5.55,
           "delta": -0.91
+        },
+        "air_yards_share": {
+          "prior": 0.318,
+          "recent": 0.511,
+          "delta": 0.193
         }
       }
     },
@@ -3893,6 +4300,11 @@
           "prior": 11.61,
           "recent": 9.16,
           "delta": -2.45
+        },
+        "air_yards_share": {
+          "prior": 0.356,
+          "recent": 0.305,
+          "delta": -0.051
         }
       }
     },
@@ -3922,6 +4334,11 @@
           "prior": 4.46,
           "recent": 8.73,
           "delta": 4.27
+        },
+        "air_yards_share": {
+          "prior": 0.102,
+          "recent": 0.144,
+          "delta": 0.042
         }
       }
     },
@@ -3970,6 +4387,11 @@
           "prior": 16.67,
           "recent": 14.22,
           "delta": -2.45
+        },
+        "air_yards_share": {
+          "prior": 0.127,
+          "recent": 0.141,
+          "delta": 0.014
         }
       }
     },
@@ -4109,6 +4531,11 @@
           "prior": 5.0,
           "recent": 5.18,
           "delta": 0.18
+        },
+        "air_yards_share": {
+          "prior": -0.016,
+          "recent": 0.024,
+          "delta": 0.04
         }
       }
     },
@@ -4138,6 +4565,11 @@
           "prior": 10.1,
           "recent": 9.11,
           "delta": -0.99
+        },
+        "air_yards_share": {
+          "prior": 0.349,
+          "recent": 0.575,
+          "delta": 0.226
         }
       }
     },
@@ -4167,6 +4599,11 @@
           "prior": 3.44,
           "recent": 16.52,
           "delta": 13.08
+        },
+        "air_yards_share": {
+          "prior": 0.114,
+          "recent": 0.518,
+          "delta": 0.404
         }
       }
     },
@@ -4215,6 +4652,11 @@
           "prior": 11.91,
           "recent": 7.63,
           "delta": -4.28
+        },
+        "air_yards_share": {
+          "prior": 0.138,
+          "recent": 0.025,
+          "delta": -0.113
         }
       }
     },
@@ -4244,6 +4686,11 @@
           "prior": 8.04,
           "recent": 10.88,
           "delta": 2.84
+        },
+        "air_yards_share": {
+          "prior": 0.471,
+          "recent": 0.44,
+          "delta": -0.031
         }
       }
     },
@@ -4273,6 +4720,11 @@
           "prior": 5.04,
           "recent": 5.44,
           "delta": 0.4
+        },
+        "air_yards_share": {
+          "prior": 0.333,
+          "recent": 0.256,
+          "delta": -0.077
         }
       }
     },
@@ -4326,6 +4778,11 @@
           "prior": 4.56,
           "recent": 4.93,
           "delta": 0.37
+        },
+        "air_yards_share": {
+          "prior": 0.009,
+          "recent": 0.008,
+          "delta": -0.001
         }
       }
     },
@@ -4355,6 +4812,11 @@
           "prior": 9.6,
           "recent": 13.33,
           "delta": 3.73
+        },
+        "air_yards_share": {
+          "prior": 0.195,
+          "recent": 0.348,
+          "delta": 0.153
         }
       }
     },
@@ -4432,6 +4894,11 @@
           "prior": 5.4,
           "recent": 6.58,
           "delta": 1.18
+        },
+        "air_yards_share": {
+          "prior": 0.119,
+          "recent": 0.159,
+          "delta": 0.04
         }
       }
     },
@@ -4686,6 +5153,11 @@
           "prior": 11.45,
           "recent": 8.43,
           "delta": -3.02
+        },
+        "air_yards_share": {
+          "prior": 0.194,
+          "recent": 0.094,
+          "delta": -0.1
         }
       }
     },
@@ -4753,6 +5225,11 @@
           "prior": 4.5,
           "recent": 4.83,
           "delta": 0.33
+        },
+        "air_yards_share": {
+          "prior": 0.001,
+          "recent": -0.035,
+          "delta": -0.036
         }
       }
     },
@@ -4830,6 +5307,11 @@
           "prior": 4.53,
           "recent": 7.97,
           "delta": 3.44
+        },
+        "air_yards_share": {
+          "prior": 0.211,
+          "recent": 0.209,
+          "delta": -0.002
         }
       }
     },
@@ -4859,6 +5341,11 @@
           "prior": 0.99,
           "recent": 5.42,
           "delta": 4.43
+        },
+        "air_yards_share": {
+          "prior": -0.042,
+          "recent": -0.116,
+          "delta": -0.074
         }
       }
     },
@@ -4893,6 +5380,11 @@
           "prior": 8.32,
           "recent": 5.0,
           "delta": -3.32
+        },
+        "air_yards_share": {
+          "prior": -0.002,
+          "recent": 0.035,
+          "delta": 0.037
         }
       }
     },
@@ -4922,6 +5414,11 @@
           "prior": 4.06,
           "recent": 5.55,
           "delta": 1.49
+        },
+        "air_yards_share": {
+          "prior": 0.008,
+          "recent": 0.078,
+          "delta": 0.07
         }
       }
     },
@@ -4951,6 +5448,11 @@
           "prior": 9.35,
           "recent": 13.65,
           "delta": 4.3
+        },
+        "air_yards_share": {
+          "prior": 0.326,
+          "recent": 0.477,
+          "delta": 0.151
         }
       }
     },
@@ -4980,6 +5482,11 @@
           "prior": 7.25,
           "recent": 3.6,
           "delta": -3.65
+        },
+        "air_yards_share": {
+          "prior": 0.01,
+          "recent": 0.037,
+          "delta": 0.027
         }
       }
     },
@@ -5009,6 +5516,11 @@
           "prior": 10.34,
           "recent": 10.53,
           "delta": 0.19
+        },
+        "air_yards_share": {
+          "prior": 0.414,
+          "recent": 0.257,
+          "delta": -0.157
         }
       }
     },
@@ -5043,6 +5555,11 @@
           "prior": 6.21,
           "recent": 2.46,
           "delta": -3.75
+        },
+        "air_yards_share": {
+          "prior": 0.027,
+          "recent": 0.042,
+          "delta": 0.015
         }
       }
     },
@@ -5072,6 +5589,11 @@
           "prior": 7.88,
           "recent": 10.67,
           "delta": 2.79
+        },
+        "air_yards_share": {
+          "prior": 0.071,
+          "recent": 0.142,
+          "delta": 0.071
         }
       }
     },
@@ -5130,6 +5652,11 @@
           "prior": 9.27,
           "recent": 5.05,
           "delta": -4.22
+        },
+        "air_yards_share": {
+          "prior": 0.36,
+          "recent": 0.104,
+          "delta": -0.256
         }
       }
     },
@@ -5265,6 +5792,11 @@
           "prior": 3.78,
           "recent": 4.81,
           "delta": 1.03
+        },
+        "air_yards_share": {
+          "prior": -0.027,
+          "recent": 0.048,
+          "delta": 0.075
         }
       }
     },
@@ -5318,6 +5850,11 @@
           "prior": 5.54,
           "recent": 8.9,
           "delta": 3.36
+        },
+        "air_yards_share": {
+          "prior": 0.118,
+          "recent": 0.148,
+          "delta": 0.03
         }
       }
     },
@@ -5347,6 +5884,11 @@
           "prior": 2.83,
           "recent": 5.81,
           "delta": 2.98
+        },
+        "air_yards_share": {
+          "prior": 0.039,
+          "recent": 0.159,
+          "delta": 0.12
         }
       }
     },
@@ -5376,6 +5918,11 @@
           "prior": 11.11,
           "recent": 9.78,
           "delta": -1.33
+        },
+        "air_yards_share": {
+          "prior": 0.315,
+          "recent": 0.205,
+          "delta": -0.11
         }
       }
     },
@@ -5467,6 +6014,11 @@
           "prior": 5.25,
           "recent": 4.15,
           "delta": -1.1
+        },
+        "air_yards_share": {
+          "prior": 0.082,
+          "recent": 0.069,
+          "delta": -0.013
         }
       }
     },
@@ -5525,6 +6077,11 @@
           "prior": 0.17,
           "recent": 0.11,
           "delta": -0.06
+        },
+        "cpoe": {
+          "prior": 3.54,
+          "recent": -0.9,
+          "delta": -4.44
         }
       }
     },
@@ -5616,6 +6173,11 @@
           "prior": 6.15,
           "recent": 7.92,
           "delta": 1.77
+        },
+        "air_yards_share": {
+          "prior": 0.089,
+          "recent": 0.098,
+          "delta": 0.009
         }
       }
     },
@@ -5688,6 +6250,11 @@
           "prior": 9.34,
           "recent": 9.0,
           "delta": -0.34
+        },
+        "air_yards_share": {
+          "prior": 0.303,
+          "recent": 0.092,
+          "delta": -0.211
         }
       }
     },
@@ -5712,6 +6279,11 @@
           "prior": 6.75,
           "recent": 7.9,
           "delta": 1.15
+        },
+        "air_yards_share": {
+          "prior": 0.271,
+          "recent": 0.169,
+          "delta": -0.102
         }
       }
     },
@@ -5765,6 +6337,11 @@
           "prior": 5.04,
           "recent": 4.01,
           "delta": -1.03
+        },
+        "air_yards_share": {
+          "prior": 0.484,
+          "recent": 0.513,
+          "delta": 0.029
         }
       }
     },
@@ -5794,6 +6371,11 @@
           "prior": 11.92,
           "recent": 7.7,
           "delta": -4.22
+        },
+        "air_yards_share": {
+          "prior": 0.317,
+          "recent": 0.259,
+          "delta": -0.058
         }
       }
     },
@@ -5823,6 +6405,11 @@
           "prior": 9.07,
           "recent": 7.47,
           "delta": -1.6
+        },
+        "air_yards_share": {
+          "prior": 0.234,
+          "recent": 0.331,
+          "delta": 0.097
         }
       }
     },
@@ -5852,6 +6439,11 @@
           "prior": 4.05,
           "recent": 9.78,
           "delta": 5.73
+        },
+        "air_yards_share": {
+          "prior": 0.302,
+          "recent": 0.149,
+          "delta": -0.153
         }
       }
     },
@@ -5881,6 +6473,11 @@
           "prior": 2.06,
           "recent": 12.17,
           "delta": 10.11
+        },
+        "air_yards_share": {
+          "prior": 0.144,
+          "recent": 0.387,
+          "delta": 0.243
         }
       }
     },
@@ -5948,6 +6545,11 @@
           "prior": 5.0,
           "recent": 4.67,
           "delta": -0.33
+        },
+        "air_yards_share": {
+          "prior": 0.019,
+          "recent": -0.079,
+          "delta": -0.098
         }
       }
     },
@@ -5982,6 +6584,11 @@
           "prior": 2.29,
           "recent": 4.08,
           "delta": 1.79
+        },
+        "air_yards_share": {
+          "prior": -0.108,
+          "recent": 0.042,
+          "delta": 0.15
         }
       }
     },
@@ -6011,6 +6618,11 @@
           "prior": 12.44,
           "recent": 7.24,
           "delta": -5.2
+        },
+        "air_yards_share": {
+          "prior": 0.429,
+          "recent": 0.543,
+          "delta": 0.114
         }
       }
     },
@@ -6040,6 +6652,11 @@
           "prior": 7.57,
           "recent": 8.75,
           "delta": 1.18
+        },
+        "air_yards_share": {
+          "prior": 0.143,
+          "recent": 0.261,
+          "delta": 0.118
         }
       }
     },
@@ -6069,6 +6686,11 @@
           "prior": 4.81,
           "recent": 4.59,
           "delta": -0.22
+        },
+        "air_yards_share": {
+          "prior": 0.106,
+          "recent": 0.176,
+          "delta": 0.07
         }
       }
     },
@@ -6098,6 +6720,11 @@
           "prior": 3.84,
           "recent": 8.95,
           "delta": 5.11
+        },
+        "air_yards_share": {
+          "prior": 0.385,
+          "recent": 0.235,
+          "delta": -0.15
         }
       }
     },
@@ -6127,6 +6754,11 @@
           "prior": 7.97,
           "recent": 9.07,
           "delta": 1.1
+        },
+        "air_yards_share": {
+          "prior": 0.291,
+          "recent": 0.169,
+          "delta": -0.122
         }
       }
     },
@@ -6180,6 +6812,11 @@
           "prior": 9.22,
           "recent": 5.72,
           "delta": -3.5
+        },
+        "air_yards_share": {
+          "prior": 0.207,
+          "recent": 0.44,
+          "delta": 0.233
         }
       }
     },
@@ -6247,6 +6884,11 @@
           "prior": 3.68,
           "recent": 2.83,
           "delta": -0.85
+        },
+        "air_yards_share": {
+          "prior": -0.034,
+          "recent": -0.052,
+          "delta": -0.018
         }
       }
     },
@@ -6295,6 +6937,11 @@
           "prior": 2.5,
           "recent": 10.45,
           "delta": 7.95
+        },
+        "air_yards_share": {
+          "prior": 0.212,
+          "recent": 0.432,
+          "delta": 0.22
         }
       }
     },
@@ -6343,6 +6990,11 @@
           "prior": 7.82,
           "recent": 9.01,
           "delta": 1.19
+        },
+        "air_yards_share": {
+          "prior": 0.211,
+          "recent": 0.153,
+          "delta": -0.058
         }
       }
     },
@@ -6568,6 +7220,11 @@
           "prior": 5.09,
           "recent": 5.25,
           "delta": 0.16
+        },
+        "air_yards_share": {
+          "prior": 0.094,
+          "recent": 0.075,
+          "delta": -0.019
         }
       }
     },
@@ -6597,6 +7254,11 @@
           "prior": 8.75,
           "recent": 1.75,
           "delta": -7.0
+        },
+        "air_yards_share": {
+          "prior": 0.034,
+          "recent": 0.119,
+          "delta": 0.085
         }
       }
     },
@@ -6645,6 +7307,11 @@
           "prior": 7.71,
           "recent": 4.55,
           "delta": -3.16
+        },
+        "air_yards_share": {
+          "prior": 0.159,
+          "recent": 0.349,
+          "delta": 0.19
         }
       }
     },
@@ -6674,6 +7341,11 @@
           "prior": 6.04,
           "recent": 9.42,
           "delta": 3.38
+        },
+        "air_yards_share": {
+          "prior": 0.135,
+          "recent": 0.135,
+          "delta": 0.0
         }
       }
     },
@@ -6703,6 +7375,11 @@
           "prior": 3.99,
           "recent": 7.29,
           "delta": 3.3
+        },
+        "air_yards_share": {
+          "prior": 0.226,
+          "recent": 0.175,
+          "delta": -0.051
         }
       }
     },
@@ -6756,6 +7433,11 @@
           "prior": 9.5,
           "recent": 8.32,
           "delta": -1.18
+        },
+        "air_yards_share": {
+          "prior": 0.1,
+          "recent": 0.173,
+          "delta": 0.073
         }
       }
     },
@@ -6814,6 +7496,11 @@
           "prior": 3.28,
           "recent": 3.88,
           "delta": 0.6
+        },
+        "air_yards_share": {
+          "prior": -0.021,
+          "recent": -0.039,
+          "delta": -0.018
         }
       }
     },
@@ -6867,6 +7554,11 @@
           "prior": 7.82,
           "recent": 12.03,
           "delta": 4.21
+        },
+        "air_yards_share": {
+          "prior": 0.135,
+          "recent": 0.173,
+          "delta": 0.038
         }
       }
     },
@@ -6896,6 +7588,11 @@
           "prior": 0.0,
           "recent": 8.25,
           "delta": 8.25
+        },
+        "air_yards_share": {
+          "prior": 0.082,
+          "recent": 0.111,
+          "delta": 0.029
         }
       }
     },
@@ -6949,6 +7646,11 @@
           "prior": 3.06,
           "recent": 2.25,
           "delta": -0.81
+        },
+        "air_yards_share": {
+          "prior": -0.024,
+          "recent": -0.019,
+          "delta": 0.005
         }
       }
     },
@@ -6983,6 +7685,11 @@
           "prior": 0.115,
           "recent": 0.268,
           "delta": 0.153
+        },
+        "cpoe": {
+          "prior": -1.09,
+          "recent": -2.06,
+          "delta": -0.97
         }
       }
     },
@@ -7017,6 +7724,11 @@
           "prior": -0.189,
           "recent": 0.174,
           "delta": 0.363
+        },
+        "cpoe": {
+          "prior": -8.47,
+          "recent": -1.32,
+          "delta": 7.15
         }
       }
     },
@@ -7051,6 +7763,11 @@
           "prior": -0.255,
           "recent": -0.05,
           "delta": 0.205
+        },
+        "cpoe": {
+          "prior": 3.74,
+          "recent": 6.21,
+          "delta": 2.47
         }
       }
     },
@@ -7090,6 +7807,11 @@
           "prior": -0.446,
           "recent": -0.083,
           "delta": 0.363
+        },
+        "cpoe": {
+          "prior": -3.72,
+          "recent": -0.3,
+          "delta": 3.42
         }
       }
     },
@@ -7124,6 +7846,11 @@
           "prior": 0.195,
           "recent": 0.168,
           "delta": -0.027
+        },
+        "cpoe": {
+          "prior": 4.06,
+          "recent": -3.85,
+          "delta": -7.91
         }
       }
     },
@@ -7158,6 +7885,11 @@
           "prior": 0.044,
           "recent": 0.133,
           "delta": 0.089
+        },
+        "cpoe": {
+          "prior": -4.77,
+          "recent": -2.84,
+          "delta": 1.93
         }
       }
     },
@@ -7192,6 +7924,11 @@
           "prior": 0.014,
           "recent": -0.061,
           "delta": -0.075
+        },
+        "cpoe": {
+          "prior": 4.54,
+          "recent": -1.2,
+          "delta": -5.74
         }
       }
     },
@@ -7250,6 +7987,11 @@
           "prior": -0.258,
           "recent": 0.373,
           "delta": 0.631
+        },
+        "cpoe": {
+          "prior": -4.87,
+          "recent": 5.71,
+          "delta": 10.58
         }
       }
     },
@@ -7289,6 +8031,11 @@
           "prior": -0.386,
           "recent": 0.147,
           "delta": 0.533
+        },
+        "cpoe": {
+          "prior": -11.47,
+          "recent": 3.75,
+          "delta": 15.22
         }
       }
     },
@@ -7328,6 +8075,11 @@
           "prior": 0.258,
           "recent": -0.126,
           "delta": -0.384
+        },
+        "cpoe": {
+          "prior": 0.99,
+          "recent": 3.04,
+          "delta": 2.05
         }
       }
     },
@@ -7367,6 +8119,11 @@
           "prior": 0.018,
           "recent": -0.013,
           "delta": -0.031
+        },
+        "cpoe": {
+          "prior": -3.52,
+          "recent": 2.39,
+          "delta": 5.91
         }
       }
     },
@@ -7420,6 +8177,11 @@
           "prior": 0.39,
           "recent": -0.003,
           "delta": -0.393
+        },
+        "cpoe": {
+          "prior": 3.88,
+          "recent": 2.33,
+          "delta": -1.55
         }
       }
     },
@@ -7459,6 +8221,11 @@
           "prior": -0.342,
           "recent": 0.185,
           "delta": 0.527
+        },
+        "cpoe": {
+          "prior": -4.32,
+          "recent": 8.6,
+          "delta": 12.92
         }
       }
     },
@@ -7498,6 +8265,11 @@
           "prior": -0.108,
           "recent": 0.305,
           "delta": 0.413
+        },
+        "cpoe": {
+          "prior": -3.36,
+          "recent": 6.68,
+          "delta": 10.04
         }
       }
     },
@@ -7532,6 +8304,11 @@
           "prior": 0.18,
           "recent": 0.204,
           "delta": 0.024
+        },
+        "cpoe": {
+          "prior": 0.52,
+          "recent": 9.69,
+          "delta": 9.17
         }
       }
     },
@@ -7571,6 +8348,11 @@
           "prior": 0.093,
           "recent": 0.377,
           "delta": 0.284
+        },
+        "cpoe": {
+          "prior": -1.11,
+          "recent": 7.31,
+          "delta": 8.42
         }
       }
     },
@@ -7667,6 +8449,11 @@
           "prior": 0.117,
           "recent": 0.271,
           "delta": 0.154
+        },
+        "cpoe": {
+          "prior": 7.01,
+          "recent": 10.28,
+          "delta": 3.27
         }
       }
     },
@@ -7725,6 +8512,11 @@
           "prior": 0.228,
           "recent": -0.063,
           "delta": -0.291
+        },
+        "cpoe": {
+          "prior": 2.79,
+          "recent": 4.49,
+          "delta": 1.7
         }
       }
     },
@@ -7764,6 +8556,11 @@
           "prior": 0.112,
           "recent": 0.154,
           "delta": 0.042
+        },
+        "cpoe": {
+          "prior": -0.03,
+          "recent": -0.4,
+          "delta": -0.37
         }
       }
     },
@@ -7860,6 +8657,11 @@
           "prior": 0.309,
           "recent": 0.515,
           "delta": 0.206
+        },
+        "cpoe": {
+          "prior": 9.63,
+          "recent": 16.41,
+          "delta": 6.78
         }
       }
     },
@@ -7899,6 +8701,11 @@
           "prior": -0.047,
           "recent": 0.167,
           "delta": 0.214
+        },
+        "cpoe": {
+          "prior": -6.01,
+          "recent": -0.14,
+          "delta": 5.87
         }
       }
     },
@@ -7933,6 +8740,11 @@
           "prior": -0.291,
           "recent": 0.078,
           "delta": 0.369
+        },
+        "cpoe": {
+          "prior": -6.43,
+          "recent": -0.85,
+          "delta": 5.58
         }
       }
     },
@@ -8010,6 +8822,11 @@
           "prior": -0.199,
           "recent": -0.435,
           "delta": -0.236
+        },
+        "cpoe": {
+          "prior": -11.34,
+          "recent": -1.76,
+          "delta": 9.58
         }
       }
     },
@@ -8044,6 +8861,11 @@
           "prior": -0.218,
           "recent": 0.029,
           "delta": 0.247
+        },
+        "cpoe": {
+          "prior": -2.34,
+          "recent": 2.47,
+          "delta": 4.81
         }
       }
     },
@@ -8083,6 +8905,11 @@
           "prior": -0.148,
           "recent": 0.231,
           "delta": 0.379
+        },
+        "cpoe": {
+          "prior": 2.53,
+          "recent": 5.17,
+          "delta": 2.64
         }
       }
     }

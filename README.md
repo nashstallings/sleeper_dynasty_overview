@@ -54,7 +54,18 @@ a scheduled job (see below) rather than fetched live in the browser.
 
 The tab is split into position sub-tabs &mdash; **QB, RB, WR, TE, FLEX**
 (RB/WR/TE combined), and **SFlex** (QB/RB/WR/TE combined, for superflex
-leagues) &mdash; each showing only the metrics relevant to that group:
+leagues). Each single-position tab (QB/RB/WR/TE) shows a curated 5 metrics
+picked for what actually matters at that position, rather than one generic
+set reused everywhere:
+
+- **QB:** Snap Share, Yards / Attempt, Passing EPA / Attempt, CPOE, Yards / Carry
+- **RB:** Snap Share, Target Share, WOPR, Yards / Target, Yards / Carry
+- **WR:** Snap Share, Target Share, WOPR, Yards / Target, Air Yards Share
+- **TE:** Snap Share, Target Share, WOPR, Yards / Target, Air Yards Share
+
+FLEX and SFlex show the union of whatever's relevant across their combined
+positions (so more than 5 tables), since they're meant to be the
+comprehensive "everything" views.
 
 - **Snap share** &mdash; share of offensive snaps played (QB/RB/WR/TE). Only
   shown for players currently above 50% snap share, so a backup buried on
@@ -66,10 +77,14 @@ leagues) &mdash; each showing only the metrics relevant to that group:
   yards-per-route-run efficiency (RB/WR/TE). True YPRR needs routes-run
   charting (e.g. PFF), which isn't part of the free nflverse feed, so treat
   this as a stand-in, not the real thing.
+- **Air yards share** &mdash; share of the team's total downfield throw
+  distance (WR/TE), a signal of a growing vertical/red-zone role.
 - **Yards / carry** &mdash; rushing efficiency (QB/RB).
 - **Yards / attempt** &mdash; passing efficiency (QB only).
 - **Passing EPA / attempt** &mdash; Expected Points Added per pass attempt, a
   situation-aware passing efficiency metric (QB only).
+- **CPOE** &mdash; Completion % Over Expected, passing accuracy adjusted for
+  throw difficulty (QB only).
 
 For each metric, every player's most recent 4 weeks are compared to the 4
 weeks before that, and the biggest positive movers are listed (max 12 per

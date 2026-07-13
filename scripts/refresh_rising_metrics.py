@@ -54,6 +54,7 @@ raw_stats AS (
     CASE WHEN pl.sleeper_id IS NOT NULL THEN CAST(CAST(pl.sleeper_id AS INT64) AS STRING) END AS sleeper_id,
     ps.player_display_name AS name, ps.position, ps.team, ps.week,
     ps.target_share, ps.wopr, ps.targets, ps.carries, ps.attempts,
+    ps.air_yards_share, ps.passing_cpoe,
     SAFE_DIVIDE(ps.receiving_yards, NULLIF(ps.targets, 0)) AS ypt,
     SAFE_DIVIDE(ps.rushing_yards, NULLIF(ps.carries, 0)) AS ypc,
     SAFE_DIVIDE(ps.passing_yards, NULLIF(ps.attempts, 0)) AS ypa,
@@ -101,6 +102,10 @@ windows AS (
     AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, ypa, NULL)) prior_ypa,
     AVG(IF(week > (SELECT max_wk FROM bounds) - 4, epa_per_att, NULL)) recent_epa,
     AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, epa_per_att, NULL)) prior_epa,
+    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, air_yards_share, NULL)) recent_air_yards_share,
+    AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, air_yards_share, NULL)) prior_air_yards_share,
+    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, passing_cpoe, NULL)) recent_cpoe,
+    AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, passing_cpoe, NULL)) prior_cpoe,
     AVG(IF(week > (SELECT max_wk FROM bounds) - 4, targets, NULL)) recent_targets_avg,
     AVG(IF(week > (SELECT max_wk FROM bounds) - 4, carries, NULL)) recent_carries_avg,
     AVG(IF(week > (SELECT max_wk FROM bounds) - 4, attempts, NULL)) recent_attempts_avg,
@@ -145,7 +150,17 @@ SELECT
   IF(recent_epa IS NOT NULL AND prior_epa IS NOT NULL AND recent_attempts_avg >= {MIN_ATTEMPTS_PER_WEEK},
      ROUND(prior_epa, 3), NULL) AS passing_epa_prior,
   IF(recent_epa IS NOT NULL AND prior_epa IS NOT NULL AND recent_attempts_avg >= {MIN_ATTEMPTS_PER_WEEK},
-     ROUND(recent_epa, 3), NULL) AS passing_epa_recent
+     ROUND(recent_epa, 3), NULL) AS passing_epa_recent,
+
+  IF(recent_air_yards_share IS NOT NULL AND prior_air_yards_share IS NOT NULL AND recent_targets_avg >= {MIN_TARGETS_PER_WEEK},
+     ROUND(prior_air_yards_share, 3), NULL) AS air_yards_share_prior,
+  IF(recent_air_yards_share IS NOT NULL AND prior_air_yards_share IS NOT NULL AND recent_targets_avg >= {MIN_TARGETS_PER_WEEK},
+     ROUND(recent_air_yards_share, 3), NULL) AS air_yards_share_recent,
+
+  IF(recent_cpoe IS NOT NULL AND prior_cpoe IS NOT NULL AND recent_attempts_avg >= {MIN_ATTEMPTS_PER_WEEK},
+     ROUND(prior_cpoe, 2), NULL) AS cpoe_prior,
+  IF(recent_cpoe IS NOT NULL AND prior_cpoe IS NOT NULL AND recent_attempts_avg >= {MIN_ATTEMPTS_PER_WEEK},
+     ROUND(recent_cpoe, 2), NULL) AS cpoe_recent
 
 FROM windows
 WHERE recent_games >= 2 AND prior_games >= 2
@@ -218,6 +233,26 @@ METRIC_DEFS = {
             "Expected Points Added per pass attempt — a play-by-play efficiency metric that "
             f"accounts for down, distance, and situation. Min. {MIN_ATTEMPTS_PER_WEEK} attempts/week "
             "in the recent window. " + INJURY_NOTE
+        ),
+    },
+    "cpoe": {
+        "label": "CPOE",
+        "format": "num",
+        "positions": ["QB"],
+        "description": (
+            "Completion % Over Expected — passing accuracy adjusted for throw difficulty, "
+            f"independent of scheme or receiver play. Min. {MIN_ATTEMPTS_PER_WEEK} attempts/week "
+            "in the recent window. " + INJURY_NOTE
+        ),
+    },
+    "air_yards_share": {
+        "label": "Air Yards Share",
+        "format": "pct",
+        "positions": ["WR", "TE"],
+        "description": (
+            "Share of the team's total air yards (downfield distance thrown, not yards after "
+            f"catch) — a signal of a growing vertical/red-zone role. Min. {MIN_TARGETS_PER_WEEK} "
+            "targets/week in the recent window. " + INJURY_NOTE
         ),
     },
 }
