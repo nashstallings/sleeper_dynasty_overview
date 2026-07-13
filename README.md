@@ -54,20 +54,23 @@ a scheduled job (see below) rather than fetched live in the browser.
 
 The tab is split into position sub-tabs &mdash; **QB, RB, WR, TE, FLEX**
 (RB/WR/TE combined), and **SFlex** (QB/RB/WR/TE combined, for superflex
-leagues). Each single-position tab (QB/RB/WR/TE) shows a curated 5 metrics
-picked for what actually matters at that position, rather than one generic
-set reused everywhere:
+leagues). Each single-position tab shows metrics picked for what actually
+matters at that position, rather than one generic set reused everywhere:
 
-- **QB:** Snap Share, Yards / Attempt, Passing EPA / Attempt, CPOE, Yards / Carry
+- **QB:** Yards / Attempt, Passing EPA / Attempt, CPOE, Yards / Carry
 - **RB:** Snap Share, Target Share, WOPR, Yards / Target, Yards / Carry
 - **WR:** Snap Share, Target Share, WOPR, Yards / Target, Air Yards Share
 - **TE:** Snap Share, Target Share, WOPR, Yards / Target, Air Yards Share
 
-FLEX and SFlex show the union of whatever's relevant across their combined
-positions (so more than 5 tables), since they're meant to be the
-comprehensive "everything" views.
+Snap share is skipped for QB (and filtered out of the QB rows in SFlex) since
+it's a near-binary "are they starting or not" signal for quarterbacks, not a
+gradual trend worth surfacing.
 
-- **Snap share** &mdash; share of offensive snaps played (QB/RB/WR/TE). Only
+FLEX and SFlex show the union of whatever's relevant across their combined
+positions (so more than the position-tab counts above), since they're meant
+to be the comprehensive "everything" views.
+
+- **Snap share** &mdash; share of offensive snaps played (RB/WR/TE). Only
   shown for players currently above 50% snap share, so a backup buried on
   the depth chart doesn't clutter the list.
 - **Target share** &mdash; share of team targets (RB/WR/TE).

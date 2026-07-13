@@ -182,7 +182,7 @@ METRIC_DEFS = {
     "snap_share": {
         "label": "Snap Share",
         "format": "pct",
-        "positions": ["QB", "RB", "WR", "TE"],
+        "positions": ["RB", "WR", "TE"],
         "description": (
             "Share of offensive snaps played, last 4 weeks vs. the 4 weeks before that. "
             f"Only players currently above {int(MIN_SNAP_SHARE_RECENT * 100)}% snap share. " + INJURY_NOTE
