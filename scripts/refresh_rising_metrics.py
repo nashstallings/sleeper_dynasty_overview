@@ -105,7 +105,7 @@ qualified AS (
 )
 SELECT 'snap_share' AS metric, name, position, team, gsis_id, sleeper_id,
   ROUND(prior_snap_pct, 3) AS prior_val, ROUND(recent_snap_pct, 3) AS recent_val, ROUND(snap_pct_delta, 3) AS delta
-FROM qualified WHERE recent_snap_pct IS NOT NULL AND prior_snap_pct IS NOT NULL
+FROM qualified WHERE recent_snap_pct IS NOT NULL AND prior_snap_pct IS NOT NULL AND recent_snap_pct > 0.5
 QUALIFY ROW_NUMBER() OVER (ORDER BY snap_pct_delta DESC) <= 12
 
 UNION ALL
@@ -139,31 +139,46 @@ FROM `{PROJECT_ID}.{DATASET}.player_stats`
 WHERE season_type = 'REG'
 """
 
+INJURY_NOTE = (
+    "Excludes weeks a player's snap share cratered to under a quarter of their own "
+    "peak (a proxy for playing hurt/limited, since no injury-report data is loaded)."
+)
+
 METRIC_META = {
     "snap_share": {
         "label": "Snap Share",
         "format": "pct",
-        "description": "Share of offensive snaps played, last 4 weeks vs. the 4 weeks before that.",
+        "description": (
+            "Share of offensive snaps played, last 4 weeks vs. the 4 weeks before that. "
+            "Only players currently above 50% snap share. " + INJURY_NOTE
+        ),
     },
     "target_share": {
         "label": "Target Share",
         "format": "pct",
-        "description": "Share of team targets, last 4 weeks vs. the 4 weeks before that.",
+        "description": "Share of team targets, last 4 weeks vs. the 4 weeks before that. " + INJURY_NOTE,
     },
     "wopr": {
         "label": "WOPR (Opportunity Score)",
         "format": "num",
-        "description": "Weighted Opportunity Rating — combines target share and air yards share into one usage score. Last 4 weeks vs. the 4 weeks before that.",
+        "description": (
+            "Weighted Opportunity Rating — combines target share and air yards share into "
+            "one usage score. Last 4 weeks vs. the 4 weeks before that. " + INJURY_NOTE
+        ),
     },
     "yards_per_target": {
         "label": "Yards / Target",
         "format": "num",
-        "description": "Receiving yards per target — the closest proxy Sleeper's free data supports for yards-per-route-run efficiency (routes-run charting isn't publicly available). Min. 3 targets/week in the recent window.",
+        "description": (
+            "Receiving yards per target — the closest proxy Sleeper's free data supports for "
+            "yards-per-route-run efficiency (routes-run charting isn't publicly available). "
+            "Min. 3 targets/week in the recent window. " + INJURY_NOTE
+        ),
     },
     "yards_per_carry": {
         "label": "Yards / Carry",
         "format": "num",
-        "description": "Rushing yards per carry, RBs only. Min. 3 carries/week in the recent window.",
+        "description": "Rushing yards per carry, RBs only. Min. 3 carries/week in the recent window. " + INJURY_NOTE,
     },
 }
 
