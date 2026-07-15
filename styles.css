@@ -292,6 +292,55 @@ h2 { margin: 0 0 14px; font-size: 1.05rem; letter-spacing: -0.01em; font-weight:
 h3 { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; margin: 22px 0 10px; }
 h3:first-of-type { margin-top: 4px; }
 
+.metric-card h3 { display: flex; align-items: center; gap: 6px; }
+
+.info-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--text-faint);
+  cursor: help;
+  border-radius: 50%;
+}
+.info-icon:hover, .info-icon:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+.info-icon .tooltip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  width: 260px;
+  max-width: 70vw;
+  background: var(--panel);
+  border: 1px solid var(--panel-border-strong);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  padding: 10px 12px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.45;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--text-dim);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  z-index: 20;
+  pointer-events: none;
+}
+.info-icon:hover .tooltip, .info-icon:focus-visible .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
 th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--panel-border); }
 th { color: var(--text-faint); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; }

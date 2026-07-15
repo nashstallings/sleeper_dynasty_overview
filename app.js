@@ -4,6 +4,26 @@ const PLAYERS_CACHE_KEY = "sleeper_tf_players_cache_v1";
 const PLAYERS_CACHE_MAX_AGE_MS = 12 * 60 * 60 * 1000; // 12h
 const SESSION_KEY = "sleeper_tf_session_v1";
 
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function infoIcon(text) {
+  return `
+    <span class="info-icon" tabindex="0" role="button" aria-label="About this metric">
+      <svg viewBox="0 0 16 16" width="13" height="13" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.3"/>
+        <rect x="7.25" y="6.5" width="1.5" height="5" rx="0.75" fill="currentColor"/>
+        <rect x="7.25" y="3.75" width="1.5" height="1.5" rx="0.75" fill="currentColor"/>
+      </svg>
+      <span class="tooltip" role="tooltip">${escapeHtml(text)}</span>
+    </span>`;
+}
+
 const POSITION_TABS = [
   {
     key: "QB",
@@ -671,8 +691,7 @@ function renderTrendingContent() {
 
       return `
         <div class="card metric-card">
-          <h3>${def.label}</h3>
-          <p class="player-meta" style="margin:-4px 0 10px">${def.description}</p>
+          <h3>${def.label}${infoIcon(def.description)}</h3>
           <table>
             <thead><tr><th>Pos</th><th>Player</th><th>Prior &rarr; Recent</th><th>&Delta;</th><th>League status</th></tr></thead>
             <tbody>${rows}</tbody>
