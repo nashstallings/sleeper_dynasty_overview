@@ -5,12 +5,48 @@ const PLAYERS_CACHE_MAX_AGE_MS = 12 * 60 * 60 * 1000; // 12h
 const SESSION_KEY = "sleeper_tf_session_v1";
 
 const POSITION_TABS = [
-  { key: "QB", label: "QB", positions: ["QB"] },
-  { key: "RB", label: "RB", positions: ["RB"] },
-  { key: "WR", label: "WR", positions: ["WR"] },
-  { key: "TE", label: "TE", positions: ["TE"] },
-  { key: "FLEX", label: "FLEX", positions: ["RB", "WR", "TE"] },
-  { key: "SFLEX", label: "SFlex", positions: ["QB", "RB", "WR", "TE"] },
+  {
+    key: "QB",
+    label: "QB",
+    positions: ["QB"],
+    // passing quality first (what QBs are actually valued on) — rushing is a bonus, not the headline
+    metricOrder: ["passing_epa", "yards_per_attempt", "cpoe", "yards_per_carry"],
+  },
+  {
+    key: "RB",
+    label: "RB",
+    positions: ["RB"],
+    // workload + rushing efficiency (an RB's primary job) before receiving-role stats
+    metricOrder: ["snap_share", "yards_per_carry", "target_share", "wopr", "yards_per_target"],
+  },
+  {
+    key: "WR",
+    label: "WR",
+    positions: ["WR"],
+    // target volume is the headline breakout signal for WRs; snap share is the least differentiating
+    metricOrder: ["target_share", "wopr", "air_yards_share", "yards_per_target", "snap_share"],
+  },
+  {
+    key: "TE",
+    label: "TE",
+    positions: ["TE"],
+    metricOrder: ["target_share", "wopr", "air_yards_share", "yards_per_target", "snap_share"],
+  },
+  {
+    key: "FLEX",
+    label: "FLEX",
+    positions: ["RB", "WR", "TE"],
+    metricOrder: ["target_share", "wopr", "snap_share", "yards_per_target", "yards_per_carry", "air_yards_share"],
+  },
+  {
+    key: "SFLEX",
+    label: "SFlex",
+    positions: ["QB", "RB", "WR", "TE"],
+    metricOrder: [
+      "target_share", "wopr", "snap_share", "yards_per_target", "yards_per_carry",
+      "air_yards_share", "passing_epa", "yards_per_attempt", "cpoe",
+    ],
+  },
 ];
 
 const state = {
@@ -584,17 +620,27 @@ async function renderTrending() {
   }
 }
 
+const TRENDING_ROWS_PER_TABLE = 10;
+
 function renderTrendingContent() {
-  const card = document.getElementById("trending-card");
+  const introCard = document.getElementById("trending-card");
+  const grid = document.getElementById("trending-grid");
   const data = state.risingMetrics;
   const tab = POSITION_TABS.find((t) => t.key === state.trendingPosTab) || POSITION_TABS[0];
 
-  const relevantMetrics = Object.entries(data.metric_defs).filter(([, def]) =>
-    def.positions.some((p) => tab.positions.includes(p))
-  );
+  introCard.innerHTML = `
+    <h2>Rising metrics</h2>
+    <p class="player-meta">
+      Weeks ${data.recent_weeks[0]}&ndash;${data.recent_weeks[data.recent_weeks.length - 1]} vs.
+      weeks ${data.prior_weeks[0]}&ndash;${data.prior_weeks[data.prior_weeks.length - 1]}, ${data.season} season.
+      Sourced from <a href="https://nflreadr.nflverse.com/" target="_blank" rel="noopener">nflverse</a> play-by-play data (refreshed weekly), cross-referenced against this league's rosters.
+    </p>`;
 
-  const metricSections = relevantMetrics
-    .map(([key, def]) => {
+  const metricCards = tab.metricOrder
+    .map((key) => {
+      const def = data.metric_defs[key];
+      if (!def) return "";
+
       const leaders = data.players
         .filter(
           (p) => tab.positions.includes(p.position) && def.positions.includes(p.position) && p.metrics[key]
@@ -602,7 +648,7 @@ function renderTrendingContent() {
         .map((p) => ({ ...p, m: p.metrics[key] }))
         .filter((p) => p.m.delta > 0)
         .sort((a, b) => b.m.delta - a.m.delta)
-        .slice(0, 12);
+        .slice(0, TRENDING_ROWS_PER_TABLE);
 
       if (!leaders.length) return "";
 
@@ -624,23 +670,21 @@ function renderTrendingContent() {
         .join("");
 
       return `
-        <h3>${def.label}</h3>
-        <p class="player-meta" style="margin:-4px 0 10px">${def.description}</p>
-        <table>
-          <thead><tr><th>Pos</th><th>Player</th><th>Prior &rarr; Recent</th><th>&Delta;</th><th>League status</th></tr></thead>
-          <tbody>${rows}</tbody>
-        </table>`;
+        <div class="card metric-card">
+          <h3>${def.label}</h3>
+          <p class="player-meta" style="margin:-4px 0 10px">${def.description}</p>
+          <table>
+            <thead><tr><th>Pos</th><th>Player</th><th>Prior &rarr; Recent</th><th>&Delta;</th><th>League status</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>`;
     })
     .join("");
 
-  card.innerHTML = `
-    <h2>Rising metrics</h2>
-    <p class="player-meta" style="margin-bottom:16px">
-      Weeks ${data.recent_weeks[0]}&ndash;${data.recent_weeks[data.recent_weeks.length - 1]} vs.
-      weeks ${data.prior_weeks[0]}&ndash;${data.prior_weeks[data.prior_weeks.length - 1]}, ${data.season} season.
-      Sourced from <a href="https://nflreadr.nflverse.com/" target="_blank" rel="noopener">nflverse</a> play-by-play data (refreshed weekly), cross-referenced against this league's rosters.
-    </p>
-    ${metricSections || emptyState("No qualifying risers for this position group yet.")}`;
+  grid.innerHTML = metricCards || "";
+  if (!metricCards) {
+    introCard.insertAdjacentHTML("beforeend", emptyState("No qualifying risers for this position group yet."));
+  }
 }
 
 // ---------- tabs ----------

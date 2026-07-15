@@ -90,9 +90,13 @@ to be the comprehensive "everything" views.
   throw difficulty (QB only).
 
 For each metric, every player's most recent 4 weeks are compared to the 4
-weeks before that, and the biggest positive movers are listed (max 12 per
+weeks before that, and the biggest positive movers are listed (max 10 per
 table, minimum weekly volume required &mdash; see the description shown
-above each table in the app for exact thresholds).
+above each table in the app for exact thresholds). Tables render two per
+row, and are ordered per tab by what's actually most predictive at that
+position &mdash; e.g. QB leads with passing efficiency (Passing EPA/Attempt),
+not Yards/Carry, since rushing is a bonus for a quarterback, not the
+headline stat.
 
 Each riser is cross-referenced against the league you loaded: if Sleeper
 knows the player and they're on a roster in your league, you'll see whose
