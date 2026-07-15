@@ -1,4 +1,4 @@
-# Sleeper Trade Finder
+# Dynasty Overview
 
 A small, static web app that connects to your [Sleeper](https://sleeper.com) fantasy
 football account and helps you:
