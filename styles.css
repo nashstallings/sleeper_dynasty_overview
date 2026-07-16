@@ -276,6 +276,16 @@ main { padding-top: 6px; }
 @media (max-width: 700px) {
   .grid-2 { grid-template-columns: 1fr; }
 }
+
+.metric-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: var(--content-w);
+  margin: 0 auto;
+}
+.metric-list .card { margin: 0; width: 100%; text-align: left; }
 @media (max-width: 480px) {
   .topbar-inner { gap: 14px; }
   .wordmark { display: none; }
