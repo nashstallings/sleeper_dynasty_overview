@@ -691,11 +691,18 @@ function renderTrendingContent() {
 
       return `
         <div class="card metric-card">
-          <h3>${def.label}${infoIcon(def.description)}</h3>
-          <table>
-            <thead><tr><th>Pos</th><th>Player</th><th>Prior &rarr; Recent</th><th>&Delta;</th><th>League status</th></tr></thead>
-            <tbody>${rows}</tbody>
-          </table>
+          <details>
+            <summary>
+              <h3>${def.label}${infoIcon(def.description)}</h3>
+              <svg class="chevron" viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden="true">
+                <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <table>
+              <thead><tr><th>Pos</th><th>Player</th><th>Prior &rarr; Recent</th><th>&Delta;</th><th>League status</th></tr></thead>
+              <tbody>${rows}</tbody>
+            </table>
+          </details>
         </div>`;
     })
     .join("");

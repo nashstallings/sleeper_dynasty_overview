@@ -292,7 +292,21 @@ h2 { margin: 0 0 14px; font-size: 1.05rem; letter-spacing: -0.01em; font-weight:
 h3 { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; margin: 22px 0 10px; }
 h3:first-of-type { margin-top: 4px; }
 
-.metric-card h3 { display: flex; align-items: center; gap: 6px; }
+.metric-card summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  padding: 2px 0;
+}
+.metric-card summary::-webkit-details-marker { display: none; }
+.metric-card summary::marker { content: ""; }
+.metric-card summary h3 { margin: 0; flex: 1 1 auto; display: flex; align-items: center; gap: 6px; }
+.metric-card .chevron { flex-shrink: 0; color: var(--text-faint); transition: transform 0.15s ease; }
+.metric-card details[open] .chevron { transform: rotate(90deg); }
+.metric-card table { margin-top: 12px; }
 
 .info-icon {
   position: relative;
