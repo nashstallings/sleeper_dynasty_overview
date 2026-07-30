@@ -557,50 +557,70 @@ function fptsAgainst(roster) {
 
 // ---------- Trade Finder ----------
 
-function startingSlotCounts() {
+// How many dedicated (non-flex) starting slots each skill position gets in
+// this league, e.g. {QB:1, RB:2, WR:2, TE:1}. FLEX/SUPER_FLEX slots aren't
+// attributed to any one position since several positions can fill them.
+// Always at least 1, so a position with zero dedicated slots (rare) still
+// gets judged on its single best player.
+function dedicatedSlotCounts() {
   const positions = (state.league && state.league.roster_positions) || [];
   const counts = {};
+  SKILL_POSITIONS.forEach((pos) => (counts[pos] = 0));
   positions.forEach((slot) => {
-    if (["BN", "IR", "TAXI"].includes(slot)) return;
-    counts[slot] = (counts[slot] || 0) + 1;
+    if (SKILL_POSITIONS.includes(slot)) counts[slot] += 1;
+  });
+  SKILL_POSITIONS.forEach((pos) => {
+    if (!counts[pos]) counts[pos] = 1;
   });
   return counts;
 }
 
-// best (lowest) search_rank at each skill position, per roster
-function bestRankByPosition() {
-  const result = {}; // position -> { rosterId -> bestRank }
+// How strong a roster is at a position: the combined trade value of its
+// top starting-slot-count players there (e.g. top 2 RBs in a 2-RB league),
+// so a team needs real depth, not just one standout player, to rate well.
+// Falls back to an inverted best search_rank if trade values haven't
+// loaded, so needs still work before/without that data.
+function positionStrengthByRoster() {
+  const result = {}; // position -> { rosterId -> strength }
   SKILL_POSITIONS.forEach((pos) => (result[pos] = {}));
+  const slotCounts = dedicatedSlotCounts();
+  const haveValues = !!(state.tradeValues && state.tradeValues.players);
 
   state.rosters.forEach((r) => {
-    const seen = {};
-    (r.players || []).forEach((pid) => {
-      const p = player(pid);
-      const pos = playerPosition(p);
-      if (!SKILL_POSITIONS.includes(pos)) return;
-      const rank = playerRank(p);
-      if (seen[pos] === undefined || rank < seen[pos]) seen[pos] = rank;
-    });
     SKILL_POSITIONS.forEach((pos) => {
-      result[pos][r.roster_id] = seen[pos] !== undefined ? seen[pos] : 9999;
+      const pids = (r.players || []).filter((pid) => playerPosition(player(pid)) === pos);
+      let strength;
+      if (haveValues) {
+        strength = pids
+          .map((pid) => playerValue(pid))
+          .filter((v) => v !== null && v !== undefined)
+          .sort((a, b) => b - a)
+          .slice(0, slotCounts[pos])
+          .reduce((sum, v) => sum + v, 0);
+      } else {
+        const bestRank = pids.reduce((best, pid) => Math.min(best, playerRank(player(pid))), 9999);
+        strength = bestRank >= 9999 ? 0 : 100000 - bestRank;
+      }
+      result[pos][r.roster_id] = strength;
     });
   });
   return result;
 }
 
-// Needs for any single roster: which skill positions rank in the bottom
-// half of the league (by best-player search_rank). Used both for the
-// passive "Team needs" summary (my roster) and to judge whether a given
-// manager would likely want one of the players offered in a trade.
+// Needs for any single roster: which skill positions rate in the bottom
+// half of the league by positional strength (see positionStrengthByRoster).
+// Used both for the passive "Team needs" summary (my roster) and to judge
+// whether a given manager would likely want one of the players offered in
+// a trade.
 function rosterNeeds(rosterId) {
   const totalTeams = state.rosters.length;
-  const byPos = bestRankByPosition();
+  const strengthByPos = positionStrengthByRoster();
   const needs = [];
 
   SKILL_POSITIONS.forEach((pos) => {
     const standings = state.rosters
-      .map((r) => ({ rosterId: r.roster_id, rank: byPos[pos][r.roster_id] }))
-      .sort((a, b) => a.rank - b.rank);
+      .map((r) => ({ rosterId: r.roster_id, strength: strengthByPos[pos][r.roster_id] }))
+      .sort((a, b) => b.strength - a.strength);
     const placement = standings.findIndex((s) => s.rosterId === rosterId) + 1;
     const percentile = placement / totalTeams;
 
@@ -755,7 +775,7 @@ async function renderTradeFinder() {
   needsCard.innerHTML = needs.length
     ? `
       <h2>Team needs</h2>
-      <p class="player-meta" style="margin-bottom:14px">Based on how your best player at each position ranks (Sleeper's overall rank) against the rest of the league.</p>
+      <p class="player-meta" style="margin-bottom:14px">Based on your combined trade value at each position (top players per starting slot) against the rest of the league.</p>
       ${needs
         .map(
           (n) => `

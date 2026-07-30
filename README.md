@@ -33,12 +33,16 @@ different one.
 ## How the Trade Finder works
 
 **Team needs** works the same way for every roster in the league, including
-yours: for each of QB / RB / WR / TE, the app compares the best player each
-team owns at that position (using Sleeper's overall `search_rank`, an
-approximate overall/ADP-style ranking). If a team's best player at a
-position ranks in the bottom half of the league, that position is flagged
-as a **need** for that team. The card at the top of the tab shows your own
-needs as a quick summary.
+yours: for each of QB / RB / WR / TE, the app sums each team's trade value
+at that position across as many players as the league starts there (e.g.
+your top 2 RBs in a 2-RB league, not just your single best one) &mdash; so
+a team needs real depth, not just one standout player, to rate well. If a
+team's combined value at a position ranks in the bottom half of the
+league, that position is flagged as a **need** for that team. The card at
+the top of the tab shows your own needs as a quick summary. (FLEX/SUPER_FLEX
+slots aren't attributed to any one position, since several positions can
+fill them. If trade values haven't loaded, this falls back to comparing
+each team's single best player by Sleeper's overall `search_rank`.)
 
 **Build a trade offer** is interactive: check one or more players from your
 own roster (starters and bench) that you'd consider trading away. The app
