@@ -907,17 +907,23 @@ function renderTradeSuggestions() {
     return { roster, theirNeedPositions, fitCount, tradePackage };
   });
 
+  // Best trade offers first: a fair package beats a fallback one, then the
+  // closer to even the better, then fewer players is a nicer offer, and
+  // only then does "would they actually want it" (fitCount) break ties.
   cards.sort((a, b) => {
-    if (b.fitCount !== a.fitCount) return b.fitCount - a.fitCount;
     const aFair = a.tradePackage ? a.tradePackage.isFair : false;
     const bFair = b.tradePackage ? b.tradePackage.isFair : false;
     if (aFair !== bFair) return aFair ? -1 : 1;
+
+    const aDiff = a.tradePackage && a.tradePackage.diffPct !== null ? a.tradePackage.diffPct : Infinity;
+    const bDiff = b.tradePackage && b.tradePackage.diffPct !== null ? b.tradePackage.diffPct : Infinity;
+    if (aDiff !== bDiff) return aDiff - bDiff;
+
     const aSize = a.tradePackage ? a.tradePackage.players.length : Infinity;
     const bSize = b.tradePackage ? b.tradePackage.players.length : Infinity;
     if (aSize !== bSize) return aSize - bSize;
-    const aDiff = a.tradePackage && a.tradePackage.diffPct !== null ? a.tradePackage.diffPct : Infinity;
-    const bDiff = b.tradePackage && b.tradePackage.diffPct !== null ? b.tradePackage.diffPct : Infinity;
-    return aDiff - bDiff;
+
+    return b.fitCount - a.fitCount;
   });
 
   grid.innerHTML = cards

@@ -68,11 +68,14 @@ enough to be fair, it shows their closest possible package instead,
 labeled with how far off it is (e.g. "18% off your offer") rather than
 mislabeling it as even.
 
-Manager cards are sorted so the teams most likely to want your offer (more
-of your selected players fill a flagged need for them) appear first, with
-an even/fair package ranked ahead of a fallback one. Values switch to the
-superflex/2QB scale automatically if your league starts more than one
-QB-eligible slot (QB or SUPER_FLEX).
+Manager cards are ranked by how good the proposed trade actually is, best
+first: a fair/even package beats a fallback one, then the closer to even
+the better, then fewer players in the package is preferred, and only as a
+final tiebreak does whether your offer fills a flagged need for them come
+into it. A team that would love your players but has nothing to offer back
+ranks below a team with a genuinely fair trade on the table. Values switch
+to the superflex/2QB scale automatically if your league starts more than
+one QB-eligible slot (QB or SUPER_FLEX).
 
 This is a heuristic based on roster construction and community-sourced
 trade values, not weekly projections, so use it as a starting point for
