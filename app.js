@@ -85,6 +85,7 @@ const state = {
   trendingPosTab: "FLEX",
   playerNews: null,
   selectedTradePlayers: new Set(),
+  tradeValues: null,
 };
 
 // ---------- low-level helpers ----------
@@ -639,7 +640,26 @@ function candidatesFromRoster(roster, positionsSet) {
   return candidates;
 }
 
-function renderTradeFinder() {
+// A league is superflex/2QB if more than one starting slot can take a QB
+// (a plain QB slot or a SUPER_FLEX slot) -- affects which value column
+// (value_1qb vs value_2qb) is the relevant one, since QBs are worth far
+// more in a 2QB/superflex format.
+function isSuperflexLeague() {
+  return startingSlots().filter((s) => s === "QB" || s === "SUPER_FLEX").length > 1;
+}
+
+function playerValue(sleeperId) {
+  const entry = state.tradeValues && state.tradeValues.players && state.tradeValues.players[sleeperId];
+  if (!entry) return null;
+  const val = isSuperflexLeague() ? entry.value_2qb : entry.value_1qb;
+  return val === null || val === undefined ? null : val;
+}
+
+function formatValue(val) {
+  return val === null || val === undefined ? "&mdash;" : val.toLocaleString();
+}
+
+async function renderTradeFinder() {
   const needsCard = document.getElementById("needs-card");
 
   if (!state.myRosterId) {
@@ -647,6 +667,15 @@ function renderTradeFinder() {
     document.getElementById("trade-builder-card").innerHTML = "";
     document.getElementById("trade-suggestions-grid").innerHTML = "";
     return;
+  }
+
+  if (!state.tradeValues) {
+    try {
+      const res = await fetch("data/trade_values.json");
+      if (res.ok) state.tradeValues = await res.json();
+    } catch {
+      // trade values are optional enrichment; the tab still works without them
+    }
   }
 
   const needs = computeNeeds();
@@ -692,17 +721,36 @@ function tradePickRowHtml(pid) {
       <span class="badge badge-${pos}">${pos}</span>
       <span class="player-name">${playerDisplay(p)}</span>
       <span class="player-meta">${p.team || "FA"}</span>
+      <span class="value-tag">${formatValue(playerValue(pid))}</span>
       <span class="rank-tag">#${playerRank(p)}</span>
     </label>`;
+}
+
+function offerValueSummaryHtml() {
+  const selectedIds = [...state.selectedTradePlayers];
+  if (!selectedIds.length) {
+    return `<p class="offer-value-summary player-meta" id="trade-offer-value">Select players below to see your offer's total trade value.</p>`;
+  }
+  const values = selectedIds.map(playerValue);
+  const known = values.filter((v) => v !== null && v !== undefined);
+  const missing = values.length - known.length;
+  const total = known.length ? known.reduce((sum, v) => sum + v, 0) : null;
+  return `
+    <p class="offer-value-summary" id="trade-offer-value">
+      Your offer value: <strong>${formatValue(total)}</strong>
+      ${missing ? `<span class="player-meta">(${missing} selected player${missing > 1 ? "s" : ""} missing a value)</span>` : ""}
+    </p>`;
 }
 
 function renderTradeBuilderPicker() {
   const card = document.getElementById("trade-builder-card");
   const { starters, bench } = myRosterAllPlayers();
+  const formatNote = isSuperflexLeague() ? "superflex/2QB" : "1QB";
 
   card.innerHTML = `
     <h2>Build a trade offer</h2>
-    <p class="player-meta" style="margin-bottom:14px">Select one or more of your players to see which managers might want them, and what to ask for in return.</p>
+    <p class="player-meta" style="margin-bottom:14px">Select one or more of your players to see which managers might want them, and what to ask for in return. Values assume a ${formatNote} format, from <a href="https://github.com/dynastyprocess/data" target="_blank" rel="noopener">DynastyProcess</a>.</p>
+    ${offerValueSummaryHtml()}
     <h3>Starters</h3>
     <div class="trade-pick-list">${starters.map(tradePickRowHtml).join("")}</div>
     ${bench.length ? `<h3>Bench</h3><div class="trade-pick-list">${bench.map(tradePickRowHtml).join("")}</div>` : ""}
@@ -713,12 +761,15 @@ function renderTradeBuilderPicker() {
       const pid = cb.dataset.pid;
       if (cb.checked) state.selectedTradePlayers.add(pid);
       else state.selectedTradePlayers.delete(pid);
+      const summaryEl = document.getElementById("trade-offer-value");
+      if (summaryEl) summaryEl.outerHTML = offerValueSummaryHtml();
       renderTradeSuggestions();
     });
   });
 }
 
 const TRADE_RETURN_MAX = 4;
+const TRADE_FAIR_VALUE_TOLERANCE = 0.2; // within +/-20% of your offer's total value counts as "about even"
 
 function renderTradeSuggestions() {
   const grid = document.getElementById("trade-suggestions-grid");
@@ -735,13 +786,27 @@ function renderTradeSuggestions() {
     return;
   }
 
-  const selectedPlayers = selectedIds.map((pid) => ({ pid, p: player(pid), pos: playerPosition(player(pid)) }));
+  const selectedPlayers = selectedIds.map((pid) => ({
+    pid,
+    p: player(pid),
+    pos: playerPosition(player(pid)),
+    value: playerValue(pid),
+  }));
   const myNeedPositions = new Set(computeNeeds().map((n) => n.position));
+
+  // Only compute a fairness comparison when every selected player has a
+  // known value -- a partial total would be misleading.
+  const offerValues = selectedPlayers.map((sp) => sp.value);
+  const offerTotal = offerValues.every((v) => v !== null && v !== undefined)
+    ? offerValues.reduce((sum, v) => sum + v, 0)
+    : null;
 
   const cards = others.map((roster) => {
     const theirNeedPositions = new Set(rosterNeeds(roster.roster_id).map((n) => n.position));
     const fitCount = selectedPlayers.filter((sp) => theirNeedPositions.has(sp.pos)).length;
-    const candidates = candidatesFromRoster(roster, myNeedPositions).slice(0, TRADE_RETURN_MAX);
+    const candidates = candidatesFromRoster(roster, myNeedPositions)
+      .slice(0, TRADE_RETURN_MAX)
+      .map((c) => ({ ...c, value: playerValue(c.pid) }));
     return { roster, theirNeedPositions, fitCount, candidates };
   });
 
@@ -759,6 +824,7 @@ function renderTradeSuggestions() {
           <div class="offer-row">
             <span class="badge badge-${sp.pos}">${sp.pos}</span>
             <span class="player-name">${playerDisplay(sp.p)}</span>
+            <span class="value-tag">${formatValue(sp.value)}</span>
             <span class="${fills ? "fit-yes" : "fit-no"}">${fills ? "Fills a need" : "No flagged need"}</span>
           </div>`;
         })
@@ -766,10 +832,15 @@ function renderTradeSuggestions() {
 
       const returnHtml = candidates.length
         ? `<table>
-            <thead><tr><th>Pos</th><th>Player</th><th>Rank</th></tr></thead>
+            <thead><tr><th>Pos</th><th>Player</th><th>Value</th><th>Rank</th></tr></thead>
             <tbody>${candidates
               .map((c) => {
                 const cp = player(c.pid);
+                const isFair =
+                  offerTotal !== null &&
+                  c.value !== null &&
+                  c.value !== undefined &&
+                  Math.abs(c.value - offerTotal) <= offerTotal * TRADE_FAIR_VALUE_TOLERANCE;
                 return `
               <tr>
                 <td><span class="badge badge-${c.pos}">${c.pos}</span></td>
@@ -777,6 +848,7 @@ function renderTradeSuggestions() {
                   <span class="player-name">${playerDisplay(cp)}</span><br/>
                   <span class="player-meta">${cp.team || "FA"} &middot; ${c.isBench ? "Bench" : "Starter"}</span>
                 </td>
+                <td>${formatValue(c.value)}${isFair ? `<br/><span class="value-fair-badge">&asymp; Even value</span>` : ""}</td>
                 <td><span class="rank-tag">#${c.rank}</span></td>
               </tr>`;
               })

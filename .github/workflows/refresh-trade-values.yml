@@ -1,0 +1,31 @@
+name: Refresh Trade Values
+
+on:
+  schedule:
+    # Daily at 12:00 UTC
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Refresh trade_values.json
+        run: python scripts/refresh_trade_values.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/trade_values.json
+          git diff --cached --quiet || git commit -m "Refresh trade values"
+          git pull --rebase origin main
+          git push

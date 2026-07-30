@@ -55,8 +55,18 @@ then shows a card for every other manager in the league, so you can see:
 Manager cards are sorted so the teams most likely to want your offer (more
 of your selected players fill a flagged need for them) appear first.
 
-This is a heuristic based on roster construction, not weekly projections or
-trade values, so use it as a starting point for research, not gospel.
+Every player also shows a **trade value** (from
+[DynastyProcess](https://github.com/dynastyprocess/data)'s open dynasty
+value dataset, refreshed daily) so you can gauge whether a trade is
+actually fair, not just whether it fills a need. Your offer's total value
+is shown as you select players; any return candidate whose value comes
+within &plusmn;20% of that total is flagged **&asymp; Even value**. Values
+switch to the superflex/2QB scale automatically if your league starts more
+than one QB-eligible slot (QB or SUPER_FLEX).
+
+This is a heuristic based on roster construction and community-sourced
+trade values, not weekly projections, so use it as a starting point for
+research, not gospel.
 
 ## How Trending works
 
