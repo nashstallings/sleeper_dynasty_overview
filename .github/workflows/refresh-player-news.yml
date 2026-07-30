@@ -32,4 +32,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/player_news.json
           git diff --cached --quiet || git commit -m "Refresh player news"
+          git pull --rebase origin main
           git push
