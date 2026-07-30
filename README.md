@@ -48,21 +48,27 @@ then shows a card for every other manager in the league, so you can see:
   (green "Fills a need") or not (muted "No flagged need") &mdash; based on
   the same needs calculation as above, just run for their roster instead of
   yours.
-- **Consider asking for** &mdash; up to 4 of their players at positions
-  *you* need, bench players surfaced first (more likely to be available
-  since their current owner isn't starting them).
+- A **suggested return package** &mdash; not just a list, but an actual
+  combination of their players that would make the trade even.
+
+Every player shows a **trade value** (from
+[DynastyProcess](https://github.com/dynastyprocess/data)'s open dynasty
+value dataset, refreshed daily), and your offer's running total is shown
+as you select players. For each manager, the app searches their roster for
+the smallest group of players whose combined value lands within &plusmn;20%
+of your offer &mdash; checking 1-player packages first, then 2, then 3, so
+it never suggests more players than necessary. When multiple packages of
+the same size would be about as fair, it prefers the one using more
+players at positions *you* need. If nothing on their roster gets close
+enough to be fair, it shows their closest possible package instead,
+labeled with how far off it is (e.g. "18% off your offer") rather than
+mislabeling it as even.
 
 Manager cards are sorted so the teams most likely to want your offer (more
-of your selected players fill a flagged need for them) appear first.
-
-Every player also shows a **trade value** (from
-[DynastyProcess](https://github.com/dynastyprocess/data)'s open dynasty
-value dataset, refreshed daily) so you can gauge whether a trade is
-actually fair, not just whether it fills a need. Your offer's total value
-is shown as you select players; any return candidate whose value comes
-within &plusmn;20% of that total is flagged **&asymp; Even value**. Values
-switch to the superflex/2QB scale automatically if your league starts more
-than one QB-eligible slot (QB or SUPER_FLEX).
+of your selected players fill a flagged need for them) appear first, with
+an even/fair package ranked ahead of a fallback one. Values switch to the
+superflex/2QB scale automatically if your league starts more than one
+QB-eligible slot (QB or SUPER_FLEX).
 
 This is a heuristic based on roster construction and community-sourced
 trade values, not weekly projections, so use it as a starting point for

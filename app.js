@@ -623,21 +623,94 @@ function computeNeeds() {
 
 // Players on `roster` who play one of `positionsSet`, bench players first
 // (their owner is more likely to move them) then sorted by rank.
-function candidatesFromRoster(roster, positionsSet) {
+function kCombinations(arr, k) {
+  const results = [];
+  const combo = [];
+  function backtrack(start) {
+    if (combo.length === k) {
+      results.push(combo.slice());
+      return;
+    }
+    for (let i = start; i < arr.length; i++) {
+      combo.push(arr[i]);
+      backtrack(i + 1);
+      combo.pop();
+    }
+  }
+  backtrack(0);
+  return results;
+}
+
+const TRADE_PACKAGE_MAX_PLAYERS = 3;
+
+// Build one recommended return package from `roster`: the smallest group of
+// their players whose combined value is within TRADE_FAIR_VALUE_TOLERANCE of
+// `offerTotal`, preferring more need-filling players (and more bench players,
+// as a last tiebreak) among equally-fair options at that size. Falls back to
+// the closest-value package found if nothing hits the fairness tolerance, or
+// to a plain need-based list if the offer's value isn't known.
+function buildTradePackage(roster, offerTotal, needPositions) {
   const starterSet = new Set(roster.starters || []);
-  const candidates = [];
-  (roster.players || []).forEach((pid) => {
-    const p = player(pid);
-    const pos = playerPosition(p);
-    if (!positionsSet.has(pos)) return;
-    if (p.injury_status === "IR") return;
-    candidates.push({ pid, pos, rank: playerRank(p), isBench: !starterSet.has(pid) });
-  });
-  candidates.sort((a, b) => {
-    if (a.isBench !== b.isBench) return a.isBench ? -1 : 1;
-    return a.rank - b.rank;
-  });
-  return candidates;
+  const pool = (roster.players || [])
+    .map((pid) => {
+      const p = player(pid);
+      const pos = playerPosition(p);
+      return {
+        pid,
+        pos,
+        rank: playerRank(p),
+        isBench: !starterSet.has(pid),
+        value: playerValue(pid),
+        needFill: needPositions.has(pos),
+        injury_status: p.injury_status,
+      };
+    })
+    .filter((c) => c.injury_status !== "IR" && c.value !== null && c.value !== undefined);
+
+  if (!pool.length) return null;
+
+  if (offerTotal === null || offerTotal === undefined) {
+    const fallback = pool
+      .filter((c) => c.needFill)
+      .sort((a, b) => (a.isBench !== b.isBench ? (a.isBench ? -1 : 1) : a.rank - b.rank))
+      .slice(0, TRADE_RETURN_MAX);
+    return fallback.length ? { players: fallback, total: null, diffPct: null, isFair: false } : null;
+  }
+
+  const bestOverallPerSize = [];
+
+  for (let size = 1; size <= TRADE_PACKAGE_MAX_PLAYERS; size++) {
+    let fairBest = null;
+    let overallBest = null;
+
+    kCombinations(pool, size).forEach((combo) => {
+      const total = combo.reduce((sum, c) => sum + c.value, 0);
+      const diffPct = Math.abs(total - offerTotal) / offerTotal;
+      const needCount = combo.filter((c) => c.needFill).length;
+      const benchCount = combo.filter((c) => c.isBench).length;
+      const candidate = { players: combo, total, diffPct, needCount, benchCount };
+
+      if (!overallBest || diffPct < overallBest.diffPct) overallBest = candidate;
+
+      if (diffPct <= TRADE_FAIR_VALUE_TOLERANCE) {
+        if (
+          !fairBest ||
+          needCount > fairBest.needCount ||
+          (needCount === fairBest.needCount &&
+            (diffPct < fairBest.diffPct ||
+              (diffPct === fairBest.diffPct && benchCount > fairBest.benchCount)))
+        ) {
+          fairBest = candidate;
+        }
+      }
+    });
+
+    if (fairBest) return { ...fairBest, isFair: true };
+    if (overallBest) bestOverallPerSize.push(overallBest);
+  }
+
+  const fallback = bestOverallPerSize.sort((a, b) => a.diffPct - b.diffPct)[0];
+  return fallback ? { ...fallback, isFair: false } : null;
 }
 
 // A league is superflex/2QB if more than one starting slot can take a QB
@@ -804,19 +877,25 @@ function renderTradeSuggestions() {
   const cards = others.map((roster) => {
     const theirNeedPositions = new Set(rosterNeeds(roster.roster_id).map((n) => n.position));
     const fitCount = selectedPlayers.filter((sp) => theirNeedPositions.has(sp.pos)).length;
-    const candidates = candidatesFromRoster(roster, myNeedPositions)
-      .slice(0, TRADE_RETURN_MAX)
-      .map((c) => ({ ...c, value: playerValue(c.pid) }));
-    return { roster, theirNeedPositions, fitCount, candidates };
+    const tradePackage = buildTradePackage(roster, offerTotal, myNeedPositions);
+    return { roster, theirNeedPositions, fitCount, tradePackage };
   });
 
   cards.sort((a, b) => {
     if (b.fitCount !== a.fitCount) return b.fitCount - a.fitCount;
-    return b.candidates.length - a.candidates.length;
+    const aFair = a.tradePackage ? a.tradePackage.isFair : false;
+    const bFair = b.tradePackage ? b.tradePackage.isFair : false;
+    if (aFair !== bFair) return aFair ? -1 : 1;
+    const aSize = a.tradePackage ? a.tradePackage.players.length : Infinity;
+    const bSize = b.tradePackage ? b.tradePackage.players.length : Infinity;
+    if (aSize !== bSize) return aSize - bSize;
+    const aDiff = a.tradePackage && a.tradePackage.diffPct !== null ? a.tradePackage.diffPct : Infinity;
+    const bDiff = b.tradePackage && b.tradePackage.diffPct !== null ? b.tradePackage.diffPct : Infinity;
+    return aDiff - bDiff;
   });
 
   grid.innerHTML = cards
-    .map(({ roster, theirNeedPositions, fitCount, candidates }) => {
+    .map(({ roster, theirNeedPositions, fitCount, tradePackage }) => {
       const offerRows = selectedPlayers
         .map((sp) => {
           const fills = theirNeedPositions.has(sp.pos);
@@ -830,31 +909,39 @@ function renderTradeSuggestions() {
         })
         .join("");
 
-      const returnHtml = candidates.length
-        ? `<table>
-            <thead><tr><th>Pos</th><th>Player</th><th>Value</th><th>Rank</th></tr></thead>
-            <tbody>${candidates
-              .map((c) => {
-                const cp = player(c.pid);
-                const isFair =
-                  offerTotal !== null &&
-                  c.value !== null &&
-                  c.value !== undefined &&
-                  Math.abs(c.value - offerTotal) <= offerTotal * TRADE_FAIR_VALUE_TOLERANCE;
-                return `
-              <tr>
-                <td><span class="badge badge-${c.pos}">${c.pos}</span></td>
-                <td>
-                  <span class="player-name">${playerDisplay(cp)}</span><br/>
-                  <span class="player-meta">${cp.team || "FA"} &middot; ${c.isBench ? "Bench" : "Starter"}</span>
-                </td>
-                <td>${formatValue(c.value)}${isFair ? `<br/><span class="value-fair-badge">&asymp; Even value</span>` : ""}</td>
-                <td><span class="rank-tag">#${c.rank}</span></td>
-              </tr>`;
-              })
-              .join("")}</tbody>
-          </table>`
-        : `<p class="player-meta">No obvious return targets on this roster at your needed positions.</p>`;
+      const returnHtml =
+        tradePackage && tradePackage.players.length
+          ? `${
+              tradePackage.total !== null
+                ? `<p class="package-summary">
+                    Package value: <strong>${formatValue(tradePackage.total)}</strong>
+                    ${
+                      tradePackage.isFair
+                        ? `<span class="value-fair-badge">&asymp; Even value</span>`
+                        : `<span class="player-meta">(${Math.round(tradePackage.diffPct * 100)}% off your offer)</span>`
+                    }
+                  </p>`
+                : ""
+            }
+            <table>
+              <thead><tr><th>Pos</th><th>Player</th><th>Value</th><th>Rank</th></tr></thead>
+              <tbody>${tradePackage.players
+                .map((c) => {
+                  const cp = player(c.pid);
+                  return `
+                <tr>
+                  <td><span class="badge badge-${c.pos}">${c.pos}</span></td>
+                  <td>
+                    <span class="player-name">${playerDisplay(cp)}</span>${c.needFill ? ` <span class="fit-yes">Fills a need</span>` : ""}<br/>
+                    <span class="player-meta">${cp.team || "FA"} &middot; ${c.isBench ? "Bench" : "Starter"}</span>
+                  </td>
+                  <td>${formatValue(c.value)}</td>
+                  <td><span class="rank-tag">#${c.rank}</span></td>
+                </tr>`;
+                })
+                .join("")}</tbody>
+            </table>`
+          : `<p class="player-meta">No obvious return package available on this roster.</p>`;
 
       const fitBadge =
         fitCount > 0
@@ -868,7 +955,7 @@ function renderTradeSuggestions() {
           ${fitBadge}
         </div>
         <div class="offer-list">${offerRows}</div>
-        <h3>Consider asking for</h3>
+        <h3>Suggested return package</h3>
         ${returnHtml}
       </div>`;
     })

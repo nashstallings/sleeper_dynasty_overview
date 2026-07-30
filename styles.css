@@ -362,6 +362,16 @@ main { padding-top: 6px; }
 }
 .offer-value-summary strong { color: var(--accent-strong); font-variant-numeric: tabular-nums; font-size: 1rem; }
 
+.package-summary {
+  font-size: 0.86rem;
+  margin: 0 0 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.package-summary strong { font-variant-numeric: tabular-nums; }
+
 .trade-manager-card h3 { margin-top: 0; }
 .manager-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
 .fit-summary { font-size: 0.72rem; font-weight: 700; color: var(--text-faint); white-space: nowrap; }
