@@ -261,7 +261,7 @@ METRIC_DEFS = {
 def get_client():
     sa_info = json.loads(os.environ["GCP_SA_KEY"])
     credentials = service_account.Credentials.from_service_account_info(
-        sa_info, scopes=["https://www.googleapis.com/auth/bigquery.readonly"]
+        sa_info, scopes=["https://www.googleapis.com/auth/bigquery"]
     )
     return bigquery.Client(project=PROJECT_ID, credentials=credentials)
 
