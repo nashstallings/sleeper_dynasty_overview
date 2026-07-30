@@ -479,6 +479,15 @@ tr.me-row:hover { background: var(--accent-soft); }
   text-align: center;
 }
 
+.news-item { padding: 12px 0; border-bottom: 1px solid var(--panel-border); }
+.news-item:last-child { border-bottom: none; }
+.news-item-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.news-date { margin-left: auto; color: var(--text-faint); font-size: 0.76rem; white-space: nowrap; }
+.news-headline { margin: 6px 0 4px; font-weight: 650; font-size: 0.92rem; }
+.news-desc { margin: 0 0 6px; }
+.news-link { font-size: 0.8rem; color: var(--accent); text-decoration: none; font-weight: 600; }
+.news-link:hover { text-decoration: underline; }
+
 footer {
   text-align: center;
   color: var(--text-faint);

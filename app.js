@@ -83,6 +83,7 @@ const state = {
   currentWeek: null,
   risingMetrics: null,
   trendingPosTab: "FLEX",
+  playerNews: null,
 };
 
 // ---------- low-level helpers ----------
@@ -295,6 +296,7 @@ function renderDashboard() {
   renderMatchup();
   renderStarters();
   renderBench();
+  renderPlayerNews();
 }
 
 function emptyState(text) {
@@ -400,6 +402,74 @@ function renderBench() {
     ? bench.map((pid) => playerRow(pid)).join("")
     : `<tr><td>${emptyState("No bench players")}</td></tr>`;
   card.innerHTML = `<h2>Bench</h2><table><tbody>${rows}</tbody></table>`;
+}
+
+const NEWS_WINDOW_DAYS = 14;
+
+function relativeDate(isoString) {
+  const then = new Date(isoString);
+  const diffMs = Date.now() - then.getTime();
+  const days = Math.floor(diffMs / (24 * 60 * 60 * 1000));
+  if (days <= 0) return "Today";
+  if (days === 1) return "Yesterday";
+  if (days < 14) return `${days}d ago`;
+  return then.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+}
+
+async function renderPlayerNews() {
+  const card = document.getElementById("news-card");
+  const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
+  if (!myRoster) {
+    card.innerHTML = `<h2>Recent News</h2>${emptyState("You don't own a team in this league.")}`;
+    return;
+  }
+
+  card.innerHTML = `<h2>Recent News</h2><p class="spinner-note">Loading player news...</p>`;
+
+  try {
+    if (!state.playerNews) {
+      const res = await fetch("data/player_news.json");
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      state.playerNews = await res.json();
+    }
+    const data = state.playerNews;
+    const rosterSet = new Set(myRoster.players || []);
+    const cutoff = Date.now() - NEWS_WINDOW_DAYS * 24 * 60 * 60 * 1000;
+
+    const items = (data.items || [])
+      .filter((n) => n.sleeper_id && rosterSet.has(n.sleeper_id))
+      .filter((n) => new Date(n.pub_date).getTime() >= cutoff)
+      .sort((a, b) => new Date(b.pub_date) - new Date(a.pub_date));
+
+    if (!items.length) {
+      card.innerHTML = `<h2>Recent News</h2>${emptyState(`No news for your roster in the last ${NEWS_WINDOW_DAYS} days.`)}`;
+      return;
+    }
+
+    const rows = items
+      .map(
+        (n) => `
+      <div class="news-item">
+        <div class="news-item-head">
+          <span class="badge badge-${n.position}">${n.position}</span>
+          <span class="player-name">${n.player_name}</span>
+          <span class="player-meta">${n.team || "FA"}</span>
+          <span class="news-date">${relativeDate(n.pub_date)}</span>
+        </div>
+        <p class="news-headline">${n.headline}</p>
+        ${n.description ? `<p class="player-meta news-desc">${n.description}</p>` : ""}
+        <a class="news-link" href="${n.link}" target="_blank" rel="noopener">Read on ${escapeHtml(data.source || "RotoWire")} &rarr;</a>
+      </div>`
+      )
+      .join("");
+
+    card.innerHTML = `
+      <h2>Recent News</h2>
+      <p class="player-meta" style="margin-bottom:14px">Last ${NEWS_WINDOW_DAYS} days, players on your roster. Sourced from ${escapeHtml(data.source || "RotoWire")}.</p>
+      ${rows}`;
+  } catch (err) {
+    card.innerHTML = `<h2>Recent News</h2>${emptyState("Couldn't load player news (data/player_news.json missing or unreachable).")}`;
+  }
 }
 
 // ---------- Standings ----------

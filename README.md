@@ -11,6 +11,8 @@ football account and helps you:
 - **Spot risers** &mdash; a Trending tab surfaces players whose snap share, target
   share, and receiving/rushing efficiency are climbing week over week, and shows
   whether they're on your roster, a rival's, or unrostered in your league.
+- **Catch up on player news** &mdash; a Recent News card on the My Team tab shows
+  the last two weeks of news for players on your roster.
 
 There is no backend, no build step, and no login. It's plain HTML/CSS/JS that
 talks directly to Sleeper's public, read-only API from your browser. Nothing
@@ -118,6 +120,24 @@ secret: a service account JSON key with BigQuery read access to that project
 fails but the site keeps serving whatever snapshot is already committed. You
 can also trigger a refresh manually from the Actions tab
 ("Run workflow" on "Refresh Rising Metrics").
+
+## How player news works
+
+RotoWire publishes a public [NFL news RSS feed](https://www.rotowire.com/rss/news.php?sport=NFL)
+intended for syndication. `.github/workflows/refresh-player-news.yml` runs
+`scripts/refresh_player_news.py` daily, which:
+
+1. Fetches that feed.
+2. Keeps only items matching RotoWire's "Player Name: headline" convention
+   (skipping general roundup articles that aren't about one player).
+3. Resolves each player name against the same BigQuery player crosswalk used
+   by the Trending pipeline, attaching a real Sleeper `player_id` &mdash; this
+   avoids fragile client-side name matching (Jr./Sr./punctuation differences).
+4. Commits the result to `data/player_news.json`.
+
+The My Team tab's Recent News card fetches that file and filters it down to
+players on your currently-loaded roster, from the last 14 days. Uses the same
+`GCP_SA_KEY` secret as the Trending refresh; no separate credential needed.
 
 ## Running it
 
