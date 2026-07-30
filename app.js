@@ -669,7 +669,12 @@ const TRADE_PACKAGE_MAX_PLAYERS = 3;
 // as a last tiebreak) among equally-fair options at that size. Falls back to
 // the closest-value package found if nothing hits the fairness tolerance, or
 // to a plain need-based list if the offer's value isn't known.
-function buildTradePackage(roster, offerTotal, needPositions) {
+//
+// Players at a position `roster` itself needs (theirNeedPositions) are
+// excluded from consideration entirely -- a team that's short at WR isn't a
+// realistic source for a WR back, and suggesting "WR for WR" when both sides
+// need WR doesn't fill anyone's need, it's just a lateral swap.
+function buildTradePackage(roster, offerTotal, needPositions, theirNeedPositions) {
   const starterSet = new Set(roster.starters || []);
   const pool = (roster.players || [])
     .map((pid) => {
@@ -685,7 +690,8 @@ function buildTradePackage(roster, offerTotal, needPositions) {
         injury_status: p.injury_status,
       };
     })
-    .filter((c) => c.injury_status !== "IR" && c.value !== null && c.value !== undefined);
+    .filter((c) => c.injury_status !== "IR" && c.value !== null && c.value !== undefined)
+    .filter((c) => !theirNeedPositions.has(c.pos));
 
   if (!pool.length) return null;
 
@@ -897,7 +903,7 @@ function renderTradeSuggestions() {
   const cards = others.map((roster) => {
     const theirNeedPositions = new Set(rosterNeeds(roster.roster_id).map((n) => n.position));
     const fitCount = selectedPlayers.filter((sp) => theirNeedPositions.has(sp.pos)).length;
-    const tradePackage = buildTradePackage(roster, offerTotal, myNeedPositions);
+    const tradePackage = buildTradePackage(roster, offerTotal, myNeedPositions, theirNeedPositions);
     return { roster, theirNeedPositions, fitCount, tradePackage };
   });
 
