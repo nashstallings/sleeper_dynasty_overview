@@ -77,6 +77,19 @@ ranks below a team with a genuinely fair trade on the table. Values switch
 to the superflex/2QB scale automatically if your league starts more than
 one QB-eligible slot (QB or SUPER_FLEX).
 
+**Draft picks count too.** Both sides of a trade can include future picks,
+not just players: your "Draft Picks" list shows every pick you currently
+own (accounting for trades already made in the league &mdash; a pick you
+acquired shows "via [team]", and one you traded away won't show up at
+all), each with a value from the same DynastyProcess dataset. Return
+packages can include a manager's picks the same way. Pick ownership is
+computed from Sleeper's `traded_picks` endpoint against a default of one
+pick per round per season (rounds read from the league's draft settings),
+for however many draft classes the value dataset currently covers (usually
+the next 3). Since a future pick's exact draft slot isn't knowable yet,
+each pick is valued at the generic season/round level (e.g. "2027 2nd"),
+not a projected exact slot.
+
 This is a heuristic based on roster construction and community-sourced
 trade values, not weekly projections, so use it as a starting point for
 research, not gospel.

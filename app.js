@@ -86,6 +86,9 @@ const state = {
   playerNews: null,
   selectedTradePlayers: new Set(),
   tradeValues: null,
+  tradedPicks: [],
+  draftRounds: 4,
+  pickOwnership: null,
 };
 
 // ---------- low-level helpers ----------
@@ -227,6 +230,24 @@ async function loadLeague(leagueId) {
     const myRoster = state.rosters.find((r) => r.owner_id === state.userId);
     if (myRoster) state.myRosterId = myRoster.roster_id;
     state.selectedTradePlayers = new Set();
+
+    state.tradedPicks = [];
+    state.draftRounds = 4;
+    state.pickOwnership = null;
+    try {
+      const [tradedPicks, drafts] = await Promise.all([
+        api(`/league/${leagueId}/traded_picks`),
+        api(`/league/${leagueId}/drafts`),
+      ]);
+      state.tradedPicks = Array.isArray(tradedPicks) ? tradedPicks : [];
+      if (Array.isArray(drafts)) {
+        const withRounds = drafts.find((d) => d.settings && typeof d.settings.rounds === "number" && d.settings.rounds > 0);
+        if (withRounds) state.draftRounds = withRounds.settings.rounds;
+      }
+    } catch {
+      // Draft pick info is optional enrichment for the trade builder; the
+      // rest of the app works fine without it.
+    }
 
     saveSession();
     setStatus("");
@@ -676,7 +697,7 @@ const TRADE_PACKAGE_MAX_PLAYERS = 3;
 // need WR doesn't fill anyone's need, it's just a lateral swap.
 function buildTradePackage(roster, offerTotal, needPositions, theirNeedPositions) {
   const starterSet = new Set(roster.starters || []);
-  const pool = (roster.players || [])
+  const playerPool = (roster.players || [])
     .map((pid) => {
       const p = player(pid);
       const pos = playerPosition(p);
@@ -691,7 +712,27 @@ function buildTradePackage(roster, offerTotal, needPositions, theirNeedPositions
       };
     })
     .filter((c) => c.injury_status !== "IR" && c.value !== null && c.value !== undefined)
+    // A pick has no position (pos is null), so this filter never excludes
+    // one -- picks are always a fine ask regardless of positional needs.
     .filter((c) => !theirNeedPositions.has(c.pos));
+
+  // Draft picks are tradeable too: fungible value with no position, so they
+  // never get excluded by the "own need" filter above and never carry a
+  // needFill bonus in the ranking, but they're a normal fairness-matching
+  // asset otherwise.
+  const pickPool = rosterPicks(roster.roster_id)
+    .map((pk) => ({
+      pid: pk.id,
+      pos: null,
+      rank: null,
+      isBench: true,
+      value: pickValue(pk.season, pk.round),
+      needFill: false,
+      isPick: true,
+    }))
+    .filter((c) => c.value !== null && c.value !== undefined);
+
+  const pool = [...playerPool, ...pickPool];
 
   if (!pool.length) return null;
 
@@ -758,6 +799,117 @@ function formatValue(val) {
   return val === null || val === undefined ? "&mdash;" : val.toLocaleString();
 }
 
+// ---------- Draft picks (as tradeable assets) ----------
+
+function roundOrdinal(round) {
+  const n = Number(round);
+  if (n % 100 >= 11 && n % 100 <= 13) return `${n}th`;
+  const suffix = { 1: "st", 2: "nd", 3: "rd" }[n % 10] || "th";
+  return `${n}${suffix}`;
+}
+
+function pickId(season, round, originalRosterId) {
+  return `pick:${season}:${round}:${originalRosterId}`;
+}
+
+function isPickId(id) {
+  return typeof id === "string" && id.startsWith("pick:");
+}
+
+function parsePickId(id) {
+  const [, season, round, originalRosterId] = id.split(":");
+  return { season, round: Number(round), originalRosterId: Number(originalRosterId) };
+}
+
+// Which draft seasons we have pick values for, derived from whatever
+// DynastyProcess's data currently covers (usually the next 3 classes)
+// rather than a hardcoded number of years.
+function pickTradeSeasons() {
+  const picks = state.tradeValues && state.tradeValues.picks;
+  if (!picks) return [];
+  const years = new Set();
+  Object.keys(picks).forEach((key) => {
+    const year = key.split(" ")[0];
+    if (/^\d{4}$/.test(year)) years.add(year);
+  });
+  return [...years].sort();
+}
+
+function pickValue(season, round) {
+  const picks = state.tradeValues && state.tradeValues.picks;
+  const entry = picks && picks[`${season} ${roundOrdinal(round)}`];
+  if (!entry) return null;
+  const val = isSuperflexLeague() ? entry.value_2qb : entry.value_1qb;
+  return val === null || val === undefined ? null : val;
+}
+
+// Every roster starts with one pick per round per season in scope; trades
+// reassign specific (season, round, original-owner) picks to a new owner.
+// Sleeper's traded_picks always names the picks by their ORIGINAL owner's
+// roster_id, with owner_id giving the current (possibly multi-hop) owner.
+function computePickOwnership() {
+  const seasons = pickTradeSeasons();
+  const rounds = state.draftRounds || 4;
+  const ownership = {}; // `${season}|${round}|${originalRosterId}` -> current owner roster_id
+
+  seasons.forEach((season) => {
+    for (let round = 1; round <= rounds; round++) {
+      state.rosters.forEach((r) => {
+        ownership[`${season}|${round}|${r.roster_id}`] = r.roster_id;
+      });
+    }
+  });
+
+  (state.tradedPicks || []).forEach((tp) => {
+    const key = `${tp.season}|${tp.round}|${tp.roster_id}`;
+    if (key in ownership) ownership[key] = tp.owner_id;
+  });
+
+  return ownership;
+}
+
+function rosterPicks(rosterId) {
+  const ownership = state.pickOwnership || {};
+  const picks = [];
+  Object.keys(ownership).forEach((key) => {
+    if (ownership[key] !== rosterId) return;
+    const [season, round, originalRosterId] = key.split("|");
+    picks.push({
+      id: pickId(season, round, originalRosterId),
+      season,
+      round: Number(round),
+      originalRosterId: Number(originalRosterId),
+    });
+  });
+  picks.sort((a, b) => (a.season !== b.season ? a.season.localeCompare(b.season) : a.round - b.round));
+  return picks;
+}
+
+function pickLabel(season, round, originalRosterId, currentOwnerRosterId) {
+  const base = `${season} ${roundOrdinal(round)}`;
+  if (originalRosterId === currentOwnerRosterId) return base;
+  const originalRoster = state.rosters.find((r) => r.roster_id === originalRosterId);
+  return `${base} (via ${rosterLabel(originalRoster)})`;
+}
+
+// Unified value/label lookup so trade-builder code can treat a selected
+// player and a selected draft pick the same way.
+function assetValue(id) {
+  if (isPickId(id)) {
+    const { season, round } = parsePickId(id);
+    return pickValue(season, round);
+  }
+  return playerValue(id);
+}
+
+function assetLabel(id, ownerRosterId) {
+  if (isPickId(id)) {
+    const { season, round, originalRosterId } = parsePickId(id);
+    return pickLabel(season, round, originalRosterId, ownerRosterId);
+  }
+  return playerDisplay(player(id));
+}
+
 async function renderTradeFinder() {
   const needsCard = document.getElementById("needs-card");
 
@@ -775,6 +927,9 @@ async function renderTradeFinder() {
     } catch {
       // trade values are optional enrichment; the tab still works without them
     }
+  }
+  if (!state.pickOwnership) {
+    state.pickOwnership = computePickOwnership();
   }
 
   const needs = computeNeeds();
@@ -801,26 +956,36 @@ async function renderTradeFinder() {
 
 function myRosterAllPlayers() {
   const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
-  if (!myRoster) return { starters: [], bench: [] };
+  if (!myRoster) return { starters: [], bench: [], picks: [] };
   const starterSet = new Set(myRoster.starters || []);
   const starters = (myRoster.starters || []).filter((pid) => pid && pid !== "0");
   const bench = (myRoster.players || [])
     .filter((pid) => !starterSet.has(pid))
     .sort((a, b) => playerRank(player(a)) - playerRank(player(b)));
-  return { starters, bench };
+  const picks = rosterPicks(state.myRosterId);
+  return { starters, bench, picks };
 }
 
-function tradePickRowHtml(pid) {
-  const p = player(pid);
+function tradePickRowHtml(id) {
+  const checked = state.selectedTradePlayers.has(id) ? "checked" : "";
+  if (isPickId(id)) {
+    return `
+      <label class="trade-pick-row">
+        <input type="checkbox" data-pid="${id}" ${checked} />
+        <span class="badge badge-PICK">PICK</span>
+        <span class="player-name">${assetLabel(id, state.myRosterId)}</span>
+        <span class="value-tag">${formatValue(assetValue(id))}</span>
+      </label>`;
+  }
+  const p = player(id);
   const pos = playerPosition(p);
-  const checked = state.selectedTradePlayers.has(pid) ? "checked" : "";
   return `
     <label class="trade-pick-row">
-      <input type="checkbox" data-pid="${pid}" ${checked} />
+      <input type="checkbox" data-pid="${id}" ${checked} />
       <span class="badge badge-${pos}">${pos}</span>
       <span class="player-name">${playerDisplay(p)}</span>
       <span class="player-meta">${p.team || "FA"}</span>
-      <span class="value-tag">${formatValue(playerValue(pid))}</span>
+      <span class="value-tag">${formatValue(playerValue(id))}</span>
       <span class="rank-tag">#${playerRank(p)}</span>
     </label>`;
 }
@@ -828,31 +993,32 @@ function tradePickRowHtml(pid) {
 function offerValueSummaryHtml() {
   const selectedIds = [...state.selectedTradePlayers];
   if (!selectedIds.length) {
-    return `<p class="offer-value-summary player-meta" id="trade-offer-value">Select players below to see your offer's total trade value.</p>`;
+    return `<p class="offer-value-summary player-meta" id="trade-offer-value">Select players or picks below to see your offer's total trade value.</p>`;
   }
-  const values = selectedIds.map(playerValue);
+  const values = selectedIds.map(assetValue);
   const known = values.filter((v) => v !== null && v !== undefined);
   const missing = values.length - known.length;
   const total = known.length ? known.reduce((sum, v) => sum + v, 0) : null;
   return `
     <p class="offer-value-summary" id="trade-offer-value">
       Your offer value: <strong>${formatValue(total)}</strong>
-      ${missing ? `<span class="player-meta">(${missing} selected player${missing > 1 ? "s" : ""} missing a value)</span>` : ""}
+      ${missing ? `<span class="player-meta">(${missing} selected item${missing > 1 ? "s" : ""} missing a value)</span>` : ""}
     </p>`;
 }
 
 function renderTradeBuilderPicker() {
   const card = document.getElementById("trade-builder-card");
-  const { starters, bench } = myRosterAllPlayers();
+  const { starters, bench, picks } = myRosterAllPlayers();
   const formatNote = isSuperflexLeague() ? "superflex/2QB" : "1QB";
 
   card.innerHTML = `
     <h2>Build a trade offer</h2>
-    <p class="player-meta" style="margin-bottom:14px">Select one or more of your players to see which managers might want them, and what to ask for in return. Values assume a ${formatNote} format, from <a href="https://github.com/dynastyprocess/data" target="_blank" rel="noopener">DynastyProcess</a>.</p>
+    <p class="player-meta" style="margin-bottom:14px">Select one or more of your players or picks to see which managers might want them, and what to ask for in return. Values assume a ${formatNote} format, from <a href="https://github.com/dynastyprocess/data" target="_blank" rel="noopener">DynastyProcess</a>.</p>
     ${offerValueSummaryHtml()}
     <h3>Starters</h3>
     <div class="trade-pick-list">${starters.map(tradePickRowHtml).join("")}</div>
     ${bench.length ? `<h3>Bench</h3><div class="trade-pick-list">${bench.map(tradePickRowHtml).join("")}</div>` : ""}
+    ${picks.length ? `<h3>Draft Picks</h3><div class="trade-pick-list">${picks.map((pk) => tradePickRowHtml(pk.id)).join("")}</div>` : ""}
   `;
 
   card.querySelectorAll("input[type=checkbox][data-pid]").forEach((cb) => {
@@ -887,9 +1053,10 @@ function renderTradeSuggestions() {
 
   const selectedPlayers = selectedIds.map((pid) => ({
     pid,
-    p: player(pid),
-    pos: playerPosition(player(pid)),
-    value: playerValue(pid),
+    isPick: isPickId(pid),
+    pos: isPickId(pid) ? null : playerPosition(player(pid)),
+    label: assetLabel(pid, state.myRosterId),
+    value: assetValue(pid),
   }));
   const myNeedPositions = new Set(computeNeeds().map((n) => n.position));
 
@@ -930,11 +1097,19 @@ function renderTradeSuggestions() {
     .map(({ roster, theirNeedPositions, fitCount, tradePackage }) => {
       const offerRows = selectedPlayers
         .map((sp) => {
+          if (sp.isPick) {
+            return `
+            <div class="offer-row">
+              <span class="badge badge-PICK">PICK</span>
+              <span class="player-name">${sp.label}</span>
+              <span class="value-tag">${formatValue(sp.value)}</span>
+            </div>`;
+          }
           const fills = theirNeedPositions.has(sp.pos);
           return `
           <div class="offer-row">
             <span class="badge badge-${sp.pos}">${sp.pos}</span>
-            <span class="player-name">${playerDisplay(sp.p)}</span>
+            <span class="player-name">${sp.label}</span>
             <span class="value-tag">${formatValue(sp.value)}</span>
             <span class="${fills ? "fit-yes" : "fit-no"}">${fills ? "Fills a need" : "No flagged need"}</span>
           </div>`;
@@ -959,6 +1134,15 @@ function renderTradeSuggestions() {
               <thead><tr><th>Pos</th><th>Player</th><th>Value</th><th>Rank</th></tr></thead>
               <tbody>${tradePackage.players
                 .map((c) => {
+                  if (c.isPick) {
+                    return `
+                  <tr>
+                    <td><span class="badge badge-PICK">PICK</span></td>
+                    <td><span class="player-name">${assetLabel(c.pid, roster.roster_id)}</span></td>
+                    <td>${formatValue(c.value)}</td>
+                    <td class="player-meta">&mdash;</td>
+                  </tr>`;
+                  }
                   const cp = player(c.pid);
                   return `
                 <tr>
