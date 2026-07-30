@@ -12,7 +12,7 @@ football account and helps you:
   share, and receiving/rushing efficiency are climbing week over week, and shows
   whether they're on your roster, a rival's, or unrostered in your league.
 - **Catch up on player news** &mdash; a Recent News card on the My Team tab shows
-  the last two weeks of news for players on your roster.
+  the last 30 days of news for players on your roster.
 
 There is no backend, no build step, and no login. It's plain HTML/CSS/JS that
 talks directly to Sleeper's public, read-only API from your browser. Nothing
@@ -136,7 +136,7 @@ intended for syndication. `.github/workflows/refresh-player-news.yml` runs
 4. Commits the result to `data/player_news.json`.
 
 The My Team tab's Recent News card fetches that file and filters it down to
-players on your currently-loaded roster, from the last 14 days. Uses the same
+players on your currently-loaded roster, from the last 30 days. Uses the same
 `GCP_SA_KEY` secret as the Trending refresh; no separate credential needed.
 
 ## Running it

@@ -438,7 +438,7 @@ function renderBench() {
     </table>`;
 }
 
-const NEWS_WINDOW_DAYS = 14;
+const NEWS_WINDOW_DAYS = 30;
 
 function relativeDate(isoString) {
   const then = new Date(isoString);
@@ -446,7 +446,7 @@ function relativeDate(isoString) {
   const days = Math.floor(diffMs / (24 * 60 * 60 * 1000));
   if (days <= 0) return "Today";
   if (days === 1) return "Yesterday";
-  if (days < 14) return `${days}d ago`;
+  if (days < NEWS_WINDOW_DAYS) return `${days}d ago`;
   return then.toLocaleDateString(undefined, { month: "short", day: "numeric" });
 }
 
