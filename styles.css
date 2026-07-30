@@ -413,6 +413,15 @@ tr.me-row:hover { background: var(--accent-soft); }
 
 .player-name { font-weight: 600; }
 .player-meta { color: var(--text-dim); font-size: 0.78rem; }
+.pos-tag {
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--text-faint);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+}
 
 .team-cell { display: flex; align-items: center; gap: 9px; }
 .avatar {

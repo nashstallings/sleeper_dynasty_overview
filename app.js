@@ -354,25 +354,46 @@ async function renderMatchup() {
   }
 }
 
-function playerRow(pid, { showRank = true } = {}) {
+// Roster slots (e.g. "SUPER_FLEX") don't always match the CSS badge classes we
+// have colors for (QB/RB/WR/TE/K/DEF) — shorten the label and fall back to the
+// neutral FLEX badge color for anything else.
+const SLOT_LABELS = {
+  FLEX: "FLEX",
+  SUPER_FLEX: "SFLEX",
+  WRRB_FLEX: "W/R",
+  REC_FLEX: "W/T",
+  WR_TE_FLEX: "W/T",
+  IDP_FLEX: "IDP",
+};
+const BADGE_COLOR_SLOTS = new Set(["QB", "RB", "WR", "TE", "K", "DEF"]);
+
+function startingSlots() {
+  const positions = (state.league && state.league.roster_positions) || [];
+  return positions.filter((s) => !["BN", "IR", "TAXI"].includes(s));
+}
+
+function playerRow(pid, { slot = null } = {}) {
   if (!pid || pid === "0") {
     return `<tr><td colspan="3" class="empty-note">&mdash; Empty slot &mdash;</td></tr>`;
   }
   const p = player(pid);
   const pos = playerPosition(p);
+  const slotIsFlexy = slot && !BADGE_COLOR_SLOTS.has(slot);
+  const badgeLabel = slot ? SLOT_LABELS[slot] || slot : pos;
+  const badgeClass = slotIsFlexy ? "FLEX" : slot || pos;
+  const posTag = slotIsFlexy ? `<span class="pos-tag">${pos}</span>` : "";
   const injury =
     p.injury_status && p.injury_status !== "Healthy"
       ? `<span class="injury">${p.injury_status}</span>`
       : "";
-  const rank = showRank ? `<span class="rank-tag">#${playerRank(p)}</span>` : "";
   return `
     <tr>
-      <td><span class="badge badge-${pos}">${pos}</span></td>
+      <td><span class="badge badge-${badgeClass}">${badgeLabel}</span></td>
       <td>
-        <span class="player-name">${playerDisplay(p)}</span>${injury}<br/>
+        <span class="player-name">${playerDisplay(p)}</span>${posTag}${injury}<br/>
         <span class="player-meta">${p.team || "FA"}</span>
       </td>
-      <td>${rank}</td>
+      <td><span class="rank-tag">#${playerRank(p)}</span></td>
     </tr>`;
 }
 
@@ -383,8 +404,16 @@ function renderStarters() {
     card.innerHTML = `<h2>Starters</h2>${emptyState("You don't own a team in this league.")}`;
     return;
   }
-  const rows = (myRoster.starters || []).map((pid) => playerRow(pid)).join("");
-  card.innerHTML = `<h2>Starters</h2><table><tbody>${rows}</tbody></table>`;
+  const slots = startingSlots();
+  const rows = (myRoster.starters || [])
+    .map((pid, i) => playerRow(pid, { slot: slots[i] }))
+    .join("");
+  card.innerHTML = `
+    <h2>Starters</h2>
+    <table>
+      <thead><tr><th>Slot</th><th>Player</th><th>Rank</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
 }
 
 function renderBench() {
@@ -400,8 +429,13 @@ function renderBench() {
     .sort((a, b) => playerRank(player(a)) - playerRank(player(b)));
   const rows = bench.length
     ? bench.map((pid) => playerRow(pid)).join("")
-    : `<tr><td>${emptyState("No bench players")}</td></tr>`;
-  card.innerHTML = `<h2>Bench</h2><table><tbody>${rows}</tbody></table>`;
+    : `<tr><td colspan="3">${emptyState("No bench players")}</td></tr>`;
+  card.innerHTML = `
+    <h2>Bench</h2>
+    <table>
+      <thead><tr><th>Pos</th><th>Player</th><th>Rank</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
 }
 
 const NEWS_WINDOW_DAYS = 14;
