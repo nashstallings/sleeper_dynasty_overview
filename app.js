@@ -84,6 +84,7 @@ const state = {
   risingMetrics: null,
   trendingPosTab: "FLEX",
   playerNews: null,
+  selectedTradePlayers: new Set(),
 };
 
 // ---------- low-level helpers ----------
@@ -224,6 +225,7 @@ async function loadLeague(leagueId) {
     state.myRosterId = null;
     const myRoster = state.rosters.find((r) => r.owner_id === state.userId);
     if (myRoster) state.myRosterId = myRoster.roster_id;
+    state.selectedTradePlayers = new Set();
 
     saveSession();
     setStatus("");
@@ -585,8 +587,11 @@ function bestRankByPosition() {
   return result;
 }
 
-function computeNeeds() {
-  if (!state.myRosterId) return [];
+// Needs for any single roster: which skill positions rank in the bottom
+// half of the league (by best-player search_rank). Used both for the
+// passive "Team needs" summary (my roster) and to judge whether a given
+// manager would likely want one of the players offered in a trade.
+function rosterNeeds(rosterId) {
   const totalTeams = state.rosters.length;
   const byPos = bestRankByPosition();
   const needs = [];
@@ -595,7 +600,7 @@ function computeNeeds() {
     const standings = state.rosters
       .map((r) => ({ rosterId: r.roster_id, rank: byPos[pos][r.roster_id] }))
       .sort((a, b) => a.rank - b.rank);
-    const placement = standings.findIndex((s) => s.rosterId === state.myRosterId) + 1;
+    const placement = standings.findIndex((s) => s.rosterId === rosterId) + 1;
     const percentile = placement / totalTeams;
 
     let severity = null;
@@ -610,102 +615,192 @@ function computeNeeds() {
   return needs.sort((a, b) => order[a.severity] - order[b.severity]);
 }
 
-function computeTargets(needs) {
-  if (!needs.length) return [];
-  const needPositions = new Set(needs.map((n) => n.position));
+function computeNeeds() {
+  if (!state.myRosterId) return [];
+  return rosterNeeds(state.myRosterId);
+}
+
+// Players on `roster` who play one of `positionsSet`, bench players first
+// (their owner is more likely to move them) then sorted by rank.
+function candidatesFromRoster(roster, positionsSet) {
+  const starterSet = new Set(roster.starters || []);
   const candidates = [];
-
-  state.rosters.forEach((r) => {
-    if (r.roster_id === state.myRosterId) return;
-    const starterSet = new Set(r.starters || []);
-    (r.players || []).forEach((pid) => {
-      const p = player(pid);
-      const pos = playerPosition(p);
-      if (!needPositions.has(pos)) return;
-      if (p.injury_status === "IR") return;
-      candidates.push({
-        pid,
-        pos,
-        rank: playerRank(p),
-        isBench: !starterSet.has(pid),
-        ownerRoster: r,
-      });
-    });
+  (roster.players || []).forEach((pid) => {
+    const p = player(pid);
+    const pos = playerPosition(p);
+    if (!positionsSet.has(pos)) return;
+    if (p.injury_status === "IR") return;
+    candidates.push({ pid, pos, rank: playerRank(p), isBench: !starterSet.has(pid) });
   });
-
   candidates.sort((a, b) => {
-    if (a.isBench !== b.isBench) return a.isBench ? -1 : 1; // bench players first
+    if (a.isBench !== b.isBench) return a.isBench ? -1 : 1;
     return a.rank - b.rank;
   });
-
-  const byPosition = {};
-  candidates.forEach((c) => {
-    byPosition[c.pos] = byPosition[c.pos] || [];
-    if (byPosition[c.pos].length < 5) byPosition[c.pos].push(c);
-  });
-  return byPosition;
+  return candidates;
 }
 
 function renderTradeFinder() {
   const needsCard = document.getElementById("needs-card");
-  const targetsCard = document.getElementById("targets-card");
 
   if (!state.myRosterId) {
     needsCard.innerHTML = `<h2>Team needs</h2>${emptyState("You don't own a team in this league.")}`;
-    targetsCard.innerHTML = "";
+    document.getElementById("trade-builder-card").innerHTML = "";
+    document.getElementById("trade-suggestions-grid").innerHTML = "";
     return;
   }
 
   const needs = computeNeeds();
-  if (!needs.length) {
-    needsCard.innerHTML = `<h2>Team needs</h2>${emptyState("Your roster looks solid at QB/RB/WR/TE relative to the rest of the league &mdash; no glaring needs detected.")}`;
-    targetsCard.innerHTML = "";
+  needsCard.innerHTML = needs.length
+    ? `
+      <h2>Team needs</h2>
+      <p class="player-meta" style="margin-bottom:14px">Based on how your best player at each position ranks (Sleeper's overall rank) against the rest of the league.</p>
+      ${needs
+        .map(
+          (n) => `
+        <span class="need-chip sev-${n.severity}">
+          <span class="badge badge-${n.position}">${n.position}</span>
+          <span class="sev-label">${n.severity} need</span>
+          <span class="player-meta">${n.placement}/${n.totalTeams} in league</span>
+        </span>`
+        )
+        .join("")}
+    `
+    : `<h2>Team needs</h2>${emptyState("Your roster looks solid at QB/RB/WR/TE relative to the rest of the league &mdash; no glaring needs detected.")}`;
+
+  renderTradeBuilderPicker();
+  renderTradeSuggestions();
+}
+
+function myRosterAllPlayers() {
+  const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
+  if (!myRoster) return { starters: [], bench: [] };
+  const starterSet = new Set(myRoster.starters || []);
+  const starters = (myRoster.starters || []).filter((pid) => pid && pid !== "0");
+  const bench = (myRoster.players || [])
+    .filter((pid) => !starterSet.has(pid))
+    .sort((a, b) => playerRank(player(a)) - playerRank(player(b)));
+  return { starters, bench };
+}
+
+function tradePickRowHtml(pid) {
+  const p = player(pid);
+  const pos = playerPosition(p);
+  const checked = state.selectedTradePlayers.has(pid) ? "checked" : "";
+  return `
+    <label class="trade-pick-row">
+      <input type="checkbox" data-pid="${pid}" ${checked} />
+      <span class="badge badge-${pos}">${pos}</span>
+      <span class="player-name">${playerDisplay(p)}</span>
+      <span class="player-meta">${p.team || "FA"}</span>
+      <span class="rank-tag">#${playerRank(p)}</span>
+    </label>`;
+}
+
+function renderTradeBuilderPicker() {
+  const card = document.getElementById("trade-builder-card");
+  const { starters, bench } = myRosterAllPlayers();
+
+  card.innerHTML = `
+    <h2>Build a trade offer</h2>
+    <p class="player-meta" style="margin-bottom:14px">Select one or more of your players to see which managers might want them, and what to ask for in return.</p>
+    <h3>Starters</h3>
+    <div class="trade-pick-list">${starters.map(tradePickRowHtml).join("")}</div>
+    ${bench.length ? `<h3>Bench</h3><div class="trade-pick-list">${bench.map(tradePickRowHtml).join("")}</div>` : ""}
+  `;
+
+  card.querySelectorAll("input[type=checkbox][data-pid]").forEach((cb) => {
+    cb.addEventListener("change", () => {
+      const pid = cb.dataset.pid;
+      if (cb.checked) state.selectedTradePlayers.add(pid);
+      else state.selectedTradePlayers.delete(pid);
+      renderTradeSuggestions();
+    });
+  });
+}
+
+const TRADE_RETURN_MAX = 4;
+
+function renderTradeSuggestions() {
+  const grid = document.getElementById("trade-suggestions-grid");
+  const selectedIds = [...state.selectedTradePlayers];
+
+  if (!selectedIds.length) {
+    grid.innerHTML = emptyState("Select one or more of your players above to see trade suggestions for each manager.");
     return;
   }
 
-  needsCard.innerHTML = `
-    <h2>Team needs</h2>
-    <p class="player-meta" style="margin-bottom:14px">Based on how your best player at each position ranks (Sleeper's overall rank) against the rest of the league.</p>
-    ${needs
-      .map(
-        (n) => `
-      <span class="need-chip sev-${n.severity}">
-        <span class="badge badge-${n.position}">${n.position}</span>
-        <span class="sev-label">${n.severity} need</span>
-        <span class="player-meta">${n.placement}/${n.totalTeams} in league</span>
-      </span>`
-      )
-      .join("")}
-  `;
+  const others = state.rosters.filter((r) => r.roster_id !== state.myRosterId);
+  if (!others.length) {
+    grid.innerHTML = emptyState("No other teams in this league.");
+    return;
+  }
 
-  const targets = computeTargets(needs);
-  const sections = Object.keys(targets)
-    .map((pos) => {
-      const rows = targets[pos]
-        .map((c) => {
-          const p = player(c.pid);
+  const selectedPlayers = selectedIds.map((pid) => ({ pid, p: player(pid), pos: playerPosition(player(pid)) }));
+  const myNeedPositions = new Set(computeNeeds().map((n) => n.position));
+
+  const cards = others.map((roster) => {
+    const theirNeedPositions = new Set(rosterNeeds(roster.roster_id).map((n) => n.position));
+    const fitCount = selectedPlayers.filter((sp) => theirNeedPositions.has(sp.pos)).length;
+    const candidates = candidatesFromRoster(roster, myNeedPositions).slice(0, TRADE_RETURN_MAX);
+    return { roster, theirNeedPositions, fitCount, candidates };
+  });
+
+  cards.sort((a, b) => {
+    if (b.fitCount !== a.fitCount) return b.fitCount - a.fitCount;
+    return b.candidates.length - a.candidates.length;
+  });
+
+  grid.innerHTML = cards
+    .map(({ roster, theirNeedPositions, fitCount, candidates }) => {
+      const offerRows = selectedPlayers
+        .map((sp) => {
+          const fills = theirNeedPositions.has(sp.pos);
           return `
-          <tr>
-            <td><span class="badge badge-${pos}">${pos}</span></td>
-            <td>
-              <span class="player-name">${playerDisplay(p)}</span><br/>
-              <span class="player-meta">${p.team || "FA"} &middot; ${c.isBench ? "Bench" : "Starter"}</span>
-            </td>
-            <td><span class="rank-tag">#${c.rank}</span></td>
-            <td>${teamCellHtml(c.ownerRoster)}</td>
-          </tr>`;
+          <div class="offer-row">
+            <span class="badge badge-${sp.pos}">${sp.pos}</span>
+            <span class="player-name">${playerDisplay(sp.p)}</span>
+            <span class="${fills ? "fit-yes" : "fit-no"}">${fills ? "Fills a need" : "No flagged need"}</span>
+          </div>`;
         })
         .join("");
+
+      const returnHtml = candidates.length
+        ? `<table>
+            <thead><tr><th>Pos</th><th>Player</th><th>Rank</th></tr></thead>
+            <tbody>${candidates
+              .map((c) => {
+                const cp = player(c.pid);
+                return `
+              <tr>
+                <td><span class="badge badge-${c.pos}">${c.pos}</span></td>
+                <td>
+                  <span class="player-name">${playerDisplay(cp)}</span><br/>
+                  <span class="player-meta">${cp.team || "FA"} &middot; ${c.isBench ? "Bench" : "Starter"}</span>
+                </td>
+                <td><span class="rank-tag">#${c.rank}</span></td>
+              </tr>`;
+              })
+              .join("")}</tbody>
+          </table>`
+        : `<p class="player-meta">No obvious return targets on this roster at your needed positions.</p>`;
+
+      const fitBadge =
+        fitCount > 0
+          ? `<span class="fit-summary fit-summary-yes">${fitCount}/${selectedPlayers.length} fill a need</span>`
+          : `<span class="fit-summary">No flagged needs</span>`;
+
       return `
-        <h3>${pos} targets</h3>
-        <table>
-          <thead><tr><th>Pos</th><th>Player</th><th>Rank</th><th>Owned by</th></tr></thead>
-          <tbody>${rows}</tbody>
-        </table>`;
+      <div class="card trade-manager-card">
+        <div class="manager-header">
+          ${teamCellHtml(roster)}
+          ${fitBadge}
+        </div>
+        <div class="offer-list">${offerRows}</div>
+        <h3>Consider asking for</h3>
+        ${returnHtml}
+      </div>`;
     })
     .join("");
-
-  targetsCard.innerHTML = `<h2>Suggested trade targets</h2>${sections}`;
 }
 
 // ---------- Trending (rising metrics from nflverse/BigQuery) ----------

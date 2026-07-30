@@ -32,16 +32,28 @@ different one.
 
 ## How the Trade Finder works
 
-For each of QB / RB / WR / TE, the app looks at the best player you own at
-that position (using Sleeper's overall `search_rank`, an approximate
-overall/ADP-style ranking) and compares it to every other team's best player
-at that position. If your best player at a position ranks in the bottom half
-of the league, that position is flagged as a **need**.
+**Team needs** works the same way for every roster in the league, including
+yours: for each of QB / RB / WR / TE, the app compares the best player each
+team owns at that position (using Sleeper's overall `search_rank`, an
+approximate overall/ADP-style ranking). If a team's best player at a
+position ranks in the bottom half of the league, that position is flagged
+as a **need** for that team. The card at the top of the tab shows your own
+needs as a quick summary.
 
-For each need, the app lists players from other rosters at that position,
-sorted by rank, with bench players surfaced first &mdash; those are more
-likely to be available in a trade since their current owner isn't starting
-them.
+**Build a trade offer** is interactive: check one or more players from your
+own roster (starters and bench) that you'd consider trading away. The app
+then shows a card for every other manager in the league, so you can see:
+
+- Whether each selected player fills a **flagged need** for that manager
+  (green "Fills a need") or not (muted "No flagged need") &mdash; based on
+  the same needs calculation as above, just run for their roster instead of
+  yours.
+- **Consider asking for** &mdash; up to 4 of their players at positions
+  *you* need, bench players surfaced first (more likely to be available
+  since their current owner isn't starting them).
+
+Manager cards are sorted so the teams most likely to want your offer (more
+of your selected players fill a flagged need for them) appear first.
 
 This is a heuristic based on roster construction, not weekly projections or
 trade values, so use it as a starting point for research, not gospel.
