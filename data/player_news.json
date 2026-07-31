@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-07-31T19:16:53Z",
+  "generated_at": "2026-07-31T22:00:04Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 30,
   "items": [
+    {
+      "player_name": "Drake Maye",
+      "sleeper_id": "11564",
+      "gsis_id": "00-0039851",
+      "position": "QB",
+      "team": "NEP",
+      "headline": "Connecting with Brown in practice",
+      "description": "Maye was sharp at Friday's practice, which he started off with a long touchdown pass to A.J. Brown on the first play of the 11-on-11 period, Paul Perillo of the Patriots' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/drake-maye-17673",
+      "pub_date": "2026-07-31T12:38:00Z"
+    },
+    {
+      "player_name": "A.J. Brown",
+      "sleeper_id": "5859",
+      "gsis_id": "00-0035676",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Building connection with Maye",
+      "description": "After the connection between Brown and QB Drake Maye got off to a slow start in training camp, Paul Perillo of the Patriots' official site notes that \"there have been some serious signs of life since the pads came on Thursday morning.\" Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
+      "pub_date": "2026-07-31T12:35:00Z"
+    },
     {
       "player_name": "Ricky Pearsall",
       "sleeper_id": "11638",
@@ -102,6 +124,17 @@
       "description": "Price got the opening first-team backfield reps during Seattle's first full-team scrimmage Thursday, Gregg Bell of The News Tribune reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
       "pub_date": "2026-07-31T06:59:00Z"
+    },
+    {
+      "player_name": "Chris Olave",
+      "sleeper_id": "8144",
+      "gsis_id": "00-0037239",
+      "position": "WR",
+      "team": "NOS",
+      "headline": "Handles team-drills during ramp-up",
+      "description": "Olave took part in the first session of 11-on-11 team drills during Friday's training camp practice, Ross Jackson of LouisianaSports.net reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chris-olave-15895",
+      "pub_date": "2026-07-31T01:18:00Z"
     },
     {
       "player_name": "Malik Nabers",
