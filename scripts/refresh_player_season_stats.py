@@ -40,7 +40,7 @@ SELECT
   SUM(ps.attempts) AS attempts,
   SUM(ps.passing_yards) AS passing_yards,
   SUM(ps.passing_tds) AS passing_tds,
-  SUM(ps.interceptions) AS interceptions,
+  SUM(ps.passing_interceptions) AS interceptions,
   SUM(ps.carries) AS carries,
   SUM(ps.rushing_yards) AS rushing_yards,
   SUM(ps.rushing_tds) AS rushing_tds,
