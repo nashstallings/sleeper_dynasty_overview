@@ -123,11 +123,14 @@ def parse_items(xml_bytes):
 
     root = ET.fromstring(xml_bytes)
     items = []
+    all_titles = []  # TEMP DEBUG
     for item in root.iter("item"):
         title = (item.findtext("title") or "").strip()
         link = (item.findtext("link") or "").strip()
         description = strip_html(item.findtext("description") or "")
         pub_date_raw = (item.findtext("pubDate") or "").strip()
+
+        all_titles.append(title)  # TEMP DEBUG
 
         if ":" not in title:
             continue  # not a single-player note (e.g. a general roundup article)
@@ -153,6 +156,13 @@ def parse_items(xml_bytes):
                 "pub_date": pub_date,
             }
         )
+    print(f"TEMP DEBUG: total <item> in feed = {len(all_titles)}")  # TEMP DEBUG
+    for t in all_titles:  # TEMP DEBUG
+        if "deebo" in t.lower() or "samuel" in t.lower():  # TEMP DEBUG
+            print(f"TEMP DEBUG: possible match title = {t!r}")  # TEMP DEBUG
+    print("TEMP DEBUG: first 15 raw titles:")  # TEMP DEBUG
+    for t in all_titles[:15]:  # TEMP DEBUG
+        print(f"  {t!r}")  # TEMP DEBUG
     return items
 
 
