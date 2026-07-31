@@ -212,10 +212,12 @@ agent").
 
 The stat line comes from `scripts/refresh_player_season_stats.py`, which
 aggregates BigQuery's weekly `nflreadpy.player_stats` into season totals
-(the last 3 regular seasons) per player, refreshed weekly via
-`.github/workflows/refresh-player-season-stats.yml` into
-`data/player_season_stats.json`. Columns shown depend on position (e.g. a
-QB sees completions/attempts/passing yards/TDs/INTs, a WR sees
+per player (up to the last 3 regular seasons, whenever that much history
+is loaded &mdash; at the moment the source table only has the current
+season, so cards show one year until more history is backfilled upstream),
+refreshed weekly via `.github/workflows/refresh-player-season-stats.yml`
+into `data/player_season_stats.json`. Columns shown depend on position
+(e.g. a QB sees completions/attempts/passing yards/TDs/INTs, a WR sees
 targets/receptions/receiving yards/TDs), plus PPR fantasy points as a
 position-agnostic summary. Uses the same `GCP_SA_KEY` secret as the other
 BigQuery-backed pipelines.
