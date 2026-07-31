@@ -1,16 +1,27 @@
 {
-  "generated_at": "2026-07-31T14:27:58Z",
+  "generated_at": "2026-07-31T15:25:05Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 30,
   "items": [
+    {
+      "player_name": "Tucker Kraft",
+      "sleeper_id": "9484",
+      "gsis_id": "00-0038996",
+      "position": "TE",
+      "team": "GBP",
+      "headline": "Brought off PUP list",
+      "description": "Packers head coach Matt LaFleur said Friday that Kraft (ACL) is being brought off the active/PUP list and will practice in some capacity, Matt Schneidman of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tucker-kraft-16649",
+      "pub_date": "2026-07-31T08:04:00Z"
+    },
     {
       "player_name": "Kyle Monangai",
       "sleeper_id": "12534",
       "gsis_id": "00-0040236",
       "position": "RB",
       "team": "CHI",
-      "headline": "Sidelined Friday",
+      "headline": "Unavailable Friday",
       "description": "Monangai was absent from Friday's practice due to an undisclosed reason, Patrick Finley of the Chicago Sun-Times reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/kyle-monangai-18520",
       "pub_date": "2026-07-31T07:23:00Z"
