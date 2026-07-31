@@ -17,9 +17,17 @@ column instead of trusting name strings.
 
 The output intentionally is NOT filtered to any specific team/league,
 since this script has no notion of who's viewing the site -- it's a
-general "recent player news, with an ID attached" feed. The front-end
-filters it down to the loaded league's roster and the desired time
-window (last 2 weeks) at render time.
+general "recent player news, with an ID attached" feed covering every
+current QB/RB/WR/TE. The front-end filters it down to the loaded
+league's roster and the desired time window (last 30 days) at render
+time.
+
+RotoWire's RSS feed only exposes a small rolling window of its most
+recent items, not a 30-day archive, so each run merges newly matched
+items into whatever was already collected (see load_existing_items)
+rather than overwriting -- otherwise coverage would be capped at
+whatever sliver of news happens to still be in the feed at the moment
+of each individual fetch.
 
 Requires GCP_SA_KEY env var (same as refresh_rising_metrics.py).
 """
@@ -117,6 +125,22 @@ def fetch_feed_xml():
         return resp.read()
 
 
+def load_existing_items():
+    """RotoWire's RSS feed only exposes a small rolling window of its most
+    recent items (often a literal handful across the whole league), not a
+    30-day archive. If we rebuilt the output from scratch every run, our
+    real coverage would be capped at whatever sliver of news happens to
+    still be in that window at each fetch -- so instead we carry forward
+    whatever we already collected and only let items age out via
+    MAX_AGE_DAYS, not via a fresh feed pull evicting them early."""
+    if not OUT_PATH.exists():
+        return []
+    try:
+        return json.loads(OUT_PATH.read_text()).get("items", [])
+    except (json.JSONDecodeError, OSError):
+        return []
+
+
 def parse_items(xml_bytes):
     # Local import: keep the XML parser import next to its only use.
     import xml.etree.ElementTree as ET
@@ -165,7 +189,7 @@ def main():
 
     cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
     matched, unmatched, stale = 0, 0, 0
-    output_items = []
+    fresh_items = []
 
     for item in raw_items:
         if item["pub_date"] < cutoff:
@@ -176,7 +200,7 @@ def main():
             unmatched += 1
             continue
         matched += 1
-        output_items.append(
+        fresh_items.append(
             {
                 "player_name": player["display_name"],
                 "sleeper_id": player["sleeper_id"],
@@ -190,6 +214,26 @@ def main():
             }
         )
 
+    # Merge with whatever we already collected (see load_existing_items for
+    # why), keyed by (sleeper_id, pub_date) since RotoWire's <link> always
+    # points at the player's profile page, not a per-story URL.
+    existing_items = load_existing_items()
+    existing_keys = {(it.get("sleeper_id"), it.get("pub_date")) for it in existing_items}
+    fresh_keys = {(it.get("sleeper_id"), it.get("pub_date")) for it in fresh_items}
+    newly_added = len(fresh_keys - existing_keys)
+
+    combined = {}
+    for it in existing_items + fresh_items:
+        combined[(it.get("sleeper_id"), it.get("pub_date"))] = it
+
+    def still_fresh(it):
+        try:
+            pub = datetime.strptime(it["pub_date"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+        except (TypeError, ValueError):
+            return False
+        return pub >= cutoff
+
+    output_items = [it for it in combined.values() if still_fresh(it)]
     output_items.sort(key=lambda x: x["pub_date"], reverse=True)
 
     output = {
@@ -203,9 +247,9 @@ def main():
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(output, indent=2) + "\n")
     print(
-        f"Wrote {OUT_PATH}: {len(output_items)} items "
-        f"(matched={matched}, unmatched_name={unmatched}, older_than_{MAX_AGE_DAYS}d={stale}, "
-        f"total_feed_items={len(raw_items)})"
+        f"Wrote {OUT_PATH}: {len(output_items)} items total ({newly_added} new this run). "
+        f"This fetch: matched={matched}, unmatched_name={unmatched}, "
+        f"older_than_{MAX_AGE_DAYS}d={stale}, total_feed_items={len(raw_items)}"
     )
 
 

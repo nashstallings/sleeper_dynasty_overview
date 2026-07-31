@@ -179,13 +179,23 @@ intended for syndication. `.github/workflows/refresh-player-news.yml` runs
 2. Keeps only items matching RotoWire's "Player Name: headline" convention
    (skipping general roundup articles that aren't about one player).
 3. Resolves each player name against the same BigQuery player crosswalk used
-   by the Trending pipeline, attaching a real Sleeper `player_id` &mdash; this
-   avoids fragile client-side name matching (Jr./Sr./punctuation differences).
-4. Commits the result to `data/player_news.json`.
+   by the Trending pipeline (covering every current QB/RB/WR/TE, not just
+   players on any particular team), attaching a real Sleeper `player_id`
+   &mdash; this avoids fragile client-side name matching (Jr./Sr./punctuation
+   differences).
+4. Merges the newly matched items into whatever was already collected and
+   commits the result to `data/player_news.json`. RotoWire's feed only
+   exposes a small rolling window of its most recent items rather than a
+   full 30-day archive, so each run accumulates onto the existing file
+   (items simply age out after 30 days) instead of overwriting it &mdash;
+   otherwise coverage would be capped at whatever sliver of news happened
+   to still be in the feed at the moment of that one fetch.
 
-The My Team tab's Recent News card fetches that file and filters it down to
-players on your currently-loaded roster, from the last 30 days. Uses the same
-`GCP_SA_KEY` secret as the Trending refresh; no separate credential needed.
+The My Team tab's Recent News card fetches that accumulated file and filters
+it client-side down to players on your currently-loaded roster, from the
+last 30 days &mdash; so switching leagues re-filters the same broad dataset
+rather than needing a per-league fetch. Uses the same `GCP_SA_KEY` secret as
+the Trending refresh; no separate credential needed.
 
 ## Running it
 
