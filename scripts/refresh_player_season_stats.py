@@ -19,8 +19,8 @@ PROJECT_ID = "ff-python-api"
 DATASET = "nflreadpy"
 OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "player_season_stats.json"
 
-# Current season plus this many prior ones (e.g. 3 total seasons of history).
-SEASONS_BACK = 3
+# Current season plus this many prior ones (e.g. 4 total seasons of history).
+SEASONS_BACK = 4
 
 QUERY = f"""
 WITH bounds AS (
