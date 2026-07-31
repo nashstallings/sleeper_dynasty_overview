@@ -1,9 +1,42 @@
 {
-  "generated_at": "2026-07-31T16:41:50Z",
+  "generated_at": "2026-07-31T19:16:53Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 30,
   "items": [
+    {
+      "player_name": "Ricky Pearsall",
+      "sleeper_id": "11638",
+      "gsis_id": "00-0039916",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Knee injury being evaluated",
+      "description": "San Francisco assistant head coach Chris Foerster said Friday that the team is \"continuing to evaluate\" Pearsall (knee) after the wide receiver aggravated the PCL issue in his right knee during early training camp practices, Matt Barrows of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ricky-pearsall-17761",
+      "pub_date": "2026-07-31T12:11:00Z"
+    },
+    {
+      "player_name": "Rashee Rice",
+      "sleeper_id": "10229",
+      "gsis_id": "00-0039067",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Easing back in",
+      "description": "Rice (knee) is being eased back into the mix during training camp, Jesse Newell of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rashee-rice-16963",
+      "pub_date": "2026-07-31T10:59:00Z"
+    },
+    {
+      "player_name": "Tua Tagovailoa",
+      "sleeper_id": "6768",
+      "gsis_id": "00-0036212",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Full return TBD",
+      "description": "Tagovailoa (back) did not take part in team drills Friday due to a \"precautionary thing\" related to back tightness and said he is unsure when he will be fully cleared for on-field activities, Marc Raimondi of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tua-tagovailoa-14465",
+      "pub_date": "2026-07-31T10:16:00Z"
+    },
     {
       "player_name": "Quinshon Judkins",
       "sleeper_id": "12512",
