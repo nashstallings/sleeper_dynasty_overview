@@ -173,7 +173,7 @@ can also trigger a refresh manually from the Actions tab
 
 RotoWire publishes a public [NFL news RSS feed](https://www.rotowire.com/rss/news.php?sport=NFL)
 intended for syndication. `.github/workflows/refresh-player-news.yml` runs
-`scripts/refresh_player_news.py` daily, which:
+`scripts/refresh_player_news.py` every 3 hours, which:
 
 1. Fetches that feed.
 2. Keeps only items matching RotoWire's "Player Name: headline" convention

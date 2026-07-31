@@ -2,8 +2,8 @@ name: Refresh Player News
 
 on:
   schedule:
-    # Daily at 13:00 UTC — news is time-sensitive, unlike the weekly stats refresh
-    - cron: '0 13 * * *'
+    # Every 3 hours — news is time-sensitive, unlike the weekly stats refresh
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 jobs:
