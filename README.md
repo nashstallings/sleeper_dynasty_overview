@@ -216,8 +216,13 @@ per player (up to the last 4 regular seasons, 2022&ndash;2025 currently),
 refreshed weekly via `.github/workflows/refresh-player-season-stats.yml`
 into `data/player_season_stats.json`. Columns shown depend on position
 (e.g. a QB sees completions/attempts/passing yards/TDs/INTs, a WR sees
-targets/receptions/receiving yards/TDs), plus PPR fantasy points as a
-position-agnostic summary. Uses the same `GCP_SA_KEY` secret as the other
+targets/receptions/receiving yards/TDs), plus a fantasy-points column
+recalculated per season from the raw stats using the *loaded league's own*
+`scoring_settings` (passing/rushing/receiving yardage and TD rates,
+interceptions, receptions, and TE-premium bonus) &mdash; so a standard,
+half-PPR, full-PPR, or TE-premium league each see accurate season totals for
+their own rules, not a generic PPR number. Falls back to a standard PPR total
+if no league is loaded. Uses the same `GCP_SA_KEY` secret as the other
 BigQuery-backed pipelines.
 
 ## Running it

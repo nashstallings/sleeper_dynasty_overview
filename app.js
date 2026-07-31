@@ -1306,7 +1306,37 @@ function fmtPpr(val) {
   return val === null || val === undefined ? "&mdash;" : val.toFixed(1);
 }
 
-// Which raw season-stat fields to show as columns, per position.
+function leagueScoringSettings() {
+  return (state.league && state.league.scoring_settings) || null;
+}
+
+// Recompute season fantasy points from the raw stat line using the loaded
+// league's own scoring_settings (falls back to the precomputed PPR total
+// when no league scoring is available, e.g. before a league is loaded).
+function computeLeaguePoints(s, pos) {
+  const sc = leagueScoringSettings();
+  if (!sc) return s.fantasy_points_ppr;
+  const n = (v) => (typeof v === "number" ? v : 0);
+  let pts =
+    n(s.passing_yards) * n(sc.pass_yd) +
+    n(s.passing_tds) * n(sc.pass_td) +
+    n(s.interceptions) * n(sc.pass_int) +
+    n(s.rushing_yards) * n(sc.rush_yd) +
+    n(s.rushing_tds) * n(sc.rush_td) +
+    n(s.receptions) * n(sc.rec) +
+    n(s.receiving_yards) * n(sc.rec_yd) +
+    n(s.receiving_tds) * n(sc.rec_td);
+  if (pos === "TE") pts += n(s.receptions) * n(sc.bonus_rec_te);
+  return pts;
+}
+
+function pointsColumnLabel() {
+  return leagueScoringSettings() ? "Lg Pts" : "PPR Pts";
+}
+
+// Which raw season-stat fields to show as columns, per position. The final
+// "points" column has no fixed key/label: it's resolved at render time so it
+// can reflect the loaded league's scoring settings.
 const STAT_COLUMNS_BY_POSITION = {
   QB: [
     { label: "Comp/Att", format: (s) => `${fmtStat(s.completions)}/${fmtStat(s.attempts)}` },
@@ -1315,7 +1345,7 @@ const STAT_COLUMNS_BY_POSITION = {
     { label: "INT", key: "interceptions" },
     { label: "Rush Yds", key: "rushing_yards" },
     { label: "Rush TD", key: "rushing_tds" },
-    { label: "PPR Pts", format: (s) => fmtPpr(s.fantasy_points_ppr) },
+    { points: true },
   ],
   RB: [
     { label: "Att", key: "carries" },
@@ -1324,14 +1354,14 @@ const STAT_COLUMNS_BY_POSITION = {
     { label: "Rec", key: "receptions" },
     { label: "Rec Yds", key: "receiving_yards" },
     { label: "Rec TD", key: "receiving_tds" },
-    { label: "PPR Pts", format: (s) => fmtPpr(s.fantasy_points_ppr) },
+    { points: true },
   ],
   WR: [
     { label: "Tgt", key: "targets" },
     { label: "Rec", key: "receptions" },
     { label: "Rec Yds", key: "receiving_yards" },
     { label: "Rec TD", key: "receiving_tds" },
-    { label: "PPR Pts", format: (s) => fmtPpr(s.fantasy_points_ppr) },
+    { points: true },
   ],
 };
 STAT_COLUMNS_BY_POSITION.TE = STAT_COLUMNS_BY_POSITION.WR;
@@ -1350,21 +1380,32 @@ function renderPlayerCardStats(pid, pos) {
   }
 
   const cols = STAT_COLUMNS_BY_POSITION[pos] || STAT_COLUMNS_BY_POSITION.WR;
+  const headers = cols.map((c) => (c.points ? pointsColumnLabel() : c.label));
   const rows = seasons
     .map((season) => {
       const s = playerStats.seasons[season];
-      const cells = cols.map((c) => `<td>${c.format ? c.format(s) : fmtStat(s[c.key])}</td>`).join("");
+      const cells = cols
+        .map((c) => {
+          if (c.points) return `<td>${fmtPpr(computeLeaguePoints(s, pos))}</td>`;
+          return `<td>${c.format ? c.format(s) : fmtStat(s[c.key])}</td>`;
+        })
+        .join("");
       return `<tr><td>${season}</td><td>${s.team || "&mdash;"}</td><td>${fmtStat(s.games)}</td>${cells}</tr>`;
     })
     .join("");
 
+  const scoringNote = leagueScoringSettings()
+    ? `Points reflect ${escapeHtml((state.league && state.league.name) || "this league")}'s scoring settings.`
+    : `Points shown are standard PPR (no league scoring loaded).`;
+
   container.innerHTML = `
     <table class="player-card-table">
       <thead>
-        <tr><th>Season</th><th>Team</th><th>G</th>${cols.map((c) => `<th>${c.label}</th>`).join("")}</tr>
+        <tr><th>Season</th><th>Team</th><th>G</th>${headers.map((h) => `<th>${h}</th>`).join("")}</tr>
       </thead>
       <tbody>${rows}</tbody>
-    </table>`;
+    </table>
+    <p class="player-meta player-card-scoring-note">${scoringNote}</p>`;
 }
 
 async function openPlayerCard(pid) {
