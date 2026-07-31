@@ -13,6 +13,10 @@ football account and helps you:
   whether they're on your roster, a rival's, or unrostered in your league.
 - **Catch up on player news** &mdash; a Recent News card on the My Team tab shows
   the last 30 days of news for players on your roster.
+- **Look up any player** &mdash; click a player's name anywhere in the app (My
+  Team, Trade Finder, Trending) to open a card with their photo, team,
+  position, who owns them in your league (or "Free agent"), and their stat
+  line for the last few seasons.
 
 There is no backend, no build step, and no login. It's plain HTML/CSS/JS that
 talks directly to Sleeper's public, read-only API from your browser. Nothing
@@ -196,6 +200,25 @@ it client-side down to players on your currently-loaded roster, from the
 last 30 days &mdash; so switching leagues re-filters the same broad dataset
 rather than needing a per-league fetch. Uses the same `GCP_SA_KEY` secret as
 the Trending refresh; no separate credential needed.
+
+## Player cards
+
+Click any player's name anywhere in the app &mdash; Starters/Bench, the
+Trade Finder builder and manager suggestions, Trending leaderboards &mdash;
+to open a card with their headshot ([Sleeper's own CDN](https://sleepercdn.com/),
+falling back to a colored initial if a player has no photo yet), team,
+position, and who currently owns them in your loaded league (or "Free
+agent").
+
+The stat line comes from `scripts/refresh_player_season_stats.py`, which
+aggregates BigQuery's weekly `nflreadpy.player_stats` into season totals
+(the last 3 regular seasons) per player, refreshed weekly via
+`.github/workflows/refresh-player-season-stats.yml` into
+`data/player_season_stats.json`. Columns shown depend on position (e.g. a
+QB sees completions/attempts/passing yards/TDs/INTs, a WR sees
+targets/receptions/receiving yards/TDs), plus PPR fantasy points as a
+position-agnostic summary. Uses the same `GCP_SA_KEY` secret as the other
+BigQuery-backed pipelines.
 
 ## Running it
 

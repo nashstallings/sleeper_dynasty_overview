@@ -89,6 +89,7 @@ const state = {
   tradedPicks: [],
   draftRounds: 4,
   pickOwnership: null,
+  playerSeasonStats: null,
 };
 
 // ---------- low-level helpers ----------
@@ -414,7 +415,7 @@ function playerRow(pid, { slot = null } = {}) {
     <tr>
       <td><span class="badge badge-${badgeClass}">${badgeLabel}</span></td>
       <td>
-        <span class="player-name">${playerDisplay(p)}</span>${posTag}${injury}<br/>
+        <span class="player-name" data-player-id="${pid}">${playerDisplay(p)}</span>${posTag}${injury}<br/>
         <span class="player-meta">${p.team || "FA"}</span>
       </td>
       <td><span class="rank-tag">#${playerRank(p)}</span></td>
@@ -510,7 +511,7 @@ async function renderPlayerNews() {
       <div class="news-item">
         <div class="news-item-head">
           <span class="badge badge-${n.position}">${n.position}</span>
-          <span class="player-name">${n.player_name}</span>
+          <span class="player-name" data-player-id="${n.sleeper_id}">${n.player_name}</span>
           <span class="player-meta">${n.team || "FA"}</span>
           <span class="news-date">${relativeDate(n.pub_date)}</span>
         </div>
@@ -983,7 +984,7 @@ function tradePickRowHtml(id) {
     <label class="trade-pick-row">
       <input type="checkbox" data-pid="${id}" ${checked} />
       <span class="badge badge-${pos}">${pos}</span>
-      <span class="player-name">${playerDisplay(p)}</span>
+      <span class="player-name" data-player-id="${id}">${playerDisplay(p)}</span>
       <span class="player-meta">${p.team || "FA"}</span>
       <span class="value-tag">${formatValue(playerValue(id))}</span>
       <span class="rank-tag">#${playerRank(p)}</span>
@@ -1109,7 +1110,7 @@ function renderTradeSuggestions() {
           return `
           <div class="offer-row">
             <span class="badge badge-${sp.pos}">${sp.pos}</span>
-            <span class="player-name">${sp.label}</span>
+            <span class="player-name" data-player-id="${sp.pid}">${sp.label}</span>
             <span class="value-tag">${formatValue(sp.value)}</span>
             <span class="${fills ? "fit-yes" : "fit-no"}">${fills ? "Fills a need" : "No flagged need"}</span>
           </div>`;
@@ -1148,7 +1149,7 @@ function renderTradeSuggestions() {
                 <tr>
                   <td><span class="badge badge-${c.pos}">${c.pos}</span></td>
                   <td>
-                    <span class="player-name">${playerDisplay(cp)}</span>${c.needFill ? ` <span class="fit-yes">Fills a need</span>` : ""}<br/>
+                    <span class="player-name" data-player-id="${c.pid}">${playerDisplay(cp)}</span>${c.needFill ? ` <span class="fit-yes">Fills a need</span>` : ""}<br/>
                     <span class="player-meta">${cp.team || "FA"} &middot; ${c.isBench ? "Bench" : "Starter"}</span>
                   </td>
                   <td>${formatValue(c.value)}</td>
@@ -1253,7 +1254,7 @@ function renderTrendingContent() {
           <tr>
             <td><span class="badge badge-${l.position}">${l.position}</span></td>
             <td>
-              <span class="player-name">${l.name}</span><br/>
+              <span class="player-name" data-player-id="${l.sleeper_id}">${l.name}</span><br/>
               <span class="player-meta">${l.team}</span>
             </td>
             <td class="player-meta">${formatMetricValue(l.m.prior, def.format)} &rarr; <strong>${formatMetricValue(l.m.recent, def.format)}</strong></td>
@@ -1285,6 +1286,146 @@ function renderTrendingContent() {
   if (!metricCards) {
     introCard.insertAdjacentHTML("beforeend", emptyState("No qualifying risers for this position group yet."));
   }
+}
+
+// ---------- Player card ----------
+
+window.handlePlayerPhotoError = function (img) {
+  const span = document.createElement("span");
+  span.className = "player-card-photo-fallback";
+  span.style.background = img.dataset.color;
+  span.textContent = img.dataset.initial || "?";
+  img.replaceWith(span);
+};
+
+function fmtStat(val) {
+  return val === null || val === undefined ? "&mdash;" : val.toLocaleString();
+}
+
+function fmtPpr(val) {
+  return val === null || val === undefined ? "&mdash;" : val.toFixed(1);
+}
+
+// Which raw season-stat fields to show as columns, per position.
+const STAT_COLUMNS_BY_POSITION = {
+  QB: [
+    { label: "Comp/Att", format: (s) => `${fmtStat(s.completions)}/${fmtStat(s.attempts)}` },
+    { label: "Pass Yds", key: "passing_yards" },
+    { label: "Pass TD", key: "passing_tds" },
+    { label: "INT", key: "interceptions" },
+    { label: "Rush Yds", key: "rushing_yards" },
+    { label: "Rush TD", key: "rushing_tds" },
+    { label: "PPR Pts", format: (s) => fmtPpr(s.fantasy_points_ppr) },
+  ],
+  RB: [
+    { label: "Att", key: "carries" },
+    { label: "Rush Yds", key: "rushing_yards" },
+    { label: "Rush TD", key: "rushing_tds" },
+    { label: "Rec", key: "receptions" },
+    { label: "Rec Yds", key: "receiving_yards" },
+    { label: "Rec TD", key: "receiving_tds" },
+    { label: "PPR Pts", format: (s) => fmtPpr(s.fantasy_points_ppr) },
+  ],
+  WR: [
+    { label: "Tgt", key: "targets" },
+    { label: "Rec", key: "receptions" },
+    { label: "Rec Yds", key: "receiving_yards" },
+    { label: "Rec TD", key: "receiving_tds" },
+    { label: "PPR Pts", format: (s) => fmtPpr(s.fantasy_points_ppr) },
+  ],
+};
+STAT_COLUMNS_BY_POSITION.TE = STAT_COLUMNS_BY_POSITION.WR;
+
+function renderPlayerCardStats(pid, pos) {
+  const container = document.querySelector("#player-card .player-card-stats");
+  if (!container) return;
+
+  const data = state.playerSeasonStats;
+  const playerStats = data && data.players && data.players[pid];
+  const seasons = playerStats ? Object.keys(playerStats.seasons || {}).sort((a, b) => b - a) : [];
+
+  if (!seasons.length) {
+    container.innerHTML = `<p class="player-meta">No season stats available for this player.</p>`;
+    return;
+  }
+
+  const cols = STAT_COLUMNS_BY_POSITION[pos] || STAT_COLUMNS_BY_POSITION.WR;
+  const rows = seasons
+    .map((season) => {
+      const s = playerStats.seasons[season];
+      const cells = cols.map((c) => `<td>${c.format ? c.format(s) : fmtStat(s[c.key])}</td>`).join("");
+      return `<tr><td>${season}</td><td>${s.team || "&mdash;"}</td><td>${fmtStat(s.games)}</td>${cells}</tr>`;
+    })
+    .join("");
+
+  container.innerHTML = `
+    <table class="player-card-table">
+      <thead>
+        <tr><th>Season</th><th>Team</th><th>G</th>${cols.map((c) => `<th>${c.label}</th>`).join("")}</tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+}
+
+async function openPlayerCard(pid) {
+  const overlay = document.getElementById("player-card-overlay");
+  const card = document.getElementById("player-card");
+  const p = player(pid);
+  const pos = playerPosition(p);
+  const status = leagueStatusForSleeperId(pid);
+  const name = playerDisplay(p);
+  const initial = (name[0] || "?").toUpperCase();
+  const color = colorForName(name);
+
+  card.innerHTML = `
+    <button type="button" class="player-card-close" aria-label="Close">&times;</button>
+    <div class="player-card-head">
+      <img class="player-card-photo" src="https://sleepercdn.com/content/nfl/players/${pid}.jpg" alt=""
+        data-initial="${escapeHtml(initial)}" data-color="${color}" onerror="handlePlayerPhotoError(this)" />
+      <div class="player-card-head-info">
+        <div class="player-card-name">${escapeHtml(playerDisplay(p))}</div>
+        <div class="player-card-meta-row">
+          <span class="badge badge-${pos}">${pos}</span>
+          <span class="player-meta">${p.team || "FA"}</span>
+        </div>
+        <div class="player-card-owner">${status.html}</div>
+      </div>
+    </div>
+    <div class="player-card-stats">
+      <p class="spinner-note">Loading season stats...</p>
+    </div>`;
+
+  overlay.classList.remove("hidden");
+  card.querySelector(".player-card-close").addEventListener("click", closePlayerCard);
+
+  if (!state.playerSeasonStats) {
+    try {
+      const res = await fetch("data/player_season_stats.json", { cache: "no-store" });
+      if (res.ok) state.playerSeasonStats = await res.json();
+    } catch {
+      // season stats are optional enrichment; the card still shows the basics without them
+    }
+  }
+  renderPlayerCardStats(pid, pos);
+}
+
+function closePlayerCard() {
+  document.getElementById("player-card-overlay").classList.add("hidden");
+}
+
+function setupPlayerCard() {
+  document.addEventListener("click", (e) => {
+    const nameEl = e.target.closest(".player-name[data-player-id]");
+    if (nameEl) {
+      e.preventDefault(); // a name inside a trade-pick-row <label> would otherwise also toggle its checkbox
+      openPlayerCard(nameEl.dataset.playerId);
+      return;
+    }
+    if (e.target.id === "player-card-overlay") closePlayerCard();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closePlayerCard();
+  });
 }
 
 // ---------- tabs ----------
@@ -1320,6 +1461,7 @@ function setupTabs() {
 
 function init() {
   setupTabs();
+  setupPlayerCard();
 
   const seasonInput = document.getElementById("season");
   seasonInput.value = new Date().getFullYear();
