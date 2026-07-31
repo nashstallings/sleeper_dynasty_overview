@@ -486,7 +486,7 @@ async function renderPlayerNews() {
 
   try {
     if (!state.playerNews) {
-      const res = await fetch("data/player_news.json");
+      const res = await fetch("data/player_news.json", { cache: "no-store" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       state.playerNews = await res.json();
     }
