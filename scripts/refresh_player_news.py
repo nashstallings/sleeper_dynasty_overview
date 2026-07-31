@@ -153,9 +153,6 @@ def parse_items(xml_bytes):
         description = strip_html(item.findtext("description") or "")
         pub_date_raw = (item.findtext("pubDate") or "").strip()
 
-        if "gibbs" in title.lower():  # TEMP DEBUG
-            print(f"TEMP DEBUG: raw title containing 'gibbs' = {title!r}")  # TEMP DEBUG
-
         if ":" not in title:
             continue  # not a single-player note (e.g. a general roundup article)
         name_part, _, headline_part = title.partition(":")
@@ -186,11 +183,6 @@ def parse_items(xml_bytes):
 def main():
     client = get_bq_client()
     lookup = load_player_lookup(client)
-
-    gibbs_keys = [k for k in lookup if "gibbs" in k]  # TEMP DEBUG
-    print(f"TEMP DEBUG: crosswalk keys containing 'gibbs' = {gibbs_keys}")  # TEMP DEBUG
-    for k in gibbs_keys:  # TEMP DEBUG
-        print(f"TEMP DEBUG: lookup[{k!r}] = {lookup[k]!r}")  # TEMP DEBUG
 
     xml_bytes = fetch_feed_xml()
     raw_items = parse_items(xml_bytes)
