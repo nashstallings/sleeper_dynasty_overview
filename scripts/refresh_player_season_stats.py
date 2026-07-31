@@ -69,6 +69,14 @@ def get_client():
 
 def main():
     client = get_client()
+
+    debug_rows = list(client.query(  # TEMP DEBUG
+        f"SELECT season, COUNT(*) AS n FROM `{PROJECT_ID}.{DATASET}.player_stats` "  # TEMP DEBUG
+        "WHERE season_type = 'REG' GROUP BY season ORDER BY season"  # TEMP DEBUG
+    ).result())  # TEMP DEBUG
+    for r in debug_rows:  # TEMP DEBUG
+        print(f"TEMP DEBUG: season={r.season} rows={r.n}")  # TEMP DEBUG
+
     rows = list(client.query(QUERY).result())
 
     players = {}
