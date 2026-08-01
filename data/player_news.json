@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-08-01T13:07:09Z",
+  "generated_at": "2026-08-01T15:57:24Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 30,
   "items": [
+    {
+      "player_name": "Cyrus Allen",
+      "sleeper_id": "13413",
+      "gsis_id": "00-0040890",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Carted off field with knee injury",
+      "description": "Allen was carted off the field during Saturday's training camp practice due to an apparent left knee injury, Nate Taylor of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cyrus-allen-19631",
+      "pub_date": "2026-08-01T08:18:00Z"
+    },
     {
       "player_name": "Drake Maye",
       "sleeper_id": "11564",
