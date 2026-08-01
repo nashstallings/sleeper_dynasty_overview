@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T13:28:18.085485+00:00",
+  "generated_at": "2026-08-01T12:52:58.755420+00:00",
   "source": "DynastyProcess",
   "source_url": "https://github.com/dynastyprocess/data",
   "players": {
@@ -3806,45 +3806,21 @@
     }
   },
   "picks": {
-    "2028 2nd": {
-      "value_1qb": 163,
-      "value_2qb": 196
-    },
-    "2026 5th": {
-      "value_1qb": 6,
-      "value_2qb": 8
-    },
-    "2027 3rd": {
-      "value_1qb": 38,
-      "value_2qb": 45
-    },
-    "2026 1st": {
-      "value_1qb": 2410,
-      "value_2qb": 3036
-    },
-    "2028 1st": {
-      "value_1qb": 1261,
-      "value_2qb": 1572
-    },
-    "2026 4th": {
-      "value_1qb": 14,
-      "value_2qb": 18
-    },
     "2028 4th": {
       "value_1qb": 8,
       "value_2qb": 11
-    },
-    "2027 2nd": {
-      "value_1qb": 204,
-      "value_2qb": 245
     },
     "2027 5th": {
       "value_1qb": 5,
       "value_2qb": 6
     },
-    "2026 3rd": {
-      "value_1qb": 52,
-      "value_2qb": 62
+    "2026 5th": {
+      "value_1qb": 6,
+      "value_2qb": 8
+    },
+    "2027 1st": {
+      "value_1qb": 1576,
+      "value_2qb": 1966
     },
     "2028 3rd": {
       "value_1qb": 30,
@@ -3854,17 +3830,41 @@
       "value_1qb": 11,
       "value_2qb": 14
     },
-    "2027 1st": {
-      "value_1qb": 1576,
-      "value_2qb": 1966
+    "2026 2nd": {
+      "value_1qb": 294,
+      "value_2qb": 353
+    },
+    "2026 1st": {
+      "value_1qb": 2410,
+      "value_2qb": 3036
+    },
+    "2027 3rd": {
+      "value_1qb": 38,
+      "value_2qb": 45
+    },
+    "2026 4th": {
+      "value_1qb": 14,
+      "value_2qb": 18
+    },
+    "2028 2nd": {
+      "value_1qb": 163,
+      "value_2qb": 196
+    },
+    "2026 3rd": {
+      "value_1qb": 52,
+      "value_2qb": 62
     },
     "2028 5th": {
       "value_1qb": 4,
       "value_2qb": 5
     },
-    "2026 2nd": {
-      "value_1qb": 294,
-      "value_2qb": 353
+    "2028 1st": {
+      "value_1qb": 1261,
+      "value_2qb": 1572
+    },
+    "2027 2nd": {
+      "value_1qb": 204,
+      "value_2qb": 245
     }
   }
 }
