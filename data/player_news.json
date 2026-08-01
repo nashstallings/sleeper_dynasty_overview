@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T22:00:04Z",
+  "generated_at": "2026-08-01T02:21:51Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 30,
@@ -126,12 +126,23 @@
       "pub_date": "2026-07-31T06:59:00Z"
     },
     {
+      "player_name": "Tucker Kraft",
+      "sleeper_id": "9484",
+      "gsis_id": "00-0038996",
+      "position": "TE",
+      "team": "GBP",
+      "headline": "Logs first practice since ACL tear",
+      "description": "Kraft (knee), who was activated from the active/PUP list Friday, took part in individual drills at his first practice of Packers training camp, Matt Schneidman of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tucker-kraft-16649",
+      "pub_date": "2026-07-31T03:55:00Z"
+    },
+    {
       "player_name": "Chris Olave",
       "sleeper_id": "8144",
       "gsis_id": "00-0037239",
       "position": "WR",
       "team": "NOS",
-      "headline": "Handles team-drills during ramp-up",
+      "headline": "Handles team drills during ramp-up",
       "description": "Olave took part in the first session of 11-on-11 team drills during Friday's training camp practice, Ross Jackson of LouisianaSports.net reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/chris-olave-15895",
       "pub_date": "2026-07-31T01:18:00Z"
