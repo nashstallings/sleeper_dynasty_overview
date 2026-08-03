@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-03T17:06:37Z",
+  "generated_at": "2026-08-03T19:24:05Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 30,
   "items": [
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Not practicing, but catches passes",
+      "description": "Evans (quadriceps) didn't don a uniform at Monday's practice, but he did make some stationary over-the-shoulder catches during special-teams drills, Matt Barrows of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-08-03T12:19:00Z"
+    },
+    {
+      "player_name": "Dak Prescott",
+      "sleeper_id": "3294",
+      "gsis_id": "00-0033077",
+      "position": "QB",
+      "team": "DAL",
+      "headline": "Won't play in preseason",
+      "description": "Coach Brian Schottenheimer said Monday that Cowboys starters won't play in the preseason, Nick Harris of the Fort Worth Star-Telegram reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dak-prescott-11008",
+      "pub_date": "2026-08-03T11:38:00Z"
+    },
+    {
+      "player_name": "Makai Lemon",
+      "sleeper_id": "13294",
+      "gsis_id": "00-0040867",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Held out of team drills",
+      "description": "Lemon (undisclosed) didn't take part in team drills during Monday's practice, Martin Frank of The Delaware News Journal reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/makai-lemon-19231",
+      "pub_date": "2026-08-03T11:05:00Z"
+    },
+    {
+      "player_name": "A.J. Brown",
+      "sleeper_id": "5859",
+      "gsis_id": "00-0035676",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Works through thumb issue",
+      "description": "Though Brown dislocated his thumb during Monday's practice, he continued to work through the session afterward, Mark Daniels of MassLive.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
+      "pub_date": "2026-08-03T10:29:00Z"
+    },
+    {
+      "player_name": "De'Zhaun Stribling",
+      "sleeper_id": "13417",
+      "gsis_id": "00-0041035",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Missing practice again",
+      "description": "Stribling (hamstring) remains day-to-day and won't practice Monday, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dezhaun-stribling-19330",
+      "pub_date": "2026-08-03T10:28:00Z"
+    },
     {
       "player_name": "Xavier Worthy",
       "sleeper_id": "11624",
