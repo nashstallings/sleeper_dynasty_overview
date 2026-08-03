@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-03T12:17:30Z",
+  "generated_at": "2026-08-03T17:06:37Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 30,
   "items": [
+    {
+      "player_name": "Xavier Worthy",
+      "sleeper_id": "11624",
+      "gsis_id": "00-0039894",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Dealing with sprained shoulder",
+      "description": "Coach Andy Reid noted Monday that Worthy, who is dealing with a sprained shoulder, needs \"a day or two\" before returning to practice, Matt Derrick of ChiefsDigest.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/xavier-worthy-17687",
+      "pub_date": "2026-08-03T09:15:00Z"
+    },
+    {
+      "player_name": "Jahmyr Gibbs",
+      "sleeper_id": "9221",
+      "gsis_id": "00-0039139",
+      "position": "RB",
+      "team": "DET",
+      "headline": "Still not practicing",
+      "description": "Gibbs (back), was present but not in uniform for Monday's practice, Nolan Bianchi of the Detroit News reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jahmyr-gibbs-16808",
+      "pub_date": "2026-08-03T09:07:00Z"
+    },
+    {
+      "player_name": "Tua Tagovailoa",
+      "sleeper_id": "6768",
+      "gsis_id": "00-0036212",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Resumes 11-on-11 work",
+      "description": "Tagovailoa (back) returned to 11-on-11 drills Monday, Marc Raimondi of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tua-tagovailoa-14465",
+      "pub_date": "2026-08-03T08:21:00Z"
+    },
+    {
+      "player_name": "Kyle Monangai",
+      "sleeper_id": "12534",
+      "gsis_id": "00-0040236",
+      "position": "RB",
+      "team": "CHI",
+      "headline": "Back at practice Monday",
+      "description": "Monangai (undisclosed) was in full uniform for Monday's practice, Chris Emma of 670TheScore.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyle-monangai-18520",
+      "pub_date": "2026-08-03T07:53:00Z"
+    },
+    {
+      "player_name": "Kyle Monangai",
+      "sleeper_id": "12534",
+      "gsis_id": "00-0040236",
+      "position": "RB",
+      "team": "CHI",
+      "headline": "Dealing with soft-tissue injury",
+      "description": "Bears head coach Ben Johnson said Monday that Monangai is dealing with a soft-tissue injury, Brad Biggs of the Chicago Tribune reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyle-monangai-18520",
+      "pub_date": "2026-08-03T06:02:00Z"
+    },
     {
       "player_name": "Chris Rodriguez Jr.",
       "sleeper_id": "10219",
