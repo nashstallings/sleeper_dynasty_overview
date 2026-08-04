@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-08-04T19:23:51Z",
+  "generated_at": "2026-08-04T22:07:43Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 30,
   "items": [
+    {
+      "player_name": "Malik Willis",
+      "sleeper_id": "8161",
+      "gsis_id": "00-0038128",
+      "position": "QB",
+      "team": "MIA",
+      "headline": "Looks sharp early in camp",
+      "description": "Willis has played well at training camp, earning praise from coach Jeff Hafley and offensive coordinator Bobby Slowik, according to David Furones of the South Florida Sun Sentinel. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-willis-15872",
+      "pub_date": "2026-08-04T12:29:00Z"
+    },
     {
       "player_name": "Ricky Pearsall",
       "sleeper_id": "11638",
@@ -14,6 +25,17 @@
       "description": "Pearsall (knee) is one of the few prominent athletes to have surgery on an isolated PCL injury, making it difficult to set expectations for rehab length or a potential return to pre-injury form, Eric Branch of the San Francisco Chronicle reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/ricky-pearsall-17761",
       "pub_date": "2026-08-04T12:21:00Z"
+    },
+    {
+      "player_name": "Jalen Nailor",
+      "sleeper_id": "8180",
+      "gsis_id": "00-0037291",
+      "position": "WR",
+      "team": "LVR",
+      "headline": "Starring at training camp",
+      "description": "Nailor has been the best receiver at Raiders training camp, Case Keefer of the Las Vegas Sun reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-nailor-16025",
+      "pub_date": "2026-08-04T12:12:00Z"
     },
     {
       "player_name": "Tua Tagovailoa",
@@ -135,6 +157,28 @@
       "description": "Robinson and the Falcons agreed to terms Tuesday on a three-year extension worth up to $75 million, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/bijan-robinson-16739",
       "pub_date": "2026-08-04T05:05:00Z"
+    },
+    {
+      "player_name": "Mason Taylor",
+      "sleeper_id": "12498",
+      "gsis_id": "00-0040736",
+      "position": "TE",
+      "team": "NYJ",
+      "headline": "Headed for big Week 1 role?",
+      "description": "Taylor could see more opportunities this summer after teammate Kenyon Sadiq (sports hernia) suffered a setback in his return from May surgery, ESPN.com's Rich Cimini reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mason-taylor-18535",
+      "pub_date": "2026-08-04T01:03:00Z"
+    },
+    {
+      "player_name": "Trey Benson",
+      "sleeper_id": "11589",
+      "gsis_id": "00-0039921",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Back at practice Tuesday",
+      "description": "Benson (knee) returned to practice Tuesday, Bo Brack of GoPHNX.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/trey-benson-17767",
+      "pub_date": "2026-08-04T01:02:00Z"
     },
     {
       "player_name": "Mike Evans",
