@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-05T19:22:32Z",
+  "generated_at": "2026-08-05T22:08:06Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
-  "max_age_days": 30,
+  "max_age_days": 90,
   "items": [
     {
       "player_name": "Jaylen Waddle",
@@ -113,6 +113,50 @@
       "description": "Dell (knee) is wearing pads at practice Wednesday for the first time this year, Jane Slater of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/tank-dell-16935",
       "pub_date": "2026-08-05T07:36:00Z"
+    },
+    {
+      "player_name": "Emeka Egbuka",
+      "sleeper_id": "12514",
+      "gsis_id": "00-0040129",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Dealing with soreness",
+      "description": "Coach Todd Bowles said Egbuka didn't practice Tuesday due to soreness in his lower body, Brianna Dix of the Buccaneers' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
+      "pub_date": "2026-08-05T02:37:00Z"
+    },
+    {
+      "player_name": "Rico Dowdle",
+      "sleeper_id": "7021",
+      "gsis_id": "00-0036139",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "Listed behind Warren on depth chart",
+      "description": "Jaylen Warren is listed ahead of Dowdle on the Steelers' initial posted depth chart ahead of the preseason, Brian Batko of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rico-dowdle-14657",
+      "pub_date": "2026-08-05T02:00:00Z"
+    },
+    {
+      "player_name": "Jaylen Warren",
+      "sleeper_id": "8228",
+      "gsis_id": "00-0037228",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "Listed ahead of Dowdle",
+      "description": "Warren is listed ahead of free-agent addition Rico Dowdle on the Steelers' initial depth chart ahead of the preseason, Brian Batko of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-warren-15984",
+      "pub_date": "2026-08-05T01:50:00Z"
+    },
+    {
+      "player_name": "Terry McLaurin",
+      "sleeper_id": "5927",
+      "gsis_id": "00-0035659",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "New running mate in Diggs",
+      "description": "McLaurin will be joined by Diggs in the Commanders' receiving corps after the latter agreed to a one-year contract with the team Wednesday, John Keim and Seth Walder of ESPN.com report. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terry-mclaurin-13536",
+      "pub_date": "2026-08-05T01:27:00Z"
     },
     {
       "player_name": "Malik Willis",
