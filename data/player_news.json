@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T22:07:43Z",
+  "generated_at": "2026-08-05T02:00:23Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 30,
@@ -148,6 +148,17 @@
       "pub_date": "2026-08-04T06:49:00Z"
     },
     {
+      "player_name": "Jalen McMillan",
+      "sleeper_id": "11618",
+      "gsis_id": "00-0039855",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Held out of practice Tuesday",
+      "description": "McMillan (calf) isn't practicing Tuesday, Jenna Laine of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-mcmillan-17763",
+      "pub_date": "2026-08-04T05:42:00Z"
+    },
+    {
       "player_name": "Bijan Robinson",
       "sleeper_id": "9509",
       "gsis_id": "00-0038542",
@@ -157,6 +168,17 @@
       "description": "Robinson and the Falcons agreed to terms Tuesday on a three-year extension worth up to $75 million, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/bijan-robinson-16739",
       "pub_date": "2026-08-04T05:05:00Z"
+    },
+    {
+      "player_name": "Travis Etienne",
+      "sleeper_id": "7543",
+      "gsis_id": "00-0036973",
+      "position": "RB",
+      "team": "NOS",
+      "headline": "Ceding third-down work to Kamara?",
+      "description": "Etienne has taken most of the early down reps at training camp, with Alvin Kamara is getting more of the third-down snaps, according to Jeff Duncan of Nola.com. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/travis-etienne-15385",
+      "pub_date": "2026-08-04T04:47:00Z"
     },
     {
       "player_name": "Mason Taylor",
