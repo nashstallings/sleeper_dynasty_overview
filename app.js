@@ -365,20 +365,18 @@ async function renderMatchup() {
 
     card.innerHTML = `
       <h2>Week ${state.currentWeek} matchup</h2>
-      <div class="matchup-row">
-        <div class="matchup-side">
+      <div class="scorebug">
+        <div class="sb-team${myWinning ? " leading" : ""}">
           ${avatarHtml(myRoster.owner_id, { size: "lg" })}
-          <span class="matchup-name">${rosterLabel(myRoster)} <span class="player-meta">(you)</span></span>
+          <span class="sb-name">${rosterLabel(myRoster)} <span class="player-meta">(you)</span></span>
+          <span class="sb-score">${myPts}</span>
         </div>
-        <span class="matchup-points" style="color:${myWinning ? "var(--good)" : "inherit"}">${myPts}</span>
-      </div>
-      <div class="matchup-vs">VS</div>
-      <div class="matchup-row">
-        <div class="matchup-side">
+        <div class="sb-mid">VS</div>
+        <div class="sb-team${oppWinning ? " leading" : ""}">
           ${oppRoster ? avatarHtml(oppRoster.owner_id, { size: "lg" }) : ""}
-          <span class="matchup-name">${oppRoster ? rosterLabel(oppRoster) : "Bye / TBD"}</span>
+          <span class="sb-name">${oppRoster ? rosterLabel(oppRoster) : "Bye / TBD"}</span>
+          <span class="sb-score">${oppPts}</span>
         </div>
-        <span class="matchup-points" style="color:${oppWinning ? "var(--good)" : "inherit"}">${oppPts}</span>
       </div>`;
   } catch (err) {
     card.innerHTML = `<h2>Week ${state.currentWeek} matchup</h2>${emptyState("Couldn't load matchup data.")}`;
