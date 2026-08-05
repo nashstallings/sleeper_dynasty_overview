@@ -1343,6 +1343,46 @@ function pointsColumnLabel() {
   return leagueScoringSettings() ? "Lg Pts" : "PPR Pts";
 }
 
+const PLAYER_CARD_NEWS_WINDOW_DAYS = 90;
+
+function renderPlayerCardNews(pid) {
+  const container = document.querySelector("#player-card .player-card-news");
+  if (!container) return;
+
+  const data = state.playerNews;
+  if (!data) {
+    container.innerHTML = `<h3>Recent News</h3><p class="player-meta">Couldn't load player news.</p>`;
+    return;
+  }
+
+  const cutoff = Date.now() - PLAYER_CARD_NEWS_WINDOW_DAYS * 24 * 60 * 60 * 1000;
+  const items = (data.items || [])
+    .filter((n) => n.sleeper_id === pid)
+    .filter((n) => new Date(n.pub_date).getTime() >= cutoff)
+    .sort((a, b) => new Date(b.pub_date) - new Date(a.pub_date));
+
+  if (!items.length) {
+    container.innerHTML = `<h3>Recent News</h3><p class="player-meta">No news in the last ${PLAYER_CARD_NEWS_WINDOW_DAYS} days.</p>`;
+    return;
+  }
+
+  const rows = items
+    .map(
+      (n) => `
+    <div class="news-item">
+      <div class="news-item-head">
+        <span class="news-date">${relativeDate(n.pub_date)}</span>
+      </div>
+      <p class="news-headline">${n.headline}</p>
+      ${n.description ? `<p class="player-meta news-desc">${n.description}</p>` : ""}
+      <a class="news-link" href="${n.link}" target="_blank" rel="noopener">Read on ${escapeHtml(data.source || "RotoWire")} &rarr;</a>
+    </div>`
+    )
+    .join("");
+
+  container.innerHTML = `<h3>Recent News</h3>${rows}`;
+}
+
 // Which raw season-stat fields to show as columns, per position. The final
 // "points" column has no fixed key/label: it's resolved at render time so it
 // can reflect the loaded league's scoring settings.
@@ -1443,6 +1483,10 @@ async function openPlayerCard(pid) {
     </div>
     <div class="player-card-stats">
       <p class="spinner-note">Loading season stats...</p>
+    </div>
+    <div class="player-card-news">
+      <h3>Recent News</h3>
+      <p class="spinner-note">Loading news...</p>
     </div>`;
 
   overlay.classList.remove("hidden");
@@ -1457,6 +1501,16 @@ async function openPlayerCard(pid) {
     }
   }
   renderPlayerCardStats(pid, pos);
+
+  if (!state.playerNews) {
+    try {
+      const res = await fetch("data/player_news.json", { cache: "no-store" });
+      if (res.ok) state.playerNews = await res.json();
+    } catch {
+      // news is optional enrichment; the card still shows the basics without them
+    }
+  }
+  renderPlayerCardNews(pid);
 }
 
 function closePlayerCard() {

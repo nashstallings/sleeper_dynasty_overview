@@ -698,3 +698,7 @@ footer a:hover { text-decoration: underline; }
 .player-card-stats { overflow-x: auto; max-width: 100%; }
 .player-card-table { font-size: 0.82rem; width: max-content; max-width: none; }
 .player-card-table th, .player-card-table td { padding: 7px 6px; white-space: nowrap; }
+
+.player-card-news { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--panel-border); }
+.player-card-news h3 { font-size: 0.95rem; margin: 0 0 8px; }
+.player-card-news .news-item { padding: 10px 0; }

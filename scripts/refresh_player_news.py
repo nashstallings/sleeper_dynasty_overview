@@ -19,11 +19,11 @@ The output intentionally is NOT filtered to any specific team/league,
 since this script has no notion of who's viewing the site -- it's a
 general "recent player news, with an ID attached" feed covering every
 current QB/RB/WR/TE. The front-end filters it down to the loaded
-league's roster and the desired time window (last 30 days) at render
-time.
+league's roster and the desired time window (last 30 days for the "Recent
+News" widget, last 90 days on a player's own card) at render time.
 
 RotoWire's RSS feed only exposes a small rolling window of its most
-recent items, not a 30-day archive, so each run merges newly matched
+recent items, not a 90-day archive, so each run merges newly matched
 items into whatever was already collected (see load_existing_items)
 rather than overwriting -- otherwise coverage would be capped at
 whatever sliver of news happens to still be in the feed at the moment
@@ -53,7 +53,7 @@ SOURCE_PAGE_URL = "https://www.rotowire.com/rss/"
 
 # Keep a wider window than the 2 weeks the UI shows, so a missed/late
 # scheduled run doesn't leave a visible gap.
-MAX_AGE_DAYS = 30
+MAX_AGE_DAYS = 90
 
 USER_AGENT = (
     "Mozilla/5.0 (compatible; DynastyOverviewBot/1.0; "
@@ -128,7 +128,7 @@ def fetch_feed_xml():
 def load_existing_items():
     """RotoWire's RSS feed only exposes a small rolling window of its most
     recent items (often a literal handful across the whole league), not a
-    30-day archive. If we rebuilt the output from scratch every run, our
+    90-day archive. If we rebuilt the output from scratch every run, our
     real coverage would be capped at whatever sliver of news happens to
     still be in that window at each fetch -- so instead we carry forward
     whatever we already collected and only let items age out via
