@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-05T16:28:37Z",
+  "generated_at": "2026-08-05T19:22:32Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 30,
   "items": [
+    {
+      "player_name": "Jaylen Waddle",
+      "sleeper_id": "7526",
+      "gsis_id": "00-0036613",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "Bothered by muscle tightness",
+      "description": "Waddle left Wednesday's practice early due to \"some muscle tightness,\" Parker Gabriel of The Denver Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-waddle-15404",
+      "pub_date": "2026-08-05T11:37:00Z"
+    },
+    {
+      "player_name": "Jordan Addison",
+      "sleeper_id": "9756",
+      "gsis_id": "00-0038994",
+      "position": "WR",
+      "team": "MIN",
+      "headline": "Jams thumb, not practicing",
+      "description": "Addison jammed his thumb earlier this week and won't catch passes during Wednesday's practice, Ben Goessling of The Minnesota Star Tribune reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordan-addison-16895",
+      "pub_date": "2026-08-05T11:09:00Z"
+    },
+    {
+      "player_name": "Stefon Diggs",
+      "sleeper_id": "2449",
+      "gsis_id": "00-0031588",
+      "position": "WR",
+      "team": "FA",
+      "headline": "Heading to Washington",
+      "description": "The Commanders and Diggs agreed to a contract Wednesday, NFL reporter Jordan Schultz reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/stefon-diggs-10133",
+      "pub_date": "2026-08-05T10:56:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Remains sidelined",
+      "description": "Evans (quadriceps) didn't practice Wednesday, Matt Maiocco of NBC Sports Bay Area reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-08-05T10:50:00Z"
+    },
+    {
+      "player_name": "Jaylen Waddle",
+      "sleeper_id": "7526",
+      "gsis_id": "00-0036613",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "Exits practice Wednesday",
+      "description": "Waddle (undisclosed) exited Wednesday's practice, Luca Evans of The Denver Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-waddle-15404",
+      "pub_date": "2026-08-05T10:16:00Z"
+    },
     {
       "player_name": "Chris Olave",
       "sleeper_id": "8144",
