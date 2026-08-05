@@ -170,6 +170,12 @@ function playerPosition(p) {
   return (p && p.position) || (p && p.fantasy_positions && p.fantasy_positions[0]) || "FLEX";
 }
 
+const BENCH_POSITION_ORDER = ["QB", "RB", "WR", "TE", "K"];
+function benchPositionRank(pos) {
+  const i = BENCH_POSITION_ORDER.indexOf(pos);
+  return i === -1 ? BENCH_POSITION_ORDER.length : i;
+}
+
 function playerDisplay(p) {
   if (!p) return "Empty";
   if (p.position === "DEF") return p.full_name || p.team;
@@ -451,7 +457,10 @@ function renderBench() {
   const starterSet = new Set(myRoster.starters || []);
   const bench = (myRoster.players || [])
     .filter((pid) => !starterSet.has(pid))
-    .sort((a, b) => playerRank(player(a)) - playerRank(player(b)));
+    .sort((a, b) => {
+      const posDiff = benchPositionRank(playerPosition(player(a))) - benchPositionRank(playerPosition(player(b)));
+      return posDiff !== 0 ? posDiff : playerRank(player(a)) - playerRank(player(b));
+    });
   const rows = bench.length
     ? bench.map((pid) => playerRow(pid)).join("")
     : `<tr><td colspan="3">${emptyState("No bench players")}</td></tr>`;
