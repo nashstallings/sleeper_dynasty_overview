@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T21:07:15Z",
+  "generated_at": "2026-08-06T23:53:57Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -102,6 +102,28 @@
       "description": "Taylor agreed to terms Thursday with the Colts on a two-year, $44 million contract extension, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jonathan-taylor-14455",
       "pub_date": "2026-08-06T05:11:00Z"
+    },
+    {
+      "player_name": "Malik Nabers",
+      "sleeper_id": "11632",
+      "gsis_id": "00-0039337",
+      "position": "WR",
+      "team": "NYG",
+      "headline": "Rejoins team drills",
+      "description": "Nabers (knee) participated in team drills at Thursday's practice, Patricia Traina of SI.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
+      "pub_date": "2026-08-06T04:04:00Z"
+    },
+    {
+      "player_name": "Jahmyr Gibbs",
+      "sleeper_id": "9221",
+      "gsis_id": "00-0039139",
+      "position": "RB",
+      "team": "DET",
+      "headline": "Lands three-year extension",
+      "description": "The Lions and Gibbs (back) agreed to terms on a three-year extension Thursday, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jahmyr-gibbs-16808",
+      "pub_date": "2026-08-06T02:32:00Z"
     },
     {
       "player_name": "Jaylen Waddle",
