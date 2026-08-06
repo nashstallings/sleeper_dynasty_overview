@@ -470,7 +470,7 @@ function renderBench() {
     </table>`;
 }
 
-const NEWS_WINDOW_DAYS = 30;
+const NEWS_WINDOW_DAYS = 90;
 
 function relativeDate(isoString) {
   const then = new Date(isoString);

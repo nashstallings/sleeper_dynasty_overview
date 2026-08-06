@@ -12,7 +12,7 @@ football account and helps you:
   share, and receiving/rushing efficiency are climbing week over week, and shows
   whether they're on your roster, a rival's, or unrostered in your league.
 - **Catch up on player news** &mdash; a Recent News card on the My Team tab shows
-  the last 30 days of news for players on your roster.
+  the last 90 days of news for players on your roster.
 - **Look up any player** &mdash; click a player's name anywhere in the app (My
   Team, Trade Finder, Trending) to open a card with their photo, team,
   position, who owns them in your league (or "Free agent"), and their stat
@@ -190,14 +190,14 @@ intended for syndication. `.github/workflows/refresh-player-news.yml` runs
 4. Merges the newly matched items into whatever was already collected and
    commits the result to `data/player_news.json`. RotoWire's feed only
    exposes a small rolling window of its most recent items rather than a
-   full 30-day archive, so each run accumulates onto the existing file
-   (items simply age out after 30 days) instead of overwriting it &mdash;
+   full 90-day archive, so each run accumulates onto the existing file
+   (items simply age out after 90 days) instead of overwriting it &mdash;
    otherwise coverage would be capped at whatever sliver of news happened
    to still be in the feed at the moment of that one fetch.
 
 The My Team tab's Recent News card fetches that accumulated file and filters
 it client-side down to players on your currently-loaded roster, from the
-last 30 days &mdash; so switching leagues re-filters the same broad dataset
+last 90 days &mdash; so switching leagues re-filters the same broad dataset
 rather than needing a per-league fetch. Uses the same `GCP_SA_KEY` secret as
 the Trending refresh; no separate credential needed.
 
