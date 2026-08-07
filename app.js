@@ -269,6 +269,7 @@ async function loadLeague(leagueId) {
     renderStandings();
     renderTradeFinder();
     renderTrending();
+    renderBuySell();
     renderAgeCurve();
   } catch (err) {
     showError(err.message || String(err));
@@ -1431,6 +1432,156 @@ function renderTrendingContent() {
   if (!metricCards) {
     introCard.insertAdjacentHTML("beforeend", emptyState("No qualifying risers for this position group yet."));
   }
+}
+
+// ---------- Buy Low / Sell High ----------
+//
+// Cross-references each position's headline usage/efficiency trend (the
+// same recent-vs-prior data Trending shows) against current trade value:
+// a player whose role is trending up but who's still valued outside the
+// position's "established" tier is a buy-low; a player whose role is
+// trending down but who's still valued inside that tier is a sell-high.
+// This is a snapshot comparison, not a value-history one -- we don't have
+// trade value trend data, only current value, so the framing is "role vs.
+// current price" rather than "market hasn't reacted yet".
+
+const BUY_SELL_PRIMARY_METRIC = { QB: "passing_epa", RB: "snap_share", WR: "target_share", TE: "target_share" };
+const BUY_SELL_VALUE_TIER = { QB: 12, RB: 24, WR: 36, TE: 12 };
+const BUY_SELL_LIMIT_PER_POS = 6;
+
+// Rank every player BigQuery/DynastyProcess has a trade value for, within
+// their position, independent of who's actually rostered in this league --
+// buy-low/sell-high is a scouting tool, not limited to your own roster.
+function positionValueRanks() {
+  const values = (state.tradeValues && state.tradeValues.players) || {};
+  const byPos = { QB: [], RB: [], WR: [], TE: [] };
+  Object.keys(values).forEach((sid) => {
+    const pos = playerPosition(player(sid));
+    if (!byPos[pos]) return;
+    const val = playerValue(sid);
+    if (val === null || val === undefined) return;
+    byPos[pos].push({ sid, val });
+  });
+  const ranks = {};
+  Object.keys(byPos).forEach((pos) => {
+    byPos[pos].sort((a, b) => b.val - a.val);
+    byPos[pos].forEach((entry, i) => {
+      ranks[entry.sid] = i + 1;
+    });
+  });
+  return ranks;
+}
+
+function buySellCandidates() {
+  const data = state.risingMetrics;
+  const buyLow = [];
+  const sellHigh = [];
+  if (!data || !state.tradeValues) return { buyLow, sellHigh };
+
+  const ranks = positionValueRanks();
+  data.players.forEach((p) => {
+    const key = BUY_SELL_PRIMARY_METRIC[p.position];
+    const sid = p.sleeper_id;
+    if (!key || !sid) return;
+    const m = p.metrics[key];
+    const rank = ranks[sid];
+    if (!m || !rank) return;
+
+    const tier = BUY_SELL_VALUE_TIER[p.position];
+    const def = data.metric_defs[key];
+    const entry = { ...p, rank, metricLabel: def.label, format: def.format, metric: m };
+    if (m.delta > 0 && rank > tier) buyLow.push(entry);
+    else if (m.delta < 0 && rank <= tier) sellHigh.push(entry);
+  });
+
+  buyLow.sort((a, b) => b.metric.delta - a.metric.delta);
+  sellHigh.sort((a, b) => a.metric.delta - b.metric.delta);
+  return { buyLow, sellHigh };
+}
+
+function buySellRowHtml(entry) {
+  const status = leagueStatusForSleeperId(entry.sleeper_id);
+  const deltaSign = entry.metric.delta > 0 ? "+" : "";
+  const deltaClass = entry.metric.delta > 0 ? "delta-tag" : "delta-tag delta-tag-neg";
+  return `
+    <tr>
+      <td><span class="player-name" data-player-id="${entry.sleeper_id}">${entry.name}</span> <span class="player-meta">${entry.team || "FA"}</span></td>
+      <td>#${entry.rank}</td>
+      <td>${formatMetricValue(entry.metric.prior, entry.format)} &rarr; ${formatMetricValue(entry.metric.recent, entry.format)}</td>
+      <td><span class="${deltaClass}">${deltaSign}${formatMetricValue(entry.metric.delta, entry.format)}</span></td>
+      <td>${status.html}</td>
+    </tr>`;
+}
+
+function buySellSectionHtml(entries, emptyText) {
+  if (!entries.length) return emptyState(emptyText);
+  const byPos = {};
+  entries.forEach((e) => {
+    (byPos[e.position] = byPos[e.position] || []).push(e);
+  });
+  return SKILL_POSITIONS.filter((pos) => byPos[pos])
+    .map((pos) => {
+      const rows = byPos[pos]
+        .slice(0, BUY_SELL_LIMIT_PER_POS)
+        .map(buySellRowHtml)
+        .join("");
+      const metricLabel = byPos[pos][0].metricLabel;
+      return `
+        <h3>${pos}</h3>
+        <table>
+          <thead><tr><th>Player</th><th>Value rank</th><th>${metricLabel} (prior &rarr; recent)</th><th>&Delta;</th><th>League status</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>`;
+    })
+    .join("");
+}
+
+async function renderBuySell() {
+  const buyCard = document.getElementById("buy-low-card");
+  const sellCard = document.getElementById("sell-high-card");
+  if (!buyCard || !sellCard) return;
+
+  buyCard.innerHTML = `<h2>Buy Low</h2><p class="spinner-note">Loading market data...</p>`;
+  sellCard.innerHTML = "";
+
+  if (!state.risingMetrics) {
+    try {
+      const res = await fetch("data/rising_metrics.json");
+      if (res.ok) state.risingMetrics = await res.json();
+    } catch {
+      // handled below via the missing-data empty state
+    }
+  }
+  if (!state.tradeValues) {
+    try {
+      const res = await fetch("data/trade_values.json");
+      if (res.ok) state.tradeValues = await res.json();
+    } catch {
+      // handled below via the missing-data empty state
+    }
+  }
+
+  if (!state.risingMetrics || !state.tradeValues) {
+    buyCard.innerHTML = `<h2>Buy Low</h2>${emptyState("Couldn't load trend and/or trade value data needed for this.")}`;
+    sellCard.innerHTML = "";
+    return;
+  }
+
+  const { buyLow, sellHigh } = buySellCandidates();
+  const tierNote = `Established tier = QB top ${BUY_SELL_VALUE_TIER.QB} &middot; RB top ${BUY_SELL_VALUE_TIER.RB} &middot; WR top ${BUY_SELL_VALUE_TIER.WR} &middot; TE top ${BUY_SELL_VALUE_TIER.TE}, by current trade value.`;
+  const methodologyNote = `Not a value-history check (this app doesn't have one) &mdash; just current role vs. current price.`;
+
+  buyCard.innerHTML = `
+    <h2>Buy Low</h2>
+    <p class="player-meta" style="margin-bottom:4px">Role trending up over the last 4 weeks, but still valued outside the position's established tier.</p>
+    <p class="player-meta" style="margin-bottom:14px">${tierNote} ${methodologyNote}</p>
+    ${buySellSectionHtml(buyLow, "No buy-low candidates fit the criteria right now.")}`;
+
+  sellCard.innerHTML = `
+    <h2>Sell High</h2>
+    <p class="player-meta" style="margin-bottom:4px">Role trending down over the last 4 weeks, but still valued inside the position's established tier.</p>
+    <p class="player-meta" style="margin-bottom:14px">${tierNote} ${methodologyNote}</p>
+    ${buySellSectionHtml(sellHigh, "No sell-high candidates fit the criteria right now.")}`;
 }
 
 // ---------- Age Curve ----------

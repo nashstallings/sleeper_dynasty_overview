@@ -25,6 +25,10 @@ football account and helps you:
   position, and how your team's age compares to the rest of the league.
   Defaults to starters only (a truer read on your win-now window), with a
   toggle to switch to your full roster.
+- **Spot buy-low/sell-high candidates** &mdash; a Buy/Sell tab cross-references
+  each position's usage trend against current trade value, surfacing
+  players whose role is climbing but who aren't valued like it yet, and
+  players still valued like a difference-maker despite a fading role.
 
 There is no backend, no build step, and no login. It's plain HTML/CSS/JS that
 talks directly to Sleeper's public, read-only API from your browser. Nothing
@@ -180,6 +184,30 @@ secret: a service account JSON key with BigQuery read access to that project
 fails but the site keeps serving whatever snapshot is already committed. You
 can also trigger a refresh manually from the Actions tab
 ("Run workflow" on "Refresh Rising Metrics").
+
+## How Buy/Sell works
+
+The Buy/Sell tab reuses two data sources the app already has &mdash; no new
+pipeline &mdash; and cross-references them client-side:
+
+1. Each position's headline usage/efficiency trend from Trending's data
+   (Passing EPA/Attempt for QB, Snap Share for RB, Target Share for WR/TE).
+2. Current trade value from [`data/trade_values.json`](data/trade_values.json),
+   used to rank every player DynastyProcess covers within their position.
+
+A player is a **buy-low** if their trend is positive but their value rank
+falls outside the position's "established" tier (top 12 QB, top 24 RB, top
+36 WR, top 12 TE); a **sell-high** if their trend is negative but their
+value rank is still inside it. Both lists are grouped by position and
+sorted by the size of the trend swing.
+
+This is a snapshot comparison, not a value-history one &mdash; the app only
+has DynastyProcess's *current* values, not how they've moved over time, so
+it can't actually detect "the market hasn't reacted yet." What it detects is
+current role vs. current price being out of sync, which is the more
+practical version of the same idea anyway. Every player league-wide is
+considered, not just your own roster, since this is a scouting tool for
+targets and sell candidates alike.
 
 ## How player news works
 
