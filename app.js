@@ -328,6 +328,7 @@ function renderDashboard() {
   renderStarters();
   renderBench();
   renderPlayerNews();
+  renderTransactions();
 }
 
 function emptyState(text) {
@@ -535,6 +536,140 @@ async function renderPlayerNews() {
       ${rows}`;
   } catch (err) {
     card.innerHTML = `<h2>Recent News</h2>${emptyState("Couldn't load player news (data/player_news.json missing or unreachable).")}`;
+  }
+}
+
+// ---------- League activity (transactions) ----------
+
+const TRANSACTIONS_LIMIT = 15;
+const TRANSACTIONS_WEEKS_BACK = 3;
+
+function rosterById(rosterId) {
+  return state.rosters.find((r) => r.roster_id === rosterId);
+}
+
+// Sleeper buckets transactions by week ("round"), so a feed needs one fetch
+// per week. Before the season starts (no current week yet), all offseason
+// trading for this league lands in week 1's bucket, so that alone covers it.
+function transactionWeeksToFetch() {
+  const week = state.currentWeek;
+  if (!week) return [1];
+  const weeks = [];
+  for (let w = week; w > 0 && weeks.length < TRANSACTIONS_WEEKS_BACK; w--) weeks.push(w);
+  return weeks;
+}
+
+function transactionRosterIds(txn) {
+  if (Array.isArray(txn.roster_ids) && txn.roster_ids.length) return txn.roster_ids;
+  const ids = new Set();
+  Object.values(txn.adds || {}).forEach((id) => ids.add(id));
+  Object.values(txn.drops || {}).forEach((id) => ids.add(id));
+  return [...ids];
+}
+
+// What a given roster received/gave up in this transaction, across players,
+// draft picks, and FAAB -- unified the same way the trade builder treats
+// players and picks as interchangeable "assets".
+function transactionAssetsForRoster(txn, rosterId) {
+  const received = [];
+  const sent = [];
+  Object.entries(txn.adds || {}).forEach(([pid, rid]) => {
+    if (rid === rosterId) received.push(playerDisplay(player(pid)));
+  });
+  Object.entries(txn.drops || {}).forEach(([pid, rid]) => {
+    if (rid === rosterId) sent.push(playerDisplay(player(pid)));
+  });
+  (txn.draft_picks || []).forEach((dp) => {
+    const label = pickLabel(dp.season, dp.round, dp.roster_id, dp.owner_id);
+    if (dp.owner_id === rosterId) received.push(label);
+    else if (dp.previous_owner_id === rosterId) sent.push(label);
+  });
+  (txn.waiver_budget || []).forEach((wb) => {
+    const label = `$${wb.amount} FAAB`;
+    if (wb.receiver === rosterId) received.push(label);
+    else if (wb.sender === rosterId) sent.push(label);
+  });
+  return { received, sent };
+}
+
+function transactionTypeBadge(txn) {
+  if (txn.type === "trade") return "TRADE";
+  if (txn.type === "waiver") return "WAIVER";
+  return "FA";
+}
+
+function transactionHeadline(txn) {
+  const rosterIds = transactionRosterIds(txn);
+
+  if (txn.type === "trade" && rosterIds.length >= 2) {
+    return rosterIds
+      .map((rid) => {
+        const { received } = transactionAssetsForRoster(txn, rid);
+        const teamName = escapeHtml(rosterLabel(rosterById(rid)));
+        return `${teamName} gets ${received.length ? received.map(escapeHtml).join(", ") : "nothing"}`;
+      })
+      .join("  &mdash;  ");
+  }
+
+  const rid = rosterIds[0];
+  const teamName = escapeHtml(rosterLabel(rosterById(rid)));
+  const { received, sent } = transactionAssetsForRoster(txn, rid);
+  const bidSuffix =
+    txn.type === "waiver" && txn.settings && typeof txn.settings.waiver_bid === "number"
+      ? ` ($${txn.settings.waiver_bid} bid)`
+      : "";
+  const bits = [];
+  if (received.length) bits.push(`added ${received.map(escapeHtml).join(", ")}${bidSuffix}`);
+  if (sent.length) bits.push(`dropped ${sent.map(escapeHtml).join(", ")}`);
+  return `${teamName} ${bits.join(", ") || "made a roster move"}`;
+}
+
+async function renderTransactions() {
+  const card = document.getElementById("transactions-card");
+  if (!card) return;
+  card.innerHTML = `<h2>League Activity</h2><p class="spinner-note">Loading transactions...</p>`;
+
+  try {
+    const weeks = transactionWeeksToFetch();
+    const results = await Promise.allSettled(
+      weeks.map((w) => api(`/league/${state.leagueId}/transactions/${w}`))
+    );
+    const all = [];
+    results.forEach((r) => {
+      if (r.status === "fulfilled" && Array.isArray(r.value)) all.push(...r.value);
+    });
+
+    const items = all
+      .filter((t) => t.status === "complete" && (t.type === "trade" || t.type === "waiver" || t.type === "free_agent"))
+      .sort((a, b) => (b.status_updated || b.created || 0) - (a.status_updated || a.created || 0))
+      .slice(0, TRANSACTIONS_LIMIT);
+
+    if (!items.length) {
+      card.innerHTML = `<h2>League Activity</h2>${emptyState("No recent trades or waiver moves.")}`;
+      return;
+    }
+
+    const rows = items
+      .map((t) => {
+        const ts = t.status_updated || t.created;
+        const badge = transactionTypeBadge(t);
+        return `
+      <div class="news-item">
+        <div class="news-item-head">
+          <span class="badge badge-${badge}">${badge}</span>
+          <span class="news-date">${ts ? relativeDate(new Date(ts).toISOString()) : ""}</span>
+        </div>
+        <p class="news-headline">${transactionHeadline(t)}</p>
+      </div>`;
+      })
+      .join("");
+
+    card.innerHTML = `
+      <h2>League Activity</h2>
+      <p class="player-meta" style="margin-bottom:14px">Recent trades and waiver moves, league-wide.</p>
+      ${rows}`;
+  } catch (err) {
+    card.innerHTML = `<h2>League Activity</h2>${emptyState("Couldn't load league transactions.")}`;
   }
 }
 

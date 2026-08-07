@@ -13,6 +13,9 @@ football account and helps you:
   whether they're on your roster, a rival's, or unrostered in your league.
 - **Catch up on player news** &mdash; a Recent News card on the My Team tab shows
   the last 90 days of news for players on your roster.
+- **See what the league is doing** &mdash; a League Activity card on the My Team
+  tab shows recent trades and waiver/free-agent moves from every team, not
+  just yours.
 - **Look up any player** &mdash; click a player's name anywhere in the app (My
   Team, Trade Finder, Trending) to open a card with their photo, team,
   position, who owns them in your league (or "Free agent"), and their stat
@@ -200,6 +203,20 @@ it client-side down to players on your currently-loaded roster, from the
 last 90 days &mdash; so switching leagues re-filters the same broad dataset
 rather than needing a per-league fetch. Uses the same `GCP_SA_KEY` secret as
 the Trending refresh; no separate credential needed.
+
+## How League Activity works
+
+The League Activity card on the My Team tab reads directly from Sleeper's
+`/league/{id}/transactions/{week}` endpoint &mdash; no BigQuery pipeline
+involved, since this is inherently per-league, real-time data Sleeper already
+serves live. Sleeper buckets transactions by week, so on load the app fetches
+the current week plus the two before it (or just week 1 if the season hasn't
+started yet, since Sleeper stores all of a league's offseason activity there
+before Week 1 begins), merges the results, and shows the 15 most recent
+completed trades, waiver claims, and free-agent adds/drops league-wide
+&mdash; skipping failed waiver bids and any non-roster (e.g. commissioner)
+transactions. Trades show what each side gave up and received, including
+traded picks and FAAB; waiver claims show the winning bid.
 
 ## Player cards
 
