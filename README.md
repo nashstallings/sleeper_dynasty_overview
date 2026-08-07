@@ -20,6 +20,9 @@ football account and helps you:
   Team, Trade Finder, Trending) to open a card with their photo, team,
   position, who owns them in your league (or "Free agent"), and their stat
   line for the last few seasons.
+- **See your contention window** &mdash; an Age Curve tab shows your roster's
+  value-weighted average age, a chart of your roster's value by age and
+  position, and how your team's age compares to the rest of the league.
 
 There is no backend, no build step, and no login. It's plain HTML/CSS/JS that
 talks directly to Sleeper's public, read-only API from your browser. Nothing
@@ -217,6 +220,24 @@ completed trades, waiver claims, and free-agent adds/drops league-wide
 &mdash; skipping failed waiver bids and any non-roster (e.g. commissioner)
 transactions. Trades show what each side gave up and received, including
 traded picks and FAAB; waiver claims show the winning bid.
+
+## How Age Curve works
+
+`scripts/refresh_player_ages.py` queries BigQuery's `players` table (the
+same one `refresh_player_season_stats.py` joins against for its
+`sleeper_id` crosswalk) for each QB/RB/WR/TE's `birth_date`, and commits
+the result to `data/player_ages.json`. Birth dates don't change, so the
+workflow just runs weekly to pick up new players (rookies, etc.) &mdash;
+current age is computed client-side from `birth_date` at render time
+instead of being baked into the file, so it's never stale.
+
+The Age Curve tab combines that with the same trade-value data the Trade
+Finder uses: each player on a roster is weighted by their trade value (so a
+bench dart-throw doesn't count as much as your RB1) to produce a
+value-weighted average age, a chart of that roster's value broken out by
+age and position, and a league-wide table ranking every team youngest to
+oldest. If trade values fail to load, it falls back to a simple (unweighted)
+average instead of hiding the feature entirely.
 
 ## Player cards
 

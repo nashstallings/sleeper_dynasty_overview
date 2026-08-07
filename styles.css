@@ -84,7 +84,7 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 18px;
 }
 
 .brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
@@ -126,9 +126,9 @@ body {
   font-style: italic;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-size: 0.86rem;
-  padding: 0 12px;
+  letter-spacing: 0.02em;
+  font-size: 0.82rem;
+  padding: 0 9px;
   height: 100%;
   cursor: pointer;
   white-space: nowrap;
@@ -137,8 +137,8 @@ body {
 .tab-btn::after {
   content: "";
   position: absolute;
-  left: 12px;
-  right: 12px;
+  left: 9px;
+  right: 9px;
   bottom: 0;
   height: 3px;
   background: transparent;
@@ -682,6 +682,40 @@ tr.me-row:hover { background: var(--accent-soft); }
 .need-chip.sev-high .sev-label { color: var(--bad); }
 .need-chip.sev-med .sev-label { color: var(--warn); }
 .need-chip.sev-low .sev-label { color: var(--good); }
+
+.table-wrap { overflow-x: auto; }
+
+/* ---------- age curve ---------- */
+
+.age-summary-value {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.age-chart { display: flex; align-items: flex-end; gap: 5px; }
+.age-bar-col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.age-bar-track {
+  height: 160px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.age-bar-stack { width: 70%; display: flex; flex-direction: column-reverse; }
+.age-bar-seg:first-child { border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; }
+.age-bar-label { font-family: var(--font-mono); font-size: 0.66rem; color: var(--text-faint); }
+
+.age-seg-QB { background: var(--bad); }
+.age-seg-RB { background: var(--good); }
+.age-seg-WR { background: var(--pos-wr); }
+.age-seg-TE { background: var(--pos-neutral); }
+
+.age-legend { display: flex; gap: 16px; margin-top: 14px; flex-wrap: wrap; }
+.age-legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-dim); }
+.age-legend-swatch { width: 10px; height: 10px; display: inline-block; }
 
 .empty-note { color: var(--text-dim); font-size: 0.88rem; }
 .empty-state {

@@ -90,6 +90,7 @@ const state = {
   draftRounds: 4,
   pickOwnership: null,
   playerSeasonStats: null,
+  playerAges: null,
 };
 
 // ---------- low-level helpers ----------
@@ -267,6 +268,7 @@ async function loadLeague(leagueId) {
     renderStandings();
     renderTradeFinder();
     renderTrending();
+    renderAgeCurve();
   } catch (err) {
     showError(err.message || String(err));
     setStatus("Failed to load league.");
@@ -1428,6 +1430,194 @@ function renderTrendingContent() {
   if (!metricCards) {
     introCard.insertAdjacentHTML("beforeend", emptyState("No qualifying risers for this position group yet."));
   }
+}
+
+// ---------- Age Curve ----------
+
+const AGE_CHART_HEIGHT = 160;
+
+function ageFromBirthDate(birthDateStr) {
+  if (!birthDateStr) return null;
+  const dob = new Date(`${birthDateStr}T00:00:00Z`);
+  if (isNaN(dob.getTime())) return null;
+  return (Date.now() - dob.getTime()) / (365.25 * 24 * 60 * 60 * 1000);
+}
+
+// A player's weight in the age curve is their trade value when we have one
+// (so bench depth counts less than your stars), falling back to a uniform
+// weight of 1 -- either because trade values never loaded at all (a plain
+// average), or because DynastyProcess just doesn't cover that one player.
+function ageWeight(sleeperId) {
+  const val = playerValue(sleeperId);
+  return val === null || val === undefined ? 1 : val;
+}
+
+function rosterAgeEntries(rosterId) {
+  const roster = rosterById(rosterId);
+  const ages = (state.playerAges && state.playerAges.players) || {};
+  if (!roster) return [];
+  return (roster.players || [])
+    .map((pid) => {
+      const info = ages[pid];
+      if (!info || !SKILL_POSITIONS.includes(info.position)) return null;
+      const age = ageFromBirthDate(info.birth_date);
+      if (age === null) return null;
+      return { pid, pos: info.position, age, weight: ageWeight(pid) };
+    })
+    .filter(Boolean);
+}
+
+function weightedAvgAge(entries) {
+  const totalWeight = entries.reduce((s, e) => s + e.weight, 0);
+  if (!totalWeight) return null;
+  return entries.reduce((s, e) => s + e.age * e.weight, 0) / totalWeight;
+}
+
+// Groups entries into whole-year age buckets, split by position so the bar
+// for each age can be stacked (and colored) the same way position badges
+// are colored everywhere else in the app.
+function ageBuckets(entries) {
+  const buckets = {};
+  entries.forEach((e) => {
+    const age = Math.floor(e.age);
+    if (!buckets[age]) buckets[age] = { QB: 0, RB: 0, WR: 0, TE: 0 };
+    buckets[age][e.pos] += e.weight;
+  });
+  return buckets;
+}
+
+function ageChartHtml(entries) {
+  if (!entries.length) {
+    return emptyState("Not enough data (trade value + birth date) to chart this roster's ages.");
+  }
+  const buckets = ageBuckets(entries);
+  const ageKeys = Object.keys(buckets)
+    .map(Number)
+    .sort((a, b) => a - b);
+  const maxTotal = Math.max(...ageKeys.map((age) => SKILL_POSITIONS.reduce((s, pos) => s + buckets[age][pos], 0)), 1);
+
+  const cols = ageKeys
+    .map((age) => {
+      const b = buckets[age];
+      const segs = SKILL_POSITIONS.filter((pos) => b[pos] > 0)
+        .map((pos) => {
+          const h = Math.max((b[pos] / maxTotal) * AGE_CHART_HEIGHT, 2);
+          return `<div class="age-bar-seg age-seg-${pos}" style="height:${h.toFixed(1)}px"></div>`;
+        })
+        .join("");
+      return `
+        <div class="age-bar-col">
+          <div class="age-bar-track"><div class="age-bar-stack">${segs}</div></div>
+          <div class="age-bar-label">${age}</div>
+        </div>`;
+    })
+    .join("");
+
+  const legend = SKILL_POSITIONS
+    .map((pos) => `<span class="age-legend-item"><span class="age-legend-swatch age-seg-${pos}"></span>${pos}</span>`)
+    .join("");
+
+  return `<div class="age-chart">${cols}</div><div class="age-legend">${legend}</div>`;
+}
+
+async function renderAgeCurve() {
+  const teamCard = document.getElementById("age-team-card");
+  const leagueCard = document.getElementById("age-league-card");
+  if (!teamCard || !leagueCard) return;
+
+  if (!state.myRosterId) {
+    teamCard.innerHTML = `<h2>Age Curve</h2>${emptyState("You don't own a team in this league.")}`;
+    leagueCard.innerHTML = "";
+    return;
+  }
+
+  teamCard.innerHTML = `<h2>Age Curve</h2><p class="spinner-note">Loading age data...</p>`;
+  leagueCard.innerHTML = "";
+
+  if (!state.playerAges) {
+    try {
+      const res = await fetch("data/player_ages.json", { cache: "no-store" });
+      if (res.ok) state.playerAges = await res.json();
+    } catch {
+      // handled below via the missing-data empty state
+    }
+  }
+  if (!state.tradeValues) {
+    try {
+      const res = await fetch("data/trade_values.json");
+      if (res.ok) state.tradeValues = await res.json();
+    } catch {
+      // falls back to an unweighted average
+    }
+  }
+
+  if (!state.playerAges || !state.playerAges.players) {
+    teamCard.innerHTML = `<h2>Age Curve</h2>${emptyState("Couldn't load player age data (data/player_ages.json missing or unreachable).")}`;
+    return;
+  }
+
+  const myEntries = rosterAgeEntries(state.myRosterId);
+  const myAvgAge = weightedAvgAge(myEntries);
+
+  const leagueRows = state.rosters
+    .map((r) => ({ roster: r, avgAge: weightedAvgAge(rosterAgeEntries(r.roster_id)), count: rosterAgeEntries(r.roster_id).length }))
+    .filter((r) => r.avgAge !== null)
+    .sort((a, b) => a.avgAge - b.avgAge);
+
+  const myRank = leagueRows.findIndex((r) => r.roster.roster_id === state.myRosterId) + 1;
+  const rankNote = myRank > 0 ? ` &middot; ${roundOrdinal(myRank)} youngest of ${leagueRows.length} teams` : "";
+
+  const weightingNote = state.tradeValues
+    ? "Weighted by each player's trade value, so bench depth counts less than your stars."
+    : "Trade values didn't load, so this is a simple (unweighted) average.";
+
+  const posRows = SKILL_POSITIONS
+    .map((pos) => {
+      const posEntries = myEntries.filter((e) => e.pos === pos);
+      const avg = weightedAvgAge(posEntries);
+      return avg === null
+        ? ""
+        : `
+        <tr>
+          <td><span class="badge badge-${pos}">${pos}</span></td>
+          <td>${posEntries.length}</td>
+          <td>${avg.toFixed(1)}</td>
+        </tr>`;
+    })
+    .join("");
+
+  teamCard.innerHTML = `
+    <h2>Age Curve</h2>
+    <p class="player-meta" style="margin-bottom:14px">${weightingNote}</p>
+    <div class="age-summary-value">${myAvgAge !== null ? myAvgAge.toFixed(1) : "&mdash;"}</div>
+    <p class="player-meta" style="margin-bottom:18px">Value-weighted average age${rankNote}</p>
+    ${ageChartHtml(myEntries)}
+    ${posRows ? `<table style="margin-top:18px"><thead><tr><th>Pos</th><th># Players</th><th>Avg age</th></tr></thead><tbody>${posRows}</tbody></table>` : ""}`;
+
+  if (!leagueRows.length) return;
+
+  const leagueTableRows = leagueRows
+    .map(({ roster, avgAge, count }, i) => {
+      const isMe = roster.roster_id === state.myRosterId;
+      return `
+        <tr class="${isMe ? "me-row" : ""}">
+          <td>${i + 1}</td>
+          <td>${teamCellHtml(roster, { suffix: isMe ? '<span class="player-meta">you</span>' : "" })}</td>
+          <td>${avgAge.toFixed(1)}</td>
+          <td>${count}</td>
+        </tr>`;
+    })
+    .join("");
+
+  leagueCard.innerHTML = `
+    <h2>League Age Comparison</h2>
+    <p class="player-meta" style="margin-bottom:14px">Youngest to oldest, by value-weighted average age.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Team</th><th>Avg age</th><th>Players counted</th></tr></thead>
+        <tbody>${leagueTableRows}</tbody>
+      </table>
+    </div>`;
 }
 
 // ---------- Player card ----------

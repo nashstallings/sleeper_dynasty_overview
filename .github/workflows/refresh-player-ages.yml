@@ -1,0 +1,36 @@
+name: Refresh Player Ages
+
+on:
+  schedule:
+    # Weekly, Wednesday 11:15 UTC (just after the season-stats refresh)
+    - cron: '15 11 * * 3'
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Refresh player_ages.json
+        run: python scripts/refresh_player_ages.py
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/player_ages.json
+          git diff --cached --quiet || git commit -m "Refresh player ages"
+          git pull --rebase origin main
+          git push
