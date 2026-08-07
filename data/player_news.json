@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-07T12:51:45Z",
+  "generated_at": "2026-08-07T15:51:28Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Malachi Fields",
+      "sleeper_id": "13285",
+      "gsis_id": "00-0041042",
+      "position": "WR",
+      "team": "NYG",
+      "headline": "Making case for WR2 role?",
+      "description": "Fields has \"made an early claim for the No. 2 receiver spot\" in the Giants' offense, according to Dan Duggan of The Athletic. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malachi-fields-19313",
+      "pub_date": "2026-08-07T07:41:00Z"
+    },
+    {
+      "player_name": "Makai Lemon",
+      "sleeper_id": "13294",
+      "gsis_id": "00-0040867",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Still sidelined by hamstring injury",
+      "description": "Lemon (hamstring) isn't practicing Friday, Dave Zangaro of NBC Sports Philadelphia reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/makai-lemon-19231",
+      "pub_date": "2026-08-07T07:29:00Z"
+    },
+    {
+      "player_name": "DeVonta Smith",
+      "sleeper_id": "7525",
+      "gsis_id": "00-0036912",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Missing another practice",
+      "description": "Smith (hamstring) isn't practicing Friday, Dave Zangaro of NBC Sports Philadelphia reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
+      "pub_date": "2026-08-07T07:23:00Z"
+    },
+    {
+      "player_name": "Cyrus Allen",
+      "sleeper_id": "13413",
+      "gsis_id": "00-0040890",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Returns from shin injury",
+      "description": "Allen (shin) returned to practice Friday morning, Sam McDowell of The Kansas City Star reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cyrus-allen-19631",
+      "pub_date": "2026-08-07T07:10:00Z"
+    },
+    {
+      "player_name": "Romeo Doubs",
+      "sleeper_id": "8121",
+      "gsis_id": "00-0037816",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Returns to practice Friday",
+      "description": "Doubs (personal) returned to practice Friday, Karen Guregian of MassLive.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/romeo-doubs-16027",
+      "pub_date": "2026-08-07T06:43:00Z"
+    },
     {
       "player_name": "George Pickens",
       "sleeper_id": "8137",
