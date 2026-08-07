@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T02:24:26Z",
+  "generated_at": "2026-08-07T04:50:59Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,28 @@
       "description": "Olave was on the field for practice Thursday. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/chris-olave-15895",
       "pub_date": "2026-08-06T10:12:00Z"
+    },
+    {
+      "player_name": "Xavier Legette",
+      "sleeper_id": "11626",
+      "gsis_id": "00-0039342",
+      "position": "WR",
+      "team": "CAR",
+      "headline": "Deemed healthy",
+      "description": "Coach Dave Canales said Thursday following the Hall of Fame Game that Legette (neck) \"feels great\" and is healthy, Mike Kaye of The Charlotte Observer reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/xavier-legette-17734",
+      "pub_date": "2026-08-06T08:32:00Z"
+    },
+    {
+      "player_name": "Carson Beck",
+      "sleeper_id": "13272",
+      "gsis_id": "00-0041561",
+      "position": "QB",
+      "team": "ARI",
+      "headline": "Stellar in preseason debut",
+      "description": "Beck started Thursday's Hall of Fame Game against the Panthers and completed 15 of 19 passes for 188 yards with a touchdown and no interceptions while adding two rushes for three yards. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/carson-beck-19287",
+      "pub_date": "2026-08-06T07:40:00Z"
     },
     {
       "player_name": "Emeka Egbuka",
