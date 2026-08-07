@@ -23,6 +23,8 @@ football account and helps you:
 - **See your contention window** &mdash; an Age Curve tab shows your roster's
   value-weighted average age, a chart of your roster's value by age and
   position, and how your team's age compares to the rest of the league.
+  Defaults to starters only (a truer read on your win-now window), with a
+  toggle to switch to your full roster.
 
 There is no backend, no build step, and no login. It's plain HTML/CSS/JS that
 talks directly to Sleeper's public, read-only API from your browser. Nothing
@@ -238,6 +240,12 @@ value-weighted average age, a chart of that roster's value broken out by
 age and position, and a league-wide table ranking every team youngest to
 oldest. If trade values fail to load, it falls back to a simple (unweighted)
 average instead of hiding the feature entirely.
+
+A Starters / Full Roster toggle controls which players feed all of this
+(both your own numbers and the league-wide comparison, so it stays an
+apples-to-apples ranking either way). It defaults to starters, since your
+bench age doesn't say much about how long your current window to win is
+open.
 
 ## Player cards
 

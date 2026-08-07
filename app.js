@@ -91,6 +91,7 @@ const state = {
   pickOwnership: null,
   playerSeasonStats: null,
   playerAges: null,
+  ageCurveScope: "starters",
 };
 
 // ---------- low-level helpers ----------
@@ -1456,7 +1457,8 @@ function rosterAgeEntries(rosterId) {
   const roster = rosterById(rosterId);
   const ages = (state.playerAges && state.playerAges.players) || {};
   if (!roster) return [];
-  return (roster.players || [])
+  const pool = state.ageCurveScope === "starters" ? roster.starters : roster.players;
+  return (pool || [])
     .map((pid) => {
       const info = ages[pid];
       if (!info || !SKILL_POSITIONS.includes(info.position)) return null;
@@ -1520,6 +1522,20 @@ function ageChartHtml(entries) {
   return `<div class="age-chart">${cols}</div><div class="age-legend">${legend}</div>`;
 }
 
+function scopeToggleHtml() {
+  const scopes = [
+    { key: "starters", label: "Starters" },
+    { key: "full", label: "Full Roster" },
+  ];
+  const btns = scopes
+    .map(
+      (s) =>
+        `<button type="button" class="scope-toggle-btn${state.ageCurveScope === s.key ? " active" : ""}" data-agescope="${s.key}">${s.label}</button>`
+    )
+    .join("");
+  return `<div class="scope-toggle">${btns}</div>`;
+}
+
 async function renderAgeCurve() {
   const teamCard = document.getElementById("age-team-card");
   const leagueCard = document.getElementById("age-league-card");
@@ -1531,7 +1547,7 @@ async function renderAgeCurve() {
     return;
   }
 
-  teamCard.innerHTML = `<h2>Age Curve</h2><p class="spinner-note">Loading age data...</p>`;
+  teamCard.innerHTML = `<h2>Age Curve</h2>${scopeToggleHtml()}<p class="spinner-note">Loading age data...</p>`;
   leagueCard.innerHTML = "";
 
   if (!state.playerAges) {
@@ -1588,6 +1604,7 @@ async function renderAgeCurve() {
 
   teamCard.innerHTML = `
     <h2>Age Curve</h2>
+    ${scopeToggleHtml()}
     <p class="player-meta" style="margin-bottom:14px">${weightingNote}</p>
     <div class="age-summary-value">${myAvgAge !== null ? myAvgAge.toFixed(1) : "&mdash;"}</div>
     <p class="player-meta" style="margin-bottom:18px">Value-weighted average age${rankNote}</p>
@@ -1609,12 +1626,13 @@ async function renderAgeCurve() {
     })
     .join("");
 
+  const countLabel = state.ageCurveScope === "starters" ? "Starters counted" : "Players counted";
   leagueCard.innerHTML = `
     <h2>League Age Comparison</h2>
-    <p class="player-meta" style="margin-bottom:14px">Youngest to oldest, by value-weighted average age.</p>
+    <p class="player-meta" style="margin-bottom:14px">Youngest to oldest, by value-weighted average age (${state.ageCurveScope === "starters" ? "starters only" : "full rosters"}).</p>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>#</th><th>Team</th><th>Avg age</th><th>Players counted</th></tr></thead>
+        <thead><tr><th>#</th><th>Team</th><th>Avg age</th><th>${countLabel}</th></tr></thead>
         <tbody>${leagueTableRows}</tbody>
       </table>
     </div>`;
@@ -1855,6 +1873,15 @@ function setupPlayerCard() {
   });
 }
 
+function setupAgeCurveToggle() {
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".scope-toggle-btn[data-agescope]");
+    if (!btn || btn.classList.contains("active")) return;
+    state.ageCurveScope = btn.dataset.agescope;
+    renderAgeCurve();
+  });
+}
+
 // ---------- tabs ----------
 
 function setupTabs() {
@@ -1889,6 +1916,7 @@ function setupTabs() {
 function init() {
   setupTabs();
   setupPlayerCard();
+  setupAgeCurveToggle();
 
   const seasonInput = document.getElementById("season");
   seasonInput.value = new Date().getFullYear();
