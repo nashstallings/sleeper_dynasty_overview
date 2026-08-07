@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-07T15:51:28Z",
+  "generated_at": "2026-08-07T18:47:24Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Bhayshul Tuten",
+      "sleeper_id": "12490",
+      "gsis_id": "00-0040719",
+      "position": "RB",
+      "team": "JAC",
+      "headline": "Rotates with Rodriguez in Friday's scrimmage",
+      "description": "During Friday's scrimmage, Tuten started the first drive with the Jaguars' offense, with LeQuint Allen mixing in on third down, then Chris Rodriguez started the second drive before rotating with Tuten, John Shipley of SI.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bhayshul-tuten-18524",
+      "pub_date": "2026-08-07T10:51:00Z"
+    },
+    {
+      "player_name": "Patrick Mahomes",
+      "sleeper_id": "4046",
+      "gsis_id": "00-0033873",
+      "position": "QB",
+      "team": "KCC",
+      "headline": "Unlikely to play in preseason opener",
+      "description": "Chiefs coach Andy Reid said Friday that Mahomes (knee) is unlikely to play in the Chiefs' preseason opener against the Rams on Saturday, Aug. 15, Sam McDowell of The Kansas City Star reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/patrick-mahomes-11839",
+      "pub_date": "2026-08-07T09:29:00Z"
+    },
+    {
+      "player_name": "Kyler Murray",
+      "sleeper_id": "5849",
+      "gsis_id": "00-0035228",
+      "position": "QB",
+      "team": "MIN",
+      "headline": "Taking more first-team snaps than McCarthy",
+      "description": "Murray has taken around two-thirds of the first-team snaps at training camp, according to ESPN's Kevin Seifert. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyler-murray-13613",
+      "pub_date": "2026-08-07T09:26:00Z"
+    },
+    {
+      "player_name": "KC Concepcion",
+      "sleeper_id": "13298",
+      "gsis_id": "00-0041547",
+      "position": "WR",
+      "team": "CLE",
+      "headline": "Says shoulder is fine",
+      "description": "Concepcion said Friday that his shoulder has felt fine since returning to practice earlier this week, Mary Kay Cabot of The Cleveland Plain Dealer reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kc-concepcion-19242",
+      "pub_date": "2026-08-07T09:13:00Z"
+    },
+    {
+      "player_name": "J.J. McCarthy",
+      "sleeper_id": "11565",
+      "gsis_id": "00-0039923",
+      "position": "QB",
+      "team": "MIN",
+      "headline": "Getting fewer first-team snaps than Murray",
+      "description": "McCarthy has taken around one-third of the first-team snaps at training camp so far, according to ESPN's Kevin Seifert. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jj-mccarthy-17689",
+      "pub_date": "2026-08-07T09:06:00Z"
+    },
     {
       "player_name": "Malachi Fields",
       "sleeper_id": "13285",
