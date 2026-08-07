@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T18:47:24Z",
+  "generated_at": "2026-08-07T21:34:03Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -113,6 +113,17 @@
       "description": "Doubs (personal) returned to practice Friday, Karen Guregian of MassLive.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/romeo-doubs-16027",
       "pub_date": "2026-08-07T06:43:00Z"
+    },
+    {
+      "player_name": "Cam Skattebo",
+      "sleeper_id": "12481",
+      "gsis_id": "00-0040715",
+      "position": "RB",
+      "team": "NYG",
+      "headline": "Harbaugh downplays exit from practice",
+      "description": "Coach John Harbaugh said Skattebo's early exit from Friday's practice is \"nothing serious at all,\" Dan Duggan of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cam-skattebo-18514",
+      "pub_date": "2026-08-07T01:31:00Z"
     },
     {
       "player_name": "George Pickens",
