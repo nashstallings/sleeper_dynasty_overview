@@ -3,6 +3,7 @@ const SKILL_POSITIONS = ["QB", "RB", "WR", "TE"];
 const PLAYERS_CACHE_KEY = "sleeper_tf_players_cache_v1";
 const PLAYERS_CACHE_MAX_AGE_MS = 12 * 60 * 60 * 1000; // 12h
 const SESSION_KEY = "sleeper_tf_session_v1";
+const TRENDING_POS_TAB_KEY = "sleeper_tf_trending_postab_v1";
 
 function escapeHtml(str) {
   return String(str)
@@ -82,7 +83,7 @@ const state = {
   myRosterId: null,
   currentWeek: null,
   risingMetrics: null,
-  trendingPosTab: "FLEX",
+  trendingPosTab: localStorage.getItem(TRENDING_POS_TAB_KEY) || "QB",
   playerNews: null,
   selectedTradePlayers: new Set(),
   tradeValues: null,
@@ -2005,10 +2006,12 @@ function setupTabs() {
   });
 
   document.querySelectorAll(".sub-tab-btn[data-postab]").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.postab === state.trendingPosTab);
     btn.addEventListener("click", () => {
       document.querySelectorAll(".sub-tab-btn[data-postab]").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       state.trendingPosTab = btn.dataset.postab;
+      localStorage.setItem(TRENDING_POS_TAB_KEY, state.trendingPosTab);
       if (state.risingMetrics) renderTrendingContent();
     });
   });
