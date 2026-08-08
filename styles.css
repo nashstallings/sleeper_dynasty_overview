@@ -475,7 +475,30 @@ h3:first-of-type { margin-top: 4px; }
 .metric-card summary h3 { margin: 0; flex: 1 1 auto; display: flex; align-items: center; gap: 6px; }
 .metric-card .chevron { flex-shrink: 0; color: var(--text-faint); transition: transform 0.15s ease; }
 .metric-card details[open] .chevron { transform: rotate(90deg); }
-.metric-card table { margin-top: 12px; }
+.metric-card table { margin-top: 0; font-size: 0.82rem; }
+
+.metric-card-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 12px;
+}
+@media (max-width: 700px) {
+  .metric-card-columns { grid-template-columns: 1fr; }
+}
+.metric-card-col { min-width: 0; }
+.buy-sell-col-title {
+  font-family: var(--font-display);
+  font-stretch: condensed;
+  font-style: italic;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 8px;
+}
+.buy-sell-col-title.buy { color: var(--good); }
+.buy-sell-col-title.sell { color: var(--bad); }
 
 .info-icon {
   position: relative;

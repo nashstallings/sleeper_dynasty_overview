@@ -8,9 +8,13 @@ football account and helps you:
 - **Find trade targets** &mdash; flags your weakest roster positions (relative to the
   rest of the league) and surfaces bench players on other rosters who could fill
   those needs.
-- **Spot risers** &mdash; a Trending tab surfaces players whose snap share, target
-  share, and receiving/rushing efficiency are climbing week over week, and shows
-  whether they're on your roster, a rival's, or unrostered in your league.
+- **Spot risers, buy-lows, and sell-highs** &mdash; a Trending tab surfaces
+  players whose snap share, target share, and receiving/rushing efficiency
+  are climbing or falling week over week, split into a Buy Low table (trend
+  up, still valued outside the position's established tier) and a Sell High
+  table (trend down, still valued inside it) for every metric. Shows
+  whether each player is on your roster, a rival's, or unrostered in your
+  league.
 - **Catch up on player news** &mdash; a Recent News card on the My Team tab shows
   the last 90 days of news for players on your roster.
 - **See what the league is doing** &mdash; a League Activity card on the My Team
@@ -25,11 +29,6 @@ football account and helps you:
   position, and how your team's age compares to the rest of the league.
   Defaults to starters only (a truer read on your win-now window), with a
   toggle to switch to your full roster.
-- **Spot buy-low/sell-high candidates** &mdash; a Buy/Sell tab cross-references
-  each position's usage trend against current trade value, surfacing
-  players whose role is climbing but who aren't valued like it yet, and
-  players still valued like a difference-maker despite a fading role.
-
 There is no backend, no build step, and no login. It's plain HTML/CSS/JS that
 talks directly to Sleeper's public, read-only API from your browser. Nothing
 you type is sent anywhere except Sleeper's API.
@@ -156,15 +155,35 @@ to be the comprehensive "everything" views.
   throw difficulty (QB only).
 
 For each metric, every player's most recent 4 weeks are compared to the 4
-weeks before that, and the biggest positive movers are listed (max 10 per
-table, minimum weekly volume required &mdash; see the description shown
-above each table in the app for exact thresholds). Tables render two per
-row, and are ordered per tab by what's actually most predictive at that
+weeks before that (minimum weekly volume required &mdash; see the
+description shown above each table in the app for exact thresholds), and
+split into two tables side by side:
+
+- **Buy Low** (left) &mdash; trend is climbing, but the player's current
+  trade value rank still falls outside their position's "established" tier
+  (top 12 QB, top 24 RB, top 36 WR, top 12 TE).
+- **Sell High** (right) &mdash; trend is falling, but the player is still
+  valued inside that tier.
+
+This cross-references [`data/trade_values.json`](data/trade_values.json)
+(the same DynastyProcess values the Trade Finder uses) client-side, no new
+data pipeline needed. It's a snapshot comparison, not a value-history one
+&mdash; the app only has DynastyProcess's *current* values, not how they've
+moved over time, so it can't actually detect "the market hasn't reacted
+yet." What it detects is current role vs. current price being out of sync,
+which is the more practical version of the same idea anyway. If trade
+values fail to load, both tables fall back to plain trend direction
+(unfiltered by value tier) rather than going empty. Each table shows up to
+5 players, ordered by the size of the trend swing, and every player
+league-wide is considered (not just your own roster), since this doubles as
+a scouting tool for trade targets.
+
+Metric cards are ordered per tab by what's actually most predictive at that
 position &mdash; e.g. QB leads with passing efficiency (Passing EPA/Attempt),
 not Yards/Carry, since rushing is a bonus for a quarterback, not the
 headline stat.
 
-Each riser is cross-referenced against the league you loaded: if Sleeper
+Each player is cross-referenced against the league you loaded: if Sleeper
 knows the player and they're on a roster in your league, you'll see whose
 (with "Your roster" called out); otherwise they're marked a free agent, or
 "Not in Sleeper's DB" for deep-roster/practice-squad players Sleeper doesn't
@@ -184,30 +203,6 @@ secret: a service account JSON key with BigQuery read access to that project
 fails but the site keeps serving whatever snapshot is already committed. You
 can also trigger a refresh manually from the Actions tab
 ("Run workflow" on "Refresh Rising Metrics").
-
-## How Buy/Sell works
-
-The Buy/Sell tab reuses two data sources the app already has &mdash; no new
-pipeline &mdash; and cross-references them client-side:
-
-1. Each position's headline usage/efficiency trend from Trending's data
-   (Passing EPA/Attempt for QB, Snap Share for RB, Target Share for WR/TE).
-2. Current trade value from [`data/trade_values.json`](data/trade_values.json),
-   used to rank every player DynastyProcess covers within their position.
-
-A player is a **buy-low** if their trend is positive but their value rank
-falls outside the position's "established" tier (top 12 QB, top 24 RB, top
-36 WR, top 12 TE); a **sell-high** if their trend is negative but their
-value rank is still inside it. Both lists are grouped by position and
-sorted by the size of the trend swing.
-
-This is a snapshot comparison, not a value-history one &mdash; the app only
-has DynastyProcess's *current* values, not how they've moved over time, so
-it can't actually detect "the market hasn't reacted yet." What it detects is
-current role vs. current price being out of sync, which is the more
-practical version of the same idea anyway. Every player league-wide is
-considered, not just your own roster, since this is a scouting tool for
-targets and sell candidates alike.
 
 ## How player news works
 
