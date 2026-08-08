@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-08-08T12:36:17Z",
+  "generated_at": "2026-08-08T15:24:10Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Josh Downs",
+      "sleeper_id": "9500",
+      "gsis_id": "00-0038997",
+      "position": "WR",
+      "team": "IND",
+      "headline": "Nursing groin injury",
+      "description": "Downs did not participate in Saturday's training camp practice due to a groin injury, Joel A. Erickson of The Indianapolis Star reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-downs-16689",
+      "pub_date": "2026-08-08T08:01:00Z"
+    },
     {
       "player_name": "Bhayshul Tuten",
       "sleeper_id": "12490",
