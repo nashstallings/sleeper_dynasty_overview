@@ -1403,10 +1403,15 @@ function positionValueRanks() {
   return ranks;
 }
 
+// Tier-qualifying candidates (the "true" buy-low/sell-high definition) are
+// always shown first, but each table backfills with the next-biggest
+// trend movers of the right sign when there aren't enough of them -- a
+// table only comes up short of TRENDING_BUY_SELL_ROWS when this position
+// group is genuinely out of players trending in that direction at all.
 function buySellForMetric(key, positions, ranks, hasValues) {
   const def = state.risingMetrics.metric_defs[key];
-  const buyLow = [];
-  const sellHigh = [];
+  const positive = [];
+  const negative = [];
 
   state.risingMetrics.players.forEach((p) => {
     if (!positions.includes(p.position) || !def.positions.includes(p.position)) return;
@@ -1417,16 +1422,22 @@ function buySellForMetric(key, positions, ranks, hasValues) {
     const entry = { ...p, m, rank };
 
     if (m.delta > 0) {
-      if (!hasValues || !rank || rank > tier) buyLow.push(entry);
+      entry.qualifies = !hasValues || !rank || rank > tier;
+      positive.push(entry);
     } else if (m.delta < 0) {
-      if (!hasValues) sellHigh.push(entry);
-      else if (rank && rank <= tier) sellHigh.push(entry);
+      entry.qualifies = hasValues && !!rank && rank <= tier;
+      negative.push(entry);
     }
   });
 
-  buyLow.sort((a, b) => b.m.delta - a.m.delta);
-  sellHigh.sort((a, b) => a.m.delta - b.m.delta);
-  return { buyLow: buyLow.slice(0, TRENDING_BUY_SELL_ROWS), sellHigh: sellHigh.slice(0, TRENDING_BUY_SELL_ROWS) };
+  // Qualifying entries first, ties broken by trend magnitude within each group.
+  positive.sort((a, b) => (b.qualifies - a.qualifies) || b.m.delta - a.m.delta);
+  negative.sort((a, b) => (b.qualifies - a.qualifies) || a.m.delta - b.m.delta);
+
+  return {
+    buyLow: positive.slice(0, TRENDING_BUY_SELL_ROWS),
+    sellHigh: negative.slice(0, TRENDING_BUY_SELL_ROWS),
+  };
 }
 
 function buySellMiniRowHtml(entry, def) {
@@ -1483,7 +1494,9 @@ function renderTrendingContent() {
     <p class="player-meta" style="margin-top:8px">
       Each metric splits into <strong>Buy Low</strong> (trend climbing, value still outside the position's
       established tier &mdash; QB top 12, RB top 24, WR top 36, TE top 12) and <strong>Sell High</strong>
-      (trend falling, value still inside it).${hasValues ? "" : " Trade values didn't load, so this is just showing trend direction without the value cross-reference."}
+      (trend falling, value still inside it), prioritized first, then backfilled with the next-biggest
+      trend movers so each table shows up to ${TRENDING_BUY_SELL_ROWS} players whenever that many exist.
+      ${hasValues ? "" : "Trade values didn't load, so this is just showing trend direction without the value cross-reference."}
     </p>`;
 
   const ranks = positionValueRanks();
@@ -1496,8 +1509,8 @@ function renderTrendingContent() {
       const { buyLow, sellHigh } = buySellForMetric(key, tab.positions, ranks, hasValues);
       if (!buyLow.length && !sellHigh.length) return "";
 
-      const buyEmptyText = "No buy-low candidates right now.";
-      const sellEmptyText = hasValues ? "No sell-high candidates right now." : "Needs trade value data to compute.";
+      const buyEmptyText = "No players trending up at this position right now.";
+      const sellEmptyText = "No players trending down at this position right now.";
 
       return `
         <div class="card metric-card">

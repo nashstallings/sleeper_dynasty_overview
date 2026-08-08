@@ -174,9 +174,12 @@ yet." What it detects is current role vs. current price being out of sync,
 which is the more practical version of the same idea anyway. If trade
 values fail to load, both tables fall back to plain trend direction
 (unfiltered by value tier) rather than going empty. Each table shows up to
-5 players, ordered by the size of the trend swing, and every player
-league-wide is considered (not just your own roster), since this doubles as
-a scouting tool for trade targets.
+5 players: tier-qualifying candidates are prioritized first, then backfilled
+with the next-biggest trend movers of the right direction if there aren't
+5 true qualifiers, so a table only comes up short when this position group
+has no players trending that way at all. Every player league-wide is
+considered (not just your own roster), since this doubles as a scouting
+tool for trade targets.
 
 Metric cards are ordered per tab by what's actually most predictive at that
 position &mdash; e.g. QB leads with passing efficiency (Passing EPA/Attempt),
