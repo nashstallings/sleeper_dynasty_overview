@@ -1084,16 +1084,18 @@ async function renderTradeFinder() {
     ? `
       <h2>Team needs</h2>
       <p class="player-meta" style="margin-bottom:14px">Based on your combined trade value at each position (top players per starting slot) against the rest of the league.</p>
-      ${needs
-        .map(
-          (n) => `
-        <span class="need-chip sev-${n.severity}">
-          <span class="badge badge-${n.position}">${n.position}</span>
-          <span class="sev-label">${n.severity} need</span>
-          <span class="player-meta">${n.placement}/${n.totalTeams} in league</span>
-        </span>`
-        )
-        .join("")}
+      <div class="need-grid">
+        ${needs
+          .map(
+            (n) => `
+          <div class="need-card sev-${n.severity}">
+            <span class="badge badge-${n.position}">${n.position}</span>
+            <span class="sev-label">${n.severity} need</span>
+            <span class="player-meta">${n.placement}/${n.totalTeams} in league</span>
+          </div>`
+          )
+          .join("")}
+      </div>
     `
     : `<h2>Team needs</h2>${emptyState("Your roster looks solid at QB/RB/WR/TE relative to the rest of the league &mdash; no glaring needs detected.")}`;
 
