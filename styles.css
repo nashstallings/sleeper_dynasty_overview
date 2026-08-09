@@ -721,6 +721,7 @@ tr.me-row:hover { background: var(--accent-soft); }
 .sb-team.leading .player-meta { color: #4a3a15; }
 .sb-name { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 .sb-score {
+  flex-shrink: 0;
   font-family: var(--font-mono);
   font-size: 1.3rem;
   font-weight: 700;
@@ -743,6 +744,16 @@ tr.me-row:hover { background: var(--accent-soft); }
   text-transform: uppercase;
   border-left: 1px solid rgba(238, 242, 246, 0.08);
   border-right: 1px solid rgba(238, 242, 246, 0.08);
+}
+
+/* .sb-team's own horizontal padding easily outgrows the ~130px each team
+   gets on a phone screen -- tighten it and shrink the avatar/score so
+   there's still room left for the team name before it, instead of the
+   score getting pushed past the team column's edge. */
+@media (max-width: 480px) {
+  .sb-team { padding: 10px 10px; gap: 8px; }
+  .scorebug .avatar-lg, .scorebug .avatar-fallback.avatar-lg { width: 30px; height: 30px; font-size: 0.8rem; }
+  .sb-score { font-size: 1.05rem; padding-left: 6px; }
 }
 
 .need-grid {
