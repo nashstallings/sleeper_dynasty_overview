@@ -1460,10 +1460,14 @@ function buySellMiniRowHtml(entry, def) {
   const rankText = entry.rank ? `#${entry.rank}` : "&mdash;";
   return `
     <tr>
-      <td><span class="badge badge-${entry.position}">${entry.position}</span></td>
-      <td>
-        <span class="player-name" data-player-id="${entry.sleeper_id}">${entry.name}</span><br/>
-        <span class="player-meta">${entry.team}</span>
+      <td class="freeze-col">
+        <div class="bs-player-cell">
+          <span class="badge badge-${entry.position}">${entry.position}</span>
+          <span>
+            <span class="player-name" data-player-id="${entry.sleeper_id}">${entry.name}</span><br/>
+            <span class="player-meta">${entry.team}</span>
+          </span>
+        </div>
       </td>
       <td class="player-meta">${formatMetricValue(entry.m.prior, def.format)} &rarr; ${formatMetricValue(entry.m.recent, def.format)}</td>
       <td><span class="${deltaClass}">${deltaSign}${formatMetricValue(entry.m.delta, def.format)}</span></td>
@@ -1483,7 +1487,7 @@ function buySellColumnHtml(title, cls, entries, def, emptyText) {
       ${heading}
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Pos</th><th>Player</th><th>Prior &rarr; Recent</th><th>&Delta;</th><th>Value rank</th><th>League status</th></tr></thead>
+          <thead><tr><th class="freeze-col">Player</th><th>Prior &rarr; Recent</th><th>&Delta;</th><th>Value rank</th><th>League status</th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
       </div>

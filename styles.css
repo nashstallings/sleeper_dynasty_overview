@@ -801,6 +801,18 @@ tr.me-row:hover { background: var(--accent-soft); }
   background: linear-gradient(to right, transparent, var(--panel));
   pointer-events: none;
 }
+/* Pins the player-identity column in place while the rest of a wide row
+   (delta, value rank, league status, ...) scrolls underneath it -- so
+   scrolling to see those columns never loses track of which player a
+   row is even about. */
+.freeze-col {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--panel);
+  border-right: 1px solid var(--panel-border);
+}
+.bs-player-cell { display: flex; align-items: center; gap: 8px; }
 
 /* ---------- age curve ---------- */
 
