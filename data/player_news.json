@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T01:16:26Z",
+  "generated_at": "2026-08-09T04:14:23Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -49,6 +49,17 @@
       "pub_date": "2026-08-08T09:20:00Z"
     },
     {
+      "player_name": "Jawhar Jordan",
+      "sleeper_id": "11588",
+      "gsis_id": "00-0039405",
+      "position": "RB",
+      "team": "HOU",
+      "headline": "Sidelined due to hip injury",
+      "description": "Jordan is dealing with a hip flexor strain and will be sidelined for \"roughly a week,\" Aaron Wilson of KPRC 2 Houston reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jawhar-jordan-17916",
+      "pub_date": "2026-08-08T08:44:00Z"
+    },
+    {
       "player_name": "Luther Burden III",
       "sleeper_id": "12519",
       "gsis_id": "00-0040735",
@@ -69,6 +80,17 @@
       "description": "Downs did not participate in Saturday's training camp practice due to a groin injury, Joel A. Erickson of The Indianapolis Star reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/josh-downs-16689",
       "pub_date": "2026-08-08T08:01:00Z"
+    },
+    {
+      "player_name": "Jadarian Price",
+      "sleeper_id": "13286",
+      "gsis_id": "00-0041512",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Expected back soon",
+      "description": "Price (lower body) didn't practice Saturday, but coach Mike Macdonald said the rookie running back should be back in a matter of days, Curtis Crabtree of Fox 13 Seattle reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
+      "pub_date": "2026-08-08T07:28:00Z"
     },
     {
       "player_name": "Ty Johnson",
