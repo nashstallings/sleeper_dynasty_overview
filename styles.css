@@ -62,6 +62,11 @@ body {
   position: relative;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  /* Nothing on this single-column layout should ever need horizontal
+     scroll -- this is a backstop against off-screen elements (like the
+     absolutely-positioned info-icon tooltip) padding out the page width
+     even while invisible. */
+  overflow-x: hidden;
 }
 
 .container {
@@ -160,6 +165,39 @@ body {
   border-radius: var(--radius-sm);
 }
 .btn-ghost:hover { color: var(--text); border-color: var(--panel-border-strong); background: rgba(238, 242, 246, 0.04); }
+
+/* Below 700px the top tab strip can't fit all 5 tabs without scrolling,
+   and scrolling a tab bar hides most of it with no reliable affordance --
+   so it becomes a fixed bottom bar instead, all tabs visible at once. */
+@media (max-width: 700px) {
+  .topbar-inner { justify-content: space-between; }
+  .tab-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    height: 58px;
+    flex: 0 0 auto;
+    background: var(--panel);
+    border-top: 1px solid var(--panel-border);
+    gap: 0;
+    overflow-x: visible;
+  }
+  .tab-btn {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.15;
+    font-size: 0.62rem;
+    padding: 4px 2px;
+  }
+  .tab-btn::after { left: 10%; right: 10%; top: 0; bottom: auto; }
+  body { padding-bottom: 58px; }
+}
 
 /* ---------- cards & layout ---------- */
 
@@ -439,13 +477,15 @@ main { padding-top: 6px; }
 @media (max-width: 480px) {
   .topbar-inner { gap: 14px; }
   .wordmark { display: none; }
-  .tab-nav {
-    gap: 10px;
-    -webkit-mask-image: linear-gradient(to right, black calc(100% - 20px), transparent 100%);
-    mask-image: linear-gradient(to right, black calc(100% - 20px), transparent 100%);
-  }
-  .tab-btn { font-size: 0.78rem; }
   .btn-ghost { font-size: 0.76rem; padding: 6px 10px; }
+
+  .container { padding: 0 14px; }
+  .card { padding: 16px; }
+  h2 { margin: -16px -16px 16px; padding: 10px 16px; }
+
+  .trade-pick-row { padding: 9px 6px; gap: 6px; }
+  .trade-pick-row .player-meta { display: none; }
+  .trade-pick-row .value-tag, .trade-pick-row .rank-tag { padding: 2px 5px; font-size: 0.7rem; }
 }
 
 /* section headers double as diagonally-cut "lower third" bars, bleeding
@@ -538,7 +578,7 @@ h3:first-of-type { margin-top: 4px; }
   left: 0;
   margin-top: 8px;
   width: 260px;
-  max-width: 70vw;
+  max-width: min(70vw, calc(100vw - 64px));
   background: var(--panel);
   border: 1px solid var(--panel-border-strong);
   padding: 10px 12px;
@@ -728,7 +768,24 @@ tr.me-row:hover { background: var(--accent-soft); }
 .need-card.sev-med .sev-label { color: var(--warn); }
 .need-card.sev-low .sev-label { color: var(--good); }
 
-.table-wrap { overflow-x: auto; }
+.table-wrap { position: relative; overflow-x: auto; }
+/* Let wrapped tables size to their content instead of being squeezed to
+   the wrapper's width -- otherwise columns wrap into unreadable stacks of
+   single words instead of the wrapper just scrolling horizontally. */
+.table-wrap table { width: max-content; min-width: 100%; }
+/* Only shown once JS confirms there's really more to scroll to (see
+   refreshScrollHints in app.js) -- a fade hint that's always-on would be
+   misleading on the many tables that already fit. */
+.table-wrap.has-scroll::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(to right, transparent, var(--panel));
+  pointer-events: none;
+}
 
 /* ---------- age curve ---------- */
 

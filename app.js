@@ -339,6 +339,16 @@ function emptyState(text) {
   return `<div class="empty-state"><p class="empty-note">${text}</p></div>`;
 }
 
+// Wide tables (buy/sell, age comparison) scroll horizontally inside
+// .table-wrap on narrow screens rather than squeezing their columns --
+// this flags which ones actually need that so a fade hint only shows up
+// when there's really more to scroll to.
+function refreshScrollHints() {
+  document.querySelectorAll(".table-wrap").forEach((el) => {
+    el.classList.toggle("has-scroll", el.scrollWidth > el.clientWidth + 1);
+  });
+}
+
 async function renderMatchup() {
   const card = document.getElementById("matchup-card");
   const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
@@ -1537,6 +1547,7 @@ function renderTrendingContent() {
   if (!metricCards) {
     introCard.insertAdjacentHTML("beforeend", emptyState("No qualifying buy-low/sell-high candidates for this position group yet."));
   }
+  refreshScrollHints();
 }
 
 // ---------- Age Curve ----------
@@ -1742,6 +1753,7 @@ async function renderAgeCurve() {
         <tbody>${leagueTableRows}</tbody>
       </table>
     </div>`;
+  refreshScrollHints();
 }
 
 // ---------- Player card ----------
@@ -1979,6 +1991,18 @@ function setupPlayerCard() {
   });
 }
 
+function setupScrollHints() {
+  // A <details> is collapsed via the browser's native disclosure hiding,
+  // so a table inside one measures 0-width until it's actually opened --
+  // re-check right when that happens rather than relying on render-time.
+  document.addEventListener("toggle", (e) => { if (e.target.matches("details")) refreshScrollHints(); }, true);
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(refreshScrollHints, 150);
+  });
+}
+
 function setupAgeCurveToggle() {
   document.addEventListener("click", (e) => {
     const btn = e.target.closest(".scope-toggle-btn[data-agescope]");
@@ -1997,6 +2021,7 @@ function setupTabs() {
       document.querySelectorAll(".tab-panel").forEach((p) => p.classList.remove("active"));
       btn.classList.add("active");
       document.getElementById(btn.dataset.tab).classList.add("active");
+      refreshScrollHints();
     });
   });
 
@@ -2025,6 +2050,7 @@ function init() {
   setupTabs();
   setupPlayerCard();
   setupAgeCurveToggle();
+  setupScrollHints();
 
   const seasonInput = document.getElementById("season");
   seasonInput.value = new Date().getFullYear();
