@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T21:24:41Z",
+  "generated_at": "2026-08-09T01:16:26Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -69,6 +69,39 @@
       "description": "Downs did not participate in Saturday's training camp practice due to a groin injury, Joel A. Erickson of The Indianapolis Star reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/josh-downs-16689",
       "pub_date": "2026-08-08T08:01:00Z"
+    },
+    {
+      "player_name": "Ty Johnson",
+      "sleeper_id": "6039",
+      "gsis_id": "00-0035537",
+      "position": "RB",
+      "team": "BUF",
+      "headline": "Departs practice with knee injury",
+      "description": "Johnson left practice early Saturday due to an apparent right knee injury, Matt Parrino of NYup.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ty-johnson-13587",
+      "pub_date": "2026-08-08T05:15:00Z"
+    },
+    {
+      "player_name": "Jadarian Price",
+      "sleeper_id": "13286",
+      "gsis_id": "00-0041512",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Dealing with lower-body soreness",
+      "description": "Price didn't practice Friday due to \"lower-body soreness,\" Gregg Bell of The Tacoma News Tribune reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
+      "pub_date": "2026-08-08T02:35:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Nearing return to practice",
+      "description": "Coach Kyle Shanahan said the 49ers continue to \"be smart with\" Evans (quadriceps), who didn't practice Saturday, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-08-08T02:25:00Z"
     },
     {
       "player_name": "Bhayshul Tuten",
