@@ -47,7 +47,11 @@
 a { color: var(--accent); }
 a:hover { text-decoration: underline; }
 
-html { scroll-behavior: smooth; }
+/* overflow-x:hidden on body alone is unreliable on iOS Safari -- it needs
+   to be set on html too, or the page can still rubber-band/settle scrolled
+   sideways, leaving a blank gap next to the (correctly full-width) fixed
+   bottom nav. */
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
