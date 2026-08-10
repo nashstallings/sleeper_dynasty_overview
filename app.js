@@ -88,6 +88,7 @@ const state = {
   selectedTradePlayers: new Set(),
   tradeValues: null,
   tradedPicks: [],
+  drafts: [],
   draftRounds: 4,
   pickOwnership: null,
   playerSeasonStats: null,
@@ -243,6 +244,7 @@ async function loadLeague(leagueId) {
     state.selectedTradePlayers = new Set();
 
     state.tradedPicks = [];
+    state.drafts = [];
     state.draftRounds = 4;
     state.pickOwnership = null;
     try {
@@ -252,6 +254,7 @@ async function loadLeague(leagueId) {
       ]);
       state.tradedPicks = Array.isArray(tradedPicks) ? tradedPicks : [];
       if (Array.isArray(drafts)) {
+        state.drafts = drafts;
         const withRounds = drafts.find((d) => d.settings && typeof d.settings.rounds === "number" && d.settings.rounds > 0);
         if (withRounds) state.draftRounds = withRounds.settings.rounds;
       }
@@ -1054,9 +1057,19 @@ function parsePickId(id) {
   return { season, round: Number(round), originalRosterId: Number(originalRosterId) };
 }
 
-// Which draft seasons we have pick values for, derived from whatever
-// DynastyProcess's data currently covers (usually the next 3 classes)
-// rather than a hardcoded number of years.
+// Whether Sleeper says this season's rookie draft has already happened --
+// used to drop that season's picks from being tradeable even if
+// DynastyProcess's data hasn't caught up yet and still has values for them.
+function rookieDraftCompleteForSeason(season) {
+  return (state.drafts || []).some((d) => String(d.season) === String(season) && d.status === "complete");
+}
+
+// Which draft seasons are tradeable, starting from whatever DynastyProcess's
+// data currently covers (usually the next 3 classes) but with already-drafted
+// seasons dropped and backfilled forward instead, so the tradeable window
+// keeps rolling ahead each year rather than shrinking or going stale.
+// Backfilled seasons won't have a DynastyProcess value yet -- shown as "--"
+// same as any other missing value, until DynastyProcess publishes them.
 function pickTradeSeasons() {
   const picks = state.tradeValues && state.tradeValues.picks;
   if (!picks) return [];
@@ -1065,7 +1078,20 @@ function pickTradeSeasons() {
     const year = key.split(" ")[0];
     if (/^\d{4}$/.test(year)) years.add(year);
   });
-  return [...years].sort();
+
+  let sorted = [...years].sort();
+  const droppedCount = sorted.filter((y) => rookieDraftCompleteForSeason(y)).length;
+  sorted = sorted.filter((y) => !rookieDraftCompleteForSeason(y));
+
+  let nextYear = sorted.length
+    ? Number(sorted[sorted.length - 1]) + 1
+    : Number((state.league && state.league.season) || new Date().getFullYear()) + 1;
+  for (let i = 0; i < droppedCount; i++) {
+    sorted.push(String(nextYear));
+    nextYear += 1;
+  }
+
+  return sorted;
 }
 
 function pickValue(season, round) {
