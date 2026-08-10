@@ -1,0 +1,38 @@
+name: Refresh NFL Byes
+
+on:
+  schedule:
+    # Weekly, Tuesday 10:00 UTC -- byes are set once the schedule is
+    # published and essentially never change, so this just needs to catch
+    # the season's schedule going live and pick up next season's each year.
+    - cron: '0 10 * * 2'
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Refresh nfl_byes.json
+        run: python scripts/refresh_nfl_byes.py
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/nfl_byes.json
+          git diff --cached --quiet || git commit -m "Refresh NFL bye weeks"
+          git pull --rebase origin main
+          git push

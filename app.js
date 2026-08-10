@@ -93,6 +93,7 @@ const state = {
   pickOwnership: null,
   playerSeasonStats: null,
   playerAges: null,
+  nflByes: null,
   ageCurveScope: "starters",
   ageCurveRosterId: null,
   tradeFinderScope: "starters",
@@ -1988,19 +1989,140 @@ function regularSeasonWeeks() {
   return start && start > 1 ? start - 1 : 14;
 }
 
-// Final record if each team's remaining games play out at their
-// season-to-date scoring rate. Actual results already in the books stay
-// locked in -- only the remaining games are projected -- so this is
-// naturally as current as Sleeper's own standings: reload the league after
-// a matchup is scored and both the actual and projected record move.
-function projectedRecordForRoster(roster) {
+// Which positions can fill each flex-type roster slot. Dedicated slots
+// (QB/RB/WR/TE) aren't listed here -- they only accept their own position,
+// handled directly in eligiblePositionsForSlot. K/DEF/IDP slots are left
+// out entirely (no eligible positions -> never filled -> 0 points), the
+// same scope limit already applied everywhere else in the app (age curve,
+// needs, buy/sell, etc. are all skill-position-only).
+const FLEX_ELIGIBILITY = {
+  FLEX: ["RB", "WR", "TE"],
+  SUPER_FLEX: ["QB", "RB", "WR", "TE"],
+  WRRB_FLEX: ["WR", "RB"],
+  REC_FLEX: ["WR", "TE"],
+  WR_TE_FLEX: ["WR", "TE"],
+};
+
+function eligiblePositionsForSlot(slot) {
+  if (SKILL_POSITIONS.includes(slot)) return [slot];
+  return FLEX_ELIGIBILITY[slot] || [];
+}
+
+// Fill the most position-restrictive slots first (a 2-position flex before
+// a 3-position one, dedicated slots before any flex) so a wide-open flex
+// slot doesn't end up claiming a player a narrower slot actually needed.
+function slotFillPriority(slot) {
+  if (SKILL_POSITIONS.includes(slot)) return 0;
+  const elig = FLEX_ELIGIBILITY[slot];
+  return elig ? 1 + elig.length : 99;
+}
+
+// Greedy best-lineup assignment over a pool of {pid, pos, projPPG}: not a
+// provably optimal assignment in every edge case, but this is exactly how
+// fantasy "optimal lineup" calculators work in practice, and is more than
+// enough precision for a season-long projection.
+function bestLineupPoints(pool, slots) {
+  const order = [...slots]
+    .map((slot, i) => ({ slot, i }))
+    .sort((a, b) => slotFillPriority(a.slot) - slotFillPriority(b.slot) || a.i - b.i);
+  const remaining = [...pool];
+  let total = 0;
+  order.forEach(({ slot }) => {
+    const eligible = eligiblePositionsForSlot(slot);
+    if (!eligible.length) return;
+    let bestIdx = -1;
+    let bestPPG = -Infinity;
+    remaining.forEach((p, idx) => {
+      if (eligible.includes(p.pos) && p.projPPG > bestPPG) {
+        bestPPG = p.projPPG;
+        bestIdx = idx;
+      }
+    });
+    if (bestIdx >= 0) {
+      total += remaining[bestIdx].projPPG;
+      remaining.splice(bestIdx, 1);
+    }
+  });
+  return total;
+}
+
+// A player's projected points for a single week: their most recent
+// season's points per game, scored using this league's own scoring
+// settings when available (same computeLeaguePoints() the player card
+// stats table uses). Falls back to 0 for anyone without season stats
+// loaded yet (e.g. a rookie with no NFL history) -- they're still
+// eligible to be started if nothing better is available, just contribute
+// nothing to the projection.
+function projectedPPGForPlayer(pid) {
+  const stats = state.playerSeasonStats && state.playerSeasonStats.players && state.playerSeasonStats.players[pid];
+  const seasons = stats ? Object.keys(stats.seasons || {}).sort((a, b) => b - a) : [];
+  if (!seasons.length) return 0;
+  const season = stats.seasons[seasons[0]];
+  if (!season || !season.games) return 0;
+  return computeLeaguePoints(season, stats.position) / season.games;
+}
+
+// This roster's best possible lineup for one specific week, with any
+// rostered player whose NFL team has a bye that week excluded from the
+// pool first -- so a normally-started player gets swapped out for the
+// next-best bench option at that position, same as a real manager would
+// do. Degrades gracefully to no bye substitutions at all if nfl_byes.json
+// hasn't loaded (or hasn't been generated yet).
+function projectedWeeklyPoints(roster, week) {
+  const byeMap = (state.nflByes && state.nflByes.byes) || {};
+  const pool = (roster.players || [])
+    .map((pid) => {
+      const p = player(pid);
+      const pos = playerPosition(p);
+      if (!SKILL_POSITIONS.includes(pos)) return null;
+      if (p.team && byeMap[p.team] === week) return null;
+      return { pid, pos, projPPG: projectedPPGForPlayer(pid) };
+    })
+    .filter(Boolean);
+  return bestLineupPoints(pool, startingSlots());
+}
+
+// Sums bye-aware weekly projections across every remaining week of the
+// season for this roster. The expensive part of the projection (loops
+// over each remaining week), so callers compute this once per roster and
+// reuse it rather than calling it multiple times.
+function rosterRemainingProjection(roster) {
   const { wins, losses, ties, played } = recordForRoster(roster);
   const totalGames = regularSeasonWeeks();
   const remaining = Math.max(0, totalGames - played);
+  let projPointsForRemaining = 0;
+  for (let w = played + 1; w <= totalGames; w++) {
+    projPointsForRemaining += projectedWeeklyPoints(roster, w);
+  }
+  return { wins, losses, ties, played, totalGames, remaining, projPointsForRemaining };
+}
+
+// Final record if each team's remaining games play out using their best
+// possible bye-aware lineup each week, projected from recent per-player
+// scoring. Actual results already in the books stay locked in -- only the
+// remaining games are projected -- so this is naturally as current as
+// Sleeper's own standings: reload the league after a matchup is scored and
+// both the actual and projected record move.
+//
+// There's no per-opponent schedule simulation here (that would need every
+// other roster's own weekly projection plus the real remaining schedule,
+// which Sleeper doesn't reliably expose for future weeks in every league
+// type) -- points-against for the remaining games instead uses this
+// team's own season-to-date points-against rate once they have one, or
+// leagueAvgProjPPG (the league's average projected scoring, passed in by
+// the caller) as a neutral "typical opponent" stand-in before any games
+// have been played at all.
+function projectedRecordForRoster(roster, remainingProjection, leagueAvgProjPPG) {
+  const { wins, losses, ties, played, totalGames, remaining, projPointsForRemaining } = remainingProjection;
   const s = roster.settings || {};
-  const pointsFor = (s.fpts || 0) + (s.fpts_decimal || 0) / 100;
-  const pointsAgainst = (s.fpts_against || 0) + (s.fpts_against_decimal || 0) / 100;
-  const winProb = pythagoreanWinProb(pointsFor, pointsAgainst);
+  const actualPointsFor = (s.fpts || 0) + (s.fpts_decimal || 0) / 100;
+  const actualPointsAgainst = (s.fpts_against || 0) + (s.fpts_against_decimal || 0) / 100;
+
+  const projPointsFor = actualPointsFor + projPointsForRemaining;
+  const againstRate = played > 0 ? actualPointsAgainst / played : leagueAvgProjPPG;
+  const projPointsAgainst = actualPointsAgainst + againstRate * remaining;
+
+  const winProb = pythagoreanWinProb(projPointsFor, projPointsAgainst);
   const projWins = wins + winProb * remaining;
   const projLosses = losses + (1 - winProb) * remaining;
   const projWinPct = totalGames > 0 ? (projWins + ties * 0.5) / totalGames : 0.5;
@@ -2058,17 +2180,46 @@ async function renderOutlook() {
       // falls back to an unweighted average
     }
   }
+  if (!state.playerSeasonStats) {
+    try {
+      const res = await fetch("data/player_season_stats.json", { cache: "no-store" });
+      if (res.ok) state.playerSeasonStats = await res.json();
+    } catch {
+      // players without season stats just project 0 PPG below
+    }
+  }
+  if (!state.nflByes) {
+    try {
+      const res = await fetch("data/nfl_byes.json", { cache: "no-store" });
+      if (res.ok) state.nflByes = await res.json();
+    } catch {
+      // no bye data -- weekly projections just skip bye substitutions
+    }
+  }
 
   if (!state.playerAges || !state.playerAges.players) {
     introCard.innerHTML = `<h2>Contender / Rebuild Outlook</h2>${emptyState("Couldn't load player age data (data/player_ages.json missing or unreachable).")}`;
     return;
   }
 
+  // Compute each roster's remaining-weeks projection once (it's the
+  // expensive part) and reuse it both to derive the league's average
+  // projected scoring and in the final per-roster record below.
+  const remainingProjByRosterId = {};
+  state.rosters.forEach((roster) => {
+    remainingProjByRosterId[roster.roster_id] = rosterRemainingProjection(roster);
+  });
+  const projRates = Object.values(remainingProjByRosterId)
+    .filter((r) => r.remaining > 0)
+    .map((r) => r.projPointsForRemaining / r.remaining);
+  const leagueAvgProjPPG = projRates.length ? projRates.reduce((a, b) => a + b, 0) / projRates.length : 0;
+
   const rows = state.rosters
     .map((roster) => {
       const avgAge = weightedAvgAge(rosterAgeEntries(roster.roster_id, "starters"));
       if (avgAge === null) return null;
-      return { roster, avgAge, ...projectedRecordForRoster(roster) };
+      const remainingProjection = remainingProjByRosterId[roster.roster_id];
+      return { roster, avgAge, ...projectedRecordForRoster(roster, remainingProjection, leagueAvgProjPPG) };
     })
     .filter(Boolean);
 
@@ -2080,6 +2231,7 @@ async function renderOutlook() {
   const medianAge = median([...rows.map((r) => r.avgAge)].sort((a, b) => a - b));
   const medianProjWinPct = median([...rows.map((r) => r.projWinPct)].sort((a, b) => a - b));
   const anyGamesPlayed = rows.some((r) => r.played > 0);
+  const haveByeData = !!(state.nflByes && state.nflByes.byes);
 
   const grouped = { rising: [], winnow: [], rebuild: [], retool: [] };
   rows.forEach((r) => {
@@ -2096,15 +2248,21 @@ async function renderOutlook() {
     <h2>Contender / Rebuild Outlook</h2>
     <p class="player-meta" style="margin-bottom:6px">
       Splits the league by two axes &mdash; projected final record and starters' value-weighted average age
-      &mdash; relative to the league median (age ${medianAge.toFixed(1)}${anyGamesPlayed ? `, projected win% ${Math.round(medianProjWinPct * 100)}%` : ""}),
-      to suggest each team's competitive window. The projection plays out each team's remaining games at their
-      season-to-date scoring rate (points for vs. points against) &mdash; actual results already in the books
-      stay locked in, so it updates automatically as real results (and scoring) come in each week.
+      &mdash; relative to the league median (age ${medianAge.toFixed(1)}, projected win% ${Math.round(medianProjWinPct * 100)}%),
+      to suggest each team's competitive window. Remaining games are projected by playing out each team's best
+      possible lineup each week (recent per-player scoring, swapped for the next-best bench option on bye weeks)
+      &mdash; actual results already in the books stay locked in, so it updates automatically as real results
+      (and scoring) come in each week.
     </p>
     ${
       anyGamesPlayed
         ? ""
-        : `<p class="player-meta">No games played yet this season, so every team currently projects to an even record until real results start to differentiate teams &mdash; check back after week 1.</p>`
+        : `<p class="player-meta" style="margin-bottom:6px">No games played yet this season, so points-against for the rest of the year assumes a league-average opponent for everyone &mdash; only the points-for side (each team's own projected scoring) differentiates teams until real results come in.</p>`
+    }
+    ${
+      haveByeData
+        ? ""
+        : `<p class="player-meta">Bye-week data hasn't loaded, so this week-by-week projection can't yet swap in bench players during a bye &mdash; it's using full rosters as available for now.</p>`
     }`;
 
   grid.innerHTML = OUTLOOK_QUADRANTS.map((q) => outlookQuadrantHtml(q, grouped[q.key])).join("");

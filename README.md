@@ -32,7 +32,8 @@ football account and helps you:
   breaks average age out by QB/RB/WR/TE too.
 - **See who's contending vs. rebuilding** &mdash; an Outlook tab splits the
   league into four quadrants by projected final record (each team's
-  remaining games played out at their season-to-date scoring rate, updating
+  remaining games played out using their best possible bye-aware lineup
+  each week, from real per-player scoring projections, updating
   automatically as real results come in) and starters' average age, both
   relative to the league median: Rising Contender (young + winning),
   Win-Now (old + winning), Rebuilding (young + losing), and Retool/Sell
@@ -297,26 +298,46 @@ quadrants:
 - **Rebuilding** &mdash; young starters, losing projection.
 - **Retool / Sell** &mdash; old starters, losing projection.
 
-The projection plays each team's remaining games out at their season-to-date
-scoring rate: a Pythagorean-style win expectation (points for&sup2; /
-(points for&sup2; + points against&sup2;)) applied per remaining game, added
-on top of the wins/losses/ties already locked in. This is a steadier read on
-team strength than raw win/loss record, since two 3-0 teams can have very
-different underlying performance &mdash; one winning by 30 a game, the other
-winning by 3 &mdash; and the scoring-based projection tells them apart where
-plain win% extrapolation wouldn't. Regular-season length comes from the
-league's own playoff-start setting. Since it's computed fresh from Sleeper's
-current standings (wins/losses and points for/against) every time the app
-loads, the projected record moves on its own each week as real matchups are
-scored &mdash; there's nothing to refresh or recalculate by hand.
+The projection plays each team's remaining games out using their **best
+possible lineup each week**, not a flat scoring rate: for every remaining
+week, it takes each rostered player's projected points (their most recent
+season's points per game, scored using this league's own scoring settings
+via the same `computeLeaguePoints()` the player card stats table uses),
+excludes anyone whose NFL team has a bye that week
+(`data/nfl_byes.json`), and fills the league's actual starting lineup
+slots &mdash; including FLEX/SUPERFLEX &mdash; with the best remaining
+eligible players. So a bye doesn't just vanish a starter's points; the
+next-best bench option at that position gets credited instead, same as a
+real manager would do. Weeks already played stay locked in (this only
+projects what's left), and points-against for the rest of the season uses
+the team's own season-to-date rate once it has one, or the league's
+average projected scoring as a neutral stand-in before any games are
+played. The final win probability comes from a Pythagorean-style
+expectation (points for&sup2; / (points for&sup2; + points against&sup2;))
+over those projected season totals. Regular-season length comes from the
+league's own playoff-start setting. Since it's computed fresh from
+Sleeper's current standings and roster every time the app loads, the
+projected record moves on its own each week as real matchups are scored
+&mdash; there's nothing to refresh or recalculate by hand.
+
+`data/nfl_byes.json` comes from a weekly BigQuery job
+(`scripts/refresh_nfl_byes.py`) that derives each team's bye week from
+nflverse's schedule data (the week a team appears in neither `home_team`
+nor `away_team`) &mdash; the same `ff-python-api.nflreadpy` project the
+other refresh jobs pull from. If that file hasn't loaded yet, the
+week-by-week projection just uses full rosters as available (no bye
+substitution) rather than breaking, and the tab says so.
 
 Both axes are relative to the league's own median (age and projected win%),
 not a fixed cutoff, so it works the same whether it's week 2 or week 15 and
-regardless of league size. Before any games are played, every team projects
-to an even record by default (no scoring yet to differentiate anyone) &mdash;
-the tab notes this rather than presenting it as a real read. Each quadrant
-includes a short note on what that competitive window suggests doing (sell
-veterans, target win-now vets, stay patient, etc.).
+regardless of league size. Before any games are played, points-for still
+differentiates teams (it's driven by real per-player projections
+regardless of games played), but points-against falls back to a
+league-average estimate for everyone since there's no real defense/schedule
+data yet &mdash; the tab notes this rather than presenting it as a fully
+settled read. Each quadrant includes a short note on what that competitive
+window suggests doing (sell veterans, target win-now vets, stay patient,
+etc.).
 
 ## Player cards
 
