@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-10T12:56:07Z",
+  "generated_at": "2026-08-10T15:55:47Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Not spotted at practice",
+      "description": "Pittman (leg) wasn't spotted at Monday's practice, Alan Saunders of SteelersNow.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-08-10T08:32:00Z"
+    },
+    {
+      "player_name": "Kirk Cousins",
+      "sleeper_id": "1166",
+      "gsis_id": "00-0029604",
+      "position": "QB",
+      "team": "LVR",
+      "headline": "Back with starters Monday",
+      "description": "The Raiders returned to their usual QB rotation during Monday's practice, with Cousins working with the first team and Fernando Mendoza with the second-team, Ryan McFadden of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kirk-cousins-8057",
+      "pub_date": "2026-08-10T08:23:00Z"
+    },
+    {
+      "player_name": "Jayden Daniels",
+      "sleeper_id": "11566",
+      "gsis_id": "00-0039910",
+      "position": "QB",
+      "team": "WAS",
+      "headline": "Impressing early in training camp",
+      "description": "Daniels, per wide receiver Jaylin Lane, has been \"elite\" in training camp, according to JP Finlay of NBC Sports Washington. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jayden-daniels-17692",
+      "pub_date": "2026-08-10T08:20:00Z"
+    },
+    {
+      "player_name": "Tank Dell",
+      "sleeper_id": "9502",
+      "gsis_id": "00-0038977",
+      "position": "WR",
+      "team": "HOU",
+      "headline": "Involved in full-team drills Monday",
+      "description": "Dell (knee) participated in \"full-team drills\" Monday, Aaron Wilson of KPRC 2 Houston reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tank-dell-16935",
+      "pub_date": "2026-08-10T08:00:00Z"
+    },
+    {
+      "player_name": "Xavier Worthy",
+      "sleeper_id": "11624",
+      "gsis_id": "00-0039894",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Returns to practice Monday",
+      "description": "Worthy (shoulder) will take part in Monday's practice, Pete Sweeney of The Kansas City Star reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/xavier-worthy-17687",
+      "pub_date": "2026-08-10T07:23:00Z"
+    },
     {
       "player_name": "Luther Burden III",
       "sleeper_id": "12519",
