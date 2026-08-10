@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-08-10T10:12:20Z",
+  "generated_at": "2026-08-10T12:56:07Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Luther Burden III",
+      "sleeper_id": "12519",
+      "gsis_id": "00-0040735",
+      "position": "WR",
+      "team": "CHI",
+      "headline": "Should be back for regular-season opener",
+      "description": "While Burden (groin) is expected to miss the preseason, the Bears believe the wideout should be back for the team's regular-season opener against the Panthers, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/luther-burden-18548",
+      "pub_date": "2026-08-10T05:42:00Z"
+    },
+    {
+      "player_name": "Hunter Henry",
+      "sleeper_id": "3214",
+      "gsis_id": "00-0033090",
+      "position": "TE",
+      "team": "NEP",
+      "headline": "Agrees to two-year extension",
+      "description": "Henry has agreed to a two-year extension with the Patriots, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/hunter-henry-10735",
+      "pub_date": "2026-08-10T05:21:00Z"
+    },
     {
       "player_name": "Carnell Tate",
       "sleeper_id": "13279",
