@@ -497,6 +497,64 @@ function relativeDate(isoString) {
   return then.toLocaleDateString(undefined, { month: "short", day: "numeric" });
 }
 
+// ---------- News sentiment ----------
+
+// There's no backend/LLM to ask, so this is a deliberately conservative
+// keyword heuristic -- and headline-only, never the description: the
+// description often brings in context that isn't about this update's own
+// sentiment (a different player's injury explaining why *this* player's
+// role is expanding, an old injury mentioned in passing while recapping a
+// full recovery), which produces confident-looking but wrong matches. The
+// headline is written to summarize the actual news, so it's much more
+// reliable even though it means fewer items get flagged at all -- which is
+// exactly the conservative behavior wanted here. "Won't play" / "will not
+// play" are deliberately excluded: RotoWire uses that phrasing both for
+// real injury absences and for routine preseason/rest-the-starters news,
+// and the two aren't distinguishable from wording alone.
+const NEWS_POSITIVE_PHRASES = [
+  "cleared to play", "good to go", "full practice", "full participant",
+  "no restrictions", "removed from the injury report",
+  "not on the injury report", "activated from injured reserve",
+  "activated from ir", "returned to practice", "returns to practice",
+  "will return", "trending toward playing", "will start",
+  "named the starter", "gets the start", "will get the start",
+  "signed with", "signs with", "promoted to the active roster",
+  "career high", "strong practice", "avoids a serious injury",
+  "avoided a serious injury", "avoids serious injury",
+  "avoided serious injury", "avoids a significant injury",
+  "avoided a significant injury", "feeling great", "feels great",
+];
+
+const NEWS_NEGATIVE_PHRASES = [
+  "ruled out", "out for the season", "out indefinitely",
+  "placed on injured reserve", "placed on ir", "season-ending",
+  "torn acl", "torn achilles", "torn meniscus", "requires surgery",
+  "undergoing surgery", "undergo surgery", "underwent surgery",
+  "will miss", "expected to miss", "miss the rest of", "suspended",
+  "suspension", "arrested", "released by", "waived by", "cut by",
+  "demoted", "benched", "lost his starting job", "loses his starting job",
+  "did not practice", "downgraded to out", "downgraded to doubtful",
+  "inactive for", "will be inactive", "did not return", "left the game",
+  "carted off", "walking boot", "on crutches",
+];
+
+function newsSentiment(item) {
+  const text = (item.headline || "").toLowerCase();
+  const positive = NEWS_POSITIVE_PHRASES.some((p) => text.includes(p));
+  const negative = NEWS_NEGATIVE_PHRASES.some((p) => text.includes(p));
+  if (positive === negative) return null; // neither matched, or both did (conflicting) -- stay silent
+  return positive ? "up" : "down";
+}
+
+function newsSentimentIconHtml(item) {
+  const sentiment = newsSentiment(item);
+  if (!sentiment) return "";
+  const cls = sentiment === "up" ? "news-sentiment news-sentiment-up" : "news-sentiment news-sentiment-down";
+  const glyph = sentiment === "up" ? "&#9650;" : "&#9660;";
+  const label = sentiment === "up" ? "Sounds like good news" : "Sounds like bad news";
+  return `<span class="${cls}" title="${label}" aria-label="${label}">${glyph}</span>`;
+}
+
 async function renderPlayerNews() {
   const card = document.getElementById("news-card");
   const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
@@ -537,7 +595,7 @@ async function renderPlayerNews() {
           <span class="player-meta">${n.team || "FA"}</span>
           <span class="news-date">${relativeDate(n.pub_date)}</span>
         </div>
-        <p class="news-headline">${n.headline}</p>
+        <p class="news-headline">${newsSentimentIconHtml(n)}${n.headline}</p>
         ${n.description ? `<p class="player-meta news-desc">${n.description}</p>` : ""}
         <a class="news-link" href="${n.link}" target="_blank" rel="noopener">Read on ${escapeHtml(data.source || "RotoWire")} &rarr;</a>
       </div>`
@@ -1836,7 +1894,7 @@ function renderPlayerCardNews(pid) {
       <div class="news-item-head">
         <span class="news-date">${relativeDate(n.pub_date)}</span>
       </div>
-      <p class="news-headline">${n.headline}</p>
+      <p class="news-headline">${newsSentimentIconHtml(n)}${n.headline}</p>
       ${n.description ? `<p class="player-meta news-desc">${n.description}</p>` : ""}
       <a class="news-link" href="${n.link}" target="_blank" rel="noopener">Read on ${escapeHtml(data.source || "RotoWire")} &rarr;</a>
     </div>`
