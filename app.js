@@ -93,6 +93,7 @@ const state = {
   playerSeasonStats: null,
   playerAges: null,
   ageCurveScope: "starters",
+  tradeFinderScope: "starters",
 };
 
 // ---------- low-level helpers ----------
@@ -811,28 +812,39 @@ function dedicatedSlotCounts() {
   return counts;
 }
 
-// How strong a roster is at a position: the combined trade value of its
-// top starting-slot-count players there (e.g. top 2 RBs in a 2-RB league),
-// so a team needs real depth, not just one standout player, to rate well.
-// Falls back to an inverted best search_rank if trade values haven't
-// loaded, so needs still work before/without that data.
+// How strong a roster is at a position, in one of two modes
+// (state.tradeFinderScope):
+//  - "starters": the combined trade value of its top starting-slot-count
+//    players there (e.g. top 2 RBs in a 2-RB league), so a team needs real
+//    depth at the positions it actually starts, not just one standout
+//    player, to rate well.
+//  - "full": the combined trade value of every rostered player at that
+//    position, rewarding bench depth too (useful for dynasty stockpiling,
+//    not just this year's lineup).
+// Falls back to inverted search_rank if trade values haven't loaded, so
+// needs still work before/without that data.
 function positionStrengthByRoster() {
   const result = {}; // position -> { rosterId -> strength }
   SKILL_POSITIONS.forEach((pos) => (result[pos] = {}));
   const slotCounts = dedicatedSlotCounts();
   const haveValues = !!(state.tradeValues && state.tradeValues.players);
+  const fullRoster = state.tradeFinderScope === "full";
 
   state.rosters.forEach((r) => {
     SKILL_POSITIONS.forEach((pos) => {
       const pids = (r.players || []).filter((pid) => playerPosition(player(pid)) === pos);
       let strength;
       if (haveValues) {
-        strength = pids
+        const values = pids
           .map((pid) => playerValue(pid))
           .filter((v) => v !== null && v !== undefined)
-          .sort((a, b) => b - a)
-          .slice(0, slotCounts[pos])
-          .reduce((sum, v) => sum + v, 0);
+          .sort((a, b) => b - a);
+        strength = (fullRoster ? values : values.slice(0, slotCounts[pos])).reduce((sum, v) => sum + v, 0);
+      } else if (fullRoster) {
+        strength = pids.reduce((sum, pid) => {
+          const rank = playerRank(player(pid));
+          return sum + (rank >= 9999 ? 0 : 100000 - rank);
+        }, 0);
       } else {
         const bestRank = pids.reduce((best, pid) => Math.min(best, playerRank(player(pid))), 9999);
         strength = bestRank >= 9999 ? 0 : 100000 - bestRank;
@@ -1125,6 +1137,20 @@ function assetLabel(id, ownerRosterId) {
   return playerDisplay(player(id));
 }
 
+function tradeFinderScopeToggleHtml() {
+  const scopes = [
+    { key: "starters", label: "Starters" },
+    { key: "full", label: "Full Roster" },
+  ];
+  const btns = scopes
+    .map(
+      (s) =>
+        `<button type="button" class="scope-toggle-btn${state.tradeFinderScope === s.key ? " active" : ""}" data-tradescope="${s.key}">${s.label}</button>`
+    )
+    .join("");
+  return `<div class="scope-toggle">${btns}</div>`;
+}
+
 async function renderTradeFinder() {
   const needsCard = document.getElementById("needs-card");
 
@@ -1148,10 +1174,17 @@ async function renderTradeFinder() {
   }
 
   const needs = computeNeeds();
-  needsCard.innerHTML = needs.length
-    ? `
-      <h2>Team needs</h2>
-      <p class="player-meta" style="margin-bottom:14px">Based on your combined trade value at each position (top players per starting slot) against the rest of the league.</p>
+  const scopeNote =
+    state.tradeFinderScope === "full"
+      ? "Based on your combined trade value at each position (entire roster) against the rest of the league."
+      : "Based on your combined trade value at each position (top players per starting slot) against the rest of the league.";
+  needsCard.innerHTML = `
+    <h2>Team needs</h2>
+    ${tradeFinderScopeToggleHtml()}
+    <p class="player-meta" style="margin-bottom:14px">${scopeNote}</p>
+    ${
+      needs.length
+        ? `
       <div class="need-grid">
         ${needs
           .map(
@@ -1163,9 +1196,9 @@ async function renderTradeFinder() {
           </div>`
           )
           .join("")}
-      </div>
-    `
-    : `<h2>Team needs</h2>${emptyState("Your roster looks solid at QB/RB/WR/TE relative to the rest of the league &mdash; no glaring needs detected.")}`;
+      </div>`
+        : emptyState("Your roster looks solid at QB/RB/WR/TE relative to the rest of the league &mdash; no glaring needs detected.")
+    }`;
 
   renderTradeBuilderPicker();
   renderTradeSuggestions();
@@ -2074,6 +2107,15 @@ function setupAgeCurveToggle() {
   });
 }
 
+function setupTradeFinderScopeToggle() {
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".scope-toggle-btn[data-tradescope]");
+    if (!btn || btn.classList.contains("active")) return;
+    state.tradeFinderScope = btn.dataset.tradescope;
+    renderTradeFinder();
+  });
+}
+
 // ---------- tabs ----------
 
 function setupTabs() {
@@ -2112,6 +2154,7 @@ function init() {
   setupTabs();
   setupPlayerCard();
   setupAgeCurveToggle();
+  setupTradeFinderScopeToggle();
   setupScrollHints();
 
   const seasonInput = document.getElementById("season");
