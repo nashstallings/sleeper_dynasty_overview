@@ -31,8 +31,10 @@ football account and helps you:
   with a toggle to switch to full rosters. The league comparison table
   breaks average age out by QB/RB/WR/TE too.
 - **See who's contending vs. rebuilding** &mdash; an Outlook tab splits the
-  league into four quadrants by current record and starters' average age,
-  both relative to the league median: Rising Contender (young + winning),
+  league into four quadrants by projected final record (each team's
+  remaining games played out at their season-to-date scoring rate, updating
+  automatically as real results come in) and starters' average age, both
+  relative to the league median: Rising Contender (young + winning),
   Win-Now (old + winning), Rebuilding (young + losing), and Retool/Sell
   (old + losing), each with a short note on what that window suggests
   doing.
@@ -287,21 +289,34 @@ about how long a team's current window to win is open.
 
 The Outlook tab reuses the same age-weighting data as Age Curve (starters
 only, fixed regardless of the Age Curve tab's own toggle) alongside each
-team's win/loss record, and sorts every team into one of four quadrants:
+team's **projected final record**, and sorts every team into one of four
+quadrants:
 
-- **Rising Contender** &mdash; young starters, winning record.
-- **Win-Now** &mdash; old starters, winning record.
-- **Rebuilding** &mdash; young starters, losing record.
-- **Retool / Sell** &mdash; old starters, losing record.
+- **Rising Contender** &mdash; young starters, winning projection.
+- **Win-Now** &mdash; old starters, winning projection.
+- **Rebuilding** &mdash; young starters, losing projection.
+- **Retool / Sell** &mdash; old starters, losing projection.
 
-Both axes are relative to the league's own median (age and win%), not a
-fixed cutoff, so it works the same whether it's week 2 or week 15 and
-regardless of league size. Early in the season, before there's a real
-spread in records, most/all teams will land in the "winning" column by
-default (median win% is 0 until results differentiate teams) &mdash; the tab
-notes this rather than presenting it as a real read. Each quadrant includes
-a short note on what that competitive window suggests doing (sell veterans,
-target win-now vets, stay patient, etc.).
+The projection plays each team's remaining games out at their season-to-date
+scoring rate: a Pythagorean-style win expectation (points for&sup2; /
+(points for&sup2; + points against&sup2;)) applied per remaining game, added
+on top of the wins/losses/ties already locked in. This is a steadier read on
+team strength than raw win/loss record, since two 3-0 teams can have very
+different underlying performance &mdash; one winning by 30 a game, the other
+winning by 3 &mdash; and the scoring-based projection tells them apart where
+plain win% extrapolation wouldn't. Regular-season length comes from the
+league's own playoff-start setting. Since it's computed fresh from Sleeper's
+current standings (wins/losses and points for/against) every time the app
+loads, the projected record moves on its own each week as real matchups are
+scored &mdash; there's nothing to refresh or recalculate by hand.
+
+Both axes are relative to the league's own median (age and projected win%),
+not a fixed cutoff, so it works the same whether it's week 2 or week 15 and
+regardless of league size. Before any games are played, every team projects
+to an even record by default (no scoring yet to differentiate anyone) &mdash;
+the tab notes this rather than presenting it as a real read. Each quadrant
+includes a short note on what that competitive window suggests doing (sell
+veterans, target win-now vets, stay patient, etc.).
 
 ## Player cards
 

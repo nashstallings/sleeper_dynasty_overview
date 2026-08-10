@@ -1960,13 +1960,51 @@ const OUTLOOK_QUADRANTS = [
   },
 ];
 
-function winPctForRoster(roster) {
+function recordForRoster(roster) {
   const s = roster.settings || {};
   const wins = s.wins || 0;
   const losses = s.losses || 0;
   const ties = s.ties || 0;
-  const total = wins + losses + ties;
-  return { winPct: total > 0 ? (wins + ties * 0.5) / total : 0, wins, losses, ties, total };
+  return { wins, losses, ties, played: wins + losses + ties };
+}
+
+// Pythagorean-style win expectation from season-to-date scoring (points for
+// vs. points against) -- a steadier read on team strength than raw win/loss
+// record this early in a season, since it isn't swung by a single close
+// loss or blowout win the way win% is. Falls back to a neutral 50% before
+// any points are on the board at all.
+function pythagoreanWinProb(pointsFor, pointsAgainst) {
+  if (pointsFor <= 0 && pointsAgainst <= 0) return 0.5;
+  const pf2 = pointsFor ** 2;
+  const pa2 = pointsAgainst ** 2;
+  return pf2 / (pf2 + pa2);
+}
+
+// Regular-season length in weeks, from the league's own playoff-start
+// setting (games before the playoffs begin) -- falls back to the common
+// 14-week default if that setting isn't available for some reason.
+function regularSeasonWeeks() {
+  const start = state.league && state.league.settings && state.league.settings.playoff_week_start;
+  return start && start > 1 ? start - 1 : 14;
+}
+
+// Final record if each team's remaining games play out at their
+// season-to-date scoring rate. Actual results already in the books stay
+// locked in -- only the remaining games are projected -- so this is
+// naturally as current as Sleeper's own standings: reload the league after
+// a matchup is scored and both the actual and projected record move.
+function projectedRecordForRoster(roster) {
+  const { wins, losses, ties, played } = recordForRoster(roster);
+  const totalGames = regularSeasonWeeks();
+  const remaining = Math.max(0, totalGames - played);
+  const s = roster.settings || {};
+  const pointsFor = (s.fpts || 0) + (s.fpts_decimal || 0) / 100;
+  const pointsAgainst = (s.fpts_against || 0) + (s.fpts_against_decimal || 0) / 100;
+  const winProb = pythagoreanWinProb(pointsFor, pointsAgainst);
+  const projWins = wins + winProb * remaining;
+  const projLosses = losses + (1 - winProb) * remaining;
+  const projWinPct = totalGames > 0 ? (projWins + ties * 0.5) / totalGames : 0.5;
+  return { wins, losses, ties, played, totalGames, remaining, winProb, projWins, projLosses, projWinPct };
 }
 
 function median(sortedNums) {
@@ -1976,12 +2014,15 @@ function median(sortedNums) {
 
 function outlookQuadrantHtml(q, teams) {
   const chips = teams
-    .map(({ roster, winPct, avgAge, wins, losses, ties }) => {
+    .map(({ roster, avgAge, wins, losses, ties, projWins, totalGames }) => {
       const record = ties ? `${wins}-${losses}-${ties}` : `${wins}-${losses}`;
+      const projWinsR = Math.round(projWins);
+      const projLossesR = totalGames - projWinsR - ties;
+      const projRecord = ties ? `${projWinsR}-${projLossesR}-${ties}` : `${projWinsR}-${projLossesR}`;
       return `
         <div class="outlook-chip">
           ${teamCellHtml(roster)}
-          <span class="player-meta">${record} &middot; age ${avgAge.toFixed(1)}</span>
+          <span class="player-meta">${record} &rarr; proj ${projRecord} &middot; age ${avgAge.toFixed(1)}</span>
         </div>`;
     })
     .join("");
@@ -2027,7 +2068,7 @@ async function renderOutlook() {
     .map((roster) => {
       const avgAge = weightedAvgAge(rosterAgeEntries(roster.roster_id, "starters"));
       if (avgAge === null) return null;
-      return { roster, avgAge, ...winPctForRoster(roster) };
+      return { roster, avgAge, ...projectedRecordForRoster(roster) };
     })
     .filter(Boolean);
 
@@ -2037,31 +2078,33 @@ async function renderOutlook() {
   }
 
   const medianAge = median([...rows.map((r) => r.avgAge)].sort((a, b) => a - b));
-  const medianWinPct = median([...rows.map((r) => r.winPct)].sort((a, b) => a - b));
-  const anyGamesPlayed = rows.some((r) => r.total > 0);
+  const medianProjWinPct = median([...rows.map((r) => r.projWinPct)].sort((a, b) => a - b));
+  const anyGamesPlayed = rows.some((r) => r.played > 0);
 
   const grouped = { rising: [], winnow: [], rebuild: [], retool: [] };
   rows.forEach((r) => {
     const young = r.avgAge <= medianAge;
-    const winning = r.winPct >= medianWinPct;
+    const winning = r.projWinPct >= medianProjWinPct;
     if (young && winning) grouped.rising.push(r);
     else if (!young && winning) grouped.winnow.push(r);
     else if (young && !winning) grouped.rebuild.push(r);
     else grouped.retool.push(r);
   });
-  Object.values(grouped).forEach((list) => list.sort((a, b) => b.winPct - a.winPct));
+  Object.values(grouped).forEach((list) => list.sort((a, b) => b.projWinPct - a.projWinPct));
 
   introCard.innerHTML = `
     <h2>Contender / Rebuild Outlook</h2>
     <p class="player-meta" style="margin-bottom:6px">
-      Splits the league by two axes &mdash; current record and starters' value-weighted average age &mdash;
-      relative to the league median (age ${medianAge.toFixed(1)}${anyGamesPlayed ? `, win% ${Math.round(medianWinPct * 100)}%` : ""}),
-      to suggest each team's competitive window.
+      Splits the league by two axes &mdash; projected final record and starters' value-weighted average age
+      &mdash; relative to the league median (age ${medianAge.toFixed(1)}${anyGamesPlayed ? `, projected win% ${Math.round(medianProjWinPct * 100)}%` : ""}),
+      to suggest each team's competitive window. The projection plays out each team's remaining games at their
+      season-to-date scoring rate (points for vs. points against) &mdash; actual results already in the books
+      stay locked in, so it updates automatically as real results (and scoring) come in each week.
     </p>
     ${
       anyGamesPlayed
         ? ""
-        : `<p class="player-meta">No games played yet this season, so every team currently reads as "winning" until standings shake out &mdash; check back once there's a real record to compare.</p>`
+        : `<p class="player-meta">No games played yet this season, so every team currently projects to an even record until real results start to differentiate teams &mdash; check back after week 1.</p>`
     }`;
 
   grid.innerHTML = OUTLOOK_QUADRANTS.map((q) => outlookQuadrantHtml(q, grouped[q.key])).join("");
