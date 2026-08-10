@@ -33,28 +33,28 @@ QUERY = f"""
 WITH bounds AS (
   SELECT MAX(season) AS season
   FROM `{PROJECT_ID}.{DATASET}.schedules`
-  WHERE season_type = 'REG'
+  WHERE game_type = 'REG'
 ),
 weeks AS (
   SELECT DISTINCT s.week
   FROM `{PROJECT_ID}.{DATASET}.schedules` s, bounds
-  WHERE s.season = bounds.season AND s.season_type = 'REG'
+  WHERE s.season = bounds.season AND s.game_type = 'REG'
 ),
 teams AS (
   SELECT DISTINCT team FROM (
     SELECT home_team AS team FROM `{PROJECT_ID}.{DATASET}.schedules` s, bounds
-      WHERE s.season = bounds.season AND s.season_type = 'REG'
+      WHERE s.season = bounds.season AND s.game_type = 'REG'
     UNION ALL
     SELECT away_team AS team FROM `{PROJECT_ID}.{DATASET}.schedules` s, bounds
-      WHERE s.season = bounds.season AND s.season_type = 'REG'
+      WHERE s.season = bounds.season AND s.game_type = 'REG'
   )
 ),
 played AS (
   SELECT home_team AS team, week FROM `{PROJECT_ID}.{DATASET}.schedules` s, bounds
-    WHERE s.season = bounds.season AND s.season_type = 'REG'
+    WHERE s.season = bounds.season AND s.game_type = 'REG'
   UNION ALL
   SELECT away_team AS team, week FROM `{PROJECT_ID}.{DATASET}.schedules` s, bounds
-    WHERE s.season = bounds.season AND s.season_type = 'REG'
+    WHERE s.season = bounds.season AND s.game_type = 'REG'
 )
 SELECT teams.team, weeks.week AS bye_week, bounds.season
 FROM teams
