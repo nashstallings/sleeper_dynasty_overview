@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T04:25:30Z",
+  "generated_at": "2026-08-10T07:20:51Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,17 @@
       "description": "Golden did not practice Sunday due to a toe injury, Matt Schneidman of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/matthew-golden-18500",
       "pub_date": "2026-08-09T09:50:00Z"
+    },
+    {
+      "player_name": "Luther Burden III",
+      "sleeper_id": "12519",
+      "gsis_id": "00-0040735",
+      "position": "WR",
+      "team": "CHI",
+      "headline": "Expected to miss one month",
+      "description": "Burden (groin) is expected to be sidelined for roughly one month, Matt Zenitz of CBSSports.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/luther-burden-18548",
+      "pub_date": "2026-08-09T09:38:00Z"
     },
     {
       "player_name": "Malik Nabers",
