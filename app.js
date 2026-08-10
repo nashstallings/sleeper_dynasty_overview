@@ -922,7 +922,11 @@ const TRADE_PACKAGE_MAX_PLAYERS = 3;
 // excluded from consideration entirely -- a team that's short at WR isn't a
 // realistic source for a WR back, and suggesting "WR for WR" when both sides
 // need WR doesn't fill anyone's need, it's just a lateral swap.
-function buildTradePackage(roster, offerTotal, needPositions, theirNeedPositions) {
+//
+// excludePickRounds is a Set of "season|round" keys (see renderTradeSuggestions)
+// for picks already in the offer -- nobody wants their own 2027 1st back for
+// a 2027 1st, regardless of which team originally owned either one.
+function buildTradePackage(roster, offerTotal, needPositions, theirNeedPositions, excludePickRounds = new Set()) {
   const starterSet = new Set(roster.starters || []);
   const playerPool = (roster.players || [])
     .map((pid) => {
@@ -956,8 +960,10 @@ function buildTradePackage(roster, offerTotal, needPositions, theirNeedPositions
       value: pickValue(pk.season, pk.round),
       needFill: false,
       isPick: true,
+      roundKey: `${pk.season}|${pk.round}`,
     }))
-    .filter((c) => c.value !== null && c.value !== undefined);
+    .filter((c) => c.value !== null && c.value !== undefined)
+    .filter((c) => !excludePickRounds.has(c.roundKey));
 
   const pool = [...playerPool, ...pickPool];
 
@@ -1310,6 +1316,16 @@ function renderTradeSuggestions() {
   }));
   const myNeedPositions = new Set(computeNeeds().map((n) => n.position));
 
+  // A team offering its 2027 1st doesn't want its 2027 1st back -- exclude
+  // same season+round picks from the suggested return, regardless of
+  // original owner (a "similar" pick, not just the identical asset).
+  const offeredPickRounds = new Set(
+    selectedIds.filter(isPickId).map((pid) => {
+      const { season, round } = parsePickId(pid);
+      return `${season}|${round}`;
+    })
+  );
+
   // Only compute a fairness comparison when every selected player has a
   // known value -- a partial total would be misleading.
   const offerValues = selectedPlayers.map((sp) => sp.value);
@@ -1320,7 +1336,7 @@ function renderTradeSuggestions() {
   const cards = others.map((roster) => {
     const theirNeedPositions = new Set(rosterNeeds(roster.roster_id).map((n) => n.position));
     const fitCount = selectedPlayers.filter((sp) => theirNeedPositions.has(sp.pos)).length;
-    const tradePackage = buildTradePackage(roster, offerTotal, myNeedPositions, theirNeedPositions);
+    const tradePackage = buildTradePackage(roster, offerTotal, myNeedPositions, theirNeedPositions, offeredPickRounds);
     return { roster, theirNeedPositions, fitCount, tradePackage };
   });
 
