@@ -621,6 +621,10 @@ tbody tr { transition: background 0.12s ease; }
 tbody tr:hover { background: rgba(238, 242, 246, 0.03); }
 tr.me-row { background: var(--accent-soft); }
 tr.me-row:hover { background: var(--accent-soft); }
+/* .freeze-col has its own opaque background to stay legible while the rest
+   of a row scrolls underneath it -- keep that in sync with me-row's tint
+   so the highlighted row doesn't lose its color in the frozen cell. */
+tr.me-row .freeze-col { background: var(--accent-soft); }
 
 .badge {
   display: inline-flex;
@@ -815,6 +819,28 @@ tr.me-row:hover { background: var(--accent-soft); }
 .bs-player-cell { display: flex; align-items: center; gap: 8px; }
 
 /* ---------- age curve ---------- */
+
+.age-team-picker { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+.age-team-picker label {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.age-team-picker select {
+  background: var(--panel-soft);
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+.age-team-picker select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
 
 .scope-toggle { display: flex; gap: 2px; margin-bottom: 16px; }
 .scope-toggle-btn {

@@ -94,6 +94,7 @@ const state = {
   playerSeasonStats: null,
   playerAges: null,
   ageCurveScope: "starters",
+  ageCurveRosterId: null,
   tradeFinderScope: "starters",
 };
 
@@ -241,6 +242,7 @@ async function loadLeague(leagueId) {
     state.myRosterId = null;
     const myRoster = state.rosters.find((r) => r.owner_id === state.userId);
     if (myRoster) state.myRosterId = myRoster.roster_id;
+    state.ageCurveRosterId = state.myRosterId;
     state.selectedTradePlayers = new Set();
 
     state.tradedPicks = [];
@@ -1729,6 +1731,16 @@ function weightedAvgAge(entries) {
   return entries.reduce((s, e) => s + e.age * e.weight, 0) / totalWeight;
 }
 
+// Per-position breakdown of a roster's weighted average age, e.g. for the
+// League Age Comparison table's QB/RB/WR/TE columns.
+function ageByPosition(entries) {
+  const result = {};
+  SKILL_POSITIONS.forEach((pos) => {
+    result[pos] = weightedAvgAge(entries.filter((e) => e.pos === pos));
+  });
+  return result;
+}
+
 // Groups entries into whole-year age buckets, split by position so the bar
 // for each age can be stacked (and colored) the same way position badges
 // are colored everywhere else in the app.
@@ -1790,6 +1802,23 @@ function scopeToggleHtml() {
   return `<div class="scope-toggle">${btns}</div>`;
 }
 
+function ageTeamSelectHtml() {
+  const selected = state.ageCurveRosterId || state.myRosterId;
+  const sorted = [...state.rosters].sort((a, b) => rosterLabel(a).localeCompare(rosterLabel(b)));
+  const options = sorted
+    .map((r) => {
+      const isMe = r.roster_id === state.myRosterId;
+      const label = `${rosterLabel(r)}${isMe ? " (you)" : ""}`;
+      return `<option value="${r.roster_id}"${r.roster_id === selected ? " selected" : ""}>${escapeHtml(label)}</option>`;
+    })
+    .join("");
+  return `
+    <div class="age-team-picker">
+      <label for="age-team-select">Viewing</label>
+      <select id="age-team-select">${options}</select>
+    </div>`;
+}
+
 async function renderAgeCurve() {
   const teamCard = document.getElementById("age-team-card");
   const leagueCard = document.getElementById("age-league-card");
@@ -1800,8 +1829,10 @@ async function renderAgeCurve() {
     leagueCard.innerHTML = "";
     return;
   }
+  if (!state.ageCurveRosterId) state.ageCurveRosterId = state.myRosterId;
+  const viewedRosterId = state.ageCurveRosterId;
 
-  teamCard.innerHTML = `<h2>Age Curve</h2>${scopeToggleHtml()}<p class="spinner-note">Loading age data...</p>`;
+  teamCard.innerHTML = `<h2>Age Curve</h2>${ageTeamSelectHtml()}${scopeToggleHtml()}<p class="spinner-note">Loading age data...</p>`;
   leagueCard.innerHTML = "";
 
   if (!state.playerAges) {
@@ -1822,28 +1853,31 @@ async function renderAgeCurve() {
   }
 
   if (!state.playerAges || !state.playerAges.players) {
-    teamCard.innerHTML = `<h2>Age Curve</h2>${emptyState("Couldn't load player age data (data/player_ages.json missing or unreachable).")}`;
+    teamCard.innerHTML = `<h2>Age Curve</h2>${ageTeamSelectHtml()}${emptyState("Couldn't load player age data (data/player_ages.json missing or unreachable).")}`;
     return;
   }
 
-  const myEntries = rosterAgeEntries(state.myRosterId);
-  const myAvgAge = weightedAvgAge(myEntries);
+  const viewedEntries = rosterAgeEntries(viewedRosterId);
+  const viewedAvgAge = weightedAvgAge(viewedEntries);
 
   const leagueRows = state.rosters
-    .map((r) => ({ roster: r, avgAge: weightedAvgAge(rosterAgeEntries(r.roster_id)), count: rosterAgeEntries(r.roster_id).length }))
+    .map((r) => {
+      const entries = rosterAgeEntries(r.roster_id);
+      return { roster: r, avgAge: weightedAvgAge(entries), byPos: ageByPosition(entries) };
+    })
     .filter((r) => r.avgAge !== null)
     .sort((a, b) => a.avgAge - b.avgAge);
 
-  const myRank = leagueRows.findIndex((r) => r.roster.roster_id === state.myRosterId) + 1;
-  const rankNote = myRank > 0 ? ` &middot; ${roundOrdinal(myRank)} youngest of ${leagueRows.length} teams` : "";
+  const viewedRank = leagueRows.findIndex((r) => r.roster.roster_id === viewedRosterId) + 1;
+  const rankNote = viewedRank > 0 ? ` &middot; ${roundOrdinal(viewedRank)} youngest of ${leagueRows.length} teams` : "";
 
   const weightingNote = state.tradeValues
-    ? "Weighted by each player's trade value, so bench depth counts less than your stars."
+    ? "Weighted by each player's trade value, so bench depth counts less than the team's stars."
     : "Trade values didn't load, so this is a simple (unweighted) average.";
 
   const posRows = SKILL_POSITIONS
     .map((pos) => {
-      const posEntries = myEntries.filter((e) => e.pos === pos);
+      const posEntries = viewedEntries.filter((e) => e.pos === pos);
       const avg = weightedAvgAge(posEntries);
       return avg === null
         ? ""
@@ -1858,35 +1892,38 @@ async function renderAgeCurve() {
 
   teamCard.innerHTML = `
     <h2>Age Curve</h2>
+    ${ageTeamSelectHtml()}
     ${scopeToggleHtml()}
     <p class="player-meta" style="margin-bottom:14px">${weightingNote}</p>
-    <div class="age-summary-value">${myAvgAge !== null ? myAvgAge.toFixed(1) : "&mdash;"}</div>
+    <div class="age-summary-value">${viewedAvgAge !== null ? viewedAvgAge.toFixed(1) : "&mdash;"}</div>
     <p class="player-meta" style="margin-bottom:18px">Value-weighted average age${rankNote}</p>
-    ${ageChartHtml(myEntries)}
+    ${ageChartHtml(viewedEntries)}
     ${posRows ? `<table style="margin-top:18px"><thead><tr><th>Pos</th><th># Players</th><th>Avg age</th></tr></thead><tbody>${posRows}</tbody></table>` : ""}`;
 
   if (!leagueRows.length) return;
 
   const leagueTableRows = leagueRows
-    .map(({ roster, avgAge, count }, i) => {
+    .map(({ roster, avgAge, byPos }, i) => {
       const isMe = roster.roster_id === state.myRosterId;
+      const posCells = SKILL_POSITIONS
+        .map((pos) => `<td>${byPos[pos] !== null ? byPos[pos].toFixed(1) : "&mdash;"}</td>`)
+        .join("");
       return `
         <tr class="${isMe ? "me-row" : ""}">
           <td>${i + 1}</td>
-          <td>${teamCellHtml(roster, { suffix: isMe ? '<span class="player-meta">you</span>' : "" })}</td>
+          <td class="freeze-col">${teamCellHtml(roster, { suffix: isMe ? '<span class="player-meta">you</span>' : "" })}</td>
           <td>${avgAge.toFixed(1)}</td>
-          <td>${count}</td>
+          ${posCells}
         </tr>`;
     })
     .join("");
 
-  const countLabel = state.ageCurveScope === "starters" ? "Starters counted" : "Players counted";
   leagueCard.innerHTML = `
     <h2>League Age Comparison</h2>
     <p class="player-meta" style="margin-bottom:14px">Youngest to oldest, by value-weighted average age (${state.ageCurveScope === "starters" ? "starters only" : "full rosters"}).</p>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>#</th><th>Team</th><th>Avg age</th><th>${countLabel}</th></tr></thead>
+        <thead><tr><th>#</th><th class="freeze-col">Team</th><th>Avg age</th><th>QB</th><th>RB</th><th>WR</th><th>TE</th></tr></thead>
         <tbody>${leagueTableRows}</tbody>
       </table>
     </div>`;
@@ -2149,6 +2186,14 @@ function setupAgeCurveToggle() {
   });
 }
 
+function setupAgeTeamSelect() {
+  document.addEventListener("change", (e) => {
+    if (e.target.id !== "age-team-select") return;
+    state.ageCurveRosterId = Number(e.target.value);
+    renderAgeCurve();
+  });
+}
+
 function setupTradeFinderScopeToggle() {
   document.addEventListener("click", (e) => {
     const btn = e.target.closest(".scope-toggle-btn[data-tradescope]");
@@ -2196,6 +2241,7 @@ function init() {
   setupTabs();
   setupPlayerCard();
   setupAgeCurveToggle();
+  setupAgeTeamSelect();
   setupTradeFinderScopeToggle();
   setupScrollHints();
 
