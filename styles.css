@@ -892,6 +892,34 @@ tr.me-row .freeze-col { background: var(--accent-soft); }
 .age-legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-dim); }
 .age-legend-swatch { width: 10px; height: 10px; display: inline-block; }
 
+/* ---------- outlook ---------- */
+
+.outlook-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: var(--content-w);
+  margin: 14px auto 0;
+}
+.outlook-quadrant { margin: 0; border-top: 3px solid var(--text-faint); }
+.outlook-quadrant h3 { margin-top: 0; }
+.outlook-rebuild { border-top-color: var(--pos-pick); }
+.outlook-rising { border-top-color: var(--good); }
+.outlook-retool { border-top-color: var(--bad); }
+.outlook-winnow { border-top-color: var(--warn); }
+.outlook-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--panel-border);
+}
+.outlook-chip:last-child { border-bottom: none; }
+@media (max-width: 700px) {
+  .outlook-grid { grid-template-columns: 1fr; }
+}
+
 .empty-note { color: var(--text-dim); font-size: 0.88rem; }
 .empty-state {
   padding: 20px 16px;

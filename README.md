@@ -24,11 +24,18 @@ football account and helps you:
   Team, Trade Finder, Trending) to open a card with their photo, team,
   position, who owns them in your league (or "Free agent"), and their stat
   line for the last few seasons.
-- **See your contention window** &mdash; an Age Curve tab shows your roster's
-  value-weighted average age, a chart of your roster's value by age and
-  position, and how your team's age compares to the rest of the league.
-  Defaults to starters only (a truer read on your win-now window), with a
-  toggle to switch to your full roster.
+- **See your contention window** &mdash; an Age Curve tab shows a value-weighted
+  average age, a chart of roster value by age and position, and how that
+  compares to the rest of the league, for your team or any other in a team
+  selector. Defaults to starters only (a truer read on a win-now window),
+  with a toggle to switch to full rosters. The league comparison table
+  breaks average age out by QB/RB/WR/TE too.
+- **See who's contending vs. rebuilding** &mdash; an Outlook tab splits the
+  league into four quadrants by current record and starters' average age,
+  both relative to the league median: Rising Contender (young + winning),
+  Win-Now (old + winning), Rebuilding (young + losing), and Retool/Sell
+  (old + losing), each with a short note on what that window suggests
+  doing.
 There is no backend, no build step, and no login. It's plain HTML/CSS/JS that
 talks directly to Sleeper's public, read-only API from your browser. Nothing
 you type is sent anywhere except Sleeper's API.
@@ -39,7 +46,8 @@ you type is sent anywhere except Sleeper's API.
 2. Enter your Sleeper **username** and the **season** (e.g. `2026`), then click
    "Find my leagues".
 3. Pick one of your leagues from the dropdown and click "Load league".
-4. Use the tabs to browse **My Team**, **Standings**, **Trade Finder**, and **Trending**.
+4. Use the tabs to browse **My Team**, **Standings**, **Trade Finder**,
+   **Trending**, **Age Curve**, and **Outlook**.
 
 Your username and chosen league are remembered in your browser (`localStorage`)
 so you won't have to re-enter them next time. Use "Switch league" to pick a
@@ -264,14 +272,36 @@ Finder uses: each player on a roster is weighted by their trade value (so a
 bench dart-throw doesn't count as much as your RB1) to produce a
 value-weighted average age, a chart of that roster's value broken out by
 age and position, and a league-wide table ranking every team youngest to
-oldest. If trade values fail to load, it falls back to a simple (unweighted)
-average instead of hiding the feature entirely.
+oldest (with QB/RB/WR/TE average-age columns of its own). If trade values
+fail to load, it falls back to a simple (unweighted) average instead of
+hiding the feature entirely.
 
-A Starters / Full Roster toggle controls which players feed all of this
-(both your own numbers and the league-wide comparison, so it stays an
-apples-to-apples ranking either way). It defaults to starters, since your
-bench age doesn't say much about how long your current window to win is
-open.
+A team selector defaults to your own roster but lets you pull up the same
+breakdown for anyone else in the league. A Starters / Full Roster toggle
+controls which players feed all of this (both the selected team's numbers
+and the league-wide comparison, so it stays an apples-to-apples ranking
+either way). It defaults to starters, since bench age doesn't say much
+about how long a team's current window to win is open.
+
+## How Outlook works
+
+The Outlook tab reuses the same age-weighting data as Age Curve (starters
+only, fixed regardless of the Age Curve tab's own toggle) alongside each
+team's win/loss record, and sorts every team into one of four quadrants:
+
+- **Rising Contender** &mdash; young starters, winning record.
+- **Win-Now** &mdash; old starters, winning record.
+- **Rebuilding** &mdash; young starters, losing record.
+- **Retool / Sell** &mdash; old starters, losing record.
+
+Both axes are relative to the league's own median (age and win%), not a
+fixed cutoff, so it works the same whether it's week 2 or week 15 and
+regardless of league size. Early in the season, before there's a real
+spread in records, most/all teams will land in the "winning" column by
+default (median win% is 0 until results differentiate teams) &mdash; the tab
+notes this rather than presenting it as a real read. Each quadrant includes
+a short note on what that competitive window suggests doing (sell veterans,
+target win-now vets, stay patient, etc.).
 
 ## Player cards
 

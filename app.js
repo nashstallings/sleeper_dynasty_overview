@@ -277,6 +277,7 @@ async function loadLeague(leagueId) {
     renderTradeFinder();
     renderTrending();
     renderAgeCurve();
+    renderOutlook();
   } catch (err) {
     showError(err.message || String(err));
     setStatus("Failed to load league.");
@@ -1709,11 +1710,11 @@ function ageWeight(sleeperId) {
   return val === null || val === undefined ? 1 : val;
 }
 
-function rosterAgeEntries(rosterId) {
+function rosterAgeEntries(rosterId, scope = state.ageCurveScope) {
   const roster = rosterById(rosterId);
   const ages = (state.playerAges && state.playerAges.players) || {};
   if (!roster) return [];
-  const pool = state.ageCurveScope === "starters" ? roster.starters : roster.players;
+  const pool = scope === "starters" ? roster.starters : roster.players;
   return (pool || [])
     .map((pid) => {
       const info = ages[pid];
@@ -1928,6 +1929,142 @@ async function renderAgeCurve() {
       </table>
     </div>`;
   refreshScrollHints();
+}
+
+// ---------- Contender / Rebuild Outlook ----------
+
+// Top-left -> top-right -> bottom-left -> bottom-right in the 2x2 grid:
+// rows split young (top) vs old (bottom), columns split losing (left) vs
+// winning (right) record, both relative to the league median so this
+// works regardless of league size or how far into the season it is.
+const OUTLOOK_QUADRANTS = [
+  {
+    key: "rebuild",
+    title: "Rebuilding",
+    blurb: "Not competitive yet, but time is on your side. Prioritize youth, draft capital, and buy-low upside over win-now vets.",
+  },
+  {
+    key: "rising",
+    title: "Rising Contender",
+    blurb: "Winning now with a young core -- the best spot to be in. No need to sell short-term assets for picks; look to add proven difference-makers while the window is wide open.",
+  },
+  {
+    key: "retool",
+    title: "Retool / Sell",
+    blurb: "The toughest spot -- not competitive and aging. Sell veterans for picks and youth now, before their value declines further.",
+  },
+  {
+    key: "winnow",
+    title: "Win-Now",
+    blurb: "Competitive today, but the roster is aging. If this is a true title contender, push all-in this season -- otherwise, consider selling vets at peak value before their production (and trade value) declines.",
+  },
+];
+
+function winPctForRoster(roster) {
+  const s = roster.settings || {};
+  const wins = s.wins || 0;
+  const losses = s.losses || 0;
+  const ties = s.ties || 0;
+  const total = wins + losses + ties;
+  return { winPct: total > 0 ? (wins + ties * 0.5) / total : 0, wins, losses, ties, total };
+}
+
+function median(sortedNums) {
+  const mid = Math.floor(sortedNums.length / 2);
+  return sortedNums.length % 2 ? sortedNums[mid] : (sortedNums[mid - 1] + sortedNums[mid]) / 2;
+}
+
+function outlookQuadrantHtml(q, teams) {
+  const chips = teams
+    .map(({ roster, winPct, avgAge, wins, losses, ties }) => {
+      const record = ties ? `${wins}-${losses}-${ties}` : `${wins}-${losses}`;
+      return `
+        <div class="outlook-chip">
+          ${teamCellHtml(roster)}
+          <span class="player-meta">${record} &middot; age ${avgAge.toFixed(1)}</span>
+        </div>`;
+    })
+    .join("");
+  return `
+    <div class="card outlook-quadrant outlook-${q.key}">
+      <h3>${q.title}</h3>
+      <p class="player-meta" style="margin-bottom:12px">${q.blurb}</p>
+      ${chips || emptyState("No teams here right now.")}
+    </div>`;
+}
+
+async function renderOutlook() {
+  const introCard = document.getElementById("outlook-card");
+  const grid = document.getElementById("outlook-quadrants");
+  if (!introCard || !grid) return;
+
+  introCard.innerHTML = `<h2>Contender / Rebuild Outlook</h2><p class="spinner-note">Loading...</p>`;
+  grid.innerHTML = "";
+
+  if (!state.playerAges) {
+    try {
+      const res = await fetch("data/player_ages.json", { cache: "no-store" });
+      if (res.ok) state.playerAges = await res.json();
+    } catch {
+      // handled below via the missing-data empty state
+    }
+  }
+  if (!state.tradeValues) {
+    try {
+      const res = await fetch("data/trade_values.json");
+      if (res.ok) state.tradeValues = await res.json();
+    } catch {
+      // falls back to an unweighted average
+    }
+  }
+
+  if (!state.playerAges || !state.playerAges.players) {
+    introCard.innerHTML = `<h2>Contender / Rebuild Outlook</h2>${emptyState("Couldn't load player age data (data/player_ages.json missing or unreachable).")}`;
+    return;
+  }
+
+  const rows = state.rosters
+    .map((roster) => {
+      const avgAge = weightedAvgAge(rosterAgeEntries(roster.roster_id, "starters"));
+      if (avgAge === null) return null;
+      return { roster, avgAge, ...winPctForRoster(roster) };
+    })
+    .filter(Boolean);
+
+  if (rows.length < 2) {
+    introCard.innerHTML = `<h2>Contender / Rebuild Outlook</h2>${emptyState("Not enough teams with age + trade value data to compare yet.")}`;
+    return;
+  }
+
+  const medianAge = median([...rows.map((r) => r.avgAge)].sort((a, b) => a - b));
+  const medianWinPct = median([...rows.map((r) => r.winPct)].sort((a, b) => a - b));
+  const anyGamesPlayed = rows.some((r) => r.total > 0);
+
+  const grouped = { rising: [], winnow: [], rebuild: [], retool: [] };
+  rows.forEach((r) => {
+    const young = r.avgAge <= medianAge;
+    const winning = r.winPct >= medianWinPct;
+    if (young && winning) grouped.rising.push(r);
+    else if (!young && winning) grouped.winnow.push(r);
+    else if (young && !winning) grouped.rebuild.push(r);
+    else grouped.retool.push(r);
+  });
+  Object.values(grouped).forEach((list) => list.sort((a, b) => b.winPct - a.winPct));
+
+  introCard.innerHTML = `
+    <h2>Contender / Rebuild Outlook</h2>
+    <p class="player-meta" style="margin-bottom:6px">
+      Splits the league by two axes &mdash; current record and starters' value-weighted average age &mdash;
+      relative to the league median (age ${medianAge.toFixed(1)}${anyGamesPlayed ? `, win% ${Math.round(medianWinPct * 100)}%` : ""}),
+      to suggest each team's competitive window.
+    </p>
+    ${
+      anyGamesPlayed
+        ? ""
+        : `<p class="player-meta">No games played yet this season, so every team currently reads as "winning" until standings shake out &mdash; check back once there's a real record to compare.</p>`
+    }`;
+
+  grid.innerHTML = OUTLOOK_QUADRANTS.map((q) => outlookQuadrantHtml(q, grouped[q.key])).join("");
 }
 
 // ---------- Player card ----------
