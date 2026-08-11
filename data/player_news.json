@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T21:36:13Z",
+  "generated_at": "2026-08-11T01:16:20Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -137,6 +137,28 @@
       "pub_date": "2026-08-10T07:23:00Z"
     },
     {
+      "player_name": "Alec Pierce",
+      "sleeper_id": "8142",
+      "gsis_id": "00-0037664",
+      "position": "WR",
+      "team": "IND",
+      "headline": "Received second PRP injection",
+      "description": "Pierce (anke) received a second PRP injection in his left ankle this offseason, James Boyd of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/alec-pierce-16022",
+      "pub_date": "2026-08-10T06:14:00Z"
+    },
+    {
+      "player_name": "Michael Penix Jr.",
+      "sleeper_id": "11559",
+      "gsis_id": "00-0039917",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Remains working in 7-on-7 drills",
+      "description": "Penix (knee) had some nice plays during 7-on-7 drills at Monday's practice, Tori McElhaney of the Falcons' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-penix-17700",
+      "pub_date": "2026-08-10T05:43:00Z"
+    },
+    {
       "player_name": "Luther Burden III",
       "sleeper_id": "12519",
       "gsis_id": "00-0040735",
@@ -157,6 +179,39 @@
       "description": "Henry has agreed to a two-year extension with the Patriots, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/hunter-henry-10735",
       "pub_date": "2026-08-10T05:21:00Z"
+    },
+    {
+      "player_name": "Rachaad White",
+      "sleeper_id": "8136",
+      "gsis_id": "00-0037256",
+      "position": "RB",
+      "team": "WAS",
+      "headline": "Penciled in as No. 2 RB at camp",
+      "description": "White was listed as the Commanders' No. 2 running back on the team's unofficial depth chart Monday, Zach Selby of the team's official website reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rachaad-white-15802",
+      "pub_date": "2026-08-10T05:02:00Z"
+    },
+    {
+      "player_name": "Breece Hall",
+      "sleeper_id": "8155",
+      "gsis_id": "00-0038120",
+      "position": "RB",
+      "team": "NYJ",
+      "headline": "Set to operate as bellcow",
+      "description": "Hall is expected to be featured more prominently as the Jets' lead back this season, Connor Hughes of SNY.TV reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/breece-hall-15810",
+      "pub_date": "2026-08-10T04:47:00Z"
+    },
+    {
+      "player_name": "RJ Harvey",
+      "sleeper_id": "12489",
+      "gsis_id": "00-0040730",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Focused on big plays in 2026",
+      "description": "Harvey expects to provide a lot of big plays in Year 2 with the Broncos, Susanna Weir of the team's official website reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rj-harvey-18522",
+      "pub_date": "2026-08-10T04:15:00Z"
     },
     {
       "player_name": "George Kittle",
