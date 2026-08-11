@@ -39,6 +39,10 @@ football account and helps you:
   Win-Now (old + winning), Rebuilding (young + losing), and Retool/Sell
   (old + losing), each with a short note on what that window suggests
   doing.
+- **Evaluate any player** &mdash; a Player Evaluator tab lets you search any
+  QB/RB/WR/TE in the league (not just players in your league) and see their
+  season-by-season stat line for the last 5 seasons plus a week-by-week
+  scoring chart and table for each of those seasons.
 There is no backend, no build step, and no login. It's plain HTML/CSS/JS that
 talks directly to Sleeper's public, read-only API from your browser. Nothing
 you type is sent anywhere except Sleeper's API.
@@ -50,7 +54,7 @@ you type is sent anywhere except Sleeper's API.
    "Find my leagues".
 3. Pick one of your leagues from the dropdown and click "Load league".
 4. Use the tabs to browse **My Team**, **Standings**, **Trade Finder**,
-   **Trending**, **Age Curve**, and **Outlook**.
+   **Trending**, **Age Curve**, **Outlook**, and **Evaluator**.
 
 Your username and chosen league are remembered in your browser (`localStorage`)
 so you won't have to re-enter them next time. Use "Switch league" to pick a
@@ -339,6 +343,35 @@ settled read. Each quadrant includes a short note on what that competitive
 window suggests doing (sell veterans, target win-now vets, stay patient,
 etc.).
 
+## How Player Evaluator works
+
+The Evaluator tab is a standalone search over the full Sleeper player
+directory (already loaded client-side for the rest of the app), not scoped
+to your league &mdash; you can look up anyone at QB/RB/WR/TE, rostered or
+not. Selecting a player reuses the same season-stat-line rendering as the
+[player card](#player-cards) (`data/player_season_stats.json`, scored with
+the loaded league's own scoring settings) and the same Recent News card, so
+those stay perfectly consistent with what you see everywhere else in the
+app.
+
+The week-by-week chart and table are new: they come from
+`scripts/refresh_player_weekly_stats.py`, refreshed weekly via
+`.github/workflows/refresh-player-weekly-stats.yml` into
+`data/player_weekly_stats.json`. It's the same BigQuery source and
+`sleeper_id` join as the season-stats pipeline, just kept at weekly grain
+(one row per player/season/week) instead of aggregated into season totals.
+Season tabs let you flip between the last 5 years of a player's career; the
+bar chart and the detailed stat table below it both use the same
+per-position columns (and league scoring) as the season table. If this file
+hasn't loaded yet or has no data for a given player, the weekly section
+says so rather than showing nothing.
+
+*A note on this specific pipeline:* like the bye-week data, this was
+written without the ability to run a live query against BigQuery in the
+authoring session &mdash; the query mirrors the season-stats script closely
+enough that it should hold up, but if the scheduled workflow fails, check
+its logs before assuming the underlying data is unavailable.
+
 ## Player cards
 
 Click any player's name anywhere in the app &mdash; Starters/Bench, the
@@ -397,3 +430,8 @@ from a `file://` page.
   recently loaded (regular season only). During the offseason it'll show
   last season's final weeks until the new season's games start generating
   data.
+- `data/player_weekly_stats.json` (used by the Evaluator tab) is
+  substantially larger than the season-stats file it's derived from, since
+  it's one row per player per week rather than per season. It's only
+  fetched the first time you open the Evaluator tab, not on every page
+  load.

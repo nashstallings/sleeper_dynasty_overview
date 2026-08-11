@@ -116,7 +116,7 @@ body {
 .tab-nav {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   height: 100%;
   flex: 1 1 auto;
   min-width: 0;
@@ -136,8 +136,8 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.01em;
-  font-size: 0.8rem;
-  padding: 0 6px;
+  font-size: 0.71rem;
+  padding: 0 3px;
   height: 100%;
   cursor: pointer;
   white-space: nowrap;
@@ -950,6 +950,61 @@ footer a { color: var(--accent); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 
 .spinner-note { color: var(--text-dim); font-size: 0.85rem; }
+
+/* ---------- player evaluator ---------- */
+
+.evaluator-search-wrap { position: relative; max-width: 420px; }
+#evaluator-search {
+  width: 100%;
+  background: var(--panel-soft);
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  padding: 11px 13px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+#evaluator-search:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.evaluator-suggestions {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: var(--panel);
+  border: 1px solid var(--panel-border-strong);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  max-height: 320px;
+  overflow-y: auto;
+}
+.evaluator-suggestion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: transparent;
+  color: var(--text);
+  border: none;
+  border-radius: 0;
+  padding: 10px 13px;
+  font-family: inherit;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.88rem;
+  text-align: left;
+  cursor: pointer;
+}
+.evaluator-suggestion:hover, .evaluator-suggestion:focus-visible { background: var(--panel-soft); }
+.evaluator-suggestion .player-meta { margin-left: auto; }
+.evaluator-suggestion-empty { padding: 12px 13px; margin: 0; }
 
 /* ---------- player card ---------- */
 

@@ -97,6 +97,9 @@ const state = {
   ageCurveScope: "starters",
   ageCurveRosterId: null,
   tradeFinderScope: "starters",
+  evaluatorPid: null,
+  evaluatorSeason: null,
+  playerWeeklyStats: null,
 };
 
 // ---------- low-level helpers ----------
@@ -2316,8 +2319,7 @@ function pointsColumnLabel() {
 
 const PLAYER_CARD_NEWS_WINDOW_DAYS = 90;
 
-function renderPlayerCardNews(pid) {
-  const container = document.querySelector("#player-card .player-card-news");
+function renderPlayerCardNews(pid, container = document.querySelector("#player-card .player-card-news")) {
   if (!container) return;
 
   const data = state.playerNews;
@@ -2386,8 +2388,7 @@ const STAT_COLUMNS_BY_POSITION = {
 };
 STAT_COLUMNS_BY_POSITION.TE = STAT_COLUMNS_BY_POSITION.WR;
 
-function renderPlayerCardStats(pid, pos) {
-  const container = document.querySelector("#player-card .player-card-stats");
+function renderPlayerCardStats(pid, pos, container = document.querySelector("#player-card .player-card-stats")) {
   if (!container) return;
 
   const data = state.playerSeasonStats;
@@ -2541,6 +2542,253 @@ function setupTradeFinderScopeToggle() {
   });
 }
 
+// ---------- player evaluator ----------
+
+const EVALUATOR_SEARCH_LIMIT = 8;
+
+function evaluatorSearchResults(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  const results = [];
+  for (const id in state.players) {
+    const p = state.players[id];
+    const pos = playerPosition(p);
+    if (!SKILL_POSITIONS.includes(pos)) continue;
+    const name = playerDisplay(p);
+    if (!name || !name.toLowerCase().includes(q)) continue;
+    results.push({ pid: id, p, name, pos });
+  }
+  results.sort((a, b) => playerRank(a.p) - playerRank(b.p));
+  return results.slice(0, EVALUATOR_SEARCH_LIMIT);
+}
+
+function evaluatorSuggestionsHtml(results) {
+  if (!results.length) {
+    return `<p class="evaluator-suggestion-empty player-meta">No matching players.</p>`;
+  }
+  return results
+    .map(
+      (r) => `
+    <button type="button" class="evaluator-suggestion" data-player-id="${r.pid}">
+      <span class="badge badge-${r.pos}">${r.pos}</span>
+      <span>${escapeHtml(r.name)}</span>
+      <span class="player-meta">${r.p.team || "FA"}</span>
+    </button>`
+    )
+    .join("");
+}
+
+function setupEvaluatorSearch() {
+  const input = document.getElementById("evaluator-search");
+  const suggestions = document.getElementById("evaluator-suggestions");
+  if (!input || !suggestions) return;
+
+  input.addEventListener("input", () => {
+    if (!input.value.trim()) {
+      suggestions.classList.add("hidden");
+      suggestions.innerHTML = "";
+      return;
+    }
+    suggestions.innerHTML = evaluatorSuggestionsHtml(evaluatorSearchResults(input.value));
+    suggestions.classList.remove("hidden");
+  });
+
+  input.addEventListener("focus", () => {
+    if (input.value.trim()) suggestions.classList.remove("hidden");
+  });
+
+  document.addEventListener("click", (e) => {
+    const suggestion = e.target.closest(".evaluator-suggestion[data-player-id]");
+    if (suggestion) {
+      const pid = suggestion.dataset.playerId;
+      input.value = playerDisplay(player(pid));
+      suggestions.classList.add("hidden");
+      suggestions.innerHTML = "";
+      state.evaluatorPid = pid;
+      state.evaluatorSeason = null;
+      renderEvaluatorDetail(pid);
+      return;
+    }
+    if (!e.target.closest(".evaluator-search-wrap")) suggestions.classList.add("hidden");
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.activeElement === input) suggestions.classList.add("hidden");
+  });
+}
+
+// Season stats, news and weekly stats are each fetched independently, so a
+// fast second search before the first player's fetches resolve must not let
+// the stale player's data land -- every render is gated on still being the
+// selected player once its fetch completes.
+async function renderEvaluatorDetail(pid) {
+  const container = document.getElementById("evaluator-detail");
+  if (!container) return;
+
+  const p = player(pid);
+  const pos = playerPosition(p);
+  const status = leagueStatusForSleeperId(pid);
+  const name = playerDisplay(p);
+  const initial = (name[0] || "?").toUpperCase();
+  const color = colorForName(name);
+
+  container.innerHTML = `
+    <div class="card">
+      <div class="player-card-head">
+        <img class="player-card-photo" src="https://sleepercdn.com/content/nfl/players/${pid}.jpg" alt=""
+          data-initial="${escapeHtml(initial)}" data-color="${color}" onerror="handlePlayerPhotoError(this)" />
+        <div class="player-card-head-info">
+          <div class="player-card-name">${escapeHtml(name)}</div>
+          <div class="player-card-meta-row">
+            <span class="badge badge-${pos}">${pos}</span>
+            <span class="player-meta">${p.team || "FA"}</span>
+          </div>
+          <div class="player-card-owner">${status.html}</div>
+        </div>
+      </div>
+      <div class="player-card-stats">
+        <p class="spinner-note">Loading season stats...</p>
+      </div>
+    </div>
+    <div class="card" id="evaluator-weekly-card">
+      <h3>Weekly Scoring</h3>
+      <p class="spinner-note">Loading weekly stats...</p>
+    </div>
+    <div class="card player-card-news">
+      <h3>Recent News</h3>
+      <p class="spinner-note">Loading news...</p>
+    </div>`;
+
+  const statsContainer = container.querySelector(".player-card-stats");
+  const newsContainer = container.querySelector(".player-card-news");
+  const weeklyContainer = container.querySelector("#evaluator-weekly-card");
+
+  if (!state.playerSeasonStats) {
+    try {
+      const res = await fetch("data/player_season_stats.json", { cache: "no-store" });
+      if (res.ok) state.playerSeasonStats = await res.json();
+    } catch {
+      // season stats are optional enrichment; the rest of the evaluator still works
+    }
+  }
+  if (state.evaluatorPid === pid) renderPlayerCardStats(pid, pos, statsContainer);
+
+  if (!state.playerNews) {
+    try {
+      const res = await fetch("data/player_news.json", { cache: "no-store" });
+      if (res.ok) state.playerNews = await res.json();
+    } catch {
+      // news is optional enrichment; the rest of the evaluator still works
+    }
+  }
+  if (state.evaluatorPid === pid) renderPlayerCardNews(pid, newsContainer);
+
+  if (!state.playerWeeklyStats) {
+    try {
+      const res = await fetch("data/player_weekly_stats.json", { cache: "no-store" });
+      if (res.ok) state.playerWeeklyStats = await res.json();
+    } catch {
+      // weekly stats are optional enrichment; the rest of the evaluator still works
+    }
+  }
+  if (state.evaluatorPid === pid) renderEvaluatorWeekly(pid, pos, weeklyContainer);
+}
+
+function evaluatorSeasonsForPlayer(pid) {
+  const data = state.playerWeeklyStats;
+  const stats = data && data.players && data.players[pid];
+  if (!stats) return [];
+  return Object.keys(stats.weeks || {}).sort((a, b) => b - a);
+}
+
+function evaluatorWeeklyChartHtml(weeksObj, pos) {
+  const weekKeys = Object.keys(weeksObj)
+    .map(Number)
+    .sort((a, b) => a - b);
+  if (!weekKeys.length) return emptyState("No weekly data for this season.");
+
+  const points = weekKeys.map((w) => computeLeaguePoints(weeksObj[w], pos));
+  const maxPts = Math.max(...points, 1);
+
+  const cols = weekKeys
+    .map((w, i) => {
+      const pts = points[i];
+      const h = Math.max((Math.max(pts, 0) / maxPts) * AGE_CHART_HEIGHT, 2);
+      return `
+        <div class="age-bar-col" title="Week ${w}: ${fmtPpr(pts)} pts">
+          <div class="age-bar-track"><div class="age-bar-stack"><div class="age-bar-seg age-seg-${pos}" style="height:${h.toFixed(1)}px"></div></div></div>
+          <div class="age-bar-label">${w}</div>
+        </div>`;
+    })
+    .join("");
+
+  return `<div class="age-chart">${cols}</div>`;
+}
+
+function evaluatorWeeklyTableHtml(weeksObj, pos) {
+  const weekKeys = Object.keys(weeksObj)
+    .map(Number)
+    .sort((a, b) => a - b);
+  const cols = STAT_COLUMNS_BY_POSITION[pos] || STAT_COLUMNS_BY_POSITION.WR;
+  const headers = cols.map((c) => (c.points ? pointsColumnLabel() : c.label));
+  const rows = weekKeys
+    .map((w) => {
+      const s = weeksObj[w];
+      const cells = cols
+        .map((c) => {
+          if (c.points) return `<td>${fmtPpr(computeLeaguePoints(s, pos))}</td>`;
+          return `<td>${c.format ? c.format(s) : fmtStat(s[c.key])}</td>`;
+        })
+        .join("");
+      return `<tr><td>${w}</td><td>${s.opponent ? `@${escapeHtml(s.opponent)}` : "&mdash;"}</td>${cells}</tr>`;
+    })
+    .join("");
+
+  return `
+    <div class="table-wrap">
+      <table class="player-card-table">
+        <thead><tr><th>Wk</th><th>Opp</th>${headers.map((h) => `<th>${h}</th>`).join("")}</tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
+function evaluatorSeasonTabsHtml(seasons, activeSeason) {
+  return seasons
+    .map((s) => `<button type="button" class="sub-tab-btn${s === activeSeason ? " active" : ""}" data-evalseason="${s}">${s}</button>`)
+    .join("");
+}
+
+function renderEvaluatorWeekly(pid, pos, container = document.getElementById("evaluator-weekly-card")) {
+  if (!container) return;
+
+  const seasons = evaluatorSeasonsForPlayer(pid);
+  if (!seasons.length) {
+    container.innerHTML = `<h3>Weekly Scoring</h3><p class="player-meta">No weekly stats available for this player.</p>`;
+    return;
+  }
+  if (!state.evaluatorSeason || !seasons.includes(state.evaluatorSeason)) {
+    state.evaluatorSeason = seasons[0];
+  }
+  const weeksObj = state.playerWeeklyStats.players[pid].weeks[state.evaluatorSeason] || {};
+
+  container.innerHTML = `
+    <h3>Weekly Scoring</h3>
+    <div class="sub-tab-nav">${evaluatorSeasonTabsHtml(seasons, state.evaluatorSeason)}</div>
+    ${evaluatorWeeklyChartHtml(weeksObj, pos)}
+    ${evaluatorWeeklyTableHtml(weeksObj, pos)}`;
+  refreshScrollHints();
+}
+
+function setupEvaluatorSeasonTabs() {
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("#evaluator-weekly-card .sub-tab-btn[data-evalseason]");
+    if (!btn || !state.evaluatorPid) return;
+    state.evaluatorSeason = btn.dataset.evalseason;
+    renderEvaluatorWeekly(state.evaluatorPid, playerPosition(player(state.evaluatorPid)));
+  });
+}
+
 // ---------- tabs ----------
 
 function setupTabs() {
@@ -2581,6 +2829,8 @@ function init() {
   setupAgeCurveToggle();
   setupAgeTeamSelect();
   setupTradeFinderScopeToggle();
+  setupEvaluatorSearch();
+  setupEvaluatorSeasonTabs();
   setupScrollHints();
 
   const seasonInput = document.getElementById("season");

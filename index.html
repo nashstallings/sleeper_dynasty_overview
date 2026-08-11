@@ -29,6 +29,7 @@
       <button class="tab-btn" data-tab="trending">Trending</button>
       <button class="tab-btn" data-tab="agecurve">Age Curve</button>
       <button class="tab-btn" data-tab="outlook">Outlook</button>
+      <button class="tab-btn" data-tab="evaluator">Evaluator</button>
     </nav>
 
     <button id="change-league-btn" class="btn-ghost hidden">Switch league</button>
@@ -113,6 +114,18 @@
     <section id="outlook" class="tab-panel">
       <div id="outlook-card" class="card"></div>
       <div id="outlook-quadrants" class="outlook-grid"></div>
+    </section>
+
+    <section id="evaluator" class="tab-panel">
+      <div class="card">
+        <h2>Player Evaluator</h2>
+        <p class="hero-copy">Search any QB, RB, WR or TE to see their performance over the last 5 seasons, including week-by-week scoring.</p>
+        <div class="evaluator-search-wrap">
+          <input id="evaluator-search" type="text" placeholder="Search for a player..." autocomplete="off" />
+          <div id="evaluator-suggestions" class="evaluator-suggestions hidden"></div>
+        </div>
+      </div>
+      <div id="evaluator-detail"></div>
     </section>
 
   </div>
