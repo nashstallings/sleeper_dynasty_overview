@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-11T15:55:50Z",
+  "generated_at": "2026-08-11T18:55:15Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Chris Rodriguez Jr.",
+      "sleeper_id": "10219",
+      "gsis_id": "00-0038611",
+      "position": "RB",
+      "team": "JAC",
+      "headline": "Deemed co-starter on unofficial depth chart",
+      "description": "Bhayshul Tuten and Rodriguez are listed as co-starters on the Jaguars' initial unofficial depth chart, Ryan O'Halloran of The Florida Times-Union reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chris-rodriguez-16933",
+      "pub_date": "2026-08-11T11:38:00Z"
+    },
+    {
+      "player_name": "Bhayshul Tuten",
+      "sleeper_id": "12490",
+      "gsis_id": "00-0040719",
+      "position": "RB",
+      "team": "JAC",
+      "headline": "Listed as co-starter on unofficial depth chart",
+      "description": "Tuten and Chris Rodriguez are listed as co-starters on the Jaguars' initial unofficial depth chart, Ryan O'Halloran of The Florida Times-Union reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bhayshul-tuten-18524",
+      "pub_date": "2026-08-11T11:18:00Z"
+    },
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Misses practice Tuesday",
+      "description": "Pittman (right leg) didn't practice Tuesday, Alan Saunders of SteelersNow.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-08-11T11:06:00Z"
+    },
+    {
+      "player_name": "J.K. Dobbins",
+      "sleeper_id": "6806",
+      "gsis_id": "00-0036158",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Works in individual drills Tuesday",
+      "description": "Dobbins, who left practice early Monday with soft-tissue injury, went through individual drills during Tuesday's session, Chris Tomasson of The Denver Gazette reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jk-dobbins-14418",
+      "pub_date": "2026-08-11T10:59:00Z"
+    },
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "In line to play Thursday",
+      "description": "Love is slated to suit up for Thursday's preseason game in Las Vegas, Josh Weinfuss of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-08-11T10:54:00Z"
+    },
     {
       "player_name": "De'Von Achane",
       "sleeper_id": "9226",
