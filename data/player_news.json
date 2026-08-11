@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T18:55:15Z",
+  "generated_at": "2026-08-11T21:40:36Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -113,6 +113,50 @@
       "description": "Judkins is expected to take on a larger role in the passing game this year, according to Scott Petrak of BrownsZone. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/quinshon-judkins-18516",
       "pub_date": "2026-08-11T08:30:00Z"
+    },
+    {
+      "player_name": "Alvin Kamara",
+      "sleeper_id": "4035",
+      "gsis_id": "00-0033906",
+      "position": "RB",
+      "team": "NOS",
+      "headline": "Listed as co-RB1 with Etienne",
+      "description": "Kamara and Travis Etienne are listed as co-RB1s on the Saints' first unofficial depth chart of training camp, Mike Triplett of NewOrleans.Football reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/alvin-kamara-11732",
+      "pub_date": "2026-08-11T02:05:00Z"
+    },
+    {
+      "player_name": "Keon Coleman",
+      "sleeper_id": "11637",
+      "gsis_id": "00-0039901",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Listed as starter on unofficial depth chart",
+      "description": "Coleman is listed as a starter on Buffalo's first depth chart of the preseason, Lance Lysowski of The Buffalo News reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/keon-coleman-17732",
+      "pub_date": "2026-08-11T02:03:00Z"
+    },
+    {
+      "player_name": "Travis Etienne",
+      "sleeper_id": "7543",
+      "gsis_id": "00-0036973",
+      "position": "RB",
+      "team": "NOS",
+      "headline": "Co-RB1 with Kamara on depth chart",
+      "description": "Etienne and Alvin Kamara are listed as co-RB1s on the Saints' first unofficial depth chart of training camp, Mike Triplett of NewOrleans.Football reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/travis-etienne-15385",
+      "pub_date": "2026-08-11T01:56:00Z"
+    },
+    {
+      "player_name": "Ashton Jeanty",
+      "sleeper_id": "12527",
+      "gsis_id": "00-0040122",
+      "position": "RB",
+      "team": "LVR",
+      "headline": "Starters in line to play Thursday",
+      "description": "Coach Klint Kubiak said Tuesday that the Raiders' starters -- a group that would include Jeanty -- are in line to play in Thursday's preseason opener against the Cardinals, Sam Warren of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ashton-jeanty-18487",
+      "pub_date": "2026-08-11T01:17:00Z"
     },
     {
       "player_name": "Keaton Mitchell",
