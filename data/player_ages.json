@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T21:12:54Z",
+  "generated_at": "2026-08-12T11:56:37Z",
   "players": {
     "2639": {
       "name": "Tony Jones",
@@ -8346,6 +8346,11 @@
       "position": "TE",
       "birth_date": "1990-11-10"
     },
+    "2152": {
+      "name": "Teddy Bridgewater",
+      "position": "QB",
+      "birth_date": "1992-11-10"
+    },
     "2197": {
       "name": "Brandin Cooks",
       "position": "WR",
@@ -8360,11 +8365,6 @@
       "name": "Adam Thielen",
       "position": "WR",
       "birth_date": "1990-08-22"
-    },
-    "2449": {
-      "name": "Stefon Diggs",
-      "position": "WR",
-      "birth_date": "1993-11-29"
     },
     "2374": {
       "name": "Tyler Lockett",
@@ -8430,11 +8430,6 @@
       "name": "Kareem Hunt",
       "position": "RB",
       "birth_date": "1995-08-06"
-    },
-    "4718": {
-      "name": "Dare Ogunbowale",
-      "position": "RB",
-      "birth_date": "1994-05-04"
     },
     "4068": {
       "name": "Mike Williams",
@@ -8556,11 +8551,6 @@
       "position": "TE",
       "birth_date": "1995-01-26"
     },
-    "4443": {
-      "name": "Pharaoh Brown",
-      "position": "TE",
-      "birth_date": "1994-05-04"
-    },
     "5284": {
       "name": "Jeff Wilson",
       "position": "RB",
@@ -8635,11 +8625,6 @@
       "name": "Jakob Johnson",
       "position": "RB",
       "birth_date": "1994-12-15"
-    },
-    "6453": {
-      "name": "D.J. Montgomery",
-      "position": "WR",
-      "birth_date": "1996-11-17"
     },
     "6386": {
       "name": "Alex Bachman",
@@ -8731,11 +8716,6 @@
       "position": "TE",
       "birth_date": "1995-11-09"
     },
-    "7605": {
-      "name": "Kyle Trask",
-      "position": "QB",
-      "birth_date": "1998-03-06"
-    },
     "7528": {
       "name": "Najee Harris",
       "position": "RB",
@@ -8776,11 +8756,6 @@
       "position": "RB",
       "birth_date": "1998-07-15"
     },
-    "7438": {
-      "name": "Kristian Wilkerson",
-      "position": "WR",
-      "birth_date": "1997-01-10"
-    },
     "8159": {
       "name": "Desmond Ridder",
       "position": "QB",
@@ -8795,11 +8770,6 @@
       "name": "Hassan Haskins",
       "position": "RB",
       "birth_date": "1999-11-26"
-    },
-    "8194": {
-      "name": "Jashaun Corbin",
-      "position": "RB",
-      "birth_date": "2000-08-20"
     },
     "8221": {
       "name": "Keaontay Ingram",
@@ -8820,6 +8790,11 @@
       "name": "John FitzPatrick",
       "position": "TE",
       "birth_date": "2000-03-09"
+    },
+    "8523": {
+      "name": "Nick Muse",
+      "position": "TE",
+      "birth_date": "1998-11-25"
     },
     "8416": {
       "name": "Jalen Virgil",
@@ -8850,6 +8825,11 @@
       "name": "Deuce Vaughn",
       "position": "RB",
       "birth_date": "2001-11-02"
+    },
+    "10863": {
+      "name": "A.T. Perry",
+      "position": "WR",
+      "birth_date": "1999-10-26"
     },
     "9495": {
       "name": "Rakim Jarrett",
@@ -8886,11 +8866,6 @@
       "position": "TE",
       "birth_date": "1998-06-04"
     },
-    "11384": {
-      "name": "Owen Wright",
-      "position": "RB",
-      "birth_date": "1999-02-28"
-    },
     "8885": {
       "name": "Tucker Fisk",
       "position": "TE",
@@ -8915,6 +8890,11 @@
       "name": "Javon Baker",
       "position": "WR",
       "birth_date": "2002-02-18"
+    },
+    "11615": {
+      "name": "Ainias Smith",
+      "position": "WR",
+      "birth_date": "2001-05-31"
     },
     "11773": {
       "name": "Keilan Robinson",
@@ -9026,11 +9006,6 @@
       "position": "TE",
       "birth_date": "1989-10-05"
     },
-    "2152": {
-      "name": "Teddy Bridgewater",
-      "position": "QB",
-      "birth_date": "1992-11-10"
-    },
     "2216": {
       "name": "Mike Evans",
       "position": "WR",
@@ -9060,6 +9035,11 @@
       "name": "Ameer Abdullah",
       "position": "RB",
       "birth_date": "1993-06-13"
+    },
+    "2449": {
+      "name": "Stefon Diggs",
+      "position": "WR",
+      "birth_date": "1993-11-29"
     },
     "2334": {
       "name": "Phillip Dorsett",
@@ -9185,6 +9165,11 @@
       "name": "James Conner",
       "position": "RB",
       "birth_date": "1995-05-05"
+    },
+    "4718": {
+      "name": "Dare Ogunbowale",
+      "position": "RB",
+      "birth_date": "1994-05-04"
     },
     "4040": {
       "name": "JuJu Smith-Schuster",
@@ -9411,6 +9396,11 @@
       "position": "QB",
       "birth_date": "1995-03-21"
     },
+    "4443": {
+      "name": "Pharaoh Brown",
+      "position": "TE",
+      "birth_date": "1994-05-04"
+    },
     "5849": {
       "name": "Kyler Murray",
       "position": "QB",
@@ -9585,6 +9575,11 @@
       "name": "Tanner Hudson",
       "position": "TE",
       "birth_date": "1994-11-12"
+    },
+    "6453": {
+      "name": "D.J. Montgomery",
+      "position": "WR",
+      "birth_date": "1996-11-17"
     },
     "6451": {
       "name": "Stephen Carlson",
@@ -9846,6 +9841,11 @@
       "position": "QB",
       "birth_date": "1998-09-05"
     },
+    "7605": {
+      "name": "Kyle Trask",
+      "position": "QB",
+      "birth_date": "1998-03-06"
+    },
     "7531": {
       "name": "Feleipe Franks",
       "position": "TE",
@@ -10056,6 +10056,11 @@
       "position": "WR",
       "birth_date": "1997-06-27"
     },
+    "7438": {
+      "name": "Kristian Wilkerson",
+      "position": "WR",
+      "birth_date": "1997-01-10"
+    },
     "7436": {
       "name": "Mason Kinsey",
       "position": "WR",
@@ -10190,6 +10195,11 @@
       "name": "Bam Knight",
       "position": "RB",
       "birth_date": "2001-04-11"
+    },
+    "8194": {
+      "name": "Jashaun Corbin",
+      "position": "RB",
+      "birth_date": "2000-08-20"
     },
     "8207": {
       "name": "Tyler Goodson",
@@ -10435,11 +10445,6 @@
       "name": "Ko Kieft",
       "position": "TE",
       "birth_date": "1998-01-20"
-    },
-    "8523": {
-      "name": "Nick Muse",
-      "position": "TE",
-      "birth_date": "1998-11-25"
     },
     "8527": {
       "name": "Dareke Young",
@@ -10736,11 +10741,6 @@
       "position": "WR",
       "birth_date": "2001-06-16"
     },
-    "10863": {
-      "name": "A.T. Perry",
-      "position": "WR",
-      "birth_date": "1999-10-26"
-    },
     "10225": {
       "name": "Jonathan Mingo",
       "position": "WR",
@@ -11025,6 +11025,11 @@
       "name": "Chris Blair",
       "position": "WR",
       "birth_date": "1997-10-06"
+    },
+    "11384": {
+      "name": "Owen Wright",
+      "position": "RB",
+      "birth_date": "1999-02-28"
     },
     "11273": {
       "name": "Ben VanSumeren",
@@ -11335,11 +11340,6 @@
       "name": "Malik Washington",
       "position": "WR",
       "birth_date": "2000-10-20"
-    },
-    "11615": {
-      "name": "Ainias Smith",
-      "position": "WR",
-      "birth_date": "2001-05-31"
     },
     "11654": {
       "name": "Dante Miller",
@@ -11846,6 +11846,11 @@
       "position": "WR",
       "birth_date": "2002-02-06"
     },
+    "12972": {
+      "name": "Roc Taylor",
+      "position": "WR",
+      "birth_date": "2001-09-26"
+    },
     "12505": {
       "name": "Jalen Royals",
       "position": "WR",
@@ -11890,6 +11895,11 @@
       "name": "Nick Nash",
       "position": "WR",
       "birth_date": "1999-07-08"
+    },
+    "12721": {
+      "name": "Kaden Prather",
+      "position": "WR",
+      "birth_date": "2002-09-06"
     },
     "12518": {
       "name": "Tyler Warren",
@@ -12151,6 +12161,11 @@
       "position": "WR",
       "birth_date": "2002-08-18"
     },
+    "12884": {
+      "name": "Quincy Skinner Jr.",
+      "position": "WR",
+      "birth_date": "2003-02-28"
+    },
     "12883": {
       "name": "Joshua Simon",
       "position": "TE",
@@ -12241,6 +12256,21 @@
       "position": "WR",
       "birth_date": "2001-07-18"
     },
+    "12935": {
+      "name": "Jakobie Keeney-James",
+      "position": "WR",
+      "birth_date": "2000-09-26"
+    },
+    "13269": {
+      "name": "Fernando Mendoza",
+      "position": "QB",
+      "birth_date": "2003-10-01"
+    },
+    "13275": {
+      "name": "Ty Simpson",
+      "position": "QB",
+      "birth_date": "2002-12-21"
+    },
     "13404": {
       "name": "Garrett Nussmeier",
       "position": "QB",
@@ -12255,6 +12285,11 @@
       "name": "Cade Klubnik",
       "position": "QB",
       "birth_date": "2003-10-10"
+    },
+    "13289": {
+      "name": "Drew Allar",
+      "position": "QB",
+      "birth_date": "2004-03-08"
     },
     "13425": {
       "name": "Jalon Daniels",
@@ -12521,10 +12556,20 @@
       "position": "WR",
       "birth_date": "2002-02-21"
     },
+    "13621": {
+      "name": "Dillon Bell",
+      "position": "WR",
+      "birth_date": "2003-11-06"
+    },
     "13776": {
       "name": "Hank Beatty",
       "position": "WR",
       "birth_date": "2003-09-20"
+    },
+    "13670": {
+      "name": "Harrison Wallace III",
+      "position": "WR",
+      "birth_date": "2003-04-23"
     },
     "13674": {
       "name": "Chris Hilton Jr.",
@@ -12731,6 +12776,11 @@
       "position": "QB",
       "birth_date": "2001-01-09"
     },
+    "13600": {
+      "name": "Tyren Montgomery",
+      "position": "WR",
+      "birth_date": "2001-07-03"
+    },
     "13964": {
       "name": "Myles Montgomery",
       "position": "RB",
@@ -12775,11 +12825,6 @@
       "name": "Caullin Lacy",
       "position": "WR",
       "birth_date": "2001-12-22"
-    },
-    "13725": {
-      "name": "Dominic Richardson",
-      "position": "RB",
-      "birth_date": "2001-04-12"
     },
     "13844": {
       "name": "Coleman Bennett",
