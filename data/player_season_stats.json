@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T12:56:40Z",
+  "generated_at": "2026-08-12T11:50:34Z",
   "seasons_included": [
     2022,
     2023,
@@ -38849,6 +38849,29 @@
           "receiving_yards": 0,
           "receiving_tds": 0,
           "fantasy_points_ppr": 0.0
+        }
+      }
+    },
+    "12935": {
+      "name": "Jakobie Keeney-James",
+      "position": "WR",
+      "seasons": {
+        "2025": {
+          "team": "GB",
+          "games": 1,
+          "completions": 0,
+          "attempts": 0,
+          "passing_yards": 0,
+          "passing_tds": 0,
+          "interceptions": 0,
+          "carries": 0,
+          "rushing_yards": 0,
+          "rushing_tds": 0,
+          "targets": 2,
+          "receptions": 2,
+          "receiving_yards": 15,
+          "receiving_tds": 0,
+          "fantasy_points_ppr": 3.5
         }
       }
     },
