@@ -1,9 +1,53 @@
 {
-  "generated_at": "2026-08-12T15:54:55Z",
+  "generated_at": "2026-08-12T18:55:03Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Michael Penix Jr.",
+      "sleeper_id": "11559",
+      "gsis_id": "00-0039917",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Out for preseason opener, still no 11-on-11s",
+      "description": "Penix (knee) still hasn't been cleared for 11-on-11s and won't be available for Friday's preseason opener against Denver, Josh Kendall of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-penix-17700",
+      "pub_date": "2026-08-12T10:13:00Z"
+    },
+    {
+      "player_name": "Tua Tagovailoa",
+      "sleeper_id": "6768",
+      "gsis_id": "00-0036212",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Starting preseason opener",
+      "description": "Tagovailoa will start Friday's preseason opener against Denver, but coach Kevin Stefanski isn't ready to name his Week 1 starter, Tori McElhaney of the Falcons' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tua-tagovailoa-14465",
+      "pub_date": "2026-08-12T10:09:00Z"
+    },
+    {
+      "player_name": "Jonathon Brooks",
+      "sleeper_id": "11583",
+      "gsis_id": "00-0039344",
+      "position": "RB",
+      "team": "CAR",
+      "headline": "Sharing work with Hubbard in next preseason game",
+      "description": "Panthers coach Dave Canales said Wednesday that Brooks will mix in with Chuba Hubbard during Saturday's preseason game against Buffalo, Joe Person of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonathon-brooks-17747",
+      "pub_date": "2026-08-12T09:17:00Z"
+    },
+    {
+      "player_name": "Emeka Egbuka",
+      "sleeper_id": "12514",
+      "gsis_id": "00-0040129",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Injury doesn't appear serious",
+      "description": "After leaving Wednesday's practice with an apparent lower-body injury, Egbuka stuck around on the sideline to watch the rest of the session, Mike Garafolo of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
+      "pub_date": "2026-08-12T09:05:00Z"
+    },
     {
       "player_name": "Emeka Egbuka",
       "sleeper_id": "12514",
