@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-13T12:57:30Z",
+  "generated_at": "2026-08-13T15:54:28Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jonathon Brooks",
+      "sleeper_id": "11583",
+      "gsis_id": "00-0039344",
+      "position": "RB",
+      "team": "CAR",
+      "headline": "Set to start preseason opener",
+      "description": "Brooks will start Saturday's preseason opener against the Bills, Joe Person of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonathon-brooks-17747",
+      "pub_date": "2026-08-13T08:40:00Z"
+    },
+    {
+      "player_name": "Chuba Hubbard",
+      "sleeper_id": "7594",
+      "gsis_id": "00-0036555",
+      "position": "RB",
+      "team": "CAR",
+      "headline": "Week-to-week with hamstring issue",
+      "description": "Hubbard (hamstring) is considered week-to-week, head coach Dave Canales revealed Thursday, Mike Kaye of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chuba-hubbard-15242",
+      "pub_date": "2026-08-13T08:35:00Z"
+    },
+    {
+      "player_name": "Josh Allen",
+      "sleeper_id": "4984",
+      "gsis_id": "00-0034857",
+      "position": "QB",
+      "team": "BUF",
+      "headline": "In line to play Saturday",
+      "description": "Head coach Joe Brady said Thursday that Allen and the rest of Buffalo's healthy starters will play in Saturday's preseason opener against the Panthers, Maddy Glab of the Bills' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-allen-12483",
+      "pub_date": "2026-08-13T08:09:00Z"
+    },
+    {
+      "player_name": "Rashod Bateman",
+      "sleeper_id": "7571",
+      "gsis_id": "00-0036550",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Back at practice Thursday",
+      "description": "Bateman is in full uniform for Thursday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rashod-bateman-15210",
+      "pub_date": "2026-08-13T08:01:00Z"
+    },
+    {
+      "player_name": "Brian Thomas Jr.",
+      "sleeper_id": "11631",
+      "gsis_id": "00-0039893",
+      "position": "WR",
+      "team": "JAC",
+      "headline": "Preparing to serve as vertical threat",
+      "description": "The Jaguars envision Thomas serving as the 'X' receiver in their offense during the upcoming season, Cameron Wolfe of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/brian-thomas-17716",
+      "pub_date": "2026-08-13T07:02:00Z"
+    },
     {
       "player_name": "Michael Penix Jr.",
       "sleeper_id": "11559",
