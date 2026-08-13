@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-08-13T18:55:38Z",
+  "generated_at": "2026-08-13T21:39:10Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Expected to practice next week",
+      "description": "Head coach Sean McVay said Thursday that Nacua (groin) is expected to practice prior to the Rams' second preseason game against the Saints, Greg Beacham of The Associated Press reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-08-13T12:48:00Z"
+    },
+    {
+      "player_name": "Stetson Bennett",
+      "sleeper_id": "10857",
+      "gsis_id": "00-0039107",
+      "position": "QB",
+      "team": "LAR",
+      "headline": "Will start preseason opener",
+      "description": "Bennett is slated to start Saturday's preseason opener against the Chiefs, Stu Jackson of the Rams' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/stetson-bennett-16871",
+      "pub_date": "2026-08-13T12:14:00Z"
+    },
     {
       "player_name": "Carson Beck",
       "sleeper_id": "13272",
@@ -102,6 +124,39 @@
       "description": "The Jaguars envision Thomas serving as the 'X' receiver in their offense during the upcoming season, Cameron Wolfe of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/brian-thomas-17716",
       "pub_date": "2026-08-13T07:02:00Z"
+    },
+    {
+      "player_name": "Malik Nabers",
+      "sleeper_id": "11632",
+      "gsis_id": "00-0039337",
+      "position": "WR",
+      "team": "NYG",
+      "headline": "Takes team reps in Thursday's light practice",
+      "description": "Nabers (knee) wore a red non-contact jersey during team drills at Thursday's practice, which didn't feature any live periods, Dan Duggan of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
+      "pub_date": "2026-08-13T01:37:00Z"
+    },
+    {
+      "player_name": "Terrell Jennings",
+      "sleeper_id": "12412",
+      "gsis_id": "00-0039757",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "Lands on injured reserve",
+      "description": "Jennings (undisclosed) was placed on injured reserve Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terrell-jennings-18368",
+      "pub_date": "2026-08-13T01:15:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Expected to be \"ready to go\" next week",
+      "description": "Head coach Sean McVay expects Nacua (groin), who is dealing with soreness in his psoas, to be \"ready to go\" in practice ahead of the team's second preseason game against the Saints on Aug. 22, Stu Jackson of the Rams' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-08-13T01:11:00Z"
     },
     {
       "player_name": "Michael Penix Jr.",
