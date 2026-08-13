@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T01:25:58Z",
+  "generated_at": "2026-08-13T04:47:45Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -60,6 +60,17 @@
       "pub_date": "2026-08-12T08:43:00Z"
     },
     {
+      "player_name": "A.J. Brown",
+      "sleeper_id": "5859",
+      "gsis_id": "00-0035676",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Top target during joint practice",
+      "description": "Brown remained the Patriots' No. 1 option in the passing game during Tuesday's joint practice with the Colts, Ethan Hurwitz of SI.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
+      "pub_date": "2026-08-12T07:48:00Z"
+    },
+    {
       "player_name": "George Holani",
       "sleeper_id": "12048",
       "gsis_id": "00-0039299",
@@ -80,6 +91,17 @@
       "description": "Bateman is absent from practice Wednesday for a second straight day, Brian Wacker of The Baltimore Sun reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/rashod-bateman-15210",
       "pub_date": "2026-08-12T07:21:00Z"
+    },
+    {
+      "player_name": "Justin Jefferson",
+      "sleeper_id": "6794",
+      "gsis_id": "00-0036322",
+      "position": "WR",
+      "team": "MIN",
+      "headline": "Building rapport with Murray",
+      "description": "Jefferson and newly named starting quarterback Kyler Murray have been starting to click at practice, Will Ragatz of Bring Me The Sports reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/justin-jefferson-14509",
+      "pub_date": "2026-08-12T07:18:00Z"
     },
     {
       "player_name": "Terrance Ferguson",
