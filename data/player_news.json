@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T21:40:03Z",
+  "generated_at": "2026-08-13T01:25:58Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -102,6 +102,50 @@
       "description": "The Giants list Skattebo as a co-starter at running back with Tyrone Tracy on their first unofficial depth chart of season that was posted Wednesday, Dan Duggan of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/cam-skattebo-18514",
       "pub_date": "2026-08-12T07:00:00Z"
+    },
+    {
+      "player_name": "Darren Waller",
+      "sleeper_id": "2505",
+      "gsis_id": "00-0031610",
+      "position": "TE",
+      "team": "FA",
+      "headline": "Inks deal with Carolina",
+      "description": "The Panthers signed Waller (groin) to a one-year contract Wednesday, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/darren-waller-10215",
+      "pub_date": "2026-08-12T05:34:00Z"
+    },
+    {
+      "player_name": "Jadarian Price",
+      "sleeper_id": "13286",
+      "gsis_id": "00-0041512",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Takes part in Wednesday's walkthrough",
+      "description": "Price (lower body) participated in Wednesday's walkthrough, Bob Condotta of The Seattle Times reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
+      "pub_date": "2026-08-12T03:42:00Z"
+    },
+    {
+      "player_name": "Shedeur Sanders",
+      "sleeper_id": "12524",
+      "gsis_id": "00-0040668",
+      "position": "QB",
+      "team": "CLE",
+      "headline": "Set to start second preseason game",
+      "description": "Deshaun Watson will get the start in Saturday's preseason opener against the Bears, while Sanders will draw the start in the team's Aug. 22 contest against the Bills. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/shedeur-sanders-18479",
+      "pub_date": "2026-08-12T03:07:00Z"
+    },
+    {
+      "player_name": "Deshaun Watson",
+      "sleeper_id": "4017",
+      "gsis_id": "00-0033537",
+      "position": "QB",
+      "team": "CLE",
+      "headline": "Starting preseason opener",
+      "description": "Watson will start Saturday's preseason game at Chicago, Kelsey Russo of the Browns' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/deshaun-watson-11712",
+      "pub_date": "2026-08-12T03:05:00Z"
     },
     {
       "player_name": "Puka Nacua",
