@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T04:44:52Z",
+  "generated_at": "2026-08-14T07:17:03Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -25,6 +25,17 @@
       "description": "Bennett is slated to start Saturday's preseason opener against the Chiefs, Stu Jackson of the Rams' official site reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/stetson-bennett-16871",
       "pub_date": "2026-08-13T12:14:00Z"
+    },
+    {
+      "player_name": "Drake Maye",
+      "sleeper_id": "11564",
+      "gsis_id": "00-0039851",
+      "position": "QB",
+      "team": "NEP",
+      "headline": "Gets night off Thursday",
+      "description": "Maye did not play in the Patriots' 13-13 preseason tie with the Colts on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/drake-maye-17673",
+      "pub_date": "2026-08-13T11:45:00Z"
     },
     {
       "player_name": "Carson Beck",
@@ -60,6 +71,17 @@
       "pub_date": "2026-08-13T11:12:00Z"
     },
     {
+      "player_name": "MarShawn Lloyd",
+      "sleeper_id": "11581",
+      "gsis_id": "00-0039811",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Gets start in preseason opener",
+      "description": "Lloyd carried the ball four times for 13 yards in Thursday's 28-9 preseason loss to the Steelers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/marshawn-lloyd-17795",
+      "pub_date": "2026-08-13T11:01:00Z"
+    },
+    {
       "player_name": "Puka Nacua",
       "sleeper_id": "9493",
       "gsis_id": "00-0039075",
@@ -69,6 +91,39 @@
       "description": "Nacua (groin) doesn't appear to be participating in Thursday's practice, Sarah Barshop of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
       "pub_date": "2026-08-13T10:56:00Z"
+    },
+    {
+      "player_name": "Matthew Golden",
+      "sleeper_id": "12501",
+      "gsis_id": "00-0040667",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Gets snaps Thursday",
+      "description": "Golden failed to see a target in Thursday's 28-9 preseason loss to the Steelers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/matthew-golden-18500",
+      "pub_date": "2026-08-13T10:54:00Z"
+    },
+    {
+      "player_name": "Jayden Reed",
+      "sleeper_id": "10222",
+      "gsis_id": "00-0039146",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Sees field in preseason opener",
+      "description": "Reed caught one of two targets for 19 yards in Thursday's 28-9 preseason loss to the Steelers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jayden-reed-16977",
+      "pub_date": "2026-08-13T10:50:00Z"
+    },
+    {
+      "player_name": "Christian Watson",
+      "sleeper_id": "8167",
+      "gsis_id": "00-0038124",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Cameo appearance in preseason opener",
+      "description": "Watson failed to bring in his only target in Thursday's 28-9 preseason loss to the Steelers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/christian-watson-15946",
+      "pub_date": "2026-08-13T10:47:00Z"
     },
     {
       "player_name": "Cam Ward",
