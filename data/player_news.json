@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T01:25:30Z",
+  "generated_at": "2026-08-14T04:44:52Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -69,6 +69,61 @@
       "description": "Nacua (groin) doesn't appear to be participating in Thursday's practice, Sarah Barshop of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
       "pub_date": "2026-08-13T10:56:00Z"
+    },
+    {
+      "player_name": "Cam Ward",
+      "sleeper_id": "12522",
+      "gsis_id": "00-0040676",
+      "position": "QB",
+      "team": "TEN",
+      "headline": "Uneven performance in preseason opener",
+      "description": "Ward completed five of 12 targets for 57 yards with no touchdowns or interceptions and rushed once for two yards in the Titans' 19-13 preseason win over the 49ers on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cam-ward-16997",
+      "pub_date": "2026-08-13T09:35:00Z"
+    },
+    {
+      "player_name": "Jacoby Brissett",
+      "sleeper_id": "3257",
+      "gsis_id": "00-0033119",
+      "position": "QB",
+      "team": "ARI",
+      "headline": "Completes all five passes Thursday",
+      "description": "Brissett completed all five of his passes for 44 yards and one touchdown during Thursday's 27-14 preseason win in Las Vegas. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jacoby-brissett-10919",
+      "pub_date": "2026-08-13T09:32:00Z"
+    },
+    {
+      "player_name": "De'Zhaun Stribling",
+      "sleeper_id": "13417",
+      "gsis_id": "00-0041035",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Paces pass catchers in win",
+      "description": "Stribling brought in seven of eight targets for 63 yards in the 49ers' 19-13 preseason loss to the Titans on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dezhaun-stribling-19330",
+      "pub_date": "2026-08-13T09:29:00Z"
+    },
+    {
+      "player_name": "Carnell Tate",
+      "sleeper_id": "13279",
+      "gsis_id": "00-0041438",
+      "position": "WR",
+      "team": "TEN",
+      "headline": "Blanked on three targets",
+      "description": "Tate didn't come up with any of his three targets in the Titans' 19-13 preseason win over the 49ers on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/carnell-tate-19268",
+      "pub_date": "2026-08-13T09:18:00Z"
+    },
+    {
+      "player_name": "Tony Pollard",
+      "sleeper_id": "5967",
+      "gsis_id": "00-0035261",
+      "position": "RB",
+      "team": "TEN",
+      "headline": "Scores TD in preseason opener",
+      "description": "Pollard rushed four times for 22 yards and a touchdown and wasn't targeted in the Titans' 19-13 preseason win over the 49ers on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tony-pollard-13590",
+      "pub_date": "2026-08-13T09:13:00Z"
     },
     {
       "player_name": "Jonathon Brooks",
