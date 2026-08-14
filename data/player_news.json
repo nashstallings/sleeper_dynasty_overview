@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T21:39:10Z",
+  "generated_at": "2026-08-14T01:25:30Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -124,6 +124,61 @@
       "description": "The Jaguars envision Thomas serving as the 'X' receiver in their offense during the upcoming season, Cameron Wolfe of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/brian-thomas-17716",
       "pub_date": "2026-08-13T07:02:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Not suited up Thursday",
+      "description": "Evans (quadriceps) is not dressed in uniform for Thursday night's preseason opener against the Titans, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-08-13T05:39:00Z"
+    },
+    {
+      "player_name": "Tucker Kraft",
+      "sleeper_id": "9484",
+      "gsis_id": "00-0038996",
+      "position": "TE",
+      "team": "GBP",
+      "headline": "Trending toward active status Week 1",
+      "description": "Kraft (knee) appears on track to be available for the Packers' Week 1 matchup with the Vikings on Sunday, Sept. 13, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tucker-kraft-16649",
+      "pub_date": "2026-08-13T03:49:00Z"
+    },
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Not slated to play preseason opener",
+      "description": "Pittman isn't in line to suit up for Thursday's preseason contest against the Packers, Brian Batko of the Pittsburgh Post-Gazette reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-08-13T03:34:00Z"
+    },
+    {
+      "player_name": "DK Metcalf",
+      "sleeper_id": "5846",
+      "gsis_id": "00-0035640",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Not in uniform for preseason opener",
+      "description": "Metcalf (undisclosed) isn't in uniform for Thursday's preseason opener against the Packers, Brian Batko of the Pittsburgh Post-Gazette reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dk-metcalf-13424",
+      "pub_date": "2026-08-13T03:32:00Z"
+    },
+    {
+      "player_name": "Aaron Rodgers",
+      "sleeper_id": "96",
+      "gsis_id": "00-0023459",
+      "position": "QB",
+      "team": "PIT",
+      "headline": "Not in line to suit up Thursday",
+      "description": "Rodgers isn't slated to play in Thursday's preseason game versus the Packers, Brooke Pryor of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aaron-rodgers-4307",
+      "pub_date": "2026-08-13T03:29:00Z"
     },
     {
       "player_name": "Malik Nabers",
