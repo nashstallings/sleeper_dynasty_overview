@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T18:20:26Z",
+  "generated_at": "2026-08-15T21:16:00Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,50 @@
       "description": "Dart and most of the Giants starters are expected to play in Saturday's preseason opener against the Vikings, Jordan Raanan of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jaxson-dart-18574",
       "pub_date": "2026-08-15T07:15:00Z"
+    },
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Not worried about injury",
+      "description": "Moore noted after Saturday's 29-14 preseason win over the Panthers that he was \"good to go\" after an apparent lower-body injury that he sustained in the first quarter, Joe Buscaglia of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-08-15T01:51:00Z"
+    },
+    {
+      "player_name": "Josh Downs",
+      "sleeper_id": "9500",
+      "gsis_id": "00-0038997",
+      "position": "WR",
+      "team": "IND",
+      "headline": "Exits practice with possible upper body injury",
+      "description": "Downs exited Saturday's practice after a hard fall on his back, Andrew Moore of Colts on SI reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-downs-16689",
+      "pub_date": "2026-08-15T01:48:00Z"
+    },
+    {
+      "player_name": "Shedeur Sanders",
+      "sleeper_id": "12524",
+      "gsis_id": "00-0040668",
+      "position": "QB",
+      "team": "CLE",
+      "headline": "Will play first half in second preseason game",
+      "description": "Sanders and Deshaun Watson will split first-team reps during joint practices ahead of the Browns' second preseason game against the Bills on Saturday, Aug. 22, Daniel Oyefusi of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/shedeur-sanders-18479",
+      "pub_date": "2026-08-15T01:41:00Z"
+    },
+    {
+      "player_name": "C.J. Stroud",
+      "sleeper_id": "9758",
+      "gsis_id": "00-0039163",
+      "position": "QB",
+      "team": "HOU",
+      "headline": "Scheduled to play against Vegas on Thursday",
+      "description": "Texans coach DeMeco Ryans said Saturday that Stroud and the other healthy starters will play in Thursday's preseason game against Las Vegas, DJ Bien-Aime of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cj-stroud-16886",
+      "pub_date": "2026-08-15T01:02:00Z"
     },
     {
       "player_name": "Josh Jacobs",
