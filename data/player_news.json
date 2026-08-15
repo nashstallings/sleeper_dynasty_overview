@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T21:19:50Z",
+  "generated_at": "2026-08-15T00:55:56Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -36,6 +36,61 @@
       "description": "Gibbs was held out of Thursday's preseason opener against the Bengals. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jahmyr-gibbs-16808",
       "pub_date": "2026-08-14T06:50:00Z"
+    },
+    {
+      "player_name": "J.K. Dobbins",
+      "sleeper_id": "6806",
+      "gsis_id": "00-0036158",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Not in uniform Friday",
+      "description": "Dobbins isn't in line to play in Friday's preseason game in Atlanta, Parker Gabriel of The Denver Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jk-dobbins-14418",
+      "pub_date": "2026-08-14T04:04:00Z"
+    },
+    {
+      "player_name": "Jaylen Waddle",
+      "sleeper_id": "7526",
+      "gsis_id": "00-0036613",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "Not suited up Friday",
+      "description": "Waddle (leg) isn't slated to play in Friday's preseason contest in Atlanta, Parker Gabriel of The Denver Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-waddle-15404",
+      "pub_date": "2026-08-14T03:39:00Z"
+    },
+    {
+      "player_name": "Chig Okonkwo",
+      "sleeper_id": "8210",
+      "gsis_id": "00-0037809",
+      "position": "TE",
+      "team": "WAS",
+      "headline": "Not playing Friday",
+      "description": "Okonkwo isn't slated to suit up for Friday's preseason contest against the Dolphins. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chig-okonkwo-16042",
+      "pub_date": "2026-08-14T03:19:00Z"
+    },
+    {
+      "player_name": "Emeka Egbuka",
+      "sleeper_id": "12514",
+      "gsis_id": "00-0040129",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Optimism for Week 1 status",
+      "description": "Egbuka had more tests done on his injured toe Friday, which confirmed a sprain that's stable, and the Buccaneers are optimistic that the second-year wide receiver will be available Week 1 at Cincinnati on Sunday, Sept. 13, Rick Stroud of the Tampa Bay Times reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
+      "pub_date": "2026-08-14T03:12:00Z"
+    },
+    {
+      "player_name": "Jacory Croskey-Merritt",
+      "sleeper_id": "12533",
+      "gsis_id": "00-0040242",
+      "position": "RB",
+      "team": "WAS",
+      "headline": "Won't play Friday",
+      "description": "Croskey-Merritt isn't in line to suit up for Friday's preseason game versus the Dolphins. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jacory-croskey-merritt-18811",
+      "pub_date": "2026-08-14T03:03:00Z"
     },
     {
       "player_name": "Tua Tagovailoa",
