@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T00:55:56Z",
+  "generated_at": "2026-08-15T03:34:00Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -25,6 +25,61 @@
       "description": "Coach Kellen Moore confirmed Friday that Tyson is dealing with a right hamstring injury, Luke Johnson of The New Orleans Times-Picayune reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jordyn-tyson-19233",
       "pub_date": "2026-08-14T10:30:00Z"
+    },
+    {
+      "player_name": "Marcus Mariota",
+      "sleeper_id": "2307",
+      "gsis_id": "00-0032268",
+      "position": "QB",
+      "team": "WAS",
+      "headline": "Injury update in coming days",
+      "description": "Head coach Dan Quinn said after Friday's 20-7 preseason win over the Dolphins that he'll provide an update on Mariota (knee) on Sunday, John Keim of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/marcus-mariota-10074",
+      "pub_date": "2026-08-14T07:48:00Z"
+    },
+    {
+      "player_name": "Malik Willis",
+      "sleeper_id": "8161",
+      "gsis_id": "00-0038128",
+      "position": "QB",
+      "team": "MIA",
+      "headline": "Sharp during successful opening drive",
+      "description": "Willis completed four of five passes for 43 yards with no touchdowns or interceptions and added two carries for nine yards in the Dolphins' 20-7 preseason loss to the Commanders on Friday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-willis-15872",
+      "pub_date": "2026-08-14T07:46:00Z"
+    },
+    {
+      "player_name": "Courtland Sutton",
+      "sleeper_id": "5045",
+      "gsis_id": "00-0034348",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "Strong start to preseason",
+      "description": "Sutton caught all three of his targets for 60 yards in Friday's 27-7 preseason win over the Falcons. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/courtland-sutton-12586",
+      "pub_date": "2026-08-14T07:43:00Z"
+    },
+    {
+      "player_name": "De'Von Achane",
+      "sleeper_id": "9226",
+      "gsis_id": "00-0039040",
+      "position": "RB",
+      "team": "MIA",
+      "headline": "Gets in end zone in preseason opener",
+      "description": "Achane rushed seven times for 39 yards and a touchdown and wasn't targeted in the Dolphins' 20-7 preseason loss to the Commanders on Friday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/devon-achane-16661",
+      "pub_date": "2026-08-14T07:41:00Z"
+    },
+    {
+      "player_name": "Brian Robinson",
+      "sleeper_id": "8154",
+      "gsis_id": "00-0037746",
+      "position": "RB",
+      "team": "ATL",
+      "headline": "Gets preseason start Friday",
+      "description": "Robinson rushed twice for six yards in Friday's 27-7 preseason loss to the Broncos. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/brian-robinson-15907",
+      "pub_date": "2026-08-14T07:37:00Z"
     },
     {
       "player_name": "Jahmyr Gibbs",
