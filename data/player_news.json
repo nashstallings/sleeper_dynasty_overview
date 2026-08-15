@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-08-15T12:26:54Z",
+  "generated_at": "2026-08-15T15:14:44Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jaxson Dart",
+      "sleeper_id": "12508",
+      "gsis_id": "00-0040691",
+      "position": "QB",
+      "team": "NYG",
+      "headline": "Expected to play Saturday",
+      "description": "Dart and most of the Giants starters are expected to play in Saturday's preseason opener against the Vikings, Jordan Raanan of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaxson-dart-18574",
+      "pub_date": "2026-08-15T07:15:00Z"
+    },
     {
       "player_name": "Josh Jacobs",
       "sleeper_id": "5850",
