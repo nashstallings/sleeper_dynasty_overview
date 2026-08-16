@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T21:16:00Z",
+  "generated_at": "2026-08-16T00:58:41Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Dart and most of the Giants starters are expected to play in Saturday's preseason opener against the Vikings, Jordan Raanan of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jaxson-dart-18574",
       "pub_date": "2026-08-15T07:15:00Z"
+    },
+    {
+      "player_name": "Deshaun Watson",
+      "sleeper_id": "4017",
+      "gsis_id": "00-0033537",
+      "position": "QB",
+      "team": "CLE",
+      "headline": "Looks sharp in preseason opener",
+      "description": "Watson completed 11 of 15 passes for 126 yards in Saturday['s 34-10 preseason loss to the Bears. He added four rushing yards on three carries and lost a fumble. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/deshaun-watson-11712",
+      "pub_date": "2026-08-15T05:54:00Z"
+    },
+    {
+      "player_name": "Ray Davis",
+      "sleeper_id": "11575",
+      "gsis_id": "00-0039875",
+      "position": "RB",
+      "team": "BUF",
+      "headline": "Seven touches in preseason opener",
+      "description": "Davis carried the ball three times for 21 yards and caught all four of his targets for 32 yards in Saturday's 29-14 preseason win over the Panthers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ray-davis-17792",
+      "pub_date": "2026-08-15T05:10:00Z"
+    },
+    {
+      "player_name": "James Cook",
+      "sleeper_id": "8138",
+      "gsis_id": "00-0037248",
+      "position": "RB",
+      "team": "BUF",
+      "headline": "Quick start to preseason",
+      "description": "Cook carried the ball five times for 21 yards in Saturday's 29-14 preseason win over the Panthers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/james-cook-15876",
+      "pub_date": "2026-08-15T05:03:00Z"
+    },
+    {
+      "player_name": "Khalil Shakir",
+      "sleeper_id": "8134",
+      "gsis_id": "00-0037261",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Two grabs in preseason opener",
+      "description": "Shakir caught both his targets for 41 yards in Saturday's 29-14 preseason win over the Panthers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/khalil-shakir-15892",
+      "pub_date": "2026-08-15T04:57:00Z"
+    },
+    {
+      "player_name": "Jordyn Tyson",
+      "sleeper_id": "13281",
+      "gsis_id": "00-0041029",
+      "position": "WR",
+      "team": "NOS",
+      "headline": "Still in wait-and-see mode, per Moore",
+      "description": "Coach Kellen Moore said Saturday that the team is \"still in collection mode\" regarding Tyson (hamstring), Mike Triplett of NewOrleans.Football reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordyn-tyson-19233",
+      "pub_date": "2026-08-15T04:56:00Z"
     },
     {
       "player_name": "DJ Moore",
