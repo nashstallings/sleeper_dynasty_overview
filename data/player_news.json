@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-08-16T12:28:22Z",
+  "generated_at": "2026-08-16T15:15:59Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Marcus Mariota",
+      "sleeper_id": "2307",
+      "gsis_id": "00-0032268",
+      "position": "QB",
+      "team": "WAS",
+      "headline": "Diagnosed with sprained MCL",
+      "description": "Mariota is expected to miss the rest of the preseason due to a sprained MCL in his knee, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/marcus-mariota-10074",
+      "pub_date": "2026-08-16T08:01:00Z"
+    },
+    {
+      "player_name": "Tucker Kraft",
+      "sleeper_id": "9484",
+      "gsis_id": "00-0038996",
+      "position": "TE",
+      "team": "GBP",
+      "headline": "Cleared for 11-on-11 drills",
+      "description": "Head coach Matt LaFleur told reporters that Kraft (knee) will participate in 11-on-11 team drills during Sunday's training camp practice, Matt Schneidman of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tucker-kraft-16649",
+      "pub_date": "2026-08-16T07:48:00Z"
+    },
     {
       "player_name": "Jaxson Dart",
       "sleeper_id": "12508",
