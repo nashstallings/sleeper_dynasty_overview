@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-08-17T18:30:44Z",
+  "generated_at": "2026-08-17T21:20:31Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Malik Nabers",
+      "sleeper_id": "11632",
+      "gsis_id": "00-0039337",
+      "position": "WR",
+      "team": "NYG",
+      "headline": "Works in team drills for first time",
+      "description": "Nabers (knee) logged reps in 11-on-11 drills while donning a red non-contact jersey during Monday's practice, Jordan Raanan of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
+      "pub_date": "2026-08-17T12:48:00Z"
+    },
+    {
+      "player_name": "TreVeyon Henderson",
+      "sleeper_id": "12529",
+      "gsis_id": "00-0040734",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "Likely looking at '50-50' split",
+      "description": "Chad Graff of The Athletic predicts that Rhamondre Stevenson and Henderson seem likely to share New England's backfield work pretty evenly this coming season. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/treveyon-henderson-18517",
+      "pub_date": "2026-08-17T12:44:00Z"
+    },
     {
       "player_name": "Jaylen Waddle",
       "sleeper_id": "7526",
@@ -102,6 +124,28 @@
       "description": "Jets head coach Aaron Glenn said that Hall sustained a groin strain during Monday's practice, Rich Cimini of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/breece-hall-15810",
       "pub_date": "2026-08-17T07:28:00Z"
+    },
+    {
+      "player_name": "Jadarian Price",
+      "sleeper_id": "13286",
+      "gsis_id": "00-0041512",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Primed to participate Monday",
+      "description": "Price (lower body) was present at the start of Monday's practice, Brady Henderson of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
+      "pub_date": "2026-08-17T01:57:00Z"
+    },
+    {
+      "player_name": "Trey Benson",
+      "sleeper_id": "11589",
+      "gsis_id": "00-0039921",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Present for Monday's workout",
+      "description": "Benson (knee) is in attendance for Monday's practice, Tyler Drake of ArizonaSports.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/trey-benson-17767",
+      "pub_date": "2026-08-17T01:18:00Z"
     },
     {
       "player_name": "Josh Downs",
