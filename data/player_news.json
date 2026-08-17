@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-17T12:33:07Z",
+  "generated_at": "2026-08-17T15:19:57Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jalen McMillan",
+      "sleeper_id": "11618",
+      "gsis_id": "00-0039855",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Labeled day-to-day by head coach",
+      "description": "Buccaneers head coach Todd Bowles said Monday that McMillan (knee) is considered day-to-day, PewterReport.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-mcmillan-17763",
+      "pub_date": "2026-08-17T07:58:00Z"
+    },
+    {
+      "player_name": "Baker Mayfield",
+      "sleeper_id": "4892",
+      "gsis_id": "00-0034855",
+      "position": "QB",
+      "team": "TBB",
+      "headline": "Likely to play in second preseason game",
+      "description": "Buccaneers head coach Todd Bowles said that Mayfield is expected to play in Saturday's preseason game versus the Chiefs, Evan Closky of 10 Tampa Bay reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/baker-mayfield-12619",
+      "pub_date": "2026-08-17T07:52:00Z"
+    },
+    {
+      "player_name": "Emeka Egbuka",
+      "sleeper_id": "12514",
+      "gsis_id": "00-0040129",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Considered 'day-to-day, week-to-week'",
+      "description": "Buccaneers head coach Todd Bowles said Monday that Egbuka (toe) is \"day-to-day, week-to-week\" and was non-committal regarding the wideout's status for the Sept. 13 season opener versus the Bengals, Evan Closky of 10 Tampa Bay reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
+      "pub_date": "2026-08-17T07:45:00Z"
+    },
+    {
+      "player_name": "Garrett Wilson",
+      "sleeper_id": "8146",
+      "gsis_id": "00-0037740",
+      "position": "WR",
+      "team": "NYJ",
+      "headline": "Sits out practice with illness",
+      "description": "Jets head coach Aaron Glenn said that Wilson didn't practice Monday due to a stomach bug, Brian Costello of the New York Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/garrett-wilson-15829",
+      "pub_date": "2026-08-17T07:30:00Z"
+    },
+    {
+      "player_name": "Breece Hall",
+      "sleeper_id": "8155",
+      "gsis_id": "00-0038120",
+      "position": "RB",
+      "team": "NYJ",
+      "headline": "Dealing with groin strain, per head coach",
+      "description": "Jets head coach Aaron Glenn said that Hall sustained a groin strain during Monday's practice, Rich Cimini of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/breece-hall-15810",
+      "pub_date": "2026-08-17T07:28:00Z"
+    },
     {
       "player_name": "Josh Downs",
       "sleeper_id": "9500",
