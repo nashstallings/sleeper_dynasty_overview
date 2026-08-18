@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T00:55:06Z",
+  "generated_at": "2026-08-18T03:39:15Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -80,6 +80,17 @@
       "description": "Buccaneers head coach Todd Bowles said Monday that McMillan (knee) is considered day-to-day, PewterReport.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jalen-mcmillan-17763",
       "pub_date": "2026-08-17T07:58:00Z"
+    },
+    {
+      "player_name": "Keenan Allen",
+      "sleeper_id": "1479",
+      "gsis_id": "00-0030279",
+      "position": "WR",
+      "team": "FA",
+      "headline": "Heading to Indianapolis",
+      "description": "The Colts are signing Allen to a one-year contract worth up to $8.32 million, NFL reporter Jordan Schultz reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/keenan-allen-8627",
+      "pub_date": "2026-08-17T07:53:00Z"
     },
     {
       "player_name": "Baker Mayfield",
