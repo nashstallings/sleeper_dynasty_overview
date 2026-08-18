@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-18T12:34:30Z",
+  "generated_at": "2026-08-18T15:25:58Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jordan Love",
+      "sleeper_id": "6804",
+      "gsis_id": "00-0036264",
+      "position": "QB",
+      "team": "GBP",
+      "headline": "Will play in second preseason game",
+      "description": "Head coach Matt LaFleur said that he plans for Love and the other offensive starters to take some snaps during the Packers' second preseason game Friday versus the Broncos, Rob Demovsky of ESPN.com Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordan-love-14371",
+      "pub_date": "2026-08-18T08:06:00Z"
+    },
+    {
+      "player_name": "Kenyon Sadiq",
+      "sleeper_id": "13330",
+      "gsis_id": "00-0041032",
+      "position": "TE",
+      "team": "NYJ",
+      "headline": "Making progress, in play for Week 1",
+      "description": "Jets head coach Aaron Glenn said Tuesday that Sadiq (hernia) is \"getting closer\" to a return and remains on track to be ready to go for the start of the regular season, Zack Rosenblatt of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenyon-sadiq-19279",
+      "pub_date": "2026-08-18T07:59:00Z"
+    },
+    {
+      "player_name": "Breece Hall",
+      "sleeper_id": "8155",
+      "gsis_id": "00-0038120",
+      "position": "RB",
+      "team": "NYJ",
+      "headline": "Will be sidelined for 2-to-3 weeks",
+      "description": "Hall (groin) will be sidelined for 2-to-3 weeks, Zack Rosenblatt of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/breece-hall-15810",
+      "pub_date": "2026-08-18T07:54:00Z"
+    },
+    {
+      "player_name": "Josh Jacobs",
+      "sleeper_id": "5850",
+      "gsis_id": "00-0035700",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Returning to practice Tuesday",
+      "description": "Packers head coach Matt LaFleur said that Jacobs (groin) will return to practice Tuesday, Matt Schneidman of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
+      "pub_date": "2026-08-18T07:51:00Z"
+    },
+    {
+      "player_name": "Jaylin Noel",
+      "sleeper_id": "12536",
+      "gsis_id": "00-0040138",
+      "position": "WR",
+      "team": "HOU",
+      "headline": "Unexpectedly returns to practice Tuesday",
+      "description": "Noel (hamstring) was spotted in full pads and a red no-contact uniform for Tuesday's practice, Jonathan M. Alexander of the Houston Chronicle reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylin-noel-18555",
+      "pub_date": "2026-08-18T07:45:00Z"
+    },
     {
       "player_name": "Malik Nabers",
       "sleeper_id": "11632",
