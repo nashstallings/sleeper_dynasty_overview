@@ -241,7 +241,12 @@ async function loadLeague(leagueId) {
     state.league = league;
     state.rosters = rosters || [];
     state.users = users || [];
-    state.currentWeek = nflState && nflState.week ? nflState.week : null;
+    // nflState.week keeps counting through the preseason too (season_type
+    // "pre"), so a truthy week there doesn't mean the fantasy season -- or
+    // even week 1 -- has actually started. Only trust it once real games
+    // that count for the league are being played.
+    const seasonIsActive = nflState && (nflState.season_type === "regular" || nflState.season_type === "post");
+    state.currentWeek = seasonIsActive && nflState.week ? nflState.week : null;
 
     state.myRosterId = null;
     const myRoster = state.rosters.find((r) => r.owner_id === state.userId);
