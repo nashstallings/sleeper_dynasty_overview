@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T09:52:01Z",
+  "generated_at": "2026-08-18T09:23:14Z",
   "season": 2025,
   "season_type": "REG",
   "recent_weeks": [
@@ -3236,6 +3236,25 @@
           "prior": 0.064,
           "recent": -0.023,
           "delta": -0.087
+        }
+      }
+    },
+    {
+      "name": "Bo Melton",
+      "position": "WR",
+      "team": "GB",
+      "gsis_id": "00-0037091",
+      "sleeper_id": "8204",
+      "metrics": {
+        "target_share": {
+          "prior": 0.04,
+          "recent": 0.062,
+          "delta": 0.022
+        },
+        "wopr": {
+          "prior": 0.124,
+          "recent": 0.118,
+          "delta": -0.006
         }
       }
     },
@@ -7842,9 +7861,9 @@
           "delta": -0.91
         },
         "passing_epa": {
-          "prior": 0.195,
+          "prior": 0.202,
           "recent": 0.168,
-          "delta": -0.027
+          "delta": -0.034
         },
         "cpoe": {
           "prior": 4.06,
@@ -8654,8 +8673,8 @@
         },
         "passing_epa": {
           "prior": 0.309,
-          "recent": 0.515,
-          "delta": 0.206
+          "recent": 0.521,
+          "delta": 0.212
         },
         "cpoe": {
           "prior": 9.63,
