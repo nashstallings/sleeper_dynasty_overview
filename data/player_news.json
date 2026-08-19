@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-08-19T18:26:15Z",
+  "generated_at": "2026-08-19T21:20:14Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Tyler Warren",
+      "sleeper_id": "12518",
+      "gsis_id": "00-0040128",
+      "position": "TE",
+      "team": "IND",
+      "headline": "Exits Wednesday's practice with trainer",
+      "description": "Warren suffered an apparent groin injury during Wednesday's practice, Joel A. Erickson of The Indianapolis Star reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyler-warren-18534",
+      "pub_date": "2026-08-19T12:53:00Z"
+    },
+    {
+      "player_name": "Quinshon Judkins",
+      "sleeper_id": "12512",
+      "gsis_id": "00-0040784",
+      "position": "RB",
+      "team": "CLE",
+      "headline": "Misses practice Wednesday with minor issue",
+      "description": "Judkins wasn't present at practice Wednesday due to an undisclosed minor injury, Mary Kay Cabot of The Cleveland Plain Dealer reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/quinshon-judkins-18516",
+      "pub_date": "2026-08-19T12:31:00Z"
+    },
     {
       "player_name": "Michael Pittman",
       "sleeper_id": "6819",
@@ -102,6 +124,39 @@
       "description": "White isn't practicing Wednesday due to an unspecified injury, Nicki Jhabvala of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/rachaad-white-15802",
       "pub_date": "2026-08-19T07:36:00Z"
+    },
+    {
+      "player_name": "Jameson Williams",
+      "sleeper_id": "8148",
+      "gsis_id": "00-0037240",
+      "position": "WR",
+      "team": "DET",
+      "headline": "Participates in Wednesday's practice",
+      "description": "Williams (shoulder) participated in team drills and 7-on-7s during Wednesday's practice, Tim Twentyman of the Lions' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jameson-williams-15849",
+      "pub_date": "2026-08-19T02:14:00Z"
+    },
+    {
+      "player_name": "Tucker Kraft",
+      "sleeper_id": "9484",
+      "gsis_id": "00-0038996",
+      "position": "TE",
+      "team": "GBP",
+      "headline": "Impressing in team drills",
+      "description": "Kraft (knee) has been impressive in 11-on-11 drills since the Packers cleared him Sunday to take part in them at practice, Bill Huber of SI.com reports Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tucker-kraft-16649",
+      "pub_date": "2026-08-19T01:37:00Z"
+    },
+    {
+      "player_name": "Tyler Warren",
+      "sleeper_id": "12518",
+      "gsis_id": "00-0040128",
+      "position": "TE",
+      "team": "IND",
+      "headline": "Returns to sideline after practice exit",
+      "description": "Warren rejoined his teammates on the sideline without a helmet after suffering an apparent groin injury during Wednesday's practice, Stephen Holder of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyler-warren-18534",
+      "pub_date": "2026-08-19T01:05:00Z"
     },
     {
       "player_name": "Quentin Johnston",
