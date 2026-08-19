@@ -980,6 +980,17 @@ tr.power-rank-row { cursor: pointer; }
   border-bottom: 1px solid var(--panel-border);
 }
 .pr-player-row:last-child { border-bottom: none; }
+.pr-player-row.pr-uncounted { opacity: 0.5; }
+.pr-uncounted-divider {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+  border-top: 1px dashed var(--panel-border-strong);
+  padding-top: 6px;
+  margin-top: 2px;
+}
 .pr-player-left { display: flex; align-items: center; gap: 6px; min-width: 0; }
 .pr-player-left .player-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .pr-player-row:not(.pr-starter) .pr-player-left .player-name { color: var(--text-dim); font-weight: 500; }

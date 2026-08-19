@@ -2333,11 +2333,20 @@ function sumPlayerValues(pids) {
   return (pids || []).reduce((sum, pid) => sum + (playerValue(pid) || 0), 0);
 }
 
+// How many players at each position count toward that position's rank/value
+// -- a team's 4th-string WR shouldn't inflate its WR rank the same as a true
+// WR1, so only each position's top N by value (roughly a starter-plus-depth
+// count, not the whole bench) are summed.
+const POWER_RANK_POSITION_COUNTS = { QB: 3, RB: 4, WR: 5, TE: 2 };
+
 function positionValueSums(pids) {
   const sums = { QB: 0, RB: 0, WR: 0, TE: 0 };
-  (pids || []).forEach((pid) => {
-    const pos = playerPosition(player(pid));
-    if (sums[pos] !== undefined) sums[pos] += playerValue(pid) || 0;
+  SKILL_POSITIONS.forEach((pos) => {
+    const values = (pids || [])
+      .filter((pid) => playerPosition(player(pid)) === pos)
+      .map((pid) => playerValue(pid) || 0)
+      .sort((a, b) => b - a);
+    sums[pos] = values.slice(0, POWER_RANK_POSITION_COUNTS[pos]).reduce((s, v) => s + v, 0);
   });
   return sums;
 }
@@ -2423,9 +2432,10 @@ function rankTier(rank, total) {
 // starter, a hollow circle for bench, and the same .player-name[data-player-id]
 // class used everywhere else in the app -- so clicking it opens the normal
 // player card via the existing global click handler, no extra wiring needed.
-function powerRankPlayerRowHtml(pid, isStarter) {
+// Dimmed (uncounted) once a position's depth goes past POWER_RANK_POSITION_COUNTS.
+function powerRankPlayerRowHtml(pid, isStarter, uncounted = false) {
   return `
-    <div class="pr-player-row${isStarter ? " pr-starter" : ""}">
+    <div class="pr-player-row${isStarter ? " pr-starter" : ""}${uncounted ? " pr-uncounted" : ""}">
       <span class="pr-player-left">
         <span class="pr-player-icon">${isStarter ? "&starf;" : "&#9675;"}</span>
         <span class="player-name" data-player-id="${pid}">${escapeHtml(playerDisplay(player(pid)))}</span>
@@ -2434,21 +2444,26 @@ function powerRankPlayerRowHtml(pid, isStarter) {
     </div>`;
 }
 
+// Sorted strictly by value (highest first), since that's the same ordering
+// used to pick which players count toward the position's rank/value -- the
+// list and the number above it should always agree on who's included.
 function powerRankPositionBlockHtml(roster, pos, rank, value, avgAge) {
   const starterSet = new Set(roster.starters || []);
   const pids = (roster.players || []).filter((pid) => playerPosition(player(pid)) === pos);
-  const sorted = [...pids].sort((a, b) => {
-    const aStarter = starterSet.has(a) ? 0 : 1;
-    const bStarter = starterSet.has(b) ? 0 : 1;
-    if (aStarter !== bStarter) return aStarter - bStarter;
-    return (playerValue(b) || 0) - (playerValue(a) || 0);
-  });
-  const rows = sorted.map((pid) => powerRankPlayerRowHtml(pid, starterSet.has(pid))).join("");
+  const sorted = [...pids].sort((a, b) => (playerValue(b) || 0) - (playerValue(a) || 0));
+  const countedN = POWER_RANK_POSITION_COUNTS[pos];
+
+  const countedRows = sorted.slice(0, countedN).map((pid) => powerRankPlayerRowHtml(pid, starterSet.has(pid))).join("");
+  const extra = sorted.slice(countedN);
+  const extraRows = extra.length
+    ? `<div class="pr-uncounted-divider">Doesn't count toward rank</div>${extra.map((pid) => powerRankPlayerRowHtml(pid, starterSet.has(pid), true)).join("")}`
+    : "";
+
   return `
     <div class="pr-block">
       <div class="pr-block-head"><span class="badge badge-${pos}">${pos}</span><span class="pr-block-rank">Rank ${rank}</span></div>
-      <p class="player-meta pr-block-sub">Value: ${formatValue(value)}${avgAge !== null ? ` | Age: ${avgAge.toFixed(1)}` : ""}</p>
-      ${rows || `<p class="player-meta">No ${pos}s rostered.</p>`}
+      <p class="player-meta pr-block-sub">Value: ${formatValue(value)} (top ${countedN})${avgAge !== null ? ` | Age: ${avgAge.toFixed(1)}` : ""}</p>
+      ${countedRows + extraRows || `<p class="player-meta">No ${pos}s rostered.</p>`}
     </div>`;
 }
 

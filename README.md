@@ -352,8 +352,10 @@ sortable table (à la Dynasty Daddy's power rankings), ranking every team
 - **Overall Rank** &mdash; full-roster trade value plus the value of every
   future draft pick you currently own.
 - **Starter Rank** &mdash; trade value of your current starting lineup only.
-- **QB / RB / WR / TE Rank** &mdash; full-roster trade value at that
-  position (bench depth counts, not just starters).
+- **QB / RB / WR / TE Rank** &mdash; combined trade value of your **top N**
+  players at that position (top 3 QB, top 4 RB, top 5 WR, top 2 TE) &mdash;
+  deep bench depth past that count doesn't inflate the position's value,
+  same idea as the Trade Finder's own needs calculation.
 - **Draft Rank** &mdash; value of your currently-owned future picks alone.
 
 All of it comes from the same DynastyProcess trade-value data (and pick
@@ -366,11 +368,14 @@ never re-runs the weekly-projection loop above, since it's all derived from
 the same rows computed once per page load.
 
 Clicking a team's row (anywhere except a player name) expands it into a
-full breakdown: every rostered QB/RB/WR/TE grouped by position &mdash;
-starters first, then bench, each individually valued, with a filled star
-marking starters &mdash; plus every future draft pick you currently own,
-individually valued and labeled with which team it was originally that
-team's if it's been traded (e.g. "2027 1st (via Some Team)"). Each position
+full breakdown: every rostered QB/RB/WR/TE grouped by position and sorted
+by value (highest first, with a filled star marking starters), plus every
+future draft pick you currently own, individually valued and labeled with
+which team it was originally that team's if it's been traded (e.g.
+"2027 1st (via Some Team)"). Within each position group, a dashed divider
+after the Nth player marks where the position's value cap kicks in &mdash;
+everyone below it is still shown (so you can see your real depth) but
+dimmed, since they don't count toward that position's rank/value. Each
 group also repeats that group's rank/value/average-age, and the panel notes
 your overall/starter value and flagged needs (the same needs the Trade
 Finder tab computes) up top. Clicking a player name inside the expanded
