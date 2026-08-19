@@ -100,6 +100,9 @@ const state = {
   evaluatorPid: null,
   evaluatorSeason: null,
   playerWeeklyStats: null,
+  outlookView: "quadrants",
+  outlookRows: null,
+  powerRankSort: "overall",
 };
 
 // ---------- low-level helpers ----------
@@ -2171,6 +2174,7 @@ async function renderOutlook() {
 
   introCard.innerHTML = `<h2>Contender / Rebuild Outlook</h2><p class="spinner-note">Loading...</p>`;
   grid.innerHTML = "";
+  state.outlookRows = null;
 
   if (!state.playerAges) {
     try {
@@ -2203,6 +2207,9 @@ async function renderOutlook() {
     } catch {
       // no bye data -- weekly projections just skip bye substitutions
     }
+  }
+  if (!state.pickOwnership) {
+    state.pickOwnership = computePickOwnership();
   }
 
   if (!state.playerAges || !state.playerAges.players) {
@@ -2241,19 +2248,18 @@ async function renderOutlook() {
   const anyGamesPlayed = rows.some((r) => r.played > 0);
   const haveByeData = !!(state.nflByes && state.nflByes.byes);
 
-  const grouped = { rising: [], winnow: [], rebuild: [], retool: [] };
+  // Every row also gets tagged with its quadrant key here so the Power
+  // Rankings view can show the same Contender Tier without re-deriving it.
   rows.forEach((r) => {
     const young = r.avgAge <= medianAge;
     const winning = r.projWinPct >= medianProjWinPct;
-    if (young && winning) grouped.rising.push(r);
-    else if (!young && winning) grouped.winnow.push(r);
-    else if (young && !winning) grouped.rebuild.push(r);
-    else grouped.retool.push(r);
+    r.quadrantKey = young && winning ? "rising" : !young && winning ? "winnow" : young && !winning ? "rebuild" : "retool";
   });
-  Object.values(grouped).forEach((list) => list.sort((a, b) => b.projWinPct - a.projWinPct));
+  state.outlookRows = rows;
 
   introCard.innerHTML = `
     <h2>Contender / Rebuild Outlook</h2>
+    ${outlookViewToggleHtml()}
     <p class="player-meta" style="margin-bottom:6px">
       Splits the league by two axes &mdash; projected final record and starters' value-weighted average age
       &mdash; relative to the league median (age ${medianAge.toFixed(1)}, projected win% ${Math.round(medianProjWinPct * 100)}%),
@@ -2273,7 +2279,185 @@ async function renderOutlook() {
         : `<p class="player-meta">Bye-week data hasn't loaded, so this week-by-week projection can't yet swap in bench players during a bye &mdash; it's using full rosters as available for now.</p>`
     }`;
 
-  grid.innerHTML = OUTLOOK_QUADRANTS.map((q) => outlookQuadrantHtml(q, grouped[q.key])).join("");
+  renderOutlookBody();
+}
+
+// Quadrants vs. Power Rankings are both derived from the same already-
+// computed `state.outlookRows` (age + projected record for quadrants;
+// trade value for rankings), so switching between them -- or re-sorting
+// the rankings table -- never has to redo the weekly-projection loop,
+// the expensive part of renderOutlook() above.
+function renderOutlookBody() {
+  const grid = document.getElementById("outlook-quadrants");
+  if (!grid || !state.outlookRows) return;
+
+  if (state.outlookView === "rankings") {
+    grid.className = "";
+    grid.innerHTML = powerRankingsHtml(state.outlookRows);
+  } else {
+    grid.className = "outlook-grid";
+    const grouped = { rising: [], winnow: [], rebuild: [], retool: [] };
+    state.outlookRows.forEach((r) => grouped[r.quadrantKey].push(r));
+    Object.values(grouped).forEach((list) => list.sort((a, b) => b.projWinPct - a.projWinPct));
+    grid.innerHTML = OUTLOOK_QUADRANTS.map((q) => outlookQuadrantHtml(q, grouped[q.key])).join("");
+  }
+  refreshScrollHints();
+}
+
+function outlookViewToggleHtml() {
+  const views = [
+    { key: "quadrants", label: "Quadrants" },
+    { key: "rankings", label: "Power Rankings" },
+  ];
+  const btns = views
+    .map((v) => `<button type="button" class="scope-toggle-btn${state.outlookView === v.key ? " active" : ""}" data-outlookview="${v.key}">${v.label}</button>`)
+    .join("");
+  return `<div class="scope-toggle" style="margin-bottom:14px">${btns}</div>`;
+}
+
+// ---------- Power Rankings ----------
+
+const POWER_RANK_COLUMNS = [
+  { key: "overall", label: "Overall Rank" },
+  { key: "starter", label: "Starter Rank" },
+  { key: "QB", label: "QB Rank" },
+  { key: "RB", label: "RB Rank" },
+  { key: "WR", label: "WR Rank" },
+  { key: "TE", label: "TE Rank" },
+  { key: "draft", label: "Draft Rank" },
+];
+
+function sumPlayerValues(pids) {
+  return (pids || []).reduce((sum, pid) => sum + (playerValue(pid) || 0), 0);
+}
+
+function positionValueSums(pids) {
+  const sums = { QB: 0, RB: 0, WR: 0, TE: 0 };
+  (pids || []).forEach((pid) => {
+    const pos = playerPosition(player(pid));
+    if (sums[pos] !== undefined) sums[pos] += playerValue(pid) || 0;
+  });
+  return sums;
+}
+
+function rosterPicksValue(rosterId) {
+  return rosterPicks(rosterId).reduce((sum, p) => sum + (pickValue(p.season, p.round) || 0), 0);
+}
+
+// Ranks every entry 1 (highest value) .. N by a value getter, ties broken
+// by roster_id so the ordering is at least stable across re-renders.
+function rankMetrics(metrics, valueOf) {
+  const sorted = [...metrics].sort((a, b) => valueOf(b) - valueOf(a) || a.row.roster.roster_id - b.row.roster.roster_id);
+  const rankByRosterId = {};
+  sorted.forEach((m, i) => { rankByRosterId[m.row.roster.roster_id] = i + 1; });
+  return rankByRosterId;
+}
+
+// Trade-value-based power rankings: Overall combines full-roster + owned
+// future draft-pick value, Starter is the current starting lineup only,
+// QB/RB/WR/TE reflect full-roster depth at that position (not just
+// starters, so bench depth counts), and Draft is owned future pick value
+// alone. All from the same DynastyProcess data the Trade Finder and Age
+// Curve tabs already use -- no separate data pipeline needed.
+function powerRankingRows(rows) {
+  const metrics = rows.map((row) => {
+    const posSums = positionValueSums(row.roster.players);
+    const rosterValue = sumPlayerValues(row.roster.players);
+    const picksValue = rosterPicksValue(row.roster.roster_id);
+    return {
+      row,
+      posSums,
+      starterValue: sumPlayerValues(row.roster.starters),
+      picksValue,
+      overallValue: rosterValue + picksValue,
+    };
+  });
+
+  const overallRank = rankMetrics(metrics, (m) => m.overallValue);
+  const starterRank = rankMetrics(metrics, (m) => m.starterValue);
+  const draftRank = rankMetrics(metrics, (m) => m.picksValue);
+  const posRank = {};
+  SKILL_POSITIONS.forEach((pos) => {
+    posRank[pos] = rankMetrics(metrics, (m) => m.posSums[pos]);
+  });
+
+  return metrics.map((m) => {
+    const rid = m.row.roster.roster_id;
+    return {
+      row: m.row,
+      ranks: {
+        overall: overallRank[rid],
+        starter: starterRank[rid],
+        QB: posRank.QB[rid],
+        RB: posRank.RB[rid],
+        WR: posRank.WR[rid],
+        TE: posRank.TE[rid],
+        draft: draftRank[rid],
+      },
+    };
+  });
+}
+
+// Splits ranks into thirds (best/middle/worst) for the pill coloring --
+// relative to league size rather than a fixed cutoff, so it reads the same
+// whether the league has 8 teams or 14.
+function rankTier(rank, total) {
+  const third = total / 3;
+  if (rank <= third) return "good";
+  if (rank > total - third) return "bad";
+  return "mid";
+}
+
+function powerRankingsHtml(rows) {
+  if (!state.tradeValues) {
+    return emptyState("Couldn't load trade value data (data/trade_values.json missing or unreachable), so power rankings can't be computed.");
+  }
+
+  const ranked = powerRankingRows(rows);
+  const total = ranked.length;
+  const sortKey = POWER_RANK_COLUMNS.some((c) => c.key === state.powerRankSort) ? state.powerRankSort : "overall";
+  ranked.sort((a, b) => a.ranks[sortKey] - b.ranks[sortKey]);
+
+  const headerCells = POWER_RANK_COLUMNS
+    .map(
+      (c) =>
+        `<th class="sortable-th" data-sortkey="${c.key}">${c.label}${c.key === sortKey ? ' <span class="sort-arrow">&uarr;</span>' : ""}</th>`
+    )
+    .join("");
+
+  const bodyRows = ranked
+    .map(({ row, ranks }) => {
+      const tier = OUTLOOK_QUADRANTS.find((q) => q.key === row.quadrantKey);
+      const isMe = row.roster.roster_id === state.myRosterId;
+      const rankCell = (key) => `<td><span class="rank-pill rank-${rankTier(ranks[key], total)}">${ranks[key]}</span></td>`;
+      return `
+        <tr class="${isMe ? "me-row" : ""}">
+          <td class="freeze-col">${teamCellHtml(row.roster, { suffix: isMe ? '<span class="player-meta">you</span>' : "" })}</td>
+          <td><span class="tier-badge tier-${tier.key}">${tier.title}</span></td>
+          ${rankCell("overall")}
+          ${rankCell("starter")}
+          ${rankCell("QB")}
+          ${rankCell("RB")}
+          ${rankCell("WR")}
+          ${rankCell("TE")}
+          ${rankCell("draft")}
+        </tr>`;
+    })
+    .join("");
+
+  return `
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="freeze-col">Team</th><th>Contender Tier</th>${headerCells}</tr></thead>
+        <tbody>${bodyRows}</tbody>
+      </table>
+    </div>
+    <p class="player-meta" style="margin-top:10px">
+      Ranks are based on DynastyProcess trade value: Overall combines full-roster + owned future draft-pick value,
+      Starter is your current starting lineup only, QB/RB/WR/TE reflect full-roster depth at that position, and
+      Draft is the value of your currently-owned future picks. Contender Tier is the same age + projected-record
+      quadrant shown in the Quadrants view. Click a column header to sort by it.
+    </p>`;
 }
 
 // ---------- Player card ----------
@@ -2527,6 +2711,30 @@ function setupAgeCurveToggle() {
     if (!btn || btn.classList.contains("active")) return;
     state.ageCurveScope = btn.dataset.agescope;
     renderAgeCurve();
+  });
+}
+
+// Unlike the other scope toggles (which just call their full async render
+// function again), this one re-renders from the already-computed
+// state.outlookRows instead -- switching views or re-sorting shouldn't
+// redo the weekly-projection loop that computed them in the first place.
+function setupOutlookViewToggle() {
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".scope-toggle-btn[data-outlookview]");
+    if (!btn || btn.classList.contains("active") || !state.outlookRows) return;
+    document.querySelectorAll(".scope-toggle-btn[data-outlookview]").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    state.outlookView = btn.dataset.outlookview;
+    renderOutlookBody();
+  });
+}
+
+function setupPowerRankSort() {
+  document.addEventListener("click", (e) => {
+    const th = e.target.closest("#outlook-quadrants th[data-sortkey]");
+    if (!th || !state.outlookRows) return;
+    state.powerRankSort = th.dataset.sortkey;
+    renderOutlookBody();
   });
 }
 
@@ -2834,6 +3042,8 @@ function init() {
   setupAgeCurveToggle();
   setupAgeTeamSelect();
   setupTradeFinderScopeToggle();
+  setupOutlookViewToggle();
+  setupPowerRankSort();
   setupEvaluatorSearch();
   setupEvaluatorSeasonTabs();
   setupScrollHints();

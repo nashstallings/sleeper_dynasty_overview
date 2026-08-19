@@ -38,7 +38,9 @@ football account and helps you:
   relative to the league median: Rising Contender (young + winning),
   Win-Now (old + winning), Rebuilding (young + losing), and Retool/Sell
   (old + losing), each with a short note on what that window suggests
-  doing.
+  doing. A Power Rankings toggle switches to a sortable, trade-value-based
+  ranking table instead (Overall / Starter / QB / RB / WR / TE / Draft
+  rank, plus the same contender tier as a badge).
 - **Evaluate any player** &mdash; a Player Evaluator tab lets you search any
   QB/RB/WR/TE in the league (not just players in your league) and see their
   season-by-season stat line for the last 5 seasons plus a week-by-week
@@ -342,6 +344,26 @@ data yet &mdash; the tab notes this rather than presenting it as a fully
 settled read. Each quadrant includes a short note on what that competitive
 window suggests doing (sell veterans, target win-now vets, stay patient,
 etc.).
+
+A **Power Rankings** toggle switches the tab from the quadrant grid to a
+sortable table (à la Dynasty Daddy's power rankings), ranking every team
+1..N across:
+
+- **Overall Rank** &mdash; full-roster trade value plus the value of every
+  future draft pick you currently own.
+- **Starter Rank** &mdash; trade value of your current starting lineup only.
+- **QB / RB / WR / TE Rank** &mdash; full-roster trade value at that
+  position (bench depth counts, not just starters).
+- **Draft Rank** &mdash; value of your currently-owned future picks alone.
+
+All of it comes from the same DynastyProcess trade-value data (and pick
+ownership accounting) the Trade Finder and Age Curve tabs already use
+&mdash; no new data pipeline. The **Contender Tier** column reuses the exact
+same quadrant classification as the Quadrants view (age + projected
+record), so the two views stay consistent with each other. Click any rank
+column header to re-sort the table by it; switching views or re-sorting
+never re-runs the weekly-projection loop above, since it's all derived from
+the same rows computed once per page load.
 
 ## How Player Evaluator works
 

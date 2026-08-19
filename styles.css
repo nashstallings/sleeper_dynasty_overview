@@ -920,6 +920,44 @@ tr.me-row .freeze-col { background: var(--accent-soft); }
   .outlook-grid { grid-template-columns: 1fr; }
 }
 
+.tier-badge {
+  display: inline-block;
+  padding: 4px 11px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-stretch: condensed;
+  font-style: italic;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+.tier-badge.tier-rising { background: var(--good-soft); color: var(--good); }
+.tier-badge.tier-winnow { background: var(--warn-soft); color: var(--warn); }
+.tier-badge.tier-rebuild { background: var(--pos-pick-soft); color: var(--pos-pick); }
+.tier-badge.tier-retool { background: var(--bad-soft); color: var(--bad); }
+
+.rank-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.rank-pill.rank-good { background: var(--good-soft); color: var(--good); }
+.rank-pill.rank-mid { background: var(--warn-soft); color: var(--warn); }
+.rank-pill.rank-bad { background: var(--bad-soft); color: var(--bad); }
+
+.sortable-th { cursor: pointer; user-select: none; }
+.sortable-th:hover { color: var(--text); }
+.sort-arrow { color: var(--accent); }
+
 .empty-note { color: var(--text-dim); font-size: 0.88rem; }
 .empty-state {
   padding: 20px 16px;
