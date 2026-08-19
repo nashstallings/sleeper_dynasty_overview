@@ -2319,14 +2319,17 @@ function outlookViewToggleHtml() {
 
 // ---------- Power Rankings ----------
 
+// Short header labels -- every column here is a rank, so spelling that out
+// per-column just widens the table without adding information (the pills
+// are colored/numbered the same way regardless of the header text).
 const POWER_RANK_COLUMNS = [
-  { key: "overall", label: "Overall Rank" },
-  { key: "starter", label: "Starter Rank" },
-  { key: "QB", label: "QB Rank" },
-  { key: "RB", label: "RB Rank" },
-  { key: "WR", label: "WR Rank" },
-  { key: "TE", label: "TE Rank" },
-  { key: "draft", label: "Draft Rank" },
+  { key: "overall", label: "Overall" },
+  { key: "starter", label: "Starter" },
+  { key: "QB", label: "QB" },
+  { key: "RB", label: "RB" },
+  { key: "WR", label: "WR" },
+  { key: "TE", label: "TE" },
+  { key: "draft", label: "Draft" },
 ];
 
 function sumPlayerValues(pids) {
@@ -2563,17 +2566,17 @@ function powerRankingsHtml(rows) {
 
   return `
     <div class="table-wrap">
-      <table>
-        <thead><tr><th class="freeze-col">Team</th><th>Contender Tier</th>${headerCells}</tr></thead>
+      <table class="power-rank-table">
+        <thead><tr><th class="freeze-col">Team</th><th>Tier</th>${headerCells}</tr></thead>
         <tbody>${bodyRows}</tbody>
       </table>
     </div>
     <p class="player-meta" style="margin-top:10px">
       Ranks are based on DynastyProcess trade value: Overall combines full-roster + owned future draft-pick value,
-      Starter is your current starting lineup only, QB/RB/WR/TE reflect full-roster depth at that position, and
-      Draft is the value of your currently-owned future picks. Contender Tier is the same age + projected-record
-      quadrant shown in the Quadrants view. Click a column header to sort by it, or a team row to see its full
-      roster and pick-by-pick breakdown.
+      Starter is your current starting lineup only, QB/RB/WR/TE reflect each position's top ${POWER_RANK_POSITION_COUNTS.QB}/${POWER_RANK_POSITION_COUNTS.RB}/${POWER_RANK_POSITION_COUNTS.WR}/${POWER_RANK_POSITION_COUNTS.TE}
+      players by value, and Draft is the value of your currently-owned future picks. Tier is the same age +
+      projected-record quadrant shown in the Quadrants view. Click a column header to sort by it, or a team row to
+      see its full roster and pick-by-pick breakdown.
     </p>`;
 }
 

@@ -922,15 +922,15 @@ tr.me-row .freeze-col { background: var(--accent-soft); }
 
 .tier-badge {
   display: inline-block;
-  padding: 4px 11px;
+  padding: 3px 8px;
   border-radius: 999px;
   font-family: var(--font-display);
   font-stretch: condensed;
   font-style: italic;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  font-size: 0.7rem;
+  letter-spacing: 0.01em;
+  font-size: 0.64rem;
   white-space: nowrap;
 }
 .tier-badge.tier-rising { background: var(--good-soft); color: var(--good); }
@@ -958,6 +958,8 @@ tr.me-row .freeze-col { background: var(--accent-soft); }
 .sortable-th:hover { color: var(--text); }
 .sort-arrow { color: var(--accent); }
 
+.power-rank-table th, .power-rank-table td { padding: 9px 6px; }
+.power-rank-table th:first-child, .power-rank-table td:first-child { padding-left: 8px; }
 tr.power-rank-row { cursor: pointer; }
 .power-rank-team-cell { display: flex; align-items: center; gap: 8px; }
 .expand-chevron { color: var(--text-faint); font-size: 0.7rem; width: 0.8em; flex-shrink: 0; }
