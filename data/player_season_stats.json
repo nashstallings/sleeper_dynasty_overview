@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T11:50:34Z",
+  "generated_at": "2026-08-19T11:28:43Z",
   "seasons_included": [
     2022,
     2023,
@@ -1461,7 +1461,7 @@
           "carries": 0,
           "rushing_yards": 0,
           "rushing_tds": 0,
-          "targets": 19,
+          "targets": 18,
           "receptions": 9,
           "receiving_yards": 55,
           "receiving_tds": 0,
@@ -4445,7 +4445,7 @@
           "carries": 8,
           "rushing_yards": 53,
           "rushing_tds": 0,
-          "targets": 122,
+          "targets": 123,
           "receptions": 81,
           "receiving_yards": 959,
           "receiving_tds": 6,
@@ -5707,7 +5707,7 @@
         },
         "2024": {
           "team": "BAL",
-          "games": 9,
+          "games": 10,
           "completions": 0,
           "attempts": 0,
           "passing_yards": 0,
@@ -9930,7 +9930,7 @@
           "carries": 0,
           "rushing_yards": 0,
           "rushing_tds": 0,
-          "targets": 61,
+          "targets": 60,
           "receptions": 37,
           "receiving_yards": 530,
           "receiving_tds": 6,
@@ -11147,7 +11147,7 @@
         },
         "2024": {
           "team": "ATL",
-          "games": 10,
+          "games": 11,
           "completions": 0,
           "attempts": 0,
           "passing_yards": 0,
@@ -24238,6 +24238,63 @@
         }
       }
     },
+    "8204": {
+      "name": "Bo Melton",
+      "position": "WR",
+      "seasons": {
+        "2023": {
+          "team": "GB",
+          "games": 4,
+          "completions": 0,
+          "attempts": 0,
+          "passing_yards": 0,
+          "passing_tds": 0,
+          "interceptions": 0,
+          "carries": 3,
+          "rushing_yards": 21,
+          "rushing_tds": 0,
+          "targets": 24,
+          "receptions": 16,
+          "receiving_yards": 218,
+          "receiving_tds": 1,
+          "fantasy_points_ppr": 45.9
+        },
+        "2024": {
+          "team": "GB",
+          "games": 13,
+          "completions": 0,
+          "attempts": 0,
+          "passing_yards": 0,
+          "passing_tds": 0,
+          "interceptions": 0,
+          "carries": 8,
+          "rushing_yards": 54,
+          "rushing_tds": 0,
+          "targets": 17,
+          "receptions": 8,
+          "receiving_yards": 91,
+          "receiving_tds": 0,
+          "fantasy_points_ppr": 22.5
+        },
+        "2025": {
+          "team": "GB",
+          "games": 13,
+          "completions": 0,
+          "attempts": 0,
+          "passing_yards": 0,
+          "passing_tds": 0,
+          "interceptions": 0,
+          "carries": 5,
+          "rushing_yards": 35,
+          "rushing_tds": 0,
+          "targets": 13,
+          "receptions": 4,
+          "receiving_yards": 107,
+          "receiving_tds": 1,
+          "fantasy_points_ppr": 24.2
+        }
+      }
+    },
     "8527": {
       "name": "Dareke Young",
       "position": "WR",
@@ -28038,7 +28095,7 @@
           "carries": 2,
           "rushing_yards": 5,
           "rushing_tds": 0,
-          "targets": 153,
+          "targets": 154,
           "receptions": 101,
           "receiving_yards": 1104,
           "receiving_tds": 7,
@@ -34969,6 +35026,29 @@
         }
       }
     },
+    "12045": {
+      "name": "Jack Westover",
+      "position": "TE",
+      "seasons": {
+        "2025": {
+          "team": "NE",
+          "games": 4,
+          "completions": 0,
+          "attempts": 0,
+          "passing_yards": 0,
+          "passing_tds": 0,
+          "interceptions": 0,
+          "carries": 0,
+          "rushing_yards": 0,
+          "rushing_tds": 0,
+          "targets": 2,
+          "receptions": 1,
+          "receiving_yards": 0,
+          "receiving_tds": 0,
+          "fantasy_points_ppr": 1.0
+        }
+      }
+    },
     "12256": {
       "name": "Baylor Cupp",
       "position": "TE",
@@ -37785,13 +37865,13 @@
           "passing_tds": 27,
           "interceptions": 7,
           "carries": 77,
-          "rushing_yards": 383,
+          "rushing_yards": 388,
           "rushing_tds": 3,
           "targets": 2,
           "receptions": 2,
           "receiving_yards": 22,
           "receiving_tds": 1,
-          "fantasy_points_ppr": 318.2
+          "fantasy_points_ppr": 318.7
         },
         "2024": {
           "team": "CHI",
