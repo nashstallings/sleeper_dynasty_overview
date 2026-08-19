@@ -1,9 +1,53 @@
 {
-  "generated_at": "2026-08-19T15:25:22Z",
+  "generated_at": "2026-08-19T18:26:15Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Dealing with minor hamstring injury",
+      "description": "Pittman's absence from practice that stems back to last week is due to a hamstring issue, Nick Farabaugh of PennLive.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-08-19T10:59:00Z"
+    },
+    {
+      "player_name": "DK Metcalf",
+      "sleeper_id": "5846",
+      "gsis_id": "00-0035640",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Says he's fine, no long-term concern",
+      "description": "Metcalf (undisclosed) said Wednesday that he's \"fine\" and isn't concerned about his status for Week 1, Nick Farabaugh of PennLive.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dk-metcalf-13424",
+      "pub_date": "2026-08-19T10:52:00Z"
+    },
+    {
+      "player_name": "Carnell Tate",
+      "sleeper_id": "13279",
+      "gsis_id": "00-0041438",
+      "position": "WR",
+      "team": "TEN",
+      "headline": "Held out of practice due to general stiffness",
+      "description": "Coach Robert Saleh said Tate's absence from Wednesday's practice was due to stiffness and not the hard hit he took at Monday's session, Terry McCormick of TitanInsider.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/carnell-tate-19268",
+      "pub_date": "2026-08-19T10:46:00Z"
+    },
+    {
+      "player_name": "Jameson Williams",
+      "sleeper_id": "8148",
+      "gsis_id": "00-0037240",
+      "position": "WR",
+      "team": "DET",
+      "headline": "Suited up for practice Wednesday",
+      "description": "Williams (shoulder) is in uniform for Wednesday's practice, Richard Silva of The Detroit News reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jameson-williams-15849",
+      "pub_date": "2026-08-19T10:02:00Z"
+    },
     {
       "player_name": "Aaron Rodgers",
       "sleeper_id": "96",
