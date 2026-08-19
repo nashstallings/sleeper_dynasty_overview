@@ -103,6 +103,7 @@ const state = {
   outlookView: "quadrants",
   outlookRows: null,
   powerRankSort: "overall",
+  powerRankExpanded: new Set(),
 };
 
 // ---------- low-level helpers ----------
@@ -256,6 +257,7 @@ async function loadLeague(leagueId) {
     if (myRoster) state.myRosterId = myRoster.roster_id;
     state.ageCurveRosterId = state.myRosterId;
     state.selectedTradePlayers = new Set();
+    state.powerRankExpanded = new Set();
 
     state.tradedPicks = [];
     state.drafts = [];
@@ -2394,6 +2396,15 @@ function powerRankingRows(rows) {
         TE: posRank.TE[rid],
         draft: draftRank[rid],
       },
+      values: {
+        overall: m.overallValue,
+        starter: m.starterValue,
+        QB: m.posSums.QB,
+        RB: m.posSums.RB,
+        WR: m.posSums.WR,
+        TE: m.posSums.TE,
+        draft: m.picksValue,
+      },
     };
   });
 }
@@ -2406,6 +2417,85 @@ function rankTier(rank, total) {
   if (rank <= third) return "good";
   if (rank > total - third) return "bad";
   return "mid";
+}
+
+// One player row inside an expanded position block: a filled star for a
+// starter, a hollow circle for bench, and the same .player-name[data-player-id]
+// class used everywhere else in the app -- so clicking it opens the normal
+// player card via the existing global click handler, no extra wiring needed.
+function powerRankPlayerRowHtml(pid, isStarter) {
+  return `
+    <div class="pr-player-row${isStarter ? " pr-starter" : ""}">
+      <span class="pr-player-left">
+        <span class="pr-player-icon">${isStarter ? "&starf;" : "&#9675;"}</span>
+        <span class="player-name" data-player-id="${pid}">${escapeHtml(playerDisplay(player(pid)))}</span>
+      </span>
+      <span class="pr-player-value">${formatValue(playerValue(pid))}</span>
+    </div>`;
+}
+
+function powerRankPositionBlockHtml(roster, pos, rank, value, avgAge) {
+  const starterSet = new Set(roster.starters || []);
+  const pids = (roster.players || []).filter((pid) => playerPosition(player(pid)) === pos);
+  const sorted = [...pids].sort((a, b) => {
+    const aStarter = starterSet.has(a) ? 0 : 1;
+    const bStarter = starterSet.has(b) ? 0 : 1;
+    if (aStarter !== bStarter) return aStarter - bStarter;
+    return (playerValue(b) || 0) - (playerValue(a) || 0);
+  });
+  const rows = sorted.map((pid) => powerRankPlayerRowHtml(pid, starterSet.has(pid))).join("");
+  return `
+    <div class="pr-block">
+      <div class="pr-block-head"><span class="badge badge-${pos}">${pos}</span><span class="pr-block-rank">Rank ${rank}</span></div>
+      <p class="player-meta pr-block-sub">Value: ${formatValue(value)}${avgAge !== null ? ` | Age: ${avgAge.toFixed(1)}` : ""}</p>
+      ${rows || `<p class="player-meta">No ${pos}s rostered.</p>`}
+    </div>`;
+}
+
+function powerRankDraftBlockHtml(roster, rank, value) {
+  const picks = rosterPicks(roster.roster_id);
+  const rows = picks
+    .map(
+      (p) => `
+    <div class="pr-player-row">
+      <span class="pr-player-left">${pickLabel(p.season, p.round, p.originalRosterId, roster.roster_id)}</span>
+      <span class="pr-player-value">${formatValue(pickValue(p.season, p.round))}</span>
+    </div>`
+    )
+    .join("");
+  return `
+    <div class="pr-block">
+      <div class="pr-block-head"><span class="badge badge-PICK">PICK</span><span class="pr-block-rank">Rank ${rank}</span></div>
+      <p class="player-meta pr-block-sub">Value: ${formatValue(value)}</p>
+      ${rows || `<p class="player-meta">No picks owned.</p>`}
+    </div>`;
+}
+
+// The expanded per-team view: every rostered skill-position player grouped
+// by position (starters first, then bench, both by trade value) alongside
+// every currently-owned future draft pick, individually valued -- the same
+// breakdown the summary row's rank columns are aggregated from.
+function powerRankDetailHtml(row, ranks, values) {
+  const roster = row.roster;
+  const ageByPos = ageByPosition(rosterAgeEntries(roster.roster_id, "full"));
+  const needs = rosterNeeds(roster.roster_id);
+  const needsText = needs.length ? needs.map((n) => n.position).join(", ") : "None";
+
+  const blocks = SKILL_POSITIONS
+    .map((pos) => powerRankPositionBlockHtml(roster, pos, ranks[pos], values[pos], ageByPos[pos]))
+    .join("");
+
+  return `
+    <div class="power-rank-detail">
+      <p class="player-meta" style="margin-bottom:12px">
+        Overall value ${formatValue(values.overall)} &middot; Starter value ${formatValue(values.starter)}
+        &middot; Avg age ${row.avgAge.toFixed(1)} &middot; Needs: ${needsText}
+      </p>
+      <div class="pr-blocks">
+        ${blocks}
+        ${powerRankDraftBlockHtml(roster, ranks.draft, values.draft)}
+      </div>
+    </div>`;
 }
 
 function powerRankingsHtml(rows) {
@@ -2426,13 +2516,20 @@ function powerRankingsHtml(rows) {
     .join("");
 
   const bodyRows = ranked
-    .map(({ row, ranks }) => {
+    .map(({ row, ranks, values }) => {
       const tier = OUTLOOK_QUADRANTS.find((q) => q.key === row.quadrantKey);
       const isMe = row.roster.roster_id === state.myRosterId;
+      const rid = row.roster.roster_id;
+      const expanded = state.powerRankExpanded.has(rid);
       const rankCell = (key) => `<td><span class="rank-pill rank-${rankTier(ranks[key], total)}">${ranks[key]}</span></td>`;
-      return `
-        <tr class="${isMe ? "me-row" : ""}">
-          <td class="freeze-col">${teamCellHtml(row.roster, { suffix: isMe ? '<span class="player-meta">you</span>' : "" })}</td>
+      const summaryRow = `
+        <tr class="power-rank-row${isMe ? " me-row" : ""}" data-expand-roster="${rid}">
+          <td class="freeze-col">
+            <div class="power-rank-team-cell">
+              <span class="expand-chevron">${expanded ? "&#9662;" : "&#9656;"}</span>
+              ${teamCellHtml(row.roster, { suffix: isMe ? '<span class="player-meta">you</span>' : "" })}
+            </div>
+          </td>
           <td><span class="tier-badge tier-${tier.key}">${tier.title}</span></td>
           ${rankCell("overall")}
           ${rankCell("starter")}
@@ -2442,6 +2539,10 @@ function powerRankingsHtml(rows) {
           ${rankCell("TE")}
           ${rankCell("draft")}
         </tr>`;
+      const detailRow = expanded
+        ? `<tr class="power-rank-detail-row"><td colspan="${POWER_RANK_COLUMNS.length + 2}">${powerRankDetailHtml(row, ranks, values)}</td></tr>`
+        : "";
+      return summaryRow + detailRow;
     })
     .join("");
 
@@ -2456,7 +2557,8 @@ function powerRankingsHtml(rows) {
       Ranks are based on DynastyProcess trade value: Overall combines full-roster + owned future draft-pick value,
       Starter is your current starting lineup only, QB/RB/WR/TE reflect full-roster depth at that position, and
       Draft is the value of your currently-owned future picks. Contender Tier is the same age + projected-record
-      quadrant shown in the Quadrants view. Click a column header to sort by it.
+      quadrant shown in the Quadrants view. Click a column header to sort by it, or a team row to see its full
+      roster and pick-by-pick breakdown.
     </p>`;
 }
 
@@ -2734,6 +2836,20 @@ function setupPowerRankSort() {
     const th = e.target.closest("#outlook-quadrants th[data-sortkey]");
     if (!th || !state.outlookRows) return;
     state.powerRankSort = th.dataset.sortkey;
+    renderOutlookBody();
+  });
+}
+
+function setupPowerRankExpand() {
+  document.addEventListener("click", (e) => {
+    // A player name inside an expanded row should open the player card
+    // (via setupPlayerCard's own listener), not toggle the row shut.
+    if (e.target.closest(".player-name[data-player-id]")) return;
+    const row = e.target.closest("tr.power-rank-row[data-expand-roster]");
+    if (!row) return;
+    const rid = Number(row.dataset.expandRoster);
+    if (state.powerRankExpanded.has(rid)) state.powerRankExpanded.delete(rid);
+    else state.powerRankExpanded.add(rid);
     renderOutlookBody();
   });
 }
@@ -3044,6 +3160,7 @@ function init() {
   setupTradeFinderScopeToggle();
   setupOutlookViewToggle();
   setupPowerRankSort();
+  setupPowerRankExpand();
   setupEvaluatorSearch();
   setupEvaluatorSeasonTabs();
   setupScrollHints();

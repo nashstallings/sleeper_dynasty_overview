@@ -365,6 +365,17 @@ column header to re-sort the table by it; switching views or re-sorting
 never re-runs the weekly-projection loop above, since it's all derived from
 the same rows computed once per page load.
 
+Clicking a team's row (anywhere except a player name) expands it into a
+full breakdown: every rostered QB/RB/WR/TE grouped by position &mdash;
+starters first, then bench, each individually valued, with a filled star
+marking starters &mdash; plus every future draft pick you currently own,
+individually valued and labeled with which team it was originally that
+team's if it's been traded (e.g. "2027 1st (via Some Team)"). Each position
+group also repeats that group's rank/value/average-age, and the panel notes
+your overall/starter value and flagged needs (the same needs the Trade
+Finder tab computes) up top. Clicking a player name inside the expanded
+view opens the normal player card instead of collapsing the row.
+
 ## How Player Evaluator works
 
 The Evaluator tab is a standalone search over the full Sleeper player
