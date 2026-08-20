@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-20T15:27:52Z",
+  "generated_at": "2026-08-20T18:31:13Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Taking part in team drills Thursday",
+      "description": "Moore (lower body) is participating in team drills Thursday, Matthew Bove of 7 News WKBW reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-08-20T11:18:00Z"
+    },
+    {
+      "player_name": "Quinshon Judkins",
+      "sleeper_id": "12512",
+      "gsis_id": "00-0040784",
+      "position": "RB",
+      "team": "CLE",
+      "headline": "Not spotted at Thursday's practice",
+      "description": "Judkins (undisclosed) wasn't spotted at practice Thursday, Daniel Oyefusi of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/quinshon-judkins-18516",
+      "pub_date": "2026-08-20T10:42:00Z"
+    },
+    {
+      "player_name": "Geno Smith",
+      "sleeper_id": "1373",
+      "gsis_id": "00-0030565",
+      "position": "QB",
+      "team": "NYJ",
+      "headline": "On track to face Steelers on Friday",
+      "description": "Smith is scheduled to start Friday's preseason game against the Steelers, Connor Hughes of SNYtv reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/geno-smith-8743",
+      "pub_date": "2026-08-20T10:38:00Z"
+    },
+    {
+      "player_name": "Khalil Shakir",
+      "sleeper_id": "8134",
+      "gsis_id": "00-0037261",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Managing unspecified injury",
+      "description": "Shakir (undisclosed) didn't practice Tuesday due to an injury, Katherine Fitzgerald of The Buffalo News reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/khalil-shakir-15892",
+      "pub_date": "2026-08-20T10:14:00Z"
+    },
+    {
+      "player_name": "Kyler Murray",
+      "sleeper_id": "5849",
+      "gsis_id": "00-0035228",
+      "position": "QB",
+      "team": "MIN",
+      "headline": "Not likely to play in Saturday's preseason contest",
+      "description": "Murray isn't expected to suit up for Saturday's preseason game against the Ravens, Kevin Seifert of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyler-murray-13613",
+      "pub_date": "2026-08-20T10:03:00Z"
+    },
     {
       "player_name": "Makai Lemon",
       "sleeper_id": "13294",
