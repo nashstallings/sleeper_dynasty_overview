@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-20T12:36:47Z",
+  "generated_at": "2026-08-20T15:27:52Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Makai Lemon",
+      "sleeper_id": "13294",
+      "gsis_id": "00-0040867",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Deemed limited at Thursday's practice",
+      "description": "Lemon (hamstring) is practicing on a limited basis Thursday, Dave Zangoro of NBC Sports Philadelphia reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/makai-lemon-19231",
+      "pub_date": "2026-08-20T08:27:00Z"
+    },
+    {
+      "player_name": "C.J. Stroud",
+      "sleeper_id": "9758",
+      "gsis_id": "00-0039163",
+      "position": "QB",
+      "team": "HOU",
+      "headline": "On track to play Thursday",
+      "description": "Stroud is expected to play a few series during Thursday's preseason game against the Raiders, Aaron Wilson of KPRC 2 Houston reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cj-stroud-16886",
+      "pub_date": "2026-08-20T08:08:00Z"
+    },
+    {
+      "player_name": "Patrick Mahomes",
+      "sleeper_id": "4046",
+      "gsis_id": "00-0033873",
+      "position": "QB",
+      "team": "KCC",
+      "headline": "Remaining out for second preseason tilt",
+      "description": "Head coach Andy Reid said that Mahomes (knee) won't play in Saturday's preseason game versus the Buccaneers, Matt McMullen of the Chiefs' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/patrick-mahomes-11839",
+      "pub_date": "2026-08-20T07:49:00Z"
+    },
+    {
+      "player_name": "Tyler Warren",
+      "sleeper_id": "12518",
+      "gsis_id": "00-0040128",
+      "position": "TE",
+      "team": "IND",
+      "headline": "Will miss 'about a week' with groin injury",
+      "description": "Warren (groin) is expected to miss about a week, but his status for Week 1 against the Ravens isn't in any danger, Ian Rapoport of ESPN and NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyler-warren-18534",
+      "pub_date": "2026-08-20T07:46:00Z"
+    },
+    {
+      "player_name": "Malik Nabers",
+      "sleeper_id": "11632",
+      "gsis_id": "00-0039337",
+      "position": "WR",
+      "team": "NYG",
+      "headline": "Sitting out joint practices this week",
+      "description": "Head coach John Harbaugh said that Nabers (knee) won't participate in the Giants' joint practices with the Dolphins this week, Jordan Raanan of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
+      "pub_date": "2026-08-20T07:12:00Z"
+    },
     {
       "player_name": "Tyler Warren",
       "sleeper_id": "12518",
