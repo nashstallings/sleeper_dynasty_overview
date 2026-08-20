@@ -404,6 +404,14 @@ per-position columns (and league scoring) as the season table. If this file
 hasn't loaded yet or has no data for a given player, the weekly section
 says so rather than showing nothing.
 
+The chart scales bar heights against a fixed, labeled point axis (rounded
+up to the next 10, with a 30-point floor) rather than that season's own
+best week, so a 12-point week always looks like a 12-point week &mdash;
+switching season tabs never silently re-scales the chart underneath you.
+Any week over 20 points is colored differently from the rest (a teal bar
+instead of the position's usual color) to call out standout scoring weeks
+at a glance.
+
 *A note on this specific pipeline:* like the bye-week data, this was
 written without the ability to run a live query against BigQuery in the
 authoring session &mdash; the query mirrors the season-stats script closely

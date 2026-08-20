@@ -3048,6 +3048,20 @@ function evaluatorSeasonsForPlayer(pid) {
   return Object.keys(stats.weeks || {}).sort((a, b) => b - a);
 }
 
+// Bar heights are scaled against a fixed axis (rounded up to the next
+// EVAL_CHART_SCALE_STEP, with a floor so a run of quiet weeks doesn't
+// blow a handful of points up to a full-height bar) rather than each
+// season's own max -- so a 12-point week always looks like a 12-point
+// week, comparable across weeks and across season tabs.
+const EVAL_CHART_SCALE_STEP = 10;
+const EVAL_CHART_SCALE_MIN = 30;
+const EVAL_CHART_BOOM_THRESHOLD = 20;
+
+function evaluatorChartScaleMax(points) {
+  const maxPts = Math.max(...points, 0, EVAL_CHART_SCALE_MIN);
+  return Math.ceil(maxPts / EVAL_CHART_SCALE_STEP) * EVAL_CHART_SCALE_STEP;
+}
+
 function evaluatorWeeklyChartHtml(weeksObj, pos) {
   const weekKeys = Object.keys(weeksObj)
     .map(Number)
@@ -3055,21 +3069,39 @@ function evaluatorWeeklyChartHtml(weeksObj, pos) {
   if (!weekKeys.length) return emptyState("No weekly data for this season.");
 
   const points = weekKeys.map((w) => computeLeaguePoints(weeksObj[w], pos));
-  const maxPts = Math.max(...points, 1);
+  const scaleMax = evaluatorChartScaleMax(points);
+
+  // A left-hand axis column built from the exact same track/label
+  // structure as a real bar column, so its tick marks line up pixel-for-
+  // pixel with the bars without any fragile height math.
+  const ticks = [];
+  for (let v = 0; v <= scaleMax; v += EVAL_CHART_SCALE_STEP) ticks.push(v);
+  const axisTicks = ticks
+    .map((v) => `<div class="eval-axis-tick" style="bottom:${((v / scaleMax) * AGE_CHART_HEIGHT).toFixed(1)}px">${v}</div>`)
+    .join("");
+  const axisCol = `
+    <div class="age-bar-col eval-axis-col">
+      <div class="age-bar-track eval-axis-track">${axisTicks}</div>
+      <div class="age-bar-label">&nbsp;</div>
+    </div>`;
 
   const cols = weekKeys
     .map((w, i) => {
       const pts = points[i];
-      const h = Math.max((Math.max(pts, 0) / maxPts) * AGE_CHART_HEIGHT, 2);
+      const h = Math.max((Math.max(pts, 0) / scaleMax) * AGE_CHART_HEIGHT, 2);
+      const boom = pts > EVAL_CHART_BOOM_THRESHOLD;
+      const segClass = boom ? "eval-bar-boom" : `age-seg-${pos}`;
       return `
         <div class="age-bar-col" title="Week ${w}: ${fmtPpr(pts)} pts">
-          <div class="age-bar-track"><div class="age-bar-stack"><div class="age-bar-seg age-seg-${pos}" style="height:${h.toFixed(1)}px"></div></div></div>
+          <div class="age-bar-track"><div class="age-bar-stack"><div class="age-bar-seg ${segClass}" style="height:${h.toFixed(1)}px"></div></div></div>
           <div class="age-bar-label">${w}</div>
         </div>`;
     })
     .join("");
 
-  return `<div class="age-chart">${cols}</div>`;
+  return `
+    <div class="age-chart">${axisCol}${cols}</div>
+    <p class="player-meta eval-chart-legend"><span class="age-legend-swatch eval-bar-boom"></span>20+ point week</p>`;
 }
 
 function evaluatorWeeklyTableHtml(weeksObj, pos) {

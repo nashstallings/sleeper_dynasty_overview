@@ -1091,6 +1091,24 @@ footer a:hover { text-decoration: underline; }
 .evaluator-suggestion .player-meta { margin-left: auto; }
 .evaluator-suggestion-empty { padding: 12px 13px; margin: 0; }
 
+.eval-axis-col { flex: 0 0 26px; }
+.eval-axis-track { position: relative; }
+.eval-axis-tick {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform: translateY(50%);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-faint);
+  text-align: right;
+  line-height: 1;
+}
+/* pos-pick (teal) rather than warn (amber), since warn reads too close to
+   WR's own bar color (pos-wr) to tell a boom week apart from a normal one. */
+.eval-bar-boom { background: var(--pos-pick); }
+.eval-chart-legend { display: flex; align-items: center; gap: 6px; margin-top: 10px; }
+
 /* ---------- player card ---------- */
 
 .player-name[data-player-id] { cursor: pointer; }
