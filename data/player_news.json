@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T21:20:14Z",
+  "generated_at": "2026-08-20T00:55:28Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -124,6 +124,39 @@
       "description": "White isn't practicing Wednesday due to an unspecified injury, Nicki Jhabvala of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/rachaad-white-15802",
       "pub_date": "2026-08-19T07:36:00Z"
+    },
+    {
+      "player_name": "Bo Nix",
+      "sleeper_id": "11563",
+      "gsis_id": "00-0039732",
+      "position": "QB",
+      "team": "DEN",
+      "headline": "In line to play in Friday's preseason contest",
+      "description": "Coach Sean Payton said Nix is expected to play roughly 14 snaps during Friday's preseason game against the Packers, Zac Stevens of TheDNVR.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bo-nix-16995",
+      "pub_date": "2026-08-19T03:44:00Z"
+    },
+    {
+      "player_name": "Alec Pierce",
+      "sleeper_id": "8142",
+      "gsis_id": "00-0037664",
+      "position": "WR",
+      "team": "IND",
+      "headline": "Moving around well, per Steichen",
+      "description": "Coach Shane Steichen told Kevin Bowen of 107.5 The Fan Indianapolis on Wednesday that Pierce (ankle) is \"in a great spot right now. ... Hopefully, we will have him back soon.\" Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/alec-pierce-16022",
+      "pub_date": "2026-08-19T03:16:00Z"
+    },
+    {
+      "player_name": "Tyler Warren",
+      "sleeper_id": "12518",
+      "gsis_id": "00-0040128",
+      "position": "TE",
+      "team": "IND",
+      "headline": "Coach confirms that TE sustained groin injury",
+      "description": "Coach Shane Steichen confirmed Warren suffered a groin injury during Wednesday's joint practice with the Falcons but provided no additional information, James Boyd of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyler-warren-18534",
+      "pub_date": "2026-08-19T02:39:00Z"
     },
     {
       "player_name": "Jameson Williams",
