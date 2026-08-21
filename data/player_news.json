@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T00:59:30Z",
+  "generated_at": "2026-08-21T03:45:56Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -71,6 +71,17 @@
       "pub_date": "2026-08-20T10:03:00Z"
     },
     {
+      "player_name": "C.J. Stroud",
+      "sleeper_id": "9758",
+      "gsis_id": "00-0039163",
+      "position": "QB",
+      "team": "HOU",
+      "headline": "Leads TD drive in brief outing",
+      "description": "Stroud completed four of six passes for 27 yards in Thursday's 22-20 preseason loss to the Raiders. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cj-stroud-16886",
+      "pub_date": "2026-08-20T08:35:00Z"
+    },
+    {
       "player_name": "Makai Lemon",
       "sleeper_id": "13294",
       "gsis_id": "00-0040867",
@@ -80,6 +91,17 @@
       "description": "Lemon (hamstring) is practicing on a limited basis Thursday, Dave Zangoro of NBC Sports Philadelphia reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/makai-lemon-19231",
       "pub_date": "2026-08-20T08:27:00Z"
+    },
+    {
+      "player_name": "Fernando Mendoza",
+      "sleeper_id": "13269",
+      "gsis_id": "00-0041562",
+      "position": "QB",
+      "team": "LVR",
+      "headline": "Tosses pick-six in first start",
+      "description": "Mendoza completed eight of 15 passes for 86 yards, no touchdowns and one interception in Thursday's 22-20 preseason win over the Texans. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/fernando-mendoza-19281",
+      "pub_date": "2026-08-20T08:25:00Z"
     },
     {
       "player_name": "C.J. Stroud",
@@ -124,6 +146,39 @@
       "description": "Head coach John Harbaugh said that Nabers (knee) won't participate in the Giants' joint practices with the Dolphins this week, Jordan Raanan of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
       "pub_date": "2026-08-20T07:12:00Z"
+    },
+    {
+      "player_name": "George Kittle",
+      "sleeper_id": "4217",
+      "gsis_id": "00-0033288",
+      "position": "TE",
+      "team": "SFO",
+      "headline": "Has chance to play Week 1",
+      "description": "Kittle (Achilles) visited with Dr. Neal ElAttrache on Wednesday and remains ahead of schedule in his recovery with a chance to play Week 1 against the Rams, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/george-kittle-11892",
+      "pub_date": "2026-08-20T06:42:00Z"
+    },
+    {
+      "player_name": "Quentin Johnston",
+      "sleeper_id": "9754",
+      "gsis_id": "00-0038544",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Not in uniform for Thursday's contest",
+      "description": "Johnston (lower body) is not in uniform for Thursday night's preseason game against the 49ers, Kris Rhim of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/quentin-johnston-16899",
+      "pub_date": "2026-08-20T06:31:00Z"
+    },
+    {
+      "player_name": "Christian McCaffrey",
+      "sleeper_id": "4034",
+      "gsis_id": "00-0033280",
+      "position": "RB",
+      "team": "SFO",
+      "headline": "Not suited up for Thursday's game",
+      "description": "McCaffrey (undisclosed) will not play in Thursday night's preseason game against the Chargers, David Lombardi of SFStandard.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/christian-mccaffrey-11690",
+      "pub_date": "2026-08-20T06:29:00Z"
     },
     {
       "player_name": "Kaleb Johnson",
