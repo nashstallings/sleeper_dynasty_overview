@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T03:45:56Z",
+  "generated_at": "2026-08-21T06:36:56Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -27,6 +27,17 @@
       "pub_date": "2026-08-20T11:18:00Z"
     },
     {
+      "player_name": "De'Zhaun Stribling",
+      "sleeper_id": "13417",
+      "gsis_id": "00-0041035",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Continues impressing in preseason win",
+      "description": "Stribling secured four of five targets for 46 yards in the 49ers' 41-17 preseason win over the Chargers on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dezhaun-stribling-19330",
+      "pub_date": "2026-08-20T10:48:00Z"
+    },
+    {
       "player_name": "Quinshon Judkins",
       "sleeper_id": "12512",
       "gsis_id": "00-0040784",
@@ -38,6 +49,17 @@
       "pub_date": "2026-08-20T10:42:00Z"
     },
     {
+      "player_name": "Keaton Mitchell",
+      "sleeper_id": "9511",
+      "gsis_id": "00-0038454",
+      "position": "RB",
+      "team": "LAC",
+      "headline": "Four touches in preseason loss",
+      "description": "Mitchell rushed three times for minus-1 yard and brought in his only target for 11 yards in the Chargers' 41-17 preseason loss to the 49ers on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/keaton-mitchell-16810",
+      "pub_date": "2026-08-20T10:39:00Z"
+    },
+    {
       "player_name": "Geno Smith",
       "sleeper_id": "1373",
       "gsis_id": "00-0030565",
@@ -47,6 +69,39 @@
       "description": "Smith is scheduled to start Friday's preseason game against the Steelers, Connor Hughes of SNYtv reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/geno-smith-8743",
       "pub_date": "2026-08-20T10:38:00Z"
+    },
+    {
+      "player_name": "Deebo Samuel Sr.",
+      "sleeper_id": "5872",
+      "gsis_id": "00-0035719",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "One catch in preseason debut",
+      "description": "Samuel brought in one of two targets for four yards in the 49ers' 41-17 preseason win over the Chargers on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/deebo-samuel-13429",
+      "pub_date": "2026-08-20T10:33:00Z"
+    },
+    {
+      "player_name": "Ladd McConkey",
+      "sleeper_id": "11635",
+      "gsis_id": "00-0039915",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Plays opening series Thursday",
+      "description": "McConkey failed to bring in his only target in the Chargers' 41-17 preseason loss to the 49ers on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
+      "pub_date": "2026-08-20T10:28:00Z"
+    },
+    {
+      "player_name": "Justin Herbert",
+      "sleeper_id": "6797",
+      "gsis_id": "00-0036355",
+      "position": "QB",
+      "team": "LAC",
+      "headline": "One completion in preseason cameo",
+      "description": "Herbert completed one of two passes for nine yards with no touchdowns or interceptions in the Chargers' 41-17 preseason loss to the 49ers on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/justin-herbert-14446",
+      "pub_date": "2026-08-20T10:24:00Z"
     },
     {
       "player_name": "Khalil Shakir",
