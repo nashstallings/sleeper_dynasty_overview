@@ -1,9 +1,42 @@
 {
-  "generated_at": "2026-08-21T15:27:04Z",
+  "generated_at": "2026-08-21T18:28:49Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Terrance Ferguson",
+      "sleeper_id": "12487",
+      "gsis_id": "00-0040737",
+      "position": "TE",
+      "team": "LAR",
+      "headline": "Seeing expanded route tree in camp",
+      "description": "The Rams have expanded Ferguson's route tree this summer now that he's more comfortable with the playbook in his second season, Nate Atkins of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terrance-ferguson-18497",
+      "pub_date": "2026-08-21T11:09:00Z"
+    },
+    {
+      "player_name": "Jake Bobo",
+      "sleeper_id": "10867",
+      "gsis_id": "00-0038752",
+      "position": "WR",
+      "team": "SEA",
+      "headline": "Knee injury believed to be serious",
+      "description": "Coach Mike Macdonald said Bobo sustained a \"serious\" knee injury in Friday's joint practice with the Titans, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jake-bobo-17040",
+      "pub_date": "2026-08-21T11:02:00Z"
+    },
+    {
+      "player_name": "Tyreek Hill",
+      "sleeper_id": "3321",
+      "gsis_id": "00-0033040",
+      "position": "WR",
+      "team": "FA",
+      "headline": "Not expected to sign before start of season",
+      "description": "Hill's (knee) agent, Drew Rosenahus, said Friday that he doesn't expect the wide receiver to sign with a team before the start of the regular season, David Furones of the South Florida Sun Sentinel reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyreek-hill-11222",
+      "pub_date": "2026-08-21T10:12:00Z"
+    },
     {
       "player_name": "Parker Washington",
       "sleeper_id": "9487",
