@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-08-21T12:35:42Z",
+  "generated_at": "2026-08-21T15:27:04Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Parker Washington",
+      "sleeper_id": "9487",
+      "gsis_id": "00-0038606",
+      "position": "WR",
+      "team": "JAC",
+      "headline": "Should resume practicing next week",
+      "description": "Washington (undisclosed) is expected to return to practice next week, ESPN's Adam Schefter reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/parker-washington-16690",
+      "pub_date": "2026-08-21T06:48:00Z"
+    },
+    {
+      "player_name": "Fernando Mendoza",
+      "sleeper_id": "13269",
+      "gsis_id": "00-0041562",
+      "position": "QB",
+      "team": "LVR",
+      "headline": "Kubiak declines to name Week 1 starter",
+      "description": "Raiders coach Klint Kubiak indicated Thursday that he is not yet ready to name a starting quarterback (between Kirk Cousins and Mendoza) ahead of Week 1, Ryan McFadden of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/fernando-mendoza-19281",
+      "pub_date": "2026-08-21T05:47:00Z"
+    },
     {
       "player_name": "Fernando Mendoza",
       "sleeper_id": "13269",
