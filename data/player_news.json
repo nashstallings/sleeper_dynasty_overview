@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-08-21T18:28:49Z",
+  "generated_at": "2026-08-21T21:18:28Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jayden Higgins",
+      "sleeper_id": "12484",
+      "gsis_id": "00-0040130",
+      "position": "WR",
+      "team": "HOU",
+      "headline": "Sent to injured reserve",
+      "description": "The Texans placed Higgins (knee) on injured reserve Friday, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jayden-higgins-18551",
+      "pub_date": "2026-08-21T11:32:00Z"
+    },
     {
       "player_name": "Terrance Ferguson",
       "sleeper_id": "12487",
