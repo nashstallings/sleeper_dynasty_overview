@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T00:55:34Z",
+  "generated_at": "2026-08-22T03:37:22Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -47,6 +47,61 @@
       "description": "Hill's (knee) agent, Drew Rosenahus, said Friday that he doesn't expect the wide receiver to sign with a team before the start of the regular season, David Furones of the South Florida Sun Sentinel reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/tyreek-hill-11222",
       "pub_date": "2026-08-21T10:12:00Z"
+    },
+    {
+      "player_name": "Tetairoa McMillan",
+      "sleeper_id": "12526",
+      "gsis_id": "00-0040124",
+      "position": "WR",
+      "team": "CAR",
+      "headline": "Two grabs against Jags on Friday",
+      "description": "McMillan caught both his targets for 25 yards in Friday's 34-17 preseason win over the Jaguars. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tetairoa-mcmillan-18547",
+      "pub_date": "2026-08-21T08:02:00Z"
+    },
+    {
+      "player_name": "Jonathon Brooks",
+      "sleeper_id": "11583",
+      "gsis_id": "00-0039344",
+      "position": "RB",
+      "team": "CAR",
+      "headline": "Gets into end zone against Jags",
+      "description": "Brooks carried the ball five times for 18 yards and a touchdown in Friday's 34-17 preseason win over the Jaguars. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonathon-brooks-17747",
+      "pub_date": "2026-08-21T07:59:00Z"
+    },
+    {
+      "player_name": "Bryce Young",
+      "sleeper_id": "9228",
+      "gsis_id": "00-0039150",
+      "position": "QB",
+      "team": "CAR",
+      "headline": "Leads scoring drive in preseason win",
+      "description": "Young completed five of six passes for 49 yards in Friday's 34-17 preseason win over the Jaguars. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bryce-young-16807",
+      "pub_date": "2026-08-21T07:56:00Z"
+    },
+    {
+      "player_name": "Rico Dowdle",
+      "sleeper_id": "7021",
+      "gsis_id": "00-0036139",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "Five carries Friday, just like Warren",
+      "description": "Dowdle rushed five times for 18 yards and caught his only target for two yards in Friday's 17-0 preseason loss to the Jets. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rico-dowdle-14657",
+      "pub_date": "2026-08-21T07:49:00Z"
+    },
+    {
+      "player_name": "Jaylen Warren",
+      "sleeper_id": "8228",
+      "gsis_id": "00-0037228",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "Splits with Dowdle in first half Friday",
+      "description": "Warren rushed five times for 17 yards in Friday's 17-0 preseason loss to the Jets. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-warren-15984",
+      "pub_date": "2026-08-21T07:42:00Z"
     },
     {
       "player_name": "Parker Washington",
