@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-22T12:28:07Z",
+  "generated_at": "2026-08-22T15:14:54Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jacory Croskey-Merritt",
+      "sleeper_id": "12533",
+      "gsis_id": "00-0040242",
+      "position": "RB",
+      "team": "WAS",
+      "headline": "Will sit Saturday",
+      "description": "Croskey-Merritt won't play in Saturday's preseason game against the Lions, John Keim of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jacory-croskey-merritt-18811",
+      "pub_date": "2026-08-22T07:25:00Z"
+    },
+    {
+      "player_name": "Josh Allen",
+      "sleeper_id": "4984",
+      "gsis_id": "00-0034857",
+      "position": "QB",
+      "team": "BUF",
+      "headline": "Will sit Saturday",
+      "description": "Allen will sit for Saturday's preseason game against the Browns, Cameron Wolfe of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-allen-12483",
+      "pub_date": "2026-08-22T07:22:00Z"
+    },
+    {
+      "player_name": "Terry McLaurin",
+      "sleeper_id": "5927",
+      "gsis_id": "00-0035659",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Playing Saturday vs. Detroit",
+      "description": "McLaurin will play in Saturday's preseason game against the Lions, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terry-mclaurin-13536",
+      "pub_date": "2026-08-22T07:16:00Z"
+    },
+    {
+      "player_name": "Stefon Diggs",
+      "sleeper_id": "2449",
+      "gsis_id": "00-0031588",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Will make preseason debut",
+      "description": "Diggs is expected to make his preseason debut Saturday against Detroit, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/stefon-diggs-10133",
+      "pub_date": "2026-08-22T07:13:00Z"
+    },
+    {
+      "player_name": "Jayden Daniels",
+      "sleeper_id": "11566",
+      "gsis_id": "00-0039910",
+      "position": "QB",
+      "team": "WAS",
+      "headline": "Expected to suit up Saturday",
+      "description": "Daniels is expected to be active for Saturday's preseason game against the Lions, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jayden-daniels-17692",
+      "pub_date": "2026-08-22T07:07:00Z"
+    },
     {
       "player_name": "Jayden Higgins",
       "sleeper_id": "12484",
