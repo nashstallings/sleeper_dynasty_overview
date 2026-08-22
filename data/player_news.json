@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T03:37:22Z",
+  "generated_at": "2026-08-22T06:30:25Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -47,6 +47,61 @@
       "description": "Hill's (knee) agent, Drew Rosenahus, said Friday that he doesn't expect the wide receiver to sign with a team before the start of the regular season, David Furones of the South Florida Sun Sentinel reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/tyreek-hill-11222",
       "pub_date": "2026-08-21T10:12:00Z"
+    },
+    {
+      "player_name": "MarShawn Lloyd",
+      "sleeper_id": "11581",
+      "gsis_id": "00-0039811",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Records receiving TD in win",
+      "description": "Lloyd rushed six times for 17 yards and secured his only target for an 11-yard touchdown in the Packers' 33-13 preseason win over the Broncos on Friday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/marshawn-lloyd-17795",
+      "pub_date": "2026-08-21T10:09:00Z"
+    },
+    {
+      "player_name": "Matthew Golden",
+      "sleeper_id": "12501",
+      "gsis_id": "00-0040667",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Big gain on one reception",
+      "description": "Golden secured his only target for 19 yards in the Packers' 33-13 preseason win over the Broncos on Friday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/matthew-golden-18500",
+      "pub_date": "2026-08-21T10:03:00Z"
+    },
+    {
+      "player_name": "Courtland Sutton",
+      "sleeper_id": "5045",
+      "gsis_id": "00-0034348",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "Quiet night in preseason loss",
+      "description": "Sutton failed to bring in either of his two targets in the Broncos' 33-13 preseason loss to the Packers on Friday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/courtland-sutton-12586",
+      "pub_date": "2026-08-21T09:57:00Z"
+    },
+    {
+      "player_name": "RJ Harvey",
+      "sleeper_id": "12489",
+      "gsis_id": "00-0040730",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Scores receiving TD in loss",
+      "description": "Harvey rushed once for five yards and brought in both targets for 25 yards and a touchdown in the Broncos' 33-13 preseason loss to the Packers on Friday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rj-harvey-18522",
+      "pub_date": "2026-08-21T09:52:00Z"
+    },
+    {
+      "player_name": "Christian Watson",
+      "sleeper_id": "8167",
+      "gsis_id": "00-0038124",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Pair of catches in preseason win",
+      "description": "Watson brought in two of three targets for 19 yards in the Packers' 33-13 preseason win over the Broncos on Friday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/christian-watson-15946",
+      "pub_date": "2026-08-21T09:47:00Z"
     },
     {
       "player_name": "Tetairoa McMillan",
