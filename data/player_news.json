@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T21:18:28Z",
+  "generated_at": "2026-08-22T00:55:34Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -60,6 +60,17 @@
       "pub_date": "2026-08-21T06:48:00Z"
     },
     {
+      "player_name": "Josh Jacobs",
+      "sleeper_id": "5850",
+      "gsis_id": "00-0035700",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Won't suit up Friday",
+      "description": "Jacobs (groin) won't play in Friday's preseason game at Denver, according to Mike Spofford of the Packers' official site. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
+      "pub_date": "2026-08-21T05:54:00Z"
+    },
+    {
       "player_name": "Fernando Mendoza",
       "sleeper_id": "13269",
       "gsis_id": "00-0041562",
@@ -69,6 +80,50 @@
       "description": "Raiders coach Klint Kubiak indicated Thursday that he is not yet ready to name a starting quarterback (between Kirk Cousins and Mendoza) ahead of Week 1, Ryan McFadden of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/fernando-mendoza-19281",
       "pub_date": "2026-08-21T05:47:00Z"
+    },
+    {
+      "player_name": "Jaylen Waddle",
+      "sleeper_id": "7526",
+      "gsis_id": "00-0036613",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "May play Friday",
+      "description": "Waddle is in uniform for Friday's preseason game versus the Packers, Parker Gabriel of The Denver Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-waddle-15404",
+      "pub_date": "2026-08-21T05:18:00Z"
+    },
+    {
+      "player_name": "Trevor Lawrence",
+      "sleeper_id": "7523",
+      "gsis_id": "00-0036971",
+      "position": "QB",
+      "team": "JAC",
+      "headline": "In street clothes Friday",
+      "description": "Lawrence won't play in Friday's preseason game against the Panthers, John Shipley of SI.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/trevor-lawrence-15357",
+      "pub_date": "2026-08-21T04:02:00Z"
+    },
+    {
+      "player_name": "Rashod Bateman",
+      "sleeper_id": "7571",
+      "gsis_id": "00-0036550",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Facing charges after June incident",
+      "description": "Bateman is facing three charges stemming from a domestic incident in June, Jamison Hensley of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rashod-bateman-15210",
+      "pub_date": "2026-08-21T03:54:00Z"
+    },
+    {
+      "player_name": "Rico Dowdle",
+      "sleeper_id": "7021",
+      "gsis_id": "00-0036139",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "In uniform Friday",
+      "description": "Dowdle is suited up for Friday's preseason game versus the Jets, Brian Batko of the Pittsburgh Post-Gazette reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rico-dowdle-14657",
+      "pub_date": "2026-08-21T03:48:00Z"
     },
     {
       "player_name": "Fernando Mendoza",
