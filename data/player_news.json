@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-08-23T12:29:13Z",
+  "generated_at": "2026-08-23T15:16:49Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Tua Tagovailoa",
+      "sleeper_id": "6768",
+      "gsis_id": "00-0036212",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Penix cleared for team drills, setting stage for QB competition",
+      "description": "Tagovailoa's teammate, Michael Penix (knee) is in line to return to 11-on-11 drills in Monday's practice, Will McFadden of the Falcons' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tua-tagovailoa-14465",
+      "pub_date": "2026-08-23T06:43:00Z"
+    },
+    {
+      "player_name": "Parker Washington",
+      "sleeper_id": "9487",
+      "gsis_id": "00-0038606",
+      "position": "WR",
+      "team": "JAC",
+      "headline": "Present for Sunday's walkthrough",
+      "description": "Washington (undisclosed) was spotted at Sunday's walkthrough, Ryan O'Halloran of The Florida Times-Union reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/parker-washington-16690",
+      "pub_date": "2026-08-23T06:34:00Z"
+    },
     {
       "player_name": "Khalil Shakir",
       "sleeper_id": "8134",
