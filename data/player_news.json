@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T21:16:14Z",
+  "generated_at": "2026-08-23T00:59:58Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -113,6 +113,61 @@
       "description": "Daniels is expected to be active for Saturday's preseason game against the Lions, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jayden-daniels-17692",
       "pub_date": "2026-08-22T07:07:00Z"
+    },
+    {
+      "player_name": "Ja'Kobi Lane",
+      "sleeper_id": "13293",
+      "gsis_id": "00-0040870",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Logs one catch vs. Minnesota",
+      "description": "Lane caught one pass on two targets for nine yards during the Ravens' 13-3 preseason win over the Vikings on Saturday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jakobi-lane-19230",
+      "pub_date": "2026-08-22T04:59:00Z"
+    },
+    {
+      "player_name": "Ty Simpson",
+      "sleeper_id": "13275",
+      "gsis_id": "00-0041568",
+      "position": "QB",
+      "team": "LAR",
+      "headline": "Serves as QB2 vs. New Orleans",
+      "description": "Simpson completed eight of 12 passes for 73 yards and added three carries for 10 yards during the Rams' 34-0 preseason win over the Saints on Saturday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ty-simpson-19275",
+      "pub_date": "2026-08-22T04:46:00Z"
+    },
+    {
+      "player_name": "Jaxson Dart",
+      "sleeper_id": "12508",
+      "gsis_id": "00-0040691",
+      "position": "QB",
+      "team": "NYG",
+      "headline": "Rested for second preseason game",
+      "description": "Dart didn't suit up for Saturday's 26-3 preseason win over the Dolphins. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaxson-dart-18574",
+      "pub_date": "2026-08-22T04:09:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Back in team drills Saturday",
+      "description": "Evans (quadriceps) took part in 11-on-11 work at Saturday's practice, Noah Furtado of the San Francisco Chronicle reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-08-22T03:49:00Z"
+    },
+    {
+      "player_name": "Caleb Williams",
+      "sleeper_id": "11560",
+      "gsis_id": "00-0039918",
+      "position": "QB",
+      "team": "CHI",
+      "headline": "Could play Saturday",
+      "description": "Williams is in uniform in advance of Saturday's preseason game in Cincinnati, Sean Hammond of the Chicago Tribune reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/caleb-williams-17695",
+      "pub_date": "2026-08-22T03:39:00Z"
     },
     {
       "player_name": "Mike Evans",
