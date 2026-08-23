@@ -1,9 +1,42 @@
 {
-  "generated_at": "2026-08-23T15:16:49Z",
+  "generated_at": "2026-08-23T18:20:52Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Christian McCaffrey",
+      "sleeper_id": "4034",
+      "gsis_id": "00-0033280",
+      "position": "RB",
+      "team": "SFO",
+      "headline": "Back at practice Sunday",
+      "description": "McCaffrey (undisclosed) is in uniform for Sunday's training camp practice, Matt Barrows of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/christian-mccaffrey-11690",
+      "pub_date": "2026-08-23T10:34:00Z"
+    },
+    {
+      "player_name": "George Kittle",
+      "sleeper_id": "4217",
+      "gsis_id": "00-0033288",
+      "position": "TE",
+      "team": "SFO",
+      "headline": "Activated from PUP list",
+      "description": "Kittle (Achilles) was activated from the active/PUP list Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/george-kittle-11892",
+      "pub_date": "2026-08-23T10:08:00Z"
+    },
+    {
+      "player_name": "Jadarian Price",
+      "sleeper_id": "13286",
+      "gsis_id": "00-0041512",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Won't play Sunday",
+      "description": "Price will not play in Sunday's preseason game against the Titans, Gregg Bell of The Tacoma News Tribune reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
+      "pub_date": "2026-08-23T09:12:00Z"
+    },
     {
       "player_name": "Tua Tagovailoa",
       "sleeper_id": "6768",
@@ -11,7 +44,7 @@
       "position": "QB",
       "team": "ATL",
       "headline": "Penix cleared for team drills, setting stage for QB competition",
-      "description": "Tagovailoa's teammate, Michael Penix (knee) is in line to return to 11-on-11 drills in Monday's practice, Will McFadden of the Falcons' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "description": "Tagovailoa's teammate, Michael Penix (knee), is in line to return to 11-on-11 drills in Monday's practice, Will McFadden of the Falcons' official site reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/tua-tagovailoa-14465",
       "pub_date": "2026-08-23T06:43:00Z"
     },
