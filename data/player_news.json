@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-08-23T18:20:52Z",
+  "generated_at": "2026-08-23T21:15:43Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Christian McCaffrey",
+      "sleeper_id": "4034",
+      "gsis_id": "00-0033280",
+      "position": "RB",
+      "team": "SFO",
+      "headline": "Jumps into team drills Sunday",
+      "description": "Updating a previous report, McCaffrey (undisclosed) participated in team drills during Sunday's practice, Vic Tafur of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/christian-mccaffrey-11690",
+      "pub_date": "2026-08-23T12:03:00Z"
+    },
     {
       "player_name": "Christian McCaffrey",
       "sleeper_id": "4034",
@@ -58,6 +69,50 @@
       "description": "Washington (undisclosed) was spotted at Sunday's walkthrough, Ryan O'Halloran of The Florida Times-Union reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/parker-washington-16690",
       "pub_date": "2026-08-23T06:34:00Z"
+    },
+    {
+      "player_name": "Christian McCaffrey",
+      "sleeper_id": "4034",
+      "gsis_id": "00-0033280",
+      "position": "RB",
+      "team": "SFO",
+      "headline": "Downplays absence during preseason",
+      "description": "McCaffrey (undisclosed) said Sunday that he always planned to take a break during training camp and then \"ramp back up,\" Vic Tafur of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/christian-mccaffrey-11690",
+      "pub_date": "2026-08-23T01:47:00Z"
+    },
+    {
+      "player_name": "Malik Nabers",
+      "sleeper_id": "11632",
+      "gsis_id": "00-0039337",
+      "position": "WR",
+      "team": "NYG",
+      "headline": "May ditch red jersey this week",
+      "description": "Giants coach John Harbaugh said Sunday that Nabers (knee) could be out of his red non-contact jersey at some point this week, Evan Barnes of Newsday reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
+      "pub_date": "2026-08-23T01:33:00Z"
+    },
+    {
+      "player_name": "Shedeur Sanders",
+      "sleeper_id": "12524",
+      "gsis_id": "00-0040668",
+      "position": "QB",
+      "team": "CLE",
+      "headline": "Will learn QB1 decision Monday",
+      "description": "Sanders will learn Monday if he or Deshaun Watson will start at quarterback for the Browns, Jeremy Fowler of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/shedeur-sanders-18479",
+      "pub_date": "2026-08-23T01:16:00Z"
+    },
+    {
+      "player_name": "Deshaun Watson",
+      "sleeper_id": "4017",
+      "gsis_id": "00-0033537",
+      "position": "QB",
+      "team": "CLE",
+      "headline": "Starting QB decision expected Monday",
+      "description": "Watson will learn Monday if he or Shedeur Sanders will be named starting quarterback for the Browns, Jeremy Fowler of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/deshaun-watson-11712",
+      "pub_date": "2026-08-23T01:08:00Z"
     },
     {
       "player_name": "Khalil Shakir",
