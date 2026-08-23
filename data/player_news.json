@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T00:59:58Z",
+  "generated_at": "2026-08-23T03:45:08Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Judkins (undisclosed) is not expected to play in Saturday's preseason game against the Bills, Kelsey Russo of the Browns' official site reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/quinshon-judkins-18516",
       "pub_date": "2026-08-22T08:34:00Z"
+    },
+    {
+      "player_name": "Baker Mayfield",
+      "sleeper_id": "4892",
+      "gsis_id": "00-0034855",
+      "position": "QB",
+      "team": "TBB",
+      "headline": "Pair of completions on opening series",
+      "description": "Mayfield completed two of four passes for 10 yards with no touchdowns or interceptions in the Buccaneers' 16-15 preseason win over the Chiefs on Saturday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/baker-mayfield-12619",
+      "pub_date": "2026-08-22T08:07:00Z"
+    },
+    {
+      "player_name": "Kenny Gainwell",
+      "sleeper_id": "7567",
+      "gsis_id": "00-0036919",
+      "position": "RB",
+      "team": "TBB",
+      "headline": "One carry in team debut",
+      "description": "Gainwell rushed once for no gain in the Buccaneers' 16-15 preseason win over the Chiefs on Saturday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenny-gainwell-15222",
+      "pub_date": "2026-08-22T08:02:00Z"
+    },
+    {
+      "player_name": "Bucky Irving",
+      "sleeper_id": "11584",
+      "gsis_id": "00-0039361",
+      "position": "RB",
+      "team": "TBB",
+      "headline": "Logs three carries in preseason debut",
+      "description": "Irving rushed three times for 14 yards in the Buccaneers' 16-15 preseason win over the Chiefs on Saturday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bucky-irving-17784",
+      "pub_date": "2026-08-22T07:56:00Z"
+    },
+    {
+      "player_name": "Kenneth Walker III",
+      "sleeper_id": "8151",
+      "gsis_id": "00-0038134",
+      "position": "RB",
+      "team": "KCC",
+      "headline": "Logs first touches as a Chief",
+      "description": "Walker rushed twice for four yards in the Chiefs' 16-15 preseason loss to the Bengals on Saturday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenneth-walker-15909",
+      "pub_date": "2026-08-22T07:47:00Z"
+    },
+    {
+      "player_name": "Rome Odunze",
+      "sleeper_id": "11620",
+      "gsis_id": "00-0039919",
+      "position": "WR",
+      "team": "CHI",
+      "headline": "Big gain on one catch Saturday",
+      "description": "Odunze brought in one of two targets for 18 yards in the Bears' 27-9 preseason loss to the Bengals on Saturday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rome-odunze-17020",
+      "pub_date": "2026-08-22T07:43:00Z"
     },
     {
       "player_name": "Jacory Croskey-Merritt",
