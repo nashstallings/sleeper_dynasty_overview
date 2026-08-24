@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T00:57:55Z",
+  "generated_at": "2026-08-24T03:49:59Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -47,6 +47,39 @@
       "description": "Price will not play in Sunday's preseason game against the Titans, Gregg Bell of The Tacoma News Tribune reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
       "pub_date": "2026-08-23T09:12:00Z"
+    },
+    {
+      "player_name": "Tony Pollard",
+      "sleeper_id": "5967",
+      "gsis_id": "00-0035261",
+      "position": "RB",
+      "team": "TEN",
+      "headline": "Quick 45 scrimmage yards Sunday",
+      "description": "Pollard rushed twice for 12 yards and caught his only target for 33 yards in Sunday's 19-16 preseason win over the Seahawks. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tony-pollard-13590",
+      "pub_date": "2026-08-23T08:27:00Z"
+    },
+    {
+      "player_name": "Carnell Tate",
+      "sleeper_id": "13279",
+      "gsis_id": "00-0041438",
+      "position": "WR",
+      "team": "TEN",
+      "headline": "Goes without a catch again",
+      "description": "Tate didn't catch either of his two targets in Sunday's 19-16 preseason win over the Seahawks. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/carnell-tate-19268",
+      "pub_date": "2026-08-23T08:21:00Z"
+    },
+    {
+      "player_name": "Ashton Jeanty",
+      "sleeper_id": "12527",
+      "gsis_id": "00-0040122",
+      "position": "RB",
+      "team": "LVR",
+      "headline": "Believed to have sprained ankle",
+      "description": "Jeanty is believed to have a sprained ankle that \"is not considered a long-term injury,\" Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ashton-jeanty-18487",
+      "pub_date": "2026-08-23T08:10:00Z"
     },
     {
       "player_name": "Tua Tagovailoa",
