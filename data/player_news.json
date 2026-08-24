@@ -1,9 +1,53 @@
 {
-  "generated_at": "2026-08-24T12:38:28Z",
+  "generated_at": "2026-08-24T15:34:12Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Josh Jacobs",
+      "sleeper_id": "5850",
+      "gsis_id": "00-0035700",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Set for limited practice work",
+      "description": "Packers head coach Matt LaFleur said that Jacobs (groin) is expected to go through limited team work during practice Monday, Rob Demovsky of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
+      "pub_date": "2026-08-24T08:30:00Z"
+    },
+    {
+      "player_name": "Chris Bell",
+      "sleeper_id": "13311",
+      "gsis_id": "00-0041525",
+      "position": "WR",
+      "team": "MIA",
+      "headline": "Set to practice without limitations",
+      "description": "Bell (knee) is expected to be a full participant in Monday's practice, David Furones of the South Florida Sun Sentinel reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chris-bell-19309",
+      "pub_date": "2026-08-24T08:02:00Z"
+    },
+    {
+      "player_name": "Shedeur Sanders",
+      "sleeper_id": "12524",
+      "gsis_id": "00-0040668",
+      "position": "QB",
+      "team": "CLE",
+      "headline": "Beginning season in backup role",
+      "description": "Sanders will open the season as the Browns' backup quarterback after the team named Deshaun Watson its starter Monday, multiple sources tell NFL reporter Jordan Schultz. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/shedeur-sanders-18479",
+      "pub_date": "2026-08-24T07:19:00Z"
+    },
+    {
+      "player_name": "Deshaun Watson",
+      "sleeper_id": "4017",
+      "gsis_id": "00-0033537",
+      "position": "QB",
+      "team": "CLE",
+      "headline": "Named Cleveland's starting quarterback",
+      "description": "The Browns named Watson their starting quarterback Monday, multiple sources tell NFL reporter Jordan Schultz. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/deshaun-watson-11712",
+      "pub_date": "2026-08-24T07:07:00Z"
+    },
     {
       "player_name": "Christian McCaffrey",
       "sleeper_id": "4034",
