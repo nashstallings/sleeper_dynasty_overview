@@ -1,9 +1,42 @@
 {
-  "generated_at": "2026-08-24T18:31:52Z",
+  "generated_at": "2026-08-24T21:23:17Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Ashton Jeanty",
+      "sleeper_id": "12527",
+      "gsis_id": "00-0040122",
+      "position": "RB",
+      "team": "LVR",
+      "headline": "Sits out Monday's practice",
+      "description": "Jeanty (ankle) didn't participant in practice Monday, Ryan McFadden of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ashton-jeanty-18487",
+      "pub_date": "2026-08-24T12:56:00Z"
+    },
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Remains sidelined by ankle issue",
+      "description": "Coach Mike LaFleur said Monday that Love is progressing in his recovery from a high-ankle sprain but will remain sidelined this week, Darren Urban of the Cardinals' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-08-24T12:49:00Z"
+    },
+    {
+      "player_name": "Malik Nabers",
+      "sleeper_id": "11632",
+      "gsis_id": "00-0039337",
+      "position": "WR",
+      "team": "NYG",
+      "headline": "Out of non-contact jersey",
+      "description": "Nabers (knee) wasn't wearing a non-contact red jersey at Monday's practice, Perry Sook of WPIX reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
+      "pub_date": "2026-08-24T12:16:00Z"
+    },
     {
       "player_name": "Rachaad White",
       "sleeper_id": "8136",
@@ -102,6 +135,17 @@
       "description": "The Browns named Watson their starting quarterback Monday, multiple sources tell NFL reporter Jordan Schultz. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/deshaun-watson-11712",
       "pub_date": "2026-08-24T07:07:00Z"
+    },
+    {
+      "player_name": "Trey Benson",
+      "sleeper_id": "11589",
+      "gsis_id": "00-0039921",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Cut by Cardinals",
+      "description": "Benson (knee) was waived/injured by the Cardinals on Monday, Darren Urban of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/trey-benson-17767",
+      "pub_date": "2026-08-24T01:37:00Z"
     },
     {
       "player_name": "Christian McCaffrey",
