@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T21:15:43Z",
+  "generated_at": "2026-08-24T00:57:55Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -69,6 +69,39 @@
       "description": "Washington (undisclosed) was spotted at Sunday's walkthrough, Ryan O'Halloran of The Florida Times-Union reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/parker-washington-16690",
       "pub_date": "2026-08-23T06:34:00Z"
+    },
+    {
+      "player_name": "Carnell Tate",
+      "sleeper_id": "13279",
+      "gsis_id": "00-0041438",
+      "position": "WR",
+      "team": "TEN",
+      "headline": "Suiting up against Seahawks",
+      "description": "Tate (undisclosed) is in uniform for Sunday's preseason game against the Seahawks. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/carnell-tate-19268",
+      "pub_date": "2026-08-23T05:00:00Z"
+    },
+    {
+      "player_name": "Mike Washington Jr.",
+      "sleeper_id": null,
+      "gsis_id": "00-0040878",
+      "position": "RB",
+      "team": null,
+      "headline": "Sees extra work after Jeanty injury",
+      "description": "Washington took most of the carries after Ashton Jeanty (knee) left Sunday's practice, Sam Warren of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-washington-19300",
+      "pub_date": "2026-08-23T03:28:00Z"
+    },
+    {
+      "player_name": "Ashton Jeanty",
+      "sleeper_id": "12527",
+      "gsis_id": "00-0040122",
+      "position": "RB",
+      "team": "LVR",
+      "headline": "Leaves practice with leg injury",
+      "description": "Jeanty left Sunday's practice with an injury and could not put pressure on his leg while leaving the field, Vincent Bonsignore of the California Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ashton-jeanty-18487",
+      "pub_date": "2026-08-23T02:41:00Z"
     },
     {
       "player_name": "Christian McCaffrey",
