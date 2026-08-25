@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-08-25T09:30:02Z",
+  "generated_at": "2026-08-25T12:37:22Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Josh Allen",
+      "sleeper_id": "4984",
+      "gsis_id": "00-0034857",
+      "position": "QB",
+      "team": "BUF",
+      "headline": "Will sit Thursday night",
+      "description": "Allen will not play in Thursday's preseason finale against the Steelers, Jay Skurski of The Buffalo News reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-allen-12483",
+      "pub_date": "2026-08-25T05:31:00Z"
+    },
     {
       "player_name": "Ashton Jeanty",
       "sleeper_id": "12527",
