@@ -1,9 +1,42 @@
 {
-  "generated_at": "2026-08-25T12:37:22Z",
+  "generated_at": "2026-08-25T15:37:10Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Alec Pierce",
+      "sleeper_id": "8142",
+      "gsis_id": "00-0037664",
+      "position": "WR",
+      "team": "IND",
+      "headline": "May practice this week",
+      "description": "Pierce (ankle) will not practice Tuesday, but coach Shane Steichen said he's hopeful that the wideout will practice this week, Kevin Bowen of 107.5 The Fan Indianapolis reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/alec-pierce-16022",
+      "pub_date": "2026-08-25T08:30:00Z"
+    },
+    {
+      "player_name": "Emeka Egbuka",
+      "sleeper_id": "12514",
+      "gsis_id": "00-0040129",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Remains sidelined by toe issue",
+      "description": "Egbuka (toe) isn't participating in Tuesday's practice, Greg Auman of Fox Sports reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
+      "pub_date": "2026-08-25T07:08:00Z"
+    },
+    {
+      "player_name": "Ashton Jeanty",
+      "sleeper_id": "12527",
+      "gsis_id": "00-0040122",
+      "position": "RB",
+      "team": "LVR",
+      "headline": "Believed to be nursing low-ankle sprain",
+      "description": "The Raiders are optimistic that the injury Jeanty sustained during practice Sunday is a \"more low than high\" ankle sprain and not considered a long-term concern, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ashton-jeanty-18487",
+      "pub_date": "2026-08-25T06:24:00Z"
+    },
     {
       "player_name": "Josh Allen",
       "sleeper_id": "4984",
