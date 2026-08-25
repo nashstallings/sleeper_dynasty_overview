@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T09:23:14Z",
+  "generated_at": "2026-08-25T09:25:30Z",
   "season": 2025,
   "season_type": "REG",
   "recent_weeks": [
@@ -7174,7 +7174,7 @@
       "position": "WR",
       "team": "CIN",
       "gsis_id": "00-0040534",
-      "sleeper_id": null,
+      "sleeper_id": "12971",
       "metrics": {
         "target_share": {
           "prior": 0.0,
