@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T12:23:11.474932+00:00",
+  "generated_at": "2026-08-25T12:23:52.904365+00:00",
   "source": "DynastyProcess",
   "source_url": "https://github.com/dynastyprocess/data",
   "players": {
@@ -4807,33 +4807,17 @@
     }
   },
   "picks": {
-    "2026 3rd": {
-      "value_1qb": 50,
-      "value_2qb": 66
-    },
-    "2028 5th": {
-      "value_1qb": 3,
-      "value_2qb": 5
-    },
-    "2028 2nd": {
-      "value_1qb": 164,
-      "value_2qb": 203
-    },
-    "2027 5th": {
-      "value_1qb": 4,
-      "value_2qb": 6
-    },
     "2027 2nd": {
       "value_1qb": 205,
       "value_2qb": 254
     },
-    "2026 2nd": {
-      "value_1qb": 301,
-      "value_2qb": 367
+    "2028 3rd": {
+      "value_1qb": 29,
+      "value_2qb": 39
     },
-    "2028 1st": {
-      "value_1qb": 1499,
-      "value_2qb": 1707
+    "2027 5th": {
+      "value_1qb": 4,
+      "value_2qb": 6
     },
     "2026 5th": {
       "value_1qb": 5,
@@ -4843,29 +4827,45 @@
       "value_1qb": 1874,
       "value_2qb": 2133
     },
-    "2028 4th": {
-      "value_1qb": 8,
-      "value_2qb": 12
+    "2028 2nd": {
+      "value_1qb": 164,
+      "value_2qb": 203
     },
-    "2026 1st": {
-      "value_1qb": 2961,
-      "value_2qb": 3346
+    "2026 2nd": {
+      "value_1qb": 301,
+      "value_2qb": 367
     },
     "2027 4th": {
       "value_1qb": 10,
       "value_2qb": 15
     },
-    "2028 3rd": {
-      "value_1qb": 29,
-      "value_2qb": 39
+    "2028 5th": {
+      "value_1qb": 3,
+      "value_2qb": 5
+    },
+    "2026 1st": {
+      "value_1qb": 2961,
+      "value_2qb": 3346
+    },
+    "2027 3rd": {
+      "value_1qb": 36,
+      "value_2qb": 49
+    },
+    "2028 4th": {
+      "value_1qb": 8,
+      "value_2qb": 12
     },
     "2026 4th": {
       "value_1qb": 13,
       "value_2qb": 19
     },
-    "2027 3rd": {
-      "value_1qb": 36,
-      "value_2qb": 49
+    "2028 1st": {
+      "value_1qb": 1499,
+      "value_2qb": 1707
+    },
+    "2026 3rd": {
+      "value_1qb": 50,
+      "value_2qb": 66
     }
   }
 }
