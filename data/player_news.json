@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-26T12:40:43Z",
+  "generated_at": "2026-08-26T16:13:30Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Josh Downs",
+      "sleeper_id": "9500",
+      "gsis_id": "00-0038997",
+      "position": "WR",
+      "team": "IND",
+      "headline": "Calf injury appears minor",
+      "description": "Downs said his calf injury is \"very minor\" and believes he will resume practicing soon, Jake Arthur of Roundtable.io reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-downs-16689",
+      "pub_date": "2026-08-26T09:08:00Z"
+    },
+    {
+      "player_name": "Ja'Marr Chase",
+      "sleeper_id": "7564",
+      "gsis_id": "00-0036900",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "Not practicing Wednesday",
+      "description": "Chase (knee) is not participating in Wednesday's practice, Ben Baby of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
+      "pub_date": "2026-08-26T09:01:00Z"
+    },
+    {
+      "player_name": "Tucker Kraft",
+      "sleeper_id": "9484",
+      "gsis_id": "00-0038996",
+      "position": "TE",
+      "team": "GBP",
+      "headline": "Participating in joint practice",
+      "description": "Kraft (knee) will participate in team drills during Wednesday's joint practice with the Cardinals, Ryan Wood of USA Today reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tucker-kraft-16649",
+      "pub_date": "2026-08-26T08:40:00Z"
+    },
+    {
+      "player_name": "Josh Downs",
+      "sleeper_id": "9500",
+      "gsis_id": "00-0038997",
+      "position": "WR",
+      "team": "IND",
+      "headline": "Tending to calf issue",
+      "description": "Downs is not practicing Wednesday due to a calf injury, Mike Chappell of Fox 59 News Indianapolis reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-downs-16689",
+      "pub_date": "2026-08-26T08:28:00Z"
+    },
+    {
+      "player_name": "Zay Flowers",
+      "sleeper_id": "9997",
+      "gsis_id": "00-0039064",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Absent for second straight practice",
+      "description": "Flowers isn't practicing Wednesday for the second day while he tends to an apparent undisclosed injury, Cordell Woodland of 105.7 The Fan Baltimore reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
+      "pub_date": "2026-08-26T07:56:00Z"
+    },
     {
       "player_name": "Ja'Marr Chase",
       "sleeper_id": "7564",
