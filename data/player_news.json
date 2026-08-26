@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-26T16:13:30Z",
+  "generated_at": "2026-08-26T19:41:50Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Kenneth Walker III",
+      "sleeper_id": "8151",
+      "gsis_id": "00-0038134",
+      "position": "RB",
+      "team": "KCC",
+      "headline": "Ankle injury not serious",
+      "description": "Walker is experiencing swelling around his ankle but is expected to \"be fine,\" Sam McDowell of The Kansas City Star reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenneth-walker-15909",
+      "pub_date": "2026-08-26T11:20:00Z"
+    },
+    {
+      "player_name": "Michael Penix Jr.",
+      "sleeper_id": "11559",
+      "gsis_id": "00-0039917",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Intends to be ready Week 1",
+      "description": "Penix (knee) won't play in Friday's preseason game in Miami, but he believes he'll be available for a Week 1 road matchup with the Steelers on Sunday, Sept. 13, Tori McElhaney of the Falcons' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-penix-17700",
+      "pub_date": "2026-08-26T10:41:00Z"
+    },
+    {
+      "player_name": "Luther Burden III",
+      "sleeper_id": "12519",
+      "gsis_id": "00-0040735",
+      "position": "WR",
+      "team": "CHI",
+      "headline": "Back at practice Wednesday",
+      "description": "Burden (groin) returned to practice Wednesday, but he was contained to individual drills, Courtney Cronin of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/luther-burden-18548",
+      "pub_date": "2026-08-26T10:25:00Z"
+    },
+    {
+      "player_name": "Tua Tagovailoa",
+      "sleeper_id": "6768",
+      "gsis_id": "00-0036212",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Starting preseason Week 3",
+      "description": "Coach Kevin Stefanski said Wednesday that Tagovailoa will start Friday's preseason game at Miami, Josh Kendall of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tua-tagovailoa-14465",
+      "pub_date": "2026-08-26T10:20:00Z"
+    },
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Doing rehab work Wednesday",
+      "description": "Love (ankle) was spotted doing some light agility work with trainers ahead of Wednesday's practice, Theo Mackie of The Arizona Republic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-08-26T10:14:00Z"
+    },
     {
       "player_name": "Josh Downs",
       "sleeper_id": "9500",
