@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T11:28:43Z",
+  "generated_at": "2026-08-26T11:33:33Z",
   "seasons_included": [
     2022,
     2023,
@@ -26603,6 +26603,29 @@
         }
       }
     },
+    "8799": {
+      "name": "Zaire Mitchell-Paden",
+      "position": "TE",
+      "seasons": {
+        "2025": {
+          "team": "NO",
+          "games": 3,
+          "completions": 0,
+          "attempts": 0,
+          "passing_yards": 0,
+          "passing_tds": 0,
+          "interceptions": 0,
+          "carries": 0,
+          "rushing_yards": 0,
+          "rushing_tds": 0,
+          "targets": 3,
+          "receptions": 2,
+          "receiving_yards": 17,
+          "receiving_tds": 0,
+          "fantasy_points_ppr": 3.7
+        }
+      }
+    },
     "8849": {
       "name": "Tanner Conner",
       "position": "TE",
@@ -38104,6 +38127,29 @@
         }
       }
     },
+    "13151": {
+      "name": "Nick Kallerup",
+      "position": "TE",
+      "seasons": {
+        "2025": {
+          "team": "SEA",
+          "games": 4,
+          "completions": 0,
+          "attempts": 0,
+          "passing_yards": 0,
+          "passing_tds": 0,
+          "interceptions": 0,
+          "carries": 0,
+          "rushing_yards": 0,
+          "rushing_tds": 0,
+          "targets": 1,
+          "receptions": 0,
+          "receiving_yards": 0,
+          "receiving_tds": 0,
+          "fantasy_points_ppr": 0.0
+        }
+      }
+    },
     "12455": {
       "name": "Brashard Smith",
       "position": "RB",
@@ -38932,6 +38978,29 @@
         }
       }
     },
+    "12765": {
+      "name": "Keleki Latu",
+      "position": "TE",
+      "seasons": {
+        "2025": {
+          "team": "BUF",
+          "games": 3,
+          "completions": 0,
+          "attempts": 0,
+          "passing_yards": 0,
+          "passing_tds": 0,
+          "interceptions": 0,
+          "carries": 0,
+          "rushing_yards": 0,
+          "rushing_tds": 0,
+          "targets": 4,
+          "receptions": 4,
+          "receiving_yards": 35,
+          "receiving_tds": 0,
+          "fantasy_points_ppr": 7.5
+        }
+      }
+    },
     "12935": {
       "name": "Jakobie Keeney-James",
       "position": "WR",
@@ -39001,6 +39070,29 @@
         }
       }
     },
+    "13122": {
+      "name": "Carter Runyon",
+      "position": "TE",
+      "seasons": {
+        "2025": {
+          "team": "LV",
+          "games": 3,
+          "completions": 0,
+          "attempts": 0,
+          "passing_yards": 0,
+          "passing_tds": 0,
+          "interceptions": 0,
+          "carries": 0,
+          "rushing_yards": 0,
+          "rushing_tds": 0,
+          "targets": 1,
+          "receptions": 1,
+          "receiving_yards": 3,
+          "receiving_tds": 0,
+          "fantasy_points_ppr": 1.3
+        }
+      }
+    },
     "13121": {
       "name": "Ben Yurosek",
       "position": "TE",
@@ -39044,6 +39136,29 @@
           "receiving_yards": 41,
           "receiving_tds": 0,
           "fantasy_points_ppr": 7.1
+        }
+      }
+    },
+    "12971": {
+      "name": "Ke'Shawn Williams",
+      "position": "WR",
+      "seasons": {
+        "2025": {
+          "team": "CIN",
+          "games": 11,
+          "completions": 0,
+          "attempts": 0,
+          "passing_yards": 0,
+          "passing_tds": 0,
+          "interceptions": 0,
+          "carries": 2,
+          "rushing_yards": 10,
+          "rushing_tds": 0,
+          "targets": 1,
+          "receptions": 1,
+          "receiving_yards": 5,
+          "receiving_tds": 0,
+          "fantasy_points_ppr": 2.5
         }
       }
     },
@@ -45563,6 +45678,29 @@
         }
       }
     },
+    "12389": {
+      "name": "Hayden Rucci",
+      "position": "TE",
+      "seasons": {
+        "2025": {
+          "team": "MIA",
+          "games": 1,
+          "completions": 0,
+          "attempts": 0,
+          "passing_yards": 0,
+          "passing_tds": 0,
+          "interceptions": 0,
+          "carries": 0,
+          "rushing_yards": 0,
+          "rushing_tds": 0,
+          "targets": 0,
+          "receptions": 0,
+          "receiving_yards": 0,
+          "receiving_tds": 0,
+          "fantasy_points_ppr": 0.0
+        }
+      }
+    },
     "11648": {
       "name": "Kedon Slovis",
       "position": "QB",
@@ -45772,6 +45910,29 @@
           "receiving_yards": 0,
           "receiving_tds": 0,
           "fantasy_points_ppr": 125.4
+        }
+      }
+    },
+    "13047": {
+      "name": "Jacardia Wright",
+      "position": "RB",
+      "seasons": {
+        "2025": {
+          "team": "SEA",
+          "games": 1,
+          "completions": 0,
+          "attempts": 0,
+          "passing_yards": 0,
+          "passing_tds": 0,
+          "interceptions": 0,
+          "carries": 5,
+          "rushing_yards": 20,
+          "rushing_tds": 0,
+          "targets": 0,
+          "receptions": 0,
+          "receiving_yards": 0,
+          "receiving_tds": 0,
+          "fantasy_points_ppr": 2.0
         }
       }
     },
