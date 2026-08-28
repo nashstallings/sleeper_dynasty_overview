@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-27T13:37:56Z",
+  "generated_at": "2026-08-28T00:12:10Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "A.J. Brown",
+      "sleeper_id": "5859",
+      "gsis_id": "00-0035676",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Not playing Thursday",
+      "description": "Brown isn't in uniform for Thursday's preseason game in Cleveland, Evan Lazar of the Patriots' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
+      "pub_date": "2026-08-27T04:49:00Z"
+    },
+    {
+      "player_name": "De'Zhaun Stribling",
+      "sleeper_id": "13417",
+      "gsis_id": "00-0041035",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Not playing in preseason finale",
+      "description": "Stribling (shoulder) won't suit up for Thursday's preseason contest at Las Vegas, David Lombardi of SFStandard.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dezhaun-stribling-19330",
+      "pub_date": "2026-08-27T04:37:00Z"
+    },
+    {
+      "player_name": "TreVeyon Henderson",
+      "sleeper_id": "12529",
+      "gsis_id": "00-0040734",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "On track for Week 1",
+      "description": "Henderson (ankle) is expected to be available for New England's Week 1 matchup with the Steelers, Christopher Price of The Boston Globe reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/treveyon-henderson-18517",
+      "pub_date": "2026-08-27T03:36:00Z"
+    },
+    {
+      "player_name": "Aaron Rodgers",
+      "sleeper_id": "96",
+      "gsis_id": "00-0023459",
+      "position": "QB",
+      "team": "PIT",
+      "headline": "Won't play Thursday",
+      "description": "Rodgers isn't in uniform for Thursday's preseason contest at Buffalo, Alan Saunders of SteelersNow.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aaron-rodgers-4307",
+      "pub_date": "2026-08-27T03:22:00Z"
+    },
+    {
+      "player_name": "Khalil Shakir",
+      "sleeper_id": "8134",
+      "gsis_id": "00-0037261",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Not suited up Thursday",
+      "description": "Shakir (undisclosed) isn't in uniform for Thursday's preseason contest against the Steelers, Alex Brasky of SI.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/khalil-shakir-15892",
+      "pub_date": "2026-08-27T03:06:00Z"
+    },
     {
       "player_name": "Kenneth Walker III",
       "sleeper_id": "8151",
