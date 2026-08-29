@@ -1,9 +1,42 @@
 {
-  "generated_at": "2026-08-29T12:09:27Z",
+  "generated_at": "2026-08-29T18:07:55Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Patrick Mahomes",
+      "sleeper_id": "4046",
+      "gsis_id": "00-0033873",
+      "position": "QB",
+      "team": "KCC",
+      "headline": "On track for Week 1",
+      "description": "Mahomes (knee) is on track to start Week 1 against the Broncos, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/patrick-mahomes-11839",
+      "pub_date": "2026-08-29T10:08:00Z"
+    },
+    {
+      "player_name": "Alec Pierce",
+      "sleeper_id": "8142",
+      "gsis_id": "00-0037664",
+      "position": "WR",
+      "team": "IND",
+      "headline": "Working out but will sit Saturday",
+      "description": "Pierce (ankle) is working out prior to Saturday's preseason game against the Lions but will not play, Mike Chappell of Fox 59 News Indianapolis reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/alec-pierce-16022",
+      "pub_date": "2026-08-29T09:43:00Z"
+    },
+    {
+      "player_name": "Emeka Egbuka",
+      "sleeper_id": "12514",
+      "gsis_id": "00-0040129",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "'Hopeful' for Week 1",
+      "description": "Egbuka (toe), per head coach Todd Bowles, will \"hopefully\" be ready for Week 1, Greg Auman of Fox Sports reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
+      "pub_date": "2026-08-29T07:24:00Z"
+    },
     {
       "player_name": "Emeka Egbuka",
       "sleeper_id": "12514",
@@ -33,7 +66,7 @@
       "position": "RB",
       "team": "ARI",
       "headline": "Continues to progress",
-      "description": "Love (ankle) did not play in Friday's preseason loss to the Packers, but per Cardinals team reporter Zach Gershman he was able to work out prior to the game. Visit RotoWire.com for more analysis on this update.",
+      "description": "Love (ankle) did not play in Friday's preseason loss to the Packers, but per Cardinals team reporter Zach Gershman, he was able to work out prior to the game. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
       "pub_date": "2026-08-28T09:13:00Z"
     },
