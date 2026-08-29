@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T18:07:55Z",
+  "generated_at": "2026-08-29T22:57:32Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -36,6 +36,28 @@
       "description": "Egbuka (toe), per head coach Todd Bowles, will \"hopefully\" be ready for Week 1, Greg Auman of Fox Sports reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
       "pub_date": "2026-08-29T07:24:00Z"
+    },
+    {
+      "player_name": "Kirk Cousins",
+      "sleeper_id": "1166",
+      "gsis_id": "00-0029604",
+      "position": "QB",
+      "team": "LVR",
+      "headline": "Expected to be named starter",
+      "description": "Cousins is expected to be named starting quarterback for the Raiders, Matt Zenitz of CBSSports.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kirk-cousins-8057",
+      "pub_date": "2026-08-29T02:30:00Z"
+    },
+    {
+      "player_name": "Quinn Ewers",
+      "sleeper_id": "12500",
+      "gsis_id": "00-0040234",
+      "position": "QB",
+      "team": "MIA",
+      "headline": "Traded to Jacksonville",
+      "description": "The Dolphins traded Ewers to the Jaguars on Saturday, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/quinn-ewers-18505",
+      "pub_date": "2026-08-29T01:46:00Z"
     },
     {
       "player_name": "Emeka Egbuka",
