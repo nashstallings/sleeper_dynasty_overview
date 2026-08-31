@@ -1130,11 +1130,22 @@ footer a:hover { text-decoration: underline; }
   background: var(--panel);
   border: 1px solid var(--panel-border-strong);
   border-radius: var(--radius);
-  padding: 22px;
   width: 100%;
   max-width: 620px;
+  max-height: calc(100vh - 40px);
   position: relative;
   animation: fade-in 0.15s ease;
+  display: flex;
+  flex-direction: column;
+}
+/* The close button stays outside this so it never scrolls out of reach --
+   min-height: 0 is what actually lets a flex child shrink to its
+   container's max-height and scroll internally instead of just growing
+   past it (flex items default to min-height: auto otherwise). */
+.player-card-scroll {
+  overflow-y: auto;
+  min-height: 0;
+  padding: 22px;
 }
 
 .player-card-close {

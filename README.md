@@ -425,7 +425,10 @@ Trade Finder builder and manager suggestions, Trending leaderboards &mdash;
 to open a card with their headshot ([Sleeper's own CDN](https://sleepercdn.com/),
 falling back to a colored initial if a player has no photo yet), team,
 position, and who currently owns them in your loaded league (or "Free
-agent").
+agent"). The card's own content (stats + news) scrolls internally once it
+runs longer than the viewport &mdash; a heavily-covered player with dozens
+of news items caps out at the window's height instead of growing past it,
+and the close button stays put in the corner regardless of scroll position.
 
 The stat line comes from `scripts/refresh_player_season_stats.py`, which
 aggregates BigQuery's weekly `nflreadpy.player_stats` into season totals

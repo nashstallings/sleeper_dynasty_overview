@@ -2750,24 +2750,26 @@ async function openPlayerCard(pid) {
 
   card.innerHTML = `
     <button type="button" class="player-card-close" aria-label="Close">&times;</button>
-    <div class="player-card-head">
-      <img class="player-card-photo" src="https://sleepercdn.com/content/nfl/players/${pid}.jpg" alt=""
-        data-initial="${escapeHtml(initial)}" data-color="${color}" onerror="handlePlayerPhotoError(this)" />
-      <div class="player-card-head-info">
-        <div class="player-card-name">${escapeHtml(playerDisplay(p))}</div>
-        <div class="player-card-meta-row">
-          <span class="badge badge-${pos}">${pos}</span>
-          <span class="player-meta">${p.team || "FA"}</span>
+    <div class="player-card-scroll">
+      <div class="player-card-head">
+        <img class="player-card-photo" src="https://sleepercdn.com/content/nfl/players/${pid}.jpg" alt=""
+          data-initial="${escapeHtml(initial)}" data-color="${color}" onerror="handlePlayerPhotoError(this)" />
+        <div class="player-card-head-info">
+          <div class="player-card-name">${escapeHtml(playerDisplay(p))}</div>
+          <div class="player-card-meta-row">
+            <span class="badge badge-${pos}">${pos}</span>
+            <span class="player-meta">${p.team || "FA"}</span>
+          </div>
+          <div class="player-card-owner">${status.html}</div>
         </div>
-        <div class="player-card-owner">${status.html}</div>
       </div>
-    </div>
-    <div class="player-card-stats">
-      <p class="spinner-note">Loading season stats...</p>
-    </div>
-    <div class="player-card-news">
-      <h3>Recent News</h3>
-      <p class="spinner-note">Loading news...</p>
+      <div class="player-card-stats">
+        <p class="spinner-note">Loading season stats...</p>
+      </div>
+      <div class="player-card-news">
+        <h3>Recent News</h3>
+        <p class="spinner-note">Loading news...</p>
+      </div>
     </div>`;
 
   overlay.classList.remove("hidden");
