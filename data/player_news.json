@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T23:04:40Z",
+  "generated_at": "2026-08-31T03:04:44Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,39 @@
       "description": "Allen was arrested early Sunday morning and charged with DUI, FOX59 reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/keenan-allen-8627",
       "pub_date": "2026-08-30T05:14:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Back at practice Sunday",
+      "description": "Nacua (groin) is practicing Sunday, Sarah Barshop of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-08-30T04:29:00Z"
+    },
+    {
+      "player_name": "Tyrone Tracy Jr.",
+      "sleeper_id": "11655",
+      "gsis_id": "00-0039384",
+      "position": "RB",
+      "team": "NYG",
+      "headline": "Makes initial 53-man roster",
+      "description": "Tracy (neck) is on the Giants' initial 53-man roster for the 2026 season, Dan Salomone and Matt Citak of the team's official site report. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyrone-tracy-17967",
+      "pub_date": "2026-08-30T04:21:00Z"
+    },
+    {
+      "player_name": "Zach Charbonnet",
+      "sleeper_id": "9753",
+      "gsis_id": "00-0039165",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Opening season on reserve/PUP list",
+      "description": "The Seahawks moved Charbonnet (knee) from the active/PUP list to the reserve/PUP list Sunday, Curtis Crabtree of Fox 13 Seattle reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zach-charbonnet-16897",
+      "pub_date": "2026-08-30T04:07:00Z"
     },
     {
       "player_name": "Jordyn Tyson",
