@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-08-31T12:28:42Z",
+  "generated_at": "2026-08-31T20:35:32Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Expected to be fine for Week 1",
+      "description": "Pittman (hamstring) is expected to be ready for Week 1 against the Falcons, Brooke Pryor of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-08-31T12:17:00Z"
+    },
+    {
+      "player_name": "DK Metcalf",
+      "sleeper_id": "5846",
+      "gsis_id": "00-0035640",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Expected to be ready for Week 1",
+      "description": "Metcalf (undisclosed) is expected to be ready for Week 1 against the Falcons, Brooke Pryor of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dk-metcalf-13424",
+      "pub_date": "2026-08-31T12:13:00Z"
+    },
+    {
+      "player_name": "Kenyon Sadiq",
+      "sleeper_id": "13330",
+      "gsis_id": "00-0041032",
+      "position": "TE",
+      "team": "NYJ",
+      "headline": "On track for Week 1",
+      "description": "Coach Aaron Glenn said Monday that Sadiq (hernia) remains on track to play Week 1 against the Titans, Zack Rosenblatt of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenyon-sadiq-19279",
+      "pub_date": "2026-08-31T11:57:00Z"
+    },
+    {
+      "player_name": "Emari Demercado",
+      "sleeper_id": "11199",
+      "gsis_id": "00-0038705",
+      "position": "RB",
+      "team": "KCC",
+      "headline": "Lands with Dallas",
+      "description": "Demercado was claimed off waivers by the Cowboys on Monday, Tom Pelissero of Netflix reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emari-demercado-17091",
+      "pub_date": "2026-08-31T11:08:00Z"
+    },
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Trending toward Week 1 return",
+      "description": "Love (ankle) is progressing well in his recovery and is trending toward being available for Week 1, Josh Weinfuss of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-08-31T01:30:00Z"
+    },
     {
       "player_name": "Jaydon Blue",
       "sleeper_id": "12457",
