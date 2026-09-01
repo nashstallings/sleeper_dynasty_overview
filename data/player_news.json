@@ -1,9 +1,53 @@
 {
-  "generated_at": "2026-09-01T13:52:23Z",
+  "generated_at": "2026-09-01T18:06:35Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Tee Higgins",
+      "sleeper_id": "6801",
+      "gsis_id": "00-0036410",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "Dealing with heel injury",
+      "description": "Higgins is tending to a heel contusion, but coach Zac Taylor said Tuesday that it isn't considered to be a major concern ahead of Week 1, Ben Baby of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tee-higgins-14506",
+      "pub_date": "2026-09-01T10:58:00Z"
+    },
+    {
+      "player_name": "Ja'Marr Chase",
+      "sleeper_id": "7564",
+      "gsis_id": "00-0036900",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "To be limited this week",
+      "description": "Coach Zac Taylor said Tuesday that Chase (knee) will be a limited participant in practice this week, and he \"feels good about\" where the wide receiver stands, Ben Baby of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
+      "pub_date": "2026-09-01T10:51:00Z"
+    },
+    {
+      "player_name": "Jonathon Brooks",
+      "sleeper_id": "11583",
+      "gsis_id": "00-0039344",
+      "position": "RB",
+      "team": "CAR",
+      "headline": "Dealing with soreness Tuesday",
+      "description": "Coach Dave Canales said Brooks missed practice Tuesday due to general soreness, Sheena Quick of Fox Sports Radio 1340 reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonathon-brooks-17747",
+      "pub_date": "2026-09-01T10:27:00Z"
+    },
+    {
+      "player_name": "George Kittle",
+      "sleeper_id": "4217",
+      "gsis_id": "00-0033288",
+      "position": "TE",
+      "team": "SFO",
+      "headline": "Going through team drills",
+      "description": "Kittle (Achilles) participated in practice Monday and plans to do so again Tuesday, David Lombardi of the San Francisco Standard reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/george-kittle-11892",
+      "pub_date": "2026-09-01T09:12:00Z"
+    },
     {
       "player_name": "Zay Flowers",
       "sleeper_id": "9997",
