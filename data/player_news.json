@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T20:35:32Z",
+  "generated_at": "2026-09-01T00:19:19Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -47,6 +47,50 @@
       "description": "Demercado was claimed off waivers by the Cowboys on Monday, Tom Pelissero of Netflix reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/emari-demercado-17091",
       "pub_date": "2026-08-31T11:08:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Working off to side Monday",
+      "description": "Nacua (groin) was off to the side for team drills at Monday's practice, Nate Atkins of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-08-31T04:53:00Z"
+    },
+    {
+      "player_name": "Malik Nabers",
+      "sleeper_id": "11632",
+      "gsis_id": "00-0039337",
+      "position": "WR",
+      "team": "NYG",
+      "headline": "Non-committal when asked about Week 1",
+      "description": "Nabers (knee) was non-committal Monday when asked about playing Week 1 against the Cowboys, Pat Leonard of the New York Daily News reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
+      "pub_date": "2026-08-31T02:51:00Z"
+    },
+    {
+      "player_name": "Jacory Croskey-Merritt",
+      "sleeper_id": "12533",
+      "gsis_id": "00-0040242",
+      "position": "RB",
+      "team": "WAS",
+      "headline": "Set to practice next week",
+      "description": "Croskey-Merritt (lower body) is expected to return to practice next week, John Keim of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jacory-croskey-merritt-18811",
+      "pub_date": "2026-08-31T02:12:00Z"
+    },
+    {
+      "player_name": "George Kittle",
+      "sleeper_id": "4217",
+      "gsis_id": "00-0033288",
+      "position": "TE",
+      "team": "SFO",
+      "headline": "Will be limited in practice this week",
+      "description": "Kittle (Achilles) will be eased back into practice this week, Matt Barrows of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/george-kittle-11892",
+      "pub_date": "2026-08-31T01:45:00Z"
     },
     {
       "player_name": "Jeremiyah Love",
