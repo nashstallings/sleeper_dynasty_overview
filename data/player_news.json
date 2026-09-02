@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-09-02T07:32:04Z",
+  "generated_at": "2026-09-02T13:10:15Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "George Kittle",
+      "sleeper_id": "4217",
+      "gsis_id": "00-0033288",
+      "position": "TE",
+      "team": "SFO",
+      "headline": "Traveling to Australia with team",
+      "description": "Kittle (Achilles) will travel to Australia with the 49ers and \"is trending in the right direction to play\" in the season opener Sept. 10 versus the Rams, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/george-kittle-11892",
+      "pub_date": "2026-09-02T05:52:00Z"
+    },
     {
       "player_name": "Christian McCaffrey",
       "sleeper_id": "4034",
