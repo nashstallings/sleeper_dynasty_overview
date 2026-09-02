@@ -2987,7 +2987,7 @@ async function renderEvaluatorDetail(pid) {
         <img class="player-card-photo" src="https://sleepercdn.com/content/nfl/players/${pid}.jpg" alt=""
           data-initial="${escapeHtml(initial)}" data-color="${color}" onerror="handlePlayerPhotoError(this)" />
         <div class="player-card-head-info">
-          <div class="player-card-name">${escapeHtml(name)}</div>
+          <div class="player-card-name player-name" data-player-id="${pid}">${escapeHtml(name)}</div>
           <div class="player-card-meta-row">
             <span class="badge badge-${pos}">${pos}</span>
             <span class="player-meta">${p.team || "FA"}</span>
@@ -3002,14 +3002,9 @@ async function renderEvaluatorDetail(pid) {
     <div class="card" id="evaluator-weekly-card">
       <h3>Weekly Scoring</h3>
       <p class="spinner-note">Loading weekly stats...</p>
-    </div>
-    <div class="card player-card-news">
-      <h3>Recent News</h3>
-      <p class="spinner-note">Loading news...</p>
     </div>`;
 
   const statsContainer = container.querySelector(".player-card-stats");
-  const newsContainer = container.querySelector(".player-card-news");
   const weeklyContainer = container.querySelector("#evaluator-weekly-card");
 
   if (!state.playerSeasonStats) {
@@ -3021,16 +3016,6 @@ async function renderEvaluatorDetail(pid) {
     }
   }
   if (state.evaluatorPid === pid) renderPlayerCardStats(pid, pos, statsContainer);
-
-  if (!state.playerNews) {
-    try {
-      const res = await fetch("data/player_news.json", { cache: "no-store" });
-      if (res.ok) state.playerNews = await res.json();
-    } catch {
-      // news is optional enrichment; the rest of the evaluator still works
-    }
-  }
-  if (state.evaluatorPid === pid) renderPlayerCardNews(pid, newsContainer);
 
   if (!state.playerWeeklyStats) {
     try {

@@ -388,9 +388,11 @@ directory (already loaded client-side for the rest of the app), not scoped
 to your league &mdash; you can look up anyone at QB/RB/WR/TE, rostered or
 not. Selecting a player reuses the same season-stat-line rendering as the
 [player card](#player-cards) (`data/player_season_stats.json`, scored with
-the loaded league's own scoring settings) and the same Recent News card, so
-those stay perfectly consistent with what you see everywhere else in the
-app.
+the loaded league's own scoring settings), so it stays perfectly consistent
+with what you see everywhere else in the app. The player's name is
+clickable the same way it is everywhere else, opening the full player card
+modal (photo, ownership status, and Recent News) instead of duplicating
+that content inline on the Evaluator page.
 
 The week-by-week chart and table are new: they come from
 `scripts/refresh_player_weekly_stats.py`, refreshed weekly via
