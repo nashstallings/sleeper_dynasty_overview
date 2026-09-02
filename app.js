@@ -2999,12 +2999,17 @@ async function renderEvaluatorDetail(pid) {
         <p class="spinner-note">Loading season stats...</p>
       </div>
     </div>
+    <div class="card" id="evaluator-metrics-card">
+      <h3>Advanced Metrics</h3>
+      <p class="spinner-note">Loading advanced metrics...</p>
+    </div>
     <div class="card" id="evaluator-weekly-card">
       <h3>Weekly Scoring</h3>
       <p class="spinner-note">Loading weekly stats...</p>
     </div>`;
 
   const statsContainer = container.querySelector(".player-card-stats");
+  const metricsContainer = container.querySelector("#evaluator-metrics-card");
   const weeklyContainer = container.querySelector("#evaluator-weekly-card");
 
   if (!state.playerSeasonStats) {
@@ -3017,6 +3022,16 @@ async function renderEvaluatorDetail(pid) {
   }
   if (state.evaluatorPid === pid) renderPlayerCardStats(pid, pos, statsContainer);
 
+  if (!state.risingMetrics) {
+    try {
+      const res = await fetch("data/rising_metrics.json");
+      if (res.ok) state.risingMetrics = await res.json();
+    } catch {
+      // advanced metrics are optional enrichment; the rest of the evaluator still works
+    }
+  }
+  if (state.evaluatorPid === pid) renderEvaluatorMetrics(pid, pos, metricsContainer);
+
   if (!state.playerWeeklyStats) {
     try {
       const res = await fetch("data/player_weekly_stats.json", { cache: "no-store" });
@@ -3026,6 +3041,58 @@ async function renderEvaluatorDetail(pid) {
     }
   }
   if (state.evaluatorPid === pid) renderEvaluatorWeekly(pid, pos, weeklyContainer);
+}
+
+// Reuses the same recent-vs-prior-4-weeks trend data the Trending tab is
+// built on (data/rising_metrics.json) -- no separate pipeline, so this
+// stays perfectly consistent with what the Trending tab already shows for
+// this player, if anything.
+function renderEvaluatorMetrics(pid, pos, container = document.getElementById("evaluator-metrics-card")) {
+  if (!container) return;
+
+  const data = state.risingMetrics;
+  if (!data) {
+    container.innerHTML = `<h3>Advanced Metrics</h3>${emptyState("Couldn't load advanced metrics (data/rising_metrics.json missing or unreachable).")}`;
+    return;
+  }
+
+  const defs = Object.entries(data.metric_defs).filter(([, def]) => def.positions.includes(pos));
+  if (!defs.length) {
+    container.innerHTML = `<h3>Advanced Metrics</h3>${emptyState(`No advanced metrics tracked for ${pos} yet.`)}`;
+    return;
+  }
+
+  const entry = data.players.find((p) => p.sleeper_id === pid);
+  const rows = defs
+    .map(([key, def]) => {
+      const m = entry && entry.metrics && entry.metrics[key];
+      if (!m) {
+        return `<tr><td>${def.label}</td><td class="player-meta" colspan="2">Not enough recent volume to qualify</td></tr>`;
+      }
+      const deltaSign = m.delta > 0 ? "+" : "";
+      const deltaClass = m.delta < 0 ? "delta-tag delta-tag-neg" : "delta-tag";
+      return `
+        <tr>
+          <td>${def.label}</td>
+          <td class="player-meta">${formatMetricValue(m.prior, def.format)} &rarr; ${formatMetricValue(m.recent, def.format)}</td>
+          <td><span class="${deltaClass}">${deltaSign}${formatMetricValue(m.delta, def.format)}</span></td>
+        </tr>`;
+    })
+    .join("");
+
+  container.innerHTML = `
+    <h3>Advanced Metrics</h3>
+    <p class="player-meta" style="margin-bottom:10px">
+      Weeks ${data.recent_weeks[0]}&ndash;${data.recent_weeks[data.recent_weeks.length - 1]} vs. weeks
+      ${data.prior_weeks[0]}&ndash;${data.prior_weeks[data.prior_weeks.length - 1]}, ${data.season} season &mdash;
+      the same trend data behind the Trending tab.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Metric</th><th>Prior &rarr; Recent</th><th>&Delta;</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
 }
 
 function evaluatorSeasonsForPlayer(pid) {

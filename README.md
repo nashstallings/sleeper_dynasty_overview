@@ -394,6 +394,18 @@ clickable the same way it is everywhere else, opening the full player card
 modal (photo, ownership status, and Recent News) instead of duplicating
 that content inline on the Evaluator page.
 
+An **Advanced Metrics** card shows the same recent-4-weeks-vs-prior-4-weeks
+trend data the Trending tab is built on (`data/rising_metrics.json`),
+filtered to whichever metrics apply to this player's position &mdash; QB
+gets Passing EPA/Attempt and CPOE, RB/WR/TE get Target Share, WOPR, and
+(WR/TE only) Air Yards Share, RB/QB get Yards/Carry, and so on, matching
+the same position-to-metric mapping the Trending tab uses. No separate
+pipeline: it's the exact same data, just re-sliced to one player instead
+of a league-wide leaderboard, so the two tabs never disagree. A metric a
+player didn't see enough volume to qualify for (e.g. too few pass attempts
+in the recent window) shows as "Not enough recent volume to qualify"
+rather than a blank or a misleading zero.
+
 The week-by-week chart and table are new: they come from
 `scripts/refresh_player_weekly_stats.py`, refreshed weekly via
 `.github/workflows/refresh-player-weekly-stats.yml` into
