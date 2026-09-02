@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-02T13:10:15Z",
+  "generated_at": "2026-09-02T18:21:53Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Zay Flowers",
+      "sleeper_id": "9997",
+      "gsis_id": "00-0039064",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Runs on side Wednesday",
+      "description": "Flowers (lower body) did not participate in Wednesday's practice, but he did run sprints on the side, Jamison Hensley of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
+      "pub_date": "2026-09-02T10:30:00Z"
+    },
+    {
+      "player_name": "Jonathon Brooks",
+      "sleeper_id": "11583",
+      "gsis_id": "00-0039344",
+      "position": "RB",
+      "team": "CAR",
+      "headline": "Optimism for Week 1",
+      "description": "Coach Dave Canales said Wednesday he's \"very optimistic\" Brooks (soreness) will be available for Week 1 against the Bears, Sheena Quick of Fox Sports Radio 1340 reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonathon-brooks-17747",
+      "pub_date": "2026-09-02T10:24:00Z"
+    },
+    {
+      "player_name": "Kenneth Walker III",
+      "sleeper_id": "8151",
+      "gsis_id": "00-0038134",
+      "position": "RB",
+      "team": "KCC",
+      "headline": "Returns to full practice Wednesday",
+      "description": "Walker (ankle) was a full participant in Wednesday's practice, Pete Sweeney of The Kansas City Star reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenneth-walker-15909",
+      "pub_date": "2026-09-02T09:57:00Z"
+    },
+    {
+      "player_name": "Ashton Jeanty",
+      "sleeper_id": "12527",
+      "gsis_id": "00-0040122",
+      "position": "RB",
+      "team": "LVR",
+      "headline": "Optimism for Week 1",
+      "description": "Coach Klint Kubiak expressed optimism Wednesday that Jeanty (ankle) will be ready for Week 1 against the Dolphins, Adam Hill of the Las Vegas Review-Journal reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ashton-jeanty-18487",
+      "pub_date": "2026-09-02T09:45:00Z"
+    },
+    {
+      "player_name": "Kirk Cousins",
+      "sleeper_id": "1166",
+      "gsis_id": "00-0029604",
+      "position": "QB",
+      "team": "LVR",
+      "headline": "Named starting quarterback",
+      "description": "Coach Klint Kubiak named Cousins the Raiders' starting quarterback Wednesday, Sam Warren of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kirk-cousins-8057",
+      "pub_date": "2026-09-02T09:41:00Z"
+    },
     {
       "player_name": "George Kittle",
       "sleeper_id": "4217",
