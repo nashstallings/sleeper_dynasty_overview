@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T15:41:57.548672+00:00",
+  "generated_at": "2026-09-02T15:31:17.763451+00:00",
   "source": "DynastyProcess",
   "source_url": "https://github.com/dynastyprocess/data",
   "players": {
@@ -3701,65 +3701,65 @@
     }
   },
   "picks": {
-    "2026 5th": {
-      "value_1qb": 6,
-      "value_2qb": 10
-    },
-    "2028 2nd": {
-      "value_1qb": 170,
-      "value_2qb": 215
+    "2027 1st": {
+      "value_1qb": 1782,
+      "value_2qb": 2028
     },
     "2026 4th": {
       "value_1qb": 14,
       "value_2qb": 23
     },
-    "2027 5th": {
-      "value_1qb": 5,
-      "value_2qb": 8
-    },
-    "2028 1st": {
-      "value_1qb": 1426,
-      "value_2qb": 1623
-    },
     "2026 1st": {
       "value_1qb": 2772,
       "value_2qb": 3108
     },
-    "2027 2nd": {
-      "value_1qb": 212,
-      "value_2qb": 269
-    },
-    "2028 4th": {
-      "value_1qb": 9,
-      "value_2qb": 14
-    },
-    "2027 1st": {
-      "value_1qb": 1782,
-      "value_2qb": 2028
-    },
-    "2028 3rd": {
-      "value_1qb": 32,
-      "value_2qb": 44
-    },
-    "2026 3rd": {
-      "value_1qb": 55,
-      "value_2qb": 75
+    "2028 2nd": {
+      "value_1qb": 170,
+      "value_2qb": 215
     },
     "2027 4th": {
       "value_1qb": 11,
       "value_2qb": 18
     },
+    "2028 5th": {
+      "value_1qb": 4,
+      "value_2qb": 7
+    },
+    "2026 3rd": {
+      "value_1qb": 55,
+      "value_2qb": 75
+    },
     "2026 2nd": {
       "value_1qb": 307,
       "value_2qb": 384
+    },
+    "2028 1st": {
+      "value_1qb": 1426,
+      "value_2qb": 1623
     },
     "2027 3rd": {
       "value_1qb": 40,
       "value_2qb": 55
     },
-    "2028 5th": {
-      "value_1qb": 4,
-      "value_2qb": 7
+    "2027 5th": {
+      "value_1qb": 5,
+      "value_2qb": 8
+    },
+    "2028 4th": {
+      "value_1qb": 9,
+      "value_2qb": 14
+    },
+    "2027 2nd": {
+      "value_1qb": 212,
+      "value_2qb": 269
+    },
+    "2026 5th": {
+      "value_1qb": 6,
+      "value_2qb": 10
+    },
+    "2028 3rd": {
+      "value_1qb": 32,
+      "value_2qb": 44
     }
   }
 }
