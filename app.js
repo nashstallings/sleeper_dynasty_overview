@@ -2697,7 +2697,44 @@ const STAT_COLUMNS_BY_POSITION = {
 };
 STAT_COLUMNS_BY_POSITION.TE = STAT_COLUMNS_BY_POSITION.WR;
 
-function renderPlayerCardStats(pid, pos, container = document.querySelector("#player-card .player-card-stats")) {
+function safeRatio(numerator, denominator) {
+  return denominator ? numerator / denominator : null;
+}
+
+// Advanced-metric columns for the Evaluator tab's season/weekly tables --
+// same underlying fields refresh_rising_metrics.py already computes
+// (target_share, wopr, air_yards_share, cpoe, passing_epa, snap_share, now
+// also carried by the season/weekly stat pipelines), and the same
+// position-to-metric mapping that script's METRIC_DEFS uses. Passed as
+// renderPlayerCardStats' extraCols param rather than folded into
+// STAT_COLUMNS_BY_POSITION, so the regular player card modal used
+// elsewhere in the app (My Team, Trade Finder, Trending) isn't affected --
+// this is additional detail specific to the Evaluator's own tables.
+const EVALUATOR_ADV_COLUMNS_BY_POSITION = {
+  QB: [
+    { label: "Y/A", format: (s) => formatMetricValue(safeRatio(s.passing_yards, s.attempts), "num") },
+    { label: "Y/C", format: (s) => formatMetricValue(safeRatio(s.rushing_yards, s.carries), "num") },
+    { label: "EPA/Att", format: (s) => formatMetricValue(safeRatio(s.passing_epa, s.attempts), "num") },
+    { label: "CPOE", format: (s) => formatMetricValue(s.cpoe, "num") },
+  ],
+  RB: [
+    { label: "Y/C", format: (s) => formatMetricValue(safeRatio(s.rushing_yards, s.carries), "num") },
+    { label: "Y/T", format: (s) => formatMetricValue(safeRatio(s.receiving_yards, s.targets), "num") },
+    { label: "Tgt Share", format: (s) => formatMetricValue(s.target_share, "pct") },
+    { label: "WOPR", format: (s) => formatMetricValue(s.wopr, "num") },
+    { label: "Snap %", format: (s) => formatMetricValue(s.snap_share, "pct") },
+  ],
+  WR: [
+    { label: "Y/T", format: (s) => formatMetricValue(safeRatio(s.receiving_yards, s.targets), "num") },
+    { label: "Tgt Share", format: (s) => formatMetricValue(s.target_share, "pct") },
+    { label: "Air Yd Share", format: (s) => formatMetricValue(s.air_yards_share, "pct") },
+    { label: "WOPR", format: (s) => formatMetricValue(s.wopr, "num") },
+    { label: "Snap %", format: (s) => formatMetricValue(s.snap_share, "pct") },
+  ],
+};
+EVALUATOR_ADV_COLUMNS_BY_POSITION.TE = EVALUATOR_ADV_COLUMNS_BY_POSITION.WR;
+
+function renderPlayerCardStats(pid, pos, container = document.querySelector("#player-card .player-card-stats"), extraCols = []) {
   if (!container) return;
 
   const data = state.playerSeasonStats;
@@ -2709,7 +2746,9 @@ function renderPlayerCardStats(pid, pos, container = document.querySelector("#pl
     return;
   }
 
-  const cols = STAT_COLUMNS_BY_POSITION[pos] || STAT_COLUMNS_BY_POSITION.WR;
+  const baseCols = STAT_COLUMNS_BY_POSITION[pos] || STAT_COLUMNS_BY_POSITION.WR;
+  const pointsCol = baseCols.find((c) => c.points);
+  const cols = [...baseCols.filter((c) => !c.points), ...extraCols, pointsCol];
   const headers = cols.map((c) => (c.points ? pointsColumnLabel() : c.label));
   const rows = seasons
     .map((season) => {
@@ -2999,18 +3038,14 @@ async function renderEvaluatorDetail(pid) {
         <p class="spinner-note">Loading season stats...</p>
       </div>
     </div>
-    <div class="card" id="evaluator-metrics-card">
-      <h3>Advanced Metrics</h3>
-      <p class="spinner-note">Loading advanced metrics...</p>
-    </div>
     <div class="card" id="evaluator-weekly-card">
       <h3>Weekly Scoring</h3>
       <p class="spinner-note">Loading weekly stats...</p>
     </div>`;
 
   const statsContainer = container.querySelector(".player-card-stats");
-  const metricsContainer = container.querySelector("#evaluator-metrics-card");
   const weeklyContainer = container.querySelector("#evaluator-weekly-card");
+  const advCols = EVALUATOR_ADV_COLUMNS_BY_POSITION[pos] || EVALUATOR_ADV_COLUMNS_BY_POSITION.WR;
 
   if (!state.playerSeasonStats) {
     try {
@@ -3020,17 +3055,7 @@ async function renderEvaluatorDetail(pid) {
       // season stats are optional enrichment; the rest of the evaluator still works
     }
   }
-  if (state.evaluatorPid === pid) renderPlayerCardStats(pid, pos, statsContainer);
-
-  if (!state.risingMetrics) {
-    try {
-      const res = await fetch("data/rising_metrics.json");
-      if (res.ok) state.risingMetrics = await res.json();
-    } catch {
-      // advanced metrics are optional enrichment; the rest of the evaluator still works
-    }
-  }
-  if (state.evaluatorPid === pid) renderEvaluatorMetrics(pid, pos, metricsContainer);
+  if (state.evaluatorPid === pid) renderPlayerCardStats(pid, pos, statsContainer, advCols);
 
   if (!state.playerWeeklyStats) {
     try {
@@ -3041,58 +3066,6 @@ async function renderEvaluatorDetail(pid) {
     }
   }
   if (state.evaluatorPid === pid) renderEvaluatorWeekly(pid, pos, weeklyContainer);
-}
-
-// Reuses the same recent-vs-prior-4-weeks trend data the Trending tab is
-// built on (data/rising_metrics.json) -- no separate pipeline, so this
-// stays perfectly consistent with what the Trending tab already shows for
-// this player, if anything.
-function renderEvaluatorMetrics(pid, pos, container = document.getElementById("evaluator-metrics-card")) {
-  if (!container) return;
-
-  const data = state.risingMetrics;
-  if (!data) {
-    container.innerHTML = `<h3>Advanced Metrics</h3>${emptyState("Couldn't load advanced metrics (data/rising_metrics.json missing or unreachable).")}`;
-    return;
-  }
-
-  const defs = Object.entries(data.metric_defs).filter(([, def]) => def.positions.includes(pos));
-  if (!defs.length) {
-    container.innerHTML = `<h3>Advanced Metrics</h3>${emptyState(`No advanced metrics tracked for ${pos} yet.`)}`;
-    return;
-  }
-
-  const entry = data.players.find((p) => p.sleeper_id === pid);
-  const rows = defs
-    .map(([key, def]) => {
-      const m = entry && entry.metrics && entry.metrics[key];
-      if (!m) {
-        return `<tr><td>${def.label}</td><td class="player-meta" colspan="2">Not enough recent volume to qualify</td></tr>`;
-      }
-      const deltaSign = m.delta > 0 ? "+" : "";
-      const deltaClass = m.delta < 0 ? "delta-tag delta-tag-neg" : "delta-tag";
-      return `
-        <tr>
-          <td>${def.label}</td>
-          <td class="player-meta">${formatMetricValue(m.prior, def.format)} &rarr; ${formatMetricValue(m.recent, def.format)}</td>
-          <td><span class="${deltaClass}">${deltaSign}${formatMetricValue(m.delta, def.format)}</span></td>
-        </tr>`;
-    })
-    .join("");
-
-  container.innerHTML = `
-    <h3>Advanced Metrics</h3>
-    <p class="player-meta" style="margin-bottom:10px">
-      Weeks ${data.recent_weeks[0]}&ndash;${data.recent_weeks[data.recent_weeks.length - 1]} vs. weeks
-      ${data.prior_weeks[0]}&ndash;${data.prior_weeks[data.prior_weeks.length - 1]}, ${data.season} season &mdash;
-      the same trend data behind the Trending tab.
-    </p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Metric</th><th>Prior &rarr; Recent</th><th>&Delta;</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>`;
 }
 
 function evaluatorSeasonsForPlayer(pid) {
@@ -3162,7 +3135,10 @@ function evaluatorWeeklyTableHtml(weeksObj, pos) {
   const weekKeys = Object.keys(weeksObj)
     .map(Number)
     .sort((a, b) => a - b);
-  const cols = STAT_COLUMNS_BY_POSITION[pos] || STAT_COLUMNS_BY_POSITION.WR;
+  const baseCols = STAT_COLUMNS_BY_POSITION[pos] || STAT_COLUMNS_BY_POSITION.WR;
+  const pointsCol = baseCols.find((c) => c.points);
+  const advCols = EVALUATOR_ADV_COLUMNS_BY_POSITION[pos] || EVALUATOR_ADV_COLUMNS_BY_POSITION.WR;
+  const cols = [...baseCols.filter((c) => !c.points), ...advCols, pointsCol];
   const headers = cols.map((c) => (c.points ? pointsColumnLabel() : c.label));
   const rows = weekKeys
     .map((w) => {

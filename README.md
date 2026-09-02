@@ -394,17 +394,22 @@ clickable the same way it is everywhere else, opening the full player card
 modal (photo, ownership status, and Recent News) instead of duplicating
 that content inline on the Evaluator page.
 
-An **Advanced Metrics** card shows the same recent-4-weeks-vs-prior-4-weeks
-trend data the Trending tab is built on (`data/rising_metrics.json`),
-filtered to whichever metrics apply to this player's position &mdash; QB
-gets Passing EPA/Attempt and CPOE, RB/WR/TE get Target Share, WOPR, and
-(WR/TE only) Air Yards Share, RB/QB get Yards/Carry, and so on, matching
-the same position-to-metric mapping the Trending tab uses. No separate
-pipeline: it's the exact same data, just re-sliced to one player instead
-of a league-wide leaderboard, so the two tabs never disagree. A metric a
-player didn't see enough volume to qualify for (e.g. too few pass attempts
-in the recent window) shows as "Not enough recent volume to qualify"
-rather than a blank or a misleading zero.
+**Advanced metrics** show up as extra columns on the season and weekly
+stat tables themselves, rather than a separate trend-based card &mdash;
+QB gets Y/A, Y/C, EPA/Attempt, and CPOE; RB gets Y/C, Y/T, Target Share,
+WOPR, and Snap %; WR/TE get Y/T, Target Share, Air Yards Share, WOPR, and
+Snap %. These are plain per-season/per-week values (no prior-vs-recent
+trend framing) computed the same way every other column in these tables
+is: `scripts/refresh_player_season_stats.py` and
+`refresh_player_weekly_stats.py` now also pull `target_share`, `wopr`,
+`air_yards_share`, `passing_cpoe`, `passing_epa`, and (via a join to
+`snap_counts`, same join condition as `refresh_rising_metrics.py`) snap
+share directly from BigQuery per season/week; the front-end computes the
+per-attempt/per-carry/per-target ratios (Y/A, Y/C, Y/T, EPA/Attempt)
+client-side from those raw totals, same pattern as every other derived
+number in the app. These extra columns are Evaluator-only &mdash; the
+shared player card modal used everywhere else in the app (My Team, Trade
+Finder, Trending) still shows its plain original column set.
 
 The week-by-week chart and table are new: they come from
 `scripts/refresh_player_weekly_stats.py`, refreshed weekly via

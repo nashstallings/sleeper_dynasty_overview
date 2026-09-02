@@ -4,6 +4,16 @@ Aggregates weekly player_stats into season totals for the last few regular
 seasons, keyed by sleeper_id, so the front-end's player card can show a
 season-by-season stat line without needing live BigQuery access.
 
+The advanced-metric columns (target_share, wopr, air_yards_share, cpoe,
+passing_epa, snap_share) and the snap_counts join are copied directly from
+the already-running refresh_rising_metrics.py's query -- same column
+names, same join condition (pfr_player_id/week/season/game_type) -- so
+this rides on a source/schema combination already verified in production,
+unlike a from-scratch guess. passing_epa is kept as a season total (not
+pre-divided) so the front-end can compute EPA/attempt itself, matching how
+every other per-attempt/per-carry/per-target column here is already
+computed client-side from raw totals.
+
 Requires GCP_SA_KEY env var (same as refresh_rising_metrics.py).
 """
 
@@ -48,9 +58,17 @@ SELECT
   SUM(ps.receptions) AS receptions,
   SUM(ps.receiving_yards) AS receiving_yards,
   SUM(ps.receiving_tds) AS receiving_tds,
-  SUM(ps.fantasy_points_ppr) AS fantasy_points_ppr
+  SUM(ps.fantasy_points_ppr) AS fantasy_points_ppr,
+  ROUND(AVG(ps.target_share), 3) AS target_share,
+  ROUND(AVG(ps.wopr), 3) AS wopr,
+  ROUND(AVG(ps.air_yards_share), 3) AS air_yards_share,
+  ROUND(AVG(ps.passing_cpoe), 2) AS cpoe,
+  SUM(ps.passing_epa) AS passing_epa,
+  ROUND(AVG(sn.offense_pct), 3) AS snap_share
 FROM `{PROJECT_ID}.{DATASET}.player_stats` ps
 LEFT JOIN `{PROJECT_ID}.{DATASET}.players` pl ON pl.gsis_id = ps.player_id
+LEFT JOIN `{PROJECT_ID}.{DATASET}.snap_counts` sn
+  ON sn.pfr_player_id = pl.pfr_id AND sn.week = ps.week AND sn.season = ps.season AND sn.game_type = 'REG'
 CROSS JOIN bounds
 WHERE ps.season_type = 'REG'
   AND ps.position IN ('QB', 'RB', 'WR', 'TE')
@@ -104,6 +122,12 @@ def main():
             "fantasy_points_ppr": (
                 round(row.fantasy_points_ppr, 1) if row.fantasy_points_ppr is not None else None
             ),
+            "target_share": row.target_share,
+            "wopr": row.wopr,
+            "air_yards_share": row.air_yards_share,
+            "cpoe": row.cpoe,
+            "passing_epa": row.passing_epa,
+            "snap_share": row.snap_share,
         }
 
     output = {

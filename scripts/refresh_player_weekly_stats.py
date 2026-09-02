@@ -7,7 +7,12 @@ week-by-week scoring without needing live BigQuery access.
 
 This is the same source table and player_id join as
 refresh_player_season_stats.py, just without the SUM()/GROUP BY collapse
-down to season -- one row per (player, season, week) instead.
+down to season -- one row per (player, season, week) instead. The
+advanced-metric columns (target_share, wopr, air_yards_share, cpoe,
+passing_epa, snap_share) and the snap_counts join are copied directly
+from refresh_rising_metrics.py's already-running query, so this rides on
+a source/schema combination already verified in production rather than a
+fresh guess.
 
 Requires GCP_SA_KEY env var (same as the sibling refresh_*.py scripts).
 """
@@ -54,9 +59,17 @@ SELECT
   ps.receptions,
   ps.receiving_yards,
   ps.receiving_tds,
-  ps.fantasy_points_ppr
+  ps.fantasy_points_ppr,
+  ps.target_share,
+  ps.wopr,
+  ps.air_yards_share,
+  ps.passing_cpoe AS cpoe,
+  ps.passing_epa,
+  sn.offense_pct AS snap_share
 FROM `{PROJECT_ID}.{DATASET}.player_stats` ps
 LEFT JOIN `{PROJECT_ID}.{DATASET}.players` pl ON pl.gsis_id = ps.player_id
+LEFT JOIN `{PROJECT_ID}.{DATASET}.snap_counts` sn
+  ON sn.pfr_player_id = pl.pfr_id AND sn.week = ps.week AND sn.season = ps.season AND sn.game_type = 'REG'
 CROSS JOIN bounds
 WHERE ps.season_type = 'REG'
   AND ps.position IN ('QB', 'RB', 'WR', 'TE')
@@ -110,6 +123,12 @@ def main():
             "fantasy_points_ppr": (
                 round(row.fantasy_points_ppr, 1) if row.fantasy_points_ppr is not None else None
             ),
+            "target_share": round(row.target_share, 3) if row.target_share is not None else None,
+            "wopr": round(row.wopr, 3) if row.wopr is not None else None,
+            "air_yards_share": round(row.air_yards_share, 3) if row.air_yards_share is not None else None,
+            "cpoe": round(row.cpoe, 2) if row.cpoe is not None else None,
+            "passing_epa": row.passing_epa,
+            "snap_share": round(row.snap_share, 3) if row.snap_share is not None else None,
         }
 
     output = {
