@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T11:41:58Z",
+  "generated_at": "2026-09-02T15:05:07Z",
   "players": {
     "2639": {
       "name": "Tony Jones",
@@ -7511,11 +7511,6 @@
       "position": "WR",
       "birth_date": "2000-09-26"
     },
-    "11038": {
-      "name": "Derek Parish",
-      "position": "RB",
-      "birth_date": "1999-01-04"
-    },
     "11214": {
       "name": "Tanner Morgan",
       "position": "QB",
@@ -8406,11 +8401,6 @@
       "position": "WR",
       "birth_date": "1995-02-16"
     },
-    "4144": {
-      "name": "Jonnu Smith",
-      "position": "TE",
-      "birth_date": "1995-08-22"
-    },
     "4198": {
       "name": "Jamal Agnew",
       "position": "WR",
@@ -8706,11 +8696,6 @@
       "position": "RB",
       "birth_date": "2000-03-03"
     },
-    "9505": {
-      "name": "Deuce Vaughn",
-      "position": "RB",
-      "birth_date": "2001-11-02"
-    },
     "10863": {
       "name": "A.T. Perry",
       "position": "WR",
@@ -8740,11 +8725,6 @@
       "name": "Malik Heath",
       "position": "WR",
       "birth_date": "2000-03-31"
-    },
-    "11378": {
-      "name": "Jordan Mims",
-      "position": "RB",
-      "birth_date": "1999-06-16"
     },
     "11511": {
       "name": "John Stephens Jr.",
@@ -9115,6 +9095,11 @@
       "name": "David Njoku",
       "position": "TE",
       "birth_date": "1996-07-10"
+    },
+    "4144": {
+      "name": "Jonnu Smith",
+      "position": "TE",
+      "birth_date": "1995-08-22"
     },
     "4054": {
       "name": "Mo Alie-Cox",
@@ -10656,6 +10641,11 @@
       "position": "RB",
       "birth_date": "2001-01-31"
     },
+    "9505": {
+      "name": "Deuce Vaughn",
+      "position": "RB",
+      "birth_date": "2001-11-02"
+    },
     "9511": {
       "name": "Keaton Mitchell",
       "position": "RB",
@@ -10891,6 +10881,11 @@
       "position": "RB",
       "birth_date": "2001-08-16"
     },
+    "11038": {
+      "name": "Derek Parish",
+      "position": "RB",
+      "birth_date": "1999-01-04"
+    },
     "11034": {
       "name": "Jalen Brooks",
       "position": "WR",
@@ -10960,6 +10955,11 @@
       "name": "Jason Brownlee",
       "position": "WR",
       "birth_date": "1999-01-30"
+    },
+    "11378": {
+      "name": "Jordan Mims",
+      "position": "RB",
+      "birth_date": "1999-06-16"
     },
     "11371": {
       "name": "Julian Hill",
@@ -12881,11 +12881,6 @@
       "position": "RB",
       "birth_date": "2001-04-12"
     },
-    "13844": {
-      "name": "Coleman Bennett",
-      "position": "RB",
-      "birth_date": "2002-10-03"
-    },
     "14034": {
       "name": "Brock Rechsteiner",
       "position": "WR",
@@ -12920,6 +12915,16 @@
       "name": "Montorie Foster Jr",
       "position": "WR",
       "birth_date": "2001-08-03"
+    },
+    "13696": {
+      "name": "Ja'Mori Maclin",
+      "position": "WR",
+      "birth_date": "2001-09-22"
+    },
+    "13432": {
+      "name": "Khalil Dinkins",
+      "position": "TE",
+      "birth_date": "2002-05-29"
     }
   }
 }
