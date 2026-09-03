@@ -1,9 +1,42 @@
 {
-  "generated_at": "2026-09-03T18:17:42Z",
+  "generated_at": "2026-09-03T22:56:20Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Caleb Williams",
+      "sleeper_id": "11560",
+      "gsis_id": "00-0039918",
+      "position": "QB",
+      "team": "CHI",
+      "headline": "Coach talks him up",
+      "description": "Coach Ben Johnson lauded Williams' approach Tuesday as the quarterback enters his third NFL campaign, Larry Mayer of the Bears' official site reports. \"He's executing at a much higher clip than he ever has, and I think it's going to continue to grow,\" Johnson said. \"He's going to continue to elevate everyone around him, coaches included.\" Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/caleb-williams-17695",
+      "pub_date": "2026-09-03T12:24:00Z"
+    },
+    {
+      "player_name": "TreVeyon Henderson",
+      "sleeper_id": "12529",
+      "gsis_id": "00-0040734",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "Sits out Thursday's practice",
+      "description": "Henderson (ankle) wasn't present for Thursday's practice, Evan Lazar of the Patriots' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/treveyon-henderson-18517",
+      "pub_date": "2026-09-03T12:02:00Z"
+    },
+    {
+      "player_name": "Keaton Mitchell",
+      "sleeper_id": "9511",
+      "gsis_id": "00-0038454",
+      "position": "RB",
+      "team": "LAC",
+      "headline": "Remains out of practice Thursday",
+      "description": "Mitchell (undisclosed) remained a non-participant in Thursday's practice, Kris Rhim of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/keaton-mitchell-16810",
+      "pub_date": "2026-09-03T11:56:00Z"
+    },
     {
       "player_name": "Jeremiyah Love",
       "sleeper_id": "13287",
@@ -47,6 +80,28 @@
       "description": "Richardson will open the season as the Colts' backup quarterback, Nathan Brown of The Indianapolis Star reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/anthony-richardson-16653",
       "pub_date": "2026-09-03T08:34:00Z"
+    },
+    {
+      "player_name": "Rome Odunze",
+      "sleeper_id": "11620",
+      "gsis_id": "00-0039919",
+      "position": "WR",
+      "team": "CHI",
+      "headline": "Sustains apparent leg injury",
+      "description": "Odunze sustained an apparent right leg injury during Thursday's practice session, Sean Hammond of the Chicago Tribune reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rome-odunze-17020",
+      "pub_date": "2026-09-03T02:31:00Z"
+    },
+    {
+      "player_name": "D'Andre Swift",
+      "sleeper_id": "6790",
+      "gsis_id": "00-0036275",
+      "position": "RB",
+      "team": "CHI",
+      "headline": "Leaves practice with injury",
+      "description": "Swift left Thursday's practice with an apparent injury and \"appeared to be in significant discomfort,\" Dan Wiederer of the Chicago Tribune reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dandre-swift-14394",
+      "pub_date": "2026-09-03T02:20:00Z"
     },
     {
       "player_name": "Malik Nabers",
