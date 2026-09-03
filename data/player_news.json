@@ -1,9 +1,53 @@
 {
-  "generated_at": "2026-09-03T13:11:30Z",
+  "generated_at": "2026-09-03T18:17:42Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Continues to progress",
+      "description": "Coach Mike LaFleur said Thursday that Love (ankle) is \"progressing,\" Howard Balzer of Cards Wire reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-09-03T10:50:00Z"
+    },
+    {
+      "player_name": "Michael Wilson",
+      "sleeper_id": "10232",
+      "gsis_id": "00-0038559",
+      "position": "WR",
+      "team": "ARI",
+      "headline": "Lands three-year extension",
+      "description": "The Cardinals signed Wilson to a three-year, $75 million contract extension Thursday, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-wilson-16957",
+      "pub_date": "2026-09-03T10:00:00Z"
+    },
+    {
+      "player_name": "Zay Flowers",
+      "sleeper_id": "9997",
+      "gsis_id": "00-0039064",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Returns to practice Thursday",
+      "description": "Flowers (lower body) is practicing Thursday, Cordell Woodland of 105.7 The Fan Baltimore reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
+      "pub_date": "2026-09-03T09:29:00Z"
+    },
+    {
+      "player_name": "Anthony Richardson",
+      "sleeper_id": "9229",
+      "gsis_id": "00-0039164",
+      "position": "QB",
+      "team": "IND",
+      "headline": "Will open season as backup",
+      "description": "Richardson will open the season as the Colts' backup quarterback, Nathan Brown of The Indianapolis Star reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/anthony-richardson-16653",
+      "pub_date": "2026-09-03T08:34:00Z"
+    },
     {
       "player_name": "Malik Nabers",
       "sleeper_id": "11632",
