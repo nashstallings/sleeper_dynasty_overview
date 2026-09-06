@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T19:53:15Z",
+  "generated_at": "2026-09-06T22:38:25Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -10,7 +10,7 @@
       "gsis_id": "00-0031503",
       "position": "QB",
       "team": "NYG",
-      "headline": "Landstwo-year extension",
+      "headline": "Lands two-year extension",
       "description": "Winston and the Giants agreed Sunday on a two-year, $13 million extension, NFL reporter Jordan Schultz reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jameis-winston-10037",
       "pub_date": "2026-09-06T12:48:00Z"
@@ -25,6 +25,28 @@
       "description": "Henderson (ankle) was in street clothes ahead of Sunday's practice and appears likely to be listed as a non-participant on the Patriots' first injury report of the season, Andrew Callahan of the Boston Herald reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/treveyon-henderson-18517",
       "pub_date": "2026-09-06T11:11:00Z"
+    },
+    {
+      "player_name": "George Kittle",
+      "sleeper_id": "4217",
+      "gsis_id": "00-0033288",
+      "position": "TE",
+      "team": "SFO",
+      "headline": "In line to practice Monday",
+      "description": "Kittle (Achilles) is slated to practice Monday in Melbourne, Australia, Matt Barrows of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/george-kittle-11892",
+      "pub_date": "2026-09-06T03:05:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Expected to play in Australia",
+      "description": "Rams head coach Sean McVay said Sunday that Nacua (core) is expected to play Thursday against the 49ers in Melbourne, Australia, Nate Atkins of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-09-06T02:03:00Z"
     },
     {
       "player_name": "TreVeyon Henderson",
