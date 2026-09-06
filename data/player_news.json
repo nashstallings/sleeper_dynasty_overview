@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-09-06T17:27:18Z",
+  "generated_at": "2026-09-06T19:53:15Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jameis Winston",
+      "sleeper_id": "2306",
+      "gsis_id": "00-0031503",
+      "position": "QB",
+      "team": "NYG",
+      "headline": "Landstwo-year extension",
+      "description": "Winston and the Giants agreed Sunday on a two-year, $13 million extension, NFL reporter Jordan Schultz reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jameis-winston-10037",
+      "pub_date": "2026-09-06T12:48:00Z"
+    },
+    {
+      "player_name": "TreVeyon Henderson",
+      "sleeper_id": "12529",
+      "gsis_id": "00-0040734",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "Looks set to miss Sunday's practice",
+      "description": "Henderson (ankle) was in street clothes ahead of Sunday's practice and appears likely to be listed as a non-participant on the Patriots' first injury report of the season, Andrew Callahan of the Boston Herald reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/treveyon-henderson-18517",
+      "pub_date": "2026-09-06T11:11:00Z"
+    },
     {
       "player_name": "TreVeyon Henderson",
       "sleeper_id": "12529",
