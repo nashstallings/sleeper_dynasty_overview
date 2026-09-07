@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-07T14:42:16Z",
+  "generated_at": "2026-09-07T18:57:28Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Rome Odunze",
+      "sleeper_id": "11620",
+      "gsis_id": "00-0039919",
+      "position": "WR",
+      "team": "CHI",
+      "headline": "Not practicing Monday",
+      "description": "Odunze (leg) is not practicing Monday, Courtney Cronin of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rome-odunze-17020",
+      "pub_date": "2026-09-07T11:49:00Z"
+    },
+    {
+      "player_name": "Kyle Monangai",
+      "sleeper_id": "12534",
+      "gsis_id": "00-0040236",
+      "position": "RB",
+      "team": "CHI",
+      "headline": "Back at practice Monday",
+      "description": "Monangai (knee) returned to practice Monday, Courtney Cronin of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyle-monangai-18520",
+      "pub_date": "2026-09-07T11:46:00Z"
+    },
+    {
+      "player_name": "D'Andre Swift",
+      "sleeper_id": "6790",
+      "gsis_id": "00-0036275",
+      "position": "RB",
+      "team": "CHI",
+      "headline": "Back at practice Monday",
+      "description": "Swift (abdomen) returned to practice Monday, Courtney Cronin of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dandre-swift-14394",
+      "pub_date": "2026-09-07T11:43:00Z"
+    },
+    {
+      "player_name": "Tee Higgins",
+      "sleeper_id": "6801",
+      "gsis_id": "00-0036410",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "Suited up for practice",
+      "description": "Higgins (heel) is in uniform for Monday's practice, Charlie Goldsmith of Charlie's Chalkboard reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tee-higgins-14506",
+      "pub_date": "2026-09-07T10:42:00Z"
+    },
+    {
+      "player_name": "Ja'Marr Chase",
+      "sleeper_id": "7564",
+      "gsis_id": "00-0036900",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "Present at practice",
+      "description": "Chase (knee) is in uniform for Monday's practice, Charlie Goldsmith of Charlie's Chalkboard reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
+      "pub_date": "2026-09-07T10:38:00Z"
+    },
     {
       "player_name": "Michael Penix Jr.",
       "sleeper_id": "11559",
