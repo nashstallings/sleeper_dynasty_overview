@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-09-07T07:48:32Z",
+  "generated_at": "2026-09-07T14:42:16Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Michael Penix Jr.",
+      "sleeper_id": "11559",
+      "gsis_id": "00-0039917",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Won't start in Week 1",
+      "description": "Penix (knee) won't start the season opener Sunday in Pittsburgh, after the Falcons named Tua Tagovailoa their top quarterback heading into Week 1, Will McFadden and Tori McElhaney of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-penix-17700",
+      "pub_date": "2026-09-07T06:36:00Z"
+    },
+    {
+      "player_name": "Tua Tagovailoa",
+      "sleeper_id": "6768",
+      "gsis_id": "00-0036212",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Will start Week 1",
+      "description": "The Falcons will have Tagovailoa start at quarterback in Sunday's season opener against the Steelers, Tom Pelissero of Netflix reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tua-tagovailoa-14465",
+      "pub_date": "2026-09-07T05:23:00Z"
+    },
     {
       "player_name": "Jameis Winston",
       "sleeper_id": "2306",
@@ -33,7 +55,7 @@
       "position": "RB",
       "team": "SFO",
       "headline": "Sitting out early drills Monday",
-      "description": "McCaffrey (undisclosed) was not participating in drills in the early portion of the 49ers' practice Monday morning in Australia, Matt Maiocco of NBC Sports Bay Area reports. Visit RotoWire.com for more analysis on this update.",
+      "description": "McCaffrey (undisclosed) wasn't participating in drills in the early portion of the 49ers' practice early Monday in Australia, Matt Maiocco of NBC Sports Bay Area reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/christian-mccaffrey-11690",
       "pub_date": "2026-09-06T10:57:00Z"
     },
