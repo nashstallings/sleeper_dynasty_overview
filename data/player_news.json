@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-08T13:14:26Z",
+  "generated_at": "2026-09-08T18:15:23Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "MarShawn Lloyd",
+      "sleeper_id": "11581",
+      "gsis_id": "00-0039811",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Set to be included in committee",
+      "description": "Packers offensive coordinator Adam Stenavich suggested Tuesday that Lloyd could be part of a backfield committee to begin the season while Josh Jacobs (personal) remains on the Commissioner's Exempt List, Weston Hodkiewicz of the Packers' official site reports. \"It's gonna be running back by committee for a little bit to see where everyone is at,\" Stenavich said. \"[Lloyd] definitely has explosive ability, playmaking ability.\" Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/marshawn-lloyd-17795",
+      "pub_date": "2026-09-08T10:50:00Z"
+    },
+    {
+      "player_name": "Breece Hall",
+      "sleeper_id": "8155",
+      "gsis_id": "00-0038120",
+      "position": "RB",
+      "team": "NYJ",
+      "headline": "Involved in Tuesday's practice",
+      "description": "Hall (groin) was seen taking part in positional drills during Tuesday's practice, Brian Costello of the New York Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/breece-hall-15810",
+      "pub_date": "2026-09-08T10:43:00Z"
+    },
+    {
+      "player_name": "Kenyon Sadiq",
+      "sleeper_id": "13330",
+      "gsis_id": "00-0041032",
+      "position": "TE",
+      "team": "NYJ",
+      "headline": "Involved in positional drills",
+      "description": "Sadiq (hernia) was spotted taking part in positional drills during Tuesday's practice, Brian Costello of the New York Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenyon-sadiq-19279",
+      "pub_date": "2026-09-08T10:37:00Z"
+    },
+    {
+      "player_name": "Rome Odunze",
+      "sleeper_id": "11620",
+      "gsis_id": "00-0039919",
+      "position": "WR",
+      "team": "CHI",
+      "headline": "Won't practice Tuesday",
+      "description": "Head coach Ben Johnson said that Odunze (leg) won't practice Tuesday, but the wide receiver is considered \"more day-to-day,\" and the Bears remain hopeful that he'll play in Sunday's season opener versus the Panthers, Brad Biggs of the Chicago Tribune reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rome-odunze-17020",
+      "pub_date": "2026-09-08T10:17:00Z"
+    },
+    {
+      "player_name": "Patrick Mahomes",
+      "sleeper_id": "4046",
+      "gsis_id": "00-0033873",
+      "position": "QB",
+      "team": "KCC",
+      "headline": "Still on track to start opener",
+      "description": "Chiefs head coach Andy Reid said Tuesday that Mahomes (knee) has a \"pretty good chance\" to start next Monday's season opener versus the Broncos, Sam McDowell of The Kansas City Star reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/patrick-mahomes-11839",
+      "pub_date": "2026-09-08T10:15:00Z"
+    },
     {
       "player_name": "Rome Odunze",
       "sleeper_id": "11620",
