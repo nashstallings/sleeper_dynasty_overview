@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T02:43:48Z",
+  "generated_at": "2026-09-10T07:48:09Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Flowers (lower body) was working off to the side with a trainer during Wednesday's practice, Brian Wacker of The Baltimore Sun reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
       "pub_date": "2026-09-09T10:15:00Z"
+    },
+    {
+      "player_name": "Romeo Doubs",
+      "sleeper_id": "8121",
+      "gsis_id": "00-0037816",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Forgettable team debut in loss",
+      "description": "Doubs failed to bring in any of his three targets during the Patriots' 13-10 loss to the Seahawks on Wednesday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/romeo-doubs-16027",
+      "pub_date": "2026-09-09T09:40:00Z"
+    },
+    {
+      "player_name": "George Kittle",
+      "sleeper_id": "4217",
+      "gsis_id": "00-0033288",
+      "position": "TE",
+      "team": "SFO",
+      "headline": "In clear to play Week 1",
+      "description": "Kittle (Achilles) isn't listed on the 49ers' injury report ahead of Thursday's contest against the Rams, Matt Maiocco of NBC Sports Bay Area reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/george-kittle-11892",
+      "pub_date": "2026-09-09T09:34:00Z"
+    },
+    {
+      "player_name": "Rhamondre Stevenson",
+      "sleeper_id": "7611",
+      "gsis_id": "00-0036875",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "Heavy volume in Week 1 loss",
+      "description": "Stevenson rushed 18 times for 51 yards and brought in five of six targets for 44 yards in the Patriots' 13-10 loss to the Seahawks on Wednesday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rhamondre-stevenson-15372",
+      "pub_date": "2026-09-09T09:33:00Z"
+    },
+    {
+      "player_name": "Jadarian Price",
+      "sleeper_id": "13286",
+      "gsis_id": "00-0041512",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Efficient in Week 1 win",
+      "description": "Price rushed 10 times for 52 yards and brought in both targets for six yards in the Seahawks' 13-10 win over the Patriots on Wednesday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
+      "pub_date": "2026-09-09T09:11:00Z"
+    },
+    {
+      "player_name": "Drew Lock",
+      "sleeper_id": "5854",
+      "gsis_id": "00-0035704",
+      "position": "QB",
+      "team": "SEA",
+      "headline": "Delivers in emergency duty",
+      "description": "Lock took over for Sam Darnold (hip) with 7:29 remaining in the first quarter of Wednesday's 13-10 win over the Patriots and completed 16 of 22 passes for 187 yards with one touchdown and no interceptions while adding two rushes for 13 yards. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/drew-lock-13736",
+      "pub_date": "2026-09-09T09:01:00Z"
     },
     {
       "player_name": "A.J. Brown",
