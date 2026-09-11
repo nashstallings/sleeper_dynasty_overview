@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-11T13:10:46Z",
+  "generated_at": "2026-09-11T18:06:54Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Cooper Rush",
+      "sleeper_id": "4574",
+      "gsis_id": "00-0033662",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Will start Sunday",
+      "description": "Rush will start Sunday's game at Pittsburgh after Tua Tagovailoa (oblique) was ruled out for Week 1 action, NFL reporter Jordan Schultz reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cooper-rush-11841",
+      "pub_date": "2026-09-11T10:44:00Z"
+    },
+    {
+      "player_name": "Tua Tagovailoa",
+      "sleeper_id": "6768",
+      "gsis_id": "00-0036212",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Won't play Sunday",
+      "description": "Tagovailoa (oblique) has been ruled out for Sunday's game at Pittsburgh, Tori McElhaney of the Falcons' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tua-tagovailoa-14465",
+      "pub_date": "2026-09-11T10:36:00Z"
+    },
+    {
+      "player_name": "Rome Odunze",
+      "sleeper_id": "11620",
+      "gsis_id": "00-0039919",
+      "position": "WR",
+      "team": "CHI",
+      "headline": "Will practice Friday",
+      "description": "Odunze (calf) will practice Friday, and the training staff will assess him afterward before deciding next steps, Sean Hammond of The Chicago Tribune reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rome-odunze-17020",
+      "pub_date": "2026-09-11T10:06:00Z"
+    },
+    {
+      "player_name": "A.J. Brown",
+      "sleeper_id": "5859",
+      "gsis_id": "00-0035676",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Heading to IR",
+      "description": "The Patriots are placing Brown (ankle) on injured reserve, ESPN's Adam Schefter reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
+      "pub_date": "2026-09-11T09:51:00Z"
+    },
+    {
+      "player_name": "Jonathon Brooks",
+      "sleeper_id": "11583",
+      "gsis_id": "00-0039344",
+      "position": "RB",
+      "team": "CAR",
+      "headline": "Will play Sunday",
+      "description": "Brooks (groin) doesn't have an injury designation for Sunday's game against the Bears, Joe Person of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonathon-brooks-17747",
+      "pub_date": "2026-09-11T09:45:00Z"
+    },
     {
       "player_name": "Tua Tagovailoa",
       "sleeper_id": "6768",
