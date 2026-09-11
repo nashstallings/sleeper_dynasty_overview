@@ -721,21 +721,22 @@ tr.me-row .freeze-col { background: var(--accent-soft); }
   background: #0c141c;
   color: #eef2f6;
   padding: 12px 18px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "avatar name score";
   align-items: center;
-  gap: 10px;
+  column-gap: 10px;
 }
 .sb-team.leading { background: var(--accent); color: #201705; }
 .sb-team.leading .player-meta { color: #4a3a15; }
-.sb-name { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.sb-team .avatar, .sb-team .avatar-fallback { grid-area: avatar; }
+.sb-name { grid-area: name; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 .sb-score {
-  flex-shrink: 0;
+  grid-area: score;
   font-family: var(--font-mono);
   font-size: 1.3rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  margin-left: auto;
-  padding-left: 10px;
   white-space: nowrap;
 }
 .sb-mid {
@@ -754,14 +755,22 @@ tr.me-row .freeze-col { background: var(--accent-soft); }
   border-right: 1px solid rgba(238, 242, 246, 0.08);
 }
 
-/* .sb-team's own horizontal padding easily outgrows the ~130px each team
-   gets on a phone screen -- tighten it and shrink the avatar/score so
-   there's still room left for the team name before it, instead of the
-   score getting pushed past the team column's edge. */
+/* Side-by-side (avatar | name | score) only leaves the team name a sliver
+   of a ~130px-wide phone column, forcing it down to 2-3 visible letters --
+   stack the name onto its own full-width row instead, with just the
+   avatar and score sharing the row above it, so the whole name is always
+   readable (wrapping to a second line if it's still long) rather than
+   ellipsis-truncated. */
 @media (max-width: 480px) {
-  .sb-team { padding: 10px 10px; gap: 8px; }
+  .sb-team {
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "avatar score" "name name";
+    row-gap: 4px;
+    padding: 10px 12px;
+  }
   .scorebug .avatar-lg, .scorebug .avatar-fallback.avatar-lg { width: 30px; height: 30px; font-size: 0.8rem; }
-  .sb-score { font-size: 1.05rem; padding-left: 6px; }
+  .sb-score { font-size: 1.05rem; justify-self: end; }
+  .sb-name { white-space: normal; overflow: visible; text-overflow: clip; font-size: 0.82rem; line-height: 1.25; }
 }
 
 .need-grid {
