@@ -1,9 +1,42 @@
 {
-  "generated_at": "2026-09-12T12:34:51Z",
+  "generated_at": "2026-09-12T17:38:43Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Michael Mayer",
+      "sleeper_id": "9482",
+      "gsis_id": "00-0039066",
+      "position": "TE",
+      "team": "LVR",
+      "headline": "Gets three-year extension with Las Vegas",
+      "description": "Mayer signed a three-year, $45 million contract extension with the Raiders on Saturday, Ian Rapoport of NFL.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-mayer-16666",
+      "pub_date": "2026-09-12T08:00:00Z"
+    },
+    {
+      "player_name": "Tucker Kraft",
+      "sleeper_id": "9484",
+      "gsis_id": "00-0038996",
+      "position": "TE",
+      "team": "GBP",
+      "headline": "Agrees to four-year extension",
+      "description": "Kraft and the Packers reached an agreement on a four-year, $75 million contract extension worth up to $92 million Saturday, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tucker-kraft-16649",
+      "pub_date": "2026-09-12T07:52:00Z"
+    },
+    {
+      "player_name": "Amon-Ra St. Brown",
+      "sleeper_id": "7547",
+      "gsis_id": "00-0036963",
+      "position": "WR",
+      "team": "DET",
+      "headline": "Contract restructured by Detroit",
+      "description": "The Lions and St. Brown agreed to a restructured contract Saturday, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/amon-ra-st-brown-15332",
+      "pub_date": "2026-09-12T07:09:00Z"
+    },
     {
       "player_name": "Cooper Rush",
       "sleeper_id": "4574",
