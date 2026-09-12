@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T20:03:52Z",
+  "generated_at": "2026-09-12T22:46:44Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,28 @@
       "description": "The Lions and St. Brown agreed to a restructured contract Saturday, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/amon-ra-st-brown-15332",
       "pub_date": "2026-09-12T07:09:00Z"
+    },
+    {
+      "player_name": "C.J. Stroud",
+      "sleeper_id": "9758",
+      "gsis_id": "00-0039163",
+      "position": "QB",
+      "team": "HOU",
+      "headline": "Extension talks paused",
+      "description": "Stroud and the Texans will wait until after the 2026 season to work out a long-term contract extension, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cj-stroud-16886",
+      "pub_date": "2026-09-12T01:31:00Z"
+    },
+    {
+      "player_name": "Cooper Rush",
+      "sleeper_id": "4574",
+      "gsis_id": "00-0033662",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Will start Week 1 despite back spasms",
+      "description": "Rush (back) experienced back spasms Saturday but still will start Sunday's game at Pittsburgh, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cooper-rush-11841",
+      "pub_date": "2026-09-12T01:09:00Z"
     },
     {
       "player_name": "Cooper Rush",
