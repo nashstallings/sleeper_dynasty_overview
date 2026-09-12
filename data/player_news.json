@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-09-12T17:38:43Z",
+  "generated_at": "2026-09-12T20:03:52Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Patrick Mahomes",
+      "sleeper_id": "4046",
+      "gsis_id": "00-0033873",
+      "position": "QB",
+      "team": "KCC",
+      "headline": "Fades injury tag Week 1",
+      "description": "Mahomes (knee) does not have an injury designation for Monday's game against the Broncos. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/patrick-mahomes-11839",
+      "pub_date": "2026-09-12T12:46:00Z"
+    },
+    {
+      "player_name": "Malik Davis",
+      "sleeper_id": "8800",
+      "gsis_id": "00-0037563",
+      "position": "RB",
+      "team": "DAL",
+      "headline": "Done for 2026 after hip surgery",
+      "description": "The Cowboys placed Davis (hip) on injured reserve Saturday, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-davis-15828",
+      "pub_date": "2026-09-12T11:20:00Z"
+    },
     {
       "player_name": "Michael Mayer",
       "sleeper_id": "9482",
