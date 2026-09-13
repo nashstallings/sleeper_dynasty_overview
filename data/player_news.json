@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T20:10:08Z",
+  "generated_at": "2026-09-13T22:47:53Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -146,6 +146,61 @@
       "description": "Love (ankle) remains listed as questionable but is expected to play in Sunday's game at the Chargers, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
       "pub_date": "2026-09-13T03:40:00Z"
+    },
+    {
+      "player_name": "Tyler Warren",
+      "sleeper_id": "12518",
+      "gsis_id": "00-0040128",
+      "position": "TE",
+      "team": "IND",
+      "headline": "Three grabs, TD in Week 1 loss",
+      "description": "Warren secured three of five targets for 13 yards and a touchdown in the Colts' 41-23 loss to the Ravens on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyler-warren-18534",
+      "pub_date": "2026-09-13T03:39:00Z"
+    },
+    {
+      "player_name": "Emeka Egbuka",
+      "sleeper_id": "12514",
+      "gsis_id": "00-0040129",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Team-high yardage in loss",
+      "description": "Egbuka brought in five of six targets for 63 yards in the Buccaneers' 33-27 loss to the Bengals on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
+      "pub_date": "2026-09-13T03:36:00Z"
+    },
+    {
+      "player_name": "Chris Olave",
+      "sleeper_id": "8144",
+      "gsis_id": "00-0037239",
+      "position": "WR",
+      "team": "NOS",
+      "headline": "Huge start to season in Week 1 loss",
+      "description": "Olave caught 10 of 13 targets for 182 yards in Sunday's 31-30 overtime loss to the Lions. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chris-olave-15895",
+      "pub_date": "2026-09-13T03:36:00Z"
+    },
+    {
+      "player_name": "Tetairoa McMillan",
+      "sleeper_id": "12526",
+      "gsis_id": "00-0040124",
+      "position": "WR",
+      "team": "CAR",
+      "headline": "Salvages day in second half in Week 1",
+      "description": "McMillan caught five of eight targets for 75 yards in Sunday's 59-37 loss to the Bears. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tetairoa-mcmillan-18547",
+      "pub_date": "2026-09-13T03:25:00Z"
+    },
+    {
+      "player_name": "Chuba Hubbard",
+      "sleeper_id": "7594",
+      "gsis_id": "00-0036555",
+      "position": "RB",
+      "team": "CAR",
+      "headline": "Finds end zone twice in Week 1 loss",
+      "description": "Hubbard carried the ball 10 times for 49 yards and a touchdown and caught all three of his targets for 38 yards and another score in Sunday's 59-37 loss to the Bears. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chuba-hubbard-15242",
+      "pub_date": "2026-09-13T03:17:00Z"
     },
     {
       "player_name": "Patrick Mahomes",
