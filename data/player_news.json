@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-13T17:52:07Z",
+  "generated_at": "2026-09-13T20:10:08Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Zay Flowers",
+      "sleeper_id": "9997",
+      "gsis_id": "00-0039064",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Done for day with hamstring injury",
+      "description": "Flowers (hamstring) has been ruled out for remainder of Sunday's game against the Colts, Jonas Shaffer of TheBaltimoreBanner.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
+      "pub_date": "2026-09-13T12:57:00Z"
+    },
+    {
+      "player_name": "Ja'Kobi Lane",
+      "sleeper_id": "13293",
+      "gsis_id": "00-0040870",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Leaves early with wrist injury",
+      "description": "The Ravens announced that Lane has been ruled out for the remainder of Sunday's game against the Colts due to a wrist injury. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jakobi-lane-19230",
+      "pub_date": "2026-09-13T12:12:00Z"
+    },
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Set for NFL debut",
+      "description": "Love (ankle) is listed as active Sunday at the Chargers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-09-13T12:03:00Z"
+    },
+    {
+      "player_name": "Brian Thomas Jr.",
+      "sleeper_id": "11631",
+      "gsis_id": "00-0039893",
+      "position": "WR",
+      "team": "JAC",
+      "headline": "Checks back into Sunday's contest",
+      "description": "Thomas (shoulder) returned to Sunday's game against the Browns late in the second quarter, Michael DiRocco of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/brian-thomas-17716",
+      "pub_date": "2026-09-13T12:02:00Z"
+    },
+    {
+      "player_name": "Omar Cooper Jr.",
+      "sleeper_id": "13276",
+      "gsis_id": "00-0041511",
+      "position": "WR",
+      "team": "NYJ",
+      "headline": "Debut ends early with ankle injury",
+      "description": "The Jets ruled out Cooper (ankle) for the remainder of Sunday's game against the Titans. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/omar-cooper-19314",
+      "pub_date": "2026-09-13T11:58:00Z"
+    },
     {
       "player_name": "Alvin Kamara",
       "sleeper_id": "4035",
