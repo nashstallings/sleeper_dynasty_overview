@@ -1,9 +1,53 @@
 {
-  "generated_at": "2026-09-13T13:35:40Z",
+  "generated_at": "2026-09-13T17:52:07Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Alvin Kamara",
+      "sleeper_id": "4035",
+      "gsis_id": "00-0033906",
+      "position": "RB",
+      "team": "NOS",
+      "headline": "Inactive for Week 1",
+      "description": "Kamara (knee) is inactive for Sunday's game against the Lions, Nick Underhill of NewOrleans.Football reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/alvin-kamara-11732",
+      "pub_date": "2026-09-13T08:39:00Z"
+    },
+    {
+      "player_name": "Rome Odunze",
+      "sleeper_id": "11620",
+      "gsis_id": "00-0039919",
+      "position": "WR",
+      "team": "CHI",
+      "headline": "Ready to go for Week 1",
+      "description": "Odunze (calf) is active for Sunday's game against the Panthers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rome-odunze-17020",
+      "pub_date": "2026-09-13T08:33:00Z"
+    },
+    {
+      "player_name": "Cooper Rush",
+      "sleeper_id": "4574",
+      "gsis_id": "00-0033662",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Active for Week 1",
+      "description": "Rush (back) is listed as active against the Steelers on Sunday, Tori McElhaney of the Falcons' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cooper-rush-11841",
+      "pub_date": "2026-09-13T08:33:00Z"
+    },
+    {
+      "player_name": "Josh Jacobs",
+      "sleeper_id": "5850",
+      "gsis_id": "00-0035700",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Time on exempt list could equal time served",
+      "description": "Jacobs (personal) remains on the Commissioner's Exempt List, but the NFL may count time on the list as time served if it eventually issues a suspension to the running back, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
+      "pub_date": "2026-09-13T08:09:00Z"
+    },
     {
       "player_name": "Cooper Rush",
       "sleeper_id": "4574",
