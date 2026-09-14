@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T22:47:53Z",
+  "generated_at": "2026-09-14T02:59:23Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -102,6 +102,61 @@
       "description": "Jacobs (personal) remains on the Commissioner's Exempt List, but the NFL may count time on the list as time served if it eventually issues a suspension to the running back, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
       "pub_date": "2026-09-13T08:09:00Z"
+    },
+    {
+      "player_name": "Jacoby Brissett",
+      "sleeper_id": "3257",
+      "gsis_id": "00-0033119",
+      "position": "QB",
+      "team": "ARI",
+      "headline": "Stellar numbers in Week 1 upset",
+      "description": "Brissett completed 27 of 37 passes for 277 yards with a touchdown and no interceptions while rushing six times for 14 yards in the Cardinals' 26-14 win over the Chargers on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jacoby-brissett-10919",
+      "pub_date": "2026-09-13T07:57:00Z"
+    },
+    {
+      "player_name": "Justin Herbert",
+      "sleeper_id": "6797",
+      "gsis_id": "00-0036355",
+      "position": "QB",
+      "team": "LAC",
+      "headline": "Disappointing in Week 1 loss",
+      "description": "Herbert completed 17 of 27 passes for 209 yards with one touchdown and one interception while adding five rushes for 29 yards in the Chargers' 26-14 loss to the Cardinals on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/justin-herbert-14446",
+      "pub_date": "2026-09-13T07:49:00Z"
+    },
+    {
+      "player_name": "Woody Marks",
+      "sleeper_id": "12474",
+      "gsis_id": "00-0040583",
+      "position": "RB",
+      "team": "HOU",
+      "headline": "Splits snaps 50-50 with Montgomery",
+      "description": "Marks rushed nine times for 42 yards and caught his lone target for a two-yard loss in the Texans' 36-31 loss to the Bills on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/woody-marks-18449",
+      "pub_date": "2026-09-13T07:09:00Z"
+    },
+    {
+      "player_name": "Ja'Kobi Lane",
+      "sleeper_id": "13293",
+      "gsis_id": "00-0040870",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Suffers fractured wrist",
+      "description": "Lane (wrist) suffered a fractured wrist in Sunday's 41-23 win over the Colts and will undergo further testing Monday, including an MRI, Mike Garafolo of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jakobi-lane-19230",
+      "pub_date": "2026-09-13T07:05:00Z"
+    },
+    {
+      "player_name": "Josh Downs",
+      "sleeper_id": "9500",
+      "gsis_id": "00-0038997",
+      "position": "WR",
+      "team": "IND",
+      "headline": "Catches two passes in Week 1",
+      "description": "Downs caught two of four targets for 37 yards in Sunday's 41-23 loss to the Ravens. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-downs-16689",
+      "pub_date": "2026-09-13T07:03:00Z"
     },
     {
       "player_name": "Cooper Rush",
