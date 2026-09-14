@@ -1,9 +1,53 @@
 {
-  "generated_at": "2026-09-14T15:35:06Z",
+  "generated_at": "2026-09-14T21:19:46Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Brock Bowers",
+      "sleeper_id": "11604",
+      "gsis_id": "00-0039338",
+      "position": "TE",
+      "team": "LVR",
+      "headline": "Considered day-to-day",
+      "description": "Raiders head coach Klint Kubiak labeled Bowers (knee) as day-to-day Monday, Sam Warren of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/brock-bowers-17693",
+      "pub_date": "2026-09-14T12:56:00Z"
+    },
+    {
+      "player_name": "Ja'Kobi Lane",
+      "sleeper_id": "13293",
+      "gsis_id": "00-0040870",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Receiving further opinions on wrist",
+      "description": "Ravens head coach Jesse Minter said that Lane will receive second and third medical opinions on his injured wrist this week before a timeline for his return is established, Sam Cohn of The Baltimore Sun reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jakobi-lane-19230",
+      "pub_date": "2026-09-14T12:20:00Z"
+    },
+    {
+      "player_name": "Zay Flowers",
+      "sleeper_id": "9997",
+      "gsis_id": "00-0039064",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Labeled day-to-day",
+      "description": "Ravens head coach Jesse Minter said Monday that Flowers (hamstring) is considered day-to-day, Sam Cohn of The Baltimore Sun reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
+      "pub_date": "2026-09-14T12:17:00Z"
+    },
+    {
+      "player_name": "Jordan Mason",
+      "sleeper_id": "8408",
+      "gsis_id": "00-0037525",
+      "position": "RB",
+      "team": "MIN",
+      "headline": "Nursing sore thumb after Week 1",
+      "description": "Vikings head coach Kevin O'Connell said Monday that Mason is being further evaluated after experiencing thumb soreness coming out of Sunday's 39-22 win over the Packers, Alec Lewis of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordan-mason-16163",
+      "pub_date": "2026-09-14T11:52:00Z"
+    },
     {
       "player_name": "Zay Flowers",
       "sleeper_id": "9997",
@@ -14,6 +58,17 @@
       "description": "The Ravens are viewing Flowers as day-to-day after he sustained a left hamstring injury in Sunday's 41-23 win over the Colts that isn't considered serious, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
       "pub_date": "2026-09-14T06:09:00Z"
+    },
+    {
+      "player_name": "Ladd McConkey",
+      "sleeper_id": "11635",
+      "gsis_id": "00-0039915",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Receives day-to-day label from coach",
+      "description": "Chargers head coach Jim Harbaugh labeled McConkey (rib) as day-to-day Monday, Adam Schefter of ESPN reports. Harbaugh added that the Chargers will see how McConkey progresses throughout the week before determining his availability for Sunday's game agains the Raiders. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
+      "pub_date": "2026-09-14T01:44:00Z"
     },
     {
       "player_name": "Zay Flowers",
