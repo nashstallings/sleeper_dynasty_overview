@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T02:59:23Z",
+  "generated_at": "2026-09-14T08:45:03Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "The Jets ruled out Cooper (ankle) for the remainder of Sunday's game against the Titans. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/omar-cooper-19314",
       "pub_date": "2026-09-13T11:58:00Z"
+    },
+    {
+      "player_name": "Isaiah Likely",
+      "sleeper_id": "8131",
+      "gsis_id": "00-0037838",
+      "position": "TE",
+      "team": "NYG",
+      "headline": "Scores twice in Week 1 win",
+      "description": "Likely caught all eight of his targets for 78 yards and two touchdowns in Sunday's 28-20 win over the Cowboys. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/isaiah-likely-16033",
+      "pub_date": "2026-09-13T09:38:00Z"
+    },
+    {
+      "player_name": "Dak Prescott",
+      "sleeper_id": "3294",
+      "gsis_id": "00-0033077",
+      "position": "QB",
+      "team": "DAL",
+      "headline": "Held to 175 passing yards in loss",
+      "description": "Prescott completed 22 of 34 passes for 175 yards, two touchdowns and one interception in Sunday's 28-20 loss to the Giants. He also rushed twice for 14 yards. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dak-prescott-11008",
+      "pub_date": "2026-09-13T09:34:00Z"
+    },
+    {
+      "player_name": "Jaxson Dart",
+      "sleeper_id": "12508",
+      "gsis_id": "00-0040691",
+      "position": "QB",
+      "team": "NYG",
+      "headline": "Tosses three TDs in Week 1 win",
+      "description": "Dart completed 23 of 29 passes for 230 yards and three touchdowns in Sunday's 28-20 win over the Cowboys. He also rushed 11 times for 54 yards. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaxson-dart-18574",
+      "pub_date": "2026-09-13T09:16:00Z"
+    },
+    {
+      "player_name": "Malik Nabers",
+      "sleeper_id": "11632",
+      "gsis_id": "00-0039337",
+      "position": "WR",
+      "team": "NYG",
+      "headline": "Six catches in return",
+      "description": "Nabers (knee) caught six of nine targets for 69 yards in Sunday's 28-20 win over the Cowboys. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
+      "pub_date": "2026-09-13T09:10:00Z"
+    },
+    {
+      "player_name": "Cam Skattebo",
+      "sleeper_id": "12481",
+      "gsis_id": "00-0040715",
+      "position": "RB",
+      "team": "NYG",
+      "headline": "Opens scoring in Week 1 win",
+      "description": "Skattebo rushed 18 times for 81 yards and a touchdown but wasn't targeted in the passing game during Sunday's 28-20 win over the Cowboys. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cam-skattebo-18514",
+      "pub_date": "2026-09-13T09:08:00Z"
     },
     {
       "player_name": "Alvin Kamara",
