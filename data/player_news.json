@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T20:46:51Z",
+  "generated_at": "2026-09-15T23:22:02Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -36,6 +36,17 @@
       "description": "Darnold (glute) is \"looking at about a four-week return to play\" but could return \"a little bit sooner than that,\" Mike Garafolo of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/sam-darnold-12490",
       "pub_date": "2026-09-15T06:49:00Z"
+    },
+    {
+      "player_name": "Ja'Kobi Lane",
+      "sleeper_id": "13293",
+      "gsis_id": "00-0040870",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Expected to undergo wrist surgery",
+      "description": "Lane (wrist) is expected to undergo surgery in the coming days, potentially as soon as Wednesday, Matt Zenitz of CBS Sports reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jakobi-lane-19230",
+      "pub_date": "2026-09-15T02:33:00Z"
     },
     {
       "player_name": "Brock Bowers",
