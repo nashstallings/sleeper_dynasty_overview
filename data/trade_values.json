@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T17:11:04.631442+00:00",
+  "generated_at": "2026-09-15T15:50:52.355263+00:00",
   "source": "DynastyProcess",
   "source_url": "https://github.com/dynastyprocess/data",
   "players": {
@@ -3071,37 +3071,13 @@
     }
   },
   "picks": {
-    "2028 2nd": {
-      "value_1qb": 175,
-      "value_2qb": 215
-    },
-    "2026 3rd": {
-      "value_1qb": 52,
-      "value_2qb": 68
-    },
-    "2028 5th": {
-      "value_1qb": 4,
-      "value_2qb": 6
-    },
     "2027 2nd": {
       "value_1qb": 219,
       "value_2qb": 269
     },
-    "2027 5th": {
-      "value_1qb": 5,
-      "value_2qb": 8
-    },
-    "2028 4th": {
-      "value_1qb": 9,
-      "value_2qb": 14
-    },
-    "2028 1st": {
-      "value_1qb": 1524,
-      "value_2qb": 1722
-    },
-    "2026 2nd": {
-      "value_1qb": 299,
-      "value_2qb": 364
+    "2028 3rd": {
+      "value_1qb": 32,
+      "value_2qb": 42
     },
     "2026 5th": {
       "value_1qb": 6,
@@ -3111,9 +3087,9 @@
       "value_1qb": 1905,
       "value_2qb": 2152
     },
-    "2026 4th": {
-      "value_1qb": 14,
-      "value_2qb": 21
+    "2028 2nd": {
+      "value_1qb": 175,
+      "value_2qb": 215
     },
     "2026 1st": {
       "value_1qb": 2809,
@@ -3123,13 +3099,37 @@
       "value_1qb": 11,
       "value_2qb": 17
     },
-    "2028 3rd": {
-      "value_1qb": 32,
-      "value_2qb": 42
+    "2028 5th": {
+      "value_1qb": 4,
+      "value_2qb": 6
+    },
+    "2026 4th": {
+      "value_1qb": 14,
+      "value_2qb": 21
+    },
+    "2028 1st": {
+      "value_1qb": 1524,
+      "value_2qb": 1722
     },
     "2027 3rd": {
       "value_1qb": 40,
       "value_2qb": 53
+    },
+    "2028 4th": {
+      "value_1qb": 9,
+      "value_2qb": 14
+    },
+    "2026 3rd": {
+      "value_1qb": 52,
+      "value_2qb": 68
+    },
+    "2026 2nd": {
+      "value_1qb": 299,
+      "value_2qb": 364
+    },
+    "2027 5th": {
+      "value_1qb": 5,
+      "value_2qb": 8
     }
   }
 }
