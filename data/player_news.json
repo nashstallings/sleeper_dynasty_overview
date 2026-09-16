@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-16T13:58:44Z",
+  "generated_at": "2026-09-16T18:36:48Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Joe Burrow",
+      "sleeper_id": "6770",
+      "gsis_id": "00-0036442",
+      "position": "QB",
+      "team": "CIN",
+      "headline": "May be dealing with injury",
+      "description": "Burrow wasn't involved in the team stretch and didn't make any throws of substance during Wednesday's practice, Kelsey Conway of The Cincinnati Enquirer reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/joe-burrow-14442",
+      "pub_date": "2026-09-16T11:24:00Z"
+    },
+    {
+      "player_name": "Jalen Coker",
+      "sleeper_id": "11646",
+      "gsis_id": "00-0039491",
+      "position": "WR",
+      "team": "CAR",
+      "headline": "Working on side Wednesday",
+      "description": "Coker (ankle) is suited up but working with trainers on a side field at Wednesday's practice, Mike Kaye of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-coker-17976",
+      "pub_date": "2026-09-16T11:03:00Z"
+    },
+    {
+      "player_name": "Brock Bowers",
+      "sleeper_id": "11604",
+      "gsis_id": "00-0039338",
+      "position": "TE",
+      "team": "LVR",
+      "headline": "No practice Wednesday",
+      "description": "Head coach Klint Kubiak said that Bowers (knee) won't practice Wednesday but hopes the tight end will be able to Thursday and/or Friday, Sam Warren of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/brock-bowers-17693",
+      "pub_date": "2026-09-16T10:54:00Z"
+    },
+    {
+      "player_name": "TreVeyon Henderson",
+      "sleeper_id": "12529",
+      "gsis_id": "00-0040734",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "More practice reps on tap",
+      "description": "Head coach Mike Vrabel said Henderson (ankle) will \"do some more\" at Wednesday's practice, Mark Daniels of MassLive.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/treveyon-henderson-18517",
+      "pub_date": "2026-09-16T10:20:00Z"
+    },
+    {
+      "player_name": "Zay Flowers",
+      "sleeper_id": "9997",
+      "gsis_id": "00-0039064",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Potential DNP on Wednesday",
+      "description": "Flowers (hamstring) wasn't seen during the media-access portion of Wednesday's practice, Jeff Zrebiec of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
+      "pub_date": "2026-09-16T10:12:00Z"
+    },
     {
       "player_name": "Dylan Sampson",
       "sleeper_id": "12469",
