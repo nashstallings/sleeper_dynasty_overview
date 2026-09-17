@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T20:52:29Z",
+  "generated_at": "2026-09-17T23:19:58Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -14,6 +14,61 @@
       "description": "Collins met with doctors after injuring his hamstring at Wednesday's practice, and although the injury does not seem serious his status for Week 2 \"is in jeopardy,\" Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/nico-collins-15200",
       "pub_date": "2026-09-17T03:47:00Z"
+    },
+    {
+      "player_name": "Kaelon Black",
+      "sleeper_id": "13414",
+      "gsis_id": "00-0041052",
+      "position": "RB",
+      "team": "SFO",
+      "headline": "Added to injury report",
+      "description": "Black was limited at Thursday's practice due to a groin injury, Matt Maiocco of NBC Sports Bay Area reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kaelon-black-19607",
+      "pub_date": "2026-09-17T03:34:00Z"
+    },
+    {
+      "player_name": "Brock Bowers",
+      "sleeper_id": "11604",
+      "gsis_id": "00-0039338",
+      "position": "TE",
+      "team": "LVR",
+      "headline": "Sits out practice again",
+      "description": "Bowers (knee) was a non-participant at Thursday's practice, Anthony Galaviz of The Fresno Bee reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/brock-bowers-17693",
+      "pub_date": "2026-09-17T03:28:00Z"
+    },
+    {
+      "player_name": "George Kittle",
+      "sleeper_id": "4217",
+      "gsis_id": "00-0033288",
+      "position": "TE",
+      "team": "SFO",
+      "headline": "Another limited showing",
+      "description": "Kittle (Achilles) practiced in a limited capacity Thursday, Matt Maiocco of NBC Sports Bay Area reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/george-kittle-11892",
+      "pub_date": "2026-09-17T03:23:00Z"
+    },
+    {
+      "player_name": "Ladd McConkey",
+      "sleeper_id": "11635",
+      "gsis_id": "00-0039915",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Sits out again Thursday",
+      "description": "McConkey (ribs) was listed as a non-participant on Thursday's injury report. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
+      "pub_date": "2026-09-17T03:18:00Z"
+    },
+    {
+      "player_name": "RJ Harvey",
+      "sleeper_id": "12489",
+      "gsis_id": "00-0040730",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Officially limited Thursday",
+      "description": "Harvey (hamstring) was limited at Thursday's practice, Aric DiLalla of the Broncos' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rj-harvey-18522",
+      "pub_date": "2026-09-17T03:11:00Z"
     },
     {
       "player_name": "Alvin Kamara",
