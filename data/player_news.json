@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-09-17T03:01:18Z",
+  "generated_at": "2026-09-17T10:50:30Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Nico Collins",
+      "sleeper_id": "7569",
+      "gsis_id": "00-0036554",
+      "position": "WR",
+      "team": "HOU",
+      "headline": "Injury seemingly not serious",
+      "description": "Collins met with doctors after injuring his hamstring at Wednesday's practice, and although the injury does not seem serious his status for Week 2 \"is in jeopardy,\" Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/nico-collins-15200",
+      "pub_date": "2026-09-17T03:47:00Z"
+    },
     {
       "player_name": "Joe Burrow",
       "sleeper_id": "6770",
