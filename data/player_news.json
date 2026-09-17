@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T16:04:59Z",
+  "generated_at": "2026-09-17T20:52:29Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -14,6 +14,61 @@
       "description": "Collins met with doctors after injuring his hamstring at Wednesday's practice, and although the injury does not seem serious his status for Week 2 \"is in jeopardy,\" Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/nico-collins-15200",
       "pub_date": "2026-09-17T03:47:00Z"
+    },
+    {
+      "player_name": "Alvin Kamara",
+      "sleeper_id": "4035",
+      "gsis_id": "00-0033906",
+      "position": "RB",
+      "team": "NOS",
+      "headline": "'Feeling great' ahead of Week 2",
+      "description": "Kamara (knee) said Thursday that he \"feels great\" and has \"no limitations\" in advance of Sunday's game at Baltimore, Katherine Terrell of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/alvin-kamara-11732",
+      "pub_date": "2026-09-17T01:45:00Z"
+    },
+    {
+      "player_name": "Zay Flowers",
+      "sleeper_id": "9997",
+      "gsis_id": "00-0039064",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Officially DNP on Thursday",
+      "description": "Flowers (hamstring) was listed as a non-participant for Thursday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
+      "pub_date": "2026-09-17T01:33:00Z"
+    },
+    {
+      "player_name": "Chris Olave",
+      "sleeper_id": "8144",
+      "gsis_id": "00-0037239",
+      "position": "WR",
+      "team": "NOS",
+      "headline": "Dealing with hamstring injury",
+      "description": "Olave was limited at Thursday's practice due to a hamstring injury, Matthew Paras of The New Orleans Times-Picayune reports.. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chris-olave-15895",
+      "pub_date": "2026-09-17T01:28:00Z"
+    },
+    {
+      "player_name": "Ja'Marr Chase",
+      "sleeper_id": "7564",
+      "gsis_id": "00-0036900",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "Not worried about knee",
+      "description": "Chase said Thursday that his knee feels great, Kelsey Conway of the Cincinnati Enquirer reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
+      "pub_date": "2026-09-17T01:25:00Z"
+    },
+    {
+      "player_name": "Ladd McConkey",
+      "sleeper_id": "11635",
+      "gsis_id": "00-0039915",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Working on side field Thursday",
+      "description": "McConkey (rib) is working off to the side with a trainer at Thursday's practice, Kris Rhim of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
+      "pub_date": "2026-09-17T01:15:00Z"
     },
     {
       "player_name": "Joe Burrow",
