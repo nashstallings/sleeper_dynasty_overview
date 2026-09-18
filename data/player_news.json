@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-18T02:48:58Z",
+  "generated_at": "2026-09-18T07:53:34Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jameson Williams",
+      "sleeper_id": "8148",
+      "gsis_id": "00-0037240",
+      "position": "WR",
+      "team": "DET",
+      "headline": "Retains modest role in loss",
+      "description": "Williams brought in two of four targets for 33 yards in the Lions' 41-31 loss to the Bills on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jameson-williams-15849",
+      "pub_date": "2026-09-17T09:54:00Z"
+    },
+    {
+      "player_name": "Sam LaPorta",
+      "sleeper_id": "10859",
+      "gsis_id": "00-0039065",
+      "position": "TE",
+      "team": "DET",
+      "headline": "Scores first TD of '26 in loss",
+      "description": "LaPorta brought in six of seven targets for 52 yards and a touchdown in the Lions' 41-31 loss to the Bills on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/sam-laporta-17033",
+      "pub_date": "2026-09-17T09:48:00Z"
+    },
+    {
+      "player_name": "Dalton Kincaid",
+      "sleeper_id": "10236",
+      "gsis_id": "00-0038933",
+      "position": "TE",
+      "team": "BUF",
+      "headline": "Continues explosive start to season Thursday",
+      "description": "Kincaid brought in seven of eight targets for 95 yards and a touchdown in the Bills' 41-31 win over the Lions on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dalton-kincaid-16697",
+      "pub_date": "2026-09-17T09:18:00Z"
+    },
+    {
+      "player_name": "Jared Goff",
+      "sleeper_id": "3163",
+      "gsis_id": "00-0033106",
+      "position": "QB",
+      "team": "DET",
+      "headline": "Racks up production in high-scoring loss",
+      "description": "Goff completed 26 of 38 passes for 327 yards with four touchdowns and no interceptions while adding three rushes for seven yards in the Lions' 41-31 loss to the Bills on Thursday. He also committed two fumbles, losing one. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jared-goff-10729",
+      "pub_date": "2026-09-17T09:12:00Z"
+    },
+    {
+      "player_name": "Amon-Ra St. Brown",
+      "sleeper_id": "7547",
+      "gsis_id": "00-0036963",
+      "position": "WR",
+      "team": "DET",
+      "headline": "Stellar numbers in Week 2 loss",
+      "description": "St. Brown brought in nine of 13 targets for 142 yards and two touchdowns in the Lions' 41-31 loss to the Bills on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/amon-ra-st-brown-15332",
+      "pub_date": "2026-09-17T09:04:00Z"
+    },
     {
       "player_name": "DJ Moore",
       "sleeper_id": "4983",
