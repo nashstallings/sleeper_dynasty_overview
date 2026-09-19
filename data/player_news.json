@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-09-19T19:55:39Z",
+  "generated_at": "2026-09-19T22:37:21Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Nico Collins",
+      "sleeper_id": "7569",
+      "gsis_id": "00-0036554",
+      "position": "WR",
+      "team": "HOU",
+      "headline": "Could miss two games",
+      "description": "Collins may miss two games due to a hamstring injury, Aaron Wilson of KPRC 2 Houston reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/nico-collins-15200",
+      "pub_date": "2026-09-19T12:56:00Z"
+    },
     {
       "player_name": "Puka Nacua",
       "sleeper_id": "9493",
@@ -36,6 +47,39 @@
       "description": "The Jets are expected to place Cooper (ankle) on injured reserve, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/omar-cooper-19314",
       "pub_date": "2026-09-19T09:24:00Z"
+    },
+    {
+      "player_name": "De'Zhaun Stribling",
+      "sleeper_id": "13417",
+      "gsis_id": "00-0041035",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Officially placed on IR",
+      "description": "The 49ers placed Stribling (ankle) on injured reserve Saturday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dezhaun-stribling-19330",
+      "pub_date": "2026-09-19T02:14:00Z"
+    },
+    {
+      "player_name": "Omar Cooper Jr.",
+      "sleeper_id": "13276",
+      "gsis_id": "00-0041511",
+      "position": "WR",
+      "team": "NYJ",
+      "headline": "Officially on injured reserve",
+      "description": "The Jets placed Cooper (ankle) on injured reserve Saturday, Amanda Vogt of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/omar-cooper-19314",
+      "pub_date": "2026-09-19T01:17:00Z"
+    },
+    {
+      "player_name": "Zay Flowers",
+      "sleeper_id": "9997",
+      "gsis_id": "00-0039064",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Ruled out for Sunday's game",
+      "description": "Flowers (hamstring) has been downgraded to out for Sunday's game against the Saints. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
+      "pub_date": "2026-09-19T01:11:00Z"
     },
     {
       "player_name": "Cooper Rush",
