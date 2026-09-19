@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-09-19T12:49:48Z",
+  "generated_at": "2026-09-19T17:42:03Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Ruled out for Week 2",
+      "description": "Pittman (foot) has been ruled out for Sunday's game at New England, Burt Lauten of the Steelers' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-09-19T10:09:00Z"
+    },
+    {
+      "player_name": "Omar Cooper Jr.",
+      "sleeper_id": "13276",
+      "gsis_id": "00-0041511",
+      "position": "WR",
+      "team": "NYJ",
+      "headline": "To be placed on injured reserve",
+      "description": "The Jets are expected to place Cooper (ankle) on injured reserve, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/omar-cooper-19314",
+      "pub_date": "2026-09-19T09:24:00Z"
+    },
     {
       "player_name": "Cooper Rush",
       "sleeper_id": "4574",
