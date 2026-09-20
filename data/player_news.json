@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-20T13:24:23Z",
+  "generated_at": "2026-09-20T17:52:56Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jayden Reed",
+      "sleeper_id": "10222",
+      "gsis_id": "00-0039146",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Won't return Sunday",
+      "description": "Reed has been ruled out of Sunday's game at the Jets due to a neck injury. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jayden-reed-16977",
+      "pub_date": "2026-09-20T10:30:00Z"
+    },
+    {
+      "player_name": "Saquon Barkley",
+      "sleeper_id": "4866",
+      "gsis_id": "00-0034844",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Questionable to return to Week 2",
+      "description": "The Eagles announced that Barkley is questionable to return to Sunday's game against the Titans due to a stinger. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
+      "pub_date": "2026-09-20T10:25:00Z"
+    },
+    {
+      "player_name": "Saquon Barkley",
+      "sleeper_id": "4866",
+      "gsis_id": "00-0034844",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Tending to left arm injury",
+      "description": "Barkley headed to the locker room during the first quarter of Sunday's game against the Titans to be evaluated for an apparent left arm injury, Jeff McLane of The Philadelphia Inquirer reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
+      "pub_date": "2026-09-20T10:20:00Z"
+    },
+    {
+      "player_name": "Jayden Reed",
+      "sleeper_id": "10222",
+      "gsis_id": "00-0039146",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Gets carted off field",
+      "description": "Reed (undisclosed) was carted off the field during Sunday's game at the Jets, Weston Hodkiewicz of the Packers' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jayden-reed-16977",
+      "pub_date": "2026-09-20T10:19:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "May be trending toward sitting Week 2",
+      "description": "Nacua (hip), who is officially listed as questionable for Monday's game against the Giants \"is trending the wrong way\" in advance of the Week 2 contest, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-09-20T09:08:00Z"
+    },
     {
       "player_name": "Keenan Allen",
       "sleeper_id": "1479",
