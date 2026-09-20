@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T20:11:04Z",
+  "generated_at": "2026-09-20T22:54:04Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -148,6 +148,17 @@
       "pub_date": "2026-09-20T03:55:00Z"
     },
     {
+      "player_name": "Christian Watson",
+      "sleeper_id": "8167",
+      "gsis_id": "00-0038124",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Three TD catches through two games",
+      "description": "Watson caught four of 11 targets for 41 yards and a touchdown in Sunday's 20-17 overtime win over the Jets. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/christian-watson-15946",
+      "pub_date": "2026-09-20T03:52:00Z"
+    },
+    {
       "player_name": "Puka Nacua",
       "sleeper_id": "9493",
       "gsis_id": "00-0039075",
@@ -157,6 +168,50 @@
       "description": "Nacua (hip) is considered by the Rams \"to be a pre-game decision\" for Monday's game against the Giants, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
       "pub_date": "2026-09-20T03:50:00Z"
+    },
+    {
+      "player_name": "Jordan Love",
+      "sleeper_id": "6804",
+      "gsis_id": "00-0036264",
+      "position": "QB",
+      "team": "GBP",
+      "headline": "Tosses two TDs in comeback win",
+      "description": "Love completed 16 of 29 passes for 145 yards and two touchdowns in Sunday's 20-17 overtime win over the Jets. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordan-love-14371",
+      "pub_date": "2026-09-20T03:50:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Injures hip in Week 2",
+      "description": "Evans sustained a hip injury during Sunday's contest against the Dolphins, Matt Barrows of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-09-20T03:47:00Z"
+    },
+    {
+      "player_name": "Kyle Monangai",
+      "sleeper_id": "12534",
+      "gsis_id": "00-0040236",
+      "position": "RB",
+      "team": "CHI",
+      "headline": "Dozen touches in Week 2 loss",
+      "description": "Monangai carried the ball 10 times for 47 yards and caught both his targets for 11 yards in Sunday's 9-3 loss to the Vikings. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyle-monangai-18520",
+      "pub_date": "2026-09-20T03:41:00Z"
+    },
+    {
+      "player_name": "J.K. Dobbins",
+      "sleeper_id": "6806",
+      "gsis_id": "00-0036158",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Suffers hamstring injury",
+      "description": "Dobbins exited Sunday's game versus the Jaguars due to a hamstring injury, Sam Jane of The Denver Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jk-dobbins-14418",
+      "pub_date": "2026-09-20T03:26:00Z"
     },
     {
       "player_name": "Caleb Williams",
