@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-20T08:26:47Z",
+  "generated_at": "2026-09-20T13:24:23Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Keenan Allen",
+      "sleeper_id": "1479",
+      "gsis_id": "00-0030279",
+      "position": "WR",
+      "team": "IND",
+      "headline": "Facing league suspension",
+      "description": "Allen \"is facing a minimum three-game suspension\" in connection with his August arrest, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/keenan-allen-8627",
+      "pub_date": "2026-09-20T04:20:00Z"
+    },
+    {
+      "player_name": "Michael Penix Jr.",
+      "sleeper_id": "11559",
+      "gsis_id": "00-0039917",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Could start in Week 3",
+      "description": "Penix (knee) may start Thursday's game against the Packers, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-penix-17700",
+      "pub_date": "2026-09-20T04:14:00Z"
+    },
+    {
+      "player_name": "Jalen McMillan",
+      "sleeper_id": "11618",
+      "gsis_id": "00-0039855",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Should play on snap count",
+      "description": "McMillan (knee) is set to play Sunday against the Browns but \"is not expected to have a full-time role just yet,\" Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-mcmillan-17763",
+      "pub_date": "2026-09-20T04:06:00Z"
+    },
+    {
+      "player_name": "Kaelon Black",
+      "sleeper_id": "13414",
+      "gsis_id": "00-0041052",
+      "position": "RB",
+      "team": "SFO",
+      "headline": "On track to play Sunday",
+      "description": "Black (groin) is on track to play Sunday against the Dolphins, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kaelon-black-19607",
+      "pub_date": "2026-09-20T03:55:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Looking like game-time call",
+      "description": "Nacua (hip) is considered by the Rams \"to be a pre-game decision\" for Monday's game against the Giants, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-09-20T03:50:00Z"
+    },
     {
       "player_name": "Nico Collins",
       "sleeper_id": "7569",
