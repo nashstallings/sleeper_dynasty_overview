@@ -867,7 +867,7 @@ tr.me-row .freeze-col { background: var(--accent-soft); }
 
 /* ---------- age curve ---------- */
 
-.age-team-picker { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+.age-team-picker { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
 .age-team-picker label {
   font-size: 0.72rem;
   color: var(--text-faint);
@@ -889,7 +889,7 @@ tr.me-row .freeze-col { background: var(--accent-soft); }
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
-.scope-toggle { display: flex; gap: 2px; margin-bottom: 16px; }
+.scope-toggle { display: flex; gap: 2px; margin-bottom: 16px; flex-wrap: wrap; }
 .scope-toggle-btn {
   flex-shrink: 0;
   background: transparent;

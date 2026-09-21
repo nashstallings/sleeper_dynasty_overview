@@ -466,6 +466,28 @@ reflects your league's actual rules (PPR, TE premium, etc.), not a generic
 default. A week selector (defaulting to the current week) lets you look at
 any completed week of the loaded season.
 
+A **Best Performances / Worst Performances** toggle flips both leaderboards
+around:
+
+- **Worst Performances** swaps the Total Points card for **Worst
+  Performances (Starters)** &mdash; the lowest-scoring players that week,
+  restricted to whoever was actually **started** that week league-wide
+  (fetched from Sleeper's official per-week matchups data, since who starts
+  changes week to week and isn't the same as who's simply rostered). A
+  bench player's bad week doesn't count against anyone's decision-making,
+  so it's deliberately left out here &mdash; a huge bench performance still
+  shows up in Total Points under Best Performances, just not here.
+- **Points Above Expected** becomes **Points Below Expected**, the same
+  actual-minus-projected data sorted the other way (most-negative delta
+  first), with no starters restriction.
+
+**Position** (All/QB/RB/WR/TE) and **Ownership** (All/Owned/Free Agent)
+filters apply to both cards at once and combine with whichever mode is
+active &mdash; e.g. Worst Performances + Free Agent will come up empty,
+since a free agent can't be a starter. Switching the mode or either filter
+just re-slices the week's data already fetched, so it's instant; only
+changing the week itself re-fetches from Sleeper.
+
 *A note on this specific integration:* these two Sleeper endpoints aren't
 part of Sleeper's [documented public API](https://docs.sleeper.com/) and
 were unreachable from the authoring session to verify live, so their exact

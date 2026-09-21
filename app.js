@@ -103,6 +103,12 @@ const state = {
   outlookView: "quadrants",
   outlookRows: null,
   performersWeek: null,
+  performersMode: "best",
+  performersPosFilter: "ALL",
+  performersOwnFilter: "ALL",
+  performersStatsMap: null,
+  performersProjMap: null,
+  performersStarterIds: null,
   powerRankSort: "overall",
   powerRankExpanded: new Set(),
 };
@@ -2714,6 +2720,10 @@ async function fetchSleeperWeekStats(kind, season, week) {
   return map;
 }
 
+function isPlayerOwned(pid) {
+  return state.rosters.some((r) => (r.players || []).includes(pid));
+}
+
 // Combines a week's actual stat lines with (optionally) that week's
 // projections into per-player entries scored with this league's own
 // scoring settings. Players with an empty stat line (bye, DNP, not on an
@@ -2738,6 +2748,8 @@ function buildPerformerEntries(statsMap, projMap = null) {
       points: computeLeaguePoints(sleeperStatsToRaw(rawStats), pos),
       projPoints: null,
       delta: null,
+      owned: isPlayerOwned(pid),
+      isStarter: !!(state.performersStarterIds && state.performersStarterIds.has(pid)),
     };
     if (projMap && projMap[pid] && Object.keys(projMap[pid]).length > 0) {
       entry.projPoints = computeLeaguePoints(sleeperStatsToRaw(projMap[pid]), pos);
@@ -2746,6 +2758,18 @@ function buildPerformerEntries(statsMap, projMap = null) {
     entries.push(entry);
   });
   return entries;
+}
+
+// Position + ownership filters apply to both leaderboards identically; the
+// "worst" mode's starters-only restriction is applied separately by the
+// caller since it only affects the Total Points / Worst Performances card.
+function filterPerformerEntries(entries) {
+  return entries.filter((e) => {
+    if (state.performersPosFilter !== "ALL" && e.position !== state.performersPosFilter) return false;
+    if (state.performersOwnFilter === "OWNED" && !e.owned) return false;
+    if (state.performersOwnFilter === "FA" && e.owned) return false;
+    return true;
+  });
 }
 
 function performerRowHtml(entry, mode) {
@@ -2800,14 +2824,44 @@ function performersWeekOptionsHtml() {
   return opts;
 }
 
+function performersToggleGroupHtml(attr, options, selected) {
+  const btns = options
+    .map((o) => `<button type="button" class="scope-toggle-btn${o.key === selected ? " active" : ""}" data-${attr}="${o.key}">${o.label}</button>`)
+    .join("");
+  return `<div class="scope-toggle" style="margin-bottom:0">${btns}</div>`;
+}
+
+const PERFORMERS_MODES = [
+  { key: "best", label: "Best Performances" },
+  { key: "worst", label: "Worst Performances" },
+];
+const PERFORMERS_POS_FILTERS = [{ key: "ALL", label: "All" }, ...SKILL_POSITIONS.map((p) => ({ key: p, label: p }))];
+const PERFORMERS_OWN_FILTERS = [
+  { key: "ALL", label: "All" },
+  { key: "OWNED", label: "Owned" },
+  { key: "FA", label: "Free Agent" },
+];
+
 function renderPerformersPicker() {
   const card = document.getElementById("performers-picker-card");
   card.innerHTML = `
     <h2>Top Performers</h2>
-    <p class="hero-copy">See who actually produced each week &mdash; by raw fantasy points, and by points above Sleeper's own weekly projection for that player.</p>
+    <p class="hero-copy">See who actually produced each week &mdash; by raw fantasy points, and by points above or below Sleeper's own weekly projection for that player.</p>
     <div class="age-team-picker">
       <label for="performers-week-select">Week</label>
       <select id="performers-week-select">${performersWeekOptionsHtml()}</select>
+    </div>
+    <div class="age-team-picker">
+      <label>Show</label>
+      ${performersToggleGroupHtml("permode", PERFORMERS_MODES, state.performersMode)}
+    </div>
+    <div class="age-team-picker">
+      <label>Position</label>
+      ${performersToggleGroupHtml("perposfilter", PERFORMERS_POS_FILTERS, state.performersPosFilter)}
+    </div>
+    <div class="age-team-picker">
+      <label>Ownership</label>
+      ${performersToggleGroupHtml("perownfilter", PERFORMERS_OWN_FILTERS, state.performersOwnFilter)}
     </div>`;
 }
 
@@ -2819,7 +2873,65 @@ function setupPerformersWeekSelect() {
   });
 }
 
+// Position/ownership filters and the best/worst mode toggle all just
+// re-slice the already-fetched week's data (state.performersStatsMap /
+// performersProjMap / performersStarterIds) via renderPerformersBody() --
+// no re-fetch needed, so these feel instant. Only the week select triggers
+// a real reload, since that's the one control that changes which week's
+// data is needed.
+function setupPerformersToggle(attr) {
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(`.scope-toggle-btn[data-${attr}]`);
+    if (!btn || btn.classList.contains("active")) return;
+    document.querySelectorAll(`.scope-toggle-btn[data-${attr}]`).forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    if (attr === "permode") state.performersMode = btn.dataset.permode;
+    else if (attr === "perposfilter") state.performersPosFilter = btn.dataset.perposfilter;
+    else if (attr === "perownfilter") state.performersOwnFilter = btn.dataset.perownfilter;
+    renderPerformersBody();
+  });
+}
+
+function setupPerformersFilters() {
+  setupPerformersToggle("permode");
+  setupPerformersToggle("perposfilter");
+  setupPerformersToggle("perownfilter");
+}
+
 const PERFORMERS_ROW_LIMIT = 15;
+
+// Re-slices the currently cached week's stats/projections against the
+// current mode + filters and repaints both cards. Safe to call any number
+// of times without re-fetching anything.
+function renderPerformersBody() {
+  const totalCard = document.getElementById("performers-total-card");
+  const paeCard = document.getElementById("performers-pae-card");
+  if (!state.performersStatsMap) return;
+
+  const mode = state.performersMode;
+  const entries = buildPerformerEntries(state.performersStatsMap, state.performersProjMap);
+
+  let totalPool = filterPerformerEntries(entries);
+  if (mode === "worst") totalPool = totalPool.filter((e) => e.isStarter);
+  const totalSorted = [...totalPool]
+    .sort((a, b) => (mode === "worst" ? a.points - b.points : b.points - a.points))
+    .slice(0, PERFORMERS_ROW_LIMIT);
+  const totalTitle = mode === "worst" ? "Worst Performances (Starters)" : "Total Points";
+  const totalEmpty =
+    mode === "worst" ? "No starters match these filters for this week yet." : "No stats available for this week yet.";
+  totalCard.innerHTML = `<h2>${totalTitle}</h2>${performersTableHtml(totalSorted, "total", totalEmpty)}`;
+
+  const paeTitle = mode === "worst" ? "Points Below Expected" : "Points Above Expected";
+  if (!state.performersProjMap) {
+    paeCard.innerHTML = `<h2>${paeTitle}</h2><p class="spinner-note">Loading week ${state.performersWeek} projections from Sleeper...</p>`;
+    return;
+  }
+  const paePool = filterPerformerEntries(entries).filter((e) => e.projPoints !== null);
+  const paeSorted = [...paePool]
+    .sort((a, b) => (mode === "worst" ? a.delta - b.delta : b.delta - a.delta))
+    .slice(0, PERFORMERS_ROW_LIMIT);
+  paeCard.innerHTML = `<h2>${paeTitle}</h2>${performersTableHtml(paeSorted, "pae", "No projections available for this week yet.")}`;
+}
 
 async function renderPerformers() {
   const weeks = regularSeasonWeeks();
@@ -2831,6 +2943,10 @@ async function renderPerformers() {
   const season = state.league && state.league.season;
   const totalCard = document.getElementById("performers-total-card");
   const paeCard = document.getElementById("performers-pae-card");
+
+  state.performersStatsMap = null;
+  state.performersProjMap = null;
+  state.performersStarterIds = null;
 
   totalCard.innerHTML = `<h2>Total Points</h2><p class="spinner-note">Loading week ${week} stats from Sleeper...</p>`;
   paeCard.innerHTML = `<h2>Points Above Expected</h2><p class="spinner-note">Loading week ${week} projections from Sleeper...</p>`;
@@ -2846,27 +2962,40 @@ async function renderPerformers() {
     return;
   }
   if (state.performersWeek !== week) return;
+  state.performersStatsMap = statsMap;
 
-  const totalRows = buildPerformerEntries(statsMap)
-    .sort((a, b) => b.points - a.points)
-    .slice(0, PERFORMERS_ROW_LIMIT);
-  totalCard.innerHTML = `<h2>Total Points</h2>${performersTableHtml(totalRows, "total", "No stats available for this week yet.")}`;
+  // Which players started is only needed for "Worst Performances
+  // (Starters)"; this is Sleeper's official, documented matchups endpoint
+  // (unlike stats/projections above), but it's still treated as optional
+  // enrichment -- if it fails, Best-mode (the default) is completely
+  // unaffected, and Worst mode just degrades to its empty state.
+  try {
+    const matchups = await api(`/league/${state.leagueId}/matchups/${week}`);
+    const starterIds = new Set();
+    (Array.isArray(matchups) ? matchups : []).forEach((m) => {
+      (m.starters || []).forEach((pid) => {
+        if (pid && pid !== "0") starterIds.add(pid);
+      });
+    });
+    state.performersStarterIds = starterIds;
+  } catch {
+    state.performersStarterIds = new Set();
+  }
+  if (state.performersWeek !== week) return;
+  renderPerformersBody();
 
   let projMap;
   try {
     projMap = await fetchSleeperWeekStats("projections", season, week);
   } catch {
     if (state.performersWeek !== week) return;
-    paeCard.innerHTML = `<h2>Points Above Expected</h2>${emptyState("Couldn't load Sleeper's projections for this week.")}`;
+    const paeTitle = state.performersMode === "worst" ? "Points Below Expected" : "Points Above Expected";
+    paeCard.innerHTML = `<h2>${paeTitle}</h2>${emptyState("Couldn't load Sleeper's projections for this week.")}`;
     return;
   }
   if (state.performersWeek !== week) return;
-
-  const paeRows = buildPerformerEntries(statsMap, projMap)
-    .filter((e) => e.projPoints !== null)
-    .sort((a, b) => b.delta - a.delta)
-    .slice(0, PERFORMERS_ROW_LIMIT);
-  paeCard.innerHTML = `<h2>Points Above Expected</h2>${performersTableHtml(paeRows, "pae", "No projections available for this week yet.")}`;
+  state.performersProjMap = projMap;
+  renderPerformersBody();
 }
 
 const PLAYER_CARD_NEWS_WINDOW_DAYS = 90;
@@ -3483,6 +3612,7 @@ function init() {
   setupTradeFinderScopeToggle();
   setupOutlookViewToggle();
   setupPerformersWeekSelect();
+  setupPerformersFilters();
   setupPowerRankSort();
   setupPowerRankExpand();
   setupEvaluatorSearch();
