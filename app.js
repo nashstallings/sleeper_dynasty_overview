@@ -461,12 +461,16 @@ function playerRow(pid, { slot = null } = {}) {
     </tr>`;
 }
 
-// How many roster_positions slots the league configures for a given slot
-// type (e.g. "IR", "TAXI") -- 0 means the league doesn't use that feature
-// at all, so its subsection is skipped entirely rather than shown empty.
-function rosterSlotCount(slotName) {
-  const positions = (state.league && state.league.roster_positions) || [];
-  return positions.filter((s) => s === slotName).length;
+// Whether the league supports an IR/taxi squad at all. roster_positions
+// doesn't reliably list "IR"/"TAXI" entries -- some leagues enable these
+// purely via a settings count instead -- so this checks both the settings
+// field AND whether any roster in the league actually has someone parked
+// there; either signal is enough to show the subsection, since relying on
+// roster_positions alone was hiding real IR/taxi rosters entirely.
+function leagueHasReserveSlot(settingsKey, rosterField) {
+  const settingsCount = state.league && state.league.settings && state.league.settings[settingsKey];
+  if ((settingsCount || 0) > 0) return true;
+  return state.rosters.some((r) => (r[rosterField] || []).length > 0);
 }
 
 // One subsection of the merged Roster card: a title plus its own little
@@ -513,8 +517,8 @@ function renderRoster() {
     rosterGroupTableHtml("Starters", starters, { withSlots: true }),
     rosterGroupTableHtml("Bench", bench),
   ];
-  if (rosterSlotCount("IR") > 0) sections.push(rosterGroupTableHtml("IR", reserve));
-  if (rosterSlotCount("TAXI") > 0) sections.push(rosterGroupTableHtml("Taxi", taxi));
+  if (leagueHasReserveSlot("reserve_slots", "reserve")) sections.push(rosterGroupTableHtml("IR", reserve));
+  if (leagueHasReserveSlot("taxi_slots", "taxi")) sections.push(rosterGroupTableHtml("Taxi", taxi));
 
   card.innerHTML = `
     <details open>
