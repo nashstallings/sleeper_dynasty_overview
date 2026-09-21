@@ -350,8 +350,7 @@ function teamCellHtml(roster, { size = "", suffix = "" } = {}) {
 
 function renderDashboard() {
   renderMatchup();
-  renderStarters();
-  renderBench();
+  renderRoster();
   renderPlayerNews();
   renderTransactions();
 }
@@ -462,48 +461,73 @@ function playerRow(pid, { slot = null } = {}) {
     </tr>`;
 }
 
-function renderStarters() {
-  const card = document.getElementById("starters-card");
-  const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
-  if (!myRoster) {
-    card.innerHTML = `<h2>Starters</h2>${emptyState("You don't own a team in this league.")}`;
-    return;
-  }
-  const slots = startingSlots();
-  const rows = (myRoster.starters || [])
-    .map((pid, i) => playerRow(pid, { slot: slots[i] }))
-    .join("");
-  card.innerHTML = `
-    <h2>Starters</h2>
+// How many roster_positions slots the league configures for a given slot
+// type (e.g. "IR", "TAXI") -- 0 means the league doesn't use that feature
+// at all, so its subsection is skipped entirely rather than shown empty.
+function rosterSlotCount(slotName) {
+  const positions = (state.league && state.league.roster_positions) || [];
+  return positions.filter((s) => s === slotName).length;
+}
+
+// One subsection of the merged Roster card: a title plus its own little
+// table, sharing playerRow()'s row rendering with the rest of the app.
+// Starters gets slot labels (QB/FLEX/etc.); every other group is just a
+// flat position badge since there's no lineup slot to speak of on IR,
+// taxi, or the bench.
+function rosterGroupTableHtml(title, pids, { withSlots = false } = {}) {
+  const slots = withSlots ? startingSlots() : null;
+  const rows = pids.length
+    ? pids.map((pid, i) => playerRow(pid, withSlots ? { slot: slots[i] } : {})).join("")
+    : `<tr><td colspan="3">${emptyState(`No ${title.toLowerCase()} players`)}</td></tr>`;
+  return `
+    <h3>${title}</h3>
     <table>
-      <thead><tr><th>Slot</th><th>Player</th><th>Rank</th></tr></thead>
+      <thead><tr><th>${withSlots ? "Slot" : "Pos"}</th><th>Player</th><th>Rank</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>`;
 }
 
-function renderBench() {
-  const card = document.getElementById("bench-card");
+function renderRoster() {
+  const card = document.getElementById("roster-card");
   const myRoster = state.rosters.find((r) => r.roster_id === state.myRosterId);
   if (!myRoster) {
-    card.innerHTML = `<h2>Bench</h2>`;
+    card.innerHTML = `<h2>Roster</h2>${emptyState("You don't own a team in this league.")}`;
     return;
   }
-  const starterSet = new Set(myRoster.starters || []);
+
+  const starters = myRoster.starters || [];
+  const reserve = myRoster.reserve || [];
+  const taxi = myRoster.taxi || [];
+  // Bench is everything left over once starters/IR/taxi are accounted for
+  // -- previously this bucket silently included IR and taxi players too,
+  // since only starters were being excluded.
+  const excluded = new Set([...starters, ...reserve, ...taxi]);
   const bench = (myRoster.players || [])
-    .filter((pid) => !starterSet.has(pid))
+    .filter((pid) => !excluded.has(pid))
     .sort((a, b) => {
       const posDiff = benchPositionRank(playerPosition(player(a))) - benchPositionRank(playerPosition(player(b)));
       return posDiff !== 0 ? posDiff : playerRank(player(a)) - playerRank(player(b));
     });
-  const rows = bench.length
-    ? bench.map((pid) => playerRow(pid)).join("")
-    : `<tr><td colspan="3">${emptyState("No bench players")}</td></tr>`;
+
+  const sections = [
+    rosterGroupTableHtml("Starters", starters, { withSlots: true }),
+    rosterGroupTableHtml("Bench", bench),
+  ];
+  if (rosterSlotCount("IR") > 0) sections.push(rosterGroupTableHtml("IR", reserve));
+  if (rosterSlotCount("TAXI") > 0) sections.push(rosterGroupTableHtml("Taxi", taxi));
+
   card.innerHTML = `
-    <h2>Bench</h2>
-    <table>
-      <thead><tr><th>Pos</th><th>Player</th><th>Rank</th></tr></thead>
-      <tbody>${rows}</tbody>
-    </table>`;
+    <details open>
+      <summary>
+        <h2>
+          <span>Roster</span>
+          <svg class="chevron" viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden="true">
+            <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </h2>
+      </summary>
+      <div class="roster-body">${sections.join("")}</div>
+    </details>`;
 }
 
 const NEWS_WINDOW_DAYS = 90;

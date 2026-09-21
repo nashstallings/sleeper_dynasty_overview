@@ -3,7 +3,9 @@
 A small, static web app that connects to your [Sleeper](https://sleeper.com) fantasy
 football account and helps you:
 
-- **Track your team** &mdash; starters, bench, and your current-week matchup.
+- **Track your team** &mdash; your current-week matchup and a collapsible
+  Roster card broken into Starters/Bench/IR/Taxi subsections (IR and Taxi
+  only show up if your league actually uses those slots).
 - **Check league standings** &mdash; records and points for/against for every team.
 - **Find trade targets** &mdash; flags your weakest roster positions (relative to the
   rest of the league) and surfaces bench players on other rosters who could fill
@@ -15,9 +17,9 @@ football account and helps you:
   table (trend down, still valued inside it) for every metric. Shows
   whether each player is on your roster, a rival's, or unrostered in your
   league.
-- **Catch up on player news** &mdash; a Recent News card on the My Team tab shows
+- **Catch up on player news** &mdash; a Recent News card on the Home tab shows
   the last 90 days of news for players on your roster.
-- **See what the league is doing** &mdash; a League Activity card on the My Team
+- **See what the league is doing** &mdash; a League Activity card on the Home
   tab shows recent trades and waiver/free-agent moves from every team, not
   just yours.
 - **Look up any player** &mdash; click a player's name anywhere in the app (My
@@ -55,7 +57,7 @@ you type is sent anywhere except Sleeper's API.
 2. Enter your Sleeper **username** and the **season** (e.g. `2026`), then click
    "Find my leagues".
 3. Pick one of your leagues from the dropdown and click "Load league".
-4. Use the tabs to browse **My Team**, **Standings**, **Trade Finder**,
+4. Use the tabs to browse **Home**, **Standings**, **Trade Finder**,
    **Trending**, **Age Curve**, **Outlook**, and **Evaluator**.
 
 Your username and chosen league are remembered in your browser (`localStorage`)
@@ -246,7 +248,7 @@ intended for syndication. `.github/workflows/refresh-player-news.yml` runs
    otherwise coverage would be capped at whatever sliver of news happened
    to still be in the feed at the moment of that one fetch.
 
-The My Team tab's Recent News card fetches that accumulated file and filters
+The Home tab's Recent News card fetches that accumulated file and filters
 it client-side down to players on your currently-loaded roster, from the
 last 90 days &mdash; so switching leagues re-filters the same broad dataset
 rather than needing a per-league fetch. Uses the same `GCP_SA_KEY` secret as
@@ -254,7 +256,7 @@ the Trending refresh; no separate credential needed.
 
 ## How League Activity works
 
-The League Activity card on the My Team tab reads directly from Sleeper's
+The League Activity card on the Home tab reads directly from Sleeper's
 `/league/{id}/transactions/{week}` endpoint &mdash; no BigQuery pipeline
 involved, since this is inherently per-league, real-time data Sleeper already
 serves live. Sleeper buckets transactions by week, so on load the app fetches
@@ -408,7 +410,7 @@ share directly from BigQuery per season/week; the front-end computes the
 per-attempt/per-carry/per-target ratios (Y/A, Y/C, Y/T, EPA/Attempt)
 client-side from those raw totals, same pattern as every other derived
 number in the app. These extra columns are Evaluator-only &mdash; the
-shared player card modal used everywhere else in the app (My Team, Trade
+shared player card modal used everywhere else in the app (Home, Trade
 Finder, Trending) still shows its plain original column set.
 
 The week-by-week chart and table are new: they come from
@@ -476,7 +478,7 @@ the app at `https://<your-username>.github.io/<repo-name>/`.
 python3 -m http.server 8000
 ```
 
-then open `http://localhost:8000`. My Team / Standings / Trade Finder also
+then open `http://localhost:8000`. Home / Standings / Trade Finder also
 work opening `index.html` directly via `file://`, since Sleeper's API allows
 cross-origin requests &mdash; but the Trending tab needs a real HTTP server,
 since browsers block `fetch()` of local files (like `data/rising_metrics.json`)

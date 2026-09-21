@@ -521,6 +521,22 @@ h3 {
 }
 h3:first-of-type { margin-top: 4px; }
 
+/* A .card whose whole body is wrapped in <details> (e.g. the Roster card)
+   -- reuses the same disclosure-arrow treatment as .metric-card's
+   per-metric collapsibles, just scoped generically so any card can opt in
+   by wrapping its content in <details><summary>. */
+.card > details > summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+.card > details > summary::-webkit-details-marker { display: none; }
+.card > details > summary::marker { content: ""; }
+.card > details > summary h2 { flex: 1 1 auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.card > details > summary .chevron { flex-shrink: 0; color: var(--text-faint); transition: transform 0.15s ease; }
+.card > details[open] > summary .chevron { transform: rotate(90deg); }
+
 .metric-card summary {
   display: flex;
   align-items: center;
