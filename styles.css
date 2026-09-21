@@ -537,6 +537,28 @@ h3:first-of-type { margin-top: 4px; }
 .card > details > summary .chevron { flex-shrink: 0; color: var(--text-faint); transition: transform 0.15s ease; }
 .card > details[open] > summary .chevron { transform: rotate(90deg); }
 
+/* Each Roster subsection (Starters/Bench/IR/Taxi) is its own nested
+   <details>, independently collapsible from the card-level one above --
+   the vertical rhythm that used to live on h3's own margin now lives on
+   this wrapper instead, since the h3 is flattened to margin:0 inside the
+   summary row alongside its chevron. */
+.roster-group { margin: 22px 0 10px; }
+.roster-group:first-of-type { margin-top: 4px; }
+.roster-group summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+  list-style: none;
+}
+.roster-group summary::-webkit-details-marker { display: none; }
+.roster-group summary::marker { content: ""; }
+.roster-group summary h3 { margin: 0; }
+.roster-group summary .chevron { flex-shrink: 0; color: var(--text-faint); transition: transform 0.15s ease; }
+.roster-group[open] summary .chevron { transform: rotate(90deg); }
+.roster-group table { margin-top: 10px; }
+
 .metric-card summary {
   display: flex;
   align-items: center;
