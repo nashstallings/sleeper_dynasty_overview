@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T02:56:40Z",
+  "generated_at": "2026-09-21T08:35:57Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -91,6 +91,61 @@
       "description": "Reed (undisclosed) was carted off the field during Sunday's game at the Jets, Weston Hodkiewicz of the Packers' official site reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jayden-reed-16977",
       "pub_date": "2026-09-20T10:19:00Z"
+    },
+    {
+      "player_name": "Xavier Worthy",
+      "sleeper_id": "11624",
+      "gsis_id": "00-0039894",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Five catches in Week 2 win",
+      "description": "Worthy brought in five of seven targets for 25 yards and a touchdown in the Chiefs' 33-30 overtime win over the Colts on Sunday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/xavier-worthy-17687",
+      "pub_date": "2026-09-20T10:08:00Z"
+    },
+    {
+      "player_name": "Travis Kelce",
+      "sleeper_id": "1466",
+      "gsis_id": "00-0030506",
+      "position": "TE",
+      "team": "KCC",
+      "headline": "Signature showing in OT win",
+      "description": "Kelce secured nine of 11 targets for 101 yards and one touchdown in the Chiefs' 33-30 overtime win over the Colts on Sunday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/travis-kelce-8783",
+      "pub_date": "2026-09-20T10:03:00Z"
+    },
+    {
+      "player_name": "Rashee Rice",
+      "sleeper_id": "10229",
+      "gsis_id": "00-0039067",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Robust yardage total in OT win",
+      "description": "Rice brought in four of six targets for 83 yards in the Chiefs' 33-30 overtime win over the Colts on Sunday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rashee-rice-16963",
+      "pub_date": "2026-09-20T09:59:00Z"
+    },
+    {
+      "player_name": "Patrick Mahomes",
+      "sleeper_id": "4046",
+      "gsis_id": "00-0033873",
+      "position": "QB",
+      "team": "KCC",
+      "headline": "Vintage performance in OT win",
+      "description": "Mahomes completed 32 of 47 passes for 382 yards with three touchdowns and no interceptions while rushing twice for 17 yards in the Chiefs' 33-30 overtime win over the Colts on Sunday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/patrick-mahomes-11839",
+      "pub_date": "2026-09-20T09:33:00Z"
+    },
+    {
+      "player_name": "Kenneth Walker III",
+      "sleeper_id": "8151",
+      "gsis_id": "00-0038134",
+      "position": "RB",
+      "team": "KCC",
+      "headline": "Thrives with massive workload",
+      "description": "Walker rushed 24 times for 117 yards and brought in six of 10 targets for 61 yards in the Chiefs' 33-30 overtime win over the Colts on Sunday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenneth-walker-15909",
+      "pub_date": "2026-09-20T09:26:00Z"
     },
     {
       "player_name": "Puka Nacua",
