@@ -102,6 +102,7 @@ const state = {
   playerWeeklyStats: null,
   outlookView: "quadrants",
   outlookRows: null,
+  performersWeek: null,
   powerRankSort: "overall",
   powerRankExpanded: new Set(),
 };
@@ -292,6 +293,7 @@ async function loadLeague(leagueId) {
     renderTrending();
     renderAgeCurve();
     renderOutlook();
+    renderPerformers();
   } catch (err) {
     showError(err.message || String(err));
     setStatus("Failed to load league.");
@@ -2661,6 +2663,212 @@ function pointsColumnLabel() {
   return leagueScoringSettings() ? "Lg Pts" : "PPR Pts";
 }
 
+// ---------- top performers ----------
+
+// Sleeper's stats/projections endpoints use Sleeper's own short-form stat
+// keys (the same convention as league.scoring_settings, e.g. "pass_yd",
+// "rec_td"), not nflverse's naming. This adapts a Sleeper stat-line into the
+// shape computeLeaguePoints() already expects, so weekly Sleeper stats and
+// projections can be scored with the exact same league-scoring formula used
+// everywhere else in the app instead of duplicating it.
+function sleeperStatsToRaw(s) {
+  if (!s) return {};
+  return {
+    passing_yards: s.pass_yd,
+    passing_tds: s.pass_td,
+    interceptions: s.pass_int,
+    rushing_yards: s.rush_yd,
+    rushing_tds: s.rush_td,
+    receptions: s.rec,
+    receiving_yards: s.rec_yd,
+    receiving_tds: s.rec_td,
+    fantasy_points_ppr: s.pts_ppr,
+  };
+}
+
+// Sleeper's stats/projections endpoints aren't part of its documented
+// public API, and are unreachable from this environment to verify directly
+// -- the exact response shape is inferred from community reverse-engineering
+// and may not match exactly what Sleeper serves. Both a bare
+// {player_id: statsObject} map and an array of {player_id, stats} rows are
+// handled defensively; if the shape has changed, this simply returns an
+// empty map and the affected card shows its "couldn't load" empty state
+// rather than throwing.
+async function fetchSleeperWeekStats(kind, season, week) {
+  const url = `https://api.sleeper.app/${kind}/nfl/${season}/${week}?season_type=regular&position[]=QB&position[]=RB&position[]=WR&position[]=TE`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Sleeper ${kind} error (${res.status})`);
+  const data = await res.json();
+  const map = {};
+  if (Array.isArray(data)) {
+    data.forEach((row) => {
+      if (!row || !row.player_id) return;
+      map[row.player_id] = row.stats || {};
+    });
+  } else if (data && typeof data === "object") {
+    Object.keys(data).forEach((pid) => {
+      const row = data[pid];
+      map[pid] = (row && row.stats) || row || {};
+    });
+  }
+  return map;
+}
+
+// Combines a week's actual stat lines with (optionally) that week's
+// projections into per-player entries scored with this league's own
+// scoring settings. Players with an empty stat line (bye, DNP, not on an
+// active roster that week) are skipped; a real zero-point performance still
+// has stat keys present (e.g. targets with 0 catches) so it isn't confused
+// with a player who didn't play.
+function buildPerformerEntries(statsMap, projMap = null) {
+  const entries = [];
+  Object.keys(statsMap).forEach((pid) => {
+    const rawStats = statsMap[pid];
+    if (!rawStats || Object.keys(rawStats).length === 0) return;
+    const p = state.players[pid];
+    if (!p) return;
+    const pos = playerPosition(p);
+    if (!SKILL_POSITIONS.includes(pos)) return;
+
+    const entry = {
+      pid,
+      name: playerDisplay(p),
+      position: pos,
+      team: p.team,
+      points: computeLeaguePoints(sleeperStatsToRaw(rawStats), pos),
+      projPoints: null,
+      delta: null,
+    };
+    if (projMap && projMap[pid] && Object.keys(projMap[pid]).length > 0) {
+      entry.projPoints = computeLeaguePoints(sleeperStatsToRaw(projMap[pid]), pos);
+      entry.delta = entry.points - entry.projPoints;
+    }
+    entries.push(entry);
+  });
+  return entries;
+}
+
+function performerRowHtml(entry, mode) {
+  const status = leagueStatusForSleeperId(entry.pid);
+  const nameCell = `
+    <span class="player-name" data-player-id="${entry.pid}">${escapeHtml(entry.name)}</span><br/>
+    <span class="player-meta">${entry.team || "FA"}</span>`;
+  if (mode === "total") {
+    return `
+      <tr>
+        <td><span class="badge badge-${entry.position}">${entry.position}</span></td>
+        <td>${nameCell}</td>
+        <td>${entry.points.toFixed(1)}</td>
+        <td>${status.html}</td>
+      </tr>`;
+  }
+  const deltaSign = entry.delta > 0 ? "+" : "";
+  const deltaClass = entry.delta > 0 ? "delta-tag" : "delta-tag delta-tag-neg";
+  return `
+    <tr>
+      <td><span class="badge badge-${entry.position}">${entry.position}</span></td>
+      <td>${nameCell}</td>
+      <td class="player-meta">${entry.projPoints.toFixed(1)} &rarr; ${entry.points.toFixed(1)}</td>
+      <td><span class="${deltaClass}">${deltaSign}${entry.delta.toFixed(1)}</span></td>
+      <td>${status.html}</td>
+    </tr>`;
+}
+
+function performersTableHtml(rows, mode, emptyText) {
+  if (!rows.length) return emptyState(emptyText);
+  const headCols =
+    mode === "total"
+      ? `<th>Pos</th><th>Player</th><th>${pointsColumnLabel()}</th><th>League status</th>`
+      : `<th>Pos</th><th>Player</th><th>Proj &rarr; Actual</th><th>&Delta;</th><th>League status</th>`;
+  const body = rows.map((e) => performerRowHtml(e, mode)).join("");
+  return `
+    <div class="table-wrap">
+      <table>
+        <thead><tr>${headCols}</tr></thead>
+        <tbody>${body}</tbody>
+      </table>
+    </div>`;
+}
+
+function performersWeekOptionsHtml() {
+  const weeks = regularSeasonWeeks();
+  const selected = state.performersWeek || 1;
+  let opts = "";
+  for (let w = 1; w <= weeks; w++) {
+    opts += `<option value="${w}"${w === selected ? " selected" : ""}>Week ${w}</option>`;
+  }
+  return opts;
+}
+
+function renderPerformersPicker() {
+  const card = document.getElementById("performers-picker-card");
+  card.innerHTML = `
+    <h2>Top Performers</h2>
+    <p class="hero-copy">See who actually produced each week &mdash; by raw fantasy points, and by points above Sleeper's own weekly projection for that player.</p>
+    <div class="age-team-picker">
+      <label for="performers-week-select">Week</label>
+      <select id="performers-week-select">${performersWeekOptionsHtml()}</select>
+    </div>`;
+}
+
+function setupPerformersWeekSelect() {
+  document.addEventListener("change", (e) => {
+    if (e.target.id !== "performers-week-select") return;
+    state.performersWeek = Number(e.target.value);
+    renderPerformers();
+  });
+}
+
+const PERFORMERS_ROW_LIMIT = 15;
+
+async function renderPerformers() {
+  const weeks = regularSeasonWeeks();
+  const defaultWeek = state.currentWeek && state.currentWeek <= weeks ? state.currentWeek : 1;
+  if (!state.performersWeek || state.performersWeek > weeks) state.performersWeek = defaultWeek;
+  renderPerformersPicker();
+
+  const week = state.performersWeek;
+  const season = state.league && state.league.season;
+  const totalCard = document.getElementById("performers-total-card");
+  const paeCard = document.getElementById("performers-pae-card");
+
+  totalCard.innerHTML = `<h2>Total Points</h2><p class="spinner-note">Loading week ${week} stats from Sleeper...</p>`;
+  paeCard.innerHTML = `<h2>Points Above Expected</h2><p class="spinner-note">Loading week ${week} projections from Sleeper...</p>`;
+
+  let statsMap;
+  try {
+    statsMap = await fetchSleeperWeekStats("stats", season, week);
+  } catch {
+    if (state.performersWeek !== week) return;
+    const msg = "Couldn't load Sleeper's stats for this week.";
+    totalCard.innerHTML = `<h2>Total Points</h2>${emptyState(msg)}`;
+    paeCard.innerHTML = `<h2>Points Above Expected</h2>${emptyState(msg)}`;
+    return;
+  }
+  if (state.performersWeek !== week) return;
+
+  const totalRows = buildPerformerEntries(statsMap)
+    .sort((a, b) => b.points - a.points)
+    .slice(0, PERFORMERS_ROW_LIMIT);
+  totalCard.innerHTML = `<h2>Total Points</h2>${performersTableHtml(totalRows, "total", "No stats available for this week yet.")}`;
+
+  let projMap;
+  try {
+    projMap = await fetchSleeperWeekStats("projections", season, week);
+  } catch {
+    if (state.performersWeek !== week) return;
+    paeCard.innerHTML = `<h2>Points Above Expected</h2>${emptyState("Couldn't load Sleeper's projections for this week.")}`;
+    return;
+  }
+  if (state.performersWeek !== week) return;
+
+  const paeRows = buildPerformerEntries(statsMap, projMap)
+    .filter((e) => e.projPoints !== null)
+    .sort((a, b) => b.delta - a.delta)
+    .slice(0, PERFORMERS_ROW_LIMIT);
+  paeCard.innerHTML = `<h2>Points Above Expected</h2>${performersTableHtml(paeRows, "pae", "No projections available for this week yet.")}`;
+}
+
 const PLAYER_CARD_NEWS_WINDOW_DAYS = 90;
 
 function renderPlayerCardNews(pid, container = document.querySelector("#player-card .player-card-news")) {
@@ -3274,6 +3482,7 @@ function init() {
   setupAgeTeamSelect();
   setupTradeFinderScopeToggle();
   setupOutlookViewToggle();
+  setupPerformersWeekSelect();
   setupPowerRankSort();
   setupPowerRankExpand();
   setupEvaluatorSearch();

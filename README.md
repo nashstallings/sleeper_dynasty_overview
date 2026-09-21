@@ -48,6 +48,11 @@ football account and helps you:
   QB/RB/WR/TE in the league (not just players in your league) and see their
   season-by-season stat line for the last 5 seasons plus a week-by-week
   scoring chart and table for each of those seasons.
+- **See who actually produced each week** &mdash; a Performers tab shows,
+  for any regular-season week, the top Total Points scorers and the top
+  Points Above Expected performers (actual points minus Sleeper's own
+  weekly per-player projection), both scored with your league's scoring
+  settings.
 There is no backend, no build step, and no login. It's plain HTML/CSS/JS that
 talks directly to Sleeper's public, read-only API from your browser. Nothing
 you type is sent anywhere except Sleeper's API.
@@ -59,7 +64,7 @@ you type is sent anywhere except Sleeper's API.
    "Find my leagues".
 3. Pick one of your leagues from the dropdown and click "Load league".
 4. Use the tabs to browse **Home**, **Trade Finder**, **Trending**,
-   **Age Curve**, **Outlook**, and **Evaluator**.
+   **Age Curve**, **Outlook**, **Performers**, and **Evaluator**.
 
 Your username and chosen league are remembered in your browser (`localStorage`)
 so you won't have to re-enter them next time. Use "Switch league" to pick a
@@ -440,6 +445,36 @@ authoring session &mdash; the query mirrors the season-stats script closely
 enough that it should hold up, but if the scheduled workflow fails, check
 its logs before assuming the underlying data is unavailable.
 
+## How Top Performers works
+
+The Performers tab shows, for a selected regular-season week, two
+leaderboards side by side:
+
+- **Total Points** &mdash; every QB/RB/WR/TE's raw fantasy points that week.
+- **Points Above Expected** &mdash; the same players' actual points minus
+  Sleeper's own weekly per-player projection for that week (so a player who
+  was projected for 8 and scored 20 shows +12, while one projected for 20
+  who scored 8 shows -12). Anyone Sleeper didn't publish a projection for
+  that week is shown in Total Points but left out of this leaderboard
+  rather than treated as a 0-point projection.
+
+Both leaderboards fetch live from Sleeper's own weekly `stats` and
+`projections` endpoints (the same ones sleeper.com's own site uses) and
+score every stat line with your league's own scoring settings, via the
+same `computeLeaguePoints()` used everywhere else in the app &mdash; so it
+reflects your league's actual rules (PPR, TE premium, etc.), not a generic
+default. A week selector (defaulting to the current week) lets you look at
+any completed week of the loaded season.
+
+*A note on this specific integration:* these two Sleeper endpoints aren't
+part of Sleeper's [documented public API](https://docs.sleeper.com/) and
+were unreachable from the authoring session to verify live, so their exact
+response shape was inferred rather than confirmed against a real request.
+The app parses defensively (handling either an array of per-player rows or
+an object keyed by player ID) and simply shows "couldn't load" for a week
+if the shape has changed rather than breaking &mdash; if you see that on a
+week that should have data, that's the most likely reason.
+
 ## Player cards
 
 Click any player's name anywhere in the app &mdash; Starters/Bench, the
@@ -506,3 +541,8 @@ from a `file://` page.
   it's one row per player per week rather than per season. It's only
   fetched the first time you open the Evaluator tab, not on every page
   load.
+- The Performers tab's live Sleeper `stats`/`projections` endpoints are
+  unofficial and unconfirmed against a real request (see
+  [How Top Performers works](#how-top-performers-works)) &mdash; treat a
+  "couldn't load" state there as a possible shape mismatch, not necessarily
+  missing data.
