@@ -478,13 +478,13 @@ function leagueHasReserveSlot(settingsKey, rosterField) {
 // Starters gets slot labels (QB/FLEX/etc.); every other group is just a
 // flat position badge since there's no lineup slot to speak of on IR,
 // taxi, or the bench.
-function rosterGroupTableHtml(title, pids, { withSlots = false } = {}) {
+function rosterGroupTableHtml(title, pids, { withSlots = false, open = false } = {}) {
   const slots = withSlots ? startingSlots() : null;
   const rows = pids.length
     ? pids.map((pid, i) => playerRow(pid, withSlots ? { slot: slots[i] } : {})).join("")
     : `<tr><td colspan="3">${emptyState(`No ${title.toLowerCase()} players`)}</td></tr>`;
   return `
-    <details class="roster-group" open>
+    <details class="roster-group"${open ? " open" : ""}>
       <summary>
         <h3>${title}</h3>
         <svg class="chevron" viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden="true">
@@ -521,7 +521,7 @@ function renderRoster() {
     });
 
   const sections = [
-    rosterGroupTableHtml("Starters", starters, { withSlots: true }),
+    rosterGroupTableHtml("Starters", starters, { withSlots: true, open: true }),
     rosterGroupTableHtml("Bench", bench),
   ];
   if (leagueHasReserveSlot("reserve_slots", "reserve")) sections.push(rosterGroupTableHtml("IR", reserve));

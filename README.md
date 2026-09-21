@@ -3,10 +3,11 @@
 A small, static web app that connects to your [Sleeper](https://sleeper.com) fantasy
 football account and helps you:
 
-- **Track your team** &mdash; your current-week matchup and a collapsible
+- **Track your team** &mdash; your current-week matchup, a collapsible
   Roster card broken into Starters/Bench/IR/Taxi subsections (IR and Taxi
-  only show up if your league actually uses those slots).
-- **Check league standings** &mdash; records and points for/against for every team.
+  only show up if your league actually uses those slots; Starters starts
+  expanded, the rest start collapsed), and league standings right below
+  it &mdash; all on the Home tab, no separate Standings tab needed.
 - **Find trade targets** &mdash; flags your weakest roster positions (relative to the
   rest of the league) and surfaces bench players on other rosters who could fill
   those needs.
@@ -57,8 +58,8 @@ you type is sent anywhere except Sleeper's API.
 2. Enter your Sleeper **username** and the **season** (e.g. `2026`), then click
    "Find my leagues".
 3. Pick one of your leagues from the dropdown and click "Load league".
-4. Use the tabs to browse **Home**, **Standings**, **Trade Finder**,
-   **Trending**, **Age Curve**, **Outlook**, and **Evaluator**.
+4. Use the tabs to browse **Home**, **Trade Finder**, **Trending**,
+   **Age Curve**, **Outlook**, and **Evaluator**.
 
 Your username and chosen league are remembered in your browser (`localStorage`)
 so you won't have to re-enter them next time. Use "Switch league" to pick a
@@ -478,7 +479,7 @@ the app at `https://<your-username>.github.io/<repo-name>/`.
 python3 -m http.server 8000
 ```
 
-then open `http://localhost:8000`. Home / Standings / Trade Finder also
+then open `http://localhost:8000`. Home / Trade Finder also
 work opening `index.html` directly via `file://`, since Sleeper's API allows
 cross-origin requests &mdash; but the Trending tab needs a real HTTP server,
 since browsers block `fetch()` of local files (like `data/rising_metrics.json`)
