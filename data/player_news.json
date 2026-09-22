@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T21:35:51Z",
+  "generated_at": "2026-09-22T02:57:06Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -16,6 +16,17 @@
       "pub_date": "2026-09-21T08:09:00Z"
     },
     {
+      "player_name": "Jaxson Dart",
+      "sleeper_id": "12508",
+      "gsis_id": "00-0040691",
+      "position": "QB",
+      "team": "NYG",
+      "headline": "Won't return Monday",
+      "description": "Dart (knee) has been ruled out for the remainder of Monday's game against the Rams. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaxson-dart-18574",
+      "pub_date": "2026-09-21T07:05:00Z"
+    },
+    {
       "player_name": "Dallas Goedert",
       "sleeper_id": "5022",
       "gsis_id": "00-0034351",
@@ -25,6 +36,50 @@
       "description": "Goedert (knee) is slated to undergo an MRI on Monday after exiting Sunday's 24-20 win over the Titans, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/dallas-goedert-12860",
       "pub_date": "2026-09-21T06:29:00Z"
+    },
+    {
+      "player_name": "Darius Slayton",
+      "sleeper_id": "6149",
+      "gsis_id": "00-0035535",
+      "position": "WR",
+      "team": "FA",
+      "headline": "Linking up with Colts",
+      "description": "Slayton is set to sign with Indianapolis, Tom Pelissero of Netflix reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/darius-slayton-13522",
+      "pub_date": "2026-09-21T06:13:00Z"
+    },
+    {
+      "player_name": "Malik Nabers",
+      "sleeper_id": "11632",
+      "gsis_id": "00-0039337",
+      "position": "WR",
+      "team": "NYG",
+      "headline": "Returns to Monday's contest",
+      "description": "Nabers (shoulder) returned to Monday's game against the Rams in the second quarter, Connor Hughes of SNY.tv reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
+      "pub_date": "2026-09-21T06:11:00Z"
+    },
+    {
+      "player_name": "Alec Pierce",
+      "sleeper_id": "8142",
+      "gsis_id": "00-0037664",
+      "position": "WR",
+      "team": "IND",
+      "headline": "Bypassing surgery, out 'several' weeks",
+      "description": "Pierce (heel) will try to rehab his injured left heel without surgery and could return around midseason if all goes well, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/alec-pierce-16022",
+      "pub_date": "2026-09-21T06:03:00Z"
+    },
+    {
+      "player_name": "Malik Nabers",
+      "sleeper_id": "11632",
+      "gsis_id": "00-0039337",
+      "position": "WR",
+      "team": "NYG",
+      "headline": "Sustains apparent arm injury",
+      "description": "Nabers left Monday's game against the Rams with an apparent right arm injury and is questionable to return, Ralph Vacchiano of FoxSports.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
+      "pub_date": "2026-09-21T05:59:00Z"
     },
     {
       "player_name": "Jayden Reed",
