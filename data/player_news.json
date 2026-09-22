@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-09-22T18:27:38Z",
+  "generated_at": "2026-09-22T23:25:57Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jameis Winston",
+      "sleeper_id": "2306",
+      "gsis_id": "00-0031503",
+      "position": "QB",
+      "team": "NYG",
+      "headline": "Extended starting opportunity awaits",
+      "description": "Winston could be in line for an extended run as the Giants' starting quarterback after Jaxson Dart sustained a more serious knee injury than anticipated in Monday's 28-6 loss to the Rams, Ian Rapoport and Mike Garafolo of NFL Network report. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jameis-winston-10037",
+      "pub_date": "2026-09-22T12:08:00Z"
+    },
     {
       "player_name": "Tyson Bagent",
       "sleeper_id": "11256",
@@ -36,6 +47,50 @@
       "description": "Rams head coach Sean McVay acknowledged Tuesday that he's uncertain if Nacua (groin) will be available for Sunday's game against the Broncos, Gary Klein of the Los Angeles Times reports. \"I'm not sure what his status is as far as this next coming week,\" McVay said of Nacua. \"I'm hopeful that he'll play.... If he's ready to go, great. If not, then we'll continue to roll.\" Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
       "pub_date": "2026-09-22T08:39:00Z"
+    },
+    {
+      "player_name": "Jayden Reed",
+      "sleeper_id": "10222",
+      "gsis_id": "00-0039146",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Back in Green Bay, still without timeline",
+      "description": "Packers head coach Matt LaFleur said Tuesday that Reed has returned to Green Bay to undergo further testing and consultations with doctors for his neck injury, Ryan Wood of USA Today. The wide receiver remains without a timeline for a return. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jayden-reed-16977",
+      "pub_date": "2026-09-22T03:16:00Z"
+    },
+    {
+      "player_name": "Rico Dowdle",
+      "sleeper_id": "7021",
+      "gsis_id": "00-0036139",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "Viewed as day-to-day",
+      "description": "Dowdle \"checked out relatively OK\" after undergoing testing on his toe injury Tuesday and is considered day-to-day, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rico-dowdle-14657",
+      "pub_date": "2026-09-22T02:43:00Z"
+    },
+    {
+      "player_name": "Jayden Reed",
+      "sleeper_id": "10222",
+      "gsis_id": "00-0039146",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Spectator for practice Tuesday",
+      "description": "Reed (neck) was listed as a non-participant for Tuesday's walkthrough practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jayden-reed-16977",
+      "pub_date": "2026-09-22T01:49:00Z"
+    },
+    {
+      "player_name": "Tua Tagovailoa",
+      "sleeper_id": "6768",
+      "gsis_id": "00-0036212",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Turns in full practice",
+      "description": "Tagovailoa (oblique) was a full participant in Tuesday's practice, Tori McElhaney of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tua-tagovailoa-14465",
+      "pub_date": "2026-09-22T01:08:00Z"
     },
     {
       "player_name": "Isaiah Likely",
