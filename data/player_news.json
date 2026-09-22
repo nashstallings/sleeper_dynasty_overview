@@ -1,9 +1,42 @@
 {
-  "generated_at": "2026-09-22T13:50:36Z",
+  "generated_at": "2026-09-22T18:27:38Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Tyson Bagent",
+      "sleeper_id": "11256",
+      "gsis_id": "00-0038416",
+      "position": "QB",
+      "team": "CHI",
+      "headline": "Placed in concussion protocol",
+      "description": "Bagent was diagnosed with a concussion and placed in the five-step protocol Tuesday, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyson-bagent-16946",
+      "pub_date": "2026-09-22T11:18:00Z"
+    },
+    {
+      "player_name": "Zach Ertz",
+      "sleeper_id": "1339",
+      "gsis_id": "00-0030061",
+      "position": "TE",
+      "team": "FA",
+      "headline": "Signs deal with Eagles",
+      "description": "Ertz signed a contract with the Eagles on Tuesday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zach-ertz-8781",
+      "pub_date": "2026-09-22T10:22:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Status uncertain heading into Week 3",
+      "description": "Rams head coach Sean McVay acknowledged Tuesday that he's uncertain if Nacua (groin) will be available for Sunday's game against the Broncos, Gary Klein of the Los Angeles Times reports. \"I'm not sure what his status is as far as this next coming week,\" McVay said of Nacua. \"I'm hopeful that he'll play.... If he's ready to go, great. If not, then we'll continue to roll.\" Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-09-22T08:39:00Z"
+    },
     {
       "player_name": "Isaiah Likely",
       "sleeper_id": "8131",
