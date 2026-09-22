@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-22T02:57:06Z",
+  "generated_at": "2026-09-22T08:16:40Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Isaiah Likely",
+      "sleeper_id": "8131",
+      "gsis_id": "00-0037838",
+      "position": "TE",
+      "team": "NYG",
+      "headline": "Solid despite Dart injury",
+      "description": "Likely secured five of 10 targets for 33 yards in the Giants' 28-6 loss to the Rams on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/isaiah-likely-16033",
+      "pub_date": "2026-09-21T09:10:00Z"
+    },
+    {
+      "player_name": "Jameis Winston",
+      "sleeper_id": "2306",
+      "gsis_id": "00-0031503",
+      "position": "QB",
+      "team": "NYG",
+      "headline": "Forgettable effort in emergency duty",
+      "description": "Winston replaced Jaxson Dart (knee) with 9:51 remaining in the first quarter of Monday night's 28-6 loss to the Rams and completed 11 of 27 passes for 111 yards with no touchdowns and one interception while rushing twice for one yard. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jameis-winston-10037",
+      "pub_date": "2026-09-21T09:05:00Z"
+    },
+    {
+      "player_name": "Matthew Stafford",
+      "sleeper_id": "421",
+      "gsis_id": "00-0026498",
+      "position": "QB",
+      "team": "LAR",
+      "headline": "Vintage effort sans Nacua in win",
+      "description": "Stafford completed 22 of 31 passes for 327 yards with four touchdowns and one interception and rushed four times for minus-1 yard in the Rams' 28-6 win over the Giants on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/matthew-stafford-5971",
+      "pub_date": "2026-09-21T08:57:00Z"
+    },
+    {
+      "player_name": "Blake Corum",
+      "sleeper_id": "11586",
+      "gsis_id": "00-0039738",
+      "position": "RB",
+      "team": "LAR",
+      "headline": "Even timeshare with Williams",
+      "description": "Corum rushed 12 times for 79 yards and brought in his only target for 13 yards in the Rams' 28-6 win over the Giants on Monday night. He also fumbled once but recovered. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/blake-corum-17690",
+      "pub_date": "2026-09-21T08:51:00Z"
+    },
+    {
+      "player_name": "Malik Nabers",
+      "sleeper_id": "11632",
+      "gsis_id": "00-0039337",
+      "position": "WR",
+      "team": "NYG",
+      "headline": "Major downturn in Week 2 loss",
+      "description": "Nabers brought in one of four targets for one yard in the Giants' 28-6 loss to the Rams on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
+      "pub_date": "2026-09-21T08:47:00Z"
+    },
     {
       "player_name": "J.K. Dobbins",
       "sleeper_id": "6806",
