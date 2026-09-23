@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-23T14:01:42Z",
+  "generated_at": "2026-09-23T18:46:59Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Aaron Jones",
+      "sleeper_id": "4199",
+      "gsis_id": "00-0033293",
+      "position": "RB",
+      "team": "MIN",
+      "headline": "Missing practice Wednesday",
+      "description": "Jones (undisclosed) won't participate in Wednesday's practice, Alec Lewis of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aaron-jones-11763",
+      "pub_date": "2026-09-23T11:41:00Z"
+    },
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Practicing, but not taking contact",
+      "description": "Moore (shoulder) was spotted participating in Wednesday's practice while wearing a red non-contact jersey, Katherine Fitzgerald of The Buffalo News reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-09-23T11:32:00Z"
+    },
+    {
+      "player_name": "Nico Collins",
+      "sleeper_id": "7569",
+      "gsis_id": "00-0036554",
+      "position": "WR",
+      "team": "HOU",
+      "headline": "Not seen at practice",
+      "description": "Collins (hamstring) wasn't spotted at the media-access portion of Wednesday's practice, DJ Bien-Aime of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/nico-collins-15200",
+      "pub_date": "2026-09-23T11:05:00Z"
+    },
+    {
+      "player_name": "Brock Bowers",
+      "sleeper_id": "11604",
+      "gsis_id": "00-0039338",
+      "position": "TE",
+      "team": "LVR",
+      "headline": "Practicing Wednesday",
+      "description": "Head coach Klint Kubiak said Bowers (knee) will practice Wednesday and termed the tight end \"day-to-day,\" Ryan McFadden of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/brock-bowers-17693",
+      "pub_date": "2026-09-23T11:01:00Z"
+    },
+    {
+      "player_name": "Andrei Iosivas",
+      "sleeper_id": "10226",
+      "gsis_id": "00-0038619",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "Needs thumb surgery, bound for IR",
+      "description": "Bengals head coach Zac Taylor said Wednesday that Iosivas tore a ligament in his thumb and will be placed on injured reserve, Ben Baby of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/andrei-iosivas-16965",
+      "pub_date": "2026-09-23T10:29:00Z"
+    },
     {
       "player_name": "Jonathon Brooks",
       "sleeper_id": "11583",
