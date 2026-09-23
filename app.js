@@ -1687,6 +1687,25 @@ function buySellColumnHtml(title, cls, entries, def, emptyText) {
     </div>`;
 }
 
+// The comparison window is the last 8 weeks of football, which early in a
+// season reaches back into the previous one. A bare week number is ambiguous
+// once that happens ("weeks 17-2" reads as nonsense), so the refresh script
+// ships prebuilt labels and we use them. The fallback keeps older
+// rising_metrics.json files, written before those fields existed, rendering.
+function risingWindowLabel(data) {
+  if (data.recent_label && data.prior_label) {
+    const span = data.spans_seasons
+      ? " Spans the offseason, so rosters and roles changed in between."
+      : ` ${data.season} season.`;
+    return `${data.recent_label} vs. ${data.prior_label}.${span}`;
+  }
+  const first = (w) => (w && w.week !== undefined ? w.week : w);
+  const r = data.recent_weeks || [];
+  const p = data.prior_weeks || [];
+  return `Weeks ${first(r[0])}&ndash;${first(r[r.length - 1])} vs. weeks ` +
+    `${first(p[0])}&ndash;${first(p[p.length - 1])}, ${data.season} season.`;
+}
+
 function renderTrendingContent() {
   const introCard = document.getElementById("trending-card");
   const grid = document.getElementById("trending-grid");
@@ -1697,8 +1716,7 @@ function renderTrendingContent() {
   introCard.innerHTML = `
     <h2>Rising metrics</h2>
     <p class="player-meta">
-      Weeks ${data.recent_weeks[0]}&ndash;${data.recent_weeks[data.recent_weeks.length - 1]} vs.
-      weeks ${data.prior_weeks[0]}&ndash;${data.prior_weeks[data.prior_weeks.length - 1]}, ${data.season} season.
+      ${risingWindowLabel(data)}
       Sourced from <a href="https://nflreadr.nflverse.com/" target="_blank" rel="noopener">nflverse</a> play-by-play data (refreshed weekly), cross-referenced against this league's rosters.
     </p>
     <p class="player-meta" style="margin-top:8px">
