@@ -9,6 +9,13 @@ position tab (QB/RB/WR/TE/FLEX/SFLEX) and re-sorts per metric itself, so
 this script doesn't need to precompute a separate leaderboard per
 position/metric combination.
 
+The window is the last 8 weeks of FOOTBALL, not of a season: it is built by
+ranking distinct (season, week) pairs, so in September it reaches back into
+the previous season rather than asking for weeks that have not been played.
+That means the two halves can straddle an offseason, during which rosters and
+roles changed -- `spans_seasons` in the output says when that is true, and the
+front-end says so on the card.
+
 No injury-report data is loaded into BigQuery, so weeks a player was
 playing hurt (or barely played) are approximated instead of detected
 directly: a week is excluded for a player if their snap share that week
@@ -43,16 +50,35 @@ MIN_ATTEMPTS_PER_WEEK = 10
 MIN_SNAP_SHARE_RECENT = 0.5
 
 QUERY = f"""
-WITH bounds AS (
-  SELECT MAX(week) AS max_wk, MAX(season) AS season
-  FROM `{PROJECT_ID}.{DATASET}.player_stats`
-  WHERE season_type = 'REG'
+WITH window_weeks AS (
+  -- The last 8 weeks of football, which may cross a season boundary.
+  --
+  -- Ranking distinct (season, week) pairs is what makes that work. The old
+  -- version took MAX(week) and MAX(season) independently over the whole
+  -- table, which agrees only while the newest season is complete. In
+  -- September the newest season has two weeks and MAX(week) still returns 18
+  -- from the season before, so the window asked for weeks 11-18 of a season
+  -- that had played two -- and every player fell out. Nothing errored; the
+  -- tab just went blank.
+  SELECT season, week, recency,
+         IF(recency <= 4, 'recent', 'prior') AS bucket
+  FROM (
+    SELECT season, week,
+           ROW_NUMBER() OVER (ORDER BY season DESC, week DESC) AS recency
+    FROM (
+      SELECT DISTINCT season, week
+      FROM `{PROJECT_ID}.{DATASET}.player_stats`
+      WHERE season_type = 'REG'
+    )
+  )
+  WHERE recency <= 8
 ),
 raw_stats AS (
   SELECT
     ps.player_id, pl.gsis_id,
     CASE WHEN pl.sleeper_id IS NOT NULL THEN CAST(CAST(pl.sleeper_id AS INT64) AS STRING) END AS sleeper_id,
-    ps.player_display_name AS name, ps.position, ps.team, ps.week,
+    ps.player_display_name AS name, ps.position, ps.team,
+    ps.season, ps.week, w.bucket,
     ps.target_share, ps.wopr, ps.targets, ps.carries, ps.attempts,
     ps.air_yards_share, ps.passing_cpoe,
     SAFE_DIVIDE(ps.receiving_yards, NULLIF(ps.targets, 0)) AS ypt,
@@ -61,13 +87,12 @@ raw_stats AS (
     SAFE_DIVIDE(ps.passing_epa, NULLIF(ps.attempts, 0)) AS epa_per_att,
     sn.offense_pct AS snap_pct
   FROM `{PROJECT_ID}.{DATASET}.player_stats` ps
+  JOIN window_weeks w ON w.season = ps.season AND w.week = ps.week
   LEFT JOIN `{PROJECT_ID}.{DATASET}.players` pl ON pl.gsis_id = ps.player_id
   LEFT JOIN `{PROJECT_ID}.{DATASET}.snap_counts` sn
     ON sn.pfr_player_id = pl.pfr_id AND sn.week = ps.week AND sn.season = ps.season AND sn.game_type = 'REG'
-  CROSS JOIN bounds
-  WHERE ps.season = bounds.season AND ps.season_type = 'REG'
+  WHERE ps.season_type = 'REG'
     AND ps.position IN ('QB', 'RB', 'WR', 'TE')
-    AND ps.week > bounds.max_wk - 8
 ),
 -- a player's own peak snap share over the window stands in for their "healthy" role
 baseline AS (
@@ -87,30 +112,30 @@ stats AS (
 windows AS (
   SELECT
     player_id, ANY_VALUE(gsis_id) gsis_id, ANY_VALUE(sleeper_id) sleeper_id,
-    ANY_VALUE(name) name, ANY_VALUE(position) position, ANY_VALUE(team) team,
-    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, snap_pct, NULL)) recent_snap_pct,
-    AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, snap_pct, NULL)) prior_snap_pct,
-    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, target_share, NULL)) recent_target_share,
-    AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, target_share, NULL)) prior_target_share,
-    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, ypt, NULL)) recent_ypt,
-    AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, ypt, NULL)) prior_ypt,
-    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, wopr, NULL)) recent_wopr,
-    AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, wopr, NULL)) prior_wopr,
-    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, ypc, NULL)) recent_ypc,
-    AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, ypc, NULL)) prior_ypc,
-    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, ypa, NULL)) recent_ypa,
-    AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, ypa, NULL)) prior_ypa,
-    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, epa_per_att, NULL)) recent_epa,
-    AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, epa_per_att, NULL)) prior_epa,
-    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, air_yards_share, NULL)) recent_air_yards_share,
-    AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, air_yards_share, NULL)) prior_air_yards_share,
-    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, passing_cpoe, NULL)) recent_cpoe,
-    AVG(IF(week <= (SELECT max_wk FROM bounds) - 4, passing_cpoe, NULL)) prior_cpoe,
-    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, targets, NULL)) recent_targets_avg,
-    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, carries, NULL)) recent_carries_avg,
-    AVG(IF(week > (SELECT max_wk FROM bounds) - 4, attempts, NULL)) recent_attempts_avg,
-    COUNTIF(week > (SELECT max_wk FROM bounds) - 4) recent_games,
-    COUNTIF(week <= (SELECT max_wk FROM bounds) - 4) prior_games
+    ANY_VALUE(name) name, ANY_VALUE(position) position, ARRAY_AGG(team ORDER BY season DESC, week DESC LIMIT 1)[OFFSET(0)] team,
+    AVG(IF(bucket = 'recent', snap_pct, NULL)) recent_snap_pct,
+    AVG(IF(bucket = 'prior', snap_pct, NULL)) prior_snap_pct,
+    AVG(IF(bucket = 'recent', target_share, NULL)) recent_target_share,
+    AVG(IF(bucket = 'prior', target_share, NULL)) prior_target_share,
+    AVG(IF(bucket = 'recent', ypt, NULL)) recent_ypt,
+    AVG(IF(bucket = 'prior', ypt, NULL)) prior_ypt,
+    AVG(IF(bucket = 'recent', wopr, NULL)) recent_wopr,
+    AVG(IF(bucket = 'prior', wopr, NULL)) prior_wopr,
+    AVG(IF(bucket = 'recent', ypc, NULL)) recent_ypc,
+    AVG(IF(bucket = 'prior', ypc, NULL)) prior_ypc,
+    AVG(IF(bucket = 'recent', ypa, NULL)) recent_ypa,
+    AVG(IF(bucket = 'prior', ypa, NULL)) prior_ypa,
+    AVG(IF(bucket = 'recent', epa_per_att, NULL)) recent_epa,
+    AVG(IF(bucket = 'prior', epa_per_att, NULL)) prior_epa,
+    AVG(IF(bucket = 'recent', air_yards_share, NULL)) recent_air_yards_share,
+    AVG(IF(bucket = 'prior', air_yards_share, NULL)) prior_air_yards_share,
+    AVG(IF(bucket = 'recent', passing_cpoe, NULL)) recent_cpoe,
+    AVG(IF(bucket = 'prior', passing_cpoe, NULL)) prior_cpoe,
+    AVG(IF(bucket = 'recent', targets, NULL)) recent_targets_avg,
+    AVG(IF(bucket = 'recent', carries, NULL)) recent_carries_avg,
+    AVG(IF(bucket = 'recent', attempts, NULL)) recent_attempts_avg,
+    COUNTIF(bucket = 'recent') recent_games,
+    COUNTIF(bucket = 'prior') prior_games
   FROM stats
   GROUP BY player_id
 )
@@ -166,10 +191,19 @@ FROM windows
 WHERE recent_games >= 2 AND prior_games >= 2
 """
 
-BOUNDS_QUERY = f"""
-SELECT MAX(season) AS season, MAX(week) AS max_wk
-FROM `{PROJECT_ID}.{DATASET}.player_stats`
-WHERE season_type = 'REG'
+WINDOW_QUERY = f"""
+SELECT season, week, recency, IF(recency <= 4, 'recent', 'prior') AS bucket
+FROM (
+  SELECT season, week,
+         ROW_NUMBER() OVER (ORDER BY season DESC, week DESC) AS recency
+  FROM (
+    SELECT DISTINCT season, week
+    FROM `{PROJECT_ID}.{DATASET}.player_stats`
+    WHERE season_type = 'REG'
+  )
+)
+WHERE recency <= 8
+ORDER BY recency
 """
 
 INJURY_NOTE = (
@@ -266,13 +300,35 @@ def get_client():
     return bigquery.Client(project=PROJECT_ID, credentials=credentials)
 
 
+def _window_label(weeks: list[dict]) -> str:
+    """Human label for one half of the window, e.g. "2025 wk17-2026 wk2".
+
+    Collapses to "wk13-wk16" when the half sits inside one season, which is
+    the normal case from about October on.
+    """
+    if not weeks:
+        return "n/a"
+    ordered = sorted(weeks, key=lambda w: (w["season"], w["week"]))
+    first, last = ordered[0], ordered[-1]
+    if first["season"] == last["season"]:
+        return f"wk{first['week']}-wk{last['week']}"
+    return f"{first['season']} wk{first['week']}-{last['season']} wk{last['week']}"
+
+
 def main():
     client = get_client()
 
-    bounds = list(client.query(BOUNDS_QUERY).result())[0]
-    season, max_wk = bounds.season, bounds.max_wk
-    recent_weeks = list(range(max_wk - 3, max_wk + 1))
-    prior_weeks = list(range(max_wk - 7, max_wk - 3))
+    # Read the window back rather than reconstructing it arithmetically --
+    # it can straddle two seasons, so there is no single week range to derive.
+    window = [
+        {"season": r.season, "week": r.week, "bucket": r.bucket}
+        for r in client.query(WINDOW_QUERY).result()
+    ]
+    recent_weeks = [w for w in window if w["bucket"] == "recent"]
+    prior_weeks = [w for w in window if w["bucket"] == "prior"]
+    seasons = sorted({w["season"] for w in window})
+    season = max(seasons)
+    spans_seasons = len(seasons) > 1
 
     rows = list(client.query(QUERY).result())
 
@@ -306,8 +362,15 @@ def main():
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "season": season,
         "season_type": "REG",
+        # Each entry is {season, week}: early in a season the window reaches
+        # back into the previous one, so a bare week number is ambiguous.
         "recent_weeks": recent_weeks,
         "prior_weeks": prior_weeks,
+        "spans_seasons": spans_seasons,
+        # Prebuilt so the front-end never has to decide how to render a range
+        # that may or may not cross a season.
+        "recent_label": _window_label(recent_weeks),
+        "prior_label": _window_label(prior_weeks),
         "injury_filter": {
             "min_peak_snap_pct": INJURY_MIN_PEAK_SNAP_PCT,
             "drop_threshold": INJURY_DROP_THRESHOLD,
@@ -319,7 +382,11 @@ def main():
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(output, indent=2) + "\n")
-    print(f"Wrote {OUT_PATH} ({len(players)} players, season {season}, weeks {prior_weeks} -> {recent_weeks})")
+    print(
+        f"Wrote {OUT_PATH}: {len(players)} players, "
+        f"{_window_label(prior_weeks)} -> {_window_label(recent_weeks)}"
+        + (" (window crosses a season boundary)" if spans_seasons else "")
+    )
 
 
 if __name__ == "__main__":
