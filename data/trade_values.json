@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T15:53:24.574490+00:00",
+  "generated_at": "2026-09-23T15:42:44.738230+00:00",
   "source": "DynastyProcess",
   "source_url": "https://github.com/dynastyprocess/data",
   "players": {
@@ -3400,30 +3400,6 @@
     }
   },
   "picks": {
-    "2027 3rd": {
-      "value_1qb": 40,
-      "value_2qb": 56
-    },
-    "2028 5th": {
-      "value_1qb": 4,
-      "value_2qb": 6
-    },
-    "2028 2nd": {
-      "value_1qb": 172,
-      "value_2qb": 220
-    },
-    "2026 5th": {
-      "value_1qb": 6,
-      "value_2qb": 10
-    },
-    "2027 5th": {
-      "value_1qb": 5,
-      "value_2qb": 8
-    },
-    "2026 2nd": {
-      "value_1qb": 294,
-      "value_2qb": 370
-    },
     "2028 1st": {
       "value_1qb": 1492,
       "value_2qb": 1715
@@ -3432,21 +3408,21 @@
       "value_1qb": 216,
       "value_2qb": 274
     },
-    "2028 4th": {
-      "value_1qb": 9,
-      "value_2qb": 14
+    "2026 3rd": {
+      "value_1qb": 52,
+      "value_2qb": 70
     },
-    "2026 1st": {
-      "value_1qb": 2750,
-      "value_2qb": 3115
+    "2027 5th": {
+      "value_1qb": 5,
+      "value_2qb": 8
     },
     "2027 1st": {
       "value_1qb": 1865,
       "value_2qb": 2144
     },
-    "2026 4th": {
-      "value_1qb": 14,
-      "value_2qb": 22
+    "2026 2nd": {
+      "value_1qb": 294,
+      "value_2qb": 370
     },
     "2028 3rd": {
       "value_1qb": 32,
@@ -3456,9 +3432,33 @@
       "value_1qb": 11,
       "value_2qb": 18
     },
-    "2026 3rd": {
-      "value_1qb": 52,
-      "value_2qb": 70
+    "2026 5th": {
+      "value_1qb": 6,
+      "value_2qb": 10
+    },
+    "2026 1st": {
+      "value_1qb": 2750,
+      "value_2qb": 3115
+    },
+    "2028 2nd": {
+      "value_1qb": 172,
+      "value_2qb": 220
+    },
+    "2026 4th": {
+      "value_1qb": 14,
+      "value_2qb": 22
+    },
+    "2028 5th": {
+      "value_1qb": 4,
+      "value_2qb": 6
+    },
+    "2027 3rd": {
+      "value_1qb": 40,
+      "value_2qb": 56
+    },
+    "2028 4th": {
+      "value_1qb": 9,
+      "value_2qb": 14
     }
   }
 }
