@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T23:25:57Z",
+  "generated_at": "2026-09-23T02:57:19Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -49,6 +49,17 @@
       "pub_date": "2026-09-22T08:39:00Z"
     },
     {
+      "player_name": "Sam Darnold",
+      "sleeper_id": "4943",
+      "gsis_id": "00-0034869",
+      "position": "QB",
+      "team": "SEA",
+      "headline": "Will practice Wednesday",
+      "description": "Darnold (glute) will practice Wednesday, according to Ian Rapoport of NFL Network. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/sam-darnold-12490",
+      "pub_date": "2026-09-22T04:31:00Z"
+    },
+    {
       "player_name": "Jayden Reed",
       "sleeper_id": "10222",
       "gsis_id": "00-0039146",
@@ -58,6 +69,17 @@
       "description": "Packers head coach Matt LaFleur said Tuesday that Reed has returned to Green Bay to undergo further testing and consultations with doctors for his neck injury, Ryan Wood of USA Today. The wide receiver remains without a timeline for a return. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jayden-reed-16977",
       "pub_date": "2026-09-22T03:16:00Z"
+    },
+    {
+      "player_name": "Mason Taylor",
+      "sleeper_id": "12498",
+      "gsis_id": "00-0040736",
+      "position": "TE",
+      "team": "NYJ",
+      "headline": "Likely out for Week 3",
+      "description": "Taylor (thumb) is considered week-to-week and will likely miss Sunday's game against the Lions, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mason-taylor-18535",
+      "pub_date": "2026-09-22T03:08:00Z"
     },
     {
       "player_name": "Rico Dowdle",
