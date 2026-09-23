@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T18:46:59Z",
+  "generated_at": "2026-09-23T23:24:09Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -91,6 +91,61 @@
       "description": "Brooks is expected to undergo surgery Wednesday to repair a core-muscle injury and is likely to miss at least six weeks, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jonathon-brooks-17747",
       "pub_date": "2026-09-23T06:11:00Z"
+    },
+    {
+      "player_name": "Sam Darnold",
+      "sleeper_id": "4943",
+      "gsis_id": "00-0034869",
+      "position": "QB",
+      "team": "SEA",
+      "headline": "Officially limited to begin week",
+      "description": "Darnold (glute) officially was a limited practice participant Wednesday, John Boyle of the Seahawks' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/sam-darnold-12490",
+      "pub_date": "2026-09-23T04:02:00Z"
+    },
+    {
+      "player_name": "Jadarian Price",
+      "sleeper_id": "13286",
+      "gsis_id": "00-0041512",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Limited Wednesday",
+      "description": "Price (chest) practiced in a limited fashion Wednesday, John Boyle of the Seahawks' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
+      "pub_date": "2026-09-23T03:53:00Z"
+    },
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Feeling great following practice",
+      "description": "Moore (shoulder) \"felt great\" after getting in a limited practice Wednesday, Matt Parrino of The Syracuse Post-Standard reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-09-23T03:18:00Z"
+    },
+    {
+      "player_name": "Terrance Ferguson",
+      "sleeper_id": "12487",
+      "gsis_id": "00-0040737",
+      "position": "TE",
+      "team": "LAR",
+      "headline": "Tending to ankle issue",
+      "description": "Ferguson was limited at Wednesday's walkthrough due to an ankle injury, Nate Atkins of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terrance-ferguson-18497",
+      "pub_date": "2026-09-23T03:05:00Z"
+    },
+    {
+      "player_name": "Jonah Coleman",
+      "sleeper_id": "13345",
+      "gsis_id": "00-0041496",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "DNP on Wednesday",
+      "description": "Coleman (ankle) didn't practice Wednesday, Aric DiLalla of the Broncos' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonah-coleman-19241",
+      "pub_date": "2026-09-23T02:58:00Z"
     },
     {
       "player_name": "Jameis Winston",
