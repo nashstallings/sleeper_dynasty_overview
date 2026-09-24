@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T18:47:35Z",
+  "generated_at": "2026-09-24T23:43:11Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Flowers (hamstring) isn't practicing Thursday, though he worked out off to the side prior to practice, Kyle Goon of The Baltimore Banner reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
       "pub_date": "2026-09-24T10:04:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Another DNP on Thursday",
+      "description": "Evans (hip) didn't participate in Thursday's practice, Harrison Rich of the San Francisco Chronicle reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-09-24T04:38:00Z"
+    },
+    {
+      "player_name": "Jonah Coleman",
+      "sleeper_id": "13345",
+      "gsis_id": "00-0041496",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Sits out another practice",
+      "description": "Coleman (ankle) was listed as a non-participant on Thursday's injury report. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonah-coleman-19241",
+      "pub_date": "2026-09-24T04:33:00Z"
+    },
+    {
+      "player_name": "Jadarian Price",
+      "sleeper_id": "13286",
+      "gsis_id": "00-0041512",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Stays limited Thursday",
+      "description": "Price (chest) was limited in practice Thursday, John Boyle of the Seahawks' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
+      "pub_date": "2026-09-24T04:33:00Z"
+    },
+    {
+      "player_name": "RJ Harvey",
+      "sleeper_id": "12489",
+      "gsis_id": "00-0040730",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Upgrades to full practice",
+      "description": "Harvey (hamstring) was listed as a full participant on Thursday's injury report. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rj-harvey-18522",
+      "pub_date": "2026-09-24T04:29:00Z"
+    },
+    {
+      "player_name": "Sam Darnold",
+      "sleeper_id": "4943",
+      "gsis_id": "00-0034869",
+      "position": "QB",
+      "team": "SEA",
+      "headline": "Gets back to full Thursday",
+      "description": "Darnold (glute) was a full practice participant Thursday, John Boyle of the Seahawks' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/sam-darnold-12490",
+      "pub_date": "2026-09-24T04:28:00Z"
     },
     {
       "player_name": "Aaron Jones",
