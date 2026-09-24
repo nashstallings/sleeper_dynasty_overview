@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-24T13:58:20Z",
+  "generated_at": "2026-09-24T18:47:35Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Absent at start of practice",
+      "description": "Moore (shoulder) was not spotted on the practice field at the beginning of Thursday's session, Joe Buscaglia of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-09-24T11:41:00Z"
+    },
+    {
+      "player_name": "Jalen Coker",
+      "sleeper_id": "11646",
+      "gsis_id": "00-0039491",
+      "position": "WR",
+      "team": "CAR",
+      "headline": "Still bothered by ankle Thursday",
+      "description": "Coker (ankle) was spotted using an exercise bike at the beginning of Thursday's practice, Mike Kaye of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-coker-17976",
+      "pub_date": "2026-09-24T11:06:00Z"
+    },
+    {
+      "player_name": "Caleb Douglas",
+      "sleeper_id": "13296",
+      "gsis_id": "00-0041523",
+      "position": "WR",
+      "team": "MIA",
+      "headline": "Not spotted at practice",
+      "description": "Douglas (ankle) wasn't present at the open portion of Thursday's practice, David Furones of the South Florida Sun Sentinel reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/caleb-douglas-19343",
+      "pub_date": "2026-09-24T10:57:00Z"
+    },
+    {
+      "player_name": "Chris Bell",
+      "sleeper_id": "13311",
+      "gsis_id": "00-0041525",
+      "position": "WR",
+      "team": "MIA",
+      "headline": "Working on side Thursday",
+      "description": "Bell (knee) \"mostly worked on the side\" during the media-viewing portion of Thursday's practice, David Furones of the South Florida Sun Sentinel reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chris-bell-19309",
+      "pub_date": "2026-09-24T10:54:00Z"
+    },
+    {
+      "player_name": "Zay Flowers",
+      "sleeper_id": "9997",
+      "gsis_id": "00-0039064",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Not practicing again Thursday",
+      "description": "Flowers (hamstring) isn't practicing Thursday, though he worked out off to the side prior to practice, Kyle Goon of The Baltimore Banner reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
+      "pub_date": "2026-09-24T10:04:00Z"
+    },
     {
       "player_name": "Aaron Jones",
       "sleeper_id": "4199",
