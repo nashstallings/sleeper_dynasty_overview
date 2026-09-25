@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T16:21:07Z",
+  "generated_at": "2026-09-25T21:00:53Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Collins (hamstring) isn't practicing Friday and is slated to miss a second game in a row, Aaron Wilson reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/nico-collins-15200",
       "pub_date": "2026-09-25T08:49:00Z"
+    },
+    {
+      "player_name": "Zach Charbonnet",
+      "sleeper_id": "9753",
+      "gsis_id": "00-0039165",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "May practice next week",
+      "description": "Head coach Mike Macdonald said Friday that Charbonnet (knee) returning to practice next week is potentially \"on the table,\" Corbin Smith of SI.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zach-charbonnet-16897",
+      "pub_date": "2026-09-25T01:51:00Z"
+    },
+    {
+      "player_name": "Jadarian Price",
+      "sleeper_id": "13286",
+      "gsis_id": "00-0041512",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Ready for Sunday",
+      "description": "Head coach Mike Macdonald said Friday that Price (shoulder) received \"a ton of reps\" in practice this week and will be \"full go\" Sunday in Washington, Gregg Bell of The Tacoma News Tribune reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
+      "pub_date": "2026-09-25T01:45:00Z"
+    },
+    {
+      "player_name": "Jonah Coleman",
+      "sleeper_id": "13345",
+      "gsis_id": "00-0041496",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Won't play this week",
+      "description": "Coleman (ankle) has been ruled out for Sunday's game against the Rams. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonah-coleman-19241",
+      "pub_date": "2026-09-25T01:40:00Z"
+    },
+    {
+      "player_name": "Sam Darnold",
+      "sleeper_id": "4943",
+      "gsis_id": "00-0034869",
+      "position": "QB",
+      "team": "SEA",
+      "headline": "Returning to action Sunday",
+      "description": "Coach Mike Macdonald said Friday that Darnold (glute) is \"going to play\" Sunday at Washington, Curtis Crabtree of Fox 13 Seattle reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/sam-darnold-12490",
+      "pub_date": "2026-09-25T01:35:00Z"
+    },
+    {
+      "player_name": "Jonah Coleman",
+      "sleeper_id": "13345",
+      "gsis_id": "00-0041496",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Present for practice",
+      "description": "Coleman (ankle) returned to practice Friday, Zac Stevens of DNVR Sports reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonah-coleman-19241",
+      "pub_date": "2026-09-25T01:34:00Z"
     },
     {
       "player_name": "DJ Moore",
