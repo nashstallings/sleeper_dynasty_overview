@@ -2,10 +2,19 @@ name: Refresh NFL Byes
 
 on:
   schedule:
-    # Weekly, Tuesday 10:00 UTC -- byes are set once the schedule is
+    # Weekly, Wednesday 15:17 UTC. Byes are set once the schedule is
     # published and essentially never change, so this just needs to catch
     # the season's schedule going live and pick up next season's each year.
-    - cron: '0 10 * * 2'
+    #
+    # It reads nflreadpy.schedules, which fantasy_football's NFL Data Weekly
+    # Refresh writes on Tuesdays at 13:00 UTC. It used to run Tuesday 10:00,
+    # before that job, so it always read the previous week's table and a newly
+    # published schedule reached the site a week late. A full day after is
+    # deliberate: cron has run hours late on this account, and a same-day
+    # slot could still land before the data job does. 15:17 also sits ten
+    # minutes after the last of the daily dashboard jobs, so their commits
+    # don't collide.
+    - cron: '17 15 * * 3'
   workflow_dispatch:
 
 jobs:

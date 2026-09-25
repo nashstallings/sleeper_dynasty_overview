@@ -346,7 +346,8 @@ projected record moves on its own each week as real matchups are scored
 &mdash; there's nothing to refresh or recalculate by hand.
 
 `data/nfl_byes.json` comes from a weekly BigQuery job
-(`scripts/refresh_nfl_byes.py`) that derives each team's bye week from
+(`scripts/refresh_nfl_byes.py`, Wednesdays, the day after
+`fantasy_football` refreshes the schedule table) that derives each team's bye week from
 nflverse's schedule data (the week a team appears in neither `home_team`
 nor `away_team`) &mdash; the same `ff-python-api.nflreadpy` project the
 other refresh jobs pull from. If that file hasn't loaded yet, the
