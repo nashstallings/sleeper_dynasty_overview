@@ -358,6 +358,12 @@ def main():
             }
         )
 
+    # Query row order isn't guaranteed, so pin the list order; otherwise an
+    # unchanged result can still reshuffle and commit. The front-end re-sorts
+    # per metric, so this order is never displayed. Keys are left unsorted on
+    # purpose -- metric_defs keeps METRIC_DEFS' authored order.
+    players.sort(key=lambda p: (p["sleeper_id"] or "", p["name"] or ""))
+
     output = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "season": season,

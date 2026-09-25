@@ -138,7 +138,10 @@ def main():
     }
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    OUT_PATH.write_text(json.dumps(output, indent=2) + "\n")
+    # sort_keys: BigQuery returns rows in no guaranteed order, so without it a
+    # rewrite of the source table can reorder keys and produce a commit with no
+    # real change. app.js sorts seasons/weeks itself, so key order never shows.
+    OUT_PATH.write_text(json.dumps(output, indent=2, sort_keys=True) + "\n")
     print(
         f"Wrote {OUT_PATH}: {len(players)} players, seasons {sorted(seasons_seen)} "
         f"(matched={matched}, unmatched_no_sleeper_id={unmatched})"

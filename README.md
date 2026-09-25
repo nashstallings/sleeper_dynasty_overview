@@ -220,10 +220,20 @@ track.
 ### Keeping the trending data fresh
 
 `.github/workflows/refresh-rising-metrics.yml` re-runs the aggregation
-weekly (Tuesday mornings, after Monday Night Football) via
-`scripts/refresh_rising_metrics.py`, which queries a BigQuery project
-(`ff-python-api.nflreadpy`) populated by a companion daily job and commits
-the refreshed `data/rising_metrics.json` back to the repo.
+daily via `scripts/refresh_rising_metrics.py`, which queries a BigQuery
+project (`ff-python-api.nflreadpy`) and commits the refreshed
+`data/rising_metrics.json` back to the repo.
+
+That dataset is written by `nashstallings/fantasy_football`: stats every
+Tuesday after Monday Night Football, and `players` daily at 12:37 UTC. The
+refresh jobs here all run daily between 14:37 and 15:07 UTC, after the players
+refresh, so roster moves (new teams, signings) reach the site the same day;
+new stats still arrive once a week, since that's when games happen.
+
+A job commits only when its data actually changed. Every file carries a
+`generated_at` timestamp that differs on every run, so the commit step
+ignores a diff that touches nothing else -- otherwise each daily job would
+commit every day regardless.
 
 For the scheduled refresh to run, this repo needs a `GCP_SA_KEY` repository
 secret: a service account JSON key with BigQuery read access to that project
@@ -279,8 +289,9 @@ traded picks and FAAB; waiver claims show the winning bid.
 `scripts/refresh_player_ages.py` queries BigQuery's `players` table (the
 same one `refresh_player_season_stats.py` joins against for its
 `sleeper_id` crosswalk) for each QB/RB/WR/TE's `birth_date`, and commits
-the result to `data/player_ages.json`. Birth dates don't change, so the
-workflow just runs weekly to pick up new players (rookies, etc.) &mdash;
+the result to `data/player_ages.json`. Birth dates don't change, but the
+workflow runs daily with the others so newly signed players get an age the
+same day they appear on a roster &mdash;
 current age is computed client-side from `birth_date` at render time
 instead of being baked into the file, so it's never stale.
 
