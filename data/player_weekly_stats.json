@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T16:17:11Z",
+  "generated_at": "2026-09-26T18:04:15Z",
   "players": {
     "10210": {
       "name": "Cameron Latu",
@@ -31328,6 +31328,29 @@
             "targets": 2,
             "team": "GB",
             "wopr": 0.097
+          },
+          "3": {
+            "air_yards_share": -0.003,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 1.4,
+            "interceptions": 0,
+            "opponent": "ATL",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 4,
+            "receptions": 1,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.41,
+            "target_share": 0.02,
+            "targets": 1,
+            "team": "GB",
+            "wopr": 0.028
           }
         }
       }
@@ -37544,6 +37567,31 @@
             "receptions": 0,
             "rushing_tds": 0,
             "rushing_yards": 19,
+            "snap_share": 1.0,
+            "target_share": 0.0,
+            "targets": 0,
+            "team": "ATL",
+            "wopr": 0.0
+          }
+        },
+        "2026": {
+          "3": {
+            "air_yards_share": 0.0,
+            "attempts": 25,
+            "carries": 2,
+            "completions": 18,
+            "cpoe": 8.77,
+            "fantasy_points_ppr": 14.0,
+            "interceptions": 1,
+            "opponent": "GB",
+            "passing_epa": 9.511075021051639,
+            "passing_tds": 1,
+            "passing_yards": 256,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 0,
+            "rushing_yards": -2,
             "snap_share": 1.0,
             "target_share": 0.0,
             "targets": 0,
@@ -45635,6 +45683,29 @@
             "targets": 2,
             "team": "GB",
             "wopr": 0.09
+          },
+          "3": {
+            "air_yards_share": -0.031,
+            "attempts": 0,
+            "carries": 4,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 3.8,
+            "interceptions": 0,
+            "opponent": "ATL",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 7,
+            "receptions": 2,
+            "rushing_tds": 0,
+            "rushing_yards": 11,
+            "snap_share": 0.23,
+            "target_share": 0.059,
+            "targets": 3,
+            "team": "GB",
+            "wopr": 0.067
           }
         }
       }
@@ -86458,6 +86529,29 @@
             "targets": 6,
             "team": "GB",
             "wopr": 0.57
+          },
+          "3": {
+            "air_yards_share": 0.508,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 21.0,
+            "interceptions": 0,
+            "opponent": "ATL",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 1,
+            "receiving_yards": 100,
+            "receptions": 5,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.82,
+            "target_share": 0.235,
+            "targets": 12,
+            "team": "GB",
+            "wopr": 0.708
           }
         }
       }
@@ -87546,6 +87640,29 @@
             "targets": 0,
             "team": "GB",
             "wopr": 0.0
+          },
+          "3": {
+            "air_yards_share": -0.003,
+            "attempts": 0,
+            "carries": 4,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 2.6,
+            "interceptions": 0,
+            "opponent": "ATL",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 10,
+            "receptions": 1,
+            "rushing_tds": 0,
+            "rushing_yards": 6,
+            "snap_share": 0.36,
+            "target_share": 0.059,
+            "targets": 3,
+            "team": "GB",
+            "wopr": 0.086
           }
         }
       }
@@ -104436,6 +104553,29 @@
             "targets": 2,
             "team": "ATL",
             "wopr": 0.066
+          },
+          "3": {
+            "air_yards_share": 0.087,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 1.7,
+            "interceptions": 0,
+            "opponent": "GB",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 7,
+            "receptions": 1,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.18,
+            "target_share": 0.087,
+            "targets": 2,
+            "team": "ATL",
+            "wopr": 0.192
           }
         }
       }
@@ -108483,6 +108623,29 @@
             "targets": 0,
             "team": "GB",
             "wopr": 0.0
+          },
+          "3": {
+            "air_yards_share": 0.056,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 5.2,
+            "interceptions": 0,
+            "opponent": "ATL",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 22,
+            "receptions": 3,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.32,
+            "target_share": 0.059,
+            "targets": 3,
+            "team": "GB",
+            "wopr": 0.128
           }
         }
       }
@@ -137755,6 +137918,29 @@
             "targets": 4,
             "team": "ATL",
             "wopr": 0.251
+          },
+          "3": {
+            "air_yards_share": 0.067,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 9.1,
+            "interceptions": 0,
+            "opponent": "GB",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 1,
+            "receiving_yards": 11,
+            "receptions": 2,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.23,
+            "target_share": 0.087,
+            "targets": 2,
+            "team": "ATL",
+            "wopr": 0.177
           }
         }
       }
@@ -163047,6 +163233,29 @@
             "targets": 3,
             "team": "GB",
             "wopr": 0.148
+          },
+          "3": {
+            "air_yards_share": 0.048,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 3.6,
+            "interceptions": 0,
+            "opponent": "ATL",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 16,
+            "receptions": 2,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.33,
+            "target_share": 0.059,
+            "targets": 3,
+            "team": "GB",
+            "wopr": 0.122
           }
         }
       }
@@ -248453,6 +248662,29 @@
             "targets": 3,
             "team": "ATL",
             "wopr": 0.176
+          },
+          "3": {
+            "air_yards_share": 0.0,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 2.9,
+            "interceptions": 0,
+            "opponent": "GB",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 9,
+            "receptions": 2,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.34,
+            "target_share": 0.087,
+            "targets": 2,
+            "team": "ATL",
+            "wopr": 0.13
           }
         }
       }
@@ -263955,6 +264187,29 @@
             "passing_epa": -3.16850428629777,
             "passing_tds": 2,
             "passing_yards": 145,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 1.0,
+            "target_share": 0.0,
+            "targets": 0,
+            "team": "GB",
+            "wopr": 0.0
+          },
+          "3": {
+            "air_yards_share": 0.0,
+            "attempts": 53,
+            "carries": 1,
+            "completions": 28,
+            "cpoe": -8.51,
+            "fantasy_points_ppr": 18.5,
+            "interceptions": 1,
+            "opponent": "ATL",
+            "passing_epa": 3.57120850867047,
+            "passing_tds": 2,
+            "passing_yards": 312,
             "receiving_tds": 0,
             "receiving_yards": 0,
             "receptions": 0,
@@ -294156,6 +294411,29 @@
             "targets": 3,
             "team": "ATL",
             "wopr": 0.251
+          },
+          "3": {
+            "air_yards_share": 0.0,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 2.0,
+            "interceptions": 0,
+            "opponent": "GB",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.18,
+            "target_share": 0.0,
+            "targets": 0,
+            "team": "ATL",
+            "wopr": 0.0
           }
         }
       }
@@ -305072,6 +305350,29 @@
             "targets": 3,
             "team": "ATL",
             "wopr": 0.26
+          },
+          "3": {
+            "air_yards_share": 0.054,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 1.5,
+            "interceptions": 0,
+            "opponent": "GB",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 5,
+            "receptions": 1,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.59,
+            "target_share": 0.087,
+            "targets": 2,
+            "team": "ATL",
+            "wopr": 0.168
           }
         }
       }
@@ -338946,6 +339247,29 @@
             "targets": 5,
             "team": "ATL",
             "wopr": 0.343
+          },
+          "3": {
+            "air_yards_share": 0.651,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 28.4,
+            "interceptions": 0,
+            "opponent": "GB",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 194,
+            "receptions": 9,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.93,
+            "target_share": 0.435,
+            "targets": 10,
+            "team": "ATL",
+            "wopr": 1.108
           }
         }
       }
@@ -342061,6 +342385,29 @@
             "targets": 4,
             "team": "ATL",
             "wopr": 0.405
+          },
+          "3": {
+            "air_yards_share": 0.295,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 2.1,
+            "interceptions": 0,
+            "opponent": "GB",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 11,
+            "receptions": 1,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.66,
+            "target_share": 0.13,
+            "targets": 3,
+            "team": "ATL",
+            "wopr": 0.402
           }
         }
       }
@@ -367821,6 +368168,29 @@
             "targets": 2,
             "team": "ATL",
             "wopr": 0.097
+          },
+          "3": {
+            "air_yards_share": 0.0,
+            "attempts": 0,
+            "carries": 10,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 11.0,
+            "interceptions": 0,
+            "opponent": "GB",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 1,
+            "rushing_yards": 50,
+            "snap_share": 0.27,
+            "target_share": 0.0,
+            "targets": 0,
+            "team": "ATL",
+            "wopr": 0.0
           }
         }
       }
@@ -371909,6 +372279,29 @@
             "targets": 11,
             "team": "GB",
             "wopr": 0.848
+          },
+          "3": {
+            "air_yards_share": 0.232,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 22.6,
+            "interceptions": 0,
+            "opponent": "ATL",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 1,
+            "receiving_yards": 96,
+            "receptions": 7,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.8,
+            "target_share": 0.196,
+            "targets": 10,
+            "team": "GB",
+            "wopr": 0.457
           }
         }
       }
@@ -372728,6 +373121,29 @@
             "targets": 3,
             "team": "GB",
             "wopr": 0.295
+          },
+          "3": {
+            "air_yards_share": 0.059,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 6.1,
+            "interceptions": 0,
+            "opponent": "ATL",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 31,
+            "receptions": 3,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.52,
+            "target_share": 0.137,
+            "targets": 7,
+            "team": "GB",
+            "wopr": 0.247
           }
         }
       }
@@ -375969,7 +376385,7 @@
             "fantasy_points_ppr": 21.1,
             "interceptions": 1,
             "opponent": "LA",
-            "passing_epa": 4.825627535880928,
+            "passing_epa": 4.825627535880926,
             "passing_tds": 3,
             "passing_yards": 205,
             "receiving_tds": 0,
@@ -378753,6 +379169,29 @@
             "targets": 1,
             "team": "GB",
             "wopr": 0.078
+          },
+          "3": {
+            "air_yards_share": 0.077,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 0.0,
+            "interceptions": 0,
+            "opponent": "ATL",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.32,
+            "target_share": 0.02,
+            "targets": 1,
+            "team": "GB",
+            "wopr": 0.083
           }
         }
       }
@@ -393261,6 +393700,29 @@
             "targets": 0,
             "team": "ATL",
             "wopr": 0.0
+          },
+          "3": {
+            "air_yards_share": 0.0,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 0.0,
+            "interceptions": 0,
+            "opponent": "GB",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.24,
+            "target_share": 0.0,
+            "targets": 0,
+            "team": "ATL",
+            "wopr": 0.0
           }
         }
       }
@@ -396222,7 +396684,7 @@
             "receptions": 0,
             "rushing_tds": 1,
             "rushing_yards": 47,
-            "snap_share": 0.12,
+            "snap_share": 0.13,
             "target_share": 0.0,
             "targets": 0,
             "team": "DAL",
@@ -409947,6 +410409,29 @@
             "targets": 3,
             "team": "GB",
             "wopr": 0.188
+          },
+          "3": {
+            "air_yards_share": 0.092,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 6.6,
+            "interceptions": 0,
+            "opponent": "ATL",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 26,
+            "receptions": 4,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.76,
+            "target_share": 0.157,
+            "targets": 8,
+            "team": "GB",
+            "wopr": 0.3
           }
         }
       }
@@ -424807,6 +425292,29 @@
             "targets": 4,
             "team": "ATL",
             "wopr": 0.246
+          },
+          "3": {
+            "air_yards_share": -0.067,
+            "attempts": 0,
+            "carries": 29,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 35.3,
+            "interceptions": 0,
+            "opponent": "GB",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 19,
+            "receptions": 2,
+            "rushing_tds": 2,
+            "rushing_yards": 194,
+            "snap_share": 0.72,
+            "target_share": 0.087,
+            "targets": 2,
+            "team": "ATL",
+            "wopr": 0.083
           }
         }
       }
