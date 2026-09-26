@@ -1,9 +1,42 @@
 {
-  "generated_at": "2026-09-26T15:35:33Z",
+  "generated_at": "2026-09-26T20:33:48Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Tyson Bagent",
+      "sleeper_id": "11256",
+      "gsis_id": "00-0038416",
+      "position": "QB",
+      "team": "CHI",
+      "headline": "Listed as questionable Monday",
+      "description": "Bagent (concussion) was a full participant in Saturday's practice but is listed as questionable for Monday's game against the Eagles. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyson-bagent-16946",
+      "pub_date": "2026-09-26T12:01:00Z"
+    },
+    {
+      "player_name": "Caleb Williams",
+      "sleeper_id": "11560",
+      "gsis_id": "00-0039918",
+      "position": "QB",
+      "team": "CHI",
+      "headline": "Ruled out for Monday",
+      "description": "Williams (hamstring) has been ruled out for Monday's game against the Eagles. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/caleb-williams-17695",
+      "pub_date": "2026-09-26T11:58:00Z"
+    },
+    {
+      "player_name": "Tyson Bagent",
+      "sleeper_id": "11256",
+      "gsis_id": "00-0038416",
+      "position": "QB",
+      "team": "CHI",
+      "headline": "Cleared to practice Saturday",
+      "description": "Bagent (concussion) will be back at practice Saturday after progressing through the league's concussion protocol, Kevin Fishbain of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyson-bagent-16946",
+      "pub_date": "2026-09-26T09:59:00Z"
+    },
     {
       "player_name": "Zay Flowers",
       "sleeper_id": "9997",
@@ -14,6 +47,28 @@
       "description": "Flowers (hamstring) is expected to \"test his injury\" prior to Sunday's game against the Cowboys, and if he suits up he \"will likely be on a pitch count,\" Jeremy Fowler of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
       "pub_date": "2026-09-26T07:19:00Z"
+    },
+    {
+      "player_name": "DeVonta Smith",
+      "sleeper_id": "7525",
+      "gsis_id": "00-0036912",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Good to go against Chicago",
+      "description": "Smith (hamstring) does not carry an injury designation into Monday's game against the Bears. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
+      "pub_date": "2026-09-26T01:04:00Z"
+    },
+    {
+      "player_name": "Dallas Goedert",
+      "sleeper_id": "5022",
+      "gsis_id": "00-0034351",
+      "position": "TE",
+      "team": "PHI",
+      "headline": "Won't play Monday",
+      "description": "Goedert (knee) has been ruled out for Monday's game against the Bears. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dallas-goedert-12860",
+      "pub_date": "2026-09-26T01:01:00Z"
     },
     {
       "player_name": "Tyjae Spears",
