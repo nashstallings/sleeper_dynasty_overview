@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-09-27T03:14:43Z",
+  "generated_at": "2026-09-27T11:14:19Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Anticipates playing Sunday",
+      "description": "Evans (hip) intends to play Sunday versus the Cardinals, Jeremy Fowler of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-09-27T04:06:00Z"
+    },
     {
       "player_name": "Tyson Bagent",
       "sleeper_id": "11256",
