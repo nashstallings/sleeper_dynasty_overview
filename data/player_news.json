@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-27T11:14:19Z",
+  "generated_at": "2026-09-27T16:15:08Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Active for Week 3",
+      "description": "Moore (shoulder) is listed as active for Sunday's game against the Chargers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-09-27T08:44:00Z"
+    },
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Deemed active for Week 3",
+      "description": "Pittman (foot) is active for Sunday's game against the Bengals, Alan Saunders of SteelersNow.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-09-27T08:44:00Z"
+    },
+    {
+      "player_name": "Tyjae Spears",
+      "sleeper_id": "9508",
+      "gsis_id": "00-0039032",
+      "position": "RB",
+      "team": "TEN",
+      "headline": "Active Sunday",
+      "description": "Spears (ankle) is listed as active Sunday at the Giants, Jim Wyatt of the Titans' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyjae-spears-16941",
+      "pub_date": "2026-09-27T08:42:00Z"
+    },
+    {
+      "player_name": "Jaylen Warren",
+      "sleeper_id": "8228",
+      "gsis_id": "00-0037228",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "Cleared to play Sunday",
+      "description": "Warren (shoulder) is active for Sunday's game against the Bengals, Alan Saunders of SteelersNow.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-warren-15984",
+      "pub_date": "2026-09-27T08:41:00Z"
+    },
+    {
+      "player_name": "Jalen Coker",
+      "sleeper_id": "11646",
+      "gsis_id": "00-0039491",
+      "position": "WR",
+      "team": "CAR",
+      "headline": "Active in Week 3",
+      "description": "Coker (ankle) is listed as active Sunday at Cleveland, Darin Gantt of the Panthers' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-coker-17976",
+      "pub_date": "2026-09-27T08:40:00Z"
+    },
     {
       "player_name": "Mike Evans",
       "sleeper_id": "2216",
