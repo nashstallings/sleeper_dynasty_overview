@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-28T12:42:05Z",
+  "generated_at": "2026-09-28T21:01:20Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Rico Dowdle",
+      "sleeper_id": "7021",
+      "gsis_id": "00-0036139",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "Sits out walk-through session",
+      "description": "Dowdle (toe) wasn't present for Monday's walkthrough practice, Brooke Pryor of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rico-dowdle-14657",
+      "pub_date": "2026-09-28T01:46:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Day-to-day with rib strain",
+      "description": "Evans is considered day-to-day after sustaining a rib strain during Sunday's 36-30 win over the Cardinals, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-09-28T01:31:00Z"
+    },
+    {
+      "player_name": "Zach Ertz",
+      "sleeper_id": "1339",
+      "gsis_id": "00-0030061",
+      "position": "TE",
+      "team": "PHI",
+      "headline": "Called up to play Monday night",
+      "description": "The Eagles elevated Ertz from the practice squad ahead of Monday's game against the Bears. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zach-ertz-8781",
+      "pub_date": "2026-09-28T01:19:00Z"
+    },
+    {
+      "player_name": "De'Von Achane",
+      "sleeper_id": "9226",
+      "gsis_id": "00-0039040",
+      "position": "RB",
+      "team": "MIA",
+      "headline": "Shifts to IR",
+      "description": "The Dolphins placed Achane (knee) on injured reserve Monday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/devon-achane-16661",
+      "pub_date": "2026-09-28T01:11:00Z"
+    },
+    {
+      "player_name": "Jameis Winston",
+      "sleeper_id": "2306",
+      "gsis_id": "00-0031503",
+      "position": "QB",
+      "team": "NYG",
+      "headline": "Retaining starting job",
+      "description": "Head coach John Harbaugh reaffirmed that Winston is the Giants' starting quarterback after the team acquired J.J. McCarthy from the Vikings on Monday, Evan Barnes of Newsday reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jameis-winston-10037",
+      "pub_date": "2026-09-28T01:05:00Z"
+    },
     {
       "player_name": "Tyjae Spears",
       "sleeper_id": "9508",
