@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T18:17:23Z",
+  "generated_at": "2026-09-28T21:03:23Z",
   "season": 2026,
   "season_type": "REG",
   "recent_weeks": [
@@ -826,9 +826,9 @@
       "sleeper_id": "11584",
       "metrics": {
         "snap_share": {
-          "prior": 0.547,
+          "prior": 0.548,
           "recent": 0.673,
-          "delta": 0.126
+          "delta": 0.125
         },
         "target_share": {
           "prior": 0.084,
@@ -1044,8 +1044,8 @@
         },
         "yards_per_target": {
           "prior": 9.21,
-          "recent": 5.57,
-          "delta": -3.64
+          "recent": 5.58,
+          "delta": -3.63
         },
         "air_yards_share": {
           "prior": 0.14,
@@ -1100,9 +1100,9 @@
       "sleeper_id": "11624",
       "metrics": {
         "snap_share": {
-          "prior": 0.768,
+          "prior": 0.767,
           "recent": 0.815,
-          "delta": 0.047
+          "delta": 0.048
         },
         "target_share": {
           "prior": 0.139,
@@ -1969,9 +1969,9 @@
       "sleeper_id": "12507",
       "metrics": {
         "snap_share": {
-          "prior": 0.507,
+          "prior": 0.508,
           "recent": 0.605,
-          "delta": 0.098
+          "delta": 0.097
         },
         "target_share": {
           "prior": 0.114,
@@ -2183,9 +2183,9 @@
       "sleeper_id": "12518",
       "metrics": {
         "snap_share": {
-          "prior": 0.873,
+          "prior": 0.872,
           "recent": 0.88,
-          "delta": 0.007
+          "delta": 0.008
         },
         "target_share": {
           "prior": 0.205,
@@ -2739,9 +2739,9 @@
       "sleeper_id": "1479",
       "metrics": {
         "snap_share": {
-          "prior": 0.507,
+          "prior": 0.508,
           "recent": 0.573,
-          "delta": 0.066
+          "delta": 0.065
         },
         "target_share": {
           "prior": 0.169,
@@ -3955,9 +3955,9 @@
       "sleeper_id": "5045",
       "metrics": {
         "snap_share": {
-          "prior": 0.823,
+          "prior": 0.822,
           "recent": 0.757,
-          "delta": -0.066
+          "delta": -0.065
         },
         "target_share": {
           "prior": 0.28,
@@ -4299,9 +4299,9 @@
       "sleeper_id": "5973",
       "metrics": {
         "snap_share": {
-          "prior": 0.672,
+          "prior": 0.673,
           "recent": 0.57,
-          "delta": -0.102
+          "delta": -0.103
         },
         "target_share": {
           "prior": 0.1,
@@ -4564,9 +4564,9 @@
       "sleeper_id": "6790",
       "metrics": {
         "snap_share": {
-          "prior": 0.567,
+          "prior": 0.568,
           "recent": 0.61,
-          "delta": 0.043
+          "delta": 0.042
         },
         "target_share": {
           "prior": 0.081,
@@ -4783,9 +4783,9 @@
       "sleeper_id": "6819",
       "metrics": {
         "snap_share": {
-          "prior": 0.897,
+          "prior": 0.898,
           "recent": 0.885,
-          "delta": -0.012
+          "delta": -0.013
         },
         "target_share": {
           "prior": 0.192,
@@ -4817,9 +4817,9 @@
       "sleeper_id": "6826",
       "metrics": {
         "snap_share": {
-          "prior": 0.718,
+          "prior": 0.717,
           "recent": 0.717,
-          "delta": -0.001
+          "delta": 0.0
         },
         "target_share": {
           "prior": 0.109,
@@ -4957,9 +4957,9 @@
       "sleeper_id": "7002",
       "metrics": {
         "snap_share": {
-          "prior": 0.627,
+          "prior": 0.628,
           "recent": 0.707,
-          "delta": 0.08
+          "delta": 0.079
         },
         "target_share": {
           "prior": 0.167,
@@ -5751,9 +5751,9 @@
       "sleeper_id": "8110",
       "metrics": {
         "snap_share": {
-          "prior": 0.622,
+          "prior": 0.623,
           "recent": 0.653,
-          "delta": 0.031
+          "delta": 0.03
         },
         "target_share": {
           "prior": 0.111,
@@ -6566,9 +6566,9 @@
       "sleeper_id": "8172",
       "metrics": {
         "snap_share": {
-          "prior": 0.392,
+          "prior": 0.393,
           "recent": 0.633,
-          "delta": 0.241
+          "delta": 0.24
         },
         "target_share": {
           "prior": 0.149,
@@ -6932,9 +6932,9 @@
       "sleeper_id": "8676",
       "metrics": {
         "snap_share": {
-          "prior": 0.477,
+          "prior": 0.478,
           "recent": 0.567,
-          "delta": 0.09
+          "delta": 0.089
         },
         "target_share": {
           "prior": 0.112,
@@ -7160,9 +7160,9 @@
       "sleeper_id": "9480",
       "metrics": {
         "snap_share": {
-          "prior": 0.793,
+          "prior": 0.792,
           "recent": 0.71,
-          "delta": -0.083
+          "delta": -0.082
         },
         "target_share": {
           "prior": 0.159,
@@ -7490,9 +7490,9 @@
           "delta": 0.008
         },
         "yards_per_target": {
-          "prior": 4.52,
+          "prior": 4.53,
           "recent": 6.26,
-          "delta": 1.74
+          "delta": 1.73
         },
         "yards_per_carry": {
           "prior": 4.51,
@@ -7728,9 +7728,9 @@
           "delta": -0.183
         },
         "target_share": {
-          "prior": 0.337,
+          "prior": 0.338,
           "recent": 0.301,
-          "delta": -0.036
+          "delta": -0.037
         },
         "wopr": {
           "prior": 0.82,
