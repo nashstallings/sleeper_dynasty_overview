@@ -147,19 +147,29 @@ research, not gospel.
 ### Trade History
 
 A team selector (defaulting to your own) lists every **completed** trade
-that team has been part of this season, newest first &mdash; who it traded
-with, and exactly what it received and sent (players, future picks, and
-FAAB, the same asset types the League Activity card and Trade Finder both
-already handle). Waiver claims and free-agent adds/drops never show up
-here, only trades.
+that manager has ever made in this league &mdash; not just this season,
+all of them &mdash; newest first: who they traded with, and exactly what
+they received and sent (players, future picks, and FAAB, the same asset
+types the League Activity card and Trade Finder both already handle).
+Waiver claims and free-agent adds/drops never show up here, only trades.
 
-Sleeper buckets transactions by week, so unlike League Activity's
-recent-3-weeks feed, this fetches every week from 1 through the current
-week (or just week 1 before the season starts, since all offseason
-trading lands in that bucket) to cover the full season. That's a fetch
-per week on first load, cached after that, so switching the team selector
-just re-filters what's already been fetched instead of re-fetching &mdash;
-picking a different team is instant.
+**Going back further than one season** relies on Sleeper chaining each
+dynasty league to the one before it via `previous_league_id`: on first
+visit, the app walks that chain all the way back (stopping only if a hop
+can't be fetched), then pulls rosters, users, and every week's transactions
+for each season it finds. The team selector is keyed by the manager's
+Sleeper account, not by roster ID, since roster IDs (and sometimes team
+names) can change season to season for the same person &mdash; a manager's
+current team name is shown even next to trades made under an old one, and
+picking them still surfaces trades from every season correctly. Each trade
+is labeled with the season it happened in, and Sleeper buckets transactions
+by week, so covering a full past season means fetching every one of its
+weeks (estimated from that season's own playoff settings, since there's no
+"current week" for a season that's already over); the live season in
+progress still only fetches up to its actual current week. All of this
+happens once per visit and is cached, so switching the team selector
+afterward just re-filters instead of re-fetching &mdash; the first load is
+the only slow part, and it scales with how many seasons the league has.
 
 ## How Trending works
 

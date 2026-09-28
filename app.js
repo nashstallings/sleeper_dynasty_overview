@@ -98,8 +98,8 @@ const state = {
   ageCurveRosterId: null,
   tradeFinderScope: "starters",
   tradeSubTab: "finder",
-  tradeHistoryRosterId: null,
-  tradeHistoryTrades: null,
+  tradeHistoryOwnerId: null,
+  tradeHistorySeasons: null,
   evaluatorPid: null,
   evaluatorSeason: null,
   playerWeeklyStats: null,
@@ -270,8 +270,8 @@ async function loadLeague(leagueId) {
     state.powerRankExpanded = new Set();
 
     state.tradeSubTab = "finder";
-    state.tradeHistoryRosterId = null;
-    state.tradeHistoryTrades = null;
+    state.tradeHistoryOwnerId = null;
+    state.tradeHistorySeasons = null;
     document.querySelectorAll(".sub-tab-btn[data-tradesubtab]").forEach((b) => b.classList.toggle("active", b.dataset.tradesubtab === "finder"));
     const finderPanel = document.getElementById("trade-finder-panel");
     const historyPanel = document.getElementById("trade-history-panel");
@@ -320,15 +320,19 @@ async function loadLeague(leagueId) {
   }
 }
 
-function teamNameForOwner(ownerId) {
-  const u = state.users.find((x) => x.user_id === ownerId);
+// `users`/`rosters` default to the currently loaded league everywhere in
+// the app, but Trade History's all-time view needs to resolve names against
+// a *past* season's own roster/user snapshot instead -- passing them
+// explicitly there lets these stay the single implementation either way.
+function teamNameForOwner(ownerId, users = state.users) {
+  const u = users.find((x) => x.user_id === ownerId);
   if (!u) return "Unclaimed team";
   return (u.metadata && u.metadata.team_name) || u.display_name || "Unnamed team";
 }
 
-function rosterLabel(roster) {
+function rosterLabel(roster, users = state.users) {
   if (!roster) return "Unknown team";
-  return teamNameForOwner(roster.owner_id);
+  return teamNameForOwner(roster.owner_id, users);
 }
 
 const AVATAR_COLORS = ["#5b8cff", "#34d399", "#fbbf24", "#f87171", "#a882ff", "#ec6fbb", "#38bdf8", "#fb923c"];
@@ -692,8 +696,8 @@ async function renderPlayerNews() {
 const TRANSACTIONS_LIMIT = 15;
 const TRANSACTIONS_WEEKS_BACK = 3;
 
-function rosterById(rosterId) {
-  return state.rosters.find((r) => r.roster_id === rosterId);
+function rosterById(rosterId, rosters = state.rosters) {
+  return rosters.find((r) => r.roster_id === rosterId);
 }
 
 // Sleeper buckets transactions by week ("round"), so a feed needs one fetch
@@ -717,8 +721,10 @@ function transactionRosterIds(txn) {
 
 // What a given roster received/gave up in this transaction, across players,
 // draft picks, and FAAB -- unified the same way the trade builder treats
-// players and picks as interchangeable "assets".
-function transactionAssetsForRoster(txn, rosterId) {
+// players and picks as interchangeable "assets". `rosters`/`users` again
+// default to the current league, overridden by Trade History for a past
+// season's own trades.
+function transactionAssetsForRoster(txn, rosterId, rosters = state.rosters, users = state.users) {
   const received = [];
   const sent = [];
   Object.entries(txn.adds || {}).forEach(([pid, rid]) => {
@@ -728,7 +734,7 @@ function transactionAssetsForRoster(txn, rosterId) {
     if (rid === rosterId) sent.push(playerDisplay(player(pid)));
   });
   (txn.draft_picks || []).forEach((dp) => {
-    const label = pickLabel(dp.season, dp.round, dp.roster_id, dp.owner_id);
+    const label = pickLabel(dp.season, dp.round, dp.roster_id, dp.owner_id, rosters, users);
     if (dp.owner_id === rosterId) received.push(label);
     else if (dp.previous_owner_id === rosterId) sent.push(label);
   });
@@ -823,41 +829,103 @@ async function renderTransactions() {
 
 // ---------- Trade History ----------
 
-// Trades can happen any time from the offseason through however far the
-// season has gotten, so (unlike League Activity's fixed 3-week lookback)
-// this needs every week's bucket from 1 through the current week -- all of
-// this league's completed trades so far, not just recent ones.
-function tradeHistoryWeeksToFetch() {
-  const week = state.currentWeek;
-  if (!week) return [1];
+// Sleeper gives each dynasty league a fresh league_id every season, chained
+// backward via previous_league_id -- so "all time" means walking that chain
+// rather than looking at one league_id. Stops at the first hop it can't
+// fetch (private/removed league, API hiccup) rather than failing outright;
+// whatever's discoverable still gets shown.
+async function discoverLeagueChain(startLeagueId) {
+  const chain = [];
+  const seen = new Set();
+  let id = startLeagueId;
+  while (id && id !== "0" && !seen.has(id)) {
+    seen.add(id);
+    let lg;
+    try {
+      lg = id === state.leagueId ? state.league : await api(`/league/${id}`);
+    } catch {
+      break;
+    }
+    if (!lg) break;
+    chain.push(lg);
+    id = lg.previous_league_id;
+  }
+  return chain; // current season first, oldest last
+}
+
+// A past season has no "current week" to bound the fetch by, so this
+// estimates the season's actual length from its own playoff settings (3
+// playoff rounds is the norm) instead of always walking every possible
+// week. The live current season still bounds by state.currentWeek, so an
+// in-progress season doesn't fetch weeks that haven't happened yet.
+function tradeHistorySeasonWeeks(lg) {
+  if (lg.league_id === state.leagueId && state.currentWeek) {
+    const weeks = [];
+    for (let w = 1; w <= state.currentWeek; w++) weeks.push(w);
+    return weeks;
+  }
+  const start = lg.settings && lg.settings.playoff_week_start;
+  const upper = start && start > 1 ? Math.min(18, start + 3) : 18;
   const weeks = [];
-  for (let w = 1; w <= week; w++) weeks.push(w);
+  for (let w = 1; w <= upper; w++) weeks.push(w);
   return weeks;
 }
 
-function tradeHistoryTeamOptionsHtml() {
-  const selected = state.tradeHistoryRosterId || state.myRosterId;
-  const sorted = [...state.rosters].sort((a, b) => rosterLabel(a).localeCompare(rosterLabel(b)));
-  return sorted
-    .map((r) => {
-      const isMe = r.roster_id === state.myRosterId;
-      const label = `${rosterLabel(r)}${isMe ? " (you)" : ""}`;
-      return `<option value="${r.roster_id}"${r.roster_id === selected ? " selected" : ""}>${escapeHtml(label)}</option>`;
-    })
-    .join("");
+// Fetches one season's worth of trade data. Reuses the already-loaded
+// rosters/users for the current league (no need to refetch what's already
+// in state); every other season in the chain needs its own roster/user
+// snapshot fetched, since roster_id numbering and ownership are season-
+// scoped in Sleeper's API. Failures here are non-fatal -- one bad season
+// just contributes no trades instead of breaking the whole feature.
+async function fetchTradeHistorySeason(lg) {
+  const leagueId = lg.league_id;
+  try {
+    const isCurrent = leagueId === state.leagueId;
+    const [rosters, users] = isCurrent
+      ? [state.rosters, state.users]
+      : await Promise.all([api(`/league/${leagueId}/rosters`), api(`/league/${leagueId}/users`)]);
+
+    const weeks = tradeHistorySeasonWeeks(lg);
+    const results = await Promise.allSettled(weeks.map((w) => api(`/league/${leagueId}/transactions/${w}`)));
+    const all = [];
+    results.forEach((r) => {
+      if (r.status === "fulfilled" && Array.isArray(r.value)) all.push(...r.value);
+    });
+    const trades = all.filter((t) => t.status === "complete" && t.type === "trade");
+    return { season: lg.season, leagueId, rosters: rosters || [], users: users || [], trades };
+  } catch {
+    return { season: lg.season, leagueId, rosters: [], users: [], trades: [] };
+  }
 }
 
-function tradeHistoryItemHtml(txn, rosterId) {
+// Every manager who's ever appeared in any season of the chain, keyed by
+// Sleeper user_id (stable across seasons, unlike roster_id) so the team
+// selector covers people even if their roster_id changed year to year.
+// Seasons are walked current-first, so the first (most recent) name found
+// for a user_id wins -- a manager's current team name, not a stale one.
+function tradeHistoryManagers() {
+  const map = new Map();
+  (state.tradeHistorySeasons || []).forEach((s) => {
+    (s.users || []).forEach((u) => {
+      if (!map.has(u.user_id)) map.set(u.user_id, { ownerId: u.user_id, label: teamNameForOwner(u.user_id, s.users) });
+    });
+  });
+  return [...map.values()].sort((a, b) => a.label.localeCompare(b.label));
+}
+
+function tradeHistoryItemHtml(entry) {
+  const { txn, rosterId, season, rosters, users } = entry;
   const partners = transactionRosterIds(txn)
     .filter((rid) => rid !== rosterId)
-    .map((rid) => rosterLabel(rosterById(rid)));
-  const { received, sent } = transactionAssetsForRoster(txn, rosterId);
+    .map((rid) => rosterLabel(rosterById(rid, rosters), users));
+  const { received, sent } = transactionAssetsForRoster(txn, rosterId, rosters, users);
   const ts = txn.status_updated || txn.created;
   return `
     <div class="news-item">
       <div class="news-item-head">
         <span class="badge badge-TRADE">TRADE</span>
         <span class="news-headline" style="margin:0">With ${escapeHtml(partners.join(", ") || "another team")}</span>
+        <span class="player-meta">${escapeHtml(String(season))}</span>
         <span class="news-date">${ts ? relativeDate(new Date(ts).toISOString()) : ""}</span>
       </div>
       <div class="trade-history-assets" style="margin-top:8px">
@@ -870,28 +938,57 @@ function tradeHistoryItemHtml(txn, rosterId) {
 function renderTradeHistoryBody() {
   const card = document.getElementById("trade-history-card");
   if (!card) return;
-  const rosterId = state.tradeHistoryRosterId;
+
+  const managers = tradeHistoryManagers();
+  if (!state.tradeHistoryOwnerId || !managers.some((m) => m.ownerId === state.tradeHistoryOwnerId)) {
+    state.tradeHistoryOwnerId = (managers.find((m) => m.ownerId === state.userId) || managers[0] || {}).ownerId || null;
+  }
+  const ownerId = state.tradeHistoryOwnerId;
+
   const pickerHtml = `
     <div class="age-team-picker">
       <label for="trade-history-team-select">Team</label>
-      <select id="trade-history-team-select">${tradeHistoryTeamOptionsHtml()}</select>
+      <select id="trade-history-team-select">
+        ${managers
+          .map((m) => {
+            const isMe = m.ownerId === state.userId;
+            return `<option value="${escapeHtml(m.ownerId)}"${m.ownerId === ownerId ? " selected" : ""}>${escapeHtml(m.label)}${isMe ? " (you)" : ""}</option>`;
+          })
+          .join("")}
+      </select>
     </div>`;
 
-  const trades = (state.tradeHistoryTrades || []).filter((t) => transactionRosterIds(t).includes(rosterId));
+  const seasons = (state.tradeHistorySeasons || []).map((s) => s.season).filter(Boolean);
+  const rangeNote =
+    seasons.length > 1
+      ? `Every completed trade for the selected team, ${seasons[seasons.length - 1]}&ndash;${seasons[0]}.`
+      : "Every completed trade involving the selected team this season.";
 
-  if (!trades.length) {
+  const entries = [];
+  (state.tradeHistorySeasons || []).forEach((s) => {
+    const roster = s.rosters.find((r) => r.owner_id === ownerId);
+    if (!roster) return;
+    s.trades.forEach((t) => {
+      if (transactionRosterIds(t).includes(roster.roster_id)) {
+        entries.push({ txn: t, rosterId: roster.roster_id, season: s.season, rosters: s.rosters, users: s.users });
+      }
+    });
+  });
+  entries.sort((a, b) => (b.txn.status_updated || b.txn.created || 0) - (a.txn.status_updated || a.txn.created || 0));
+
+  if (!entries.length) {
     card.innerHTML = `
       <h2>Trade History</h2>
-      <p class="hero-copy">Every completed trade involving the selected team this season.</p>
+      <p class="hero-copy">${rangeNote}</p>
       ${pickerHtml}
-      ${emptyState("No completed trades for this team yet.")}`;
+      ${emptyState("No completed trades for this team.")}`;
     return;
   }
 
-  const rows = trades.map((t) => tradeHistoryItemHtml(t, rosterId)).join("");
+  const rows = entries.map((e) => tradeHistoryItemHtml(e)).join("");
   card.innerHTML = `
     <h2>Trade History</h2>
-    <p class="hero-copy">Every completed trade involving the selected team this season.</p>
+    <p class="hero-copy">${rangeNote}</p>
     ${pickerHtml}
     ${rows}`;
 }
@@ -899,24 +996,12 @@ function renderTradeHistoryBody() {
 async function renderTradeHistory() {
   const card = document.getElementById("trade-history-card");
   if (!card) return;
-  if (!state.tradeHistoryRosterId) {
-    state.tradeHistoryRosterId = state.myRosterId || (state.rosters[0] && state.rosters[0].roster_id) || null;
-  }
-  card.innerHTML = `<h2>Trade History</h2><p class="spinner-note">Loading trade history...</p>`;
+  card.innerHTML = `<h2>Trade History</h2><p class="spinner-note">Loading trade history across all seasons...</p>`;
 
-  if (!state.tradeHistoryTrades) {
+  if (!state.tradeHistorySeasons) {
     try {
-      const weeks = tradeHistoryWeeksToFetch();
-      const results = await Promise.allSettled(
-        weeks.map((w) => api(`/league/${state.leagueId}/transactions/${w}`))
-      );
-      const all = [];
-      results.forEach((r) => {
-        if (r.status === "fulfilled" && Array.isArray(r.value)) all.push(...r.value);
-      });
-      state.tradeHistoryTrades = all
-        .filter((t) => t.status === "complete" && t.type === "trade")
-        .sort((a, b) => (b.status_updated || b.created || 0) - (a.status_updated || a.created || 0));
+      const chain = await discoverLeagueChain(state.leagueId);
+      state.tradeHistorySeasons = await Promise.all(chain.map(fetchTradeHistorySeason));
     } catch {
       card.innerHTML = `<h2>Trade History</h2>${emptyState("Couldn't load trade history.")}`;
       return;
@@ -928,7 +1013,7 @@ async function renderTradeHistory() {
 function setupTradeHistoryTeamSelect() {
   document.addEventListener("change", (e) => {
     if (e.target.id !== "trade-history-team-select") return;
-    state.tradeHistoryRosterId = Number(e.target.value);
+    state.tradeHistoryOwnerId = e.target.value;
     renderTradeHistoryBody();
   });
 }
@@ -1328,11 +1413,11 @@ function rosterPicks(rosterId) {
   return picks;
 }
 
-function pickLabel(season, round, originalRosterId, currentOwnerRosterId) {
+function pickLabel(season, round, originalRosterId, currentOwnerRosterId, rosters = state.rosters, users = state.users) {
   const base = `${season} ${roundOrdinal(round)}`;
   if (originalRosterId === currentOwnerRosterId) return base;
-  const originalRoster = state.rosters.find((r) => r.roster_id === originalRosterId);
-  return `${base} (via ${rosterLabel(originalRoster)})`;
+  const originalRoster = rosters.find((r) => r.roster_id === originalRosterId);
+  return `${base} (via ${rosterLabel(originalRoster, users)})`;
 }
 
 // Unified value/label lookup so trade-builder code can treat a selected
@@ -3754,7 +3839,7 @@ function setupTabs() {
       // Trade History fetches every week of the season on first visit (not
       // needed for Trade Finder), so it's loaded lazily here instead of in
       // the main load sequence -- same reasoning as the Evaluator tab.
-      if (state.tradeSubTab === "history" && !state.tradeHistoryTrades) renderTradeHistory();
+      if (state.tradeSubTab === "history" && !state.tradeHistorySeasons) renderTradeHistory();
     });
   });
 }
