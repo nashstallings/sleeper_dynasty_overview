@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T03:11:30Z",
+  "generated_at": "2026-09-28T12:42:05Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -25,6 +25,61 @@
       "description": "Hall was ruled out for the remainder of Sunday's game against the Lions after sustaining a thigh injury with 11:30 remaining in the fourth quarter. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/breece-hall-15810",
       "pub_date": "2026-09-27T12:36:00Z"
+    },
+    {
+      "player_name": "Courtland Sutton",
+      "sleeper_id": "5045",
+      "gsis_id": "00-0034348",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "Team-high 46 rec yards in comeback win",
+      "description": "Sutton caught three of seven targets for 46 yards in Sunday's 30-26 win over the Rams. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/courtland-sutton-12586",
+      "pub_date": "2026-09-27T09:44:00Z"
+    },
+    {
+      "player_name": "J.K. Dobbins",
+      "sleeper_id": "6806",
+      "gsis_id": "00-0036158",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Doesn't do much with 17 carries",
+      "description": "Dobbins rushed 17 times for 49 yards while catching one of two targets for four yards in Sunday's 30-26 win over the Rams. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jk-dobbins-14418",
+      "pub_date": "2026-09-27T09:42:00Z"
+    },
+    {
+      "player_name": "RJ Harvey",
+      "sleeper_id": "12489",
+      "gsis_id": "00-0040730",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Seven targets, two carries in Week 3",
+      "description": "Harvey (hamstring) rushed twice for six yards while catching six of seven targets for 41 yards in Sunday's 30-26 win over the Rams. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rj-harvey-18522",
+      "pub_date": "2026-09-27T09:41:00Z"
+    },
+    {
+      "player_name": "Blake Corum",
+      "sleeper_id": "11586",
+      "gsis_id": "00-0039738",
+      "position": "RB",
+      "team": "LAR",
+      "headline": "Limited workload during SNF",
+      "description": "Corum rushed six times for 15 yards and caught two of four targets for no gain during Sunday night's 30-26 loss to Denver. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/blake-corum-17690",
+      "pub_date": "2026-09-27T09:30:00Z"
+    },
+    {
+      "player_name": "Bo Nix",
+      "sleeper_id": "11563",
+      "gsis_id": "00-0039732",
+      "position": "QB",
+      "team": "DEN",
+      "headline": "Three totals TDs in second-half comeback",
+      "description": "Nix completed 17 of 34 passes for 186 yards, two touchdowns and one interception in Sunday's 30-26 win over the Rams. He also rushed four times for seven yards and a touchdown in addition to throwing two successful two-point conversions. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bo-nix-16995",
+      "pub_date": "2026-09-27T09:28:00Z"
     },
     {
       "player_name": "DJ Moore",
