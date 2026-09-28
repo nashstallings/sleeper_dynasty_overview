@@ -8,9 +8,11 @@ football account and helps you:
   only show up if your league actually uses those slots; Starters starts
   expanded, the rest start collapsed), and league standings right below
   it &mdash; all on the Home tab, no separate Standings tab needed.
-- **Find trade targets** &mdash; flags your weakest roster positions (relative to the
-  rest of the league) and surfaces bench players on other rosters who could fill
-  those needs.
+- **Find trade targets** &mdash; the Trades tab's Trade Finder sub-tab flags
+  your weakest roster positions (relative to the rest of the league) and
+  surfaces bench players on other rosters who could fill those needs. A
+  Trade History sub-tab lets you pick any team in the league and see every
+  completed trade it's made this season.
 - **Spot risers, buy-lows, and sell-highs** &mdash; a Trending tab surfaces
   players whose snap share, target share, and receiving/rushing efficiency
   are climbing or falling week over week, split into a Buy Low table (trend
@@ -63,14 +65,22 @@ you type is sent anywhere except Sleeper's API.
 2. Enter your Sleeper **username** and the **season** (e.g. `2026`), then click
    "Find my leagues".
 3. Pick one of your leagues from the dropdown and click "Load league".
-4. Use the tabs to browse **Home**, **Trade Finder**, **Trending**,
-   **Age Curve**, **Outlook**, **Performers**, and **Evaluator**.
+4. Use the tabs to browse **Home**, **Trades**, **Trending**,
+   **Age Curve**, **Outlook**, **Performers**, and **Evaluator**. Trades
+   splits into two sub-tabs of its own: **Trade Finder** and
+   **Trade History**.
 
 Your username and chosen league are remembered in your browser (`localStorage`)
 so you won't have to re-enter them next time. Use "Switch league" to pick a
 different one.
 
-## How the Trade Finder works
+## How the Trades tab works
+
+The Trades tab splits into two sub-tabs: **Trade Finder** (the trade-target
+scouting tool below) and **Trade History** (every completed trade a chosen
+team has made this season).
+
+### Trade Finder
 
 **Team needs** works the same way for every roster in the league, including
 yours: for each of QB / RB / WR / TE, the app sums each team's trade value
@@ -133,6 +143,23 @@ not a projected exact slot.
 This is a heuristic based on roster construction and community-sourced
 trade values, not weekly projections, so use it as a starting point for
 research, not gospel.
+
+### Trade History
+
+A team selector (defaulting to your own) lists every **completed** trade
+that team has been part of this season, newest first &mdash; who it traded
+with, and exactly what it received and sent (players, future picks, and
+FAAB, the same asset types the League Activity card and Trade Finder both
+already handle). Waiver claims and free-agent adds/drops never show up
+here, only trades.
+
+Sleeper buckets transactions by week, so unlike League Activity's
+recent-3-weeks feed, this fetches every week from 1 through the current
+week (or just week 1 before the season starts, since all offseason
+trading lands in that bucket) to cover the full season. That's a fetch
+per week on first load, cached after that, so switching the team selector
+just re-filters what's already been fetched instead of re-fetching &mdash;
+picking a different team is instant.
 
 ## How Trending works
 
@@ -548,7 +575,7 @@ the app at `https://<your-username>.github.io/<repo-name>/`.
 python3 -m http.server 8000
 ```
 
-then open `http://localhost:8000`. Home / Trade Finder also
+then open `http://localhost:8000`. Home / Trades also
 work opening `index.html` directly via `file://`, since Sleeper's API allows
 cross-origin requests &mdash; but the Trending tab needs a real HTTP server,
 since browsers block `fetch()` of local files (like `data/rising_metrics.json`)

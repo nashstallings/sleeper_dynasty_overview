@@ -338,6 +338,11 @@ button:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
 main { padding-top: 6px; }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
+/* independent of .tab-panel's own show/hide -- switching the main nav
+   tabs blanks every .tab-panel, but a sub-tab's own panel state (e.g.
+   Trades' Finder/History split) should survive navigating away and back */
+.sub-tab-panel { display: none; }
+.sub-tab-panel.active { display: block; }
 
 .grid-2 {
   display: grid;
@@ -1077,6 +1082,9 @@ tr.power-rank-row { cursor: pointer; }
 .news-sentiment { display: inline-block; margin-right: 6px; font-size: 0.7em; vertical-align: 1px; }
 .news-sentiment-up { color: var(--good); }
 .news-sentiment-down { color: var(--bad); }
+
+.trade-history-assets { display: flex; gap: 24px; flex-wrap: wrap; }
+.trade-history-assets > div { min-width: 160px; }
 .news-desc { margin: 0 0 6px; }
 .news-link { font-size: 0.8rem; color: var(--accent); text-decoration: none; font-weight: 600; }
 .news-link:hover { text-decoration: underline; }

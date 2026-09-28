@@ -97,6 +97,9 @@ const state = {
   ageCurveScope: "starters",
   ageCurveRosterId: null,
   tradeFinderScope: "starters",
+  tradeSubTab: "finder",
+  tradeHistoryRosterId: null,
+  tradeHistoryTrades: null,
   evaluatorPid: null,
   evaluatorSeason: null,
   playerWeeklyStats: null,
@@ -265,6 +268,15 @@ async function loadLeague(leagueId) {
     state.ageCurveRosterId = state.myRosterId;
     state.selectedTradePlayers = new Set();
     state.powerRankExpanded = new Set();
+
+    state.tradeSubTab = "finder";
+    state.tradeHistoryRosterId = null;
+    state.tradeHistoryTrades = null;
+    document.querySelectorAll(".sub-tab-btn[data-tradesubtab]").forEach((b) => b.classList.toggle("active", b.dataset.tradesubtab === "finder"));
+    const finderPanel = document.getElementById("trade-finder-panel");
+    const historyPanel = document.getElementById("trade-history-panel");
+    if (finderPanel) finderPanel.classList.add("active");
+    if (historyPanel) historyPanel.classList.remove("active");
 
     state.tradedPicks = [];
     state.drafts = [];
@@ -807,6 +819,118 @@ async function renderTransactions() {
   } catch (err) {
     card.innerHTML = `<h2>League Activity</h2>${emptyState("Couldn't load league transactions.")}`;
   }
+}
+
+// ---------- Trade History ----------
+
+// Trades can happen any time from the offseason through however far the
+// season has gotten, so (unlike League Activity's fixed 3-week lookback)
+// this needs every week's bucket from 1 through the current week -- all of
+// this league's completed trades so far, not just recent ones.
+function tradeHistoryWeeksToFetch() {
+  const week = state.currentWeek;
+  if (!week) return [1];
+  const weeks = [];
+  for (let w = 1; w <= week; w++) weeks.push(w);
+  return weeks;
+}
+
+function tradeHistoryTeamOptionsHtml() {
+  const selected = state.tradeHistoryRosterId || state.myRosterId;
+  const sorted = [...state.rosters].sort((a, b) => rosterLabel(a).localeCompare(rosterLabel(b)));
+  return sorted
+    .map((r) => {
+      const isMe = r.roster_id === state.myRosterId;
+      const label = `${rosterLabel(r)}${isMe ? " (you)" : ""}`;
+      return `<option value="${r.roster_id}"${r.roster_id === selected ? " selected" : ""}>${escapeHtml(label)}</option>`;
+    })
+    .join("");
+}
+
+function tradeHistoryItemHtml(txn, rosterId) {
+  const partners = transactionRosterIds(txn)
+    .filter((rid) => rid !== rosterId)
+    .map((rid) => rosterLabel(rosterById(rid)));
+  const { received, sent } = transactionAssetsForRoster(txn, rosterId);
+  const ts = txn.status_updated || txn.created;
+  return `
+    <div class="news-item">
+      <div class="news-item-head">
+        <span class="badge badge-TRADE">TRADE</span>
+        <span class="news-headline" style="margin:0">With ${escapeHtml(partners.join(", ") || "another team")}</span>
+        <span class="news-date">${ts ? relativeDate(new Date(ts).toISOString()) : ""}</span>
+      </div>
+      <div class="trade-history-assets" style="margin-top:8px">
+        <div><span class="player-meta">Received</span><br>${received.length ? received.map(escapeHtml).join(", ") : "&mdash;"}</div>
+        <div><span class="player-meta">Sent</span><br>${sent.length ? sent.map(escapeHtml).join(", ") : "&mdash;"}</div>
+      </div>
+    </div>`;
+}
+
+function renderTradeHistoryBody() {
+  const card = document.getElementById("trade-history-card");
+  if (!card) return;
+  const rosterId = state.tradeHistoryRosterId;
+  const pickerHtml = `
+    <div class="age-team-picker">
+      <label for="trade-history-team-select">Team</label>
+      <select id="trade-history-team-select">${tradeHistoryTeamOptionsHtml()}</select>
+    </div>`;
+
+  const trades = (state.tradeHistoryTrades || []).filter((t) => transactionRosterIds(t).includes(rosterId));
+
+  if (!trades.length) {
+    card.innerHTML = `
+      <h2>Trade History</h2>
+      <p class="hero-copy">Every completed trade involving the selected team this season.</p>
+      ${pickerHtml}
+      ${emptyState("No completed trades for this team yet.")}`;
+    return;
+  }
+
+  const rows = trades.map((t) => tradeHistoryItemHtml(t, rosterId)).join("");
+  card.innerHTML = `
+    <h2>Trade History</h2>
+    <p class="hero-copy">Every completed trade involving the selected team this season.</p>
+    ${pickerHtml}
+    ${rows}`;
+}
+
+async function renderTradeHistory() {
+  const card = document.getElementById("trade-history-card");
+  if (!card) return;
+  if (!state.tradeHistoryRosterId) {
+    state.tradeHistoryRosterId = state.myRosterId || (state.rosters[0] && state.rosters[0].roster_id) || null;
+  }
+  card.innerHTML = `<h2>Trade History</h2><p class="spinner-note">Loading trade history...</p>`;
+
+  if (!state.tradeHistoryTrades) {
+    try {
+      const weeks = tradeHistoryWeeksToFetch();
+      const results = await Promise.allSettled(
+        weeks.map((w) => api(`/league/${state.leagueId}/transactions/${w}`))
+      );
+      const all = [];
+      results.forEach((r) => {
+        if (r.status === "fulfilled" && Array.isArray(r.value)) all.push(...r.value);
+      });
+      state.tradeHistoryTrades = all
+        .filter((t) => t.status === "complete" && t.type === "trade")
+        .sort((a, b) => (b.status_updated || b.created || 0) - (a.status_updated || a.created || 0));
+    } catch {
+      card.innerHTML = `<h2>Trade History</h2>${emptyState("Couldn't load trade history.")}`;
+      return;
+    }
+  }
+  renderTradeHistoryBody();
+}
+
+function setupTradeHistoryTeamSelect() {
+  document.addEventListener("change", (e) => {
+    if (e.target.id !== "trade-history-team-select") return;
+    state.tradeHistoryRosterId = Number(e.target.value);
+    renderTradeHistoryBody();
+  });
 }
 
 // ---------- Standings ----------
@@ -3618,6 +3742,21 @@ function setupTabs() {
       if (state.risingMetrics) renderTrendingContent();
     });
   });
+
+  document.querySelectorAll(".sub-tab-btn[data-tradesubtab]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("active")) return;
+      document.querySelectorAll(".sub-tab-btn[data-tradesubtab]").forEach((b) => b.classList.remove("active"));
+      document.querySelectorAll(".sub-tab-panel").forEach((p) => p.classList.remove("active"));
+      btn.classList.add("active");
+      state.tradeSubTab = btn.dataset.tradesubtab;
+      document.getElementById(`trade-${state.tradeSubTab}-panel`).classList.add("active");
+      // Trade History fetches every week of the season on first visit (not
+      // needed for Trade Finder), so it's loaded lazily here instead of in
+      // the main load sequence -- same reasoning as the Evaluator tab.
+      if (state.tradeSubTab === "history" && !state.tradeHistoryTrades) renderTradeHistory();
+    });
+  });
 }
 
 // ---------- wiring ----------
@@ -3631,6 +3770,7 @@ function init() {
   setupOutlookViewToggle();
   setupPerformersWeekSelect();
   setupPerformersFilters();
+  setupTradeHistoryTeamSelect();
   setupPowerRankSort();
   setupPowerRankExpand();
   setupEvaluatorSearch();

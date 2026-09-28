@@ -27,7 +27,7 @@
 
     <nav id="app-nav" class="tab-nav hidden">
       <button class="tab-btn active" data-tab="dashboard">Home</button>
-      <button class="tab-btn" data-tab="trades">Trade Finder</button>
+      <button class="tab-btn" data-tab="trades">Trades</button>
       <button class="tab-btn" data-tab="trending">Trending</button>
       <button class="tab-btn" data-tab="agecurve">Age Curve</button>
       <button class="tab-btn" data-tab="outlook">Outlook</button>
@@ -81,14 +81,25 @@
     </section>
 
     <section id="trades" class="tab-panel">
-      <div id="needs-card" class="card"></div>
-      <div class="trade-columns">
-        <div class="trade-col">
-          <div id="trade-builder-card" class="card"></div>
+      <div id="trade-sub-tabs" class="sub-tab-nav">
+        <button class="sub-tab-btn active" data-tradesubtab="finder">Trade Finder</button>
+        <button class="sub-tab-btn" data-tradesubtab="history">Trade History</button>
+      </div>
+
+      <div id="trade-finder-panel" class="sub-tab-panel active">
+        <div id="needs-card" class="card"></div>
+        <div class="trade-columns">
+          <div class="trade-col">
+            <div id="trade-builder-card" class="card"></div>
+          </div>
+          <div class="trade-col">
+            <div id="trade-suggestions-grid" class="trade-grid"></div>
+          </div>
         </div>
-        <div class="trade-col">
-          <div id="trade-suggestions-grid" class="trade-grid"></div>
-        </div>
+      </div>
+
+      <div id="trade-history-panel" class="sub-tab-panel">
+        <div id="trade-history-card" class="card"></div>
       </div>
     </section>
 
