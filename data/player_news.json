@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-28T21:01:20Z",
+  "generated_at": "2026-09-29T03:49:32Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "DeVonta Smith",
+      "sleeper_id": "7525",
+      "gsis_id": "00-0036912",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Paces pass catchers in Week 3 loss",
+      "description": "Smith secured six of eight targets for 65 yards in the Eagles' 27-7 loss to the Bears on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
+      "pub_date": "2026-09-28T08:42:00Z"
+    },
+    {
+      "player_name": "Saquon Barkley",
+      "sleeper_id": "4866",
+      "gsis_id": "00-0034844",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Solid numbers in double-digit loss",
+      "description": "Barkley rushed 15 times for 82 yards and secured one of two targets for minus-2 yards in the Eagles' 27-7 loss to the Bears on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
+      "pub_date": "2026-09-28T08:37:00Z"
+    },
+    {
+      "player_name": "D'Andre Swift",
+      "sleeper_id": "6790",
+      "gsis_id": "00-0036275",
+      "position": "RB",
+      "team": "CHI",
+      "headline": "Strong finish in Week 3 win",
+      "description": "Swift rushed 20 times for 84 yards and brought in two of three targets for four yards in the Bears' 27-7 win over the Eagles on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dandre-swift-14394",
+      "pub_date": "2026-09-28T08:31:00Z"
+    },
+    {
+      "player_name": "Jalen Hurts",
+      "sleeper_id": "6904",
+      "gsis_id": "00-0036389",
+      "position": "QB",
+      "team": "PHI",
+      "headline": "Evaluated for concussion, cleared to return",
+      "description": "Hurts exited Monday's game versus Chicago to be evaluated for a concussion and has since been cleared to return. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-hurts-14416",
+      "pub_date": "2026-09-28T06:31:00Z"
+    },
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Limited to two catches in return",
+      "description": "Pittman caught two passes on five targets for 16 yards in Sunday's 30-27 win over the Bengals. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-09-28T06:16:00Z"
+    },
     {
       "player_name": "Rico Dowdle",
       "sleeper_id": "7021",
