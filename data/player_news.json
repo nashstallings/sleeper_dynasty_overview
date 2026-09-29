@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-29T03:49:32Z",
+  "generated_at": "2026-09-29T11:59:19Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Kyle Monangai",
+      "sleeper_id": "12534",
+      "gsis_id": "00-0040236",
+      "position": "RB",
+      "team": "CHI",
+      "headline": "Kept in check during win",
+      "description": "Monangai rushed 10 times for 31 yards and wasn't targeted in the Bears' 27-7 win over the Eagles on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyle-monangai-18520",
+      "pub_date": "2026-09-28T09:18:00Z"
+    },
+    {
+      "player_name": "Colston Loveland",
+      "sleeper_id": "12517",
+      "gsis_id": "00-0040126",
+      "position": "TE",
+      "team": "CHI",
+      "headline": "Slight uptick in production Monday",
+      "description": "Loveland secured all four targets for 31 yards in the Bears' 27-7 win over the Eagles on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/colston-loveland-18460",
+      "pub_date": "2026-09-28T09:13:00Z"
+    },
+    {
+      "player_name": "Rome Odunze",
+      "sleeper_id": "11620",
+      "gsis_id": "00-0039919",
+      "position": "WR",
+      "team": "CHI",
+      "headline": "Three more catches in win",
+      "description": "Odunze secured three of six targets for 44 yards in the Bears' 27-7 win over the Eagles on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rome-odunze-17020",
+      "pub_date": "2026-09-28T09:09:00Z"
+    },
+    {
+      "player_name": "Luther Burden III",
+      "sleeper_id": "12519",
+      "gsis_id": "00-0040735",
+      "position": "WR",
+      "team": "CHI",
+      "headline": "Scores TD on productive night",
+      "description": "Burden secured seven of 11 targets for 61 yards and a touchdown while rushing once for seven yards in the Bears' 27-7 win over the Eagles on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/luther-burden-18548",
+      "pub_date": "2026-09-28T09:03:00Z"
+    },
+    {
+      "player_name": "Jalen Hurts",
+      "sleeper_id": "6904",
+      "gsis_id": "00-0036389",
+      "position": "QB",
+      "team": "PHI",
+      "headline": "Forgettable night in loss",
+      "description": "Hurts completed 16 of 25 passes for 153 yards with no touchdowns and one interception while rushing four times for 25 yards and a touchdown in the Eagles' 27-7 loss to the Bears on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-hurts-14416",
+      "pub_date": "2026-09-28T08:58:00Z"
+    },
     {
       "player_name": "DeVonta Smith",
       "sleeper_id": "7525",
