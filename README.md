@@ -79,8 +79,9 @@ different one.
 The Trades tab splits into three sub-tabs: **Trade Finder** (the
 trade-target scouting tool below), **Trade History** (every completed
 trade a chosen team has ever made in this league), and **Trade Calculator**
-(build both sides of a hypothetical trade with any players or picks, and
-see whether it's fair by trade value).
+(pick any two teams, check off what each side would give up from their
+actual rosters and picks, and see whether the trade is fair by trade
+value).
 
 ### Trade Finder
 
@@ -176,39 +177,34 @@ the only slow part, and it scales with how many seasons the league has.
 ### Trade Calculator
 
 Two side-by-side panels, each with a **Team** selector (defaulting to
-your own team on the left, the first other team on the right) so the
-panel is labeled with a real team name &mdash; "My Squad gets&hellip;"
-rather than a generic "Team 1 gets&hellip;". Search for any QB/RB/WR/TE
-(system-wide, not limited to whatever that selected team currently
-rosters) and add them to whichever side is receiving them, or add a
-future draft pick by season and round. Each added player shows their
-position, team, age, and trade value, with a button to remove them; the
-same player can't be added to both sides at once, and picking the same
-team on both sides isn't possible either (each side's dropdown excludes
-whatever the other side currently has selected).
+your own team on the left, the first other team on the right). Unlike
+Trade Finder's search-based player picker, each side only lists that
+team's actual assets &mdash; its real Starters, Bench, and Draft Picks,
+pulled the same way Trade Finder's own builder does &mdash; as checkboxes:
+checking one means that team would *give it up* in the trade. A traded
+pick shows its real original owner (e.g. "2027 2nd (via Rival Squad)")
+the same way it does everywhere else in the app.
 
-The team selector is purely a label, not a scope restriction: switching
-which team a side represents never clears or restricts what you've
-already added there, since the search was never limited to that team's
-actual roster in the first place &mdash; it just changes the name shown.
+Switching a side's team dropdown clears whatever was checked there, since
+a selection only makes sense for the roster it came from; the new team's
+own roster then populates the checkboxes. Picking the same team on both
+sides isn't possible either &mdash; each side's dropdown excludes
+whatever the other side currently has selected.
 
-Below the two panels, a summary compares the two piles directly: each
-side's team name, total pieces, and a position breakdown (e.g. "1 RB" vs.
-"1 RB, 1 WR"), total trade value, a proportional bar showing the split,
-and a verdict &mdash; **&asymp; Fair Trade** if the two totals are within
-the same &plusmn;20% tolerance the Trade Finder's own return packages use,
-or **Favors [team name]** with roughly how much value the other side
-would need to add to even it out. Since each panel already represents
-what that team *receives*, whichever pile is worth more directly tells
-you who's ahead &mdash; no separate "what each side gives up" bookkeeping
-needed.
+Below the two panels, a summary compares both sides: each team's name,
+total pieces given up, and a position breakdown (e.g. "1 RB" vs.
+"1 RB, 1 WR"), the total trade value each side gives up and receives
+(what it gives up is the other side's pile, not its own), a proportional
+bar showing the split of value received, and a verdict &mdash;
+**&asymp; Fair Trade** if the two received totals are within the same
+&plusmn;20% tolerance the Trade Finder's own return packages use, or
+**Favors [team name]** with roughly how much value the other side would
+need to add to even it out.
 
-Team selection aside, this tab isn't tied to actual roster ownership the
-way Trade Finder and Trade History are: it's a plain value comparison for
-any hypothetical trade you want to price out, using the same
-DynastyProcess values and 1QB/superflex format-awareness used everywhere
-else in the app. It doesn't check flagged needs or suggest a return
-package &mdash; that's what Trade Finder is for.
+This tab is a plain value comparison using the same DynastyProcess values
+and 1QB/superflex format-awareness used everywhere else in the app. It
+doesn't check flagged needs or suggest a return package &mdash; that's
+what Trade Finder is for.
 
 ## How Trending works
 
