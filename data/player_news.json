@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-09-30T11:47:40Z",
+  "generated_at": "2026-09-30T17:28:17Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Caleb Douglas",
+      "sleeper_id": "13296",
+      "gsis_id": "00-0041523",
+      "position": "WR",
+      "team": "MIA",
+      "headline": "Misses practice Wednesday",
+      "description": "Dolphins head coach Jeff Hafley said that Douglas (ankle) won't practice Wednesday, Travis Wingfield of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/caleb-douglas-19343",
+      "pub_date": "2026-09-30T09:57:00Z"
+    },
+    {
+      "player_name": "Jaylen Wright",
+      "sleeper_id": "11643",
+      "gsis_id": "00-0039874",
+      "position": "RB",
+      "team": "MIA",
+      "headline": "Taking part in practice Wednesday",
+      "description": "Dolphins head coach Jeff Hafley said that Wright (foot/stinger) will practice Wednesday, C. Isaiah Smalls II of the Miami Herald reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-wright-17800",
+      "pub_date": "2026-09-30T09:49:00Z"
+    },
+    {
+      "player_name": "Tony Pollard",
+      "sleeper_id": "5967",
+      "gsis_id": "00-0035261",
+      "position": "RB",
+      "team": "TEN",
+      "headline": "Won't practice Wednesday",
+      "description": "Pollard (ankle) won't practice Wednesday, Terry McCormick of TitanInsider.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tony-pollard-13590",
+      "pub_date": "2026-09-30T09:46:00Z"
+    },
+    {
+      "player_name": "Tyjae Spears",
+      "sleeper_id": "9508",
+      "gsis_id": "00-0039032",
+      "position": "RB",
+      "team": "TEN",
+      "headline": "Won't practice Wednesday",
+      "description": "Spears (ankle) won't practice Wednesday, Terry McCormick of TitanInsider.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyjae-spears-16941",
+      "pub_date": "2026-09-30T09:42:00Z"
+    },
+    {
+      "player_name": "Jayden Reed",
+      "sleeper_id": "10222",
+      "gsis_id": "00-0039146",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Needs neck surgery, out for season",
+      "description": "Packers head coach Matt LaFleur said Wednesday that Reed will require season-ending surgery on his neck, Matt Schneidman of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jayden-reed-16977",
+      "pub_date": "2026-09-30T09:40:00Z"
+    },
     {
       "player_name": "Jayden Daniels",
       "sleeper_id": "11566",
