@@ -100,11 +100,8 @@ const state = {
   tradeSubTab: "finder",
   tradeHistoryOwnerId: null,
   tradeHistorySeasons: null,
-  tradeCalcInitialized: false,
-  tradeCalcRosterA: null,
-  tradeCalcRosterB: null,
-  tradeCalcSelectedA: new Set(),
-  tradeCalcSelectedB: new Set(),
+  tradeCalcItemsA: [],
+  tradeCalcItemsB: [],
   evaluatorPid: null,
   evaluatorSeason: null,
   playerWeeklyStats: null,
@@ -277,11 +274,8 @@ async function loadLeague(leagueId) {
     state.tradeSubTab = "finder";
     state.tradeHistoryOwnerId = null;
     state.tradeHistorySeasons = null;
-    state.tradeCalcInitialized = false;
-    state.tradeCalcRosterA = null;
-    state.tradeCalcRosterB = null;
-    state.tradeCalcSelectedA = new Set();
-    state.tradeCalcSelectedB = new Set();
+    state.tradeCalcItemsA = [];
+    state.tradeCalcItemsB = [];
     document.querySelectorAll(".sub-tab-btn[data-tradesubtab]").forEach((b) => b.classList.toggle("active", b.dataset.tradesubtab === "finder"));
     document.querySelectorAll(".sub-tab-panel").forEach((p) => p.classList.remove("active"));
     const finderPanel = document.getElementById("trade-finder-panel");
@@ -1758,189 +1752,309 @@ function renderTradeSuggestions() {
 
 // ---------- Trade Calculator ----------
 
-// Deliberately a separate row renderer from tradePickRowHtml rather than
-// adding parameters to it -- tradePickRowHtml is called as `arr.map
-// (tradePickRowHtml)` in a few places, and Array.map passes (item, index,
-// array) to its callback, so a second parameter there would silently
-// receive the loop index instead of anything meaningful.
-function tradeCalcAssetRowHtml(id, ownerRosterId, selectedSet) {
-  const checked = selectedSet.has(id) ? "checked" : "";
-  if (isPickId(id)) {
-    return `
-      <label class="trade-pick-row">
-        <input type="checkbox" data-pid="${id}" ${checked} />
-        <span class="badge badge-PICK">PICK</span>
-        <span class="player-name">${assetLabel(id, ownerRosterId)}</span>
-        <span class="value-tag">${formatValue(assetValue(id))}</span>
-      </label>`;
+// Free-form pile builder: each side is "what Team N gets", built by
+// searching the full player pool (not scoped to any particular roster --
+// this isn't tied to who currently owns whom) and adding future picks by
+// season/round. A separate, simpler ID scheme from the Trade Finder's
+// roster-owned pickId() -- there's no "original owner" concept here, a
+// pick is just a (season, round) asset like KeepTradeCut-style calculators
+// treat it.
+function tradeCalcPickId(season, round) {
+  return `calcpick:${season}:${round}`;
+}
+function isTradeCalcPickId(id) {
+  return typeof id === "string" && id.startsWith("calcpick:");
+}
+function parseTradeCalcPickId(id) {
+  const [, season, round] = id.split(":");
+  return { season, round: Number(round) };
+}
+function tradeCalcAssetValue(id) {
+  if (isTradeCalcPickId(id)) {
+    const { season, round } = parseTradeCalcPickId(id);
+    return pickValue(season, round);
   }
-  const p = player(id);
-  const pos = playerPosition(p);
-  return `
-    <label class="trade-pick-row">
-      <input type="checkbox" data-pid="${id}" ${checked} />
-      <span class="badge badge-${pos}">${pos}</span>
-      <span class="player-name" data-player-id="${id}">${playerDisplay(p)}</span>
-      <span class="player-meta">${p.team || "FA"}</span>
-      <span class="value-tag">${formatValue(playerValue(id))}</span>
-      <span class="rank-tag">#${playerRank(p)}</span>
-    </label>`;
+  return playerValue(id);
+}
+function tradeCalcAssetPosition(id) {
+  return isTradeCalcPickId(id) ? "PICK" : playerPosition(player(id));
+}
+function tradeCalcAssetName(id) {
+  if (isTradeCalcPickId(id)) {
+    const { season, round } = parseTradeCalcPickId(id);
+    return `${season} ${roundOrdinal(round)}`;
+  }
+  return playerDisplay(player(id));
 }
 
-// Each side's team select excludes whichever roster the OTHER side has
-// picked, so the same team can't end up selected on both sides at once.
-function tradeCalcTeamOptionsHtml(side) {
-  const selectedId = side === "A" ? state.tradeCalcRosterA : state.tradeCalcRosterB;
-  const excludeId = side === "A" ? state.tradeCalcRosterB : state.tradeCalcRosterA;
-  const sorted = [...state.rosters].sort((a, b) => rosterLabel(a).localeCompare(rosterLabel(b)));
-  const opts = sorted
-    .filter((r) => r.roster_id !== excludeId)
-    .map((r) => {
-      const isMe = r.roster_id === state.myRosterId;
-      const label = `${rosterLabel(r)}${isMe ? " (you)" : ""}`;
-      return `<option value="${r.roster_id}"${r.roster_id === selectedId ? " selected" : ""}>${escapeHtml(label)}</option>`;
-    })
+function playerAgeYears(pid) {
+  const info = state.playerAges && state.playerAges.players && state.playerAges.players[pid];
+  if (!info) return null;
+  return ageFromBirthDate(info.birth_date);
+}
+
+function tradeCalcItems(side) {
+  return side === "A" ? state.tradeCalcItemsA : state.tradeCalcItemsB;
+}
+function tradeCalcUsedIds() {
+  return new Set([...state.tradeCalcItemsA, ...state.tradeCalcItemsB]);
+}
+
+function tradeCalcSearchResults(query, excludeIds) {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  const results = [];
+  for (const id in state.players) {
+    if (excludeIds.has(id)) continue;
+    const p = state.players[id];
+    const pos = playerPosition(p);
+    if (!SKILL_POSITIONS.includes(pos)) continue;
+    const name = playerDisplay(p);
+    if (!name || !name.toLowerCase().includes(q)) continue;
+    results.push({ pid: id, p, name, pos });
+  }
+  results.sort((a, b) => playerRank(a.p) - playerRank(b.p));
+  return results.slice(0, EVALUATOR_SEARCH_LIMIT);
+}
+
+function tradeCalcSuggestionsHtml(results) {
+  if (!results.length) return `<p class="evaluator-suggestion-empty player-meta">No matching players.</p>`;
+  return results
+    .map(
+      (r) => `
+    <button type="button" class="evaluator-suggestion" data-add-pid="${r.pid}">
+      <span class="badge badge-${r.pos}">${r.pos}</span>
+      <span>${escapeHtml(r.name)}</span>
+      <span class="player-meta">${r.p.team || "FA"}</span>
+    </button>`
+    )
     .join("");
-  return `<option value="">Choose a team&hellip;</option>${opts}`;
+}
+
+function tradeCalcPickAdderHtml(side) {
+  const seasons = pickTradeSeasons();
+  if (!seasons.length) return "";
+  const rounds = state.draftRounds || 4;
+  const seasonOpts = seasons.map((s) => `<option value="${s}">${s}</option>`).join("");
+  const roundOpts = Array.from({ length: rounds }, (_, i) => i + 1)
+    .map((r) => `<option value="${r}">${roundOrdinal(r)}</option>`)
+    .join("");
+  return `
+    <div class="trade-calc-pick-adder">
+      <select data-tradecalc-pickseason="${side}">${seasonOpts}</select>
+      <select data-tradecalc-pickround="${side}">${roundOpts}</select>
+      <button type="button" class="btn-ghost" data-tradecalc-addpick="${side}">+ Add a pick</button>
+    </div>`;
+}
+
+function tradeCalcItemRowHtml(id) {
+  const pos = tradeCalcAssetPosition(id);
+  const value = tradeCalcAssetValue(id);
+  const nameCell = isTradeCalcPickId(id)
+    ? `<span class="player-name">${tradeCalcAssetName(id)}</span>`
+    : (() => {
+        const p = player(id);
+        const age = playerAgeYears(id);
+        return `
+          <span class="player-name" data-player-id="${id}">${escapeHtml(playerDisplay(p))}</span>
+          <span class="player-meta">${p.team || "FA"}${age !== null ? ` &middot; ${age.toFixed(1)} y.o.` : ""}</span>`;
+      })();
+  return `
+    <div class="trade-calc-item">
+      <span class="badge badge-${pos}">${pos}</span>
+      ${nameCell}
+      <span class="value-tag">${formatValue(value)}</span>
+      <button type="button" class="trade-calc-remove" data-remove-pid="${id}" aria-label="Remove">&times;</button>
+    </div>`;
 }
 
 function tradeCalcSideHtml(side) {
-  const rosterId = side === "A" ? state.tradeCalcRosterA : state.tradeCalcRosterB;
-  const selected = side === "A" ? state.tradeCalcSelectedA : state.tradeCalcSelectedB;
-  const roster = rosterId ? rosterById(rosterId) : null;
-
-  let bodyHtml;
-  if (!roster) {
-    bodyHtml = emptyState("Pick a team to see their roster.");
-  } else {
-    const { starters, bench, picks } = rosterAllAssets(rosterId);
-    const rows = (ids) => ids.map((id) => tradeCalcAssetRowHtml(id, rosterId, selected)).join("");
-    bodyHtml = `
-      <h3>Starters</h3>
-      <div class="trade-pick-list">${rows(starters)}</div>
-      ${bench.length ? `<h3>Bench</h3><div class="trade-pick-list">${rows(bench)}</div>` : ""}
-      ${picks.length ? `<h3>Draft Picks</h3><div class="trade-pick-list">${rows(picks.map((pk) => pk.id))}</div>` : ""}`;
-  }
-
+  const items = tradeCalcItems(side);
+  const label = side === "A" ? "Team 1" : "Team 2";
   return `
-    <div class="age-team-picker">
-      <label for="trade-calc-team-${side}">Team ${side}</label>
-      <select id="trade-calc-team-${side}" data-tradecalcside="${side}">${tradeCalcTeamOptionsHtml(side)}</select>
+    <h2>${label} gets&hellip;</h2>
+    <div class="evaluator-search-wrap">
+      <input type="text" class="trade-calc-search-input" data-tradecalc-search="${side}" placeholder="Search for a player..." autocomplete="off" />
+      <div class="evaluator-suggestions hidden" data-tradecalc-suggestions="${side}"></div>
     </div>
-    ${bodyHtml}`;
+    ${tradeCalcPickAdderHtml(side)}
+    <div class="trade-calc-item-list">
+      ${items.length ? items.map(tradeCalcItemRowHtml).join("") : emptyState("Nothing added yet.")}
+    </div>`;
 }
 
-// Fairness is judged the same way as the trade builder's own return
-// packages (TRADE_FAIR_VALUE_TOLERANCE, +/-20%), just applied to two
-// user-picked piles instead of an auto-suggested one.
-function tradeCalcVerdictHtml() {
-  const rosterA = rosterById(state.tradeCalcRosterA);
-  const rosterB = rosterById(state.tradeCalcRosterB);
-  if (!rosterA || !rosterB) {
-    return emptyState("Choose two teams below, then select what each side would give up.");
-  }
-  if (!state.tradeCalcSelectedA.size && !state.tradeCalcSelectedB.size) {
-    return emptyState("Select what each team would give up to see if the trade is fair.");
+const POSITION_TALLY_ORDER = ["QB", "RB", "WR", "TE", "PICK"];
+function tradeCalcPositionTally(items) {
+  const counts = {};
+  items.forEach((id) => {
+    const pos = tradeCalcAssetPosition(id);
+    counts[pos] = (counts[pos] || 0) + 1;
+  });
+  return POSITION_TALLY_ORDER.filter((pos) => counts[pos])
+    .map((pos) => `${counts[pos]} ${pos}`)
+    .join(", ");
+}
+
+// Each side's list IS what that team receives (that's the point of the
+// "Team N gets..." framing), so unlike a roster-bound give/receive split,
+// comparing the two totals directly already tells you who's ahead --
+// there's no separate "gives" side to invert here.
+function tradeCalcSummaryHtml() {
+  const itemsA = state.tradeCalcItemsA;
+  const itemsB = state.tradeCalcItemsB;
+  if (!itemsA.length && !itemsB.length) {
+    return emptyState("Add players (or picks) to each side to see if the trade is fair.");
   }
 
-  const valuesA = [...state.tradeCalcSelectedA].map(assetValue);
-  const valuesB = [...state.tradeCalcSelectedB].map(assetValue);
+  const valuesA = itemsA.map(tradeCalcAssetValue);
+  const valuesB = itemsB.map(tradeCalcAssetValue);
   const knownA = valuesA.filter((v) => v !== null && v !== undefined);
   const knownB = valuesB.filter((v) => v !== null && v !== undefined);
-  const givesA = knownA.reduce((sum, v) => sum + v, 0);
-  const givesB = knownB.reduce((sum, v) => sum + v, 0);
+  const totalA = knownA.reduce((sum, v) => sum + v, 0);
+  const totalB = knownB.reduce((sum, v) => sum + v, 0);
   const missing = valuesA.length - knownA.length + (valuesB.length - knownB.length);
 
-  // Each side's checkboxes are what THAT team is sending away, so what a
-  // team receives is simply the other side's total -- Team A's incoming
-  // value is whatever Team B checked off, and vice versa. Getting this
-  // backwards (comparing what each side gives, not receives) is exactly
-  // the bug this fixes: a team that gives up MORE than it receives is
-  // losing the trade, not winning it.
-  const receivesA = givesB;
-  const receivesB = givesA;
+  const combined = totalA + totalB;
+  const pctA = combined > 0 ? (totalA / combined) * 100 : 50;
+  const pctB = 100 - pctA;
 
-  const labelA = rosterLabel(rosterA);
-  const labelB = rosterLabel(rosterB);
-
-  let verdictHtml;
-  if (!givesA && !givesB) {
-    verdictHtml = `<p class="player-meta">None of the selected assets have a known trade value yet.</p>`;
-  } else {
-    const bigger = Math.max(receivesA, receivesB);
-    const smaller = Math.min(receivesA, receivesB);
+  let verdictHtml = "";
+  if (combined > 0) {
+    const bigger = Math.max(totalA, totalB);
+    const smaller = Math.min(totalA, totalB);
     const diffPct = bigger > 0 ? (bigger - smaller) / bigger : 0;
     const isFair = diffPct <= TRADE_FAIR_VALUE_TOLERANCE;
-    const winnerLabel = receivesA === receivesB ? null : receivesA > receivesB ? labelA : labelB;
-    verdictHtml = isFair
-      ? `<p class="package-summary"><span class="value-fair-badge">&asymp; Fair trade</span></p>`
-      : `<p class="package-summary"><span class="player-meta"><strong>${escapeHtml(winnerLabel)}</strong> is getting the better end, by about ${Math.round(diffPct * 100)}%</span></p>`;
+    if (isFair) {
+      verdictHtml = `<div class="trade-calc-verdict-banner is-fair"><div class="trade-calc-favors">&asymp; Fair Trade</div></div>`;
+    } else {
+      const favored = totalA > totalB ? "Team 1" : "Team 2";
+      const needing = totalA > totalB ? "Team 2" : "Team 1";
+      const arrow = totalA > totalB ? "&larr;" : "&rarr;";
+      const gap = Math.round(bigger - smaller);
+      verdictHtml = `
+        <div class="trade-calc-verdict-banner is-lopsided">
+          <div class="trade-calc-favors">Favors ${favored} ${arrow}</div>
+          <p>Add a player worth about ${gap.toLocaleString()} to ${needing} to even the trade.</p>
+        </div>`;
+    }
   }
 
   return `
-    <div class="offer-value-summary">
-      <span>${escapeHtml(labelA)} gives <strong>${formatValue(givesA)}</strong>, receives <strong>${formatValue(receivesA)}</strong></span>
+    <div class="trade-calc-compare">
+      <div class="trade-calc-compare-col">
+        <p class="trade-calc-pieces">${itemsA.length} Total Piece${itemsA.length === 1 ? "" : "s"}</p>
+        <p class="player-meta">${tradeCalcPositionTally(itemsA) || "&mdash;"}</p>
+        <p class="trade-calc-total">${formatValue(totalA)}</p>
+      </div>
+      <div class="trade-calc-compare-col trade-calc-compare-col-right">
+        <p class="trade-calc-pieces">${itemsB.length} Total Piece${itemsB.length === 1 ? "" : "s"}</p>
+        <p class="player-meta">${tradeCalcPositionTally(itemsB) || "&mdash;"}</p>
+        <p class="trade-calc-total">${formatValue(totalB)}</p>
+      </div>
     </div>
-    <div class="offer-value-summary">
-      <span>${escapeHtml(labelB)} gives <strong>${formatValue(givesB)}</strong>, receives <strong>${formatValue(receivesB)}</strong></span>
-    </div>
-    ${missing ? `<p class="player-meta">(${missing} selected item${missing > 1 ? "s" : ""} missing a value)</p>` : ""}
+    <div class="trade-calc-bar"><div class="trade-calc-bar-a" style="width:${pctA}%"></div><div class="trade-calc-bar-b" style="width:${pctB}%"></div></div>
+    ${missing ? `<p class="player-meta">(${missing} item${missing > 1 ? "s" : ""} missing a value)</p>` : ""}
     ${verdictHtml}`;
-}
-
-function renderTradeCalculatorSummary() {
-  const card = document.getElementById("trade-calc-summary-card");
-  if (!card) return;
-  const formatNote = isSuperflexLeague() ? "superflex/2QB" : "1QB";
-  card.innerHTML = `
-    <h2>Trade Calculator</h2>
-    <p class="player-meta" style="margin-bottom:14px">Pick two teams, select what each side would give up, and see whether the trade is fair by trade value. Values assume a ${formatNote} format, from <a href="https://github.com/dynastyprocess/data" target="_blank" rel="noopener">DynastyProcess</a>.</p>
-    ${tradeCalcVerdictHtml()}`;
-}
-
-function wireTradeCalcSideEvents(side) {
-  const card = document.getElementById(`trade-calc-side-${side.toLowerCase()}`);
-  if (!card) return;
-  const select = card.querySelector(`select[data-tradecalcside="${side}"]`);
-  if (select) {
-    select.addEventListener("change", () => {
-      const val = select.value ? Number(select.value) : null;
-      if (side === "A") {
-        state.tradeCalcRosterA = val;
-        state.tradeCalcSelectedA = new Set();
-      } else {
-        state.tradeCalcRosterB = val;
-        state.tradeCalcSelectedB = new Set();
-      }
-      // The other side's own dropdown needs re-rendering too, since its
-      // option list excludes whichever roster this side just picked.
-      renderTradeCalculatorSummary();
-      renderTradeCalculatorSide("A");
-      renderTradeCalculatorSide("B");
-    });
-  }
-  card.querySelectorAll("input[type=checkbox][data-pid]").forEach((cb) => {
-    cb.addEventListener("change", () => {
-      const set = side === "A" ? state.tradeCalcSelectedA : state.tradeCalcSelectedB;
-      if (cb.checked) set.add(cb.dataset.pid);
-      else set.delete(cb.dataset.pid);
-      renderTradeCalculatorSummary();
-    });
-  });
 }
 
 function renderTradeCalculatorSide(side) {
   const card = document.getElementById(`trade-calc-side-${side.toLowerCase()}`);
-  if (!card) return;
-  card.innerHTML = tradeCalcSideHtml(side);
-  wireTradeCalcSideEvents(side);
+  if (card) card.innerHTML = tradeCalcSideHtml(side);
 }
 
-// Self-sufficient (loads trade values/pick ownership itself) rather than
-// riding on renderTradeFinder()'s loads, since renderTradeFinder() returns
-// early without loading either when the viewer doesn't own a roster in
-// this league -- the calculator has no such requirement, it just compares
-// two arbitrary teams.
+function renderTradeCalculatorSummary() {
+  const card = document.getElementById("trade-calc-summary-card");
+  if (card) card.innerHTML = tradeCalcSummaryHtml();
+}
+
+function renderTradeCalculatorIntro() {
+  const card = document.getElementById("trade-calc-intro-card");
+  if (!card) return;
+  const formatNote = isSuperflexLeague() ? "superflex/2QB" : "1QB";
+  card.innerHTML = `
+    <h2>Trade Calculator</h2>
+    <p class="hero-copy">Add players (or future picks) to either side to see whether the trade is fair by trade value. Values assume a ${formatNote} format, from <a href="https://github.com/dynastyprocess/data" target="_blank" rel="noopener">DynastyProcess</a>.</p>`;
+}
+
+function tradeCalcAddItem(side, id) {
+  const list = tradeCalcItems(side);
+  if (!list.includes(id)) list.push(id);
+  const input = document.querySelector(`input[data-tradecalc-search="${side}"]`);
+  if (input) input.value = "";
+  renderTradeCalculatorSide(side);
+  renderTradeCalculatorSummary();
+}
+
+function tradeCalcRemoveItem(side, id) {
+  const list = tradeCalcItems(side);
+  const idx = list.indexOf(id);
+  if (idx !== -1) list.splice(idx, 1);
+  renderTradeCalculatorSide(side);
+  renderTradeCalculatorSummary();
+}
+
+function tradeCalcAddPick(side) {
+  const seasonSel = document.querySelector(`select[data-tradecalc-pickseason="${side}"]`);
+  const roundSel = document.querySelector(`select[data-tradecalc-pickround="${side}"]`);
+  if (!seasonSel || !roundSel) return;
+  tradeCalcAddItem(side, tradeCalcPickId(seasonSel.value, Number(roundSel.value)));
+}
+
+// A single set of delegated listeners (attached once in init(), not
+// re-wired per render) covers both sides' search boxes and item lists --
+// simpler and more robust than re-attaching handlers every time a side's
+// innerHTML is replaced by an add/remove.
+function setupTradeCalcInteractions() {
+  document.addEventListener("input", (e) => {
+    const input = e.target.closest("input[data-tradecalc-search]");
+    if (!input) return;
+    const side = input.dataset.tradecalcSearch;
+    const suggestions = document.querySelector(`[data-tradecalc-suggestions="${side}"]`);
+    if (!suggestions) return;
+    if (!input.value.trim()) {
+      suggestions.classList.add("hidden");
+      suggestions.innerHTML = "";
+      return;
+    }
+    suggestions.innerHTML = tradeCalcSuggestionsHtml(tradeCalcSearchResults(input.value, tradeCalcUsedIds()));
+    suggestions.classList.remove("hidden");
+  });
+
+  document.addEventListener("focusin", (e) => {
+    const input = e.target.closest("input[data-tradecalc-search]");
+    if (!input || !input.value.trim()) return;
+    const suggestions = document.querySelector(`[data-tradecalc-suggestions="${input.dataset.tradecalcSearch}"]`);
+    if (suggestions) suggestions.classList.remove("hidden");
+  });
+
+  document.addEventListener("click", (e) => {
+    const addBtn = e.target.closest(".evaluator-suggestion[data-add-pid]");
+    if (addBtn) {
+      const suggestions = addBtn.closest("[data-tradecalc-suggestions]");
+      const side = suggestions ? suggestions.dataset.tradecalcSuggestions : null;
+      if (side) tradeCalcAddItem(side, addBtn.dataset.addPid);
+      return;
+    }
+    const removeBtn = e.target.closest(".trade-calc-remove[data-remove-pid]");
+    if (removeBtn) {
+      const side = removeBtn.closest("#trade-calc-side-a") ? "A" : "B";
+      tradeCalcRemoveItem(side, removeBtn.dataset.removePid);
+      return;
+    }
+    const addPickBtn = e.target.closest("[data-tradecalc-addpick]");
+    if (addPickBtn) {
+      tradeCalcAddPick(addPickBtn.dataset.tradecalcAddpick);
+      return;
+    }
+    if (!e.target.closest(".evaluator-search-wrap")) {
+      document.querySelectorAll("[data-tradecalc-suggestions]").forEach((s) => s.classList.add("hidden"));
+    }
+  });
+}
+
+// Self-sufficient (loads trade values/ages itself) rather than depending
+// on Trade Finder or Age Curve having already fetched them, since this can
+// render before either of those does.
 async function renderTradeCalculator() {
   if (!state.tradeValues) {
     try {
@@ -1950,17 +2064,18 @@ async function renderTradeCalculator() {
       // trade values are optional enrichment; the tab still works without them
     }
   }
-  if (!state.pickOwnership) {
-    state.pickOwnership = computePickOwnership();
+  if (!state.playerAges) {
+    try {
+      const res = await fetch("data/player_ages.json");
+      if (res.ok) state.playerAges = await res.json();
+    } catch {
+      // ages are optional enrichment (shown next to each player); harmless if missing
+    }
   }
-  if (!state.tradeCalcInitialized) {
-    state.tradeCalcInitialized = true;
-    state.tradeCalcRosterA = state.myRosterId || (state.rosters[0] && state.rosters[0].roster_id) || null;
-    state.tradeCalcRosterB = (state.rosters.find((r) => r.roster_id !== state.tradeCalcRosterA) || {}).roster_id || null;
-  }
-  renderTradeCalculatorSummary();
+  renderTradeCalculatorIntro();
   renderTradeCalculatorSide("A");
   renderTradeCalculatorSide("B");
+  renderTradeCalculatorSummary();
 }
 
 // ---------- Trending (rising metrics from nflverse/BigQuery) ----------
@@ -4080,6 +4195,7 @@ function init() {
   setupPerformersWeekSelect();
   setupPerformersFilters();
   setupTradeHistoryTeamSelect();
+  setupTradeCalcInteractions();
   setupPowerRankSort();
   setupPowerRankExpand();
   setupEvaluatorSearch();

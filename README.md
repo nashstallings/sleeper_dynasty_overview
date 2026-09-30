@@ -79,8 +79,8 @@ different one.
 The Trades tab splits into three sub-tabs: **Trade Finder** (the
 trade-target scouting tool below), **Trade History** (every completed
 trade a chosen team has ever made in this league), and **Trade Calculator**
-(pick any two teams, build both sides of a hypothetical trade, and see
-whether it's fair by trade value).
+(build both sides of a hypothetical trade with any players or picks, and
+see whether it's fair by trade value).
 
 ### Trade Finder
 
@@ -175,25 +175,29 @@ the only slow part, and it scales with how many seasons the league has.
 
 ### Trade Calculator
 
-Pick any two teams in the league (Team A and Team B, not limited to your
-own roster) and check off what each side would give up &mdash; starters,
-bench, and owned draft picks, the same rows and trade values the Trade
-Finder builder uses. As you check things off, a summary above shows both
-sides of the ledger for each team: what they **give** (their own checked
-items) and what they **receive** (the other side's checked items) &mdash;
-since whatever Team A sends away is exactly what Team B gets, and vice
-versa. The verdict is based on that receives total, not the gives total:
-**&asymp; Fair trade** if the two are within the same &plusmn;20% tolerance
-the Trade Finder's own return packages use, or which team is getting the
-better end and by roughly how much if not (the team receiving more value
-than it gives up, not the team whose own pile happens to add up to a
-bigger number). Choosing a team on one side removes it from the other
-side's dropdown (the same team can't appear on both sides of a trade), and
-switching either team's dropdown clears that side's checkboxes, since a
-different roster's players aren't the ones you just selected. Nothing here
-checks flagged needs or suggests a package for you &mdash; it's a plain
-value comparison for a trade you've already got in mind, either side
-missing a value shown as such rather than silently left out of the totals.
+Two side-by-side panels, **Team 1 gets&hellip;** and **Team 2 gets&hellip;**
+&mdash; search for any QB/RB/WR/TE (system-wide, not limited to a
+particular roster) and add them to whichever side is receiving them, or
+add a future draft pick by season and round. Each added player shows their
+position, team, age, and trade value, with a button to remove them; the
+same player can't be added to both sides at once.
+
+Below the two panels, a summary compares the two piles directly: total
+pieces and a position breakdown for each side (e.g. "1 RB" vs. "1 RB, 1
+WR"), each side's total trade value, a proportional bar showing the split,
+and a verdict &mdash; **&asymp; Fair Trade** if the two totals are within
+the same &plusmn;20% tolerance the Trade Finder's own return packages use,
+or **Favors Team N** with roughly how much value the other side would
+need to add to even it out. Since each panel already represents what that
+team *receives*, whichever pile is worth more directly tells you who's
+ahead &mdash; no separate "what each side gives up" bookkeeping needed.
+
+This tab isn't tied to actual roster ownership at all (unlike Trade
+Finder and Trade History): it's a plain value comparison for any
+hypothetical trade you want to price out, using the same DynastyProcess
+values and 1QB/superflex format-awareness used everywhere else in the
+app. It doesn't check flagged needs or suggest a return package &mdash;
+that's what Trade Finder is for.
 
 ## How Trending works
 

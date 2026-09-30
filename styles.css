@@ -465,6 +465,94 @@ main { padding-top: 6px; }
 }
 .package-summary strong { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 
+/* ---------- Trade Calculator ---------- */
+
+.trade-calc-search-input {
+  width: 100%;
+  background: var(--panel-soft);
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  padding: 11px 13px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.trade-calc-search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.trade-calc-pick-adder { display: flex; gap: 6px; align-items: center; margin: 12px 0; flex-wrap: wrap; }
+.trade-calc-pick-adder select {
+  background: var(--panel-soft);
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  padding: 6px 8px;
+  border-radius: calc(var(--radius-sm) + 2px);
+  font-size: 0.8rem;
+}
+.trade-calc-pick-adder .btn-ghost { padding: 6px 12px; font-size: 0.8rem; }
+
+.trade-calc-item-list { display: flex; flex-direction: column; gap: 2px; margin-top: 12px; }
+.trade-calc-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 4px;
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--panel-border);
+}
+.trade-calc-item:last-child { border-bottom: none; }
+.trade-calc-item .player-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.trade-calc-item .player-meta, .trade-calc-item .value-tag { flex-shrink: 0; }
+.trade-calc-remove {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--panel-border);
+  background: transparent;
+  color: var(--text-faint);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.trade-calc-remove:hover { color: var(--bad); border-color: var(--bad); }
+
+.trade-calc-compare { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 14px; flex-wrap: wrap; }
+.trade-calc-compare-col-right { text-align: right; }
+.trade-calc-pieces { margin: 0; font-weight: 700; font-size: 0.95rem; }
+.trade-calc-total {
+  margin: 2px 0 0;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.trade-calc-bar {
+  display: flex;
+  height: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--panel-soft);
+  margin-bottom: 14px;
+}
+.trade-calc-bar-a { background: var(--accent); transition: width 0.2s ease; }
+.trade-calc-bar-b { background: var(--pos-neutral); transition: width 0.2s ease; }
+
+.trade-calc-verdict-banner { border-radius: var(--radius); padding: 12px 16px; text-align: center; }
+.trade-calc-verdict-banner.is-fair { background: var(--good-soft); }
+.trade-calc-verdict-banner.is-lopsided { background: var(--bad-soft); }
+.trade-calc-favors { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.95rem; }
+.trade-calc-verdict-banner p { margin: 4px 0 0; font-size: 0.85rem; color: var(--text-dim); }
+
 .trade-manager-card h3 { margin-top: 0; }
 .manager-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
 .fit-summary { font-size: 0.72rem; font-weight: 700; color: var(--text-faint); white-space: nowrap; }
