@@ -67,8 +67,8 @@ you type is sent anywhere except Sleeper's API.
 3. Pick one of your leagues from the dropdown and click "Load league".
 4. Use the tabs to browse **Home**, **Trades**, **Trending**,
    **Age Curve**, **Outlook**, **Performers**, and **Evaluator**. Trades
-   splits into two sub-tabs of its own: **Trade Finder** and
-   **Trade History**.
+   splits into three sub-tabs of its own: **Trade Finder**,
+   **Trade History**, and **Trade Calculator**.
 
 Your username and chosen league are remembered in your browser (`localStorage`)
 so you won't have to re-enter them next time. Use "Switch league" to pick a
@@ -76,9 +76,11 @@ different one.
 
 ## How the Trades tab works
 
-The Trades tab splits into two sub-tabs: **Trade Finder** (the trade-target
-scouting tool below) and **Trade History** (every completed trade a chosen
-team has made this season).
+The Trades tab splits into three sub-tabs: **Trade Finder** (the
+trade-target scouting tool below), **Trade History** (every completed
+trade a chosen team has ever made in this league), and **Trade Calculator**
+(pick any two teams, build both sides of a hypothetical trade, and see
+whether it's fair by trade value).
 
 ### Trade Finder
 
@@ -170,6 +172,24 @@ progress still only fetches up to its actual current week. All of this
 happens once per visit and is cached, so switching the team selector
 afterward just re-filters instead of re-fetching &mdash; the first load is
 the only slow part, and it scales with how many seasons the league has.
+
+### Trade Calculator
+
+Pick any two teams in the league (Team A and Team B, not limited to your
+own roster) and check off what each side would give up &mdash; starters,
+bench, and owned draft picks, the same rows and trade values the Trade
+Finder builder uses. As you check things off, a summary above shows each
+side's total trade value and a verdict: **&asymp; Fair trade** if the two
+totals are within the same &plusmn;20% tolerance the Trade Finder's own
+return packages use, or which team is getting the better end and by
+roughly how much if not. Choosing a team on one side removes it from the
+other side's dropdown (the same team can't appear on both sides of a
+trade), and switching either team's dropdown clears that side's
+checkboxes, since a different roster's players aren't the ones you just
+selected. Nothing here checks flagged needs or suggests a package for
+you &mdash; it's a plain value comparison for a trade you've already got
+in mind, either side missing a value shown as such rather than silently
+left out of the totals.
 
 ## How Trending works
 
