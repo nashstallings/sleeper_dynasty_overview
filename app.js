@@ -1847,22 +1847,31 @@ function tradeCalcVerdictHtml() {
   const valuesB = [...state.tradeCalcSelectedB].map(assetValue);
   const knownA = valuesA.filter((v) => v !== null && v !== undefined);
   const knownB = valuesB.filter((v) => v !== null && v !== undefined);
-  const totalA = knownA.reduce((sum, v) => sum + v, 0);
-  const totalB = knownB.reduce((sum, v) => sum + v, 0);
+  const givesA = knownA.reduce((sum, v) => sum + v, 0);
+  const givesB = knownB.reduce((sum, v) => sum + v, 0);
   const missing = valuesA.length - knownA.length + (valuesB.length - knownB.length);
+
+  // Each side's checkboxes are what THAT team is sending away, so what a
+  // team receives is simply the other side's total -- Team A's incoming
+  // value is whatever Team B checked off, and vice versa. Getting this
+  // backwards (comparing what each side gives, not receives) is exactly
+  // the bug this fixes: a team that gives up MORE than it receives is
+  // losing the trade, not winning it.
+  const receivesA = givesB;
+  const receivesB = givesA;
 
   const labelA = rosterLabel(rosterA);
   const labelB = rosterLabel(rosterB);
 
   let verdictHtml;
-  if (!totalA && !totalB) {
+  if (!givesA && !givesB) {
     verdictHtml = `<p class="player-meta">None of the selected assets have a known trade value yet.</p>`;
   } else {
-    const bigger = Math.max(totalA, totalB);
-    const smaller = Math.min(totalA, totalB);
+    const bigger = Math.max(receivesA, receivesB);
+    const smaller = Math.min(receivesA, receivesB);
     const diffPct = bigger > 0 ? (bigger - smaller) / bigger : 0;
     const isFair = diffPct <= TRADE_FAIR_VALUE_TOLERANCE;
-    const winnerLabel = totalA === totalB ? null : totalA > totalB ? labelA : labelB;
+    const winnerLabel = receivesA === receivesB ? null : receivesA > receivesB ? labelA : labelB;
     verdictHtml = isFair
       ? `<p class="package-summary"><span class="value-fair-badge">&asymp; Fair trade</span></p>`
       : `<p class="package-summary"><span class="player-meta"><strong>${escapeHtml(winnerLabel)}</strong> is getting the better end, by about ${Math.round(diffPct * 100)}%</span></p>`;
@@ -1870,10 +1879,12 @@ function tradeCalcVerdictHtml() {
 
   return `
     <div class="offer-value-summary">
-      <span>${escapeHtml(labelA)}: <strong>${formatValue(totalA)}</strong></span>
-      <span>${escapeHtml(labelB)}: <strong>${formatValue(totalB)}</strong></span>
-      ${missing ? `<span class="player-meta">(${missing} selected item${missing > 1 ? "s" : ""} missing a value)</span>` : ""}
+      <span>${escapeHtml(labelA)} gives <strong>${formatValue(givesA)}</strong>, receives <strong>${formatValue(receivesA)}</strong></span>
     </div>
+    <div class="offer-value-summary">
+      <span>${escapeHtml(labelB)} gives <strong>${formatValue(givesB)}</strong>, receives <strong>${formatValue(receivesB)}</strong></span>
+    </div>
+    ${missing ? `<p class="player-meta">(${missing} selected item${missing > 1 ? "s" : ""} missing a value)</p>` : ""}
     ${verdictHtml}`;
 }
 

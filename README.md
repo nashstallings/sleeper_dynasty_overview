@@ -178,18 +178,22 @@ the only slow part, and it scales with how many seasons the league has.
 Pick any two teams in the league (Team A and Team B, not limited to your
 own roster) and check off what each side would give up &mdash; starters,
 bench, and owned draft picks, the same rows and trade values the Trade
-Finder builder uses. As you check things off, a summary above shows each
-side's total trade value and a verdict: **&asymp; Fair trade** if the two
-totals are within the same &plusmn;20% tolerance the Trade Finder's own
-return packages use, or which team is getting the better end and by
-roughly how much if not. Choosing a team on one side removes it from the
-other side's dropdown (the same team can't appear on both sides of a
-trade), and switching either team's dropdown clears that side's
-checkboxes, since a different roster's players aren't the ones you just
-selected. Nothing here checks flagged needs or suggests a package for
-you &mdash; it's a plain value comparison for a trade you've already got
-in mind, either side missing a value shown as such rather than silently
-left out of the totals.
+Finder builder uses. As you check things off, a summary above shows both
+sides of the ledger for each team: what they **give** (their own checked
+items) and what they **receive** (the other side's checked items) &mdash;
+since whatever Team A sends away is exactly what Team B gets, and vice
+versa. The verdict is based on that receives total, not the gives total:
+**&asymp; Fair trade** if the two are within the same &plusmn;20% tolerance
+the Trade Finder's own return packages use, or which team is getting the
+better end and by roughly how much if not (the team receiving more value
+than it gives up, not the team whose own pile happens to add up to a
+bigger number). Choosing a team on one side removes it from the other
+side's dropdown (the same team can't appear on both sides of a trade), and
+switching either team's dropdown clears that side's checkboxes, since a
+different roster's players aren't the ones you just selected. Nothing here
+checks flagged needs or suggests a package for you &mdash; it's a plain
+value comparison for a trade you've already got in mind, either side
+missing a value shown as such rather than silently left out of the totals.
 
 ## How Trending works
 
