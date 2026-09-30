@@ -100,6 +100,9 @@ const state = {
   tradeSubTab: "finder",
   tradeHistoryOwnerId: null,
   tradeHistorySeasons: null,
+  tradeCalcTeamsInitialized: false,
+  tradeCalcRosterA: null,
+  tradeCalcRosterB: null,
   tradeCalcItemsA: [],
   tradeCalcItemsB: [],
   evaluatorPid: null,
@@ -274,6 +277,9 @@ async function loadLeague(leagueId) {
     state.tradeSubTab = "finder";
     state.tradeHistoryOwnerId = null;
     state.tradeHistorySeasons = null;
+    state.tradeCalcTeamsInitialized = false;
+    state.tradeCalcRosterA = null;
+    state.tradeCalcRosterB = null;
     state.tradeCalcItemsA = [];
     state.tradeCalcItemsB = [];
     document.querySelectorAll(".sub-tab-btn[data-tradesubtab]").forEach((b) => b.classList.toggle("active", b.dataset.tradesubtab === "finder"));
@@ -1868,11 +1874,47 @@ function tradeCalcItemRowHtml(id) {
     </div>`;
 }
 
+function tradeCalcRosterFor(side) {
+  const id = side === "A" ? state.tradeCalcRosterA : state.tradeCalcRosterB;
+  return id ? rosterById(id) : null;
+}
+
+// Falls back to a generic "Team 1"/"Team 2" label until a real team is
+// chosen (or if the league has too few rosters for one side to have a
+// pick at all), so headings and the verdict never show a blank name.
+function tradeCalcSideLabel(side) {
+  const roster = tradeCalcRosterFor(side);
+  return roster ? rosterLabel(roster) : side === "A" ? "Team 1" : "Team 2";
+}
+
+// Each side's team select excludes whichever roster the OTHER side has
+// picked, so the same team can't end up on both sides of the trade.
+function tradeCalcTeamOptionsHtml(side) {
+  const selectedId = side === "A" ? state.tradeCalcRosterA : state.tradeCalcRosterB;
+  const excludeId = side === "A" ? state.tradeCalcRosterB : state.tradeCalcRosterA;
+  const sorted = [...state.rosters].sort((a, b) => rosterLabel(a).localeCompare(rosterLabel(b)));
+  const opts = sorted
+    .filter((r) => r.roster_id !== excludeId)
+    .map((r) => {
+      const isMe = r.roster_id === state.myRosterId;
+      const label = `${rosterLabel(r)}${isMe ? " (you)" : ""}`;
+      return `<option value="${r.roster_id}"${r.roster_id === selectedId ? " selected" : ""}>${escapeHtml(label)}</option>`;
+    })
+    .join("");
+  return `<option value="">Choose a team&hellip;</option>${opts}`;
+}
+
+// The team select is purely identity/labeling here -- unlike the roster-
+// bound version this replaced, picking a team does NOT restrict or clear
+// what's been searched-and-added to that side; you can still add anyone.
 function tradeCalcSideHtml(side) {
   const items = tradeCalcItems(side);
-  const label = side === "A" ? "Team 1" : "Team 2";
   return `
-    <h2>${label} gets&hellip;</h2>
+    <h2>${escapeHtml(tradeCalcSideLabel(side))} gets&hellip;</h2>
+    <div class="age-team-picker">
+      <label for="trade-calc-team-${side}">Team</label>
+      <select id="trade-calc-team-${side}" data-tradecalc-team="${side}">${tradeCalcTeamOptionsHtml(side)}</select>
+    </div>
     <div class="evaluator-search-wrap">
       <input type="text" class="trade-calc-search-input" data-tradecalc-search="${side}" placeholder="Search for a player..." autocomplete="off" />
       <div class="evaluator-suggestions hidden" data-tradecalc-suggestions="${side}"></div>
@@ -1927,14 +1969,14 @@ function tradeCalcSummaryHtml() {
     if (isFair) {
       verdictHtml = `<div class="trade-calc-verdict-banner is-fair"><div class="trade-calc-favors">&asymp; Fair Trade</div></div>`;
     } else {
-      const favored = totalA > totalB ? "Team 1" : "Team 2";
-      const needing = totalA > totalB ? "Team 2" : "Team 1";
+      const favored = totalA > totalB ? tradeCalcSideLabel("A") : tradeCalcSideLabel("B");
+      const needing = totalA > totalB ? tradeCalcSideLabel("B") : tradeCalcSideLabel("A");
       const arrow = totalA > totalB ? "&larr;" : "&rarr;";
       const gap = Math.round(bigger - smaller);
       verdictHtml = `
         <div class="trade-calc-verdict-banner is-lopsided">
-          <div class="trade-calc-favors">Favors ${favored} ${arrow}</div>
-          <p>Add a player worth about ${gap.toLocaleString()} to ${needing} to even the trade.</p>
+          <div class="trade-calc-favors">Favors ${escapeHtml(favored)} ${arrow}</div>
+          <p>Add a player worth about ${gap.toLocaleString()} to ${escapeHtml(needing)} to even the trade.</p>
         </div>`;
     }
   }
@@ -1942,11 +1984,13 @@ function tradeCalcSummaryHtml() {
   return `
     <div class="trade-calc-compare">
       <div class="trade-calc-compare-col">
+        <p class="trade-calc-compare-label">${escapeHtml(tradeCalcSideLabel("A"))}</p>
         <p class="trade-calc-pieces">${itemsA.length} Total Piece${itemsA.length === 1 ? "" : "s"}</p>
         <p class="player-meta">${tradeCalcPositionTally(itemsA) || "&mdash;"}</p>
         <p class="trade-calc-total">${formatValue(totalA)}</p>
       </div>
       <div class="trade-calc-compare-col trade-calc-compare-col-right">
+        <p class="trade-calc-compare-label">${escapeHtml(tradeCalcSideLabel("B"))}</p>
         <p class="trade-calc-pieces">${itemsB.length} Total Piece${itemsB.length === 1 ? "" : "s"}</p>
         <p class="player-meta">${tradeCalcPositionTally(itemsB) || "&mdash;"}</p>
         <p class="trade-calc-total">${formatValue(totalB)}</p>
@@ -2005,6 +2049,21 @@ function tradeCalcAddPick(side) {
 // simpler and more robust than re-attaching handlers every time a side's
 // innerHTML is replaced by an add/remove.
 function setupTradeCalcInteractions() {
+  document.addEventListener("change", (e) => {
+    const select = e.target.closest("select[data-tradecalc-team]");
+    if (!select) return;
+    const side = select.dataset.tradecalcTeam;
+    const val = select.value ? Number(select.value) : null;
+    if (side === "A") state.tradeCalcRosterA = val;
+    else state.tradeCalcRosterB = val;
+    // Re-render both sides: this side's own heading changed, and the
+    // other side's dropdown needs to stop excluding whatever roster this
+    // one just gave up (or start excluding the newly-picked one).
+    renderTradeCalculatorSide("A");
+    renderTradeCalculatorSide("B");
+    renderTradeCalculatorSummary();
+  });
+
   document.addEventListener("input", (e) => {
     const input = e.target.closest("input[data-tradecalc-search]");
     if (!input) return;
@@ -2071,6 +2130,11 @@ async function renderTradeCalculator() {
     } catch {
       // ages are optional enrichment (shown next to each player); harmless if missing
     }
+  }
+  if (!state.tradeCalcTeamsInitialized) {
+    state.tradeCalcTeamsInitialized = true;
+    state.tradeCalcRosterA = state.myRosterId || (state.rosters[0] && state.rosters[0].roster_id) || null;
+    state.tradeCalcRosterB = (state.rosters.find((r) => r.roster_id !== state.tradeCalcRosterA) || {}).roster_id || null;
   }
   renderTradeCalculatorIntro();
   renderTradeCalculatorSide("A");

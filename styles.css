@@ -526,6 +526,14 @@ main { padding-top: 6px; }
 
 .trade-calc-compare { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 14px; flex-wrap: wrap; }
 .trade-calc-compare-col-right { text-align: right; }
+.trade-calc-compare-label {
+  margin: 0 0 2px;
+  font-size: 0.68rem;
+  color: var(--text-faint);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 .trade-calc-pieces { margin: 0; font-weight: 700; font-size: 0.95rem; }
 .trade-calc-total {
   margin: 2px 0 0;
