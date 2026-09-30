@@ -176,30 +176,35 @@ the only slow part, and it scales with how many seasons the league has.
 
 ### Trade Calculator
 
-Two side-by-side panels, each with a **Team** selector (defaulting to
-your own team on the left, the first other team on the right). Unlike
-Trade Finder's search-based player picker, each side only lists that
-team's actual assets &mdash; its real Starters, Bench, and Draft Picks,
-pulled the same way Trade Finder's own builder does &mdash; as checkboxes:
-checking one means that team would *give it up* in the trade. A traded
-pick shows its real original owner (e.g. "2027 2nd (via Rival Squad)")
-the same way it does everywhere else in the app.
+A summary card sits at the top, two side-by-side team panels in the
+middle, and a short description card at the bottom.
 
-Switching a side's team dropdown clears whatever was checked there, since
-a selection only makes sense for the roster it came from; the new team's
-own roster then populates the checkboxes. Picking the same team on both
-sides isn't possible either &mdash; each side's dropdown excludes
-whatever the other side currently has selected.
+Each panel has a **Team** selector (defaulting to your own team on the
+left, the first other team on the right) and a KeepTradeCut-style search
+box: type a name and click a suggestion to add that player, or add one of
+the team's real draft picks from a dropdown next to it &mdash; adding
+something means that team would *give it up* in the trade. Search only
+ever matches that team's own Starters/Bench, and the pick dropdown only
+ever lists picks that team actually owns, pulled the same way Trade
+Finder's own builder does. A traded pick shows its real original owner
+(e.g. "2027 2nd (via Rival Squad)") the same way it does everywhere else
+in the app. Added items appear in a list below, each with a &times;
+button to remove it.
 
-Below the two panels, a summary compares both sides: each team's name,
-total pieces given up, and a position breakdown (e.g. "1 RB" vs.
-"1 RB, 1 WR"), the total trade value each side gives up and receives
-(what it gives up is the other side's pile, not its own), a proportional
-bar showing the split of value received, and a verdict &mdash;
-**&asymp; Fair Trade** if the two received totals are within the same
-&plusmn;20% tolerance the Trade Finder's own return packages use, or
-**Favors [team name]** with roughly how much value the other side would
-need to add to even it out.
+Switching a side's team dropdown clears whatever was added there, since a
+selection only makes sense for the roster it came from; the new team's
+own roster is then what search/the pick dropdown draw from. Picking the
+same team on both sides isn't possible either &mdash; each side's
+dropdown excludes whatever the other side currently has selected.
+
+The summary at the top compares both sides: each team's name, total
+pieces given up, and a position breakdown (e.g. "1 RB" vs. "1 RB, 1 WR"),
+the total trade value each side gives up and receives (what it gives up
+is the other side's pile, not its own), a proportional bar showing the
+split of value received, and a verdict &mdash; **&asymp; Fair Trade** if
+the two received totals are within the same &plusmn;20% tolerance the
+Trade Finder's own return packages use, or **Favors [team name]** with
+roughly how much value the other side would need to add to even it out.
 
 This tab is a plain value comparison using the same DynastyProcess values
 and 1QB/superflex format-awareness used everywhere else in the app. It
