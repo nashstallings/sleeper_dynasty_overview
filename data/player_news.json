@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T21:47:09Z",
+  "generated_at": "2026-10-01T03:43:08Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Packers head coach Matt LaFleur said Wednesday that Reed will require season-ending surgery on his neck, Matt Schneidman of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jayden-reed-16977",
       "pub_date": "2026-09-30T09:40:00Z"
+    },
+    {
+      "player_name": "Kenyon Sadiq",
+      "sleeper_id": "13330",
+      "gsis_id": "00-0041032",
+      "position": "TE",
+      "team": "NYJ",
+      "headline": "Dealing with back issue",
+      "description": "Sadiq was limited at Wednesday's practice due to a back injury. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenyon-sadiq-19279",
+      "pub_date": "2026-09-30T05:22:00Z"
+    },
+    {
+      "player_name": "Terrance Ferguson",
+      "sleeper_id": "12487",
+      "gsis_id": "00-0040737",
+      "position": "TE",
+      "team": "LAR",
+      "headline": "Logs DNP on Wednesday",
+      "description": "Ferguson (ankle) officially didn't practice Wednesday, Adam Caplan of SiriusXM NFL Radio reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terrance-ferguson-18497",
+      "pub_date": "2026-09-30T04:53:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Officially limited Wednesday",
+      "description": "Nacua (hip) officially was limited at Wednesday's practice, Adam Caplan of SiriusXM NFL Radio reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-09-30T04:48:00Z"
+    },
+    {
+      "player_name": "Jadarian Price",
+      "sleeper_id": "13286",
+      "gsis_id": "00-0041512",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Limited by chest issue",
+      "description": "Price was limited in practice Wednesday due to a chest injury, Bob Condotta of The Seattle Times reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
+      "pub_date": "2026-09-30T04:26:00Z"
+    },
+    {
+      "player_name": "Keaton Mitchell",
+      "sleeper_id": "9511",
+      "gsis_id": "00-0038454",
+      "position": "RB",
+      "team": "LAC",
+      "headline": "Dealing with ankle injury",
+      "description": "Mitchell (ankle) was a limited participant at the Chargers' practice Wednesday, Kris Rhim of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/keaton-mitchell-16810",
+      "pub_date": "2026-09-30T04:16:00Z"
     },
     {
       "player_name": "Jaylen Wright",
