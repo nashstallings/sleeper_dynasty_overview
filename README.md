@@ -176,8 +176,8 @@ the only slow part, and it scales with how many seasons the league has.
 
 ### Trade Calculator
 
-A summary card sits at the top, two side-by-side team panels in the
-middle, and a short description card at the bottom.
+A summary card, titled "Trade Calculator", sits at the top, with two
+side-by-side team panels below it.
 
 Each panel has a **Team** selector (defaulting to your own team on the
 left, the first other team on the right) and a KeepTradeCut-style search

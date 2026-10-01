@@ -2015,16 +2015,7 @@ function renderTradeCalculatorSide(side) {
 
 function renderTradeCalculatorSummary() {
   const card = document.getElementById("trade-calc-summary-card");
-  if (card) card.innerHTML = tradeCalcSummaryHtml();
-}
-
-function renderTradeCalculatorIntro() {
-  const card = document.getElementById("trade-calc-intro-card");
-  if (!card) return;
-  const formatNote = isSuperflexLeague() ? "superflex/2QB" : "1QB";
-  card.innerHTML = `
-    <h2>Trade Calculator</h2>
-    <p class="hero-copy">Pick two teams, search each side's actual roster for the players to add (or add one of their real draft picks), and see whether the trade is fair by trade value. Values assume a ${formatNote} format, from <a href="https://github.com/dynastyprocess/data" target="_blank" rel="noopener">DynastyProcess</a>.</p>`;
+  if (card) card.innerHTML = `<h2>Trade Calculator</h2>${tradeCalcSummaryHtml()}`;
 }
 
 function tradeCalcHideSuggestions() {
@@ -2153,7 +2144,6 @@ async function renderTradeCalculator() {
     state.tradeCalcRosterA = state.myRosterId || (state.rosters[0] && state.rosters[0].roster_id) || null;
     state.tradeCalcRosterB = (state.rosters.find((r) => r.roster_id !== state.tradeCalcRosterA) || {}).roster_id || null;
   }
-  renderTradeCalculatorIntro();
   renderTradeCalculatorSide("A");
   renderTradeCalculatorSide("B");
   renderTradeCalculatorSummary();
