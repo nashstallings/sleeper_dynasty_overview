@@ -1882,6 +1882,97 @@ function tradeCalcItemRowHtml(id, ownerRosterId) {
     </div>`;
 }
 
+// Shared give/receive fairness math, used by both the summary verdict and
+// each side's "add this to even it out" suggestions, so they always agree
+// on which side is favored (receiving more than it gives) and by how much.
+// Returns null until both teams are chosen and at least one item is added.
+function tradeCalcFairnessStats() {
+  const rosterA = tradeCalcRosterFor("A");
+  const rosterB = tradeCalcRosterFor("B");
+  if (!rosterA || !rosterB) return null;
+  const idsA = state.tradeCalcItemsA;
+  const idsB = state.tradeCalcItemsB;
+  if (!idsA.length && !idsB.length) return null;
+
+  const valuesA = idsA.map(assetValue);
+  const valuesB = idsB.map(assetValue);
+  const knownA = valuesA.filter((v) => v !== null && v !== undefined);
+  const knownB = valuesB.filter((v) => v !== null && v !== undefined);
+  const givesA = knownA.reduce((sum, v) => sum + v, 0);
+  const givesB = knownB.reduce((sum, v) => sum + v, 0);
+  const missing = valuesA.length - knownA.length + (valuesB.length - knownB.length);
+
+  const receivesA = givesB;
+  const receivesB = givesA;
+  const combined = receivesA + receivesB;
+  const bigger = Math.max(receivesA, receivesB);
+  const smaller = Math.min(receivesA, receivesB);
+  const diffPct = combined > 0 && bigger > 0 ? (bigger - smaller) / bigger : 0;
+  const isFair = combined > 0 && diffPct <= TRADE_FAIR_VALUE_TOLERANCE;
+
+  return {
+    idsA, idsB, givesA, givesB, receivesA, receivesB, missing, combined, isFair,
+    favoredSide: receivesA > receivesB ? "A" : "B",
+    gap: Math.round(bigger - smaller),
+  };
+}
+
+const TRADE_CALC_SUGGEST_LIMIT = 3;
+
+// Candidates from this side's OWN remaining roster/picks (nothing already
+// added to this side), ranked by how close their value is to the gap
+// needed to even the trade out.
+function tradeCalcSuggestionCandidates(side, gap) {
+  const rosterId = side === "A" ? state.tradeCalcRosterA : state.tradeCalcRosterB;
+  if (!rosterId) return [];
+  const { starters, bench, picks } = rosterAllAssets(rosterId);
+  const already = new Set(tradeCalcItems(side));
+  const pool = [...starters, ...bench, ...picks.map((pk) => pk.id)].filter((id) => !already.has(id));
+  const withValue = pool
+    .map((id) => ({ id, value: assetValue(id) }))
+    .filter((c) => c.value !== null && c.value !== undefined);
+  withValue.sort((a, b) => Math.abs(a.value - gap) - Math.abs(b.value - gap));
+  return withValue.slice(0, TRADE_CALC_SUGGEST_LIMIT).map((c) => c.id);
+}
+
+// Reuses the .evaluator-suggestion button (and its existing
+// data-tradecalc-add click handler) so clicking a suggestion here adds it
+// exactly like clicking a search result does.
+function tradeCalcSuggestRowHtml(side, id, ownerRosterId) {
+  if (isPickId(id)) {
+    return `
+      <button type="button" class="evaluator-suggestion trade-calc-suggest-row" data-tradecalc-add="${side}" data-add-pid="${id}">
+        <span class="badge badge-PICK">PICK</span>
+        <span>${assetLabel(id, ownerRosterId)}</span>
+        <span class="value-tag">${formatValue(assetValue(id))}</span>
+      </button>`;
+  }
+  const p = player(id);
+  const pos = playerPosition(p);
+  return `
+    <button type="button" class="evaluator-suggestion trade-calc-suggest-row" data-tradecalc-add="${side}" data-add-pid="${id}">
+      <span class="badge badge-${pos}">${pos}</span>
+      <span>${playerDisplay(p)}</span>
+      <span class="player-meta">${p.team || "FA"}</span>
+      <span class="value-tag">${formatValue(playerValue(id))}</span>
+    </button>`;
+}
+
+// Only ever shown under the side that's currently favored (receiving more
+// than it gives) -- that's the side whose own pile needs to grow to even
+// the trade out. Showing it under the other side would suggest making an
+// already-bigger pile bigger, widening the gap instead of closing it.
+function tradeCalcSuggestBoxHtml(side) {
+  const stats = tradeCalcFairnessStats();
+  if (!stats || stats.combined <= 0 || stats.isFair || stats.favoredSide !== side) return "";
+  const rosterId = side === "A" ? state.tradeCalcRosterA : state.tradeCalcRosterB;
+  const candidates = tradeCalcSuggestionCandidates(side, stats.gap);
+  if (!candidates.length) return "";
+  return `
+    <h3>Add to Even It Out</h3>
+    <div class="trade-calc-suggest-list">${candidates.map((id) => tradeCalcSuggestRowHtml(side, id, rosterId)).join("")}</div>`;
+}
+
 // Picking a team here only sets whose roster this side draws from, but
 // switching it DOES clear that side's added items, since something added
 // under the old team isn't something the newly-picked team could
@@ -1906,7 +1997,8 @@ function tradeCalcSideHtml(side) {
       </div>
       <div class="trade-calc-item-list">
         ${items.length ? items.map((id) => tradeCalcItemRowHtml(id, rosterId)).join("") : `<p class="player-meta">Nothing selected yet.</p>`}
-      </div>`;
+      </div>
+      ${tradeCalcSuggestBoxHtml(side)}`;
   }
 
   return `
@@ -1940,42 +2032,25 @@ function tradeCalcSummaryHtml() {
   if (!rosterA || !rosterB) {
     return emptyState("Choose two teams below, then search for what each side would give up.");
   }
-  if (!state.tradeCalcItemsA.length && !state.tradeCalcItemsB.length) {
+  const stats = tradeCalcFairnessStats();
+  if (!stats) {
     return emptyState("Select what each team would give up below to see if the trade is fair.");
   }
 
-  const idsA = state.tradeCalcItemsA;
-  const idsB = state.tradeCalcItemsB;
-  const valuesA = idsA.map(assetValue);
-  const valuesB = idsB.map(assetValue);
-  const knownA = valuesA.filter((v) => v !== null && v !== undefined);
-  const knownB = valuesB.filter((v) => v !== null && v !== undefined);
-  const givesA = knownA.reduce((sum, v) => sum + v, 0);
-  const givesB = knownB.reduce((sum, v) => sum + v, 0);
-  const missing = valuesA.length - knownA.length + (valuesB.length - knownB.length);
-
-  const receivesA = givesB;
-  const receivesB = givesA;
+  const { idsA, idsB, givesA, givesB, receivesA, receivesB, missing, combined, isFair, favoredSide, gap } = stats;
   const labelA = tradeCalcSideLabel("A");
   const labelB = tradeCalcSideLabel("B");
-
-  const combined = receivesA + receivesB;
   const pctA = combined > 0 ? (receivesA / combined) * 100 : 50;
   const pctB = 100 - pctA;
 
   let verdictHtml = "";
   if (combined > 0) {
-    const bigger = Math.max(receivesA, receivesB);
-    const smaller = Math.min(receivesA, receivesB);
-    const diffPct = bigger > 0 ? (bigger - smaller) / bigger : 0;
-    const isFair = diffPct <= TRADE_FAIR_VALUE_TOLERANCE;
     if (isFair) {
       verdictHtml = `<div class="trade-calc-verdict-banner is-fair"><div class="trade-calc-favors">&asymp; Fair Trade</div></div>`;
     } else {
-      const favored = receivesA > receivesB ? labelA : labelB;
-      const needing = receivesA > receivesB ? labelB : labelA;
-      const arrow = receivesA > receivesB ? "&larr;" : "&rarr;";
-      const gap = Math.round(bigger - smaller);
+      const favored = favoredSide === "A" ? labelA : labelB;
+      const needing = favoredSide === "A" ? labelB : labelA;
+      const arrow = favoredSide === "A" ? "&larr;" : "&rarr;";
       verdictHtml = `
         <div class="trade-calc-verdict-banner is-lopsided">
           <div class="trade-calc-favors">Favors ${escapeHtml(favored)} ${arrow}</div>
@@ -2079,7 +2154,11 @@ function setupTradeCalcInteractions() {
       const side = suggestion.dataset.tradecalcAdd;
       const items = tradeCalcItems(side);
       if (!items.includes(suggestion.dataset.addPid)) items.push(suggestion.dataset.addPid);
-      renderTradeCalculatorSide(side);
+      // Both sides, not just this one: the "add to even it out" box each
+      // side shows (or hides) depends on which side is currently favored,
+      // which this change can flip.
+      renderTradeCalculatorSide("A");
+      renderTradeCalculatorSide("B");
       renderTradeCalculatorSummary();
       return;
     }
@@ -2091,7 +2170,8 @@ function setupTradeCalcInteractions() {
       if (select && select.value) {
         const items = tradeCalcItems(side);
         if (!items.includes(select.value)) items.push(select.value);
-        renderTradeCalculatorSide(side);
+        renderTradeCalculatorSide("A");
+        renderTradeCalculatorSide("B");
         renderTradeCalculatorSummary();
       }
       return;
@@ -2103,7 +2183,8 @@ function setupTradeCalcInteractions() {
       const items = tradeCalcItems(side);
       const idx = items.indexOf(removeBtn.dataset.removePid);
       if (idx !== -1) items.splice(idx, 1);
-      renderTradeCalculatorSide(side);
+      renderTradeCalculatorSide("A");
+      renderTradeCalculatorSide("B");
       renderTradeCalculatorSummary();
       return;
     }

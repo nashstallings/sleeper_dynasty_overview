@@ -524,6 +524,18 @@ main { padding-top: 6px; }
 }
 .trade-calc-remove:hover { color: var(--bad); border-color: var(--bad); }
 
+.trade-calc-suggest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-top: 4px;
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.trade-calc-suggest-row { border-bottom: 1px solid var(--panel-border); border-radius: 0; }
+.trade-calc-suggest-row:last-child { border-bottom: none; }
+
 .trade-calc-compare { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 14px; flex-wrap: wrap; }
 .trade-calc-compare-col-right { text-align: right; }
 .trade-calc-compare-label {

@@ -206,10 +206,19 @@ the two received totals are within the same &plusmn;20% tolerance the
 Trade Finder's own return packages use, or **Favors [team name]** with
 roughly how much value the other side would need to add to even it out.
 
+When the trade is lopsided, the favored team's panel (the side currently
+giving up *less* value than it's getting back) grows an "Add to Even It
+Out" box: up to three of that team's own remaining players/picks, ranked
+by how close their value is to closing the gap. Clicking one adds it just
+like a search result would. The box never shows up under the other
+side &mdash; adding more to the pile that's already bigger would only
+widen the gap &mdash; and it disappears entirely once the trade reads as
+fair.
+
 This tab is a plain value comparison using the same DynastyProcess values
 and 1QB/superflex format-awareness used everywhere else in the app. It
-doesn't check flagged needs or suggest a return package &mdash; that's
-what Trade Finder is for.
+doesn't check flagged needs or suggest a return package from the other
+side &mdash; that's what Trade Finder is for.
 
 ## How Trending works
 
