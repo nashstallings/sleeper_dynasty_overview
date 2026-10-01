@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-01T12:16:46Z",
+  "generated_at": "2026-10-01T20:03:46Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Justin Jefferson",
+      "sleeper_id": "6794",
+      "gsis_id": "00-0036322",
+      "position": "WR",
+      "team": "MIN",
+      "headline": "Not spotted by reporters Thursday",
+      "description": "Jefferson (ankle) didn't participate in the portion of practice open to reporters Thursday, Kevin Seifert of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/justin-jefferson-14509",
+      "pub_date": "2026-10-01T12:49:00Z"
+    },
+    {
+      "player_name": "Jalen Coker",
+      "sleeper_id": "11646",
+      "gsis_id": "00-0039491",
+      "position": "WR",
+      "team": "CAR",
+      "headline": "Gets in limited practice Thursday",
+      "description": "Coker (quadriceps) was a limited participant in Thursday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-coker-17976",
+      "pub_date": "2026-10-01T12:47:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Expected to practice fully",
+      "description": "Nacua (hip) is expected to log a full practice Thursday, Adam Grosbard of The Orange County Register reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-10-01T12:30:00Z"
+    },
+    {
+      "player_name": "Dallas Goedert",
+      "sleeper_id": "5022",
+      "gsis_id": "00-0034351",
+      "position": "TE",
+      "team": "PHI",
+      "headline": "Not spotted at Thursday's practice",
+      "description": "Goedert (knee) isn't present for the start of practice Thursday, Dave Zangaro of NBC Sports Philadelphia reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dallas-goedert-12860",
+      "pub_date": "2026-10-01T11:55:00Z"
+    },
+    {
+      "player_name": "DeVonta Smith",
+      "sleeper_id": "7525",
+      "gsis_id": "00-0036912",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Does not practice Thursday",
+      "description": "Smith (hamstring) is not practicing Thursday, Jeff McLane of The Philadelphia Inquirer reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
+      "pub_date": "2026-10-01T11:40:00Z"
+    },
     {
       "player_name": "Caleb Douglas",
       "sleeper_id": "13296",
