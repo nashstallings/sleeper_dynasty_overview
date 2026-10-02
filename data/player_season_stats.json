@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T19:37:15Z",
+  "generated_at": "2026-10-02T19:29:38Z",
   "players": {
     "10210": {
       "name": "Cameron Latu",
@@ -10959,6 +10959,35 @@
         }
       }
     },
+    "12079": {
+      "name": "Treyton Welch",
+      "position": "TE",
+      "seasons": {
+        "2026": {
+          "air_yards_share": 0.0,
+          "attempts": 0,
+          "carries": 0,
+          "completions": 0,
+          "cpoe": null,
+          "fantasy_points_ppr": 0.0,
+          "games": 1,
+          "interceptions": 0,
+          "passing_epa": null,
+          "passing_tds": 0,
+          "passing_yards": 0,
+          "receiving_tds": 0,
+          "receiving_yards": 0,
+          "receptions": 0,
+          "rushing_tds": 0,
+          "rushing_yards": 0,
+          "snap_share": 0.11,
+          "target_share": 0.0,
+          "targets": 0,
+          "team": "NO",
+          "wopr": 0.0
+        }
+      }
+    },
     "12171": {
       "name": "British Brooks",
       "position": "RB",
@@ -15290,6 +15319,35 @@
         }
       }
     },
+    "12939": {
+      "name": "Anthony Tyus III",
+      "position": "RB",
+      "seasons": {
+        "2026": {
+          "air_yards_share": 0.0,
+          "attempts": 0,
+          "carries": 0,
+          "completions": 0,
+          "cpoe": null,
+          "fantasy_points_ppr": 0.0,
+          "games": 1,
+          "interceptions": 0,
+          "passing_epa": null,
+          "passing_tds": 0,
+          "passing_yards": 0,
+          "receiving_tds": 0,
+          "receiving_yards": 0,
+          "receptions": 0,
+          "rushing_tds": 0,
+          "rushing_yards": 0,
+          "snap_share": 0.0,
+          "target_share": 0.0,
+          "targets": 0,
+          "team": "CAR",
+          "wopr": 0.0
+        }
+      }
+    },
     "12969": {
       "name": "Lan Larison",
       "position": "RB",
@@ -17541,6 +17599,64 @@
           "targets": 3,
           "team": "GB",
           "wopr": 0.064
+        }
+      }
+    },
+    "13981": {
+      "name": "Kolbe Katsis",
+      "position": "WR",
+      "seasons": {
+        "2026": {
+          "air_yards_share": 0.0,
+          "attempts": 0,
+          "carries": 0,
+          "completions": 0,
+          "cpoe": null,
+          "fantasy_points_ppr": 0.0,
+          "games": 1,
+          "interceptions": 0,
+          "passing_epa": null,
+          "passing_tds": 0,
+          "passing_yards": 0,
+          "receiving_tds": 0,
+          "receiving_yards": 0,
+          "receptions": 0,
+          "rushing_tds": 0,
+          "rushing_yards": 0,
+          "snap_share": 0.0,
+          "target_share": 0.0,
+          "targets": 0,
+          "team": "DEN",
+          "wopr": 0.0
+        }
+      }
+    },
+    "14026": {
+      "name": "DJ Herman",
+      "position": "RB",
+      "seasons": {
+        "2026": {
+          "air_yards_share": 0.107,
+          "attempts": 0,
+          "carries": 0,
+          "completions": 0,
+          "cpoe": null,
+          "fantasy_points_ppr": 2.8,
+          "games": 2,
+          "interceptions": 0,
+          "passing_epa": null,
+          "passing_tds": 0,
+          "passing_yards": 0,
+          "receiving_tds": 0,
+          "receiving_yards": 18,
+          "receptions": 1,
+          "rushing_tds": 0,
+          "rushing_yards": 0,
+          "snap_share": null,
+          "target_share": 0.065,
+          "targets": 3,
+          "team": "MIA",
+          "wopr": 0.172
         }
       }
     },
