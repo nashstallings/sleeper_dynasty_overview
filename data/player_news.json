@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T17:18:15Z",
+  "generated_at": "2026-10-02T21:43:47Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Coker (quadriceps) is listed as questionable for Sunday night's game against the Lions, Joe Person of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jalen-coker-17976",
       "pub_date": "2026-10-02T09:41:00Z"
+    },
+    {
+      "player_name": "Terrance Ferguson",
+      "sleeper_id": "12487",
+      "gsis_id": "00-0040737",
+      "position": "TE",
+      "team": "LAR",
+      "headline": "Placed on injured reserve",
+      "description": "The Rams placed Ferguson (ankle) on injured reserve Friday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terrance-ferguson-18497",
+      "pub_date": "2026-10-02T02:16:00Z"
+    },
+    {
+      "player_name": "Zach Charbonnet",
+      "sleeper_id": "9753",
+      "gsis_id": "00-0039165",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Limited in both practices this week",
+      "description": "Charbonnet (knee) was a limited practice participant Thursday and Friday, John Boyle of seahawks.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zach-charbonnet-16897",
+      "pub_date": "2026-10-02T02:13:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Game-time decision incoming",
+      "description": "Coach Kyle Shanahan said Friday that Evans (ribs) will be a game-time decision for Sunday's contest against the Broncos, Vic Tafur of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-10-02T02:08:00Z"
+    },
+    {
+      "player_name": "Ladd McConkey",
+      "sleeper_id": "11635",
+      "gsis_id": "00-0039915",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Listed questionable for Sunday",
+      "description": "McConkey (foot) is questionable for Sunday's game against Seattle, Kris Rhim of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
+      "pub_date": "2026-10-02T01:41:00Z"
+    },
+    {
+      "player_name": "Jadarian Price",
+      "sleeper_id": "13286",
+      "gsis_id": "00-0041512",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Ruled out for Week 4",
+      "description": "Coach Mike Macdonald said Friday that Price has been ruled out for Sunday's game against the Chargers, Curtis Crabtree of Fox 13 Seattle reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
+      "pub_date": "2026-10-02T01:40:00Z"
     },
     {
       "player_name": "Justin Jefferson",
