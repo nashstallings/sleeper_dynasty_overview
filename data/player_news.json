@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T00:26:56Z",
+  "generated_at": "2026-10-02T09:16:04Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Smith (hamstring) is not practicing Thursday, Jeff McLane of The Philadelphia Inquirer reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
       "pub_date": "2026-10-01T11:40:00Z"
+    },
+    {
+      "player_name": "KC Concepcion",
+      "sleeper_id": "13298",
+      "gsis_id": "00-0041547",
+      "position": "WR",
+      "team": "CLE",
+      "headline": "Remains productive in Week 4 win",
+      "description": "Concepcion secured five of eight targets for 64 yards and returned two punts for 10 yards in the Browns' 27-24 win over the Steelers on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kc-concepcion-19242",
+      "pub_date": "2026-10-01T10:10:00Z"
+    },
+    {
+      "player_name": "Denzel Boston",
+      "sleeper_id": "13346",
+      "gsis_id": "00-0041037",
+      "position": "WR",
+      "team": "CLE",
+      "headline": "Continues thriving in Week 4 win",
+      "description": "Boston brought in four of seven targets for 89 yards in the Browns' 27-24 win over the Steelers on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/denzel-boston-19298",
+      "pub_date": "2026-10-01T10:07:00Z"
+    },
+    {
+      "player_name": "Harold Fannin Jr.",
+      "sleeper_id": "12506",
+      "gsis_id": "00-0040663",
+      "position": "TE",
+      "team": "CLE",
+      "headline": "Salvages night with TD",
+      "description": "Fannin secured three of five targets for 27 yards and a touchdown in the Browns' 27-24 win over the Steelers on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/harold-fannin-18472",
+      "pub_date": "2026-10-01T10:00:00Z"
+    },
+    {
+      "player_name": "Deshaun Watson",
+      "sleeper_id": "4017",
+      "gsis_id": "00-0033537",
+      "position": "QB",
+      "team": "CLE",
+      "headline": "Continues ascent with third straight win",
+      "description": "Watson completed 24 of 33 passes for 268 yards with one touchdown and one interception while rushing seven times for 22 yards in the Browns' 27-24 win over the Steelers on Thursday. He also committed two fumbles, losing one. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/deshaun-watson-11712",
+      "pub_date": "2026-10-01T09:57:00Z"
+    },
+    {
+      "player_name": "Aaron Rodgers",
+      "sleeper_id": "96",
+      "gsis_id": "00-0023459",
+      "position": "QB",
+      "team": "PIT",
+      "headline": "Mixed performance in Week 4 loss",
+      "description": "Rodgers completed 22 of 40 passes for 299 yards with three touchdowns and two interceptions in the Steelers' 27-24 loss to the Browns on Thursday. He also ran in a game-tying two-point conversion. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aaron-rodgers-4307",
+      "pub_date": "2026-10-01T09:48:00Z"
     },
     {
       "player_name": "Jadarian Price",
