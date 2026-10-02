@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T20:03:46Z",
+  "generated_at": "2026-10-02T00:26:56Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Smith (hamstring) is not practicing Thursday, Jeff McLane of The Philadelphia Inquirer reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
       "pub_date": "2026-10-01T11:40:00Z"
+    },
+    {
+      "player_name": "Jadarian Price",
+      "sleeper_id": "13286",
+      "gsis_id": "00-0041512",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "DNP on Thursday",
+      "description": "Price (chest) didn't practice Thursday, John Boyle of the Seahawks' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
+      "pub_date": "2026-10-01T04:26:00Z"
+    },
+    {
+      "player_name": "Ladd McConkey",
+      "sleeper_id": "11635",
+      "gsis_id": "00-0039915",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Exhibiting limp Thursday",
+      "description": "McConkey (foot) was seen walking out of the locker room with a limp after not taking part in Thursday's practice, Kris Rhim of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
+      "pub_date": "2026-10-01T04:20:00Z"
+    },
+    {
+      "player_name": "DeVonta Smith",
+      "sleeper_id": "7525",
+      "gsis_id": "00-0036912",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Unlikely to play in Week 4",
+      "description": "Smith (hamstring) isn't expected to be available Sunday versus the Rams, Tim McManus of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
+      "pub_date": "2026-10-01T04:11:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Remains limited Thursday",
+      "description": "Nacua (hip) officially was listed as a limited participant on Thursday's injury report, Adam Grosbard of The Orange County Register reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-10-01T04:01:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Remains sidelined at practice",
+      "description": "Evans (ribs) was a non-participant at Thursday's practice, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-10-01T03:28:00Z"
     },
     {
       "player_name": "Caleb Douglas",
