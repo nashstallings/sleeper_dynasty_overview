@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-02T09:16:04Z",
+  "generated_at": "2026-10-02T17:18:15Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Terry McLaurin",
+      "sleeper_id": "5927",
+      "gsis_id": "00-0035659",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Added to injury report as questionable",
+      "description": "McLaurin (hamstring) was added to the injury report Friday and is listed as questionable for Sunday's game against the Colts, Nicki Jhabvala of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terry-mclaurin-13536",
+      "pub_date": "2026-10-02T10:07:00Z"
+    },
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Practicing in non-contact jersey Friday",
+      "description": "Moore (shoulder) is practicing in a non-contact jersey Friday, Sal Capaccio of WGR Sports Radio 550 Buffalo reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-10-02T10:04:00Z"
+    },
+    {
+      "player_name": "Caleb Williams",
+      "sleeper_id": "11560",
+      "gsis_id": "00-0039918",
+      "position": "QB",
+      "team": "CHI",
+      "headline": "Ruled out for Week 4",
+      "description": "Williams (hamstring) has been ruled out for Sunday's game against the Jets, Brad Biggs of the Chicago Tribune reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/caleb-williams-17695",
+      "pub_date": "2026-10-02T09:58:00Z"
+    },
+    {
+      "player_name": "D'Andre Swift",
+      "sleeper_id": "6790",
+      "gsis_id": "00-0036275",
+      "position": "RB",
+      "team": "CHI",
+      "headline": "Expected to practice Friday",
+      "description": "Swift (knee) is expected to practice Friday, Brad Biggs of the Chicago Tribune reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dandre-swift-14394",
+      "pub_date": "2026-10-02T09:55:00Z"
+    },
+    {
+      "player_name": "Jalen Coker",
+      "sleeper_id": "11646",
+      "gsis_id": "00-0039491",
+      "position": "WR",
+      "team": "CAR",
+      "headline": "Listed questionable for Week 4",
+      "description": "Coker (quadriceps) is listed as questionable for Sunday night's game against the Lions, Joe Person of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-coker-17976",
+      "pub_date": "2026-10-02T09:41:00Z"
+    },
     {
       "player_name": "Justin Jefferson",
       "sleeper_id": "6794",
