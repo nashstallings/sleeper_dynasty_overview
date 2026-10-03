@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T21:43:47Z",
+  "generated_at": "2026-10-03T03:27:01Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Coker (quadriceps) is listed as questionable for Sunday night's game against the Lions, Joe Person of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jalen-coker-17976",
       "pub_date": "2026-10-02T09:41:00Z"
+    },
+    {
+      "player_name": "Case Keenum",
+      "sleeper_id": "1737",
+      "gsis_id": "00-0028986",
+      "position": "QB",
+      "team": "CHI",
+      "headline": "Expected to back up Bagent vs. NYJ",
+      "description": "Ian Rapoport of NFL Network reports that Keenum is expected to serve as the backup quarterback to Tyson Bagent against the Jets on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/case-keenum-8065",
+      "pub_date": "2026-10-02T05:45:00Z"
+    },
+    {
+      "player_name": "Jacory Croskey-Merritt",
+      "sleeper_id": "12533",
+      "gsis_id": "00-0040242",
+      "position": "RB",
+      "team": "WAS",
+      "headline": "In line for larger workload in London",
+      "description": "Croskey-Merritt has served as the Commanders' RB1 this season, but his backfield snap count for Week 4 against the Colts figures to be larger due to the absence of Rachaad White (shoulder). Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jacory-croskey-merritt-18811",
+      "pub_date": "2026-10-02T05:39:00Z"
+    },
+    {
+      "player_name": "Alvin Kamara",
+      "sleeper_id": "4035",
+      "gsis_id": "00-0033906",
+      "position": "RB",
+      "team": "NOS",
+      "headline": "Taking on larger role sans Etienne",
+      "description": "Kamara figures to serve as the Saints' top running back for as long as Travis Etienne (hamstring) is on injured reserve, starting with Monday's game against the Falcons, John DeShazier of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/alvin-kamara-11732",
+      "pub_date": "2026-10-02T05:03:00Z"
+    },
+    {
+      "player_name": "Jordan Addison",
+      "sleeper_id": "9756",
+      "gsis_id": "00-0038994",
+      "position": "WR",
+      "team": "MIN",
+      "headline": "Will be Vikes' top WR for Week 4",
+      "description": "Addison will serve as the Vikings' top wide receiver against the Dolphins on Sunday due to the absence of Justin Jefferson (ankle), Craig Peters of the Vikings' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordan-addison-16895",
+      "pub_date": "2026-10-02T04:45:00Z"
+    },
+    {
+      "player_name": "Tyson Bagent",
+      "sleeper_id": "11256",
+      "gsis_id": "00-0038416",
+      "position": "QB",
+      "team": "CHI",
+      "headline": "Expected to start Sunday",
+      "description": "Bagent is expected to start Sunday versus the Jets after getting most of the first-team reps in practice, Ian Rapoport of NFL Network reports. However, coach Ben Johnson has not yet confirmed the plan. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyson-bagent-16946",
+      "pub_date": "2026-10-02T04:38:00Z"
     },
     {
       "player_name": "Terrance Ferguson",
