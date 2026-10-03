@@ -1,9 +1,42 @@
 {
-  "generated_at": "2026-10-03T10:58:52Z",
+  "generated_at": "2026-10-03T15:35:39Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Terry McLaurin",
+      "sleeper_id": "5927",
+      "gsis_id": "00-0035659",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Likely to miss Sunday's game",
+      "description": "McLaurin (hamstring) is now likely to miss Sunday's game against the Colts in London, Ben Standig of The Team 980 Washington D.C. reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terry-mclaurin-13536",
+      "pub_date": "2026-10-03T07:43:00Z"
+    },
+    {
+      "player_name": "Keenan Allen",
+      "sleeper_id": "1479",
+      "gsis_id": "00-0030279",
+      "position": "WR",
+      "team": "IND",
+      "headline": "Ruled out for Sunday",
+      "description": "Allen (groin) has been downgraded to out for Sunday's game against Washington. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/keenan-allen-8627",
+      "pub_date": "2026-10-03T07:38:00Z"
+    },
+    {
+      "player_name": "Justin Jefferson",
+      "sleeper_id": "6794",
+      "gsis_id": "00-0036322",
+      "position": "WR",
+      "team": "MIN",
+      "headline": "Aiming to return Week 5",
+      "description": "Jefferson (ankle) has been already been ruled out for Sunday's game against the Dolphins, but the Vikings are hopeful that the superstar wide receiver will return for Week 5 against the Saints, Jeremy Fowler of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/justin-jefferson-14509",
+      "pub_date": "2026-10-03T06:33:00Z"
+    },
     {
       "player_name": "Terry McLaurin",
       "sleeper_id": "5927",
@@ -65,8 +98,8 @@
       "gsis_id": "00-0028986",
       "position": "QB",
       "team": "CHI",
-      "headline": "Expected to back up Bagent vs. NYJ",
-      "description": "Ian Rapoport of NFL Network reports that Keenum is expected to serve as the backup quarterback to Tyson Bagent against the Jets on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "headline": "Expected to back up Bagent in Week 4",
+      "description": "Keenum is expected to serve as the Bears' No. 2 quarterback behind Tyson Bagent in Sunday's game against the Jets, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/case-keenum-8065",
       "pub_date": "2026-10-02T05:45:00Z"
     },
