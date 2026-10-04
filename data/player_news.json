@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-04T11:41:07Z",
+  "generated_at": "2026-10-04T16:19:37Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Brock Bowers",
+      "sleeper_id": "11604",
+      "gsis_id": "00-0039338",
+      "position": "TE",
+      "team": "LVR",
+      "headline": "Set to play through illness",
+      "description": "Bowers was a late addition to the Raiders' injury report due to an illness, but he doesn't have a designation for Sunday's game against the Chiefs and is set to play, Paul Gutierrez of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/brock-bowers-17693",
+      "pub_date": "2026-10-04T09:01:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Active as expected Sunday",
+      "description": "Nacua is active for Sunday's Week 4 matchup against the Eagles. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-10-04T08:50:00Z"
+    },
+    {
+      "player_name": "Zay Flowers",
+      "sleeper_id": "9997",
+      "gsis_id": "00-0039064",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Active for Sunday's game",
+      "description": "Flowers (hamstring) is listed as active Sunday against the Titans. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
+      "pub_date": "2026-10-04T08:37:00Z"
+    },
+    {
+      "player_name": "Tyjae Spears",
+      "sleeper_id": "9508",
+      "gsis_id": "00-0039032",
+      "position": "RB",
+      "team": "TEN",
+      "headline": "Good to go Sunday",
+      "description": "Spears (ankle) is active for Sunday's game against the Ravens. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyjae-spears-16941",
+      "pub_date": "2026-10-04T08:37:00Z"
+    },
+    {
+      "player_name": "Marcus Mariota",
+      "sleeper_id": "2307",
+      "gsis_id": "00-0032268",
+      "position": "QB",
+      "team": "WAS",
+      "headline": "Won't return Sunday",
+      "description": "Mariota (knee) has been ruled out for the remainder of Sunday's game against the Colts in London, Tashan Reed of The Washington Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/marcus-mariota-10074",
+      "pub_date": "2026-10-04T08:13:00Z"
+    },
     {
       "player_name": "Jalen Coker",
       "sleeper_id": "11646",
