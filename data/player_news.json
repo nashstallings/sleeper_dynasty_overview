@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T20:47:05Z",
+  "generated_at": "2026-10-04T23:46:35Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -60,6 +60,39 @@
       "pub_date": "2026-10-04T08:13:00Z"
     },
     {
+      "player_name": "Michael Wilson",
+      "sleeper_id": "10232",
+      "gsis_id": "00-0038559",
+      "position": "WR",
+      "team": "ARI",
+      "headline": "Leading receiver in loss to Big Blue",
+      "description": "Wilson caught seven of 13 targets for 95 yards in Sunday's 36-24 loss to the Giants. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-wilson-16957",
+      "pub_date": "2026-10-04T04:36:00Z"
+    },
+    {
+      "player_name": "Jacoby Brissett",
+      "sleeper_id": "3257",
+      "gsis_id": "00-0033119",
+      "position": "QB",
+      "team": "ARI",
+      "headline": "Hurt by three INTs in loss to Giants",
+      "description": "Brissett completed 21 of 35 passes for 166 yards and two touchdowns with three interceptions in Sunday's 36-24 loss to the Giants. He added 18 yards on four carries. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jacoby-brissett-10919",
+      "pub_date": "2026-10-04T04:32:00Z"
+    },
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Modest numbers in Week 4 loss",
+      "description": "Love carried the ball 14 times for 63 yards and caught his only target for minus-eight yards in Sunday's 36-24 loss to the Giants. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-10-04T04:27:00Z"
+    },
+    {
       "player_name": "Jalen Coker",
       "sleeper_id": "11646",
       "gsis_id": "00-0039491",
@@ -69,6 +102,17 @@
       "description": "Coker (quadriceps) is unlikely to suit up for Sunday night's game against the Lions, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jalen-coker-17976",
       "pub_date": "2026-10-04T04:26:00Z"
+    },
+    {
+      "player_name": "Trey McBride",
+      "sleeper_id": "8130",
+      "gsis_id": "00-0037744",
+      "position": "TE",
+      "team": "ARI",
+      "headline": "Does little on big volume in loss",
+      "description": "McBride caught seven of 12 targets for 31 yards in Sunday's 36-24 loss to the Giants. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/trey-mcbride-15902",
+      "pub_date": "2026-10-04T04:23:00Z"
     },
     {
       "player_name": "Mike Evans",
@@ -91,6 +135,17 @@
       "description": "McConkey (foot), who is listed as questionable for Sunday's game at Seattle, is likely to suit up, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
       "pub_date": "2026-10-04T04:12:00Z"
+    },
+    {
+      "player_name": "Jalon Daniels",
+      "sleeper_id": "13425",
+      "gsis_id": "00-0041251",
+      "position": "QB",
+      "team": "TBB",
+      "headline": "Uneven showing in starting debut",
+      "description": "Daniels completed 19 of 27 passes for 148 yards with one touchdown and two interceptions and rushed eight times for 55 yards in the Buccaneers' 17-14 loss to the Packers on Sunday. He also recovered a fumble. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalon-daniels-19292",
+      "pub_date": "2026-10-04T04:07:00Z"
     },
     {
       "player_name": "Zay Flowers",
