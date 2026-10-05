@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-05T03:39:41Z",
+  "generated_at": "2026-10-05T13:23:05Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Sam LaPorta",
+      "sleeper_id": "10859",
+      "gsis_id": "00-0039065",
+      "position": "TE",
+      "team": "DET",
+      "headline": "Season-best numbers in loss",
+      "description": "LaPorta brought in eight of 13 targets for 84 yards and a touchdown in the Lions' 32-26 loss to the Panthers on Sunday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/sam-laporta-17033",
+      "pub_date": "2026-10-04T09:41:00Z"
+    },
+    {
+      "player_name": "Jameson Williams",
+      "sleeper_id": "8148",
+      "gsis_id": "00-0037240",
+      "position": "WR",
+      "team": "DET",
+      "headline": "Eclipses century mark in loss",
+      "description": "Williams secured six of eight targets for 102 yards in the Lions' 32-26 loss to the Panthers on Sunday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jameson-williams-15849",
+      "pub_date": "2026-10-04T09:35:00Z"
+    },
+    {
+      "player_name": "Bryce Young",
+      "sleeper_id": "9228",
+      "gsis_id": "00-0039150",
+      "position": "QB",
+      "team": "CAR",
+      "headline": "Tosses two TDs to Tet",
+      "description": "Young completed 29 of 41 passes for 329 yards and two touchdowns while rushing three times for three yards in Sunday's 32-26 win over the Lions. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bryce-young-16807",
+      "pub_date": "2026-10-04T09:21:00Z"
+    },
+    {
+      "player_name": "Chuba Hubbard",
+      "sleeper_id": "7594",
+      "gsis_id": "00-0036555",
+      "position": "RB",
+      "team": "CAR",
+      "headline": "Rushes for 122 yards and two TDs",
+      "description": "Hubbard rushed 20 times for 122 yards and two touchdowns while catching one of two targets for seven yards in Sunday's 32-26 win over the Lions. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chuba-hubbard-15242",
+      "pub_date": "2026-10-04T09:15:00Z"
+    },
+    {
+      "player_name": "Jared Goff",
+      "sleeper_id": "3163",
+      "gsis_id": "00-0033106",
+      "position": "QB",
+      "team": "DET",
+      "headline": "Massive passing yardage total in loss",
+      "description": "Goff completed 32 of 52 passes for 412 yards with one touchdown and no interceptions in the Lions' 32-26 loss to the Panthers on Sunday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jared-goff-10729",
+      "pub_date": "2026-10-04T09:09:00Z"
+    },
     {
       "player_name": "Brock Bowers",
       "sleeper_id": "11604",
