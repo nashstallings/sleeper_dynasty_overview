@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T23:46:35Z",
+  "generated_at": "2026-10-05T03:39:41Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Mariota (knee) has been ruled out for the remainder of Sunday's game against the Colts in London, Tashan Reed of The Washington Post reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/marcus-mariota-10074",
       "pub_date": "2026-10-04T08:13:00Z"
+    },
+    {
+      "player_name": "Tyquan Thornton",
+      "sleeper_id": "8188",
+      "gsis_id": "00-0038104",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Out indefinitely due to dislocated ankle",
+      "description": "Thornton (ankle) is out indefinitely after dislocating his ankle during Sunday's 30-27 win over the Raiders, Ian Rapoport of ESPN and NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyquan-thornton-15831",
+      "pub_date": "2026-10-04T07:12:00Z"
+    },
+    {
+      "player_name": "Jordan Addison",
+      "sleeper_id": "9756",
+      "gsis_id": "00-0038994",
+      "position": "WR",
+      "team": "MIN",
+      "headline": "Just four grabs in Week 4 win",
+      "description": "Addison caught four of six targets for 52 yards in Sunday's 15-10 win over the Dolphins. He added minus-1 yard on his only carry. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordan-addison-16895",
+      "pub_date": "2026-10-04T07:00:00Z"
+    },
+    {
+      "player_name": "Kyler Murray",
+      "sleeper_id": "5849",
+      "gsis_id": "00-0035228",
+      "position": "QB",
+      "team": "MIN",
+      "headline": "Fails to produce TD in win over Miami",
+      "description": "Murray completed 27 of 37 passes for 247 yards while adding 16 rushing yards on six carries in Sunday's 15-10 win over the Dolphins. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyler-murray-13613",
+      "pub_date": "2026-10-04T06:54:00Z"
+    },
+    {
+      "player_name": "J.K. Dobbins",
+      "sleeper_id": "6806",
+      "gsis_id": "00-0036158",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Generates 52 total yards in loss",
+      "description": "Dobbins rushed 11 times for 40 yards and brought in both targets for 12 yards in the Broncos' 24-14 loss to the 49ers on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jk-dobbins-14418",
+      "pub_date": "2026-10-04T06:47:00Z"
+    },
+    {
+      "player_name": "Bo Nix",
+      "sleeper_id": "11563",
+      "gsis_id": "00-0039732",
+      "position": "QB",
+      "team": "DEN",
+      "headline": "Can't overcome another deficit",
+      "description": "Nix completed 25 of 42 passes for 214 yards with one touchdown and no interceptions while rushing twice for 10 yards in the Broncos' 24-14 loss to the 49ers on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bo-nix-16995",
+      "pub_date": "2026-10-04T06:40:00Z"
     },
     {
       "player_name": "Michael Wilson",
