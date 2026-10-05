@@ -1,9 +1,42 @@
 {
-  "generated_at": "2026-10-05T13:23:05Z",
+  "generated_at": "2026-10-05T21:46:45Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Saquon Barkley",
+      "sleeper_id": "4866",
+      "gsis_id": "00-0034844",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Status uncertain with injured hamstring",
+      "description": "Coach Nick Sirianni said, \"We'll see,\" Monday afternoon when asked about Barkley's new hamstring injury, Zach Berman of The Athletic reports. \"We'll have more answers Wednesday for you probably with that stuff,\" Sirianni added. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
+      "pub_date": "2026-10-05T02:31:00Z"
+    },
+    {
+      "player_name": "Tank Bigsby",
+      "sleeper_id": "9225",
+      "gsis_id": "00-0038555",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Set for IR stint",
+      "description": "Bigsby will undergo core muscle surgery and be placed on injured reserve, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tank-bigsby-16705",
+      "pub_date": "2026-10-05T02:17:00Z"
+    },
+    {
+      "player_name": "Caleb Williams",
+      "sleeper_id": "11560",
+      "gsis_id": "00-0039918",
+      "position": "QB",
+      "team": "CHI",
+      "headline": "Not practicing Week 5, still week-to-week",
+      "description": "Bears head coach Ben Johnson said Monday that Williams (hamstring) won't practice during Week 5 and is still being classified as week-to-week rather than day-to-day, Courtney Cronin of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/caleb-williams-17695",
+      "pub_date": "2026-10-05T02:13:00Z"
+    },
     {
       "player_name": "Sam LaPorta",
       "sleeper_id": "10859",
