@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-05T21:46:45Z",
+  "generated_at": "2026-10-06T04:27:50Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Kyle Pitts",
+      "sleeper_id": "7553",
+      "gsis_id": "00-0036970",
+      "position": "TE",
+      "team": "ATL",
+      "headline": "Uptick in production during big win",
+      "description": "Pitts secured all three targets for 47 yards in the Falcons' 45-24 win over the Saints on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyle-pitts-15265",
+      "pub_date": "2026-10-05T09:24:00Z"
+    },
+    {
+      "player_name": "Juwan Johnson",
+      "sleeper_id": "7002",
+      "gsis_id": "00-0036040",
+      "position": "TE",
+      "team": "NOS",
+      "headline": "Stays busy in Week 4 loss",
+      "description": "Johnson secured six of eight targets for 59 yards in the Saints' 45-24 loss to the Falcons on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/juwan-johnson-14630",
+      "pub_date": "2026-10-05T09:20:00Z"
+    },
+    {
+      "player_name": "Alvin Kamara",
+      "sleeper_id": "4035",
+      "gsis_id": "00-0033906",
+      "position": "RB",
+      "team": "NOS",
+      "headline": "Two rush TDs in return to lead role",
+      "description": "Kamara rushed seven times for 23 yards and two touchdowns and brought in five of seven targets for 35 yards in the Saints' 45-24 loss to the Falcons on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/alvin-kamara-11732",
+      "pub_date": "2026-10-05T09:15:00Z"
+    },
+    {
+      "player_name": "Brian Robinson",
+      "sleeper_id": "8154",
+      "gsis_id": "00-0037746",
+      "position": "RB",
+      "team": "ATL",
+      "headline": "Racks up three TDs in win",
+      "description": "Robinson rushed 14 times for 62 yards and three touchdowns and brought in his sole target for five yards in the Falcons' 45-24 win over the Saints on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/brian-robinson-15907",
+      "pub_date": "2026-10-05T09:06:00Z"
+    },
+    {
+      "player_name": "Michael Penix Jr.",
+      "sleeper_id": "11559",
+      "gsis_id": "00-0039917",
+      "position": "QB",
+      "team": "ATL",
+      "headline": "Highly efficient in big division win",
+      "description": "Penix completed 15 of 20 passes for 223 yards with one touchdown and no interceptions and rushed twice for minus-2 yards in the Falcons' 45-24 win over the Saints on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-penix-17700",
+      "pub_date": "2026-10-05T09:01:00Z"
+    },
     {
       "player_name": "Saquon Barkley",
       "sleeper_id": "4866",
