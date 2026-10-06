@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-10-06T12:37:40Z",
+  "generated_at": "2026-10-06T19:56:52Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Joe Mixon",
+      "sleeper_id": "4018",
+      "gsis_id": "00-0033897",
+      "position": "RB",
+      "team": "FA",
+      "headline": "Not joining Seattle after all",
+      "description": "The Seahawks opted not to sign Mixon (foot) after he underwent a physical for the team Tuesday, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/joe-mixon-11707",
+      "pub_date": "2026-10-06T11:05:00Z"
+    },
+    {
+      "player_name": "Lamar Jackson",
+      "sleeper_id": "4881",
+      "gsis_id": "00-0034796",
+      "position": "QB",
+      "team": "BAL",
+      "headline": "Could miss multiple games",
+      "description": "Jackson (ankle) is not dealing with a long-term injury, but he has \"only an outside chance to play\" in Week 5 and \"could end up missing multiple games,\" Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/lamar-jackson-12561",
+      "pub_date": "2026-10-06T06:12:00Z"
+    },
     {
       "player_name": "Kyle Pitts",
       "sleeper_id": "7553",
