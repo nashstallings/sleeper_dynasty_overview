@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-07T09:40:11Z",
+  "generated_at": "2026-10-07T18:19:01Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "A.J. Brown",
+      "sleeper_id": "5859",
+      "gsis_id": "00-0035676",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Walking without limp",
+      "description": "Brown (ankle) was seen in the locker room Wednesday without a noticeable limp, Doug Kyed of the Boston Herald reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
+      "pub_date": "2026-10-07T11:07:00Z"
+    },
+    {
+      "player_name": "Ja'Marr Chase",
+      "sleeper_id": "7564",
+      "gsis_id": "00-0036900",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "Remains in concussion protocol",
+      "description": "Chase remains in the league's concussion protocol Wednesday, Ben Baby of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
+      "pub_date": "2026-10-07T10:46:00Z"
+    },
+    {
+      "player_name": "Stefon Diggs",
+      "sleeper_id": "2449",
+      "gsis_id": "00-0031588",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Not present for Wednesday's practice",
+      "description": "Diggs (undisclosed) was not on the practice field during the portion of Wednesday's practice open to the media, John Keim of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/stefon-diggs-10133",
+      "pub_date": "2026-10-07T10:36:00Z"
+    },
+    {
+      "player_name": "Jayden Daniels",
+      "sleeper_id": "11566",
+      "gsis_id": "00-0039910",
+      "position": "QB",
+      "team": "WAS",
+      "headline": "Practicing Wednesday",
+      "description": "Daniels (elbow) was spotted throwing during the open portion of Wednesday's practice, John Keim of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jayden-daniels-17692",
+      "pub_date": "2026-10-07T10:36:00Z"
+    },
+    {
+      "player_name": "Kyle Monangai",
+      "sleeper_id": "12534",
+      "gsis_id": "00-0040236",
+      "position": "RB",
+      "team": "CHI",
+      "headline": "Thumb injury not considered an issue",
+      "description": "Head coach Ben Johnson said Wednesday that Monangai's thumb injury is not an issue, Courtney Cronin of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyle-monangai-18520",
+      "pub_date": "2026-10-07T10:33:00Z"
+    },
     {
       "player_name": "Joe Mixon",
       "sleeper_id": "4018",
