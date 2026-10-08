@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-08T09:50:44Z",
+  "generated_at": "2026-10-08T18:19:10Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Saquon Barkley",
+      "sleeper_id": "4866",
+      "gsis_id": "00-0034844",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Not seen at practice Thursday",
+      "description": "Barkley (hamstring) wasn't present during the open portion of Thursday's practice, Tim McManus of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
+      "pub_date": "2026-10-08T11:12:00Z"
+    },
+    {
+      "player_name": "DeVonta Smith",
+      "sleeper_id": "7525",
+      "gsis_id": "00-0036912",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Logging some activity Thursday",
+      "description": "Smith (hamstring) was spotted running on a side field during Thursday's practice, Tim McManus of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
+      "pub_date": "2026-10-08T10:59:00Z"
+    },
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Not ruled out for Week 5",
+      "description": "Head coach Joe Brady said Thursday that Moore (shoulder) is \"going to be able to do everything he can to be able to rock this week,\" Katherine Fitzgerald of The Buffalo News reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-10-08T10:56:00Z"
+    },
+    {
+      "player_name": "Tee Higgins",
+      "sleeper_id": "6801",
+      "gsis_id": "00-0036410",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "Sticking to side field",
+      "description": "Higgins (groin/neck) was spotted on a side field during the open portion of Thursday's practice, Ben Baby of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tee-higgins-14506",
+      "pub_date": "2026-10-08T10:53:00Z"
+    },
+    {
+      "player_name": "Ja'Marr Chase",
+      "sleeper_id": "7564",
+      "gsis_id": "00-0036900",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "Returns to practice Thursday",
+      "description": "Chase (concussion) was present for the media-access portion of Thursday's practice, Ben Baby of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
+      "pub_date": "2026-10-08T10:46:00Z"
+    },
     {
       "player_name": "A.J. Brown",
       "sleeper_id": "5859",
