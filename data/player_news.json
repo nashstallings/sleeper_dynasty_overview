@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T17:52:27Z",
+  "generated_at": "2026-10-09T22:08:41Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Stevenson (knee) said Friday that he's \"ready to go\", while Patriots coach Mike Vrabel said the running back \"is not out as of yet\" for Sunday's game against Las Vegas, according to Mark Daniels of MassLive.com. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/rhamondre-stevenson-15372",
       "pub_date": "2026-10-09T10:32:00Z"
+    },
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Set to play Sunday",
+      "description": "Love (ankle) doesn't have a designation for Sunday's contest versus the Lions, Theo Mackie of The Arizona Republic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-10-09T02:08:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Cleared for Week 5",
+      "description": "Evans (ribs) does not have an injury designation for Sunday's game against the Seahawks, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-10-09T02:04:00Z"
+    },
+    {
+      "player_name": "Dallas Goedert",
+      "sleeper_id": "5022",
+      "gsis_id": "00-0034351",
+      "position": "TE",
+      "team": "PHI",
+      "headline": "Ready to return in Week 5",
+      "description": "Goedert (knee) doesn't have a designation for Sunday's game at Jacksonville. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dallas-goedert-12860",
+      "pub_date": "2026-10-09T01:53:00Z"
+    },
+    {
+      "player_name": "Jaylen Wright",
+      "sleeper_id": "11643",
+      "gsis_id": "00-0039874",
+      "position": "RB",
+      "team": "MIA",
+      "headline": "Questionable for Sunday",
+      "description": "Wright (foot) is listed as questionable for Sunday's game against the Bengals, David Furones of the South Florida Sun Sentinel reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-wright-17800",
+      "pub_date": "2026-10-09T01:51:00Z"
+    },
+    {
+      "player_name": "Quentin Johnston",
+      "sleeper_id": "9754",
+      "gsis_id": "00-0038544",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Out for Week 5",
+      "description": "Johnston (chest) has been ruled out for Sunday's game against Denver Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/quentin-johnston-16899",
+      "pub_date": "2026-10-09T01:44:00Z"
     },
     {
       "player_name": "Saquon Barkley",
