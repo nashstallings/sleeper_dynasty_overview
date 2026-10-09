@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T19:48:02Z",
+  "generated_at": "2026-10-09T19:43:04Z",
   "players": {
     "10210": {
       "name": "Cameron Latu",
@@ -10537,6 +10537,58 @@
         }
       }
     },
+    "11911": {
+      "name": "Jeshaun Jones",
+      "position": "WR",
+      "seasons": {
+        "2025": {
+          "air_yards_share": 0.0,
+          "attempts": 0,
+          "carries": 0,
+          "completions": 0,
+          "cpoe": null,
+          "fantasy_points_ppr": 0.0,
+          "games": 1,
+          "interceptions": 0,
+          "passing_epa": null,
+          "passing_tds": 0,
+          "passing_yards": 0,
+          "receiving_tds": 0,
+          "receiving_yards": 0,
+          "receptions": 0,
+          "rushing_tds": 0,
+          "rushing_yards": 0,
+          "snap_share": 0.0,
+          "target_share": 0.0,
+          "targets": 0,
+          "team": "MIN",
+          "wopr": 0.0
+        },
+        "2026": {
+          "air_yards_share": 0.0,
+          "attempts": 0,
+          "carries": 0,
+          "completions": 0,
+          "cpoe": null,
+          "fantasy_points_ppr": 0.0,
+          "games": 1,
+          "interceptions": 0,
+          "passing_epa": null,
+          "passing_tds": 0,
+          "passing_yards": 0,
+          "receiving_tds": 0,
+          "receiving_yards": 0,
+          "receptions": 0,
+          "rushing_tds": 0,
+          "rushing_yards": 0,
+          "snap_share": 0.04,
+          "target_share": 0.0,
+          "targets": 0,
+          "team": "MIN",
+          "wopr": 0.0
+        }
+      }
+    },
     "11921": {
       "name": "Xavier Weaver",
       "position": "WR",
@@ -15501,6 +15553,35 @@
           "targets": 0,
           "team": "CIN",
           "wopr": 0.0
+        }
+      }
+    },
+    "13013": {
+      "name": "Mark Redman",
+      "position": "TE",
+      "seasons": {
+        "2026": {
+          "air_yards_share": 0.102,
+          "attempts": 0,
+          "carries": 0,
+          "completions": 0,
+          "cpoe": null,
+          "fantasy_points_ppr": 4.9,
+          "games": 1,
+          "interceptions": 0,
+          "passing_epa": null,
+          "passing_tds": 0,
+          "passing_yards": 0,
+          "receiving_tds": 0,
+          "receiving_yards": 29,
+          "receptions": 2,
+          "rushing_tds": 0,
+          "rushing_yards": 0,
+          "snap_share": 0.47,
+          "target_share": 0.067,
+          "targets": 2,
+          "team": "GB",
+          "wopr": 0.172
         }
       }
     },
