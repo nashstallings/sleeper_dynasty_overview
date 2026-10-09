@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T00:55:50Z",
+  "generated_at": "2026-10-09T09:54:53Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Chase (concussion) was present for the media-access portion of Thursday's practice, Ben Baby of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
       "pub_date": "2026-10-08T10:46:00Z"
+    },
+    {
+      "player_name": "Jalon Daniels",
+      "sleeper_id": "13425",
+      "gsis_id": "00-0041251",
+      "position": "QB",
+      "team": "TBB",
+      "headline": "Notable improvement in second start",
+      "description": "Daniels completed 19 of 25 passes for 189 yards with one touchdown and no interceptions while rushing seven times for 23 yards in the Buccaneers' 24-16 win over the Cowboys on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalon-daniels-19292",
+      "pub_date": "2026-10-08T09:12:00Z"
+    },
+    {
+      "player_name": "Chris Godwin Jr.",
+      "sleeper_id": "4037",
+      "gsis_id": "00-0033921",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Four touches in Week 5 win",
+      "description": "Godwin secured all three targets for 37 yards and rushed once for three yards in the Buccaneers' 24-16 win over the Cowboys on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chris-godwin-11718",
+      "pub_date": "2026-10-08T09:06:00Z"
+    },
+    {
+      "player_name": "Emeka Egbuka",
+      "sleeper_id": "12514",
+      "gsis_id": "00-0040129",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Seven touches, one TD in win",
+      "description": "Egbuka secured six of nine targets for 38 yards and rushed once for a 14-yard touchdown in the Buccaneers' 24-16 win over the Cowboys on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
+      "pub_date": "2026-10-08T09:02:00Z"
+    },
+    {
+      "player_name": "Dak Prescott",
+      "sleeper_id": "3294",
+      "gsis_id": "00-0033077",
+      "position": "QB",
+      "team": "DAL",
+      "headline": "Piles up yards late in Week 5 loss",
+      "description": "Prescott completed 24 of 42 passes for 316 yards with a touchdown and two interceptions in the Cowboys' 24-16 loss to the Buccaneers on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dak-prescott-11008",
+      "pub_date": "2026-10-08T08:57:00Z"
+    },
+    {
+      "player_name": "Javonte Williams",
+      "sleeper_id": "7588",
+      "gsis_id": "00-0036997",
+      "position": "RB",
+      "team": "DAL",
+      "headline": "Another TD in Week 5 loss",
+      "description": "Williams rushed 12 times for 45 yards and a touchdown and brought in two of three targets for 17 yards in the Cowboys' 24-16 loss to the Buccaneers on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/javonte-williams-15306",
+      "pub_date": "2026-10-08T08:50:00Z"
     },
     {
       "player_name": "DJ Moore",
