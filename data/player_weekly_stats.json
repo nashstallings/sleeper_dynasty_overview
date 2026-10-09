@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T19:52:06Z",
+  "generated_at": "2026-10-09T19:51:03Z",
   "players": {
     "10210": {
       "name": "Cameron Latu",
@@ -77122,6 +77122,62 @@
         }
       }
     },
+    "11911": {
+      "name": "Jeshaun Jones",
+      "position": "WR",
+      "weeks": {
+        "2025": {
+          "18": {
+            "air_yards_share": 0.0,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 0.0,
+            "interceptions": 0,
+            "opponent": "GB",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.0,
+            "target_share": 0.0,
+            "targets": 0,
+            "team": "MIN",
+            "wopr": 0.0
+          }
+        },
+        "2026": {
+          "4": {
+            "air_yards_share": 0.0,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 0.0,
+            "interceptions": 0,
+            "opponent": "MIA",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.04,
+            "target_share": 0.0,
+            "targets": 0,
+            "team": "MIN",
+            "wopr": 0.0
+          }
+        }
+      }
+    },
     "11921": {
       "name": "Xavier Weaver",
       "position": "WR",
@@ -107552,6 +107608,37 @@
             "targets": 0,
             "team": "CIN",
             "wopr": 0.0
+          }
+        }
+      }
+    },
+    "13013": {
+      "name": "Mark Redman",
+      "position": "TE",
+      "weeks": {
+        "2026": {
+          "4": {
+            "air_yards_share": 0.102,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 4.9,
+            "interceptions": 0,
+            "opponent": "TB",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 29,
+            "receptions": 2,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.47,
+            "target_share": 0.067,
+            "targets": 2,
+            "team": "GB",
+            "wopr": 0.172
           }
         }
       }
