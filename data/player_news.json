@@ -1,9 +1,53 @@
 {
-  "generated_at": "2026-10-10T16:49:27Z",
+  "generated_at": "2026-10-10T21:02:31Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Officially placed on IR",
+      "description": "The Steelers placed Pittman (foot) on injured reserve Saturday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-10-10T12:53:00Z"
+    },
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Bound for injured reserve",
+      "description": "Pittman (foot) is being placed on injured reserve, Jeremy Fowler of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-10-10T12:05:00Z"
+    },
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Questionable for Week 5",
+      "description": "Moore (shoulder) is listed as questionable for Monday's game against the Rams, Katherine Fitzgerald of The Buffalo News reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-10-10T11:05:00Z"
+    },
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Spotted at practice Saturday",
+      "description": "Moore (shoulder) was on the field for the start of Saturday's practice, Joe Buscaglia of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-10-10T09:59:00Z"
+    },
     {
       "player_name": "Marvin Harrison Jr.",
       "sleeper_id": "11628",
