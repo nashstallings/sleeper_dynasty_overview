@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-10-10T11:46:31Z",
+  "generated_at": "2026-10-10T16:49:27Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Marvin Harrison Jr.",
+      "sleeper_id": "11628",
+      "gsis_id": "00-0039849",
+      "position": "WR",
+      "team": "ARI",
+      "headline": "Will sit amid trade talks",
+      "description": "A trade for Harrison will not be completed \"until after Sunday's games are played,\" but the Cardinals \"feel comfortable enough\" knowing it will occur that they will deactivate him for Sunday's game against the Lions, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/marvin-harrison-17674",
+      "pub_date": "2026-10-10T08:35:00Z"
+    },
+    {
+      "player_name": "Marvin Harrison Jr.",
+      "sleeper_id": "11628",
+      "gsis_id": "00-0039849",
+      "position": "WR",
+      "team": "ARI",
+      "headline": "Trade being finalized",
+      "description": "The Cardinals are \"finalizing a deal to trade Harrison\" to an unspecified team, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/marvin-harrison-17674",
+      "pub_date": "2026-10-10T08:13:00Z"
+    },
     {
       "player_name": "Jeremiyah Love",
       "sleeper_id": "13287",
@@ -66,9 +88,20 @@
       "position": "WR",
       "team": "WAS",
       "headline": "Seemingly game-time decision for Week 5",
-      "description": "McLaurin (hamstring), who is officially questionable for Sunday's game against the Giants, will be a game-time decision, as Jeremy Fowler of ESPN highlighted Friday in a Week 5 injury update on SportsCenter. Visit RotoWire.com for more analysis on this update.",
+      "description": "McLaurin (hamstring), who officially is listed as questionable for Sunday's contest against the Giants, will be a game-time decision, as Jeremy Fowler of ESPN highlighted Friday in a Week 5 injury update on SportsCenter. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/terry-mclaurin-13536",
       "pub_date": "2026-10-09T05:05:00Z"
+    },
+    {
+      "player_name": "Will Shipley",
+      "sleeper_id": "11577",
+      "gsis_id": "00-0039746",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Philly's top RB for Week 5",
+      "description": "Shipley is slated to lead the Eagles backfield against the Jaguars in Week 5 due to the absences of both Saquon Barkley (hamstring) and Tank Bigsby (abdomen, IR), Chris McPherson of the Eagles' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/will-shipley-17802",
+      "pub_date": "2026-10-09T04:23:00Z"
     },
     {
       "player_name": "DJ Moore",
