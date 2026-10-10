@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T22:08:41Z",
+  "generated_at": "2026-10-10T03:57:35Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -60,6 +60,28 @@
       "pub_date": "2026-10-09T10:32:00Z"
     },
     {
+      "player_name": "Terry McLaurin",
+      "sleeper_id": "5927",
+      "gsis_id": "00-0035659",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Seemingly game-time decision for Week 5",
+      "description": "McLaurin (hamstring), who is officially questionable for Sunday's game against the Giants, will be a game-time decision, as Jeremy Fowler of ESPN highlighted Friday in a Week 5 injury update on SportsCenter. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terry-mclaurin-13536",
+      "pub_date": "2026-10-09T05:05:00Z"
+    },
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Remains sidelined Friday",
+      "description": "Moore (shoulder) remained a non-participant in Friday's practice for the Bills. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-10-09T04:09:00Z"
+    },
+    {
       "player_name": "Jeremiyah Love",
       "sleeper_id": "13287",
       "gsis_id": "00-0041027",
@@ -88,7 +110,7 @@
       "position": "TE",
       "team": "PHI",
       "headline": "Ready to return in Week 5",
-      "description": "Goedert (knee) doesn't have a designation for Sunday's game at Jacksonville. Visit RotoWire.com for more analysis on this update.",
+      "description": "Goedert (knee) doesn't have a designation for Sunday's game versus the Jaguars in London. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/dallas-goedert-12860",
       "pub_date": "2026-10-09T01:53:00Z"
     },
