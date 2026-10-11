@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-11T03:31:59Z",
+  "generated_at": "2026-10-11T11:58:37Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Justin Jefferson",
+      "sleeper_id": "6794",
+      "gsis_id": "00-0036322",
+      "position": "WR",
+      "team": "MIN",
+      "headline": "Listed questionable for Sunday",
+      "description": "Jefferson (ankle) will go through a pregame workout before the Vikings make a decision on his availability for Sunday's contest at New Orleans, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/justin-jefferson-14509",
+      "pub_date": "2026-10-11T04:50:00Z"
+    },
+    {
+      "player_name": "Zay Flowers",
+      "sleeper_id": "9997",
+      "gsis_id": "00-0039064",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Expected to play Sunday night",
+      "description": "Flowers (foot) is slated to play in Sunday night's game in Atlanta, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
+      "pub_date": "2026-10-11T04:43:00Z"
+    },
+    {
+      "player_name": "Keenan Allen",
+      "sleeper_id": "1479",
+      "gsis_id": "00-0030279",
+      "position": "WR",
+      "team": "IND",
+      "headline": "Expected to suit up Sunday",
+      "description": "Allen (groin) is expected to play Sunday against the Steelers, Jeremy Fowler of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/keenan-allen-8627",
+      "pub_date": "2026-10-11T04:42:00Z"
+    },
+    {
+      "player_name": "Ladd McConkey",
+      "sleeper_id": "11635",
+      "gsis_id": "00-0039915",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Not slated to play in Week 5",
+      "description": "McConkey (foot) isn't expected to play Sunday versus the Broncos, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
+      "pub_date": "2026-10-11T04:36:00Z"
+    },
+    {
+      "player_name": "Alvin Kamara",
+      "sleeper_id": "4035",
+      "gsis_id": "00-0033906",
+      "position": "RB",
+      "team": "NOS",
+      "headline": "Slated to to suit up Sunday",
+      "description": "Kamara (back) is expected to play in Sunday's contest against the Vikings, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/alvin-kamara-11732",
+      "pub_date": "2026-10-11T04:29:00Z"
+    },
     {
       "player_name": "Michael Pittman",
       "sleeper_id": "6819",
