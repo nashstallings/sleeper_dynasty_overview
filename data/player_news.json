@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T17:32:20Z",
+  "generated_at": "2026-10-11T21:23:11Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -113,6 +113,61 @@
       "description": "Kamara (back) is expected to play in Sunday's contest against the Vikings, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/alvin-kamara-11732",
       "pub_date": "2026-10-11T04:29:00Z"
+    },
+    {
+      "player_name": "Quinshon Judkins",
+      "sleeper_id": "12512",
+      "gsis_id": "00-0040784",
+      "position": "RB",
+      "team": "CLE",
+      "headline": "Dealing with foot issue",
+      "description": "Judkins was wearing a walking boot on his right foot after Sunday's 17-12 loss at the Jets, Chris Easterling of the Akron Beacon Journal reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/quinshon-judkins-18516",
+      "pub_date": "2026-10-11T02:13:00Z"
+    },
+    {
+      "player_name": "Ja'Marr Chase",
+      "sleeper_id": "7564",
+      "gsis_id": "00-0036900",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "One-handed TD in win",
+      "description": "Chase brought in six of 10 targets for 77 yards and a touchdown in the Bengals' 31-24 win over the Dolphins on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
+      "pub_date": "2026-10-11T02:08:00Z"
+    },
+    {
+      "player_name": "Caleb Williams",
+      "sleeper_id": "11560",
+      "gsis_id": "00-0039918",
+      "position": "QB",
+      "team": "CHI",
+      "headline": "Johnson unclear on return for QB",
+      "description": "Head coach Ben Johnson wouldn't commit to a return date for Williams (hamstring) after Sunday's loss at Green Bay, Chris Emma of 670TheScore.com reports. \"He's on track. We'll see if that's Atlanta or after,\" Johnson said. \"I think it's going to be close.\" Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/caleb-williams-17695",
+      "pub_date": "2026-10-11T02:06:00Z"
+    },
+    {
+      "player_name": "Jordan Love",
+      "sleeper_id": "6804",
+      "gsis_id": "00-0036264",
+      "position": "QB",
+      "team": "GBP",
+      "headline": "Elite numbers in easy win",
+      "description": "Love completed 25 of 31 passes for 367 yards with two touchdowns and no interceptions while adding one carry for six yards in the Packers' 31-7 win over the Bears on Sunday. He also fumbled once but recovered. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordan-love-14371",
+      "pub_date": "2026-10-11T02:02:00Z"
+    },
+    {
+      "player_name": "Braelon Allen",
+      "sleeper_id": "11576",
+      "gsis_id": "00-0039794",
+      "position": "RB",
+      "team": "NYJ",
+      "headline": "Breaks out for 116 yards, TD",
+      "description": "Allen rushed 24 times for 116 yards and a touchdown while catching one of four targets for no gain in Sunday's 17-12 win over the Browns. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/braelon-allen-17702",
+      "pub_date": "2026-10-11T01:58:00Z"
     },
     {
       "player_name": "Michael Pittman",
