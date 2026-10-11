@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-11T11:58:37Z",
+  "generated_at": "2026-10-11T17:32:20Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "T.J. Hockenson",
+      "sleeper_id": "5844",
+      "gsis_id": "00-0035229",
+      "position": "TE",
+      "team": "MIN",
+      "headline": "Getting checked for possible concussion",
+      "description": "Hockenson is under evaluation for a possible concussion and is considered questionable to return to Sunday's game at New Orleans. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tj-hockenson-13610",
+      "pub_date": "2026-10-11T10:19:00Z"
+    },
+    {
+      "player_name": "George Kittle",
+      "sleeper_id": "4217",
+      "gsis_id": "00-0033288",
+      "position": "TE",
+      "team": "SFO",
+      "headline": "Will play through illness Sunday",
+      "description": "The 49ers announced that Kittle is dealing with an illness but will play in Sunday's game against the Seahawks, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/george-kittle-11892",
+      "pub_date": "2026-10-11T10:08:00Z"
+    },
+    {
+      "player_name": "Daniel Jones",
+      "sleeper_id": "5870",
+      "gsis_id": "00-0035710",
+      "position": "QB",
+      "team": "IND",
+      "headline": "Getting Allen back in Week 5",
+      "description": "Jones will welcome back Keenan Allen (groin) to his wide-receiver corps in Sunday's Week 5 matchup against the Steelers, as the latter is active for the contest. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/daniel-jones-13491",
+      "pub_date": "2026-10-11T09:20:00Z"
+    },
+    {
+      "player_name": "Jaylen Warren",
+      "sleeper_id": "8228",
+      "gsis_id": "00-0037228",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "Full control of backfield again Sunday",
+      "description": "Warren will remain the Steelers' unquestioned lead back in Sunday's Week 5 matchup against the Colts due to Rico Dowdle (toe) having been declared inactive for the contest. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-warren-15984",
+      "pub_date": "2026-10-11T08:57:00Z"
+    },
+    {
+      "player_name": "Terry McLaurin",
+      "sleeper_id": "5927",
+      "gsis_id": "00-0035659",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Good to go Week 5",
+      "description": "McLaurin (hamstring) is officially active for Sunday's game against the Giants. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terry-mclaurin-13536",
+      "pub_date": "2026-10-11T08:56:00Z"
+    },
     {
       "player_name": "Justin Jefferson",
       "sleeper_id": "6794",
