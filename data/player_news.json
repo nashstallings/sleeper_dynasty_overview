@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T21:02:31Z",
+  "generated_at": "2026-10-11T03:31:59Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -69,6 +69,17 @@
       "description": "The Cardinals are \"finalizing a deal to trade Harrison\" to an unspecified team, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/marvin-harrison-17674",
       "pub_date": "2026-10-10T08:13:00Z"
+    },
+    {
+      "player_name": "Terry McLaurin",
+      "sleeper_id": "5927",
+      "gsis_id": "00-0035659",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Trending toward playing Sunday",
+      "description": "McLaurin (hamstring) remains a game-time decision for Sunday's game against the Giants, with a \"slight lean\" toward him playing, John Keim of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terry-mclaurin-13536",
+      "pub_date": "2026-10-10T05:33:00Z"
     },
     {
       "player_name": "Jeremiyah Love",
