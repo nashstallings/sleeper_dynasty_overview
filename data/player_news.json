@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T21:23:11Z",
+  "generated_at": "2026-10-12T03:55:59Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "McLaurin (hamstring) is officially active for Sunday's game against the Giants. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/terry-mclaurin-13536",
       "pub_date": "2026-10-11T08:56:00Z"
+    },
+    {
+      "player_name": "Jacoby Brissett",
+      "sleeper_id": "3257",
+      "gsis_id": "00-0033119",
+      "position": "QB",
+      "team": "ARI",
+      "headline": "Pads stats late in loss",
+      "description": "Brissett completed 29 of 47 passes for 292 yards with three touchdowns and one interception while adding two rushes for 19 yards and a seven-yard reception on his only target in the Cardinals' 45-21 loss to the Lions on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jacoby-brissett-10919",
+      "pub_date": "2026-10-11T06:40:00Z"
+    },
+    {
+      "player_name": "Courtland Sutton",
+      "sleeper_id": "5045",
+      "gsis_id": "00-0034348",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "Reaches end zone in Week 5",
+      "description": "Sutton posted two catches (on three targets) for 18 yards and one touchdown during Sunday's 23-17 victory at the Chargers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/courtland-sutton-12586",
+      "pub_date": "2026-10-11T06:40:00Z"
+    },
+    {
+      "player_name": "Jared Goff",
+      "sleeper_id": "3163",
+      "gsis_id": "00-0033106",
+      "position": "QB",
+      "team": "DET",
+      "headline": "Four total TDs in win",
+      "description": "Goff completed 19 of 30 passes for 271 yards with three touchdowns and no interceptions while adding a one-yard touchdown on his only rush attempt in the Lions' 45-21 win over the Cardinals on Sunday. He also committed a fumble recovered by Detroit. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jared-goff-10729",
+      "pub_date": "2026-10-11T06:30:00Z"
+    },
+    {
+      "player_name": "Michael Wilson",
+      "sleeper_id": "10232",
+      "gsis_id": "00-0038559",
+      "position": "WR",
+      "team": "ARI",
+      "headline": "Limited by Lions in loss",
+      "description": "Wilson brought in four of seven targets for 30 yards and completed his only pass attempt for seven yards in the Cardinals' 45-21 loss to the Lions on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-wilson-16957",
+      "pub_date": "2026-10-11T06:24:00Z"
+    },
+    {
+      "player_name": "Rhamondre Stevenson",
+      "sleeper_id": "7611",
+      "gsis_id": "00-0036875",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "Punches in TD in win over Vegas",
+      "description": "Stevenson carried the ball 13 times for 64 yards and a touchdown and caught all three of his targets for 21 yards in Sunday's 45-17 rout of the Raiders. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rhamondre-stevenson-15372",
+      "pub_date": "2026-10-11T06:18:00Z"
     },
     {
       "player_name": "Justin Jefferson",
