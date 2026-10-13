@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T22:21:40Z",
+  "generated_at": "2026-10-13T05:05:57Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -38,6 +38,50 @@
       "pub_date": "2026-10-12T12:46:00Z"
     },
     {
+      "player_name": "Matthew Stafford",
+      "sleeper_id": "421",
+      "gsis_id": "00-0026498",
+      "position": "QB",
+      "team": "LAR",
+      "headline": "Massive yardage total in OT loss",
+      "description": "Stafford completed 40 of 54 passes for 383 yards with three touchdowns and no interceptions in the Rams' 37-34 overtime loss to the Bills on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/matthew-stafford-5971",
+      "pub_date": "2026-10-12T09:59:00Z"
+    },
+    {
+      "player_name": "Josh Allen",
+      "sleeper_id": "4984",
+      "gsis_id": "00-0034857",
+      "position": "QB",
+      "team": "BUF",
+      "headline": "Late-game heroics in OT win",
+      "description": "Allen completed 12 of 19 passes for 210 yards with one touchdown and one interception while adding 10 carries for 121 yards and another score and a two-point conversion pass in the Bills' 37-34 overtime win against the Rams on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-allen-12483",
+      "pub_date": "2026-10-12T09:50:00Z"
+    },
+    {
+      "player_name": "James Cook",
+      "sleeper_id": "8138",
+      "gsis_id": "00-0037248",
+      "position": "RB",
+      "team": "BUF",
+      "headline": "Stellar night nearly ruined by fumble",
+      "description": "Cook rushed 10 times for 121 yards and a touchdown and brought in his only target for seven yards in the Bills' 37-34 overtime win over the Rams on Monday night. He also committed two fumbles, losing one. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/james-cook-15876",
+      "pub_date": "2026-10-12T09:15:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Career-best numbers in OT loss",
+      "description": "Nacua brought in 17 of 24 targets for 138 yards and a touchdown and rushed twice for nine yards in the Rams' 37-34 overtime loss to the Bills on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-10-12T09:09:00Z"
+    },
+    {
       "player_name": "Deebo Samuel Sr.",
       "sleeper_id": "5872",
       "gsis_id": "00-0035719",
@@ -58,6 +102,17 @@
       "description": "Wilson (finger) is expected to miss a couple of weeks after exiting Sunday's 34-22 win over the Colts, Jeremy Fowler of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/roman-wilson-17043",
       "pub_date": "2026-10-12T06:05:00Z"
+    },
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Inactive in Week 5",
+      "description": "Moore (shoulder) is listed as inactive Monday at the Rams. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-10-12T03:50:00Z"
     },
     {
       "player_name": "Jaxon Smith-Njigba",
