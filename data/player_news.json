@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T05:05:57Z",
+  "generated_at": "2026-10-13T13:23:10Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -36,6 +36,39 @@
       "description": "San Francisco head coach Kyle Shanahan said that Samuel strained his right hamstring \"pretty good\" during Sunday's 32-29 win over Seattle and is \"going to miss at least a couple weeks,\" David Lombardi of SFStandard.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/deebo-samuel-13429",
       "pub_date": "2026-10-12T12:46:00Z"
+    },
+    {
+      "player_name": "Blake Corum",
+      "sleeper_id": "11586",
+      "gsis_id": "00-0039738",
+      "position": "RB",
+      "team": "LAR",
+      "headline": "Efficient with eight touches",
+      "description": "Corum rushed five times for 19 yards and a touchdown and brought in three of four targets for 53 yards in the Rams' 37-34 overtime loss to the Bills on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/blake-corum-17690",
+      "pub_date": "2026-10-12T10:13:00Z"
+    },
+    {
+      "player_name": "Davante Adams",
+      "sleeper_id": "2133",
+      "gsis_id": "00-0031381",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Two TDs in OT loss",
+      "description": "Adams brought in five of seven targets for 51 yards and two touchdowns in the Rams' 37-34 overtime loss to the Bills on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/davante-adams-9455",
+      "pub_date": "2026-10-12T10:09:00Z"
+    },
+    {
+      "player_name": "Kyren Williams",
+      "sleeper_id": "8150",
+      "gsis_id": "00-0037840",
+      "position": "RB",
+      "team": "LAR",
+      "headline": "Rush TD on inefficient night",
+      "description": "Williams rushed 16 times for 49 yards and a touchdown and brought in six of eight targets for 27 yards in the Rams' 37-34 overtime loss to the Bills on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyren-williams-15807",
+      "pub_date": "2026-10-12T10:04:00Z"
     },
     {
       "player_name": "Matthew Stafford",
