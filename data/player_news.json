@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-14T14:16:45Z",
+  "generated_at": "2026-10-14T19:07:56Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "DeVonta Smith",
+      "sleeper_id": "7525",
+      "gsis_id": "00-0036912",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Working on side Wednesday",
+      "description": "Smith (hamstring) was working on the JUGS machine during Wednesday's practice, Olivia Reiner of The Philadelphia Inquirer reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
+      "pub_date": "2026-10-14T11:55:00Z"
+    },
+    {
+      "player_name": "Ashton Jeanty",
+      "sleeper_id": "12527",
+      "gsis_id": "00-0040122",
+      "position": "RB",
+      "team": "LVR",
+      "headline": "Improving, won't be rested due to injury",
+      "description": "Head coach Klint Kubiak said Wednesday that Jeanty is \"starting to feel a lot better physically,\" and the Raiders have had no discussions of resting him, Sam Warren of The Athletic reports. \"I'm excited about giving him even more reps in practice and more full-speed reps,\" Kubiak said. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ashton-jeanty-18487",
+      "pub_date": "2026-10-14T11:49:00Z"
+    },
+    {
+      "player_name": "Saquon Barkley",
+      "sleeper_id": "4866",
+      "gsis_id": "00-0034844",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Not seen Wednesday",
+      "description": "Barkley (hamstring) wasn't spotted at the portion of Wednesday's practice open to the media, Jimmy Kempski of PhillyVoice.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
+      "pub_date": "2026-10-14T11:48:00Z"
+    },
+    {
+      "player_name": "TreVeyon Henderson",
+      "sleeper_id": "12529",
+      "gsis_id": "00-0040734",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "Absent for first Week 6 practice",
+      "description": "Henderson (ankle) isn't participating in Wednesday's practice, Doug Kyed of the Boston Herald reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/treveyon-henderson-18517",
+      "pub_date": "2026-10-14T11:43:00Z"
+    },
+    {
+      "player_name": "Keenan Allen",
+      "sleeper_id": "1479",
+      "gsis_id": "00-0030279",
+      "position": "WR",
+      "team": "IND",
+      "headline": "Not practicing Wednesday",
+      "description": "Allen (groin) isn't practicing Wednesday, Nathan Brown of The Indianapolis Star reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/keenan-allen-8627",
+      "pub_date": "2026-10-14T11:19:00Z"
+    },
     {
       "player_name": "Lamar Jackson",
       "sleeper_id": "4881",
