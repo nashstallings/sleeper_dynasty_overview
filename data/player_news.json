@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-15T13:52:02Z",
+  "generated_at": "2026-10-15T18:50:27Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Rashee Rice",
+      "sleeper_id": "10229",
+      "gsis_id": "00-0039067",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Sidelined for practice again",
+      "description": "Rice (hamstring) isn't participating in Thursday's practice, Matt Derrick of ChiefsDigest.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rashee-rice-16963",
+      "pub_date": "2026-10-15T11:44:00Z"
+    },
+    {
+      "player_name": "Jonathon Brooks",
+      "sleeper_id": "11583",
+      "gsis_id": "00-0039344",
+      "position": "RB",
+      "team": "CAR",
+      "headline": "Spotted jogging Thursday",
+      "description": "Brooks (core) was seen jogging at practice Thursday, Sheena Quick of Fox Sports Radio 1340 reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonathon-brooks-17747",
+      "pub_date": "2026-10-15T11:29:00Z"
+    },
+    {
+      "player_name": "Saquon Barkley",
+      "sleeper_id": "4866",
+      "gsis_id": "00-0034844",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Not in attendance Thursday",
+      "description": "Barkley (hamstring) wasn't present for the open portion of Thursday's practice, Martin Frank of The News Journal reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
+      "pub_date": "2026-10-15T11:26:00Z"
+    },
+    {
+      "player_name": "DeVonta Smith",
+      "sleeper_id": "7525",
+      "gsis_id": "00-0036912",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Working off to side Thursday",
+      "description": "Smith was not seen with his helmet during the media viewing period Thursday,Tim McManus of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
+      "pub_date": "2026-10-15T11:21:00Z"
+    },
+    {
+      "player_name": "Josh Jacobs",
+      "sleeper_id": "5850",
+      "gsis_id": "00-0035700",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Files civil suit Wednesday",
+      "description": "Jacobs filed a civil suit Wednesday seeking a permanent injunction restricting access to records pertaining to his May 23 altercation with a woman at his home, Rob Demovsky of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
+      "pub_date": "2026-10-15T11:15:00Z"
+    },
     {
       "player_name": "DeVonta Smith",
       "sleeper_id": "7525",
