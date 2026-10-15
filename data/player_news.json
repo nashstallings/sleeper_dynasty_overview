@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T18:50:27Z",
+  "generated_at": "2026-10-15T23:30:30Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Jacobs filed a civil suit Wednesday seeking a permanent injunction restricting access to records pertaining to his May 23 altercation with a woman at his home, Rob Demovsky of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
       "pub_date": "2026-10-15T11:15:00Z"
+    },
+    {
+      "player_name": "Terry McLaurin",
+      "sleeper_id": "5927",
+      "gsis_id": "00-0035659",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Limited Thursday",
+      "description": "McLaurin (hamstring) practiced in a limited capacity Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terry-mclaurin-13536",
+      "pub_date": "2026-10-15T03:19:00Z"
+    },
+    {
+      "player_name": "Ladd McConkey",
+      "sleeper_id": "11635",
+      "gsis_id": "00-0039915",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Stays limited in practice",
+      "description": "McConkey (foot) was listed as a limited participant in Thursday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
+      "pub_date": "2026-10-15T03:18:00Z"
+    },
+    {
+      "player_name": "Jacory Croskey-Merritt",
+      "sleeper_id": "12533",
+      "gsis_id": "00-0040242",
+      "position": "RB",
+      "team": "WAS",
+      "headline": "DNP due to groin injury",
+      "description": "Croskey-Merritt was held out of Thursday's practice due to a groin injury. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jacory-croskey-merritt-18811",
+      "pub_date": "2026-10-15T03:11:00Z"
+    },
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Not practicing again",
+      "description": "Moore (shoulder) didn't participate in the media-access portion of Thursday's practice, Sal Capaccio of WGR Sports Radio 550 Buffalo reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-10-15T02:51:00Z"
+    },
+    {
+      "player_name": "Dontayvion Wicks",
+      "sleeper_id": "9486",
+      "gsis_id": "00-0038393",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Doesn't practice Thursday",
+      "description": "Wicks (hamstring) didn't practice Thursday, Zach Berman of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dontayvion-wicks-16658",
+      "pub_date": "2026-10-15T02:46:00Z"
     },
     {
       "player_name": "DeVonta Smith",
