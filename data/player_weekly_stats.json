@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T20:23:08Z",
+  "generated_at": "2026-10-16T18:26:10Z",
   "players": {
     "10210": {
       "name": "Cameron Latu",
@@ -109664,6 +109664,108 @@
         }
       }
     },
+    "12888": {
+      "name": "Dalen Cambre",
+      "position": "WR",
+      "weeks": {
+        "2025": {
+          "11": {
+            "air_yards_share": 0.0,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 0.0,
+            "interceptions": 0,
+            "opponent": "GB",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.0,
+            "target_share": 0.0,
+            "targets": 0,
+            "team": "NYG",
+            "wopr": 0.0
+          },
+          "15": {
+            "air_yards_share": 0.0,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 0.0,
+            "interceptions": 0,
+            "opponent": "WAS",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.03,
+            "target_share": 0.0,
+            "targets": 0,
+            "team": "NYG",
+            "wopr": 0.0
+          },
+          "18": {
+            "air_yards_share": 0.0,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 0.0,
+            "interceptions": 0,
+            "opponent": "DAL",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.09,
+            "target_share": 0.0,
+            "targets": 0,
+            "team": "NYG",
+            "wopr": 0.0
+          }
+        },
+        "2026": {
+          "5": {
+            "air_yards_share": 0.0,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 0.0,
+            "interceptions": 0,
+            "opponent": "WAS",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.02,
+            "target_share": 0.0,
+            "targets": 0,
+            "team": "NYG",
+            "wopr": 0.0
+          }
+        }
+      }
+    },
     "12889": {
       "name": "Beaux Collins",
       "position": "WR",
@@ -120084,6 +120186,60 @@
             "target_share": 0.0,
             "targets": 0,
             "team": "GB",
+            "wopr": 0.0
+          }
+        }
+      }
+    },
+    "13825": {
+      "name": "Malik McClain",
+      "position": "WR",
+      "weeks": {
+        "2026": {
+          "3": {
+            "air_yards_share": 0.0,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 0.0,
+            "interceptions": 0,
+            "opponent": "DET",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.27,
+            "target_share": 0.0,
+            "targets": 0,
+            "team": "NYJ",
+            "wopr": 0.0
+          },
+          "5": {
+            "air_yards_share": 0.0,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 0.0,
+            "interceptions": 0,
+            "opponent": "CLE",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 0,
+            "receptions": 0,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.03,
+            "target_share": 0.0,
+            "targets": 0,
+            "team": "NYJ",
             "wopr": 0.0
           }
         }
