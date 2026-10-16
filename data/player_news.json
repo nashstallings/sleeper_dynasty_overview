@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T02:48:36Z",
+  "generated_at": "2026-10-16T07:49:14Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Jacobs filed a civil suit Wednesday seeking a permanent injunction restricting access to records pertaining to his May 23 altercation with a woman at his home, Rob Demovsky of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
       "pub_date": "2026-10-15T11:15:00Z"
+    },
+    {
+      "player_name": "Courtland Sutton",
+      "sleeper_id": "5045",
+      "gsis_id": "00-0034348",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "Remains quiet in OT win",
+      "description": "Sutton brought in two of three targets for 19 yards in the Broncos' 17-14 overtime win over the Seahawks on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/courtland-sutton-12586",
+      "pub_date": "2026-10-15T10:05:00Z"
+    },
+    {
+      "player_name": "Jaylen Waddle",
+      "sleeper_id": "7526",
+      "gsis_id": "00-0036613",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "Team-high catch total Thursday",
+      "description": "Waddle secured four of seven targets for 24 yards in the Broncos' 17-14 overtime win over the Seahawks on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-waddle-15404",
+      "pub_date": "2026-10-15T09:59:00Z"
+    },
+    {
+      "player_name": "Bo Nix",
+      "sleeper_id": "11563",
+      "gsis_id": "00-0039732",
+      "position": "QB",
+      "team": "DEN",
+      "headline": "Season-low passing yardage in OT win",
+      "description": "Nix completed 17 of 27 passes for 107 yards with no touchdowns or interceptions and rushed four times for two yards in the Broncos' 17-14 overtime win over the Seahawks on Thursday. He also recovered a fumble. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bo-nix-16995",
+      "pub_date": "2026-10-15T09:54:00Z"
+    },
+    {
+      "player_name": "Sam Darnold",
+      "sleeper_id": "4943",
+      "gsis_id": "00-0034869",
+      "position": "QB",
+      "team": "SEA",
+      "headline": "Key errors in OT loss",
+      "description": "Darnold completed 27 of 51 passes for 278 yards with no touchdowns and two interceptions and rushed twice for 19 yards in the Seahawks' 17-14 overtime loss to the Broncos on Thursday. He also threw a two-point conversion pass. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/sam-darnold-12490",
+      "pub_date": "2026-10-15T09:17:00Z"
+    },
+    {
+      "player_name": "Emanuel Wilson",
+      "sleeper_id": "11435",
+      "gsis_id": "00-0038797",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Struggles with efficiency in loss",
+      "description": "Wilson rushed 14 times for 52 yards and failed to bring in his only target in the Seahawks' 17-14 overtime loss to the Broncos on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emanuel-wilson-17593",
+      "pub_date": "2026-10-15T09:09:00Z"
     },
     {
       "player_name": "Jaylen Waddle",
