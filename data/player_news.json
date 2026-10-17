@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T23:12:40Z",
+  "generated_at": "2026-10-17T02:40:02Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,50 @@
       "description": "Judkins (foot) is listed as questionable for Sunday's game against Baltimore, Zac Jackson of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/quinshon-judkins-18516",
       "pub_date": "2026-10-16T11:13:00Z"
+    },
+    {
+      "player_name": "Braelon Allen",
+      "sleeper_id": "11576",
+      "gsis_id": "00-0039794",
+      "position": "RB",
+      "team": "NYJ",
+      "headline": "Remains RB1 for Week 6",
+      "description": "Allen will once again operate as the Jets' primary running back for Sunday's game against the Patriots due to the absence of Breece Hall (quadriceps). Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/braelon-allen-17702",
+      "pub_date": "2026-10-16T05:02:00Z"
+    },
+    {
+      "player_name": "Xavier Worthy",
+      "sleeper_id": "11624",
+      "gsis_id": "00-0039894",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Operating as Chiefs' WR1",
+      "description": "Worthy will be the Chiefs' top wideout against the Chargers on Sunday due to the absence of Rashee Rice (hamstring/knee). Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/xavier-worthy-17687",
+      "pub_date": "2026-10-16T04:53:00Z"
+    },
+    {
+      "player_name": "D'Andre Swift",
+      "sleeper_id": "6790",
+      "gsis_id": "00-0036275",
+      "position": "RB",
+      "team": "CHI",
+      "headline": "Bigger workload sans Monangai",
+      "description": "Swift will once again absorb a heavier backfield workload after Kyle Monangai (thumb/toe) was ruled out for Sunday's game against the Falcons, Larry Mayer of the Bears' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dandre-swift-14394",
+      "pub_date": "2026-10-16T04:45:00Z"
+    },
+    {
+      "player_name": "Tyler Huntley",
+      "sleeper_id": "7083",
+      "gsis_id": "00-0035993",
+      "position": "QB",
+      "team": "BAL",
+      "headline": "Starting vs. Cleveland",
+      "description": "Huntley will be the Ravens' starting QB against the Browns on Sunday after Lamar Jackson (ankle) was ruled out, Ryan Mink of the Ravens' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyler-huntley-14563",
+      "pub_date": "2026-10-16T04:17:00Z"
     },
     {
       "player_name": "Tyler Allgeier",
