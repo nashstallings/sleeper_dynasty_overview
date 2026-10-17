@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T19:59:26Z",
+  "generated_at": "2026-10-17T22:49:29Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -113,6 +113,50 @@
       "description": "Diggs (hamstring) was on the field for Saturday's practice session, Jonah Keim of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/stefon-diggs-10133",
       "pub_date": "2026-10-17T08:37:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Questionable for MNF",
+      "description": "Evans (ribs) is listed as questionable for Monday's game against Washington, Vic Tafur of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-10-17T01:58:00Z"
+    },
+    {
+      "player_name": "Caleb Williams",
+      "sleeper_id": "11560",
+      "gsis_id": "00-0039918",
+      "position": "QB",
+      "team": "CHI",
+      "headline": "Expected to start Sunday",
+      "description": "Williams (hamstring) is expected to start Sunday's game against the Falcons, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/caleb-williams-17695",
+      "pub_date": "2026-10-17T01:37:00Z"
+    },
+    {
+      "player_name": "A.J. Brown",
+      "sleeper_id": "5859",
+      "gsis_id": "00-0035676",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Activated from injured reserve",
+      "description": "The Patriots activated Brown (ankle) from injured reserve Saturday, but he's still listed as questionable for Sunday's game against the Jets. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
+      "pub_date": "2026-10-17T01:13:00Z"
+    },
+    {
+      "player_name": "Jalen Hurts",
+      "sleeper_id": "6904",
+      "gsis_id": "00-0036389",
+      "position": "QB",
+      "team": "PHI",
+      "headline": "Placed on IR, out indefinitely",
+      "description": "The Eagles placed Hurts (calf) on injured reserve Saturday, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-hurts-14416",
+      "pub_date": "2026-10-17T01:02:00Z"
     },
     {
       "player_name": "Alvin Kamara",
