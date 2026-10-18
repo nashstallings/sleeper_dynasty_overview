@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-18T17:43:47Z",
+  "generated_at": "2026-10-18T19:58:27Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Out again in Week 6",
+      "description": "Moore (shoulder) is listed as inactive Sunday in Las Vegas. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-10-18T11:58:00Z"
+    },
+    {
+      "player_name": "Romeo Doubs",
+      "sleeper_id": "8121",
+      "gsis_id": "00-0037816",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Won't return Sunday",
+      "description": "Doubs (shoulder) has been ruled out for the rest of Sunday's game against the Jets, Doug Kyed of the Boston Herald reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/romeo-doubs-16027",
+      "pub_date": "2026-10-18T11:54:00Z"
+    },
+    {
+      "player_name": "Rashod Bateman",
+      "sleeper_id": "7571",
+      "gsis_id": "00-0036550",
+      "position": "WR",
+      "team": "BAL",
+      "headline": "Won't return Sunday",
+      "description": "Bateman (shoulder) has been ruled out of Sunday's game in Cleveland. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rashod-bateman-15210",
+      "pub_date": "2026-10-18T11:45:00Z"
+    },
+    {
+      "player_name": "Alvin Kamara",
+      "sleeper_id": "4035",
+      "gsis_id": "00-0033906",
+      "position": "RB",
+      "team": "NOS",
+      "headline": "Back in Sunday's game",
+      "description": "Kamara (undisclosed) returned to Sunday's contest at the Giants. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/alvin-kamara-11732",
+      "pub_date": "2026-10-18T11:29:00Z"
+    },
+    {
+      "player_name": "Alvin Kamara",
+      "sleeper_id": "4035",
+      "gsis_id": "00-0033906",
+      "position": "RB",
+      "team": "NOS",
+      "headline": "Heads to medical tent Sunday",
+      "description": "Kamara (undisclosed) walked slowly to the medical tent during Sunday's game at the Giants, Matthew Paras of The New Orleans Times-Picayune reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/alvin-kamara-11732",
+      "pub_date": "2026-10-18T11:01:00Z"
+    },
     {
       "player_name": "Parker Washington",
       "sleeper_id": "9487",
