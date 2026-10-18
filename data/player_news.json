@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-10-18T19:58:27Z",
+  "generated_at": "2026-10-18T22:42:47Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Makai Lemon",
+      "sleeper_id": "13294",
+      "gsis_id": "00-0040867",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Back in Sunday's contest",
+      "description": "Lemon (undisclosed) returned to Sunday's contest against the Panthers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/makai-lemon-19231",
+      "pub_date": "2026-10-18T12:59:00Z"
+    },
     {
       "player_name": "DJ Moore",
       "sleeper_id": "4983",
@@ -168,6 +179,39 @@
       "description": "Kamara (back), who is listed as questionable for Sunday's contest at the Giants, is expected to play, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/alvin-kamara-11732",
       "pub_date": "2026-10-18T04:49:00Z"
+    },
+    {
+      "player_name": "Dalton Kincaid",
+      "sleeper_id": "10236",
+      "gsis_id": "00-0038933",
+      "position": "TE",
+      "team": "BUF",
+      "headline": "Questionable to return Sunday",
+      "description": "Kincaid (ribs) is questionable to return to Sunday's game against the Raiders. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dalton-kincaid-16697",
+      "pub_date": "2026-10-18T03:39:00Z"
+    },
+    {
+      "player_name": "Jaylin Noel",
+      "sleeper_id": "12536",
+      "gsis_id": "00-0040138",
+      "position": "WR",
+      "team": "HOU",
+      "headline": "Records 100-plus yards, TD in Week 6",
+      "description": "Noel gathered in all four targets for 107 yards and one touchdown during Sunday's 34-31 win against the Jaguars in London. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylin-noel-18555",
+      "pub_date": "2026-10-18T02:19:00Z"
+    },
+    {
+      "player_name": "Ladd McConkey",
+      "sleeper_id": "11635",
+      "gsis_id": "00-0039915",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Ruled out with concussion",
+      "description": "McConkey won't return to Sunday's game at Kansas City due to a concussion. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
+      "pub_date": "2026-10-18T02:15:00Z"
     },
     {
       "player_name": "Mike Evans",
