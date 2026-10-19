@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T22:42:47Z",
+  "generated_at": "2026-10-19T02:54:45Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -124,6 +124,61 @@
       "description": "Tuten carried the ball 12 times for 39 yards and caught all four of his targets for 48 yards and two touchdowns in Sunday's 34-31 loss to the Texans. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/bhayshul-tuten-18524",
       "pub_date": "2026-10-18T10:31:00Z"
+    },
+    {
+      "player_name": "Chris Godwin Jr.",
+      "sleeper_id": "4037",
+      "gsis_id": "00-0033921",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Another lackluster showing in Week 6 loss",
+      "description": "Godwin caught four of eight targets for 37 yards in Sunday's 26-19 overtime loss to the Steelers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chris-godwin-11718",
+      "pub_date": "2026-10-18T07:50:00Z"
+    },
+    {
+      "player_name": "Emeka Egbuka",
+      "sleeper_id": "12514",
+      "gsis_id": "00-0040129",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Finds end zone in OT loss",
+      "description": "Egbuka caught seven of 16 targets for 48 yards and a touchdown in Sunday's 26-19 overtime loss to the Steelers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
+      "pub_date": "2026-10-18T07:44:00Z"
+    },
+    {
+      "player_name": "Bucky Irving",
+      "sleeper_id": "11584",
+      "gsis_id": "00-0039361",
+      "position": "RB",
+      "team": "TBB",
+      "headline": "Quiet in OT loss to Pittsburgh",
+      "description": "Irving carried the ball 19 times for 46 yards and caught two of three targets for three yards in Sunday's 26-19 overtime loss to the Steelers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bucky-irving-17784",
+      "pub_date": "2026-10-18T07:39:00Z"
+    },
+    {
+      "player_name": "Jalon Daniels",
+      "sleeper_id": "13425",
+      "gsis_id": "00-0041251",
+      "position": "QB",
+      "team": "TBB",
+      "headline": "Two picks in OT loss to Pittsburgh",
+      "description": "Daniels completed 22 of 43 passes for 164 yards and one touchdown with two interceptions in Sunday's 26-19 overtime loss to the Steelers. He added 39 rushing yards on four carries. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalon-daniels-19292",
+      "pub_date": "2026-10-18T07:33:00Z"
+    },
+    {
+      "player_name": "DK Metcalf",
+      "sleeper_id": "5846",
+      "gsis_id": "00-0035640",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Big volume in OT win",
+      "description": "Metcalf caught 11 of 15 targets for 93 yards in Sunday's 26-19 overtime win over the Buccaneers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dk-metcalf-13424",
+      "pub_date": "2026-10-18T07:15:00Z"
     },
     {
       "player_name": "Cam Skattebo",
