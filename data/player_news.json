@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-19T02:54:45Z",
+  "generated_at": "2026-10-19T08:24:09Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "TreVeyon Henderson",
+      "sleeper_id": "12529",
+      "gsis_id": "00-0040734",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "Plays through ankle sprain",
+      "description": "Henderson (ankle) rushed seven times for 31 yards and brought in his only target for nine yards in the Patriots' 26-19 win over the Jets on Sunday. He also lost a fumble. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/treveyon-henderson-18517",
+      "pub_date": "2026-10-19T01:23:00Z"
+    },
+    {
+      "player_name": "Rhamondre Stevenson",
+      "sleeper_id": "7611",
+      "gsis_id": "00-0036875",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "Stonewalled by Jets in win",
+      "description": "Stevenson rushed 14 times for 36 yards and wasn't targeted in the Patriots' 26-19 win over the Jets on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rhamondre-stevenson-15372",
+      "pub_date": "2026-10-19T01:19:00Z"
+    },
+    {
+      "player_name": "Braelon Allen",
+      "sleeper_id": "11576",
+      "gsis_id": "00-0039794",
+      "position": "RB",
+      "team": "NYJ",
+      "headline": "Eclipses 100 scrimmage yards in loss",
+      "description": "Allen rushed 17 times for 78 yards and brought in both targets for 26 yards in the Jets' 26-19 loss to the Patriots on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/braelon-allen-17702",
+      "pub_date": "2026-10-19T01:15:00Z"
+    },
+    {
+      "player_name": "Harold Fannin Jr.",
+      "sleeper_id": "12506",
+      "gsis_id": "00-0040663",
+      "position": "TE",
+      "team": "CLE",
+      "headline": "Held to one catch Sunday",
+      "description": "Fannin brought in one of three targets for nine yards in the Browns' 13-10 win over the Ravens on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/harold-fannin-18472",
+      "pub_date": "2026-10-19T01:10:00Z"
+    },
+    {
+      "player_name": "Tyler Huntley",
+      "sleeper_id": "7083",
+      "gsis_id": "00-0035993",
+      "position": "QB",
+      "team": "BAL",
+      "headline": "Can't muster enough offense in loss",
+      "description": "Huntley completed 19 of 31 passes for 165 yards with a touchdown and no interceptions and added five rushes for 28 yards in the Ravens' 13-10 loss to the Browns on Sunday. He also fumbled once but recovered. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyler-huntley-14563",
+      "pub_date": "2026-10-19T01:05:00Z"
+    },
     {
       "player_name": "Makai Lemon",
       "sleeper_id": "13294",
