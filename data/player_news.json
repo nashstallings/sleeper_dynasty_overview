@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T21:56:18Z",
+  "generated_at": "2026-10-20T03:04:39Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -49,6 +49,39 @@
       "pub_date": "2026-10-19T07:19:00Z"
     },
     {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Ruled out for remainder of MNF",
+      "description": "Evans (Achilles) has been ruled out for the remainder of Monday night's game against the Commanders, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-10-19T07:02:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Questionable to return Monday",
+      "description": "Evans (Achilles) is questionable to return to Monday night's game against the Commanders, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-10-19T06:43:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Heads to locker room Monday",
+      "description": "Evans headed to the locker room in the second quarter of Monday night's game against the Commanders with an apparent Achilles injury, Harrison Rich of the San Francisco Chronicle reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-10-19T06:39:00Z"
+    },
+    {
       "player_name": "Jordyn Tyson",
       "sleeper_id": "13281",
       "gsis_id": "00-0041029",
@@ -58,6 +91,28 @@
       "description": "Saints head coach Kellen Moore said that Tyson (hamstring) traveled to Paris in advance of Sunday's game against the Steelers, NewOrleans.football reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jordyn-tyson-19233",
       "pub_date": "2026-10-19T06:19:00Z"
+    },
+    {
+      "player_name": "Terry McLaurin",
+      "sleeper_id": "5927",
+      "gsis_id": "00-0035659",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Carted off with knee injury",
+      "description": "McLaurin left Monday night's game against the 49ers in the first quarter with a left knee injury, Nicki Jhabvala of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terry-mclaurin-13536",
+      "pub_date": "2026-10-19T05:58:00Z"
+    },
+    {
+      "player_name": "A.J. Brown",
+      "sleeper_id": "5859",
+      "gsis_id": "00-0035676",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Limited on Monday's practice estimate",
+      "description": "Brown (ankle) was listed as limited on Monday's estimated practice report. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
+      "pub_date": "2026-10-19T05:12:00Z"
     },
     {
       "player_name": "Davante Adams",
