@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-10-20T16:13:34Z",
+  "generated_at": "2026-10-20T21:09:22Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "A.J. Brown",
+      "sleeper_id": "5859",
+      "gsis_id": "00-0035676",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "On practice field Tuesday",
+      "description": "Brown (ankle) was spotted on the practice field Tuesday, according to Mike Reiss of ESPN.com. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
+      "pub_date": "2026-10-20T12:43:00Z"
+    },
+    {
+      "player_name": "Terry McLaurin",
+      "sleeper_id": "5927",
+      "gsis_id": "00-0035659",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Suffers torn patellar tendon",
+      "description": "Coach Dan Quinn noted Tuesday that McLaurin tore his left patellar tendon during Monday's loss to the 49ers, according to John Keim of ESPN.com. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terry-mclaurin-13536",
+      "pub_date": "2026-10-20T12:18:00Z"
+    },
     {
       "player_name": "Najee Harris",
       "sleeper_id": "7528",
