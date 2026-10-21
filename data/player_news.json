@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-21T14:18:02Z",
+  "generated_at": "2026-10-21T19:04:42Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "T.J. Hockenson",
+      "sleeper_id": "5844",
+      "gsis_id": "00-0035229",
+      "position": "TE",
+      "team": "MIN",
+      "headline": "Slated to practice Wednesday",
+      "description": "Head coach Kevin O'Connell said that Hockenson (concussion) is expected to practice Wednesday, Alec Lewis of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tj-hockenson-13610",
+      "pub_date": "2026-10-21T11:40:00Z"
+    },
+    {
+      "player_name": "Jordan Addison",
+      "sleeper_id": "9756",
+      "gsis_id": "00-0038994",
+      "position": "WR",
+      "team": "MIN",
+      "headline": "To practice Wednesday",
+      "description": "Head coach Kevin O'Connell said Addison (hamstring) will participate in practice Wednesday, Alec Lewis of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordan-addison-16895",
+      "pub_date": "2026-10-21T11:36:00Z"
+    },
+    {
+      "player_name": "Jordan Mason",
+      "sleeper_id": "8408",
+      "gsis_id": "00-0037525",
+      "position": "RB",
+      "team": "MIN",
+      "headline": "In line to practice Wednesday",
+      "description": "Head coach Kevin O'Connell said that Mason (thumb) is expected to practice Wednesday, Alec Lewis of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordan-mason-16163",
+      "pub_date": "2026-10-21T11:32:00Z"
+    },
+    {
+      "player_name": "Tyler Warren",
+      "sleeper_id": "12518",
+      "gsis_id": "00-0040128",
+      "position": "TE",
+      "team": "IND",
+      "headline": "Absent from first Week 7 practice",
+      "description": "Warren (groin) wasn't spotted on the field for the open portion of Wednesday's practice, Jake Arthur of Roundtable.io reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyler-warren-18534",
+      "pub_date": "2026-10-21T11:17:00Z"
+    },
+    {
+      "player_name": "David Montgomery",
+      "sleeper_id": "5892",
+      "gsis_id": "00-0035685",
+      "position": "RB",
+      "team": "HOU",
+      "headline": "Still sidelined at practice",
+      "description": "Montgomery (groin) isn't practicing Wednesday, Aaron Wilson of KPRC 2 Houston reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/david-montgomery-13556",
+      "pub_date": "2026-10-21T11:11:00Z"
+    },
     {
       "player_name": "Jordyn Tyson",
       "sleeper_id": "13281",
