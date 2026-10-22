@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-22T14:17:32Z",
+  "generated_at": "2026-10-22T19:01:13Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Zach Charbonnet",
+      "sleeper_id": "9753",
+      "gsis_id": "00-0039165",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Activated from PUP list",
+      "description": "The Seahawks activated Charbonnet (knee) from the reserve/PUP list Thursday, John Boyle of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zach-charbonnet-16897",
+      "pub_date": "2026-10-22T11:09:00Z"
+    },
+    {
+      "player_name": "David Montgomery",
+      "sleeper_id": "5892",
+      "gsis_id": "00-0035685",
+      "position": "RB",
+      "team": "HOU",
+      "headline": "Not practicing Thursday",
+      "description": "Montgomery (groin) isn't practicing Thursday, Aaron Wilson of KPRC 2 Houston reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/david-montgomery-13556",
+      "pub_date": "2026-10-22T10:46:00Z"
+    },
+    {
+      "player_name": "Josh Jacobs",
+      "sleeper_id": "5850",
+      "gsis_id": "00-0035700",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Practicing Thursday",
+      "description": "Jacobs took part in practice Thursday, Matt Schneidman of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
+      "pub_date": "2026-10-22T10:16:00Z"
+    },
+    {
+      "player_name": "Tyler Warren",
+      "sleeper_id": "12518",
+      "gsis_id": "00-0040128",
+      "position": "TE",
+      "team": "IND",
+      "headline": "Not spotted Thursday",
+      "description": "Warren (groin) was not present for Thursday's practice, Kevin Bowen of 107.5 The Fan Indianapolis reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyler-warren-18534",
+      "pub_date": "2026-10-22T10:13:00Z"
+    },
+    {
+      "player_name": "Lamar Jackson",
+      "sleeper_id": "4881",
+      "gsis_id": "00-0034796",
+      "position": "QB",
+      "team": "BAL",
+      "headline": "Present for start of practice Thursday",
+      "description": "Jackson (ankle) is taking the practice field with his teammates Thursday, Jamison Hensley of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/lamar-jackson-12561",
+      "pub_date": "2026-10-22T10:10:00Z"
+    },
     {
       "player_name": "Saquon Barkley",
       "sleeper_id": "4866",
