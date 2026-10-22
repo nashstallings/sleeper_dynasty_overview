@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T19:01:13Z",
+  "generated_at": "2026-10-22T23:49:31Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -69,6 +69,61 @@
       "description": "Barkley (hamstring) is expected to practice Thursday and \"is in line to play Monday against the Cowboys,\" Mike Garafolo of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
       "pub_date": "2026-10-22T06:45:00Z"
+    },
+    {
+      "player_name": "Zach Charbonnet",
+      "sleeper_id": "9753",
+      "gsis_id": "00-0039165",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Another full practice",
+      "description": "Charbonnet (knee) practiced fully Thursday, John Boyle of the Seahawks' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/zach-charbonnet-16897",
+      "pub_date": "2026-10-22T04:33:00Z"
+    },
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Remains DNP on Thursday",
+      "description": "Love (ankle) remained sidelined at Thursday's practice, Darren Urban of the Cardinals' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-10-22T04:28:00Z"
+    },
+    {
+      "player_name": "Jaylen Waddle",
+      "sleeper_id": "7526",
+      "gsis_id": "00-0036613",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "Logs limited practice Thursday",
+      "description": "Waddle (chest) remained a limited participant in Thursday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-waddle-15404",
+      "pub_date": "2026-10-22T04:24:00Z"
+    },
+    {
+      "player_name": "Dallas Goedert",
+      "sleeper_id": "5022",
+      "gsis_id": "00-0034351",
+      "position": "TE",
+      "team": "PHI",
+      "headline": "Misses practice Thursday",
+      "description": "Goedert (knee) was held out of Thursday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dallas-goedert-12860",
+      "pub_date": "2026-10-22T04:21:00Z"
+    },
+    {
+      "player_name": "Dontayvion Wicks",
+      "sleeper_id": "9486",
+      "gsis_id": "00-0038393",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "DNP due to ankle injury",
+      "description": "Wicks (ankle) was a non-participant at Thursday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dontayvion-wicks-16658",
+      "pub_date": "2026-10-22T04:14:00Z"
     },
     {
       "player_name": "T.J. Hockenson",
