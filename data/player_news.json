@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T20:54:03Z",
+  "generated_at": "2026-10-23T23:43:32Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Irving (illness) is practicing Friday, Pewter Report reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/bucky-irving-17784",
       "pub_date": "2026-10-23T08:20:00Z"
+    },
+    {
+      "player_name": "Woody Marks",
+      "sleeper_id": "12474",
+      "gsis_id": "00-0040583",
+      "position": "RB",
+      "team": "HOU",
+      "headline": "Set to lead backfield again in Week 7",
+      "description": "Marks is lined up to start at running back against the Giants on Sunday with David Montgomery (groin) ruled out. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/woody-marks-18449",
+      "pub_date": "2026-10-23T04:38:00Z"
+    },
+    {
+      "player_name": "Cam Skattebo",
+      "sleeper_id": "12481",
+      "gsis_id": "00-0040715",
+      "position": "RB",
+      "team": "NYG",
+      "headline": "Expected to be back in mix for Week 7",
+      "description": "Head coach John Harbaugh said Friday that Skattebo had a \"good week\" of practice and that the second-year running back should be back in the mix for backfield touches against the Texans on Sunday, Jordan Ranaan of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cam-skattebo-18514",
+      "pub_date": "2026-10-23T03:28:00Z"
+    },
+    {
+      "player_name": "Xavier Worthy",
+      "sleeper_id": "11624",
+      "gsis_id": "00-0039894",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "KC's top wideout for Week 7",
+      "description": "Worthy will once again operate as the Chiefs' top wide receiver after Rashee Rice (hamstring/knee) was ruled out ahead of Sunday's game against the Seahawks, Pete Sweeney of The Kansas City Star reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/xavier-worthy-17687",
+      "pub_date": "2026-10-23T03:22:00Z"
+    },
+    {
+      "player_name": "Dontayvion Wicks",
+      "sleeper_id": "9486",
+      "gsis_id": "00-0038393",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Sits out Friday's practice",
+      "description": "Wicks (ankle) didn't take part in Friday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dontayvion-wicks-16658",
+      "pub_date": "2026-10-23T03:17:00Z"
+    },
+    {
+      "player_name": "Dallas Goedert",
+      "sleeper_id": "5022",
+      "gsis_id": "00-0034351",
+      "position": "TE",
+      "team": "PHI",
+      "headline": "Sits out Friday's practice",
+      "description": "Goedert (knee) was a non-participant at Friday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dallas-goedert-12860",
+      "pub_date": "2026-10-23T03:13:00Z"
     },
     {
       "player_name": "Zach Charbonnet",
