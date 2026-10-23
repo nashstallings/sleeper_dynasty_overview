@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-23T10:53:46Z",
+  "generated_at": "2026-10-23T16:18:35Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Lamar Jackson",
+      "sleeper_id": "4881",
+      "gsis_id": "00-0034796",
+      "position": "QB",
+      "team": "BAL",
+      "headline": "Practicing again Friday",
+      "description": "Jackson (ankle) is practicing Friday, Brian Wacker of The Baltimore Sun reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/lamar-jackson-12561",
+      "pub_date": "2026-10-23T09:15:00Z"
+    },
+    {
+      "player_name": "Tyler Warren",
+      "sleeper_id": "12518",
+      "gsis_id": "00-0040128",
+      "position": "TE",
+      "team": "IND",
+      "headline": "Remains out of practice Friday",
+      "description": "Warren (groin) was not practicing Friday, Nathan Brown of The Indianapolis Star reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyler-warren-18534",
+      "pub_date": "2026-10-23T09:09:00Z"
+    },
+    {
+      "player_name": "Josh Jacobs",
+      "sleeper_id": "5850",
+      "gsis_id": "00-0035700",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "On track for Sunday debut",
+      "description": "Packers coach Matt LaFleur said Jacobs is on track to play Sunday against the Lions, Rob Demovsky of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
+      "pub_date": "2026-10-23T09:05:00Z"
+    },
+    {
+      "player_name": "David Montgomery",
+      "sleeper_id": "5892",
+      "gsis_id": "00-0035685",
+      "position": "RB",
+      "team": "HOU",
+      "headline": "Will miss Week 7",
+      "description": "Montgomery (groin) will not play Sunday against the Giants, Aaron Wilson of KPRC 2 Houston reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/david-montgomery-13556",
+      "pub_date": "2026-10-23T08:52:00Z"
+    },
+    {
+      "player_name": "Bucky Irving",
+      "sleeper_id": "11584",
+      "gsis_id": "00-0039361",
+      "position": "RB",
+      "team": "TBB",
+      "headline": "Practices again Friday",
+      "description": "Irving (illness) is practicing Friday, Pewter Report reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bucky-irving-17784",
+      "pub_date": "2026-10-23T08:20:00Z"
+    },
     {
       "player_name": "Zach Charbonnet",
       "sleeper_id": "9753",
