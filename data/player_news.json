@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T23:43:32Z",
+  "generated_at": "2026-10-24T02:58:31Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,39 @@
       "description": "Irving (illness) is practicing Friday, Pewter Report reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/bucky-irving-17784",
       "pub_date": "2026-10-23T08:20:00Z"
+    },
+    {
+      "player_name": "Omar Cooper Jr.",
+      "sleeper_id": "13276",
+      "gsis_id": "00-0041511",
+      "position": "WR",
+      "team": "NYJ",
+      "headline": "Could be set for lesser role",
+      "description": "Cooper may get fewer looks in the passing game Sunday versus Miami with Adonai Mitchell cleared to return from a finger injury, Amanda Vogt of the Jets' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/omar-cooper-19314",
+      "pub_date": "2026-10-23T05:37:00Z"
+    },
+    {
+      "player_name": "Braelon Allen",
+      "sleeper_id": "11576",
+      "gsis_id": "00-0039794",
+      "position": "RB",
+      "team": "NYJ",
+      "headline": "Week 7 role uncertain",
+      "description": "Allen's workload and role Sunday against Miami is unclear given that Breece Hall (quadriceps) is officially questionable to play, per Amanda Vogt of the Jets' official site. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/braelon-allen-17702",
+      "pub_date": "2026-10-23T05:18:00Z"
+    },
+    {
+      "player_name": "Aaron Jones",
+      "sleeper_id": "4199",
+      "gsis_id": "00-0033293",
+      "position": "RB",
+      "team": "MIN",
+      "headline": "Workload could be eased Sunday",
+      "description": "Jones may log fewer touches in Week 7 against Indianapolis on Sunday, as fellow RB Jordan Mason (thumb) is questionable to suit up, Craig Peters of the Vikings' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aaron-jones-11763",
+      "pub_date": "2026-10-23T05:03:00Z"
     },
     {
       "player_name": "Woody Marks",
