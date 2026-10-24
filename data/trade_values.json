@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T16:02:59.931561+00:00",
+  "generated_at": "2026-10-24T15:00:12.056604+00:00",
   "source": "DynastyProcess",
   "source_url": "https://github.com/dynastyprocess/data",
   "players": {
@@ -4002,53 +4002,9 @@
     }
   },
   "picks": {
-    "2027 2nd": {
-      "value_1qb": 217,
-      "value_2qb": 265
-    },
-    "2026 5th": {
-      "value_1qb": 5,
-      "value_2qb": 8
-    },
-    "2028 5th": {
-      "value_1qb": 4,
-      "value_2qb": 5
-    },
-    "2027 5th": {
-      "value_1qb": 5,
-      "value_2qb": 6
-    },
-    "2026 2nd": {
-      "value_1qb": 298,
-      "value_2qb": 360
-    },
-    "2028 2nd": {
-      "value_1qb": 174,
-      "value_2qb": 212
-    },
-    "2027 4th": {
-      "value_1qb": 11,
-      "value_2qb": 15
-    },
-    "2026 1st": {
-      "value_1qb": 2770,
-      "value_2qb": 3260
-    },
-    "2028 1st": {
-      "value_1qb": 1507,
-      "value_2qb": 1770
-    },
-    "2027 1st": {
-      "value_1qb": 1884,
-      "value_2qb": 2212
-    },
-    "2026 4th": {
-      "value_1qb": 13,
-      "value_2qb": 18
-    },
-    "2028 4th": {
-      "value_1qb": 9,
-      "value_2qb": 12
+    "2027 3rd": {
+      "value_1qb": 39,
+      "value_2qb": 50
     },
     "2026 3rd": {
       "value_1qb": 51,
@@ -4058,9 +4014,53 @@
       "value_1qb": 31,
       "value_2qb": 40
     },
-    "2027 3rd": {
-      "value_1qb": 39,
-      "value_2qb": 50
+    "2028 2nd": {
+      "value_1qb": 174,
+      "value_2qb": 212
+    },
+    "2026 4th": {
+      "value_1qb": 13,
+      "value_2qb": 18
+    },
+    "2027 5th": {
+      "value_1qb": 5,
+      "value_2qb": 6
+    },
+    "2028 5th": {
+      "value_1qb": 4,
+      "value_2qb": 5
+    },
+    "2027 2nd": {
+      "value_1qb": 217,
+      "value_2qb": 265
+    },
+    "2026 2nd": {
+      "value_1qb": 298,
+      "value_2qb": 360
+    },
+    "2026 5th": {
+      "value_1qb": 5,
+      "value_2qb": 8
+    },
+    "2028 4th": {
+      "value_1qb": 9,
+      "value_2qb": 12
+    },
+    "2027 1st": {
+      "value_1qb": 1884,
+      "value_2qb": 2212
+    },
+    "2026 1st": {
+      "value_1qb": 2770,
+      "value_2qb": 3260
+    },
+    "2028 1st": {
+      "value_1qb": 1507,
+      "value_2qb": 1770
+    },
+    "2027 4th": {
+      "value_1qb": 11,
+      "value_2qb": 15
     }
   }
 }
