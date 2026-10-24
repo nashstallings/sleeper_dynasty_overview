@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T20:05:19Z",
+  "generated_at": "2026-10-24T22:49:24Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -113,6 +113,50 @@
       "description": "Goedert (knee) is on the field for the start of Saturday's practice, Dave Zangaro of NBC Sports Philadelphia reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/dallas-goedert-12860",
       "pub_date": "2026-10-24T09:18:00Z"
+    },
+    {
+      "player_name": "Christian Kirk",
+      "sleeper_id": "4950",
+      "gsis_id": "00-0034775",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Activated from injured reserve",
+      "description": "The 49ers activated Kirk (calf) from injured reserve and removed his questionable designation for Sunday's game in Atlanta. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/christian-kirk-12508",
+      "pub_date": "2026-10-24T01:47:00Z"
+    },
+    {
+      "player_name": "Jordan Mason",
+      "sleeper_id": "8408",
+      "gsis_id": "00-0037525",
+      "position": "RB",
+      "team": "MIN",
+      "headline": "Activated from IR, cleared for Week 7",
+      "description": "The Vikings activated Mason (thumb) from injured reserve Saturday, and he does not carry an injury designation into Sunday's game against the Colts. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordan-mason-16163",
+      "pub_date": "2026-10-24T01:34:00Z"
+    },
+    {
+      "player_name": "Tank Dell",
+      "sleeper_id": "9502",
+      "gsis_id": "00-0038977",
+      "position": "WR",
+      "team": "HOU",
+      "headline": "Activated from injured reserve",
+      "description": "Dell (knee) was activated from injured reserve Saturday, and his questionable designation has been removed for Sunday's game against the Giants. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tank-dell-16935",
+      "pub_date": "2026-10-24T01:16:00Z"
+    },
+    {
+      "player_name": "Josh Jacobs",
+      "sleeper_id": "5850",
+      "gsis_id": "00-0035700",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Expected to play Sunday",
+      "description": "Jacobs had his roster exemption removed by the Packers and is expected to play Sunday at Detroit, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
+      "pub_date": "2026-10-24T01:09:00Z"
     },
     {
       "player_name": "Lamar Jackson",
