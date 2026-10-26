@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T02:49:49Z",
+  "generated_at": "2026-10-26T08:24:54Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Warren carried the ball 18 times for 101 yards and caught three of four targets for 36 yards in Sunday's 16-10 win over the Saints. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jaylen-warren-15984",
       "pub_date": "2026-10-25T10:45:00Z"
+    },
+    {
+      "player_name": "Xavier Worthy",
+      "sleeper_id": "11624",
+      "gsis_id": "00-0039894",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Held to 11 yards on six targets",
+      "description": "Worthy caught three of six targets for 11 yards in Sunday's 20-3 loss to the Seahawks. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/xavier-worthy-17687",
+      "pub_date": "2026-10-25T09:01:00Z"
+    },
+    {
+      "player_name": "Travis Kelce",
+      "sleeper_id": "1466",
+      "gsis_id": "00-0030506",
+      "position": "TE",
+      "team": "KCC",
+      "headline": "Moves to fifth on all-time catch list",
+      "description": "Kelce caught four of eight targets for 44 yards in Sunday's 20-3 loss to the Seahawks. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/travis-kelce-8783",
+      "pub_date": "2026-10-25T08:59:00Z"
+    },
+    {
+      "player_name": "Patrick Mahomes",
+      "sleeper_id": "4046",
+      "gsis_id": "00-0033873",
+      "position": "QB",
+      "team": "KCC",
+      "headline": "Two-game TD drought sans Rice",
+      "description": "Mahomes completed 19 of 33 passes for 165 yards, no touchdowns and one interception in Sunday's 20-3 loss to the Seahawks. He added two rushing attempts for 14 yards. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/patrick-mahomes-11839",
+      "pub_date": "2026-10-25T08:56:00Z"
+    },
+    {
+      "player_name": "Sam Darnold",
+      "sleeper_id": "4943",
+      "gsis_id": "00-0034869",
+      "position": "QB",
+      "team": "SEA",
+      "headline": "One TD, one INT in comfortable win",
+      "description": "Darnold completed 20 of 28 passes for 257 yards, one touchdown and one interception in Sunday's 20-3 win over the Chiefs. He added two rushing attempts for 17 yards. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/sam-darnold-12490",
+      "pub_date": "2026-10-25T08:53:00Z"
+    },
+    {
+      "player_name": "Emanuel Wilson",
+      "sleeper_id": "11435",
+      "gsis_id": "00-0038797",
+      "position": "RB",
+      "team": "SEA",
+      "headline": "Rumbles for 100 yards, TD",
+      "description": "Wilson rushed 24 times for 100 yards and a touchdown while catching his lone target for 15 yards in Sunday's 20-3 win over the Chiefs. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emanuel-wilson-17593",
+      "pub_date": "2026-10-25T08:38:00Z"
     },
     {
       "player_name": "Blake Corum",
