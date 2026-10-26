@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T22:59:19Z",
+  "generated_at": "2026-10-26T02:49:49Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Warren carried the ball 18 times for 101 yards and caught three of four targets for 36 yards in Sunday's 16-10 win over the Saints. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jaylen-warren-15984",
       "pub_date": "2026-10-25T10:45:00Z"
+    },
+    {
+      "player_name": "Blake Corum",
+      "sleeper_id": "11586",
+      "gsis_id": "00-0039738",
+      "position": "RB",
+      "team": "LAR",
+      "headline": "Over 100 scrimmage yards in win",
+      "description": "Corum rushed 17 times for 93 yards and a touchdown and brought in his only target for eight yards in the Rams' 35-21 win over the Raiders on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/blake-corum-17690",
+      "pub_date": "2026-10-25T07:45:00Z"
+    },
+    {
+      "player_name": "Jalen Coker",
+      "sleeper_id": "11646",
+      "gsis_id": "00-0039491",
+      "position": "WR",
+      "team": "CAR",
+      "headline": "Cools off in Week 7",
+      "description": "Coker caught one of four targets for nine yards during Sunday's 43-13 loss to the Buccaneers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-coker-17976",
+      "pub_date": "2026-10-25T07:15:00Z"
+    },
+    {
+      "player_name": "Rashid Shaheed",
+      "sleeper_id": "8676",
+      "gsis_id": "00-0037545",
+      "position": "WR",
+      "team": "SEA",
+      "headline": "Questionable to return for second half",
+      "description": "Shaheed (knee) is questionable to return to Sunday's game against the Chiefs, Curtis Crabtree of FOX 13 Seattle reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rashid-shaheed-16560",
+      "pub_date": "2026-10-25T07:14:00Z"
+    },
+    {
+      "player_name": "Sam LaPorta",
+      "sleeper_id": "10859",
+      "gsis_id": "00-0039065",
+      "position": "TE",
+      "team": "DET",
+      "headline": "Shut down in Week 7 win",
+      "description": "LaPorta caught one of two targets for 18 yards in Sunday's 20-17 win over the Packers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/sam-laporta-17033",
+      "pub_date": "2026-10-25T07:14:00Z"
+    },
+    {
+      "player_name": "Jameson Williams",
+      "sleeper_id": "8148",
+      "gsis_id": "00-0037240",
+      "position": "WR",
+      "team": "DET",
+      "headline": "Finds end zone twice in win over Pack",
+      "description": "Williams caught five of nine targets for 91 yards and two touchdowns in Sunday's 20-17 win over Green Bay. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jameson-williams-15849",
+      "pub_date": "2026-10-25T07:11:00Z"
     },
     {
       "player_name": "Tyrone Tracy Jr.",
