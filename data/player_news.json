@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-10-26T15:45:00Z",
+  "generated_at": "2026-10-26T22:12:03Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Kirk Cousins",
+      "sleeper_id": "1166",
+      "gsis_id": "00-0029604",
+      "position": "QB",
+      "team": "LVR",
+      "headline": "Remaining starting quarterback in Week 8",
+      "description": "Head coach Klint Kubiak said that Cousins will remain the Raiders' starting quarterback heading into Sunday's game against the Jets, Paul Gutierrez of ESPN reports. \"There is no controversy,\" Kubiak said. \"He is playing at a very high level.\" Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kirk-cousins-8057",
+      "pub_date": "2026-10-26T12:54:00Z"
+    },
     {
       "player_name": "Aaron Jones",
       "sleeper_id": "4199",
@@ -36,6 +47,50 @@
       "description": "Barkley (hamstring), who is listed as questionable for Monday's game against the Cowboys, is \"trending toward playing,\" Mike Garafolo of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
       "pub_date": "2026-10-26T06:23:00Z"
+    },
+    {
+      "player_name": "Matthew Golden",
+      "sleeper_id": "12501",
+      "gsis_id": "00-0040667",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Listed as DNP on Monday",
+      "description": "Golden (shoulder/foot) was listed as a non-participant on Monday's practice estimate, Matt Schneidman of The Athletic reports Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/matthew-golden-18500",
+      "pub_date": "2026-10-26T02:47:00Z"
+    },
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Set to practice Wednesday",
+      "description": "Head coach Mike LaFleur said Monday that Love (ankle) will take part in Wednesday's practice, Theo Mackie of The Arizona Republic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-10-26T02:39:00Z"
+    },
+    {
+      "player_name": "Jalen Coker",
+      "sleeper_id": "11646",
+      "gsis_id": "00-0039491",
+      "position": "WR",
+      "team": "CAR",
+      "headline": "Listed as limited Monday",
+      "description": "Coker was listed as limited on Monday's estimated practice report due to a shoulder injury, Darin Gantt of the Panthers' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-coker-17976",
+      "pub_date": "2026-10-26T02:34:00Z"
+    },
+    {
+      "player_name": "Ladd McConkey",
+      "sleeper_id": "11635",
+      "gsis_id": "00-0039915",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Spotted practicing Monday",
+      "description": "McConkey (concussion) was spotted on the field in a no-contact jersey during the Chargers' bonus practice session Monday, Noah Furtado of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
+      "pub_date": "2026-10-26T02:02:00Z"
     },
     {
       "player_name": "Rico Dowdle",
