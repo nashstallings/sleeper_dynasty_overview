@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-10-27T11:28:09Z",
+  "generated_at": "2026-10-27T17:17:20Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Saquon Barkley",
+      "sleeper_id": "4866",
+      "gsis_id": "00-0034844",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Plans to play through back issue",
+      "description": "Barkley said after Monday's 38-21 loss to the Cowboys that his \"hamstring came out great,\" and noted that the back issue that kept him out for the entire fourth quarter isn't anything that he expects to prevent him from playing Sunday against the Commanders, Tim McManus of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
+      "pub_date": "2026-10-27T08:38:00Z"
+    },
+    {
+      "player_name": "Dameon Pierce",
+      "sleeper_id": "8129",
+      "gsis_id": "00-0037258",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Makes late exit in Week 7",
+      "description": "Pierce didn't take the field for either of the Eagles' final two possessions of Monday's 38-21 loss to the Cowboys after sustaining an undisclosed injury with 8:38 remaining in the fourth quarter, Dave Zangaro of NBC Sports Philadelphia reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dameon-pierce-15875",
+      "pub_date": "2026-10-27T07:29:00Z"
+    },
     {
       "player_name": "Kirk Cousins",
       "sleeper_id": "1166",
@@ -44,7 +66,7 @@
       "position": "RB",
       "team": "PHI",
       "headline": "Suffers compensatory back injury",
-      "description": "Barkley said Monday that his back injury was compensatory after he tweaked his hamstring on his first run of the game and tried to play through it, EJ Smith of The Philadelphia Inquirer reports. Visit RotoWire.com for more analysis on this update.",
+      "description": "Barkley said after Monday's 38-21 loss to the Cowboys that he sustained a compensatory back injury, which he tried to play through after tweaking his injured hamstring on his first run of the game, EJ Smith of The Philadelphia Inquirer reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
       "pub_date": "2026-10-26T09:09:00Z"
     },
