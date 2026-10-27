@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T22:12:03Z",
+  "generated_at": "2026-10-27T03:23:44Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -27,6 +27,17 @@
       "pub_date": "2026-10-26T08:16:00Z"
     },
     {
+      "player_name": "Saquon Barkley",
+      "sleeper_id": "4866",
+      "gsis_id": "00-0034844",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Questionable to return to Monday Night Football",
+      "description": "Barkley is questionable to return to Monday's game against the Cowboys due to a back injury. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
+      "pub_date": "2026-10-26T07:50:00Z"
+    },
+    {
       "player_name": "Cam Skattebo",
       "sleeper_id": "12481",
       "gsis_id": "00-0040715",
@@ -47,6 +58,50 @@
       "description": "Barkley (hamstring), who is listed as questionable for Monday's game against the Cowboys, is \"trending toward playing,\" Mike Garafolo of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
       "pub_date": "2026-10-26T06:23:00Z"
+    },
+    {
+      "player_name": "Saquon Barkley",
+      "sleeper_id": "4866",
+      "gsis_id": "00-0034844",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Back in action Monday",
+      "description": "Barkley (hamstring) is listed as active Monday against the Cowboys. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
+      "pub_date": "2026-10-26T03:48:00Z"
+    },
+    {
+      "player_name": "Deebo Samuel Sr.",
+      "sleeper_id": "5872",
+      "gsis_id": "00-0035719",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Eyes Week 9 return",
+      "description": "Samuel (hamstring) has a chance to return following the 49ers' Week 8 bye, Matt Maiocco of NBC Sports Bay Area reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/deebo-samuel-13429",
+      "pub_date": "2026-10-26T03:36:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Expected back after bye week",
+      "description": "Evans (Achilles) is expected to return after San Francisco's Week 8 bye, David Lombardi of SF Standard reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-10-26T03:15:00Z"
+    },
+    {
+      "player_name": "Christian McCaffrey",
+      "sleeper_id": "4034",
+      "gsis_id": "00-0033280",
+      "position": "RB",
+      "team": "SFO",
+      "headline": "Dealing with mild hamstring strain",
+      "description": "McCaffrey is dealing with a mild hamstring strain rather than a quadriceps injury, and the 49ers believe he'll be ready following the team's Week 8 bye, David Lombardi of SF Standard reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/christian-mccaffrey-11690",
+      "pub_date": "2026-10-26T03:13:00Z"
     },
     {
       "player_name": "Matthew Golden",
