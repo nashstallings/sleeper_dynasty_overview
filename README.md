@@ -563,15 +563,31 @@ season?
 It looks up the player's NFL team's Week N opponent from
 `data/nfl_byes.json`'s schedule (see below), then scans every QB/RB/WR/TE
 who's already faced that opponent this season, grouped into one row per
-week with the combined points scored against them that week. Expanding a
-week (a plain disclosure row, same pattern as the Roster card's
-Starters/Bench sections) breaks the total down into whichever player(s)
-had the game that week and their individual points, ranked highest to
-lowest; the player you searched for is highlighted if they're one of
-them. The most recent meeting starts expanded, earlier ones start
-collapsed. If the team's on a bye, the schedule hasn't loaded, or nobody
-at that position has faced this opponent yet this season, it says so
-instead of showing an empty list.
+week (its team logo and combined points shown on the collapsed summary
+line) with a disclosure row (same pattern as the Roster card's
+Starters/Bench sections) that expands into a full stat table &mdash; the
+same Comp/Att, Pass Yds, Pass TD, INT, etc. columns (plus the position's
+advanced metrics) shown on a player's season stat table, one row per
+player who had that week's game plus a bold **Subtotal** row above them.
+The subtotal sums whatever's meaningfully additive (yardage, TDs, attempts,
+etc.) and recomputes the derived columns (Y/A, Y/C, EPA/Att, points) from
+those sums; a column like CPOE or Snap % that's a rate rather than a raw
+count shows "&mdash;" in that row instead of a made-up combined number.
+Player rows default to sorted by points, highest first, but every column
+header is clickable to re-sort by it instead (one shared sort applies
+across every week's table, so they all read the same way at a glance);
+the player you searched for is highlighted if they're one of the rows.
+The most recent meeting starts expanded, earlier ones start collapsed
+(tracked explicitly so a sort click elsewhere doesn't collapse a week
+you'd opened). If the team's on a bye, the schedule hasn't loaded, or
+nobody at that position has faced this opponent yet this season, it says
+so instead of showing an empty table.
+
+The team logo on each week's line uses Sleeper's CDN with the same
+community-documented path other Sleeper-built tools use
+(`sleepercdn.com/images/team_logos/nfl/{team}.png`) rather than a
+documented part of its public API, so if a given team's logo doesn't
+resolve, the image is just removed instead of showing a broken-image icon.
 
 ## How Top Performers works
 

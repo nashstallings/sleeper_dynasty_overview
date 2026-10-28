@@ -108,6 +108,8 @@ const state = {
   evaluatorPid: null,
   evaluatorSeason: null,
   evaluatorDetailTab: "weekly",
+  evaluatorMatchupSort: null,
+  evaluatorMatchupOpenWeeks: null,
   playerWeeklyStats: null,
   outlookView: "quadrants",
   outlookRows: null,
@@ -4086,6 +4088,7 @@ function setupEvaluatorSearch() {
       state.evaluatorPid = pid;
       state.evaluatorSeason = null;
       state.evaluatorDetailTab = "weekly";
+      state.evaluatorMatchupOpenWeeks = null;
       renderEvaluatorDetail(pid);
       return;
     }
@@ -4230,24 +4233,34 @@ function evaluatorWeeklyChartHtml(weeksObj, pos) {
     <p class="player-meta eval-chart-legend"><span class="age-legend-swatch eval-bar-boom"></span>20+ point week</p>`;
 }
 
+// Shared by the Weekly Scoring table and the Matchup tab's tables, so
+// both always show the exact same per-position stat columns.
+function statTableColumnsFor(pos) {
+  const baseCols = STAT_COLUMNS_BY_POSITION[pos] || STAT_COLUMNS_BY_POSITION.WR;
+  const pointsCol = baseCols.find((c) => c.points);
+  const advCols = EVALUATOR_ADV_COLUMNS_BY_POSITION[pos] || EVALUATOR_ADV_COLUMNS_BY_POSITION.WR;
+  return [...baseCols.filter((c) => !c.points), ...advCols, pointsCol];
+}
+
+function statTableColumnId(col) {
+  return col.points ? "__points" : col.key || col.label;
+}
+
+function statTableCellHtml(col, s, pos) {
+  if (col.points) return fmtPpr(computeLeaguePoints(s, pos));
+  return col.format ? col.format(s) : fmtStat(s[col.key]);
+}
+
 function evaluatorWeeklyTableHtml(weeksObj, pos) {
   const weekKeys = Object.keys(weeksObj)
     .map(Number)
     .sort((a, b) => a - b);
-  const baseCols = STAT_COLUMNS_BY_POSITION[pos] || STAT_COLUMNS_BY_POSITION.WR;
-  const pointsCol = baseCols.find((c) => c.points);
-  const advCols = EVALUATOR_ADV_COLUMNS_BY_POSITION[pos] || EVALUATOR_ADV_COLUMNS_BY_POSITION.WR;
-  const cols = [...baseCols.filter((c) => !c.points), ...advCols, pointsCol];
+  const cols = statTableColumnsFor(pos);
   const headers = cols.map((c) => (c.points ? pointsColumnLabel() : c.label));
   const rows = weekKeys
     .map((w) => {
       const s = weeksObj[w];
-      const cells = cols
-        .map((c) => {
-          if (c.points) return `<td>${fmtPpr(computeLeaguePoints(s, pos))}</td>`;
-          return `<td>${c.format ? c.format(s) : fmtStat(s[c.key])}</td>`;
-        })
-        .join("");
+      const cells = cols.map((c) => `<td>${statTableCellHtml(c, s, pos)}</td>`).join("");
       return `<tr><td>${w}</td><td>${s.opponent ? `@${escapeHtml(s.opponent)}` : "&mdash;"}</td>${cells}</tr>`;
     })
     .join("");
@@ -4286,6 +4299,14 @@ function evaluatorWeeklyScoringBodyHtml(pid, pos) {
 // ---------- Evaluator: Matchup (how this position has fared against the
 // player's upcoming/current-week NFL opponent, so far this season) ----------
 
+// Community-documented Sleeper CDN path for NFL team logos (same cdn
+// already used for player photos/avatars elsewhere in this app). Falls
+// back to hiding the image rather than showing a broken-image icon if a
+// given team code doesn't resolve.
+function nflTeamLogoUrl(team) {
+  return team ? `https://sleepercdn.com/images/team_logos/nfl/${team.toLowerCase()}.png` : null;
+}
+
 // Where nfl_byes.json's weekly schedule (team -> week -> opponent) says
 // this player's own NFL team plays in the given week -- including weeks
 // that haven't been played yet, since that file covers the whole season
@@ -4317,11 +4338,11 @@ function evaluatorMatchupWeeksAgainst(pos, opponent, season) {
   return [...weekSet].sort((a, b) => a - b);
 }
 
-// Every player at this position who faced `opponent` in the given week,
-// scored with this league's own settings -- highest points first, so the
-// breakdown reads like a leaderboard. Usually just one player (whichever
-// team had the game that week), occasionally two if a backup also logged
-// a stat line.
+// Every player at this position who faced `opponent` in the given week --
+// usually just one (whichever team had the game that week), occasionally
+// two if a backup also logged a stat line. Keeps each player's full raw
+// stat line (not just points) so the table can show the same columns as
+// the season/weekly stat tables and build a summed subtotal row.
 function evaluatorMatchupWeekEntriesAgainst(pos, opponent, season, week) {
   const data = state.playerWeeklyStats;
   const entries = [];
@@ -4329,35 +4350,126 @@ function evaluatorMatchupWeekEntriesAgainst(pos, opponent, season, week) {
     if (playerPosition(player(rpid)) !== pos) return;
     const weekStats = data.players[rpid].weeks[season] && data.players[rpid].weeks[season][week];
     if (!weekStats || weekStats.opponent !== opponent) return;
-    entries.push({ pid: rpid, points: computeLeaguePoints(weekStats, pos), team: weekStats.team });
+    entries.push({ pid: rpid, stats: weekStats });
   });
-  entries.sort((a, b) => b.points - a.points);
   return entries;
+}
+
+// Raw fields that are legitimate to add across players (counting stats,
+// plus passing_epa which is itself a per-game total, not a rate) -- left
+// out of this list, a field like cpoe/target_share/wopr/snap_share is a
+// rate that doesn't have a meaningful combined value from what's here, so
+// it's simply absent from the merged object and renders as "--" via the
+// same format functions used for a single player's line.
+const EVAL_MATCHUP_SUMMABLE_FIELDS = [
+  "completions", "attempts", "passing_yards", "passing_tds", "interceptions",
+  "rushing_yards", "rushing_tds", "carries", "receptions", "receiving_yards",
+  "receiving_tds", "targets", "passing_epa",
+];
+
+function evaluatorMatchupMergedStats(entries) {
+  const merged = {};
+  EVAL_MATCHUP_SUMMABLE_FIELDS.forEach((field) => {
+    const vals = entries.map((e) => e.stats[field]).filter((v) => typeof v === "number");
+    if (vals.length) merged[field] = vals.reduce((sum, v) => sum + v, 0);
+  });
+  return merged;
+}
+
+// A numeric value per column for sorting -- reusing the same raw fields
+// and ratio formulas the column's own format() already uses, just
+// returning a number instead of a formatted string. Keyed by column
+// key/label (same lookup `statTableColumnId` uses), since format-only
+// columns (Comp/Att, Y/A, Y/C, ...) don't have a plain data key.
+function evaluatorMatchupSortValue(col, s, pos) {
+  if (col.points) return computeLeaguePoints(s, pos);
+  if (col.key) return typeof s[col.key] === "number" ? s[col.key] : -Infinity;
+  switch (col.label) {
+    case "Comp/Att": return typeof s.completions === "number" ? s.completions : -Infinity;
+    case "Y/A": return safeRatio(s.passing_yards, s.attempts) ?? -Infinity;
+    case "Y/C": return safeRatio(s.rushing_yards, s.carries) ?? -Infinity;
+    case "Y/T": return safeRatio(s.receiving_yards, s.targets) ?? -Infinity;
+    case "EPA/Att": return safeRatio(s.passing_epa, s.attempts) ?? -Infinity;
+    case "CPOE": return typeof s.cpoe === "number" ? s.cpoe : -Infinity;
+    case "Tgt Share": return typeof s.target_share === "number" ? s.target_share : -Infinity;
+    case "Air Yd Share": return typeof s.air_yards_share === "number" ? s.air_yards_share : -Infinity;
+    case "WOPR": return typeof s.wopr === "number" ? s.wopr : -Infinity;
+    case "Snap %": return typeof s.snap_share === "number" ? s.snap_share : -Infinity;
+    default: return -Infinity;
+  }
+}
+
+// One shared sort applies to every week's table at once (rather than
+// tracking it per week) -- simpler state, and keeps every table reading
+// the same way at a glance. Defaults to points, highest first.
+function evaluatorMatchupSort() {
+  return state.evaluatorMatchupSort || { id: "__points", dir: "desc" };
+}
+
+function evaluatorMatchupSortedEntries(entries, cols, pos) {
+  const sort = evaluatorMatchupSort();
+  const col = cols.find((c) => statTableColumnId(c) === sort.id) || cols[cols.length - 1];
+  const sorted = [...entries].sort((a, b) => evaluatorMatchupSortValue(col, a.stats, pos) - evaluatorMatchupSortValue(col, b.stats, pos));
+  if (sort.dir === "desc") sorted.reverse();
+  return sorted;
+}
+
+function evaluatorMatchupHeaderRowHtml(cols) {
+  const sort = evaluatorMatchupSort();
+  const cells = cols
+    .map((c) => {
+      const id = statTableColumnId(c);
+      const label = c.points ? pointsColumnLabel() : c.label;
+      const arrow = sort.id === id ? ` <span class="sort-arrow">${sort.dir === "desc" ? "&darr;" : "&uarr;"}</span>` : "";
+      return `<th class="sortable-th" data-sortcol="${id}">${label}${arrow}</th>`;
+    })
+    .join("");
+  return `<tr><th>Player</th>${cells}</tr>`;
 }
 
 // Uses the same <details>/<summary> disclosure pattern as the Roster
 // card's subsections -- the browser handles open/closed state natively,
 // so nothing needs to be tracked for it to survive a re-render here.
-function evaluatorMatchupRowHtml(week, entries, isLatest, evaluatedPid) {
-  const total = entries.reduce((sum, e) => sum + e.points, 0);
-  const detailRows = entries.length
-    ? entries
-        .map((e) => {
-          const p = player(e.pid);
-          const highlight = e.pid === evaluatedPid ? " is-evaluated" : "";
-          return `
-            <div class="evaluator-matchup-player${highlight}">
-              <span class="player-name" data-player-id="${e.pid}">${escapeHtml(playerDisplay(p))}</span>
-              <span class="player-meta">${e.team ? escapeHtml(e.team) : "&mdash;"}</span>
-              <span class="value-tag">${fmtPpr(e.points)}</span>
-            </div>`;
-        })
-        .join("")
-    : `<p class="player-meta">No players with stats this week.</p>`;
+function evaluatorMatchupRowHtml(week, entries, isOpen, evaluatedPid, pos) {
+  const cols = statTableColumnsFor(pos);
+  const total = entries.reduce((sum, e) => sum + computeLeaguePoints(e.stats, pos), 0);
+  const logo = nflTeamLogoUrl(entries[0] && entries[0].stats.opponent);
+
+  let bodyHtml;
+  if (entries.length) {
+    const merged = evaluatorMatchupMergedStats(entries);
+    const subtotalCells = cols.map((c) => `<td>${statTableCellHtml(c, merged, pos)}</td>`).join("");
+    const sorted = evaluatorMatchupSortedEntries(entries, cols, pos);
+    const playerRows = sorted
+      .map((e) => {
+        const p = player(e.pid);
+        const highlight = e.pid === evaluatedPid ? " is-evaluated" : "";
+        const cells = cols.map((c) => `<td>${statTableCellHtml(c, e.stats, pos)}</td>`).join("");
+        return `
+          <tr class="evaluator-matchup-player-row${highlight}">
+            <td><span class="player-name" data-player-id="${e.pid}">${escapeHtml(playerDisplay(p))}</span> <span class="player-meta">${e.stats.team ? escapeHtml(e.stats.team) : ""}</span></td>
+            ${cells}
+          </tr>`;
+      })
+      .join("");
+    bodyHtml = `
+      <div class="table-wrap">
+        <table class="player-card-table evaluator-matchup-table">
+          <thead>${evaluatorMatchupHeaderRowHtml(cols)}</thead>
+          <tbody>
+            <tr class="evaluator-matchup-subtotal"><td>Subtotal</td>${subtotalCells}</tr>
+            ${playerRows}
+          </tbody>
+        </table>
+      </div>`;
+  } else {
+    bodyHtml = `<p class="player-meta">No players with stats this week.</p>`;
+  }
 
   return `
-    <details class="evaluator-matchup-row"${isLatest ? " open" : ""}>
+    <details class="evaluator-matchup-row" data-matchupweek="${week}"${isOpen ? " open" : ""}>
       <summary>
+        ${logo ? `<img class="evaluator-matchup-logo" src="${logo}" alt="" onerror="this.remove()" />` : ""}
         <span class="evaluator-matchup-week">Week ${week}</span>
         <span class="player-meta">${entries.length} player${entries.length === 1 ? "" : "s"}</span>
         <span class="value-tag">${fmtPpr(total)}</span>
@@ -4365,7 +4477,7 @@ function evaluatorMatchupRowHtml(week, entries, isLatest, evaluatedPid) {
           <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </summary>
-      <div class="evaluator-matchup-row-body">${detailRows}</div>
+      <div class="evaluator-matchup-row-body">${bodyHtml}</div>
     </details>`;
 }
 
@@ -4398,8 +4510,14 @@ function evaluatorMatchupHtml(pid, pos) {
   }
 
   const latestWeek = weeks[weeks.length - 1];
+  // Tracked explicitly (rather than relying on <details>'s native open
+  // state) because sorting re-renders this whole list -- without this,
+  // a week the user expanded would snap back shut the moment they
+  // clicked a column header elsewhere. Defaults to just the latest week
+  // the first time this player/opponent is shown.
+  if (!state.evaluatorMatchupOpenWeeks) state.evaluatorMatchupOpenWeeks = new Set([latestWeek]);
   const rows = weeks
-    .map((w) => evaluatorMatchupRowHtml(w, evaluatorMatchupWeekEntriesAgainst(pos, opponent, season, w), w === latestWeek, pid))
+    .map((w) => evaluatorMatchupRowHtml(w, evaluatorMatchupWeekEntriesAgainst(pos, opponent, season, w), state.evaluatorMatchupOpenWeeks.has(w), pid, pos))
     .join("");
 
   return `
@@ -4441,8 +4559,37 @@ function setupEvaluatorSeasonTabs() {
     if (seasonBtn && state.evaluatorPid) {
       state.evaluatorSeason = seasonBtn.dataset.evalseason;
       renderEvaluatorWeekly(state.evaluatorPid, playerPosition(player(state.evaluatorPid)));
+      return;
+    }
+
+    const sortTh = e.target.closest("#evaluator-weekly-card th[data-sortcol]");
+    if (sortTh && state.evaluatorPid) {
+      const id = sortTh.dataset.sortcol;
+      const current = evaluatorMatchupSort();
+      state.evaluatorMatchupSort = { id, dir: current.id === id && current.dir === "desc" ? "asc" : "desc" };
+      renderEvaluatorWeekly(state.evaluatorPid, playerPosition(player(state.evaluatorPid)));
     }
   });
+
+  // The "toggle" event (fired whenever a <details> opens or closes,
+  // including a plain user click on its <summary>) doesn't bubble, so
+  // this has to listen during the capture phase to catch it via
+  // delegation. Keeps evaluatorMatchupOpenWeeks in sync with whatever
+  // the user has actually expanded, so a later re-render (e.g. from
+  // clicking a sort column) can preserve it instead of collapsing
+  // everything back to just the latest week.
+  document.addEventListener(
+    "toggle",
+    (e) => {
+      const details = e.target;
+      if (!details.matches || !details.matches(".evaluator-matchup-row")) return;
+      const week = Number(details.dataset.matchupweek);
+      if (!state.evaluatorMatchupOpenWeeks) state.evaluatorMatchupOpenWeeks = new Set();
+      if (details.open) state.evaluatorMatchupOpenWeeks.add(week);
+      else state.evaluatorMatchupOpenWeeks.delete(week);
+    },
+    true
+  );
 }
 
 // ---------- tabs ----------

@@ -1303,18 +1303,10 @@ footer a:hover { text-decoration: underline; }
 .evaluator-matchup-row summary .chevron { flex-shrink: 0; color: var(--text-faint); transition: transform 0.15s ease; }
 .evaluator-matchup-row[open] summary .chevron { transform: rotate(90deg); }
 .evaluator-matchup-week { font-weight: 700; font-size: 0.88rem; }
-.evaluator-matchup-row-body { display: flex; flex-direction: column; }
-.evaluator-matchup-player {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
-  font-size: 0.88rem;
-  border-top: 1px solid var(--panel-border);
-}
-.evaluator-matchup-player .player-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.evaluator-matchup-player .player-meta, .evaluator-matchup-player .value-tag { flex-shrink: 0; }
-.evaluator-matchup-player.is-evaluated { background: var(--accent-soft); }
+.evaluator-matchup-logo { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
+.evaluator-matchup-row-body { padding: 10px 12px 12px; }
+.evaluator-matchup-subtotal { font-weight: 700; background: var(--panel-soft); }
+.evaluator-matchup-player-row.is-evaluated { background: var(--accent-soft); }
 
 /* ---------- player card ---------- */
 
