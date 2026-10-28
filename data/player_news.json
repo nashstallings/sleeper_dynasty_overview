@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-28T11:58:41Z",
+  "generated_at": "2026-10-28T18:07:56Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Ja'Marr Chase",
+      "sleeper_id": "7564",
+      "gsis_id": "00-0036900",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "Absent from Wednesday stretch",
+      "description": "Chase wasn't spotted during the stretch portion of Wednesday's practice, Mike Petraglia of CLNSCincy.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
+      "pub_date": "2026-10-28T10:58:00Z"
+    },
+    {
+      "player_name": "Emeka Egbuka",
+      "sleeper_id": "12514",
+      "gsis_id": "00-0040129",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Progressing in recovery",
+      "description": "Head coach Todd Bowles said Egbuka (concussion/foot) took part in individual drills Wednesday, but the wide receiver will need to do more Thursday to progress toward a return to action, Scott Smith of the Buccaneers' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
+      "pub_date": "2026-10-28T10:38:00Z"
+    },
+    {
+      "player_name": "Lamar Jackson",
+      "sleeper_id": "4881",
+      "gsis_id": "00-0034796",
+      "position": "QB",
+      "team": "BAL",
+      "headline": "On field to begin Week 8 prep",
+      "description": "Jackson (ankle) was spotted on the field for the start of Wednesday's practice, Jamison Hensley of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/lamar-jackson-12561",
+      "pub_date": "2026-10-28T10:32:00Z"
+    },
+    {
+      "player_name": "Rashee Rice",
+      "sleeper_id": "10229",
+      "gsis_id": "00-0039067",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Returning to practice Wednesday",
+      "description": "Chiefs head coach Andy Reid said that Rice (hamstring/knee) is expected to practice Wednesday, Nate Taylor of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rashee-rice-16963",
+      "pub_date": "2026-10-28T10:25:00Z"
+    },
+    {
+      "player_name": "Stefon Diggs",
+      "sleeper_id": "2449",
+      "gsis_id": "00-0031588",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Sitting out, but will be full go Thursday",
+      "description": "Commanders head coach Dan Quinn said that Diggs won't practice Wednesday due to an unspecified issue but is expected to be a full participant Thursday, Tashan Reed of The Washington Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/stefon-diggs-10133",
+      "pub_date": "2026-10-28T10:17:00Z"
+    },
     {
       "player_name": "Jalen Coker",
       "sleeper_id": "11646",
@@ -14039,17 +14094,6 @@
       "description": "Olave took part in the first session of 11-on-11 team drills during Friday's training camp practice, Ross Jackson of LouisianaSports.net reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/chris-olave-15895",
       "pub_date": "2026-07-31T01:18:00Z"
-    },
-    {
-      "player_name": "Malik Nabers",
-      "sleeper_id": "11632",
-      "gsis_id": "00-0039337",
-      "position": "WR",
-      "team": "NYG",
-      "headline": "Feeling 'great' at practice",
-      "description": "Nabers (knee) said Thursday that he \"felt great\" after practicing Wednesday for the first time since having his torn ACL surgically repaired in October, Matt Citak of the Giants' official site reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
-      "pub_date": "2026-07-30T12:49:00Z"
     }
   ]
 }
