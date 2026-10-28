@@ -5,6 +5,15 @@ derived by finding, for the current season's regular season, which week(s)
 each team has no game at all (appears in neither home_team nor away_team).
 Normally that's exactly one week per team.
 
+Also writes a per-team weekly opponent schedule (`schedule`) into the same
+file, covering every REG week the schedule table has rows for -- including
+weeks not yet played, since nflreadpy's schedules table is populated for
+the whole season up front, not filled in as games happen (this is exactly
+what lets the bye-week query above tell a real bye apart from "hasn't been
+played yet"). This is what the Evaluator tab's Matchup sub-tab uses to find
+a player's *upcoming* opponent, something `player_weekly_stats.json` can't
+answer since that file only has a week once it's actually been played.
+
 Schema assumption: this queries `nflreadpy.schedules` with a `season_type`
 column (matching the convention already used by `player_stats` in this same
 BigQuery project -- see refresh_rising_metrics.py / refresh_player_season_stats.py),
@@ -29,7 +38,7 @@ PROJECT_ID = "ff-python-api"
 DATASET = "nflreadpy"
 OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "nfl_byes.json"
 
-QUERY = f"""
+BYE_QUERY = f"""
 WITH bounds AS (
   SELECT MAX(season) AS season
   FROM `{PROJECT_ID}.{DATASET}.schedules`
@@ -64,6 +73,17 @@ LEFT JOIN played ON played.team = teams.team AND played.week = weeks.week
 WHERE played.team IS NULL
 """
 
+SCHEDULE_QUERY = f"""
+WITH bounds AS (
+  SELECT MAX(season) AS season
+  FROM `{PROJECT_ID}.{DATASET}.schedules`
+  WHERE game_type = 'REG'
+)
+SELECT s.home_team, s.away_team, s.week
+FROM `{PROJECT_ID}.{DATASET}.schedules` s, bounds
+WHERE s.season = bounds.season AND s.game_type = 'REG'
+"""
+
 
 def get_client():
     sa_info = json.loads(os.environ["GCP_SA_KEY"])
@@ -75,7 +95,7 @@ def get_client():
 
 def main():
     client = get_client()
-    rows = list(client.query(QUERY).result())
+    rows = list(client.query(BYE_QUERY).result())
 
     # A team should have exactly one bye. If the schedule table only has
     # past weeks loaded so far, every not-yet-played future week would also
@@ -103,16 +123,25 @@ def main():
             f"{multi_week_teams}"
         )
 
+    schedule_rows = list(client.query(SCHEDULE_QUERY).result())
+    schedule = {}
+    for row in schedule_rows:
+        week = str(row.week)
+        schedule.setdefault(row.home_team, {})[week] = row.away_team
+        schedule.setdefault(row.away_team, {})[week] = row.home_team
+
     output = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "season": season,
         "byes": byes,
+        "schedule": schedule,
     }
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(output, indent=2) + "\n")
-    print(f"Wrote {OUT_PATH}: season {season}, {len(byes)} teams")
+    print(f"Wrote {OUT_PATH}: season {season}, {len(byes)} teams, {len(schedule)} teams scheduled")
 
 
 if __name__ == "__main__":
     main()
+

@@ -4156,6 +4156,14 @@ async function renderEvaluatorDetail(pid) {
       // weekly stats are optional enrichment; the rest of the evaluator still works
     }
   }
+  if (!state.nflByes) {
+    try {
+      const res = await fetch("data/nfl_byes.json", { cache: "no-store" });
+      if (res.ok) state.nflByes = await res.json();
+    } catch {
+      // schedule data is optional enrichment -- only the Matchup sub-tab needs it
+    }
+  }
   if (state.evaluatorPid === pid) renderEvaluatorWeekly(pid, pos, weeklyContainer);
 }
 
@@ -4275,38 +4283,53 @@ function evaluatorWeeklyScoringBodyHtml(pid, pos) {
     ${evaluatorWeeklyTableHtml(weeksObj, pos)}`;
 }
 
-// ---------- Evaluator: Matchup (team's weekly position-group totals) ----------
+// ---------- Evaluator: Matchup (how this position has fared against the
+// player's upcoming/current-week NFL opponent, so far this season) ----------
 
-function evaluatorMatchupRosterFor(pid) {
-  return state.rosters.find((r) => (r.players || []).includes(pid)) || null;
+// Where nfl_byes.json's weekly schedule (team -> week -> opponent) says
+// this player's own NFL team plays in the given week -- including weeks
+// that haven't been played yet, since that file covers the whole season
+// up front. Returns null if the schedule hasn't loaded, or this team/week
+// combination isn't in it (e.g. off-season).
+function evaluatorMatchupOpponentFor(team, week) {
+  const schedule = state.nflByes && state.nflByes.schedule;
+  const teamSchedule = schedule && team && schedule[team];
+  return (teamSchedule && teamSchedule[String(week)]) || null;
 }
 
-// Every week this season that's actually been played so far, i.e. any
-// week at least one of the roster's players at this position has a
-// stored stat line for -- ascending, same order as the weekly table.
-function evaluatorMatchupWeeks(roster, pos, season) {
+// Every week this season some player at this position has an ALREADY-
+// PLAYED stat line against `opponent` -- i.e. every past meeting, found by
+// scanning each player's own recorded weekly opponent rather than working
+// forward from the schedule, so a future (not yet played) week simply
+// never shows up here even though the schedule already knows about it.
+function evaluatorMatchupWeeksAgainst(pos, opponent, season) {
   const data = state.playerWeeklyStats;
   if (!data || !data.players) return [];
-  const posPids = (roster.players || []).filter((rpid) => playerPosition(player(rpid)) === pos);
   const weekSet = new Set();
-  posPids.forEach((rpid) => {
-    const weeks = data.players[rpid] && data.players[rpid].weeks && data.players[rpid].weeks[season];
-    if (weeks) Object.keys(weeks).forEach((w) => weekSet.add(Number(w)));
+  Object.keys(data.players).forEach((rpid) => {
+    if (playerPosition(player(rpid)) !== pos) return;
+    const weeks = data.players[rpid].weeks && data.players[rpid].weeks[season];
+    if (!weeks) return;
+    Object.keys(weeks).forEach((w) => {
+      if (weeks[w].opponent === opponent) weekSet.add(Number(w));
+    });
   });
   return [...weekSet].sort((a, b) => a - b);
 }
 
-// Each of the roster's players at this position who has a stat line for
-// the given week, scored with this league's own settings -- highest
-// points first, so the breakdown reads like a leaderboard.
-function evaluatorMatchupWeekEntries(roster, pos, season, week) {
+// Every player at this position who faced `opponent` in the given week,
+// scored with this league's own settings -- highest points first, so the
+// breakdown reads like a leaderboard. Usually just one player (whichever
+// team had the game that week), occasionally two if a backup also logged
+// a stat line.
+function evaluatorMatchupWeekEntriesAgainst(pos, opponent, season, week) {
   const data = state.playerWeeklyStats;
-  const posPids = (roster.players || []).filter((rpid) => playerPosition(player(rpid)) === pos);
   const entries = [];
-  posPids.forEach((rpid) => {
-    const weekStats = data.players[rpid] && data.players[rpid].weeks[season] && data.players[rpid].weeks[season][week];
-    if (!weekStats) return;
-    entries.push({ pid: rpid, points: computeLeaguePoints(weekStats, pos), opponent: weekStats.opponent });
+  Object.keys(data.players).forEach((rpid) => {
+    if (playerPosition(player(rpid)) !== pos) return;
+    const weekStats = data.players[rpid].weeks[season] && data.players[rpid].weeks[season][week];
+    if (!weekStats || weekStats.opponent !== opponent) return;
+    entries.push({ pid: rpid, points: computeLeaguePoints(weekStats, pos), team: weekStats.team });
   });
   entries.sort((a, b) => b.points - a.points);
   return entries;
@@ -4325,7 +4348,7 @@ function evaluatorMatchupRowHtml(week, entries, isLatest, evaluatedPid) {
           return `
             <div class="evaluator-matchup-player${highlight}">
               <span class="player-name" data-player-id="${e.pid}">${escapeHtml(playerDisplay(p))}</span>
-              <span class="player-meta">${e.opponent ? `@${escapeHtml(e.opponent)}` : "&mdash;"}</span>
+              <span class="player-meta">${e.team ? escapeHtml(e.team) : "&mdash;"}</span>
               <span class="value-tag">${fmtPpr(e.points)}</span>
             </div>`;
         })
@@ -4347,23 +4370,40 @@ function evaluatorMatchupRowHtml(week, entries, isLatest, evaluatedPid) {
 }
 
 function evaluatorMatchupHtml(pid, pos) {
-  const roster = evaluatorMatchupRosterFor(pid);
-  if (!roster) {
-    return emptyState("This player isn't on a team in your league, so there's no matchup history to show.");
+  const p = player(pid);
+  const team = p.team;
+  if (!team) {
+    return emptyState("This player isn't on an NFL team, so there's no opponent to show a matchup for.");
   }
+  if (!state.currentWeek) {
+    return emptyState("There's no current NFL week to show a matchup for right now.");
+  }
+  if (!state.nflByes || !state.nflByes.schedule) {
+    return emptyState("Schedule data hasn't loaded, so this player's matchup can't be shown yet.");
+  }
+  if (state.nflByes.byes && state.nflByes.byes[team] === state.currentWeek) {
+    return emptyState(`${escapeHtml(team)} is on a bye in Week ${state.currentWeek}.`);
+  }
+  const opponent = evaluatorMatchupOpponentFor(team, state.currentWeek);
+  if (!opponent) {
+    return emptyState(`Couldn't find ${escapeHtml(team)}'s Week ${state.currentWeek} opponent.`);
+  }
+
   const season = state.league && state.league.season;
-  const weeks = evaluatorMatchupWeeks(roster, pos, season);
+  const weeks = evaluatorMatchupWeeksAgainst(pos, opponent, season);
   if (!weeks.length) {
-    return emptyState(`No ${pos} weekly data for ${escapeHtml(rosterLabel(roster))} yet this season.`);
+    return `
+      <p class="player-meta eval-matchup-team">Week ${state.currentWeek} vs ${escapeHtml(opponent)}</p>
+      ${emptyState(`No ${pos} has played ${escapeHtml(opponent)} yet this season.`)}`;
   }
 
   const latestWeek = weeks[weeks.length - 1];
   const rows = weeks
-    .map((w) => evaluatorMatchupRowHtml(w, evaluatorMatchupWeekEntries(roster, pos, season, w), w === latestWeek, pid))
+    .map((w) => evaluatorMatchupRowHtml(w, evaluatorMatchupWeekEntriesAgainst(pos, opponent, season, w), w === latestWeek, pid))
     .join("");
 
   return `
-    <p class="player-meta eval-matchup-team">${escapeHtml(rosterLabel(roster))} &middot; ${pos} weekly totals</p>
+    <p class="player-meta eval-matchup-team">Week ${state.currentWeek} vs ${escapeHtml(opponent)} &middot; how ${pos}s have fared against them this season</p>
     <div class="evaluator-matchup-list">${rows}</div>`;
 }
 

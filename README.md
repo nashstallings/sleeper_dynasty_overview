@@ -50,8 +50,8 @@ football account and helps you:
   QB/RB/WR/TE in the league (not just players in your league) and see their
   season-by-season stat line for the last 5 seasons plus a week-by-week
   scoring chart and table for each of those seasons, with a Matchup sub-tab
-  showing how their whole position group on their fantasy team has scored
-  week by week this season.
+  showing how that position has fared against their current-week NFL
+  opponent in games already played this season.
 - **See who actually produced each week** &mdash; a Performers tab shows,
   for any regular-season week, the top Total Points scorers and the top
   Points Above Expected performers (actual points minus Sleeper's own
@@ -438,9 +438,14 @@ projected record moves on its own each week as real matchups are scored
 `fantasy_football` refreshes the schedule table) that derives each team's bye week from
 nflverse's schedule data (the week a team appears in neither `home_team`
 nor `away_team`) &mdash; the same `ff-python-api.nflreadpy` project the
-other refresh jobs pull from. If that file hasn't loaded yet, the
-week-by-week projection just uses full rosters as available (no bye
-substitution) rather than breaking, and the tab says so.
+other refresh jobs pull from. The same job also writes a `schedule` field
+to that file: every team's opponent for every week of the season,
+including weeks not yet played (the schedule table is populated for the
+whole season up front) &mdash; this is what the Evaluator's Matchup
+sub-tab (below) uses to find a player's current-week opponent. If that
+file hasn't loaded yet, the week-by-week projection just uses full
+rosters as available (no bye substitution) rather than breaking, and the
+tab says so.
 
 Both axes are relative to the league's own median (age and projected win%),
 not a fixed cutoff, so it works the same whether it's week 2 or week 15 and
@@ -549,22 +554,24 @@ its logs before assuming the underlying data is unavailable.
 
 The weekly card below a selected player splits into two sub-tabs:
 **Weekly Scoring** (the chart and table above) and **Matchup**. Matchup
-answers a different question than the player's own week-by-week line: how
-has their whole *position group* on their fantasy team been performing
-this season? If the selected player isn't on a roster in your league (a
-free agent), it says so instead of showing anything &mdash; there's no
-team to group by.
+answers a different question than the player's own week-by-week line: the
+selected player's real NFL team plays somebody this week (e.g. Bryce
+Young's Panthers facing Green Bay in Week 8) &mdash; how has that *same
+position* fared against that opponent in games already played this
+season?
 
-Otherwise it finds the player's current fantasy team, filters that
-roster down to every player (starter or bench) at the same position, and
-shows one row per week played so far this season &mdash; the whole
-group's combined points that week, using the same league-scored weekly
-data as the chart above. Expanding a week (a plain disclosure row, same
-pattern as the Roster card's Starters/Bench sections) breaks the total
-down into each contributing player and their individual points that
-week, ranked highest to lowest; the player you searched for is
-highlighted so it's easy to spot them in the group. The most recent week
-starts expanded, every earlier week starts collapsed.
+It looks up the player's NFL team's Week N opponent from
+`data/nfl_byes.json`'s schedule (see below), then scans every QB/RB/WR/TE
+who's already faced that opponent this season, grouped into one row per
+week with the combined points scored against them that week. Expanding a
+week (a plain disclosure row, same pattern as the Roster card's
+Starters/Bench sections) breaks the total down into whichever player(s)
+had the game that week and their individual points, ranked highest to
+lowest; the player you searched for is highlighted if they're one of
+them. The most recent meeting starts expanded, earlier ones start
+collapsed. If the team's on a bye, the schedule hasn't loaded, or nobody
+at that position has faced this opponent yet this season, it says so
+instead of showing an empty list.
 
 ## How Top Performers works
 
