@@ -4433,7 +4433,11 @@ function evaluatorMatchupHeaderRowHtml(cols) {
 function evaluatorMatchupRowHtml(week, entries, isOpen, evaluatedPid, pos) {
   const cols = statTableColumnsFor(pos);
   const total = entries.reduce((sum, e) => sum + computeLeaguePoints(e.stats, pos), 0);
-  const logo = nflTeamLogoUrl(entries[0] && entries[0].stats.opponent);
+  // The opponent (GB, say) is the same for every row in this whole tab --
+  // the logo here should instead show whichever team's players are
+  // actually summed in THIS week's subtotal (the team that played GB
+  // that week), which is every entry's own .team, not .opponent.
+  const logo = nflTeamLogoUrl(entries[0] && entries[0].stats.team);
 
   let bodyHtml;
   if (entries.length) {

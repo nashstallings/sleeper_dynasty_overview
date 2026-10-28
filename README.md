@@ -563,8 +563,10 @@ season?
 It looks up the player's NFL team's Week N opponent from
 `data/nfl_byes.json`'s schedule (see below), then scans every QB/RB/WR/TE
 who's already faced that opponent this season, grouped into one row per
-week (its team logo and combined points shown on the collapsed summary
-line) with a disclosure row (same pattern as the Roster card's
+week (the logo of whichever team's player(s) are actually summed that
+week &mdash; not the constant opponent, which is already named in the
+heading above &mdash; shown next to the combined points on the collapsed
+summary line) with a disclosure row (same pattern as the Roster card's
 Starters/Bench sections) that expands into a full stat table &mdash; the
 same Comp/Att, Pass Yds, Pass TD, INT, etc. columns (plus the position's
 advanced metrics) shown on a player's season stat table, one row per
