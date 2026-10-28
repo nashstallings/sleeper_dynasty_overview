@@ -1282,30 +1282,18 @@ footer a:hover { text-decoration: underline; }
 .eval-chart-legend { display: flex; align-items: center; gap: 6px; margin-top: 10px; }
 
 .eval-matchup-team { margin: 0 0 10px; }
-.evaluator-matchup-list { display: flex; flex-direction: column; gap: 6px; }
-.evaluator-matchup-row {
-  border: 1px solid var(--panel-border);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-}
-.evaluator-matchup-row summary {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 12px;
+.evaluator-matchup-subtotal {
   cursor: pointer;
-  list-style: none;
+  font-weight: 700;
   background: var(--panel-soft);
 }
-.evaluator-matchup-row summary::-webkit-details-marker { display: none; }
-.evaluator-matchup-row summary::marker { content: ""; }
-.evaluator-matchup-row summary .player-meta { margin-left: auto; }
-.evaluator-matchup-row summary .chevron { flex-shrink: 0; color: var(--text-faint); transition: transform 0.15s ease; }
-.evaluator-matchup-row[open] summary .chevron { transform: rotate(90deg); }
+.evaluator-matchup-subtotal td { border-top: 1px solid var(--panel-border); }
+.evaluator-matchup-subtotal:hover { background: var(--panel-border); }
+.evaluator-matchup-subtotal td:first-child { display: flex; align-items: center; gap: 8px; }
+.evaluator-matchup-subtotal .chevron { flex-shrink: 0; color: var(--text-faint); transition: transform 0.15s ease; }
+.evaluator-matchup-subtotal.is-open .chevron { transform: rotate(90deg); }
 .evaluator-matchup-week { font-weight: 700; font-size: 0.88rem; }
 .evaluator-matchup-logo { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
-.evaluator-matchup-row-body { padding: 10px 12px 12px; }
-.evaluator-matchup-subtotal { font-weight: 700; background: var(--panel-soft); }
 .evaluator-matchup-player-row.is-evaluated { background: var(--accent-soft); }
 
 /* ---------- player card ---------- */

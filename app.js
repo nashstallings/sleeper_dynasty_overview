@@ -4427,62 +4427,41 @@ function evaluatorMatchupHeaderRowHtml(cols) {
   return `<tr><th>Player</th>${cells}</tr>`;
 }
 
-// Uses the same <details>/<summary> disclosure pattern as the Roster
-// card's subsections -- the browser handles open/closed state natively,
-// so nothing needs to be tracked for it to survive a re-render here.
-function evaluatorMatchupRowHtml(week, entries, isOpen, evaluatedPid, pos) {
-  const cols = statTableColumnsFor(pos);
-  const total = entries.reduce((sum, e) => sum + computeLeaguePoints(e.stats, pos), 0);
+// The always-visible row for a week -- shows the full stat line (summed
+// across whoever played that week) so the subtotal is readable without
+// expanding anything, and doubles as the toggle for that week's
+// individual player rows below it.
+function evaluatorMatchupSubtotalRowHtml(week, entries, cols, pos, isOpen) {
+  const merged = evaluatorMatchupMergedStats(entries);
   // The opponent (GB, say) is the same for every row in this whole tab --
   // the logo here should instead show whichever team's players are
   // actually summed in THIS week's subtotal (the team that played GB
   // that week), which is every entry's own .team, not .opponent.
   const logo = nflTeamLogoUrl(entries[0] && entries[0].stats.team);
-
-  let bodyHtml;
-  if (entries.length) {
-    const merged = evaluatorMatchupMergedStats(entries);
-    const subtotalCells = cols.map((c) => `<td>${statTableCellHtml(c, merged, pos)}</td>`).join("");
-    const sorted = evaluatorMatchupSortedEntries(entries, cols, pos);
-    const playerRows = sorted
-      .map((e) => {
-        const p = player(e.pid);
-        const highlight = e.pid === evaluatedPid ? " is-evaluated" : "";
-        const cells = cols.map((c) => `<td>${statTableCellHtml(c, e.stats, pos)}</td>`).join("");
-        return `
-          <tr class="evaluator-matchup-player-row${highlight}">
-            <td><span class="player-name" data-player-id="${e.pid}">${escapeHtml(playerDisplay(p))}</span> <span class="player-meta">${e.stats.team ? escapeHtml(e.stats.team) : ""}</span></td>
-            ${cells}
-          </tr>`;
-      })
-      .join("");
-    bodyHtml = `
-      <div class="table-wrap">
-        <table class="player-card-table evaluator-matchup-table">
-          <thead>${evaluatorMatchupHeaderRowHtml(cols)}</thead>
-          <tbody>
-            <tr class="evaluator-matchup-subtotal"><td>Subtotal</td>${subtotalCells}</tr>
-            ${playerRows}
-          </tbody>
-        </table>
-      </div>`;
-  } else {
-    bodyHtml = `<p class="player-meta">No players with stats this week.</p>`;
-  }
-
+  const cells = cols.map((c) => `<td>${statTableCellHtml(c, merged, pos)}</td>`).join("");
   return `
-    <details class="evaluator-matchup-row" data-matchupweek="${week}"${isOpen ? " open" : ""}>
-      <summary>
-        ${logo ? `<img class="evaluator-matchup-logo" src="${logo}" alt="" onerror="this.remove()" />` : ""}
-        <span class="evaluator-matchup-week">Week ${week}</span>
-        <span class="player-meta">${entries.length} player${entries.length === 1 ? "" : "s"}</span>
-        <span class="value-tag">${fmtPpr(total)}</span>
+    <tr class="evaluator-matchup-subtotal${isOpen ? " is-open" : ""}" data-matchupweek="${week}">
+      <td>
         <svg class="chevron" viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden="true">
           <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-      </summary>
-      <div class="evaluator-matchup-row-body">${bodyHtml}</div>
-    </details>`;
+        ${logo ? `<img class="evaluator-matchup-logo" src="${logo}" alt="" onerror="this.remove()" />` : ""}
+        <span class="evaluator-matchup-week">Week ${week}</span>
+      </td>
+      ${cells}
+    </tr>`;
+}
+
+// Only shown once its week's subtotal row is expanded.
+function evaluatorMatchupPlayerRowHtml(entry, cols, pos, evaluatedPid, week, isOpen) {
+  const p = player(entry.pid);
+  const highlight = entry.pid === evaluatedPid ? " is-evaluated" : "";
+  const cells = cols.map((c) => `<td>${statTableCellHtml(c, entry.stats, pos)}</td>`).join("");
+  return `
+    <tr class="evaluator-matchup-player-row${highlight}${isOpen ? "" : " hidden"}" data-matchupweek="${week}">
+      <td><span class="player-name" data-player-id="${entry.pid}">${escapeHtml(playerDisplay(p))}</span> <span class="player-meta">${entry.stats.team ? escapeHtml(entry.stats.team) : ""}</span></td>
+      ${cells}
+    </tr>`;
 }
 
 function evaluatorMatchupHtml(pid, pos) {
@@ -4514,19 +4493,34 @@ function evaluatorMatchupHtml(pid, pos) {
   }
 
   const latestWeek = weeks[weeks.length - 1];
-  // Tracked explicitly (rather than relying on <details>'s native open
-  // state) because sorting re-renders this whole list -- without this,
-  // a week the user expanded would snap back shut the moment they
-  // clicked a column header elsewhere. Defaults to just the latest week
-  // the first time this player/opponent is shown.
+  // Tracked explicitly rather than relying on anything native, since
+  // sorting re-renders this whole table -- without this, a week the user
+  // expanded would snap back shut the moment they clicked a column
+  // header elsewhere. Defaults to just the latest week the first time
+  // this player/opponent is shown.
   if (!state.evaluatorMatchupOpenWeeks) state.evaluatorMatchupOpenWeeks = new Set([latestWeek]);
+
+  const cols = statTableColumnsFor(pos);
   const rows = weeks
-    .map((w) => evaluatorMatchupRowHtml(w, evaluatorMatchupWeekEntriesAgainst(pos, opponent, season, w), state.evaluatorMatchupOpenWeeks.has(w), pid, pos))
+    .map((w) => {
+      const entries = evaluatorMatchupWeekEntriesAgainst(pos, opponent, season, w);
+      const isOpen = state.evaluatorMatchupOpenWeeks.has(w);
+      const subtotalRow = evaluatorMatchupSubtotalRowHtml(w, entries, cols, pos, isOpen);
+      const playerRows = evaluatorMatchupSortedEntries(entries, cols, pos)
+        .map((e) => evaluatorMatchupPlayerRowHtml(e, cols, pos, pid, w, isOpen))
+        .join("");
+      return subtotalRow + playerRows;
+    })
     .join("");
 
   return `
     <p class="player-meta eval-matchup-team">Week ${state.currentWeek} vs ${escapeHtml(opponent)} &middot; how ${pos}s have fared against them this season</p>
-    <div class="evaluator-matchup-list">${rows}</div>`;
+    <div class="table-wrap">
+      <table class="player-card-table evaluator-matchup-table">
+        <thead>${evaluatorMatchupHeaderRowHtml(cols)}</thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
 }
 
 function evaluatorDetailTabsHtml(activeTab) {
@@ -4572,28 +4566,18 @@ function setupEvaluatorSeasonTabs() {
       const current = evaluatorMatchupSort();
       state.evaluatorMatchupSort = { id, dir: current.id === id && current.dir === "desc" ? "asc" : "desc" };
       renderEvaluatorWeekly(state.evaluatorPid, playerPosition(player(state.evaluatorPid)));
+      return;
+    }
+
+    const subtotalRow = e.target.closest("#evaluator-weekly-card .evaluator-matchup-subtotal");
+    if (subtotalRow && state.evaluatorPid) {
+      const week = Number(subtotalRow.dataset.matchupweek);
+      if (!state.evaluatorMatchupOpenWeeks) state.evaluatorMatchupOpenWeeks = new Set();
+      if (state.evaluatorMatchupOpenWeeks.has(week)) state.evaluatorMatchupOpenWeeks.delete(week);
+      else state.evaluatorMatchupOpenWeeks.add(week);
+      renderEvaluatorWeekly(state.evaluatorPid, playerPosition(player(state.evaluatorPid)));
     }
   });
-
-  // The "toggle" event (fired whenever a <details> opens or closes,
-  // including a plain user click on its <summary>) doesn't bubble, so
-  // this has to listen during the capture phase to catch it via
-  // delegation. Keeps evaluatorMatchupOpenWeeks in sync with whatever
-  // the user has actually expanded, so a later re-render (e.g. from
-  // clicking a sort column) can preserve it instead of collapsing
-  // everything back to just the latest week.
-  document.addEventListener(
-    "toggle",
-    (e) => {
-      const details = e.target;
-      if (!details.matches || !details.matches(".evaluator-matchup-row")) return;
-      const week = Number(details.dataset.matchupweek);
-      if (!state.evaluatorMatchupOpenWeeks) state.evaluatorMatchupOpenWeeks = new Set();
-      if (details.open) state.evaluatorMatchupOpenWeeks.add(week);
-      else state.evaluatorMatchupOpenWeeks.delete(week);
-    },
-    true
-  );
 }
 
 // ---------- tabs ----------
