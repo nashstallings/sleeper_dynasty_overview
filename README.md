@@ -49,7 +49,9 @@ football account and helps you:
 - **Evaluate any player** &mdash; a Player Evaluator tab lets you search any
   QB/RB/WR/TE in the league (not just players in your league) and see their
   season-by-season stat line for the last 5 seasons plus a week-by-week
-  scoring chart and table for each of those seasons.
+  scoring chart and table for each of those seasons, with a Matchup sub-tab
+  showing how their whole position group on their fantasy team has scored
+  week by week this season.
 - **See who actually produced each week** &mdash; a Performers tab shows,
   for any regular-season week, the top Total Points scorers and the top
   Points Above Expected performers (actual points minus Sleeper's own
@@ -542,6 +544,27 @@ written without the ability to run a live query against BigQuery in the
 authoring session &mdash; the query mirrors the season-stats script closely
 enough that it should hold up, but if the scheduled workflow fails, check
 its logs before assuming the underlying data is unavailable.
+
+### Matchup sub-tab
+
+The weekly card below a selected player splits into two sub-tabs:
+**Weekly Scoring** (the chart and table above) and **Matchup**. Matchup
+answers a different question than the player's own week-by-week line: how
+has their whole *position group* on their fantasy team been performing
+this season? If the selected player isn't on a roster in your league (a
+free agent), it says so instead of showing anything &mdash; there's no
+team to group by.
+
+Otherwise it finds the player's current fantasy team, filters that
+roster down to every player (starter or bench) at the same position, and
+shows one row per week played so far this season &mdash; the whole
+group's combined points that week, using the same league-scored weekly
+data as the chart above. Expanding a week (a plain disclosure row, same
+pattern as the Roster card's Starters/Bench sections) breaks the total
+down into each contributing player and their individual points that
+week, ranked highest to lowest; the player you searched for is
+highlighted so it's easy to spot them in the group. The most recent week
+starts expanded, every earlier week starts collapsed.
 
 ## How Top Performers works
 

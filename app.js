@@ -107,6 +107,7 @@ const state = {
   tradeCalcItemsB: [],
   evaluatorPid: null,
   evaluatorSeason: null,
+  evaluatorDetailTab: "weekly",
   playerWeeklyStats: null,
   outlookView: "quadrants",
   outlookRows: null,
@@ -4084,6 +4085,7 @@ function setupEvaluatorSearch() {
       suggestions.innerHTML = "";
       state.evaluatorPid = pid;
       state.evaluatorSeason = null;
+      state.evaluatorDetailTab = "weekly";
       renderEvaluatorDetail(pid);
       return;
     }
@@ -4129,7 +4131,6 @@ async function renderEvaluatorDetail(pid) {
       </div>
     </div>
     <div class="card" id="evaluator-weekly-card">
-      <h3>Weekly Scoring</h3>
       <p class="spinner-note">Loading weekly stats...</p>
     </div>`;
 
@@ -4258,33 +4259,149 @@ function evaluatorSeasonTabsHtml(seasons, activeSeason) {
     .join("");
 }
 
-function renderEvaluatorWeekly(pid, pos, container = document.getElementById("evaluator-weekly-card")) {
-  if (!container) return;
-
+function evaluatorWeeklyScoringBodyHtml(pid, pos) {
   const seasons = evaluatorSeasonsForPlayer(pid);
   if (!seasons.length) {
-    container.innerHTML = `<h3>Weekly Scoring</h3><p class="player-meta">No weekly stats available for this player.</p>`;
-    return;
+    return `<p class="player-meta">No weekly stats available for this player.</p>`;
   }
   if (!state.evaluatorSeason || !seasons.includes(state.evaluatorSeason)) {
     state.evaluatorSeason = seasons[0];
   }
   const weeksObj = state.playerWeeklyStats.players[pid].weeks[state.evaluatorSeason] || {};
 
-  container.innerHTML = `
-    <h3>Weekly Scoring</h3>
+  return `
     <div class="sub-tab-nav">${evaluatorSeasonTabsHtml(seasons, state.evaluatorSeason)}</div>
     ${evaluatorWeeklyChartHtml(weeksObj, pos)}
     ${evaluatorWeeklyTableHtml(weeksObj, pos)}`;
+}
+
+// ---------- Evaluator: Matchup (team's weekly position-group totals) ----------
+
+function evaluatorMatchupRosterFor(pid) {
+  return state.rosters.find((r) => (r.players || []).includes(pid)) || null;
+}
+
+// Every week this season that's actually been played so far, i.e. any
+// week at least one of the roster's players at this position has a
+// stored stat line for -- ascending, same order as the weekly table.
+function evaluatorMatchupWeeks(roster, pos, season) {
+  const data = state.playerWeeklyStats;
+  if (!data || !data.players) return [];
+  const posPids = (roster.players || []).filter((rpid) => playerPosition(player(rpid)) === pos);
+  const weekSet = new Set();
+  posPids.forEach((rpid) => {
+    const weeks = data.players[rpid] && data.players[rpid].weeks && data.players[rpid].weeks[season];
+    if (weeks) Object.keys(weeks).forEach((w) => weekSet.add(Number(w)));
+  });
+  return [...weekSet].sort((a, b) => a - b);
+}
+
+// Each of the roster's players at this position who has a stat line for
+// the given week, scored with this league's own settings -- highest
+// points first, so the breakdown reads like a leaderboard.
+function evaluatorMatchupWeekEntries(roster, pos, season, week) {
+  const data = state.playerWeeklyStats;
+  const posPids = (roster.players || []).filter((rpid) => playerPosition(player(rpid)) === pos);
+  const entries = [];
+  posPids.forEach((rpid) => {
+    const weekStats = data.players[rpid] && data.players[rpid].weeks[season] && data.players[rpid].weeks[season][week];
+    if (!weekStats) return;
+    entries.push({ pid: rpid, points: computeLeaguePoints(weekStats, pos), opponent: weekStats.opponent });
+  });
+  entries.sort((a, b) => b.points - a.points);
+  return entries;
+}
+
+// Uses the same <details>/<summary> disclosure pattern as the Roster
+// card's subsections -- the browser handles open/closed state natively,
+// so nothing needs to be tracked for it to survive a re-render here.
+function evaluatorMatchupRowHtml(week, entries, isLatest, evaluatedPid) {
+  const total = entries.reduce((sum, e) => sum + e.points, 0);
+  const detailRows = entries.length
+    ? entries
+        .map((e) => {
+          const p = player(e.pid);
+          const highlight = e.pid === evaluatedPid ? " is-evaluated" : "";
+          return `
+            <div class="evaluator-matchup-player${highlight}">
+              <span class="player-name" data-player-id="${e.pid}">${escapeHtml(playerDisplay(p))}</span>
+              <span class="player-meta">${e.opponent ? `@${escapeHtml(e.opponent)}` : "&mdash;"}</span>
+              <span class="value-tag">${fmtPpr(e.points)}</span>
+            </div>`;
+        })
+        .join("")
+    : `<p class="player-meta">No players with stats this week.</p>`;
+
+  return `
+    <details class="evaluator-matchup-row"${isLatest ? " open" : ""}>
+      <summary>
+        <span class="evaluator-matchup-week">Week ${week}</span>
+        <span class="player-meta">${entries.length} player${entries.length === 1 ? "" : "s"}</span>
+        <span class="value-tag">${fmtPpr(total)}</span>
+        <svg class="chevron" viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden="true">
+          <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="evaluator-matchup-row-body">${detailRows}</div>
+    </details>`;
+}
+
+function evaluatorMatchupHtml(pid, pos) {
+  const roster = evaluatorMatchupRosterFor(pid);
+  if (!roster) {
+    return emptyState("This player isn't on a team in your league, so there's no matchup history to show.");
+  }
+  const season = state.league && state.league.season;
+  const weeks = evaluatorMatchupWeeks(roster, pos, season);
+  if (!weeks.length) {
+    return emptyState(`No ${pos} weekly data for ${escapeHtml(rosterLabel(roster))} yet this season.`);
+  }
+
+  const latestWeek = weeks[weeks.length - 1];
+  const rows = weeks
+    .map((w) => evaluatorMatchupRowHtml(w, evaluatorMatchupWeekEntries(roster, pos, season, w), w === latestWeek, pid))
+    .join("");
+
+  return `
+    <p class="player-meta eval-matchup-team">${escapeHtml(rosterLabel(roster))} &middot; ${pos} weekly totals</p>
+    <div class="evaluator-matchup-list">${rows}</div>`;
+}
+
+function evaluatorDetailTabsHtml(activeTab) {
+  const tabs = [
+    { key: "weekly", label: "Weekly Scoring" },
+    { key: "matchup", label: "Matchup" },
+  ];
+  return tabs
+    .map((t) => `<button type="button" class="sub-tab-btn${t.key === activeTab ? " active" : ""}" data-evaldetailtab="${t.key}">${t.label}</button>`)
+    .join("");
+}
+
+function renderEvaluatorWeekly(pid, pos, container = document.getElementById("evaluator-weekly-card")) {
+  if (!container) return;
+
+  const bodyHtml = state.evaluatorDetailTab === "matchup" ? evaluatorMatchupHtml(pid, pos) : evaluatorWeeklyScoringBodyHtml(pid, pos);
+
+  container.innerHTML = `
+    <div class="sub-tab-nav">${evaluatorDetailTabsHtml(state.evaluatorDetailTab)}</div>
+    <div id="evaluator-weekly-body">${bodyHtml}</div>`;
   refreshScrollHints();
 }
 
 function setupEvaluatorSeasonTabs() {
   document.addEventListener("click", (e) => {
-    const btn = e.target.closest("#evaluator-weekly-card .sub-tab-btn[data-evalseason]");
-    if (!btn || !state.evaluatorPid) return;
-    state.evaluatorSeason = btn.dataset.evalseason;
-    renderEvaluatorWeekly(state.evaluatorPid, playerPosition(player(state.evaluatorPid)));
+    const detailTabBtn = e.target.closest("#evaluator-weekly-card .sub-tab-btn[data-evaldetailtab]");
+    if (detailTabBtn && state.evaluatorPid) {
+      state.evaluatorDetailTab = detailTabBtn.dataset.evaldetailtab;
+      renderEvaluatorWeekly(state.evaluatorPid, playerPosition(player(state.evaluatorPid)));
+      return;
+    }
+
+    const seasonBtn = e.target.closest("#evaluator-weekly-card .sub-tab-btn[data-evalseason]");
+    if (seasonBtn && state.evaluatorPid) {
+      state.evaluatorSeason = seasonBtn.dataset.evalseason;
+      renderEvaluatorWeekly(state.evaluatorPid, playerPosition(player(state.evaluatorPid)));
+    }
   });
 }
 
