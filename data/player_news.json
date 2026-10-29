@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-29T09:14:08Z",
+  "generated_at": "2026-10-29T17:55:18Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Ja'Marr Chase",
+      "sleeper_id": "7564",
+      "gsis_id": "00-0036900",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "In uniform Thursday",
+      "description": "Chase (ankle) is in uniform for Thursday's practice, Charlie Goldsmith of Fox 19 Now Cincinnati reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
+      "pub_date": "2026-10-29T10:51:00Z"
+    },
+    {
+      "player_name": "Amon-Ra St. Brown",
+      "sleeper_id": "7547",
+      "gsis_id": "00-0036963",
+      "position": "WR",
+      "team": "DET",
+      "headline": "Returns to practice Thursday",
+      "description": "St. Brown (ankle) returned to practice Thursday, Colton Pouncy of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/amon-ra-st-brown-15332",
+      "pub_date": "2026-10-29T10:45:00Z"
+    },
+    {
+      "player_name": "Jahmyr Gibbs",
+      "sleeper_id": "9221",
+      "gsis_id": "00-0039139",
+      "position": "RB",
+      "team": "DET",
+      "headline": "Resumes practicing Thursday",
+      "description": "Gibbs (shoulder) returned to practice Thursday, Colton Pouncy of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jahmyr-gibbs-16808",
+      "pub_date": "2026-10-29T10:41:00Z"
+    },
+    {
+      "player_name": "Carnell Tate",
+      "sleeper_id": "13279",
+      "gsis_id": "00-0041438",
+      "position": "WR",
+      "team": "TEN",
+      "headline": "Won't practice Thursday",
+      "description": "Tate (shoulder) won't practice Thursday, Jim Wyatt of the Titans' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/carnell-tate-19268",
+      "pub_date": "2026-10-29T10:02:00Z"
+    },
+    {
+      "player_name": "Kenny Gainwell",
+      "sleeper_id": "7567",
+      "gsis_id": "00-0036919",
+      "position": "RB",
+      "team": "TBB",
+      "headline": "Spotted at practice Thursday",
+      "description": "Gainwell (hip) returned to practice Thursday, Rick Stroud of the Tampa Bay Times reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenny-gainwell-15222",
+      "pub_date": "2026-10-29T09:37:00Z"
+    },
     {
       "player_name": "Ja'Marr Chase",
       "sleeper_id": "7564",
@@ -14006,72 +14061,6 @@
       "description": "Worthy is believed to avoided a serious shoulder injury that he sustained during the final session of Saturday's training camp practice, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/xavier-worthy-17687",
       "pub_date": "2026-08-01T01:26:00Z"
-    },
-    {
-      "player_name": "Drake Maye",
-      "sleeper_id": "11564",
-      "gsis_id": "00-0039851",
-      "position": "QB",
-      "team": "NEP",
-      "headline": "Connecting with Brown in practice",
-      "description": "Maye was sharp at Friday's practice, which he started off with a long touchdown pass to A.J. Brown on the first play of the 11-on-11 period, Paul Perillo of the Patriots' official site reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/drake-maye-17673",
-      "pub_date": "2026-07-31T12:38:00Z"
-    },
-    {
-      "player_name": "A.J. Brown",
-      "sleeper_id": "5859",
-      "gsis_id": "00-0035676",
-      "position": "WR",
-      "team": "NEP",
-      "headline": "Building connection with Maye",
-      "description": "After the connection between Brown and QB Drake Maye got off to a slow start in training camp, Paul Perillo of the Patriots' official site notes that \"there have been some serious signs of life since the pads came on Thursday morning.\" Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
-      "pub_date": "2026-07-31T12:35:00Z"
-    },
-    {
-      "player_name": "Ricky Pearsall",
-      "sleeper_id": "11638",
-      "gsis_id": "00-0039916",
-      "position": "WR",
-      "team": "SFO",
-      "headline": "Knee injury being evaluated",
-      "description": "San Francisco assistant head coach Chris Foerster said Friday that the team is \"continuing to evaluate\" Pearsall (knee) after the wide receiver aggravated the PCL issue in his right knee during early training camp practices, Matt Barrows of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/ricky-pearsall-17761",
-      "pub_date": "2026-07-31T12:11:00Z"
-    },
-    {
-      "player_name": "Rashee Rice",
-      "sleeper_id": "10229",
-      "gsis_id": "00-0039067",
-      "position": "WR",
-      "team": "KCC",
-      "headline": "Easing back in",
-      "description": "Rice (knee) is being eased back into the mix during training camp, Jesse Newell of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/rashee-rice-16963",
-      "pub_date": "2026-07-31T10:59:00Z"
-    },
-    {
-      "player_name": "Tua Tagovailoa",
-      "sleeper_id": "6768",
-      "gsis_id": "00-0036212",
-      "position": "QB",
-      "team": "ATL",
-      "headline": "Full return TBD",
-      "description": "Tagovailoa (back) did not take part in team drills Friday due to a \"precautionary thing\" related to back tightness and said he is unsure when he will be fully cleared for on-field activities, Marc Raimondi of ESPN reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/tua-tagovailoa-14465",
-      "pub_date": "2026-07-31T10:16:00Z"
-    },
-    {
-      "player_name": "Quinshon Judkins",
-      "sleeper_id": "12512",
-      "gsis_id": "00-0040784",
-      "position": "RB",
-      "team": "CLE",
-      "headline": "Praised by RB coach",
-      "description": "Browns running backs coach Duce Staley said Friday that the \"sky's the limit\" for Judkins, Scott Petrak of the Elyria Chronicle-Telegram reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/quinshon-judkins-18516",
-      "pub_date": "2026-07-31T09:31:00Z"
     }
   ]
 }
