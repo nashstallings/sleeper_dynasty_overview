@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T04:01:10Z",
+  "generated_at": "2026-10-30T11:59:41Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Gainwell (hip) returned to practice Thursday, Rick Stroud of the Tampa Bay Times reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/kenny-gainwell-15222",
       "pub_date": "2026-10-29T09:37:00Z"
+    },
+    {
+      "player_name": "Jalen Coker",
+      "sleeper_id": "11646",
+      "gsis_id": "00-0039491",
+      "position": "WR",
+      "team": "CAR",
+      "headline": "Salvages night with TD in loss",
+      "description": "Coker secured two of five targets for 37 yards and a touchdown in the Panthers' 27-19 loss to the Packers on Thursday. He also lost a fumble. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jalen-coker-17976",
+      "pub_date": "2026-10-29T09:23:00Z"
+    },
+    {
+      "player_name": "Jordan Love",
+      "sleeper_id": "6804",
+      "gsis_id": "00-0036264",
+      "position": "QB",
+      "team": "GBP",
+      "headline": "Stays hot in Week 9 win",
+      "description": "Love completed 30 of 41 passes for 288 yards with three touchdowns and one interception and recovered a fumble in the Packers' 27-19 win over the Panthers on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordan-love-14371",
+      "pub_date": "2026-10-29T09:18:00Z"
+    },
+    {
+      "player_name": "Bryce Young",
+      "sleeper_id": "9228",
+      "gsis_id": "00-0039150",
+      "position": "QB",
+      "team": "CAR",
+      "headline": "Struggles again in defeat",
+      "description": "Young completed 23 of 41 passes for 209 yards with one touchdown and one interception in the Panthers' 27-19 loss to the Packers on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bryce-young-16807",
+      "pub_date": "2026-10-29T09:10:00Z"
+    },
+    {
+      "player_name": "Christian Watson",
+      "sleeper_id": "8167",
+      "gsis_id": "00-0038124",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Suffers broken rib Thursday",
+      "description": "Watson said he suffered a broken rib in Thursday night's 27-19 win over the Panthers, Rob Demovsky of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/christian-watson-15946",
+      "pub_date": "2026-10-29T09:06:00Z"
+    },
+    {
+      "player_name": "Tucker Kraft",
+      "sleeper_id": "9484",
+      "gsis_id": "00-0038996",
+      "position": "TE",
+      "team": "GBP",
+      "headline": "Back in end zone during win",
+      "description": "Kraft secured all six targets for 53 yards and a touchdown in the Packers' 27-19 win over the Panthers on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tucker-kraft-16649",
+      "pub_date": "2026-10-29T09:04:00Z"
     },
     {
       "player_name": "Matthew Golden",
@@ -14083,72 +14138,6 @@
       "description": "Allen was diagnosed with a shin bruise on his left leg that he suffered during Saturday's training camp practice, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/cyrus-allen-19631",
       "pub_date": "2026-08-01T12:25:00Z"
-    },
-    {
-      "player_name": "De'Zhaun Stribling",
-      "sleeper_id": "13417",
-      "gsis_id": "00-0041035",
-      "position": "WR",
-      "team": "SFO",
-      "headline": "Nursing hamstring tightness",
-      "description": "Stribling will not participate in Saturday's training camp practice due to hamstring tightness, David Lombardi of SFStandard.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/dezhaun-stribling-19330",
-      "pub_date": "2026-08-01T10:40:00Z"
-    },
-    {
-      "player_name": "Xavier Worthy",
-      "sleeper_id": "11624",
-      "gsis_id": "00-0039894",
-      "position": "WR",
-      "team": "KCC",
-      "headline": "Exits practice with shoulder injury",
-      "description": "Worthy left Saturday's training camp practice due to a shoulder injury, Jesse Newell of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/xavier-worthy-17687",
-      "pub_date": "2026-08-01T10:36:00Z"
-    },
-    {
-      "player_name": "Cyrus Allen",
-      "sleeper_id": "13413",
-      "gsis_id": "00-0040890",
-      "position": "WR",
-      "team": "KCC",
-      "headline": "Evaluated for lower-leg injury",
-      "description": "Allen is being evaluated for a left lower-leg injury that he sustained during Saturday's training camp practice, Pete Sweeney of The Kansas City Star reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/cyrus-allen-19631",
-      "pub_date": "2026-08-01T10:32:00Z"
-    },
-    {
-      "player_name": "De'Zhaun Stribling",
-      "sleeper_id": "13417",
-      "gsis_id": "00-0041035",
-      "position": "WR",
-      "team": "SFO",
-      "headline": "Set for expanded role sans Pearsall",
-      "description": "Stribling will have the opportunity to earn an expanded role in the 49ers' offense after Ricky Pearsall (knee) was placed on injured reserve Saturday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/dezhaun-stribling-19330",
-      "pub_date": "2026-08-01T09:59:00Z"
-    },
-    {
-      "player_name": "Ricky Pearsall",
-      "sleeper_id": "11638",
-      "gsis_id": "00-0039916",
-      "position": "WR",
-      "team": "SFO",
-      "headline": "Undergoing season-ending surgery",
-      "description": "Pearsall was placed on injured reserve Saturday and will undergo season-ending PCL surgery on his right knee, Cam Inman of The San Jose Mercury News reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/ricky-pearsall-17761",
-      "pub_date": "2026-08-01T09:52:00Z"
-    },
-    {
-      "player_name": "Cyrus Allen",
-      "sleeper_id": "13413",
-      "gsis_id": "00-0040890",
-      "position": "WR",
-      "team": "KCC",
-      "headline": "Carted off field with knee injury",
-      "description": "Allen was carted off the field during Saturday's training camp practice due to an apparent left knee injury, Nate Taylor of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/cyrus-allen-19631",
-      "pub_date": "2026-08-01T08:18:00Z"
     }
   ]
 }
