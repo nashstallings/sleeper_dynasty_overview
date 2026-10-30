@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-10-30T11:59:41Z",
+  "generated_at": "2026-10-30T17:55:29Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Dalton Kincaid",
+      "sleeper_id": "10236",
+      "gsis_id": "00-0038933",
+      "position": "TE",
+      "team": "BUF",
+      "headline": "Listed as questionable for Sunday",
+      "description": "Kincaid (chest) is listed as questionable for Sunday's game against the Ravens, Katherine Fitzgerald of The Buffalo News reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dalton-kincaid-16697",
+      "pub_date": "2026-10-30T10:49:00Z"
+    },
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "In line to play Sunday",
+      "description": "Coach Mike LaFleur said Friday that Love (ankle) is expected to play in Sunday's game against the Cowboys, Darren Urban of the Cardinals' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-10-30T10:47:00Z"
+    },
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Questionable for Week 8",
+      "description": "Moore (shoulder) is questionable for Sunday's game against the Ravens, Katherine Fitzgerald of The Buffalo News reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-10-30T10:46:00Z"
+    },
+    {
+      "player_name": "Lamar Jackson",
+      "sleeper_id": "4881",
+      "gsis_id": "00-0034796",
+      "position": "QB",
+      "team": "BAL",
+      "headline": "Will play Sunday",
+      "description": "Ravens coach Jesse Minter confirmed Friday that Jackson (ankle) will play in Sunday's game at Buffalo, Brian Wacker of The Baltimore Sun reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/lamar-jackson-12561",
+      "pub_date": "2026-10-30T10:36:00Z"
+    },
+    {
+      "player_name": "A.J. Brown",
+      "sleeper_id": "5859",
+      "gsis_id": "00-0035676",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Listed as questionable for Week 8",
+      "description": "Brown (ankle/knee) is questionable for Sunday's game at Miami, Evan Lazar of the Patriots' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
+      "pub_date": "2026-10-30T10:14:00Z"
+    },
     {
       "player_name": "Ja'Marr Chase",
       "sleeper_id": "7564",
@@ -14127,17 +14182,6 @@
       "description": "Rodriguez (foot) participated in team drills during Sunday's training camp practice, John Shipley of SI.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/chris-rodriguez-16933",
       "pub_date": "2026-08-02T09:15:00Z"
-    },
-    {
-      "player_name": "Cyrus Allen",
-      "sleeper_id": "13413",
-      "gsis_id": "00-0040890",
-      "position": "WR",
-      "team": "KCC",
-      "headline": "Diagnosed with shin bruise",
-      "description": "Allen was diagnosed with a shin bruise on his left leg that he suffered during Saturday's training camp practice, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/cyrus-allen-19631",
-      "pub_date": "2026-08-01T12:25:00Z"
     }
   ]
 }
