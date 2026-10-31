@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T20:53:51Z",
+  "generated_at": "2026-10-31T23:54:41Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -47,6 +47,17 @@
       "description": "Taylor is being made available via trade by the Colts, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jonathan-taylor-14455",
       "pub_date": "2026-10-31T05:04:00Z"
+    },
+    {
+      "player_name": "Rashid Shaheed",
+      "sleeper_id": "8676",
+      "gsis_id": "00-0037545",
+      "position": "WR",
+      "team": "SEA",
+      "headline": "Ruled out for MNF",
+      "description": "Shaheed (knee) has been ruled out for Monday's game against the Bears, Curtis Crabtree of FOX 13 Seattle reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rashid-shaheed-16560",
+      "pub_date": "2026-10-31T01:53:00Z"
     },
     {
       "player_name": "Jadarian Price",
