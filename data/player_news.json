@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T19:19:30Z",
+  "generated_at": "2026-11-02T00:09:56Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -80,6 +80,61 @@
       "description": "Waddle (chest) is trending in a positive direction for Sunday's game against the Chiefs, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jaylen-waddle-15404",
       "pub_date": "2026-11-01T04:18:00Z"
+    },
+    {
+      "player_name": "Trey McBride",
+      "sleeper_id": "8130",
+      "gsis_id": "00-0037744",
+      "position": "TE",
+      "team": "ARI",
+      "headline": "Another productive performance",
+      "description": "McBride hauled in seven of eight targets for 72 yards and one touchdown during Sunday's 33-30 overtime victory at Dallas. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/trey-mcbride-15902",
+      "pub_date": "2026-11-01T03:48:00Z"
+    },
+    {
+      "player_name": "Tyler Huntley",
+      "sleeper_id": "7083",
+      "gsis_id": "00-0035993",
+      "position": "QB",
+      "team": "BAL",
+      "headline": "May have turf-toe injury",
+      "description": "Huntley sustained what could be a turf-toe injury during Sunday's 36-10 loss at Buffalo, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyler-huntley-14563",
+      "pub_date": "2026-11-01T03:38:00Z"
+    },
+    {
+      "player_name": "Chase Brown",
+      "sleeper_id": "9224",
+      "gsis_id": "00-0038597",
+      "position": "RB",
+      "team": "CIN",
+      "headline": "Solid all-around day in OT win",
+      "description": "Brown rushed 12 times for 55 yards and brought in eight of nine targets for 46 yards in the Bengals' 43-36 overtime win over the Titans on Sunday. He also lost a fumble. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chase-brown-16934",
+      "pub_date": "2026-11-01T03:38:00Z"
+    },
+    {
+      "player_name": "Harold Fannin Jr.",
+      "sleeper_id": "12506",
+      "gsis_id": "00-0040663",
+      "position": "TE",
+      "team": "CLE",
+      "headline": "Career-best day in loss",
+      "description": "Fannin brought in 10 of 12 targets for 154 yards in the Browns' 27-6 loss to the Steelers on Sunday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/harold-fannin-18472",
+      "pub_date": "2026-11-01T03:32:00Z"
+    },
+    {
+      "player_name": "Jaylen Warren",
+      "sleeper_id": "8228",
+      "gsis_id": "00-0037228",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "Ties career high in rushing yards",
+      "description": "Warren rushed 17 times for 143 yards and a touchdown and brought in one of two targets for no gain in the Steelers' 27-6 win over the Browns on Sunday. He also fumbled once but recovered. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-warren-15984",
+      "pub_date": "2026-11-01T03:28:00Z"
     },
     {
       "player_name": "Colston Loveland",
