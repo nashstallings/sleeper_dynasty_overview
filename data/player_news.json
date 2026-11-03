@@ -1,9 +1,53 @@
 {
-  "generated_at": "2026-11-03T13:29:04Z",
+  "generated_at": "2026-11-03T20:44:43Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Bound for IR with high-ankle sprain",
+      "description": "Love was diagnosed Tuesday with a right high-ankle sprain, which is expected to send him to injured reserve and keep him out for 4-to-5 weeks, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-11-03T10:58:00Z"
+    },
+    {
+      "player_name": "Joe Fagnano",
+      "sleeper_id": "13350",
+      "gsis_id": "00-0040981",
+      "position": "QB",
+      "team": "BAL",
+      "headline": "Practicing with 'significant' brace",
+      "description": "Fagnano practiced Tuesday \"with a significant guard/brace on his right ankle,\" Jeff Zrebiec of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/joe-fagnano-19428",
+      "pub_date": "2026-11-03T10:53:00Z"
+    },
+    {
+      "player_name": "Bhayshul Tuten",
+      "sleeper_id": "12490",
+      "gsis_id": "00-0040719",
+      "position": "RB",
+      "team": "JAC",
+      "headline": "Not spotted at practice",
+      "description": "Tuten (ankle/foot) was not spotted during the portion of Tuesday's practice open to the media, according to Michael DiRocco of ESPN.com. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bhayshul-tuten-18524",
+      "pub_date": "2026-11-03T10:17:00Z"
+    },
+    {
+      "player_name": "Hunter Henry",
+      "sleeper_id": "3214",
+      "gsis_id": "00-0033090",
+      "position": "TE",
+      "team": "NEP",
+      "headline": "Status uncertain for Week 9",
+      "description": "Patriots head coach Mike Vrabel said Monday that he had no update on Henry's (foot) status heading into Sunday's game against the Packers, Karen Guregian of MassLive.com reports. \"I don't have any expectations yet,\" Vrabel said of Henry. \"It's kind of how he responds here. He wasn't able to finish the [Week 8] game. So we'll see where he is, and I know Hunter will do everything he can to get back to help us.\" Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/hunter-henry-10735",
+      "pub_date": "2026-11-03T07:14:00Z"
+    },
     {
       "player_name": "Christian Watson",
       "sleeper_id": "8167",
