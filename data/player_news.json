@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T20:44:43Z",
+  "generated_at": "2026-11-04T00:59:51Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -47,6 +47,61 @@
       "description": "Patriots head coach Mike Vrabel said Monday that he had no update on Henry's (foot) status heading into Sunday's game against the Packers, Karen Guregian of MassLive.com reports. \"I don't have any expectations yet,\" Vrabel said of Henry. \"It's kind of how he responds here. He wasn't able to finish the [Week 8] game. So we'll see where he is, and I know Hunter will do everything he can to get back to help us.\" Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/hunter-henry-10735",
       "pub_date": "2026-11-03T07:14:00Z"
+    },
+    {
+      "player_name": "Tyler Allgeier",
+      "sleeper_id": "8132",
+      "gsis_id": "00-0037263",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Set for lead-back duties",
+      "description": "Allgeier is slated to work as Arizona's No. 1 running back for at least the next four weeks after Jeremiyah Love (ankle) was placed on injured reserve Tuesday, Darren Urban of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyler-allgeier-15976",
+      "pub_date": "2026-11-03T04:18:00Z"
+    },
+    {
+      "player_name": "Jakobi Meyers",
+      "sleeper_id": "5947",
+      "gsis_id": "00-0034960",
+      "position": "WR",
+      "team": "JAC",
+      "headline": "Remains limited in Tuesday's practice",
+      "description": "Meyers (hamstring/ankle) was listed as a limited participant in Tuesday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jakobi-meyers-13517",
+      "pub_date": "2026-11-03T01:57:00Z"
+    },
+    {
+      "player_name": "Chris Rodriguez Jr.",
+      "sleeper_id": "10219",
+      "gsis_id": "00-0038611",
+      "position": "RB",
+      "team": "JAC",
+      "headline": "Limited in Tuesday's practice",
+      "description": "Rodriguez (hand) was listed as a limited participant in Tuesday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chris-rodriguez-16933",
+      "pub_date": "2026-11-03T01:54:00Z"
+    },
+    {
+      "player_name": "Bhayshul Tuten",
+      "sleeper_id": "12490",
+      "gsis_id": "00-0040719",
+      "position": "RB",
+      "team": "JAC",
+      "headline": "Sits out Tuesday's practice",
+      "description": "The Jaguars listed Tuten (ankle/foot) as a non-participant in Tuesday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bhayshul-tuten-18524",
+      "pub_date": "2026-11-03T01:49:00Z"
+    },
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Hits IR, out 4-to-5 weeks",
+      "description": "Arizona placed Love (ankle) on injured reserve Tuesday, Darren Urban of the Cardinals' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-11-03T01:14:00Z"
     },
     {
       "player_name": "Christian Watson",
