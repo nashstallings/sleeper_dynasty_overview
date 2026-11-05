@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T19:14:52Z",
+  "generated_at": "2026-11-05T01:14:48Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Skattebo (hamstring) didn't take part in Wednesday's practice and instead was seen working with a trainer on the side, Jordan Raanan of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/cam-skattebo-18514",
       "pub_date": "2026-11-04T10:45:00Z"
+    },
+    {
+      "player_name": "Matthew Stafford",
+      "sleeper_id": "421",
+      "gsis_id": "00-0026498",
+      "position": "QB",
+      "team": "LAR",
+      "headline": "Practices fully Wednesday",
+      "description": "Stafford (right elbow) was a full participant in Wednesday's practice, Sarah Barshop of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/matthew-stafford-5971",
+      "pub_date": "2026-11-04T04:36:00Z"
+    },
+    {
+      "player_name": "DeVonta Smith",
+      "sleeper_id": "7525",
+      "gsis_id": "00-0036912",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "No practice Wednesday",
+      "description": "Smith (hamstring) didn't practice Wednesday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
+      "pub_date": "2026-11-04T03:26:00Z"
+    },
+    {
+      "player_name": "Saquon Barkley",
+      "sleeper_id": "4866",
+      "gsis_id": "00-0034844",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Doesn't practice Wednesday",
+      "description": "Barkley (hamstring/back) officially didn't practice Wednesday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
+      "pub_date": "2026-11-04T03:21:00Z"
+    },
+    {
+      "player_name": "Michael Wilson",
+      "sleeper_id": "10232",
+      "gsis_id": "00-0038559",
+      "position": "WR",
+      "team": "ARI",
+      "headline": "Wearing non-contact jersey at practice",
+      "description": "Wilson (ribs) wore a yellow non-contact jersey at Wednesday's practice, Bo Brack of GoPHNX.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-wilson-16957",
+      "pub_date": "2026-11-04T02:35:00Z"
+    },
+    {
+      "player_name": "Denzel Boston",
+      "sleeper_id": "13346",
+      "gsis_id": "00-0041037",
+      "position": "WR",
+      "team": "CLE",
+      "headline": "Limited by calf injury Wednesday",
+      "description": "Boston was a limited participant in Wednesday's practice due to a calf injury, Scott Petrak of the Elyria Chronicle-Telegram reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/denzel-boston-19298",
+      "pub_date": "2026-11-04T02:25:00Z"
     },
     {
       "player_name": "Jeremiyah Love",
