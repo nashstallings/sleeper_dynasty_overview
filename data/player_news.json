@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T01:14:48Z",
+  "generated_at": "2026-11-05T10:13:06Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,50 @@
       "description": "Skattebo (hamstring) didn't take part in Wednesday's practice and instead was seen working with a trainer on the side, Jordan Raanan of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/cam-skattebo-18514",
       "pub_date": "2026-11-04T10:45:00Z"
+    },
+    {
+      "player_name": "Michael Wilson",
+      "sleeper_id": "10232",
+      "gsis_id": "00-0038559",
+      "position": "WR",
+      "team": "ARI",
+      "headline": "Stays limited Wednesday",
+      "description": "Wilson (rest/ribs) practiced in a limited capacity Wednesday, Theo Mackie of The Arizona Republic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-wilson-16957",
+      "pub_date": "2026-11-04T06:25:00Z"
+    },
+    {
+      "player_name": "Drew Lock",
+      "sleeper_id": "5854",
+      "gsis_id": "00-0035704",
+      "position": "QB",
+      "team": "SEA",
+      "headline": "Listed as limited Wednesday",
+      "description": "Lock (right elbow) was limited at Wednesday's walkthrough, John Boyle of the Seahawks' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/drew-lock-13736",
+      "pub_date": "2026-11-04T06:22:00Z"
+    },
+    {
+      "player_name": "Kenny Gainwell",
+      "sleeper_id": "7567",
+      "gsis_id": "00-0036919",
+      "position": "RB",
+      "team": "TBB",
+      "headline": "Limited Wednesday",
+      "description": "Gainwell (hip) was listed as limited on Wednesday's injury report. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenny-gainwell-15222",
+      "pub_date": "2026-11-04T06:15:00Z"
+    },
+    {
+      "player_name": "Kyle Monangai",
+      "sleeper_id": "12534",
+      "gsis_id": "00-0040236",
+      "position": "RB",
+      "team": "CHI",
+      "headline": "Misses Wednesday's walkthrough",
+      "description": "Monangai (thumb/toe) didn't participate in Wednesday's walkthrough. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyle-monangai-18520",
+      "pub_date": "2026-11-04T06:02:00Z"
     },
     {
       "player_name": "Matthew Stafford",
@@ -14105,149 +14149,6 @@
       "description": "During Friday's scrimmage, Tuten started the first drive with the Jaguars' offense with LeQuint Allen mixing in on third down, then Chris Rodriguez started the second drive before rotating with Tuten, John Shipley of SI.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/bhayshul-tuten-18524",
       "pub_date": "2026-08-07T10:51:00Z"
-    },
-    {
-      "player_name": "Patrick Mahomes",
-      "sleeper_id": "4046",
-      "gsis_id": "00-0033873",
-      "position": "QB",
-      "team": "KCC",
-      "headline": "Unlikely to play in preseason opener",
-      "description": "Chiefs coach Andy Reid said Friday that Mahomes (knee) is unlikely to play in the Chiefs' preseason opener against the Rams on Saturday, Aug. 15, Sam McDowell of The Kansas City Star reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/patrick-mahomes-11839",
-      "pub_date": "2026-08-07T09:29:00Z"
-    },
-    {
-      "player_name": "Kyler Murray",
-      "sleeper_id": "5849",
-      "gsis_id": "00-0035228",
-      "position": "QB",
-      "team": "MIN",
-      "headline": "Taking more first-team snaps than McCarthy",
-      "description": "Murray has taken around two-thirds of the first-team snaps at training camp, according to ESPN's Kevin Seifert. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/kyler-murray-13613",
-      "pub_date": "2026-08-07T09:26:00Z"
-    },
-    {
-      "player_name": "KC Concepcion",
-      "sleeper_id": "13298",
-      "gsis_id": "00-0041547",
-      "position": "WR",
-      "team": "CLE",
-      "headline": "Says shoulder is fine",
-      "description": "Concepcion said Friday that his shoulder has felt fine since returning to practice earlier this week, Mary Kay Cabot of The Cleveland Plain Dealer reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/kc-concepcion-19242",
-      "pub_date": "2026-08-07T09:13:00Z"
-    },
-    {
-      "player_name": "J.J. McCarthy",
-      "sleeper_id": "11565",
-      "gsis_id": "00-0039923",
-      "position": "QB",
-      "team": "MIN",
-      "headline": "Getting fewer first-team snaps than Murray",
-      "description": "McCarthy has taken around one-third of the first-team snaps at training camp so far, according to ESPN's Kevin Seifert. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jj-mccarthy-17689",
-      "pub_date": "2026-08-07T09:06:00Z"
-    },
-    {
-      "player_name": "Malachi Fields",
-      "sleeper_id": "13285",
-      "gsis_id": "00-0041042",
-      "position": "WR",
-      "team": "NYG",
-      "headline": "Making case for WR2 role?",
-      "description": "Fields has \"made an early claim for the No. 2 receiver spot\" in the Giants' offense, according to Dan Duggan of The Athletic. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/malachi-fields-19313",
-      "pub_date": "2026-08-07T07:41:00Z"
-    },
-    {
-      "player_name": "Makai Lemon",
-      "sleeper_id": "13294",
-      "gsis_id": "00-0040867",
-      "position": "WR",
-      "team": "PHI",
-      "headline": "Still sidelined by hamstring injury",
-      "description": "Lemon (hamstring) isn't practicing Friday, Dave Zangaro of NBC Sports Philadelphia reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/makai-lemon-19231",
-      "pub_date": "2026-08-07T07:29:00Z"
-    },
-    {
-      "player_name": "DeVonta Smith",
-      "sleeper_id": "7525",
-      "gsis_id": "00-0036912",
-      "position": "WR",
-      "team": "PHI",
-      "headline": "Missing another practice",
-      "description": "Smith (hamstring) isn't practicing Friday, Dave Zangaro of NBC Sports Philadelphia reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
-      "pub_date": "2026-08-07T07:23:00Z"
-    },
-    {
-      "player_name": "Tank Dell",
-      "sleeper_id": "9502",
-      "gsis_id": "00-0038977",
-      "position": "WR",
-      "team": "HOU",
-      "headline": "Week 1 status unclear",
-      "description": "Dell said, \"I'm taking it one day at a time\" when asked Friday about his potential availability for Week 1 of the regular season versus Buffalo, DJ Bien-Aime of ESPN reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/tank-dell-16935",
-      "pub_date": "2026-08-07T07:18:00Z"
-    },
-    {
-      "player_name": "Cyrus Allen",
-      "sleeper_id": "13413",
-      "gsis_id": "00-0040890",
-      "position": "WR",
-      "team": "KCC",
-      "headline": "Returns from shin injury",
-      "description": "Allen (shin) returned to practice Friday morning, Sam McDowell of The Kansas City Star reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/cyrus-allen-19631",
-      "pub_date": "2026-08-07T07:10:00Z"
-    },
-    {
-      "player_name": "Tyjae Spears",
-      "sleeper_id": "9508",
-      "gsis_id": "00-0039032",
-      "position": "RB",
-      "team": "TEN",
-      "headline": "Exits practice early Friday",
-      "description": "Spears is dealing with some soreness and irritation, which caused him to depart practice early Friday, Turron Davenport of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/tyjae-spears-16941",
-      "pub_date": "2026-08-07T07:05:00Z"
-    },
-    {
-      "player_name": "Romeo Doubs",
-      "sleeper_id": "8121",
-      "gsis_id": "00-0037816",
-      "position": "WR",
-      "team": "NEP",
-      "headline": "Returns to practice Friday",
-      "description": "Doubs (personal) returned to practice Friday, Karen Guregian of MassLive.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/romeo-doubs-16027",
-      "pub_date": "2026-08-07T06:43:00Z"
-    },
-    {
-      "player_name": "Josh Jacobs",
-      "sleeper_id": "5850",
-      "gsis_id": "00-0035700",
-      "position": "RB",
-      "team": "GBP",
-      "headline": "DNP again Friday",
-      "description": "Jacobs (groin) isn't practicing Friday, Matt Schneidman of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
-      "pub_date": "2026-08-07T06:06:00Z"
-    },
-    {
-      "player_name": "Cam Skattebo",
-      "sleeper_id": "12481",
-      "gsis_id": "00-0040715",
-      "position": "RB",
-      "team": "NYG",
-      "headline": "Harbaugh downplays exit from practice",
-      "description": "Coach John Harbaugh said Skattebo's early exit from Friday's practice is \"nothing serious at all,\" Dan Duggan of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/cam-skattebo-18514",
-      "pub_date": "2026-08-07T01:31:00Z"
     }
   ]
 }
