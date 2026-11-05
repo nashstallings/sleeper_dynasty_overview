@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-05T10:13:06Z",
+  "generated_at": "2026-11-05T19:23:10Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Poised to practice Thursday",
+      "description": "Moore (knee) is line to practice in some capacity Thursday, Sal Capaccio of WGR Sports Radio 550 Buffalo reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-11-05T10:50:00Z"
+    },
+    {
+      "player_name": "Malik Nabers",
+      "sleeper_id": "11632",
+      "gsis_id": "00-0039337",
+      "position": "WR",
+      "team": "NYG",
+      "headline": "Spotted with training staff Thursday",
+      "description": "Nabers had his jersey and helmet on but worked with the training staff in the portion of Thursday's practice open to the media, Pat Leonard of the New York Daily News reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
+      "pub_date": "2026-11-05T10:45:00Z"
+    },
+    {
+      "player_name": "Cam Skattebo",
+      "sleeper_id": "12481",
+      "gsis_id": "00-0040715",
+      "position": "RB",
+      "team": "NYG",
+      "headline": "Working with trainers Thursday",
+      "description": "Skattebo (hamstring) was spotted working off to the side with the Giants' training staff Thursday, Art Stapleton of The Bergen Record reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cam-skattebo-18514",
+      "pub_date": "2026-11-05T10:44:00Z"
+    },
+    {
+      "player_name": "Kyler Murray",
+      "sleeper_id": "5849",
+      "gsis_id": "00-0035228",
+      "position": "QB",
+      "team": "MIN",
+      "headline": "Out Monday due to hamstring strain, won't go on IR",
+      "description": "Murray (hamstring) won't play Monday against the Bills, Alec Lewis of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyler-murray-13613",
+      "pub_date": "2026-11-05T10:37:00Z"
+    },
+    {
+      "player_name": "Carson Wentz",
+      "sleeper_id": "3161",
+      "gsis_id": "00-0032950",
+      "position": "QB",
+      "team": "MIN",
+      "headline": "In line to draw MNF start",
+      "description": "Wentz is stated to start Monday night's game against the Bills, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/carson-wentz-10856",
+      "pub_date": "2026-11-05T10:31:00Z"
+    },
     {
       "player_name": "David Montgomery",
       "sleeper_id": "5892",
@@ -14138,17 +14193,6 @@
       "description": "Coach Kyle Shanahan said the 49ers continue to \"be smart with\" Evans (quadriceps), who didn't practice Saturday, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/mike-evans-9253",
       "pub_date": "2026-08-08T02:25:00Z"
-    },
-    {
-      "player_name": "Bhayshul Tuten",
-      "sleeper_id": "12490",
-      "gsis_id": "00-0040719",
-      "position": "RB",
-      "team": "JAC",
-      "headline": "Rotates with Rodriguez in scrimmage",
-      "description": "During Friday's scrimmage, Tuten started the first drive with the Jaguars' offense with LeQuint Allen mixing in on third down, then Chris Rodriguez started the second drive before rotating with Tuten, John Shipley of SI.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/bhayshul-tuten-18524",
-      "pub_date": "2026-08-07T10:51:00Z"
     }
   ]
 }
