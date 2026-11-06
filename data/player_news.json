@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-06T10:17:18Z",
+  "generated_at": "2026-11-06T18:46:46Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Cam Skattebo",
+      "sleeper_id": "12481",
+      "gsis_id": "00-0040715",
+      "position": "RB",
+      "team": "NYG",
+      "headline": "Has chance to play Sunday",
+      "description": "Head coach John Harbaugh said Skattebo (hamstring) didn't practice Friday, but the Giants are \"keeping the door open\" for the running back to play Sunday at Philadelphia, Ryan Dunleavy of the New York Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cam-skattebo-18514",
+      "pub_date": "2026-11-06T10:31:00Z"
+    },
+    {
+      "player_name": "TreVeyon Henderson",
+      "sleeper_id": "12529",
+      "gsis_id": "00-0040734",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "Won't play Sunday against Green Bay",
+      "description": "Henderson (illness) won't play Sunday against the Packers, Evan Lazar of the Patriots' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/treveyon-henderson-18517",
+      "pub_date": "2026-11-06T10:30:00Z"
+    },
+    {
+      "player_name": "Deshaun Watson",
+      "sleeper_id": "4017",
+      "gsis_id": "00-0033537",
+      "position": "QB",
+      "team": "CLE",
+      "headline": "Listed as questionable, won't start",
+      "description": "Watson (concussion) is listed as questionable for Sunday's game against the Saints, but Shedeur Sanders will start even if Watson is active Kelsey Russo of the Browns' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/deshaun-watson-11712",
+      "pub_date": "2026-11-06T10:28:00Z"
+    },
+    {
+      "player_name": "Harold Fannin Jr.",
+      "sleeper_id": "12506",
+      "gsis_id": "00-0040663",
+      "position": "TE",
+      "team": "CLE",
+      "headline": "Will play Sunday",
+      "description": "Fannin (groin) will play Sunday against the Saints, Daniel Oyefusi of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/harold-fannin-18472",
+      "pub_date": "2026-11-06T10:28:00Z"
+    },
+    {
+      "player_name": "Shedeur Sanders",
+      "sleeper_id": "12524",
+      "gsis_id": "00-0040668",
+      "position": "QB",
+      "team": "CLE",
+      "headline": "Will start Sunday",
+      "description": "Sanders will start at quarterback Sunday against the Saints, Scott Petrak of the Elyria Chronicle-Telegram reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/shedeur-sanders-18479",
+      "pub_date": "2026-11-06T10:24:00Z"
+    },
     {
       "player_name": "DJ Moore",
       "sleeper_id": "4983",
@@ -14182,17 +14237,6 @@
       "description": "Addison (thumb) is expected to be close to a full participant at the Vikings' night practice Sunday, Ben Goessling of The Minnesota Star Tribune reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jordan-addison-16895",
       "pub_date": "2026-08-09T03:47:00Z"
-    },
-    {
-      "player_name": "De'Zhaun Stribling",
-      "sleeper_id": "13417",
-      "gsis_id": "00-0041035",
-      "position": "WR",
-      "team": "SFO",
-      "headline": "Back in team drills Saturday",
-      "description": "Stribling (hamstring) participated in 11-on-11 team drills during Saturday's training camp practice, Noah Furtado of the San Francisco Chronicle reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/dezhaun-stribling-19330",
-      "pub_date": "2026-08-08T11:11:00Z"
     }
   ]
 }
