@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T01:19:52Z",
+  "generated_at": "2026-11-06T10:17:18Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Wentz is stated to start Monday night's game against the Bills, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/carson-wentz-10856",
       "pub_date": "2026-11-05T10:31:00Z"
+    },
+    {
+      "player_name": "Justice Hill",
+      "sleeper_id": "5995",
+      "gsis_id": "00-0034975",
+      "position": "RB",
+      "team": "BAL",
+      "headline": "Season-high rushing yardage total",
+      "description": "Hill rushed nine times for 85 yards and a touchdown and brought in all three targets for seven yards in the Ravens' 33-10 loss to the Jaguars on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/justice-hill-13427",
+      "pub_date": "2026-11-05T09:39:00Z"
+    },
+    {
+      "player_name": "Mark Andrews",
+      "sleeper_id": "5012",
+      "gsis_id": "00-0034753",
+      "position": "TE",
+      "team": "BAL",
+      "headline": "Two catches in Week 9 loss",
+      "description": "Andrews secured both targets for 19 yards in the Ravens' 33-10 loss to the Jaguars on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mark-andrews-12559",
+      "pub_date": "2026-11-05T09:29:00Z"
+    },
+    {
+      "player_name": "Joe Fagnano",
+      "sleeper_id": "13350",
+      "gsis_id": "00-0040981",
+      "position": "QB",
+      "team": "BAL",
+      "headline": "Modest numbers in starting role",
+      "description": "Fagnano completed 10 of 18 passes for 60 yards with no touchdowns and two interceptions while adding three rushes for 13 yards in the Ravens' 33-10 loss to the Jaguars on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/joe-fagnano-19428",
+      "pub_date": "2026-11-05T09:24:00Z"
+    },
+    {
+      "player_name": "Jakobi Meyers",
+      "sleeper_id": "5947",
+      "gsis_id": "00-0034960",
+      "position": "WR",
+      "team": "JAC",
+      "headline": "Paces pass catchers in win",
+      "description": "Meyers brought in four of six targets for 65 yards in the Jaguars' 33-10 win over the Ravens on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jakobi-meyers-13517",
+      "pub_date": "2026-11-05T09:14:00Z"
+    },
+    {
+      "player_name": "Trevor Lawrence",
+      "sleeper_id": "7523",
+      "gsis_id": "00-0036971",
+      "position": "QB",
+      "team": "JAC",
+      "headline": "Solid numbers in comfortable win",
+      "description": "Lawrence completed 16 of 26 passes for 242 yards with a touchdown and no interceptions while rushing once for minus-1 yard in the Jaguars' 33-16 win over the Ravens on Thursday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/trevor-lawrence-15357",
+      "pub_date": "2026-11-05T09:09:00Z"
     },
     {
       "player_name": "Bam Knight",
@@ -14138,116 +14193,6 @@
       "description": "Stribling (hamstring) participated in 11-on-11 team drills during Saturday's training camp practice, Noah Furtado of the San Francisco Chronicle reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/dezhaun-stribling-19330",
       "pub_date": "2026-08-08T11:11:00Z"
-    },
-    {
-      "player_name": "Zay Flowers",
-      "sleeper_id": "9997",
-      "gsis_id": "00-0039064",
-      "position": "WR",
-      "team": "BAL",
-      "headline": "Day-to-day with quad bruise",
-      "description": "Head coach Jesse Minter said Saturday that Flowers is considered day-to-day due to a quad contusion that he sustained during training camp practice, Jeff Zrebiec of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
-      "pub_date": "2026-08-08T10:09:00Z"
-    },
-    {
-      "player_name": "Zay Flowers",
-      "sleeper_id": "9997",
-      "gsis_id": "00-0039064",
-      "position": "WR",
-      "team": "BAL",
-      "headline": "Exits practice with leg injury",
-      "description": "Flowers left Saturday's training camp practice early due to a left leg injury, Sam Cohn of The Baltimore Sun reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
-      "pub_date": "2026-08-08T10:01:00Z"
-    },
-    {
-      "player_name": "Jaylen Waddle",
-      "sleeper_id": "7526",
-      "gsis_id": "00-0036613",
-      "position": "WR",
-      "team": "DEN",
-      "headline": "Sheds leg sleeve",
-      "description": "Waddle worked on the side at Saturday's training camp practice and was not wearing a sleeve on his leg, Zac Stevens of TheDNVR.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jaylen-waddle-15404",
-      "pub_date": "2026-08-08T09:20:00Z"
-    },
-    {
-      "player_name": "Jawhar Jordan",
-      "sleeper_id": "11588",
-      "gsis_id": "00-0039405",
-      "position": "RB",
-      "team": "HOU",
-      "headline": "Sidelined due to hip injury",
-      "description": "Jordan is dealing with a hip flexor strain and will be sidelined for \"roughly a week,\" Aaron Wilson of KPRC 2 Houston reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jawhar-jordan-17916",
-      "pub_date": "2026-08-08T08:44:00Z"
-    },
-    {
-      "player_name": "Luther Burden III",
-      "sleeper_id": "12519",
-      "gsis_id": "00-0040735",
-      "position": "WR",
-      "team": "CHI",
-      "headline": "Exits practice with apparent injury",
-      "description": "Burden left Saturday's training camp practice due to a lower-body injury, Patrick Finley of the Chicago Sun Times reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/luther-burden-18548",
-      "pub_date": "2026-08-08T08:41:00Z"
-    },
-    {
-      "player_name": "Josh Downs",
-      "sleeper_id": "9500",
-      "gsis_id": "00-0038997",
-      "position": "WR",
-      "team": "IND",
-      "headline": "Nursing groin injury",
-      "description": "Downs did not participate in Saturday's training camp practice due to a groin injury, Joel A. Erickson of The Indianapolis Star reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/josh-downs-16689",
-      "pub_date": "2026-08-08T08:01:00Z"
-    },
-    {
-      "player_name": "Jadarian Price",
-      "sleeper_id": "13286",
-      "gsis_id": "00-0041512",
-      "position": "RB",
-      "team": "SEA",
-      "headline": "Expected back soon",
-      "description": "Price (lower body) didn't practice Saturday, but coach Mike Macdonald said the rookie running back should be back in a matter of days, Curtis Crabtree of Fox 13 Seattle reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
-      "pub_date": "2026-08-08T07:28:00Z"
-    },
-    {
-      "player_name": "Ty Johnson",
-      "sleeper_id": "6039",
-      "gsis_id": "00-0035537",
-      "position": "RB",
-      "team": "BUF",
-      "headline": "Departs practice with knee injury",
-      "description": "Johnson left practice early Saturday due to an apparent right knee injury, Matt Parrino of NYup.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/ty-johnson-13587",
-      "pub_date": "2026-08-08T05:15:00Z"
-    },
-    {
-      "player_name": "Jadarian Price",
-      "sleeper_id": "13286",
-      "gsis_id": "00-0041512",
-      "position": "RB",
-      "team": "SEA",
-      "headline": "Dealing with lower-body soreness",
-      "description": "Price didn't practice Friday due to \"lower-body soreness,\" Gregg Bell of The Tacoma News Tribune reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
-      "pub_date": "2026-08-08T02:35:00Z"
-    },
-    {
-      "player_name": "Mike Evans",
-      "sleeper_id": "2216",
-      "gsis_id": "00-0031408",
-      "position": "WR",
-      "team": "SFO",
-      "headline": "Nearing return to practice",
-      "description": "Coach Kyle Shanahan said the 49ers continue to \"be smart with\" Evans (quadriceps), who didn't practice Saturday, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
-      "pub_date": "2026-08-08T02:25:00Z"
     }
   ]
 }
