@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T18:46:46Z",
+  "generated_at": "2026-11-07T00:34:14Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Sanders will start at quarterback Sunday against the Saints, Scott Petrak of the Elyria Chronicle-Telegram reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/shedeur-sanders-18479",
       "pub_date": "2026-11-06T10:24:00Z"
+    },
+    {
+      "player_name": "Terrance Ferguson",
+      "sleeper_id": "12487",
+      "gsis_id": "00-0040737",
+      "position": "TE",
+      "team": "LAR",
+      "headline": "Suffers hamstring injury, out again",
+      "description": "Ferguson (ankle) was expected to return for Sunday's game against Washington, but he's been ruled out after injuring his hamstring during Friday's practice, Cameron DaSilva of USA Today reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/terrance-ferguson-18497",
+      "pub_date": "2026-11-06T02:30:00Z"
+    },
+    {
+      "player_name": "Drew Lock",
+      "sleeper_id": "5854",
+      "gsis_id": "00-0035704",
+      "position": "QB",
+      "team": "SEA",
+      "headline": "Set for Week 9 start",
+      "description": "Lock (right elbow) doesn't have a designation for Sunday's contest against the Cardinals, John Boyle of the Seahawks' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/drew-lock-13736",
+      "pub_date": "2026-11-06T02:26:00Z"
+    },
+    {
+      "player_name": "Michael Wilson",
+      "sleeper_id": "10232",
+      "gsis_id": "00-0038559",
+      "position": "WR",
+      "team": "ARI",
+      "headline": "No designation for Week 9",
+      "description": "Wilson (rest/ribs) doesn't have a designation for Sunday's contest in Seattle, Josh Weinfuss of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-wilson-16957",
+      "pub_date": "2026-11-06T02:19:00Z"
+    },
+    {
+      "player_name": "Christian McCaffrey",
+      "sleeper_id": "4034",
+      "gsis_id": "00-0033280",
+      "position": "RB",
+      "team": "SFO",
+      "headline": "Set to play Sunday",
+      "description": "McCaffrey (hamstring) doesn't have a designation for Sunday's game versus the Raiders, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/christian-mccaffrey-11690",
+      "pub_date": "2026-11-06T02:12:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Won't play Sunday",
+      "description": "Evans (Achilles) has been ruled out for Sunday's game against the Raiders, Nick Wagoner of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-11-06T02:06:00Z"
     },
     {
       "player_name": "DJ Moore",
