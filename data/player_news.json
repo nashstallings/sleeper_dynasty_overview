@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T17:18:18Z",
+  "generated_at": "2026-11-07T21:20:42Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -10,10 +10,65 @@
       "gsis_id": "00-0035228",
       "position": "QB",
       "team": "MIN",
+      "headline": "Out for Monday's game",
+      "description": "Head coach Kevin O'Connell said Saturday that Murray (hamstring) has been ruled out for Monday's game versus the Bills. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyler-murray-13613",
+      "pub_date": "2026-11-07T11:24:00Z"
+    },
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "In clear for Week 9",
+      "description": "Moore (shoulder) doesn't have a designation for Monday's contest at Minnesota. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-11-07T11:17:00Z"
+    },
+    {
+      "player_name": "Deshaun Watson",
+      "sleeper_id": "4017",
+      "gsis_id": "00-0033537",
+      "position": "QB",
+      "team": "CLE",
+      "headline": "Clears concussion protocol, still questionable",
+      "description": "Watson (concussion) cleared the concussion protocol Saturday but remains questionable for Sunday's game at New Orleans. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/deshaun-watson-11712",
+      "pub_date": "2026-11-07T10:13:00Z"
+    },
+    {
+      "player_name": "Jordyn Tyson",
+      "sleeper_id": "13281",
+      "gsis_id": "00-0041029",
+      "position": "WR",
+      "team": "NOS",
+      "headline": "Inching closer to NFL debut",
+      "description": "Tyson (hamstring) intends to make his NFL debut Sunday against the Browns, NFL reporter Jordan Schultz reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordyn-tyson-19233",
+      "pub_date": "2026-11-07T10:07:00Z"
+    },
+    {
+      "player_name": "Kyler Murray",
+      "sleeper_id": "5849",
+      "gsis_id": "00-0035228",
+      "position": "QB",
+      "team": "MIN",
       "headline": "Dealing with Grade 2 strain",
       "description": "Murray (hamstring) is recovering from a Grade 2 strain \"that will keep him out for Monday's game and potentially beyond,\" Tom Pelissero of Netflix reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/kyler-murray-13613",
       "pub_date": "2026-11-07T06:40:00Z"
+    },
+    {
+      "player_name": "Jordyn Tyson",
+      "sleeper_id": "13281",
+      "gsis_id": "00-0041029",
+      "position": "WR",
+      "team": "NOS",
+      "headline": "Activated from injured reserve",
+      "description": "Tyson (hamstring) was activated from injured reserve Saturday, but he remains questionable for Sunday's game against the Browns. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordyn-tyson-19233",
+      "pub_date": "2026-11-07T01:10:00Z"
     },
     {
       "player_name": "Cam Skattebo",
