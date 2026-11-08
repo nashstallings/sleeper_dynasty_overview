@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T21:20:42Z",
+  "generated_at": "2026-11-08T03:57:53Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,28 @@
       "description": "Murray (hamstring) is recovering from a Grade 2 strain \"that will keep him out for Monday's game and potentially beyond,\" Tom Pelissero of Netflix reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/kyler-murray-13613",
       "pub_date": "2026-11-07T06:40:00Z"
+    },
+    {
+      "player_name": "Demarcus Robinson",
+      "sleeper_id": "3286",
+      "gsis_id": "00-0032775",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Off IR, clear for Sunday",
+      "description": "Robinson (ankle) was activated from injured reserve Saturday, per Matt Maiocco of NBC Sports Bay Area, and the 49ers removed his questionable designation for Sunday's game versus the Raiders. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/demarcus-robinson-11163",
+      "pub_date": "2026-11-07T01:45:00Z"
+    },
+    {
+      "player_name": "Pat Bryant",
+      "sleeper_id": "12492",
+      "gsis_id": "00-0040134",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "Activated from IR",
+      "description": "Bryant (ankle) was activated from injured reserve Saturday, but he remains questionable for Sunday's game in Carolina, Zac Stevens of TheDNVR.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/pat-bryant-18562",
+      "pub_date": "2026-11-07T01:35:00Z"
     },
     {
       "player_name": "Jordyn Tyson",
@@ -14248,28 +14270,6 @@
       "description": "Harvey expects to provide a lot of big plays in Year 2 with the Broncos, Susanna Weir of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/rj-harvey-18522",
       "pub_date": "2026-08-10T04:15:00Z"
-    },
-    {
-      "player_name": "George Kittle",
-      "sleeper_id": "4217",
-      "gsis_id": "00-0033288",
-      "position": "TE",
-      "team": "SFO",
-      "headline": "Increases activity level Monday",
-      "description": "Kittle (Achilles) was seen running routes, catching passes and doing conditioning work prior to Monday's practice, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/george-kittle-11892",
-      "pub_date": "2026-08-10T01:25:00Z"
-    },
-    {
-      "player_name": "Omarion Hampton",
-      "sleeper_id": "12507",
-      "gsis_id": "00-0040666",
-      "position": "RB",
-      "team": "LAC",
-      "headline": "OC to use hot hand approach at RB",
-      "description": "New Chargers OC Mike McDaniel said Monday he'll likely use a \"hot hand\" approach in the backfield this season, Kris Rhim of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/omarion-hampton-18445",
-      "pub_date": "2026-08-10T01:10:00Z"
     }
   ]
 }
