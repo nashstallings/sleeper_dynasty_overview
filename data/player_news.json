@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-08T12:38:11Z",
+  "generated_at": "2026-11-08T19:17:39Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Tee Higgins",
+      "sleeper_id": "6801",
+      "gsis_id": "00-0036410",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "Finds end zone twice in win over Falcons",
+      "description": "Higgins caught five of six targets for 32 yards and two touchdowns in Sunday's 34-17 win over Atlanta. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tee-higgins-14506",
+      "pub_date": "2026-11-08T11:15:00Z"
+    },
+    {
+      "player_name": "Ja'Marr Chase",
+      "sleeper_id": "7564",
+      "gsis_id": "00-0036900",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "Dominates in Madrid",
+      "description": "Chase caught 10 of 12 targets for 155 yards and a touchdown in Sunday's 34-17 win over the Falcons. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
+      "pub_date": "2026-11-08T11:11:00Z"
+    },
+    {
+      "player_name": "Joe Burrow",
+      "sleeper_id": "6770",
+      "gsis_id": "00-0036442",
+      "position": "QB",
+      "team": "CIN",
+      "headline": "Another stellar effort in Week 9 win",
+      "description": "Burrow completed 24 of 29 passes for 271 yards and three touchdowns in Sunday's 34-17 win over the Falcons. He added seven yards and a TD on three carries. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/joe-burrow-14442",
+      "pub_date": "2026-11-08T11:05:00Z"
+    },
+    {
+      "player_name": "Jaylen Waddle",
+      "sleeper_id": "7526",
+      "gsis_id": "00-0036613",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "Being checked for concussion",
+      "description": "Waddle is being evaluated for a potential concussion during Sunday's game against the Panthers, Parker Gabriel of The Denver Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-waddle-15404",
+      "pub_date": "2026-11-08T10:52:00Z"
+    },
+    {
+      "player_name": "Jonah Coleman",
+      "sleeper_id": "13345",
+      "gsis_id": "00-0041496",
+      "position": "RB",
+      "team": "DEN",
+      "headline": "Works with starters in warmups",
+      "description": "Coleman received the first rep with the starters during warmups before Sunday's game against the Panthers, Parker Gabriel of The Denver Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonah-coleman-19241",
+      "pub_date": "2026-11-08T09:52:00Z"
+    },
     {
       "player_name": "Deshaun Watson",
       "sleeper_id": "4017",
@@ -14116,17 +14171,6 @@
       "description": "Coach Klint Kubiak said Tuesday that the Raiders' starters -- a group that would include Jeanty -- are in line to play in Thursday's preseason opener against the Cardinals, Sam Warren of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/ashton-jeanty-18487",
       "pub_date": "2026-08-11T01:17:00Z"
-    },
-    {
-      "player_name": "Keaton Mitchell",
-      "sleeper_id": "9511",
-      "gsis_id": "00-0038454",
-      "position": "RB",
-      "team": "LAC",
-      "headline": "Will have role on game days",
-      "description": "Chargers OC Mike McDaniel said Monday that Mitchell will have an offensive role on game days this season, Alex Insdorf of BoltBeat.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/keaton-mitchell-16810",
-      "pub_date": "2026-08-10T12:46:00Z"
     }
   ]
 }
