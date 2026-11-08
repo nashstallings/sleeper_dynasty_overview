@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-08T03:57:53Z",
+  "generated_at": "2026-11-08T12:38:11Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Deshaun Watson",
+      "sleeper_id": "4017",
+      "gsis_id": "00-0033537",
+      "position": "QB",
+      "team": "CLE",
+      "headline": "Likely inactive Sunday",
+      "description": "Watson (concussion) is expected to be inactive for Sunday's game at New Orleans, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/deshaun-watson-11712",
+      "pub_date": "2026-11-08T04:33:00Z"
+    },
+    {
+      "player_name": "Kyle Monangai",
+      "sleeper_id": "12534",
+      "gsis_id": "00-0040236",
+      "position": "RB",
+      "team": "CHI",
+      "headline": "Not expected to return Sunday",
+      "description": "Monangai (thumb/toe) isn't slated to play in Sunday's game against the Buccaneers, but he's expected to return after the Bears' Week 10 bye in a Week 11 matchup with the Saints, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyle-monangai-18520",
+      "pub_date": "2026-11-08T04:26:00Z"
+    },
+    {
+      "player_name": "Lamar Jackson",
+      "sleeper_id": "4881",
+      "gsis_id": "00-0034796",
+      "position": "QB",
+      "team": "BAL",
+      "headline": "Plans to return this season",
+      "description": "Jackson, who is scheduled to undergo surgery on his injured right thumb, has told teammates he plans to return later this season, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/lamar-jackson-12561",
+      "pub_date": "2026-11-08T04:13:00Z"
+    },
+    {
+      "player_name": "Emeka Egbuka",
+      "sleeper_id": "12514",
+      "gsis_id": "00-0040129",
+      "position": "WR",
+      "team": "TBB",
+      "headline": "Expected to return Sunday",
+      "description": "Egbuka (foot), who is listed as questionable for Sunday's game at Chicago, is slated to return to action, Tom Pelissero of Netflix reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
+      "pub_date": "2026-11-08T03:17:00Z"
+    },
+    {
+      "player_name": "Amon-Ra St. Brown",
+      "sleeper_id": "7547",
+      "gsis_id": "00-0036963",
+      "position": "WR",
+      "team": "DET",
+      "headline": "In line to play Sunday",
+      "description": "St. Brown (ribs) is slated to play in Sunday's game at Miami, Tom Pelissero of Netflix reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/amon-ra-st-brown-15332",
+      "pub_date": "2026-11-08T03:09:00Z"
+    },
     {
       "player_name": "Kyler Murray",
       "sleeper_id": "5849",
@@ -14072,204 +14127,6 @@
       "description": "Chargers OC Mike McDaniel said Monday that Mitchell will have an offensive role on game days this season, Alex Insdorf of BoltBeat.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/keaton-mitchell-16810",
       "pub_date": "2026-08-10T12:46:00Z"
-    },
-    {
-      "player_name": "Evan Engram",
-      "sleeper_id": "4066",
-      "gsis_id": "00-0033881",
-      "position": "TE",
-      "team": "DEN",
-      "headline": "More involved as blocker at camp",
-      "description": "Bo Nix said Monday that Engram has been more involved in the running game and as a blocker during training camp, Parker Gabriel of The Denver Post reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/evan-engram-11805",
-      "pub_date": "2026-08-10T12:27:00Z"
-    },
-    {
-      "player_name": "J.K. Dobbins",
-      "sleeper_id": "6806",
-      "gsis_id": "00-0036158",
-      "position": "RB",
-      "team": "DEN",
-      "headline": "Soft-tissue injury; expected to be be fine",
-      "description": "Coach Sean Payton noted Monday that Dobbins has a soft tissue injury, Aric DiLalla of the Broncos' official site reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jk-dobbins-14418",
-      "pub_date": "2026-08-10T11:46:00Z"
-    },
-    {
-      "player_name": "Ja'Kobi Lane",
-      "sleeper_id": "13293",
-      "gsis_id": "00-0040870",
-      "position": "WR",
-      "team": "BAL",
-      "headline": "Continues generating buzz at camp",
-      "description": "Lane has been the buzz of Ravens training camp over the first couple weeks, Ryan Mink of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jakobi-lane-19230",
-      "pub_date": "2026-08-10T11:18:00Z"
-    },
-    {
-      "player_name": "Christian McCaffrey",
-      "sleeper_id": "4034",
-      "gsis_id": "00-0033280",
-      "position": "RB",
-      "team": "SFO",
-      "headline": "Gets day off Monday",
-      "description": "McCaffrey won't practice Monday due to \"tightness,\" Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/christian-mccaffrey-11690",
-      "pub_date": "2026-08-10T10:59:00Z"
-    },
-    {
-      "player_name": "J.K. Dobbins",
-      "sleeper_id": "6806",
-      "gsis_id": "00-0036158",
-      "position": "RB",
-      "team": "DEN",
-      "headline": "Exits Monday's practice with trainers",
-      "description": "Dobbins exited Monday's practice alongside the training staff with an undisclosed injury, Zac Stevens of TheDNVR.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jk-dobbins-14418",
-      "pub_date": "2026-08-10T10:50:00Z"
-    },
-    {
-      "player_name": "Tua Tagovailoa",
-      "sleeper_id": "6768",
-      "gsis_id": "00-0036212",
-      "position": "QB",
-      "team": "ATL",
-      "headline": "No timetable to name starter",
-      "description": "Coach Kevin Stefanski said Monday that the Falcons don't have a timeline to name a starting quarterback for the team's Week 1 game at Pittsburgh, Josh Kendall of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/tua-tagovailoa-14465",
-      "pub_date": "2026-08-10T10:36:00Z"
-    },
-    {
-      "player_name": "Michael Pittman",
-      "sleeper_id": "6819",
-      "gsis_id": "00-0036252",
-      "position": "WR",
-      "team": "PIT",
-      "headline": "Not spotted at practice",
-      "description": "Pittman (leg) wasn't spotted at Monday's practice, Alan Saunders of SteelersNow.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
-      "pub_date": "2026-08-10T08:32:00Z"
-    },
-    {
-      "player_name": "Kirk Cousins",
-      "sleeper_id": "1166",
-      "gsis_id": "00-0029604",
-      "position": "QB",
-      "team": "LVR",
-      "headline": "Back with starters Monday",
-      "description": "The Raiders returned to their usual QB rotation during Monday's practice, with Cousins working with the first team and Fernando Mendoza with the second-team, Ryan McFadden of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/kirk-cousins-8057",
-      "pub_date": "2026-08-10T08:23:00Z"
-    },
-    {
-      "player_name": "Jayden Daniels",
-      "sleeper_id": "11566",
-      "gsis_id": "00-0039910",
-      "position": "QB",
-      "team": "WAS",
-      "headline": "Impressing early in training camp",
-      "description": "Daniels, per wide receiver Jaylin Lane, has been \"elite\" in training camp, according to JP Finlay of NBC Sports Washington. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jayden-daniels-17692",
-      "pub_date": "2026-08-10T08:20:00Z"
-    },
-    {
-      "player_name": "Tank Dell",
-      "sleeper_id": "9502",
-      "gsis_id": "00-0038977",
-      "position": "WR",
-      "team": "HOU",
-      "headline": "Involved in full-team drills Monday",
-      "description": "Dell (knee) participated in \"full-team drills\" Monday, Aaron Wilson of KPRC 2 Houston reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/tank-dell-16935",
-      "pub_date": "2026-08-10T08:00:00Z"
-    },
-    {
-      "player_name": "Xavier Worthy",
-      "sleeper_id": "11624",
-      "gsis_id": "00-0039894",
-      "position": "WR",
-      "team": "KCC",
-      "headline": "Returns to practice Monday",
-      "description": "Worthy (shoulder) will take part in Monday's practice, Pete Sweeney of The Kansas City Star reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/xavier-worthy-17687",
-      "pub_date": "2026-08-10T07:23:00Z"
-    },
-    {
-      "player_name": "Alec Pierce",
-      "sleeper_id": "8142",
-      "gsis_id": "00-0037664",
-      "position": "WR",
-      "team": "IND",
-      "headline": "Receives second PRP injection",
-      "description": "Pierce (anke) received a second PRP injection in his left ankle this offseason, James Boyd of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/alec-pierce-16022",
-      "pub_date": "2026-08-10T06:14:00Z"
-    },
-    {
-      "player_name": "Michael Penix Jr.",
-      "sleeper_id": "11559",
-      "gsis_id": "00-0039917",
-      "position": "QB",
-      "team": "ATL",
-      "headline": "Still working in 7-on-7 drills",
-      "description": "Penix (knee) had some nice plays during 7-on-7 drills at Monday's practice, Tori McElhaney of the Falcons' official site reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/michael-penix-17700",
-      "pub_date": "2026-08-10T05:43:00Z"
-    },
-    {
-      "player_name": "Luther Burden III",
-      "sleeper_id": "12519",
-      "gsis_id": "00-0040735",
-      "position": "WR",
-      "team": "CHI",
-      "headline": "Should be back for regular-season opener",
-      "description": "While Burden (groin) is expected to miss the preseason, the Bears believe the wideout should be back for the team's regular-season opener against the Panthers, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/luther-burden-18548",
-      "pub_date": "2026-08-10T05:42:00Z"
-    },
-    {
-      "player_name": "Hunter Henry",
-      "sleeper_id": "3214",
-      "gsis_id": "00-0033090",
-      "position": "TE",
-      "team": "NEP",
-      "headline": "Agrees to two-year extension",
-      "description": "Henry has agreed to a two-year extension with the Patriots, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/hunter-henry-10735",
-      "pub_date": "2026-08-10T05:21:00Z"
-    },
-    {
-      "player_name": "Rachaad White",
-      "sleeper_id": "8136",
-      "gsis_id": "00-0037256",
-      "position": "RB",
-      "team": "WAS",
-      "headline": "Penciled in as No. 2 RB at camp",
-      "description": "White was listed as the Commanders' No. 2 running back on the team's unofficial depth chart Monday, Zach Selby of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/rachaad-white-15802",
-      "pub_date": "2026-08-10T05:02:00Z"
-    },
-    {
-      "player_name": "Breece Hall",
-      "sleeper_id": "8155",
-      "gsis_id": "00-0038120",
-      "position": "RB",
-      "team": "NYJ",
-      "headline": "Set to operate as bellcow",
-      "description": "Hall is expected to be featured more prominently as the Jets' lead back this season, Connor Hughes of SNY.TV reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/breece-hall-15810",
-      "pub_date": "2026-08-10T04:47:00Z"
-    },
-    {
-      "player_name": "RJ Harvey",
-      "sleeper_id": "12489",
-      "gsis_id": "00-0040730",
-      "position": "RB",
-      "team": "DEN",
-      "headline": "Focused on big plays in 2026",
-      "description": "Harvey expects to provide a lot of big plays in Year 2 with the Broncos, Susanna Weir of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/rj-harvey-18522",
-      "pub_date": "2026-08-10T04:15:00Z"
     }
   ]
 }
