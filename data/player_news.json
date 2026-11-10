@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-10T14:10:19Z",
+  "generated_at": "2026-11-10T21:09:45Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Malik Willis",
+      "sleeper_id": "8161",
+      "gsis_id": "00-0038128",
+      "position": "QB",
+      "team": "MIA",
+      "headline": "Headed for IR with core-muscle injury",
+      "description": "The Dolphins are expected to place Willis on injured reserve after an MRI on Monday revealed a core-muscle injury, Tom Pelissero of Netflix reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/malik-willis-15872",
+      "pub_date": "2026-11-10T12:59:00Z"
+    },
+    {
+      "player_name": "Josh Downs",
+      "sleeper_id": "9500",
+      "gsis_id": "00-0038997",
+      "position": "WR",
+      "team": "IND",
+      "headline": "On move to Kansas City",
+      "description": "The Chiefs acquired Downs and a 2027 seventh-round pick from the Colts on Tuesday in exchange for 2027 fourth- and fifth-round picks, Tom Pelissero of Netflix reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-downs-16689",
+      "pub_date": "2026-11-10T12:46:00Z"
+    },
+    {
+      "player_name": "Jonathan Taylor",
+      "sleeper_id": "6813",
+      "gsis_id": "00-0036223",
+      "position": "RB",
+      "team": "IND",
+      "headline": "Sticking around in Indy",
+      "description": "The Colts informed Taylor that he won't be traded before Tuesday's deadline, Tom Pelissero of Netflix reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonathan-taylor-14455",
+      "pub_date": "2026-11-10T12:21:00Z"
+    },
+    {
+      "player_name": "Kyler Murray",
+      "sleeper_id": "5849",
+      "gsis_id": "00-0035228",
+      "position": "QB",
+      "team": "MIN",
+      "headline": "Managing Grade 2 hamstring strain",
+      "description": "Murray is considered week-to-week due to a Grade 2 hamstring strain and isn't expected to be available for Sunday's game against the Packers, James Palmer of Bleacher Report reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyler-murray-13613",
+      "pub_date": "2026-11-10T12:14:00Z"
+    },
+    {
+      "player_name": "Tony Pollard",
+      "sleeper_id": "5967",
+      "gsis_id": "00-0035261",
+      "position": "RB",
+      "team": "TEN",
+      "headline": "Stays put in Tennessee after deadline",
+      "description": "The Titans opted not to move Pollard ahead of Tuesday's trade deadline, despite him drawing interest from teams, Jeremy Fowler of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tony-pollard-13590",
+      "pub_date": "2026-11-10T01:08:00Z"
+    },
     {
       "player_name": "David Montgomery",
       "sleeper_id": "5892",
