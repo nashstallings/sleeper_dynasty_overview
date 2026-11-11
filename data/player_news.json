@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-11T13:25:59Z",
+  "generated_at": "2026-11-11T21:42:08Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Travis Etienne",
+      "sleeper_id": "7543",
+      "gsis_id": "00-0036973",
+      "position": "RB",
+      "team": "NOS",
+      "headline": "Back at practice Wednesday",
+      "description": "Etienne (hamstring) was back at Saints practice Wednesday, Ross Jackson of WWL Louisiana reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/travis-etienne-15385",
+      "pub_date": "2026-11-11T01:39:00Z"
+    },
+    {
+      "player_name": "Bam Knight",
+      "sleeper_id": "8122",
+      "gsis_id": "00-0037157",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Practicing Wednesday",
+      "description": "Knight (concussion) practiced Wednesday in a non-contact jersey, Theo Mackie of The Arizona Republic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bam-knight-16105",
+      "pub_date": "2026-11-11T01:38:00Z"
+    },
+    {
+      "player_name": "T.J. Hockenson",
+      "sleeper_id": "5844",
+      "gsis_id": "00-0035229",
+      "position": "TE",
+      "team": "MIN",
+      "headline": "Listed as DNP on Wednesday",
+      "description": "Hockenson (wrist/chest) is listed as a non-participant on Wednesday's estimated practice report. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tj-hockenson-13610",
+      "pub_date": "2026-11-11T01:32:00Z"
+    },
+    {
+      "player_name": "Jared Goff",
+      "sleeper_id": "3163",
+      "gsis_id": "00-0033106",
+      "position": "QB",
+      "team": "DET",
+      "headline": "Dealing with chest injury",
+      "description": "Goff was limited at Wednesday's practice due to a chest injury. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jared-goff-10729",
+      "pub_date": "2026-11-11T01:28:00Z"
+    },
+    {
+      "player_name": "A.J. Brown",
+      "sleeper_id": "5859",
+      "gsis_id": "00-0035676",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Returns to practice",
+      "description": "Brown (knee) returned to practice Wednesday, Evan Lazar of the Patriots' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
+      "pub_date": "2026-11-11T01:27:00Z"
+    },
     {
       "player_name": "Malik Willis",
       "sleeper_id": "8161",
