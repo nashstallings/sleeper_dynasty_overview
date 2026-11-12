@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-12T14:30:14Z",
+  "generated_at": "2026-11-12T21:41:30Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Dalton Kincaid",
+      "sleeper_id": "10236",
+      "gsis_id": "00-0038933",
+      "position": "TE",
+      "team": "BUF",
+      "headline": "Remains limited Thursday",
+      "description": "Kincaid (ankle) was a limited participant at Thursday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dalton-kincaid-16697",
+      "pub_date": "2026-11-12T01:25:00Z"
+    },
+    {
+      "player_name": "Travis Etienne",
+      "sleeper_id": "7543",
+      "gsis_id": "00-0036973",
+      "position": "RB",
+      "team": "NOS",
+      "headline": "Remains limited Thursday",
+      "description": "Etienne (hamstring) practiced in a limited capacity Thursday, Ross Jackson of WWL-TV reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/travis-etienne-15385",
+      "pub_date": "2026-11-12T01:24:00Z"
+    },
+    {
+      "player_name": "Bhayshul Tuten",
+      "sleeper_id": "12490",
+      "gsis_id": "00-0040719",
+      "position": "RB",
+      "team": "JAC",
+      "headline": "Sits out another practice",
+      "description": "Tuten (ankle/foot) didn't practice Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bhayshul-tuten-18524",
+      "pub_date": "2026-11-12T01:24:00Z"
+    },
+    {
+      "player_name": "Jared Goff",
+      "sleeper_id": "3163",
+      "gsis_id": "00-0033106",
+      "position": "QB",
+      "team": "DET",
+      "headline": "Full practice Thursday",
+      "description": "Goff (chest) practiced fully Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jared-goff-10729",
+      "pub_date": "2026-11-12T01:19:00Z"
+    },
+    {
+      "player_name": "Rhamondre Stevenson",
+      "sleeper_id": "7611",
+      "gsis_id": "00-0036875",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "Returns to practice Thursday",
+      "description": "Stevenson (knee) returned to practice Thursday as a limited participant. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rhamondre-stevenson-15372",
+      "pub_date": "2026-11-12T01:18:00Z"
+    },
     {
       "player_name": "Drew Lock",
       "sleeper_id": "5854",
