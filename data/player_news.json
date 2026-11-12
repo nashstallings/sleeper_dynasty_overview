@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-11T21:42:08Z",
+  "generated_at": "2026-11-12T05:27:16Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Drew Lock",
+      "sleeper_id": "5854",
+      "gsis_id": "00-0035704",
+      "position": "QB",
+      "team": "SEA",
+      "headline": "Limited Wednesday",
+      "description": "Lock (right elbow/oblique) was limited at Wednesday's practice, John Boyle of the Seahawks' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/drew-lock-13736",
+      "pub_date": "2026-11-11T04:10:00Z"
+    },
+    {
+      "player_name": "Rashid Shaheed",
+      "sleeper_id": "8676",
+      "gsis_id": "00-0037545",
+      "position": "WR",
+      "team": "SEA",
+      "headline": "Full practice Wednesday",
+      "description": "Shaheed (knee) was a full participant in Wednesday's practice, John Boyle of the Seahawks' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rashid-shaheed-16560",
+      "pub_date": "2026-11-11T04:02:00Z"
+    },
+    {
+      "player_name": "Deebo Samuel Sr.",
+      "sleeper_id": "5872",
+      "gsis_id": "00-0035719",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Limited in return to practice",
+      "description": "Samuel (hamstring) was a limited practice participant Wednesday, Matt Barrows of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/deebo-samuel-13429",
+      "pub_date": "2026-11-11T03:53:00Z"
+    },
+    {
+      "player_name": "Bam Knight",
+      "sleeper_id": "8122",
+      "gsis_id": "00-0037157",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Officially limited Wednesday",
+      "description": "Knight (concussion) practiced in a limited capacity Wednesday, Theo Mackie of The Arizona Republic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bam-knight-16105",
+      "pub_date": "2026-11-11T03:49:00Z"
+    },
+    {
+      "player_name": "TreVeyon Henderson",
+      "sleeper_id": "12529",
+      "gsis_id": "00-0040734",
+      "position": "RB",
+      "team": "NEP",
+      "headline": "Deemed out for Sunday's game",
+      "description": "Henderson (illness) didn't practice Wednesday and is listed as out for Sunday's game against the Lions in Munich. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/treveyon-henderson-18517",
+      "pub_date": "2026-11-11T03:02:00Z"
+    },
     {
       "player_name": "Travis Etienne",
       "sleeper_id": "7543",
@@ -13731,105 +13786,6 @@
       "description": "Gibbs was held out of Thursday's preseason opener against the Bengals. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jahmyr-gibbs-16808",
       "pub_date": "2026-08-14T06:50:00Z"
-    },
-    {
-      "player_name": "J.K. Dobbins",
-      "sleeper_id": "6806",
-      "gsis_id": "00-0036158",
-      "position": "RB",
-      "team": "DEN",
-      "headline": "Not in uniform Friday",
-      "description": "Dobbins isn't in line to play in Friday's preseason game in Atlanta, Parker Gabriel of The Denver Post reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jk-dobbins-14418",
-      "pub_date": "2026-08-14T04:04:00Z"
-    },
-    {
-      "player_name": "Jaylen Waddle",
-      "sleeper_id": "7526",
-      "gsis_id": "00-0036613",
-      "position": "WR",
-      "team": "DEN",
-      "headline": "Not suited up Friday",
-      "description": "Waddle (leg) isn't slated to play in Friday's preseason contest in Atlanta, Parker Gabriel of The Denver Post reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jaylen-waddle-15404",
-      "pub_date": "2026-08-14T03:39:00Z"
-    },
-    {
-      "player_name": "Chig Okonkwo",
-      "sleeper_id": "8210",
-      "gsis_id": "00-0037809",
-      "position": "TE",
-      "team": "WAS",
-      "headline": "Not playing Friday",
-      "description": "Okonkwo isn't slated to suit up for Friday's preseason contest against the Dolphins. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/chig-okonkwo-16042",
-      "pub_date": "2026-08-14T03:19:00Z"
-    },
-    {
-      "player_name": "Emeka Egbuka",
-      "sleeper_id": "12514",
-      "gsis_id": "00-0040129",
-      "position": "WR",
-      "team": "TBB",
-      "headline": "Optimism for Week 1 status",
-      "description": "Egbuka had more tests done on his injured toe Friday, which confirmed a sprain that's stable, and the Buccaneers are optimistic that the second-year wide receiver will be available Week 1 at Cincinnati on Sunday, Sept. 13, Rick Stroud of the Tampa Bay Times reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
-      "pub_date": "2026-08-14T03:12:00Z"
-    },
-    {
-      "player_name": "Jacory Croskey-Merritt",
-      "sleeper_id": "12533",
-      "gsis_id": "00-0040242",
-      "position": "RB",
-      "team": "WAS",
-      "headline": "Won't play Friday",
-      "description": "Croskey-Merritt isn't in line to suit up for Friday's preseason game versus the Dolphins. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jacory-croskey-merritt-18811",
-      "pub_date": "2026-08-14T03:03:00Z"
-    },
-    {
-      "player_name": "Tua Tagovailoa",
-      "sleeper_id": "6768",
-      "gsis_id": "00-0036212",
-      "position": "QB",
-      "team": "ATL",
-      "headline": "Inside track to Week 1 start, per Fowler",
-      "description": "Tagovailoa has the \"inside track\" to be named the Falcons' starting quarterback ahead of Week 1, Jeremy Fowler of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/tua-tagovailoa-14465",
-      "pub_date": "2026-08-14T02:06:00Z"
-    },
-    {
-      "player_name": "Jayden Daniels",
-      "sleeper_id": "11566",
-      "gsis_id": "00-0039910",
-      "position": "QB",
-      "team": "WAS",
-      "headline": "Not in line to play in Friday's preseason opener",
-      "description": "Daniels isn't slated to suit up for Friday's preseason game versus the Dolphins, Nicki Jhabvala of The Washington Post reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jayden-daniels-17692",
-      "pub_date": "2026-08-14T01:52:00Z"
-    },
-    {
-      "player_name": "Sam Darnold",
-      "sleeper_id": "4943",
-      "gsis_id": "00-0034869",
-      "position": "QB",
-      "team": "SEA",
-      "headline": "Not playing Saturday",
-      "description": "Coach Mike Macdonald said Friday that Darnold won't suit up for Saturday's preseason game versus the Cowboys, Curtis Crabtree of Fox 13 Seattle reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/sam-darnold-12490",
-      "pub_date": "2026-08-14T01:47:00Z"
-    },
-    {
-      "player_name": "Jadarian Price",
-      "sleeper_id": "13286",
-      "gsis_id": "00-0041512",
-      "position": "RB",
-      "team": "SEA",
-      "headline": "Won't play Saturday",
-      "description": "Price (lower body) won't suit up for Saturday's preseason game against the Cowboys, Curtis Crabtree of Fox 13 Seattle reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jadarian-price-19299",
-      "pub_date": "2026-08-14T01:39:00Z"
     }
   ]
 }
