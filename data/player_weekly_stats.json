@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T21:02:06Z",
+  "generated_at": "2026-11-13T21:00:41Z",
   "players": {
     "10210": {
       "name": "Cameron Latu",
@@ -133885,6 +133885,37 @@
             "targets": 0,
             "team": "NYJ",
             "wopr": 0.0
+          }
+        }
+      }
+    },
+    "13760": {
+      "name": "Jaden Bradley",
+      "position": "WR",
+      "weeks": {
+        "2026": {
+          "9": {
+            "air_yards_share": 0.048,
+            "attempts": 0,
+            "carries": 0,
+            "completions": 0,
+            "cpoe": null,
+            "fantasy_points_ppr": 2.2,
+            "interceptions": 0,
+            "opponent": "LA",
+            "passing_epa": null,
+            "passing_tds": 0,
+            "passing_yards": 0,
+            "receiving_tds": 0,
+            "receiving_yards": 12,
+            "receptions": 1,
+            "rushing_tds": 0,
+            "rushing_yards": 0,
+            "snap_share": 0.27,
+            "target_share": 0.029,
+            "targets": 1,
+            "team": "WAS",
+            "wopr": 0.077
           }
         }
       }
