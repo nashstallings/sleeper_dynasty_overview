@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-13T13:48:18Z",
+  "generated_at": "2026-11-13T21:08:15Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Tony Pollard",
+      "sleeper_id": "5967",
+      "gsis_id": "00-0035261",
+      "position": "RB",
+      "team": "TEN",
+      "headline": "Cleared for Week 10 action",
+      "description": "Pollard (finger/rest) was a full participant in Friday's practice and doesn't carry an injury designation ahead of Sunday's game against the Jaguars, Jim Wyatt of the Titans' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tony-pollard-13590",
+      "pub_date": "2026-11-13T12:45:00Z"
+    },
+    {
+      "player_name": "Kenneth Walker III",
+      "sleeper_id": "8151",
+      "gsis_id": "00-0038134",
+      "position": "RB",
+      "team": "KCC",
+      "headline": "Deemed questionable for Sunday",
+      "description": "Walker (groin) is listed as questionable for Sunday's game against the Falcons. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenneth-walker-15909",
+      "pub_date": "2026-11-13T12:33:00Z"
+    },
+    {
+      "player_name": "T.J. Hockenson",
+      "sleeper_id": "5844",
+      "gsis_id": "00-0035229",
+      "position": "TE",
+      "team": "MIN",
+      "headline": "Not spotted Friday",
+      "description": "Hockenson (wrist/chest) wasn't seen during the portion of Friday's practice open to the media, Kevin Seifert of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tj-hockenson-13610",
+      "pub_date": "2026-11-13T11:53:00Z"
+    },
+    {
+      "player_name": "Travis Etienne",
+      "sleeper_id": "7543",
+      "gsis_id": "00-0036973",
+      "position": "RB",
+      "team": "NOS",
+      "headline": "May return in Week 10",
+      "description": "Etienne (hamstring) said Friday that \"the week of practice went well,\" and that he hopes to be active for Sunday's game against the Panthers, Jeff Nowak of WWL Radio reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/travis-etienne-15385",
+      "pub_date": "2026-11-13T11:38:00Z"
+    },
+    {
+      "player_name": "Josh Downs",
+      "sleeper_id": "9500",
+      "gsis_id": "00-0038997",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Likely playing Sunday",
+      "description": "Chiefs coach Andy Reid said Friday that Downs looks ready to play in Sunday's game at Atlanta, Charles Goldman of AtoZ Sports reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-downs-16689",
+      "pub_date": "2026-11-13T11:32:00Z"
+    },
     {
       "player_name": "Rhamondre Stevenson",
       "sleeper_id": "7611",
