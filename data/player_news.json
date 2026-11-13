@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-12T21:41:30Z",
+  "generated_at": "2026-11-13T04:43:17Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Cam Skattebo",
+      "sleeper_id": "12481",
+      "gsis_id": "00-0040715",
+      "position": "RB",
+      "team": "NYG",
+      "headline": "Pair of TDs in close loss",
+      "description": "Skattebo rushed 18 times for 78 yards and two touchdowns and brought in three of four targets for 44 yards in the Giants' 24-21 loss to the Commanders on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cam-skattebo-18514",
+      "pub_date": "2026-11-12T08:39:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Lands on injured reserve",
+      "description": "The Rams placed Nacua (knee) on injured reserve Thursday, Greg Beacham of the Associated Press reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-11-12T04:39:00Z"
+    },
+    {
+      "player_name": "Bam Knight",
+      "sleeper_id": "8122",
+      "gsis_id": "00-0037157",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "Logs full practice Thursday",
+      "description": "Knight (concussion) practiced in full Thursday, Zach Gershman of the Cardinals' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bam-knight-16105",
+      "pub_date": "2026-11-12T04:32:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Close to returning from injury",
+      "description": "Coach Kyle Shanahan said Thursday that Evans is \"real close\" to returning from Achilles tendinitis and that he would probably be playing Sunday if it were a playoff game, David Lombardi of SFStandard.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-11-12T04:28:00Z"
+    },
+    {
+      "player_name": "Drew Lock",
+      "sleeper_id": "5854",
+      "gsis_id": "00-0035704",
+      "position": "QB",
+      "team": "SEA",
+      "headline": "Remains limited in practice",
+      "description": "Lock (right elbow/oblique) practiced in a limited capacity Thursday, John Boyle of the Seahawks' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/drew-lock-13736",
+      "pub_date": "2026-11-12T04:04:00Z"
+    },
     {
       "player_name": "Dalton Kincaid",
       "sleeper_id": "10236",
@@ -13709,50 +13764,6 @@
       "description": "Coach Kellen Moore said Saturday that the team is \"still in collection mode\" regarding Tyson (hamstring), Mike Triplett of NewOrleans.Football reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jordyn-tyson-19233",
       "pub_date": "2026-08-15T04:56:00Z"
-    },
-    {
-      "player_name": "DJ Moore",
-      "sleeper_id": "4983",
-      "gsis_id": "00-0034827",
-      "position": "WR",
-      "team": "BUF",
-      "headline": "Not worried about injury",
-      "description": "Moore noted after Saturday's 29-14 preseason win over the Panthers that he was \"good to go\" after an apparent lower-body injury that he sustained in the first quarter, Joe Buscaglia of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
-      "pub_date": "2026-08-15T01:51:00Z"
-    },
-    {
-      "player_name": "Josh Downs",
-      "sleeper_id": "9500",
-      "gsis_id": "00-0038997",
-      "position": "WR",
-      "team": "IND",
-      "headline": "Exits practice with possible upper body injury",
-      "description": "Downs exited Saturday's practice after a hard fall on his back, Andrew Moore of Colts on SI reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/josh-downs-16689",
-      "pub_date": "2026-08-15T01:48:00Z"
-    },
-    {
-      "player_name": "Shedeur Sanders",
-      "sleeper_id": "12524",
-      "gsis_id": "00-0040668",
-      "position": "QB",
-      "team": "CLE",
-      "headline": "Will play first half in second preseason game",
-      "description": "Sanders and Deshaun Watson will split first-team reps during joint practices ahead of the Browns' second preseason game against the Bills on Saturday, Aug. 22, Daniel Oyefusi of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/shedeur-sanders-18479",
-      "pub_date": "2026-08-15T01:41:00Z"
-    },
-    {
-      "player_name": "C.J. Stroud",
-      "sleeper_id": "9758",
-      "gsis_id": "00-0039163",
-      "position": "QB",
-      "team": "HOU",
-      "headline": "Scheduled to play against Vegas on Thursday",
-      "description": "Texans coach DeMeco Ryans said Saturday that Stroud and the other healthy starters will play in Thursday's preseason game against Las Vegas, DJ Bien-Aime of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/cj-stroud-16886",
-      "pub_date": "2026-08-15T01:02:00Z"
     }
   ]
 }
