@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T21:08:15Z",
+  "generated_at": "2026-11-14T04:38:14Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -91,6 +91,61 @@
       "description": "Brown (ankle/knee) practiced Friday for a third straight day, Mike Reiss of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/aj-brown-13432",
       "pub_date": "2026-11-13T05:12:00Z"
+    },
+    {
+      "player_name": "Ladd McConkey",
+      "sleeper_id": "11635",
+      "gsis_id": "00-0039915",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Remains sidelined at practice Friday",
+      "description": "McConkey (back) didn't practice Friday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
+      "pub_date": "2026-11-13T03:05:00Z"
+    },
+    {
+      "player_name": "Patrick Mahomes",
+      "sleeper_id": "4046",
+      "gsis_id": "00-0033873",
+      "position": "QB",
+      "team": "KCC",
+      "headline": "No injury designation",
+      "description": "Mahomes (elbow) was a full practice participant throughout the week and doesn't have an injury designation for Sunday's game at Atlanta. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/patrick-mahomes-11839",
+      "pub_date": "2026-11-13T02:48:00Z"
+    },
+    {
+      "player_name": "George Pickens",
+      "sleeper_id": "8137",
+      "gsis_id": "00-0037247",
+      "position": "WR",
+      "team": "DAL",
+      "headline": "Clear for return in Week 10",
+      "description": "Pickens (hamstring) doesn't have a designation for Sunday's contest against the 49ers, Tommy Yarrish of the Cowboys' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/george-pickens-15853",
+      "pub_date": "2026-11-13T02:17:00Z"
+    },
+    {
+      "player_name": "Deebo Samuel Sr.",
+      "sleeper_id": "5872",
+      "gsis_id": "00-0035719",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Set to return in Week 10",
+      "description": "Samuel (hamstring) doesn't have a designation for Sunday's game in Dallas, Nick Wagoner of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/deebo-samuel-13429",
+      "pub_date": "2026-11-13T02:12:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Ruled out for Week 10",
+      "description": "Evans (Achilles) has been ruled out for Sunday's game at Dallas, Nick Wagoner of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-11-13T02:08:00Z"
     },
     {
       "player_name": "Rachaad White",
@@ -13654,61 +13709,6 @@
       "description": "Love reportedly sustained a high-ankle sprain in Thursday's preseason win over the Raiders, and he is unlikely to play again during the preseason, Adam Schefter of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
       "pub_date": "2026-08-16T05:16:00Z"
-    },
-    {
-      "player_name": "Kyle Monangai",
-      "sleeper_id": "12534",
-      "gsis_id": "00-0040236",
-      "position": "RB",
-      "team": "CHI",
-      "headline": "Believed to be \"fine\" after exiting practice",
-      "description": "Monangai is believed to be \"fine\" after exiting Sunday's practice with a right-knee injury, and he will undergo an MRI, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/kyle-monangai-18520",
-      "pub_date": "2026-08-16T03:41:00Z"
-    },
-    {
-      "player_name": "Carson Beck",
-      "sleeper_id": "13272",
-      "gsis_id": "00-0041561",
-      "position": "QB",
-      "team": "ARI",
-      "headline": "Day-to-day with rib injury",
-      "description": "Cardinals head coach Mike LaFleur said Sunday that Beck is day-to-day with his rib injury, Josh Weinfuss of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/carson-beck-19287",
-      "pub_date": "2026-08-16T02:52:00Z"
-    },
-    {
-      "player_name": "Kyle Monangai",
-      "sleeper_id": "12534",
-      "gsis_id": "00-0040236",
-      "position": "RB",
-      "team": "CHI",
-      "headline": "Exits practice with apparent injury",
-      "description": "Monangai left Sunday's practice due to an apparent right-knee injury, Brad Biggs of the Chicago Tribune reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/kyle-monangai-18520",
-      "pub_date": "2026-08-16T02:39:00Z"
-    },
-    {
-      "player_name": "Jeremiyah Love",
-      "sleeper_id": "13287",
-      "gsis_id": "00-0041027",
-      "position": "RB",
-      "team": "ARI",
-      "headline": "Hopeful for Week 1",
-      "description": "The Cardinals are \"hopeful\" that Love (ankle) will be ready for Week 1, Jeremy Fowler of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
-      "pub_date": "2026-08-16T02:02:00Z"
-    },
-    {
-      "player_name": "Tucker Kraft",
-      "sleeper_id": "9484",
-      "gsis_id": "00-0038996",
-      "position": "TE",
-      "team": "GBP",
-      "headline": "Expects to be on snap count early in season",
-      "description": "Kraft said Sunday that he expects the Packers to limit his reps \"probably until halfway through the season,\" Rob Demovsky of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/tucker-kraft-16649",
-      "pub_date": "2026-08-16T01:10:00Z"
     }
   ]
 }
