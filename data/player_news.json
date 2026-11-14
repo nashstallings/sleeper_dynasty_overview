@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-14T12:52:11Z",
+  "generated_at": "2026-11-14T19:39:33Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Woody Marks",
+      "sleeper_id": "12474",
+      "gsis_id": "00-0040583",
+      "position": "RB",
+      "team": "HOU",
+      "headline": "Will once again serve as RB1",
+      "description": "Marks will be the Texans' lead back against the Browns on Sunday after David Montgomery (groin) was ruled out for that contest. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/woody-marks-18449",
+      "pub_date": "2026-11-14T10:27:00Z"
+    },
+    {
+      "player_name": "David Montgomery",
+      "sleeper_id": "5892",
+      "gsis_id": "00-0035685",
+      "position": "RB",
+      "team": "HOU",
+      "headline": "Won't play against Cleveland",
+      "description": "Montgomery (groin) has been downgraded from questionable to out for Sunday's game against the Browns. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/david-montgomery-13556",
+      "pub_date": "2026-11-14T10:18:00Z"
+    },
+    {
+      "player_name": "Pat Freiermuth",
+      "sleeper_id": "7600",
+      "gsis_id": "00-0036894",
+      "position": "TE",
+      "team": "PIT",
+      "headline": "Under the weather, iffy for Week 10",
+      "description": "Freiermuth (illness) was added to Saturday's injury report and is listed as questionable for Sunday's game against Cincinnati. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/pat-freiermuth-15267",
+      "pub_date": "2026-11-14T09:39:00Z"
+    },
+    {
+      "player_name": "Garrett Wilson",
+      "sleeper_id": "8146",
+      "gsis_id": "00-0037740",
+      "position": "WR",
+      "team": "NYJ",
+      "headline": "Slated to return Sunday",
+      "description": "Wilson (concussion) is expected to be cleared to play against the Bills on Sunday, Matt Zenitz of CBS Sports reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/garrett-wilson-15829",
+      "pub_date": "2026-11-14T09:18:00Z"
+    },
+    {
+      "player_name": "Omar Cooper Jr.",
+      "sleeper_id": "13276",
+      "gsis_id": "00-0041511",
+      "position": "WR",
+      "team": "NYJ",
+      "headline": "Expected to play Sunday",
+      "description": "Cooper (ankle), who is listed as questionable for Sunday's game against the Bills, is expected to be available, Matt Zenitz of CBS Sports reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/omar-cooper-19314",
+      "pub_date": "2026-11-14T09:16:00Z"
+    },
     {
       "player_name": "Tony Pollard",
       "sleeper_id": "5967",
