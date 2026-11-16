@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T00:38:54Z",
+  "generated_at": "2026-11-16T10:31:59Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -49,6 +49,28 @@
       "pub_date": "2026-11-15T09:22:00Z"
     },
     {
+      "player_name": "DK Metcalf",
+      "sleeper_id": "5846",
+      "gsis_id": "00-0035640",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Gets into end zone in loss",
+      "description": "Metcalf brought in two of six targets for 54 yards and a touchdown and added a two-point conversion catch in the Steelers' 38-18 loss to the Bengals on Sunday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dk-metcalf-13424",
+      "pub_date": "2026-11-15T09:19:00Z"
+    },
+    {
+      "player_name": "Jaylen Warren",
+      "sleeper_id": "8228",
+      "gsis_id": "00-0037228",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "Stymied by Bengals in loss",
+      "description": "Warren rushed seven times for 15 yards and brought in five of six targets for 26 yards in the Steelers' 38-18 loss to the Bengals on Sunday night. He committed a fumble recovered by Pittsburgh. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-warren-15984",
+      "pub_date": "2026-11-15T09:15:00Z"
+    },
+    {
       "player_name": "A.J. Brown",
       "sleeper_id": "5859",
       "gsis_id": "00-0035676",
@@ -58,6 +80,39 @@
       "description": "Brown (hamstring) is questionable to return to Sunday's game against the Lions. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/aj-brown-13432",
       "pub_date": "2026-11-15T09:08:00Z"
+    },
+    {
+      "player_name": "Tee Higgins",
+      "sleeper_id": "6801",
+      "gsis_id": "00-0036410",
+      "position": "WR",
+      "team": "CIN",
+      "headline": "Five catches in Week 10 win",
+      "description": "Higgins brought in five of six targets for 66 yards in the Bengals' 38-18 win over the Steelers on Sunday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tee-higgins-14506",
+      "pub_date": "2026-11-15T08:55:00Z"
+    },
+    {
+      "player_name": "Chase Brown",
+      "sleeper_id": "9224",
+      "gsis_id": "00-0038597",
+      "position": "RB",
+      "team": "CIN",
+      "headline": "Garners 18 touches in win",
+      "description": "Brown rushed 10 times for 44 yards and brought in eight of nine targets for 39 yards in the Bengals' 38-18 win over the Steelers on Sunday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chase-brown-16934",
+      "pub_date": "2026-11-15T08:52:00Z"
+    },
+    {
+      "player_name": "Rico Dowdle",
+      "sleeper_id": "7021",
+      "gsis_id": "00-0036139",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "Only seven touches in Week 10",
+      "description": "Dowdle rushed five times for 26 yards and caught both of his targets for eight yards during Sunday's 38-18 defeat at Cincinnati. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rico-dowdle-14657",
+      "pub_date": "2026-11-15T08:49:00Z"
     },
     {
       "player_name": "DJ Moore",
@@ -13489,160 +13544,6 @@
       "description": "Johnston sustained an apparent lower-body injury during Tuesday's joint practice with the 49ers, Kris Rhim of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/quentin-johnston-16899",
       "pub_date": "2026-08-18T11:11:00Z"
-    },
-    {
-      "player_name": "Keon Coleman",
-      "sleeper_id": "11637",
-      "gsis_id": "00-0039901",
-      "position": "WR",
-      "team": "BUF",
-      "headline": "Diagnosed with sprained foot/toe",
-      "description": "Coleman has been diagnosed with a sprained right foot/toe, Cameron Wolfe of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/keon-coleman-17732",
-      "pub_date": "2026-08-18T10:18:00Z"
-    },
-    {
-      "player_name": "Kyle Monangai",
-      "sleeper_id": "12534",
-      "gsis_id": "00-0040236",
-      "position": "RB",
-      "team": "CHI",
-      "headline": "Deemed week-to-week by coach",
-      "description": "Monangai (knee) is considered week-to-week, Adam Jahns of AllCHGO.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/kyle-monangai-18520",
-      "pub_date": "2026-08-18T09:53:00Z"
-    },
-    {
-      "player_name": "Jayden Higgins",
-      "sleeper_id": "12484",
-      "gsis_id": "00-0040130",
-      "position": "WR",
-      "team": "HOU",
-      "headline": "Dealing with leg injury, should be OK",
-      "description": "In reference to Higgins, who appeared to sustain a leg injury during Tuesday's practice, QB C.J. Stroud noted afterward, \"I think he'll be fine,\" Aaron Wilson of KPRC 2 Houston reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jayden-higgins-18551",
-      "pub_date": "2026-08-18T09:40:00Z"
-    },
-    {
-      "player_name": "Alvin Kamara",
-      "sleeper_id": "4035",
-      "gsis_id": "00-0033906",
-      "position": "RB",
-      "team": "NOS",
-      "headline": "Avoids serious setback but will miss weeks",
-      "description": "Kamara (knee) avoided a major injury but \"will be out for a few weeks,\" Nick Underhill of NewOrleans.Football reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/alvin-kamara-11732",
-      "pub_date": "2026-08-18T08:13:00Z"
-    },
-    {
-      "player_name": "Jordan Love",
-      "sleeper_id": "6804",
-      "gsis_id": "00-0036264",
-      "position": "QB",
-      "team": "GBP",
-      "headline": "Will play in second preseason game",
-      "description": "Head coach Matt LaFleur said that he plans for Love and the other offensive starters to take some snaps during the Packers' second preseason game Friday versus the Broncos, Rob Demovsky of ESPN.com Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jordan-love-14371",
-      "pub_date": "2026-08-18T08:06:00Z"
-    },
-    {
-      "player_name": "Kenyon Sadiq",
-      "sleeper_id": "13330",
-      "gsis_id": "00-0041032",
-      "position": "TE",
-      "team": "NYJ",
-      "headline": "Making progress, in play for Week 1",
-      "description": "Jets head coach Aaron Glenn said Tuesday that Sadiq (hernia) is \"getting closer\" to a return and remains on track to be ready to go for the start of the regular season, Zack Rosenblatt of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/kenyon-sadiq-19279",
-      "pub_date": "2026-08-18T07:59:00Z"
-    },
-    {
-      "player_name": "Breece Hall",
-      "sleeper_id": "8155",
-      "gsis_id": "00-0038120",
-      "position": "RB",
-      "team": "NYJ",
-      "headline": "Will be sidelined for 2-to-3 weeks",
-      "description": "Hall (groin) will be sidelined for 2-to-3 weeks, Zack Rosenblatt of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/breece-hall-15810",
-      "pub_date": "2026-08-18T07:54:00Z"
-    },
-    {
-      "player_name": "Josh Jacobs",
-      "sleeper_id": "5850",
-      "gsis_id": "00-0035700",
-      "position": "RB",
-      "team": "GBP",
-      "headline": "Returning to practice Tuesday",
-      "description": "Packers head coach Matt LaFleur said that Jacobs (groin) will return to practice Tuesday, Matt Schneidman of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
-      "pub_date": "2026-08-18T07:51:00Z"
-    },
-    {
-      "player_name": "Jaylin Noel",
-      "sleeper_id": "12536",
-      "gsis_id": "00-0040138",
-      "position": "WR",
-      "team": "HOU",
-      "headline": "Unexpectedly returns to practice Tuesday",
-      "description": "Noel (hamstring) was spotted in full pads and a red no-contact uniform for Tuesday's practice, Jonathan M. Alexander of the Houston Chronicle reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jaylin-noel-18555",
-      "pub_date": "2026-08-18T07:45:00Z"
-    },
-    {
-      "player_name": "Jaydon Blue",
-      "sleeper_id": "12457",
-      "gsis_id": "00-0040586",
-      "position": "RB",
-      "team": "DAL",
-      "headline": "Misses practice with shoulder injury",
-      "description": "Blue missed Tuesday's joint practice with the Saints due to a shoulder injury, Patrik Walker of the Cowboys' official site reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jaydon-blue-18499",
-      "pub_date": "2026-08-18T04:55:00Z"
-    },
-    {
-      "player_name": "Devaughn Vele",
-      "sleeper_id": "11834",
-      "gsis_id": "00-0039424",
-      "position": "WR",
-      "team": "NOS",
-      "headline": "Had a rest day Tuesday",
-      "description": "Vele missed Tuesday's practice due to a planned rest day, Matthew Paras of The New Orleans Times-Picayune reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/devaughn-vele-17975",
-      "pub_date": "2026-08-18T04:28:00Z"
-    },
-    {
-      "player_name": "Alvin Kamara",
-      "sleeper_id": "4035",
-      "gsis_id": "00-0033906",
-      "position": "RB",
-      "team": "NOS",
-      "headline": "Dealing with knee injury",
-      "description": "Kamara was unable to finish Tuesday's joint practice with the Cowboys due to a knee injury, Ross Jackson of WWL Louisiana reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/alvin-kamara-11732",
-      "pub_date": "2026-08-18T04:22:00Z"
-    },
-    {
-      "player_name": "Chris Olave",
-      "sleeper_id": "8144",
-      "gsis_id": "00-0037239",
-      "position": "WR",
-      "team": "NOS",
-      "headline": "Returns to Tuesday's practice",
-      "description": "Olave returned to Tuesday's joint practice with the Cowboys after making a brief exit during the session, Katherine Terrell of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/chris-olave-15895",
-      "pub_date": "2026-08-18T03:53:00Z"
-    },
-    {
-      "player_name": "Chris Olave",
-      "sleeper_id": "8144",
-      "gsis_id": "00-0037239",
-      "position": "WR",
-      "team": "NOS",
-      "headline": "Heads to medical tent during Tuesday's practice",
-      "description": "Olave went the medical tent during Tuesday's joint practice with the Cowboys, Nick Harris of the Fort Worth Star-Telegram reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/chris-olave-15895",
-      "pub_date": "2026-08-18T03:44:00Z"
     }
   ]
 }
