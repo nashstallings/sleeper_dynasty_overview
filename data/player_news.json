@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-18T10:59:24Z",
+  "generated_at": "2026-11-18T19:52:19Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Back practicing Wednesday",
+      "description": "Steelers head coach Mike McCarthy said Wednesday that Pittman (foot) has been designated for return from injured reserve, Nick Farabaugh of PennLive.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-11-18T11:34:00Z"
+    },
+    {
+      "player_name": "Brock Bowers",
+      "sleeper_id": "11604",
+      "gsis_id": "00-0039338",
+      "position": "TE",
+      "team": "LVR",
+      "headline": "Absent from practicing Wednesday",
+      "description": "Bowers (ankle) wasn't spotted on the field for Wednesday's practice, Ryan McFadden of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/brock-bowers-17693",
+      "pub_date": "2026-11-18T11:27:00Z"
+    },
+    {
+      "player_name": "Jordan Addison",
+      "sleeper_id": "9756",
+      "gsis_id": "00-0038994",
+      "position": "WR",
+      "team": "MIN",
+      "headline": "Has thumb surgery, avoiding IR",
+      "description": "Head coach Kevin O'Connell said Wednesday that Addison underwent thumb surgery earlier this week and won't be placed on injured reserve, Alec Lewis of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordan-addison-16895",
+      "pub_date": "2026-11-18T11:26:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "DNP on Wednesday, may practice Thursday",
+      "description": "Head coach Kyle Shanahan said Evans (Achilles) won't practice Wednesday but hopes the wide receiver will return to drills Thursday, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-11-18T10:53:00Z"
+    },
+    {
+      "player_name": "Baker Mayfield",
+      "sleeper_id": "4892",
+      "gsis_id": "00-0034855",
+      "position": "QB",
+      "team": "TBB",
+      "headline": "Week 11 status TBD",
+      "description": "Coach Todd Bowles said Wednesday that Mayfield (foot), who didn't practice Wednesday, is \"a lot better\" than he was a week ago, Scott Smith of the Buccaneers' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/baker-mayfield-12619",
+      "pub_date": "2026-11-18T10:37:00Z"
+    },
     {
       "player_name": "David Montgomery",
       "sleeper_id": "5892",
@@ -13181,28 +13236,6 @@
       "description": "Dowdle is suited up for Friday's preseason game versus the Jets, Brian Batko of the Pittsburgh Post-Gazette reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/rico-dowdle-14657",
       "pub_date": "2026-08-21T03:48:00Z"
-    },
-    {
-      "player_name": "Fernando Mendoza",
-      "sleeper_id": "13269",
-      "gsis_id": "00-0041562",
-      "position": "QB",
-      "team": "LVR",
-      "headline": "In line to see first-half action Thursday",
-      "description": "Mendoza is expected to play the first half of Thursday's preseason game against the Texans, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/fernando-mendoza-19281",
-      "pub_date": "2026-08-20T12:17:00Z"
-    },
-    {
-      "player_name": "DJ Moore",
-      "sleeper_id": "4983",
-      "gsis_id": "00-0034827",
-      "position": "WR",
-      "team": "BUF",
-      "headline": "Taking part in team drills Thursday",
-      "description": "Moore (lower body) is participating in team drills Thursday, Matthew Bove of 7 News WKBW reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
-      "pub_date": "2026-08-20T11:18:00Z"
     }
   ]
 }
