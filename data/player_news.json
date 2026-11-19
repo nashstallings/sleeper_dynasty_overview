@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T19:52:19Z",
+  "generated_at": "2026-11-19T02:11:52Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Coach Todd Bowles said Wednesday that Mayfield (foot), who didn't practice Wednesday, is \"a lot better\" than he was a week ago, Scott Smith of the Buccaneers' official site reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/baker-mayfield-12619",
       "pub_date": "2026-11-18T10:37:00Z"
+    },
+    {
+      "player_name": "Ladd McConkey",
+      "sleeper_id": "11635",
+      "gsis_id": "00-0039915",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Limited in Wednesday's practice",
+      "description": "McConkey (back) was a limited participant in Wednesday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
+      "pub_date": "2026-11-18T04:17:00Z"
+    },
+    {
+      "player_name": "Jaylen Waddle",
+      "sleeper_id": "7526",
+      "gsis_id": "00-0036613",
+      "position": "WR",
+      "team": "DEN",
+      "headline": "Practices fully Wednesday",
+      "description": "Waddle (concussion) was a full participant in Wednesday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-waddle-15404",
+      "pub_date": "2026-11-18T03:06:00Z"
+    },
+    {
+      "player_name": "DeVonta Smith",
+      "sleeper_id": "7525",
+      "gsis_id": "00-0036912",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Limited in return to practice",
+      "description": "Smith (hamstring) was a limited participant in Wednesday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
+      "pub_date": "2026-11-18T02:59:00Z"
+    },
+    {
+      "player_name": "Geno Smith",
+      "sleeper_id": "1373",
+      "gsis_id": "00-0030565",
+      "position": "QB",
+      "team": "NYJ",
+      "headline": "Limited, but plans to play Sunday",
+      "description": "Smith (ankle), who was a limited participant in Wednesday's walkthrough practice, said afterward that he intends to play in Sunday's game against the Chargers, Rich Cimini of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/geno-smith-8743",
+      "pub_date": "2026-11-18T02:53:00Z"
+    },
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Limited in first practice back",
+      "description": "Pittman (foot) was limited in his return to practice Wednesday, Teresa Varley of the Steelers' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-11-18T02:44:00Z"
     },
     {
       "player_name": "David Montgomery",
