@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-19T11:01:25Z",
+  "generated_at": "2026-11-19T19:52:29Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Dalton Kincaid",
+      "sleeper_id": "10236",
+      "gsis_id": "00-0038933",
+      "position": "TE",
+      "team": "BUF",
+      "headline": "Sidelined for Thursday's practice",
+      "description": "Kincaid (thumb/ankle) wasn't spotted on the field for Thursday's practice, Joe Buscaglia of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dalton-kincaid-16697",
+      "pub_date": "2026-11-19T11:43:00Z"
+    },
+    {
+      "player_name": "DeVonta Smith",
+      "sleeper_id": "7525",
+      "gsis_id": "00-0036912",
+      "position": "WR",
+      "team": "PHI",
+      "headline": "Practicing again Thursday",
+      "description": "Smith (hamstring) is taking part in Thursday's practice, Andrew DiCecco of InsideTheBirds.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/devonta-smith-15406",
+      "pub_date": "2026-11-19T11:42:00Z"
+    },
+    {
+      "player_name": "Brock Bowers",
+      "sleeper_id": "11604",
+      "gsis_id": "00-0039338",
+      "position": "TE",
+      "team": "LVR",
+      "headline": "Back at practice Thursday",
+      "description": "Bowers (ankle) was on the field for the start of Thursday's practice, Ryan McFadden of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/brock-bowers-17693",
+      "pub_date": "2026-11-19T11:19:00Z"
+    },
+    {
+      "player_name": "Baker Mayfield",
+      "sleeper_id": "4892",
+      "gsis_id": "00-0034855",
+      "position": "QB",
+      "team": "TBB",
+      "headline": "Calls himself 'limited' Thursday",
+      "description": "Mayfield (foot/right thumb) said that he felt good but was \"limited\" at Thursday's practice, and he's hopeful to do more at Friday's session, Scott Smith of the Buccaneers' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/baker-mayfield-12619",
+      "pub_date": "2026-11-19T10:38:00Z"
+    },
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Practicing again Thursday",
+      "description": "Pittman (foot) participated in practice Thursday, Nick Farabaugh of PennLive.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-11-19T10:29:00Z"
+    },
     {
       "player_name": "Michael Pittman",
       "sleeper_id": "6819",
@@ -13060,39 +13115,6 @@
       "description": "Mayfield will play in Saturday's preseason game against the Chiefs, Jenna Laine of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/baker-mayfield-12619",
       "pub_date": "2026-08-22T01:26:00Z"
-    },
-    {
-      "player_name": "Jayden Higgins",
-      "sleeper_id": "12484",
-      "gsis_id": "00-0040130",
-      "position": "WR",
-      "team": "HOU",
-      "headline": "Sent to injured reserve",
-      "description": "The Texans placed Higgins (knee) on injured reserve Friday, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jayden-higgins-18551",
-      "pub_date": "2026-08-21T11:32:00Z"
-    },
-    {
-      "player_name": "Terrance Ferguson",
-      "sleeper_id": "12487",
-      "gsis_id": "00-0040737",
-      "position": "TE",
-      "team": "LAR",
-      "headline": "Seeing expanded route tree in camp",
-      "description": "The Rams have expanded Ferguson's route tree this summer now that he's more comfortable with the playbook in his second season, Nate Atkins of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/terrance-ferguson-18497",
-      "pub_date": "2026-08-21T11:09:00Z"
-    },
-    {
-      "player_name": "Jake Bobo",
-      "sleeper_id": "10867",
-      "gsis_id": "00-0038752",
-      "position": "WR",
-      "team": "SEA",
-      "headline": "Knee injury believed to be serious",
-      "description": "Coach Mike Macdonald said Bobo sustained a \"serious\" knee injury in Friday's joint practice with the Titans, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jake-bobo-17040",
-      "pub_date": "2026-08-21T11:02:00Z"
     }
   ]
 }
