@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-20T10:50:15Z",
+  "generated_at": "2026-11-20T19:31:23Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jordyn Tyson",
+      "sleeper_id": "13281",
+      "gsis_id": "00-0041029",
+      "position": "WR",
+      "team": "NOS",
+      "headline": "Clear for Week 11",
+      "description": "Tyson (chest) doesn't have a designation for Sunday's game at Chicago. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordyn-tyson-19233",
+      "pub_date": "2026-11-20T11:30:00Z"
+    },
+    {
+      "player_name": "Mike Evans",
+      "sleeper_id": "2216",
+      "gsis_id": "00-0031408",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Gets questionable tag",
+      "description": "Head coach Kyle Shanahan said Friday that the 49ers will make a decision on Evans' (Achilles) Week 11 status Saturday after listing the wide receiver as questionable for Sunday's game against the Vikings in Mexico City, Matt Barrows of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
+      "pub_date": "2026-11-20T11:27:00Z"
+    },
+    {
+      "player_name": "Kenneth Walker III",
+      "sleeper_id": "8151",
+      "gsis_id": "00-0038134",
+      "position": "RB",
+      "team": "KCC",
+      "headline": "Likely out in Week 11",
+      "description": "Head coach Andy Reid said Friday that Walker (groin) \"most likely\" won't be available Sunday against the Cardinals, Sam McDowell of The Kansas City Star reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenneth-walker-15909",
+      "pub_date": "2026-11-20T11:20:00Z"
+    },
+    {
+      "player_name": "T.J. Hockenson",
+      "sleeper_id": "5844",
+      "gsis_id": "00-0035229",
+      "position": "TE",
+      "team": "MIN",
+      "headline": "Good to go for Week 11",
+      "description": "Hockenson (wrist) doesn't have an injury designation for Sunday night's game against the 49ers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tj-hockenson-13610",
+      "pub_date": "2026-11-20T11:19:00Z"
+    },
+    {
+      "player_name": "Drake Maye",
+      "sleeper_id": "11564",
+      "gsis_id": "00-0039851",
+      "position": "QB",
+      "team": "NEP",
+      "headline": "Out indefinitely with fractured fibula",
+      "description": "Maye has suffered a fractured right fibula that won't require surgery but is expected to sideline him for some time, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/drake-maye-17673",
+      "pub_date": "2026-11-20T11:15:00Z"
+    },
     {
       "player_name": "Dalton Kincaid",
       "sleeper_id": "10236",
