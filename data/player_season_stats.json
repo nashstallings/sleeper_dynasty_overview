@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T22:37:29Z",
+  "generated_at": "2026-11-20T21:56:42Z",
   "players": {
     "10210": {
       "name": "Cameron Latu",
@@ -19199,6 +19199,35 @@
           "target_share": 0.0,
           "targets": 0,
           "team": "NE",
+          "wopr": 0.0
+        }
+      }
+    },
+    "13904": {
+      "name": "Jacob De Jesus",
+      "position": "WR",
+      "seasons": {
+        "2026": {
+          "air_yards_share": 0.0,
+          "attempts": 0,
+          "carries": 0,
+          "completions": 0,
+          "cpoe": null,
+          "fantasy_points_ppr": 0.0,
+          "games": 1,
+          "interceptions": 0,
+          "passing_epa": null,
+          "passing_tds": 0,
+          "passing_yards": 0,
+          "receiving_tds": 0,
+          "receiving_yards": 0,
+          "receptions": 0,
+          "rushing_tds": 0,
+          "rushing_yards": 0,
+          "snap_share": 0.0,
+          "target_share": 0.0,
+          "targets": 0,
+          "team": "KC",
           "wopr": 0.0
         }
       }
