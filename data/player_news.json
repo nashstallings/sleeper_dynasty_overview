@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T01:58:56Z",
+  "generated_at": "2026-11-20T10:50:15Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Pittman (foot) participated in practice Thursday, Nick Farabaugh of PennLive.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
       "pub_date": "2026-11-19T10:29:00Z"
+    },
+    {
+      "player_name": "Tyler Warren",
+      "sleeper_id": "12518",
+      "gsis_id": "00-0040128",
+      "position": "TE",
+      "team": "IND",
+      "headline": "Good yardage on one catch",
+      "description": "Warren brought in one of five targets for 22 yards in the Colts' 26-3 loss to the Texans on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tyler-warren-18534",
+      "pub_date": "2026-11-19T09:06:00Z"
+    },
+    {
+      "player_name": "Daniel Jones",
+      "sleeper_id": "5870",
+      "gsis_id": "00-0035710",
+      "position": "QB",
+      "team": "IND",
+      "headline": "Another forgettable performance in loss",
+      "description": "Jones completed 12 of 27 passes for 144 yards with no touchdowns and one interception and rushed once for three yards in the Colts' 26-3 loss to the Texans on Thursday before being replaced by Anthony Richardson with 7:51 remaining. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/daniel-jones-13491",
+      "pub_date": "2026-11-19T09:02:00Z"
+    },
+    {
+      "player_name": "C.J. Stroud",
+      "sleeper_id": "9758",
+      "gsis_id": "00-0039163",
+      "position": "QB",
+      "team": "HOU",
+      "headline": "Keeps piling up TDs in win",
+      "description": "Stroud completed 21 of 26 passes for 194 yards with three touchdowns and one interception and rushed six times for 27 yards in the Texans' 26-3 win over the Colts on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/cj-stroud-16886",
+      "pub_date": "2026-11-19T08:53:00Z"
+    },
+    {
+      "player_name": "Jonathan Taylor",
+      "sleeper_id": "6813",
+      "gsis_id": "00-0036223",
+      "position": "RB",
+      "team": "IND",
+      "headline": "Minimal production with 15 touches",
+      "description": "Taylor rushed 11 times for 21 yards and brought in four of five targets for six yards in the Colts' 26-3 loss to the Texans on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jonathan-taylor-14455",
+      "pub_date": "2026-11-19T08:47:00Z"
+    },
+    {
+      "player_name": "Nico Collins",
+      "sleeper_id": "7569",
+      "gsis_id": "00-0036554",
+      "position": "WR",
+      "team": "HOU",
+      "headline": "Gets into end zone Thursday",
+      "description": "Collins secured three of five targets for 58 yards and a touchdown in the Texans' 26-3 win over the Colts on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/nico-collins-15200",
+      "pub_date": "2026-11-19T08:42:00Z"
     },
     {
       "player_name": "Mike Evans",
@@ -12895,248 +12950,6 @@
       "description": "Watson will learn Monday if he or Shedeur Sanders will be named starting quarterback for the Browns, Jeremy Fowler of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/deshaun-watson-11712",
       "pub_date": "2026-08-23T01:08:00Z"
-    },
-    {
-      "player_name": "Khalil Shakir",
-      "sleeper_id": "8134",
-      "gsis_id": "00-0037261",
-      "position": "WR",
-      "team": "BUF",
-      "headline": "Won't play Saturday",
-      "description": "Shakir (undisclosed) won't play in Saturday's preseason game against Cleveland, Jay Skurski of The Buffalo News reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/khalil-shakir-15892",
-      "pub_date": "2026-08-22T09:46:00Z"
-    },
-    {
-      "player_name": "Keon Coleman",
-      "sleeper_id": "11637",
-      "gsis_id": "00-0039901",
-      "position": "WR",
-      "team": "BUF",
-      "headline": "Not slated to play Saturday",
-      "description": "Coleman (right foot/toe) isn't expected to play in Saturday's preseason game, Jay Skurski of The Buffalo News reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/keon-coleman-17732",
-      "pub_date": "2026-08-22T09:34:00Z"
-    },
-    {
-      "player_name": "Jerry Jeudy",
-      "sleeper_id": "6783",
-      "gsis_id": "00-0036407",
-      "position": "WR",
-      "team": "CLE",
-      "headline": "Not playing Saturday",
-      "description": "Jeudy will not play in the Browns' preseason game against the Bills on Saturday, Daniel Oyefusi of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jerry-jeudy-14458",
-      "pub_date": "2026-08-22T09:26:00Z"
-    },
-    {
-      "player_name": "Quentin Johnston",
-      "sleeper_id": "9754",
-      "gsis_id": "00-0038544",
-      "position": "WR",
-      "team": "LAC",
-      "headline": "Idle for Saturday's practice",
-      "description": "Johnston (lower body) will not participate in Saturday's training camp practice, Alex Insdorf of BoltBeat.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/quentin-johnston-16899",
-      "pub_date": "2026-08-22T09:20:00Z"
-    },
-    {
-      "player_name": "Quinshon Judkins",
-      "sleeper_id": "12512",
-      "gsis_id": "00-0040784",
-      "position": "RB",
-      "team": "CLE",
-      "headline": "Not expected to play Saturday",
-      "description": "Judkins (undisclosed) is not expected to play in Saturday's preseason game against the Bills, Kelsey Russo of the Browns' official site reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/quinshon-judkins-18516",
-      "pub_date": "2026-08-22T08:34:00Z"
-    },
-    {
-      "player_name": "Baker Mayfield",
-      "sleeper_id": "4892",
-      "gsis_id": "00-0034855",
-      "position": "QB",
-      "team": "TBB",
-      "headline": "Pair of completions on first two series",
-      "description": "Mayfield completed two of four passes for 10 yards with no touchdowns or interceptions in the Buccaneers' 16-15 preseason win over the Chiefs on Saturday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/baker-mayfield-12619",
-      "pub_date": "2026-08-22T08:07:00Z"
-    },
-    {
-      "player_name": "Kenny Gainwell",
-      "sleeper_id": "7567",
-      "gsis_id": "00-0036919",
-      "position": "RB",
-      "team": "TBB",
-      "headline": "One carry in team debut",
-      "description": "Gainwell rushed once for no gain in the Buccaneers' 16-15 preseason win over the Chiefs on Saturday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/kenny-gainwell-15222",
-      "pub_date": "2026-08-22T08:02:00Z"
-    },
-    {
-      "player_name": "Bucky Irving",
-      "sleeper_id": "11584",
-      "gsis_id": "00-0039361",
-      "position": "RB",
-      "team": "TBB",
-      "headline": "Logs three carries in preseason debut",
-      "description": "Irving rushed three times for 14 yards in the Buccaneers' 16-15 preseason win over the Chiefs on Saturday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/bucky-irving-17784",
-      "pub_date": "2026-08-22T07:56:00Z"
-    },
-    {
-      "player_name": "Kenneth Walker III",
-      "sleeper_id": "8151",
-      "gsis_id": "00-0038134",
-      "position": "RB",
-      "team": "KCC",
-      "headline": "Logs first touches as a Chief",
-      "description": "Walker rushed twice for four yards in the Chiefs' 16-15 preseason loss to the Buccaneers on Saturday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/kenneth-walker-15909",
-      "pub_date": "2026-08-22T07:47:00Z"
-    },
-    {
-      "player_name": "Rome Odunze",
-      "sleeper_id": "11620",
-      "gsis_id": "00-0039919",
-      "position": "WR",
-      "team": "CHI",
-      "headline": "Big gain on one catch Saturday",
-      "description": "Odunze brought in one of two targets for 18 yards in the Bears' 27-9 preseason loss to the Bengals on Saturday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/rome-odunze-17020",
-      "pub_date": "2026-08-22T07:43:00Z"
-    },
-    {
-      "player_name": "Jacory Croskey-Merritt",
-      "sleeper_id": "12533",
-      "gsis_id": "00-0040242",
-      "position": "RB",
-      "team": "WAS",
-      "headline": "Will sit Saturday",
-      "description": "Croskey-Merritt won't play in Saturday's preseason game against the Lions, John Keim of ESPN reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jacory-croskey-merritt-18811",
-      "pub_date": "2026-08-22T07:25:00Z"
-    },
-    {
-      "player_name": "Josh Allen",
-      "sleeper_id": "4984",
-      "gsis_id": "00-0034857",
-      "position": "QB",
-      "team": "BUF",
-      "headline": "Will sit Saturday",
-      "description": "Allen will sit for Saturday's preseason game against the Browns, Cameron Wolfe of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/josh-allen-12483",
-      "pub_date": "2026-08-22T07:22:00Z"
-    },
-    {
-      "player_name": "Terry McLaurin",
-      "sleeper_id": "5927",
-      "gsis_id": "00-0035659",
-      "position": "WR",
-      "team": "WAS",
-      "headline": "Playing Saturday vs. Detroit",
-      "description": "McLaurin will play in Saturday's preseason game against the Lions, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/terry-mclaurin-13536",
-      "pub_date": "2026-08-22T07:16:00Z"
-    },
-    {
-      "player_name": "Stefon Diggs",
-      "sleeper_id": "2449",
-      "gsis_id": "00-0031588",
-      "position": "WR",
-      "team": "WAS",
-      "headline": "Will make preseason debut",
-      "description": "Diggs is expected to make his preseason debut Saturday against Detroit, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/stefon-diggs-10133",
-      "pub_date": "2026-08-22T07:13:00Z"
-    },
-    {
-      "player_name": "Jayden Daniels",
-      "sleeper_id": "11566",
-      "gsis_id": "00-0039910",
-      "position": "QB",
-      "team": "WAS",
-      "headline": "Expected to suit up Saturday",
-      "description": "Daniels is expected to be active for Saturday's preseason game against the Lions, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jayden-daniels-17692",
-      "pub_date": "2026-08-22T07:07:00Z"
-    },
-    {
-      "player_name": "Ja'Kobi Lane",
-      "sleeper_id": "13293",
-      "gsis_id": "00-0040870",
-      "position": "WR",
-      "team": "BAL",
-      "headline": "Logs one catch vs. Minnesota",
-      "description": "Lane caught one pass on two targets for nine yards during the Ravens' 13-3 preseason win over the Vikings on Saturday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jakobi-lane-19230",
-      "pub_date": "2026-08-22T04:59:00Z"
-    },
-    {
-      "player_name": "Ty Simpson",
-      "sleeper_id": "13275",
-      "gsis_id": "00-0041568",
-      "position": "QB",
-      "team": "LAR",
-      "headline": "Serves as QB2 vs. New Orleans",
-      "description": "Simpson completed eight of 12 passes for 73 yards and added three carries for 10 yards during the Rams' 34-0 preseason win over the Saints on Saturday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/ty-simpson-19275",
-      "pub_date": "2026-08-22T04:46:00Z"
-    },
-    {
-      "player_name": "Jaxson Dart",
-      "sleeper_id": "12508",
-      "gsis_id": "00-0040691",
-      "position": "QB",
-      "team": "NYG",
-      "headline": "Rested for second preseason game",
-      "description": "Dart didn't suit up for Saturday's 26-3 preseason win over the Dolphins. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jaxson-dart-18574",
-      "pub_date": "2026-08-22T04:09:00Z"
-    },
-    {
-      "player_name": "Mike Evans",
-      "sleeper_id": "2216",
-      "gsis_id": "00-0031408",
-      "position": "WR",
-      "team": "SFO",
-      "headline": "Back in team drills Saturday",
-      "description": "Evans (quadriceps) took part in 11-on-11 work at Saturday's practice, Noah Furtado of the San Francisco Chronicle reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
-      "pub_date": "2026-08-22T03:49:00Z"
-    },
-    {
-      "player_name": "Caleb Williams",
-      "sleeper_id": "11560",
-      "gsis_id": "00-0039918",
-      "position": "QB",
-      "team": "CHI",
-      "headline": "Could play Saturday",
-      "description": "Williams is in uniform in advance of Saturday's preseason game in Cincinnati, Sean Hammond of the Chicago Tribune reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/caleb-williams-17695",
-      "pub_date": "2026-08-22T03:39:00Z"
-    },
-    {
-      "player_name": "Mike Evans",
-      "sleeper_id": "2216",
-      "gsis_id": "00-0031408",
-      "position": "WR",
-      "team": "SFO",
-      "headline": "In uniform for practice Saturday",
-      "description": "Evans (quadriceps) is suited up for Saturday's practice, Nick Wagoner of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
-      "pub_date": "2026-08-22T02:11:00Z"
-    },
-    {
-      "player_name": "De'Zhaun Stribling",
-      "sleeper_id": "13417",
-      "gsis_id": "00-0041035",
-      "position": "WR",
-      "team": "SFO",
-      "headline": "Working through shoulder issue",
-      "description": "Stribling is considered day-to-day due to a shoulder injury, Matt Maiocco of NBC Sports Bay Area reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/dezhaun-stribling-19330",
-      "pub_date": "2026-08-22T02:08:00Z"
     }
   ]
 }
