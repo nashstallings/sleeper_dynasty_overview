@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-21T10:34:02Z",
+  "generated_at": "2026-11-21T18:36:20Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Josh Jacobs",
+      "sleeper_id": "5850",
+      "gsis_id": "00-0035700",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Practicing Saturday",
+      "description": "Jacobs (finger) is participating in Saturday's practice session, Bill Huber of SI.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
+      "pub_date": "2026-11-21T10:30:00Z"
+    },
+    {
+      "player_name": "Rachaad White",
+      "sleeper_id": "8136",
+      "gsis_id": "00-0037256",
+      "position": "RB",
+      "team": "WAS",
+      "headline": "Expected to play Monday",
+      "description": "White (heel) is trending toward being available for Monday's game against the Bengals, Tashan Reed of The Washington Post reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rachaad-white-15802",
+      "pub_date": "2026-11-21T09:53:00Z"
+    },
+    {
+      "player_name": "Jacory Croskey-Merritt",
+      "sleeper_id": "12533",
+      "gsis_id": "00-0040242",
+      "position": "RB",
+      "team": "WAS",
+      "headline": "Trending toward playing Monday",
+      "description": "Croskey-Merritt (groin) is trending toward playing in Monday night's game against the Bengals, Nicki Jhabvala of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jacory-croskey-merritt-18811",
+      "pub_date": "2026-11-21T09:50:00Z"
+    },
+    {
+      "player_name": "Josh Jacobs",
+      "sleeper_id": "5850",
+      "gsis_id": "00-0035700",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Unlikely to play Wednesday",
+      "description": "Jacobs (finger) isn't expected to play Wednesday against the Rams, Matt Schneidman of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
+      "pub_date": "2026-11-21T09:18:00Z"
+    },
+    {
+      "player_name": "Carnell Tate",
+      "sleeper_id": "13279",
+      "gsis_id": "00-0041438",
+      "position": "WR",
+      "team": "TEN",
+      "headline": "Expected to play Sunday",
+      "description": "Tate (shoulder) is questionable for Sunday's game against the Cowboys but is \"considered likely\" to be cleared to play, Matt Zenitz of CBS Sports reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/carnell-tate-19268",
+      "pub_date": "2026-11-21T08:43:00Z"
+    },
     {
       "player_name": "Jordyn Tyson",
       "sleeper_id": "13281",
@@ -12873,17 +12928,6 @@
       "description": "Benson (knee) was waived/injured by the Cardinals on Monday, Darren Urban of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/trey-benson-17767",
       "pub_date": "2026-08-24T01:37:00Z"
-    },
-    {
-      "player_name": "Christian McCaffrey",
-      "sleeper_id": "4034",
-      "gsis_id": "00-0033280",
-      "position": "RB",
-      "team": "SFO",
-      "headline": "Jumps into team drills Sunday",
-      "description": "Updating a previous report, McCaffrey (undisclosed) participated in team drills during Sunday's practice, Vic Tafur of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/christian-mccaffrey-11690",
-      "pub_date": "2026-08-23T12:03:00Z"
     }
   ]
 }
