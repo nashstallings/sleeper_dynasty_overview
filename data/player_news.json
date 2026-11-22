@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T18:36:20Z",
+  "generated_at": "2026-11-22T00:51:49Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Tate (shoulder) is questionable for Sunday's game against the Cowboys but is \"considered likely\" to be cleared to play, Matt Zenitz of CBS Sports reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/carnell-tate-19268",
       "pub_date": "2026-11-21T08:43:00Z"
+    },
+    {
+      "player_name": "Jacory Croskey-Merritt",
+      "sleeper_id": "12533",
+      "gsis_id": "00-0040242",
+      "position": "RB",
+      "team": "WAS",
+      "headline": "Expected to return for MNF",
+      "description": "Croskey-Merritt (groin) is slated to be activated from IR in time to play in Monday's game against the Bengals, Matt Zenitz of CBS Sports reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jacory-croskey-merritt-18811",
+      "pub_date": "2026-11-21T03:35:00Z"
+    },
+    {
+      "player_name": "Kyren Williams",
+      "sleeper_id": "8150",
+      "gsis_id": "00-0037840",
+      "position": "RB",
+      "team": "LAR",
+      "headline": "Dealing with sore toe",
+      "description": "Head coach Sean McVay said Saturday that Williams is tending to a sore toe but is expected to play Wednesday against the Packers, Sarah Barshop of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyren-williams-15807",
+      "pub_date": "2026-11-21T01:56:00Z"
+    },
+    {
+      "player_name": "Joe Burrow",
+      "sleeper_id": "6770",
+      "gsis_id": "00-0036442",
+      "position": "QB",
+      "team": "CIN",
+      "headline": "Officially cleared for Monday Night Football",
+      "description": "Burrow (illness) does not have an injury designation ahead of Monday's game against the Commanders. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/joe-burrow-14442",
+      "pub_date": "2026-11-21T01:31:00Z"
+    },
+    {
+      "player_name": "Rachaad White",
+      "sleeper_id": "8136",
+      "gsis_id": "00-0037256",
+      "position": "RB",
+      "team": "WAS",
+      "headline": "Questionable for Monday",
+      "description": "White (heel) is listed as questionable for Monday's game versus the Bengals. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rachaad-white-15802",
+      "pub_date": "2026-11-21T01:22:00Z"
+    },
+    {
+      "player_name": "Jacory Croskey-Merritt",
+      "sleeper_id": "12533",
+      "gsis_id": "00-0040242",
+      "position": "RB",
+      "team": "WAS",
+      "headline": "Questionable for Week 11",
+      "description": "Croskey-Merritt (groin) is listed as questionable for Monday's game against the Bengals. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jacory-croskey-merritt-18811",
+      "pub_date": "2026-11-21T01:16:00Z"
     },
     {
       "player_name": "Jordyn Tyson",
