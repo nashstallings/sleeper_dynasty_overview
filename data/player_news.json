@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T00:51:49Z",
+  "generated_at": "2026-11-22T10:38:17Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,17 @@
       "description": "Tate (shoulder) is questionable for Sunday's game against the Cowboys but is \"considered likely\" to be cleared to play, Matt Zenitz of CBS Sports reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/carnell-tate-19268",
       "pub_date": "2026-11-21T08:43:00Z"
+    },
+    {
+      "player_name": "Puka Nacua",
+      "sleeper_id": "9493",
+      "gsis_id": "00-0039075",
+      "position": "WR",
+      "team": "LAR",
+      "headline": "Out even for playoffs",
+      "description": "Nacua (knee) is expected to be sidelined 4-to-5 months after undergoing MCL surgery, which means he likely won't be able to return to action even if the Rams advance to the Super Bowl, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/puka-nacua-16790",
+      "pub_date": "2026-11-21T05:26:00Z"
     },
     {
       "player_name": "Jacory Croskey-Merritt",
@@ -12895,94 +12906,6 @@
       "description": "Judkins (undisclosed) returned to practice Monday, Daniel Oyefusi of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/quinshon-judkins-18516",
       "pub_date": "2026-08-24T10:43:00Z"
-    },
-    {
-      "player_name": "Breece Hall",
-      "sleeper_id": "8155",
-      "gsis_id": "00-0038120",
-      "position": "RB",
-      "team": "NYJ",
-      "headline": "Works on side Monday",
-      "description": "Hall (groin) took part in agility drills on the side at Monday's practice, Brian Costello of the New York Post reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/breece-hall-15810",
-      "pub_date": "2026-08-24T10:11:00Z"
-    },
-    {
-      "player_name": "Josh Jacobs",
-      "sleeper_id": "5850",
-      "gsis_id": "00-0035700",
-      "position": "RB",
-      "team": "GBP",
-      "headline": "Set for limited practice work",
-      "description": "Packers head coach Matt LaFleur said that Jacobs (groin) is expected to go through limited team work during practice Monday, Rob Demovsky of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
-      "pub_date": "2026-08-24T08:30:00Z"
-    },
-    {
-      "player_name": "Chris Bell",
-      "sleeper_id": "13311",
-      "gsis_id": "00-0041525",
-      "position": "WR",
-      "team": "MIA",
-      "headline": "Set to practice without limitations",
-      "description": "Bell (knee) is expected to be a full participant in Monday's practice, David Furones of the South Florida Sun Sentinel reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/chris-bell-19309",
-      "pub_date": "2026-08-24T08:02:00Z"
-    },
-    {
-      "player_name": "Shedeur Sanders",
-      "sleeper_id": "12524",
-      "gsis_id": "00-0040668",
-      "position": "QB",
-      "team": "CLE",
-      "headline": "Beginning season in backup role",
-      "description": "Sanders will open the season as the Browns' backup quarterback after the team named Deshaun Watson its starter Monday, multiple sources tell NFL reporter Jordan Schultz. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/shedeur-sanders-18479",
-      "pub_date": "2026-08-24T07:19:00Z"
-    },
-    {
-      "player_name": "Deshaun Watson",
-      "sleeper_id": "4017",
-      "gsis_id": "00-0033537",
-      "position": "QB",
-      "team": "CLE",
-      "headline": "Named Cleveland's starting quarterback",
-      "description": "The Browns named Watson their starting quarterback Monday, multiple sources tell NFL reporter Jordan Schultz. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/deshaun-watson-11712",
-      "pub_date": "2026-08-24T07:07:00Z"
-    },
-    {
-      "player_name": "Kirk Cousins",
-      "sleeper_id": "1166",
-      "gsis_id": "00-0029604",
-      "position": "QB",
-      "team": "LVR",
-      "headline": "Listed atop depth chart",
-      "description": "Cousins is listed as the Raiders' top quarterback on the unofficial depth chart for Thursday's preseason game versus the 49ers, according to the team's official site. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/kirk-cousins-8057",
-      "pub_date": "2026-08-24T05:48:00Z"
-    },
-    {
-      "player_name": "J.J. McCarthy",
-      "sleeper_id": "11565",
-      "gsis_id": "00-0039923",
-      "position": "QB",
-      "team": "MIN",
-      "headline": "Practices Monday",
-      "description": "McCarthy (undisclosed) participated in Monday's practice, Kevin Seifert of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jj-mccarthy-17689",
-      "pub_date": "2026-08-24T02:24:00Z"
-    },
-    {
-      "player_name": "Trey Benson",
-      "sleeper_id": "11589",
-      "gsis_id": "00-0039921",
-      "position": "RB",
-      "team": "ARI",
-      "headline": "Cut by Cardinals",
-      "description": "Benson (knee) was waived/injured by the Cardinals on Monday, Darren Urban of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/trey-benson-17767",
-      "pub_date": "2026-08-24T01:37:00Z"
     }
   ]
 }
