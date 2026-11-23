@@ -1,9 +1,53 @@
 {
-  "generated_at": "2026-11-23T11:40:16Z",
+  "generated_at": "2026-11-23T23:15:37Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Jake Ferguson",
+      "sleeper_id": "8110",
+      "gsis_id": "00-0038041",
+      "position": "TE",
+      "team": "DAL",
+      "headline": "Estimated as 'DNP' Monday",
+      "description": "Ferguson (knee/ankle) was listed as a non-participant on Monday's practice estimate, Tommy Yarrish of the Cowboys' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jake-ferguson-15947",
+      "pub_date": "2026-11-23T03:02:00Z"
+    },
+    {
+      "player_name": "Dalton Kincaid",
+      "sleeper_id": "10236",
+      "gsis_id": "00-0038933",
+      "position": "TE",
+      "team": "BUF",
+      "headline": "Limited listing on Monday's practice estimate",
+      "description": "Kincaid (thumb/ankle) was listed as a limited participanton Monday's practice estimate. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dalton-kincaid-16697",
+      "pub_date": "2026-11-23T02:54:00Z"
+    },
+    {
+      "player_name": "Kenneth Walker III",
+      "sleeper_id": "8151",
+      "gsis_id": "00-0038134",
+      "position": "RB",
+      "team": "KCC",
+      "headline": "Deemed 'DNP' on practice estimate",
+      "description": "Walker (groin) was listed as a non-participant on Monday's practice estimate. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kenneth-walker-15909",
+      "pub_date": "2026-11-23T02:45:00Z"
+    },
+    {
+      "player_name": "Jeremiyah Love",
+      "sleeper_id": "13287",
+      "gsis_id": "00-0041027",
+      "position": "RB",
+      "team": "ARI",
+      "headline": "On IR for at least one more game",
+      "description": "Coach Mike LaFleur said Monday that the Cardinals are still evaluating the status of Love (ankle), with the running back's earliest possible return from IR on the horizon, Bo Brack of GoPHNX.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
+      "pub_date": "2026-11-23T02:35:00Z"
+    },
     {
       "player_name": "Josh Jacobs",
       "sleeper_id": "5850",
@@ -12840,50 +12884,6 @@
       "description": "Evans' groin injury is considered minor, and he plans to be ready for the 49ers' Week 1 regular-season opener against the Rams on Thursday, Sept. 10, Jeremy Fowler of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/mike-evans-9253",
       "pub_date": "2026-08-26T04:54:00Z"
-    },
-    {
-      "player_name": "Ja'Marr Chase",
-      "sleeper_id": "7564",
-      "gsis_id": "00-0036900",
-      "position": "WR",
-      "team": "CIN",
-      "headline": "Downplays knee injury",
-      "description": "Chase downplayed his knee injury Tuesday, saying it was a \"little hyperextension,\" and he could've kept practicing, Kelsey Conway of the Cincinnati Enquirer reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
-      "pub_date": "2026-08-25T12:53:00Z"
-    },
-    {
-      "player_name": "Chris Olave",
-      "sleeper_id": "8144",
-      "gsis_id": "00-0037239",
-      "position": "WR",
-      "team": "NOS",
-      "headline": "Exits practice early Tuesday",
-      "description": "Olave exited Tuesday's practice early with an undisclosed injury, Mike Triplett of New Orleans.Football reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/chris-olave-15895",
-      "pub_date": "2026-08-25T12:41:00Z"
-    },
-    {
-      "player_name": "Sam LaPorta",
-      "sleeper_id": "10859",
-      "gsis_id": "00-0039065",
-      "position": "TE",
-      "team": "DET",
-      "headline": "Practicing Tuesday",
-      "description": "LaPorta (hip) returned to practice Tuesday, Richard Silva of The Detroit News reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/sam-laporta-17033",
-      "pub_date": "2026-08-25T12:00:00Z"
-    },
-    {
-      "player_name": "Ja'Marr Chase",
-      "sleeper_id": "7564",
-      "gsis_id": "00-0036900",
-      "position": "WR",
-      "team": "CIN",
-      "headline": "Limps off field at Tuesday's practice",
-      "description": "Chase (knee) limped off the field at Tuesday's practice after landing awkwardly while attempting to reel in a deep ball, Jay Morrison of SI.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
-      "pub_date": "2026-08-25T11:54:00Z"
     }
   ]
 }
