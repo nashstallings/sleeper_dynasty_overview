@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T18:57:01Z",
+  "generated_at": "2026-11-23T01:21:03Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -58,6 +58,61 @@
       "description": "Mayfield (foot/thumb) is listed as active Sunday at Detroit, Scott Smith of the Buccaneers' official site reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/baker-mayfield-12619",
       "pub_date": "2026-11-22T08:37:00Z"
+    },
+    {
+      "player_name": "Ladd McConkey",
+      "sleeper_id": "11635",
+      "gsis_id": "00-0039915",
+      "position": "WR",
+      "team": "LAC",
+      "headline": "Finds end zone twice against Jets",
+      "description": "McConkey caught five of eight targets for 37 yards and two touchdowns in Sunday's 27-24 loss to the Jets. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/ladd-mcconkey-17724",
+      "pub_date": "2026-11-22T05:21:00Z"
+    },
+    {
+      "player_name": "Brock Bowers",
+      "sleeper_id": "11604",
+      "gsis_id": "00-0039338",
+      "position": "TE",
+      "team": "LVR",
+      "headline": "Coach optimistic about Week 12 availability",
+      "description": "Raiders coach Klink Kubiak said after Sunday's 38-24 loss to the Broncos that he's optimistic Bowers (ankle/quadriceps) will be available to face the Browns on Nov. 29, Ryan McFadden of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/brock-bowers-17693",
+      "pub_date": "2026-11-22T05:16:00Z"
+    },
+    {
+      "player_name": "Omarion Hampton",
+      "sleeper_id": "12507",
+      "gsis_id": "00-0040666",
+      "position": "RB",
+      "team": "LAC",
+      "headline": "Productive again in Week 11 loss",
+      "description": "Hampton carried the ball 14 times for 89 yards and caught his only target for four yards in Sunday's 27-24 loss to the Jets. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/omarion-hampton-18445",
+      "pub_date": "2026-11-22T05:15:00Z"
+    },
+    {
+      "player_name": "Braelon Allen",
+      "sleeper_id": "11576",
+      "gsis_id": "00-0039794",
+      "position": "RB",
+      "team": "NYJ",
+      "headline": "Effective complement to Hall in Week 11",
+      "description": "Allen rushed 16 times for 75 yards while catching his lone target for nine yards in Sunday's 27-24 win over the Chargers. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/braelon-allen-17702",
+      "pub_date": "2026-11-22T05:06:00Z"
+    },
+    {
+      "player_name": "Bryce Young",
+      "sleeper_id": "9228",
+      "gsis_id": "00-0039150",
+      "position": "QB",
+      "team": "CAR",
+      "headline": "Tosses two TDs in win over Ravens",
+      "description": "Young completed 22 of 30 passes for 254 yards and two touchdowns with one interception in Sunday's 35-33 win over Baltimore. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bryce-young-16807",
+      "pub_date": "2026-11-22T04:56:00Z"
     },
     {
       "player_name": "Josh Jacobs",
@@ -12873,17 +12928,6 @@
       "description": "Allen will not play in Thursday's preseason finale against the Steelers, Jay Skurski of The Buffalo News reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/josh-allen-12483",
       "pub_date": "2026-08-25T05:31:00Z"
-    },
-    {
-      "player_name": "Ja'Marr Chase",
-      "sleeper_id": "7564",
-      "gsis_id": "00-0036900",
-      "position": "WR",
-      "team": "CIN",
-      "headline": "Says he could play through knee injury",
-      "description": "Chase (knee) said he could play in a game Wednesday after exiting Tuesday's practice early, Kelsey Conway of the Cincinnati Enquirer reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
-      "pub_date": "2026-08-25T01:16:00Z"
     }
   ]
 }
