@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-23T23:15:37Z",
+  "generated_at": "2026-11-24T07:59:59Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Chig Okonkwo",
+      "sleeper_id": "8210",
+      "gsis_id": "00-0037809",
+      "position": "TE",
+      "team": "WAS",
+      "headline": "Productive with four catches in win",
+      "description": "Okonkwo brought in four of five targets for 66 yards in the Commanders' 22-20 win over the Bengals on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chig-okonkwo-16042",
+      "pub_date": "2026-11-23T09:15:00Z"
+    },
+    {
+      "player_name": "Antonio Williams",
+      "sleeper_id": "13301",
+      "gsis_id": "00-0041040",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Career-best totals in win",
+      "description": "Williams brought in nine of 11 targets for 122 yards in the Commanders' 22-20 win over the Bengals on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/antonio-williams-19237",
+      "pub_date": "2026-11-23T09:10:00Z"
+    },
+    {
+      "player_name": "Jacory Croskey-Merritt",
+      "sleeper_id": "12533",
+      "gsis_id": "00-0040242",
+      "position": "RB",
+      "team": "WAS",
+      "headline": "Scores TD in return from injury",
+      "description": "Croskey-Merritt rushed 13 times for 54 yards and a touchdown and brought in two of three targets for 23 yards in the Commanders' 22-20 win over the Bengals on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jacory-croskey-merritt-18811",
+      "pub_date": "2026-11-23T09:06:00Z"
+    },
+    {
+      "player_name": "Mike Gesicki",
+      "sleeper_id": "4993",
+      "gsis_id": "00-0034829",
+      "position": "TE",
+      "team": "CIN",
+      "headline": "Team-high yardage total in loss",
+      "description": "Gesicki brought in five of six targets for 77 yards in the Bengals' 22-20 loss to the Commanders on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mike-gesicki-12764",
+      "pub_date": "2026-11-23T09:01:00Z"
+    },
+    {
+      "player_name": "Chase Brown",
+      "sleeper_id": "9224",
+      "gsis_id": "00-0038597",
+      "position": "RB",
+      "team": "CIN",
+      "headline": "Forgettable rushing night in loss",
+      "description": "Brown rushed six times for six yards and brought in five of eight targets for 30 yards in the Bengals' 22-20 loss to the Commanders on Monday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/chase-brown-16934",
+      "pub_date": "2026-11-23T08:56:00Z"
+    },
     {
       "player_name": "Jake Ferguson",
       "sleeper_id": "8110",
@@ -12840,50 +12895,6 @@
       "description": "Downs is not practicing Wednesday due to a calf injury, Mike Chappell of Fox 59 News Indianapolis reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/josh-downs-16689",
       "pub_date": "2026-08-26T08:28:00Z"
-    },
-    {
-      "player_name": "Zay Flowers",
-      "sleeper_id": "9997",
-      "gsis_id": "00-0039064",
-      "position": "WR",
-      "team": "BAL",
-      "headline": "Absent for second straight practice",
-      "description": "Flowers isn't practicing Wednesday for the second day while he tends to an apparent undisclosed injury, Cordell Woodland of 105.7 The Fan Baltimore reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/zay-flowers-16919",
-      "pub_date": "2026-08-26T07:56:00Z"
-    },
-    {
-      "player_name": "Tucker Kraft",
-      "sleeper_id": "9484",
-      "gsis_id": "00-0038996",
-      "position": "TE",
-      "team": "GBP",
-      "headline": "Expected to be full-go Week 1",
-      "description": "Kraft (knee) is expected to be \"full go\" for the Packers' Week 1 regular-season opener against the Vikings, Rob Demovsky of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/tucker-kraft-16649",
-      "pub_date": "2026-08-26T05:18:00Z"
-    },
-    {
-      "player_name": "Chris Olave",
-      "sleeper_id": "8144",
-      "gsis_id": "00-0037239",
-      "position": "WR",
-      "team": "NOS",
-      "headline": "Back at practice Wednesday",
-      "description": "Olave (upper body) returned to practice Wednesday after exiting early Tuesday, Katherine Terrell of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/chris-olave-15895",
-      "pub_date": "2026-08-26T05:10:00Z"
-    },
-    {
-      "player_name": "Mike Evans",
-      "sleeper_id": "2216",
-      "gsis_id": "00-0031408",
-      "position": "WR",
-      "team": "SFO",
-      "headline": "Groin injury considered minor",
-      "description": "Evans' groin injury is considered minor, and he plans to be ready for the 49ers' Week 1 regular-season opener against the Rams on Thursday, Sept. 10, Jeremy Fowler of ESPN reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/mike-evans-9253",
-      "pub_date": "2026-08-26T04:54:00Z"
     }
   ]
 }
