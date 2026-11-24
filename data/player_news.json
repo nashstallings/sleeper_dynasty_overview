@@ -1,9 +1,42 @@
 {
-  "generated_at": "2026-11-24T07:59:59Z",
+  "generated_at": "2026-11-24T19:51:59Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "A.J. Brown",
+      "sleeper_id": "5859",
+      "gsis_id": "00-0035676",
+      "position": "WR",
+      "team": "NEP",
+      "headline": "Remains absent from practice",
+      "description": "Brown (hamstring) wasn't spotted on the field for Tuesday's unofficial practice, Evan Lazar of the Patriots' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
+      "pub_date": "2026-11-24T11:47:00Z"
+    },
+    {
+      "player_name": "Josh Jacobs",
+      "sleeper_id": "5850",
+      "gsis_id": "00-0035700",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Officially questionable for Wednesday",
+      "description": "The Packers list Jacobs (finger) as questionable for Wednesday's game against the Rams, Wes Hodkiewicz of the team's official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
+      "pub_date": "2026-11-24T10:20:00Z"
+    },
+    {
+      "player_name": "Denzel Boston",
+      "sleeper_id": "13346",
+      "gsis_id": "00-0041037",
+      "position": "WR",
+      "team": "CLE",
+      "headline": "Spectator for practice Tuesday",
+      "description": "Boston didn't take part in the Browns' unofficial practice Tuesday, Daniel Oyefusi of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/denzel-boston-19298",
+      "pub_date": "2026-11-24T10:18:00Z"
+    },
     {
       "player_name": "Chig Okonkwo",
       "sleeper_id": "8210",
@@ -12796,105 +12829,6 @@
       "description": "Shakir (undisclosed) isn't in uniform for Thursday's preseason contest against the Steelers, Alex Brasky of SI.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/khalil-shakir-15892",
       "pub_date": "2026-08-27T03:06:00Z"
-    },
-    {
-      "player_name": "Kenneth Walker III",
-      "sleeper_id": "8151",
-      "gsis_id": "00-0038134",
-      "position": "RB",
-      "team": "KCC",
-      "headline": "Ankle injury not serious",
-      "description": "Walker is experiencing swelling around his ankle but is expected to \"be fine,\" Sam McDowell of The Kansas City Star reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/kenneth-walker-15909",
-      "pub_date": "2026-08-26T11:20:00Z"
-    },
-    {
-      "player_name": "Michael Penix Jr.",
-      "sleeper_id": "11559",
-      "gsis_id": "00-0039917",
-      "position": "QB",
-      "team": "ATL",
-      "headline": "Intends to be ready Week 1",
-      "description": "Penix (knee) won't play in Friday's preseason game in Miami, but he believes he'll be available for a Week 1 road matchup with the Steelers on Sunday, Sept. 13, Tori McElhaney of the Falcons' official site reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/michael-penix-17700",
-      "pub_date": "2026-08-26T10:41:00Z"
-    },
-    {
-      "player_name": "Luther Burden III",
-      "sleeper_id": "12519",
-      "gsis_id": "00-0040735",
-      "position": "WR",
-      "team": "CHI",
-      "headline": "Back at practice Wednesday",
-      "description": "Burden (groin) returned to practice Wednesday, but he was contained to individual drills, Courtney Cronin of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/luther-burden-18548",
-      "pub_date": "2026-08-26T10:25:00Z"
-    },
-    {
-      "player_name": "Tua Tagovailoa",
-      "sleeper_id": "6768",
-      "gsis_id": "00-0036212",
-      "position": "QB",
-      "team": "ATL",
-      "headline": "Starting preseason Week 3",
-      "description": "Coach Kevin Stefanski said Wednesday that Tagovailoa will start Friday's preseason game at Miami, Josh Kendall of The Athletic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/tua-tagovailoa-14465",
-      "pub_date": "2026-08-26T10:20:00Z"
-    },
-    {
-      "player_name": "Jeremiyah Love",
-      "sleeper_id": "13287",
-      "gsis_id": "00-0041027",
-      "position": "RB",
-      "team": "ARI",
-      "headline": "Doing rehab work Wednesday",
-      "description": "Love (ankle) was spotted doing some light agility work with trainers ahead of Wednesday's practice, Theo Mackie of The Arizona Republic reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
-      "pub_date": "2026-08-26T10:14:00Z"
-    },
-    {
-      "player_name": "Josh Downs",
-      "sleeper_id": "9500",
-      "gsis_id": "00-0038997",
-      "position": "WR",
-      "team": "IND",
-      "headline": "Calf injury appears minor",
-      "description": "Downs said his calf injury is \"very minor\" and believes he will resume practicing soon, Jake Arthur of Roundtable.io reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/josh-downs-16689",
-      "pub_date": "2026-08-26T09:08:00Z"
-    },
-    {
-      "player_name": "Ja'Marr Chase",
-      "sleeper_id": "7564",
-      "gsis_id": "00-0036900",
-      "position": "WR",
-      "team": "CIN",
-      "headline": "Not practicing Wednesday",
-      "description": "Chase (knee) is not participating in Wednesday's practice, Ben Baby of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jamarr-chase-15183",
-      "pub_date": "2026-08-26T09:01:00Z"
-    },
-    {
-      "player_name": "Tucker Kraft",
-      "sleeper_id": "9484",
-      "gsis_id": "00-0038996",
-      "position": "TE",
-      "team": "GBP",
-      "headline": "Participating in joint practice",
-      "description": "Kraft (knee) will participate in team drills during Wednesday's joint practice with the Cardinals, Ryan Wood of USA Today reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/tucker-kraft-16649",
-      "pub_date": "2026-08-26T08:40:00Z"
-    },
-    {
-      "player_name": "Josh Downs",
-      "sleeper_id": "9500",
-      "gsis_id": "00-0038997",
-      "position": "WR",
-      "team": "IND",
-      "headline": "Tending to calf issue",
-      "description": "Downs is not practicing Wednesday due to a calf injury, Mike Chappell of Fox 59 News Indianapolis reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/josh-downs-16689",
-      "pub_date": "2026-08-26T08:28:00Z"
     }
   ]
 }
