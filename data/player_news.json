@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T19:51:59Z",
+  "generated_at": "2026-11-25T03:54:58Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -36,6 +36,61 @@
       "description": "Boston didn't take part in the Browns' unofficial practice Tuesday, Daniel Oyefusi of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/denzel-boston-19298",
       "pub_date": "2026-11-24T10:18:00Z"
+    },
+    {
+      "player_name": "Dallas Goedert",
+      "sleeper_id": "5022",
+      "gsis_id": "00-0034351",
+      "position": "TE",
+      "team": "PHI",
+      "headline": "In clear for Week 12",
+      "description": "The Eagles listed Goedert (shin) as a full participant in Tuesday's walkthrough practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dallas-goedert-12860",
+      "pub_date": "2026-11-24T03:13:00Z"
+    },
+    {
+      "player_name": "Saquon Barkley",
+      "sleeper_id": "4866",
+      "gsis_id": "00-0034844",
+      "position": "RB",
+      "team": "PHI",
+      "headline": "Upgrades to full participation",
+      "description": "The Eagles listed Barkley (neck/illness) as a full participant in Tuesday's walkthrough practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/saquon-barkley-12507",
+      "pub_date": "2026-11-24T03:11:00Z"
+    },
+    {
+      "player_name": "Brandon Aiyuk",
+      "sleeper_id": "6803",
+      "gsis_id": "00-0036261",
+      "position": "WR",
+      "team": "SFO",
+      "headline": "Set to visit Commanders",
+      "description": "Aiyuk, per agent Drew Rosenhaus, is scheduled to visit the Commanders on Wednesday, Adam Schefter of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/brandon-aiyuk-14386",
+      "pub_date": "2026-11-24T02:40:00Z"
+    },
+    {
+      "player_name": "Sam LaPorta",
+      "sleeper_id": "10859",
+      "gsis_id": "00-0039065",
+      "position": "TE",
+      "team": "DET",
+      "headline": "Ready for Thanksgiving Day",
+      "description": "LaPorta (ankle) was a full participant in Tuesday's walkthrough practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/sam-laporta-17033",
+      "pub_date": "2026-11-24T02:39:00Z"
+    },
+    {
+      "player_name": "Dalton Kincaid",
+      "sleeper_id": "10236",
+      "gsis_id": "00-0038933",
+      "position": "TE",
+      "team": "BUF",
+      "headline": "Limited Tuesday, plans to play Thursday",
+      "description": "The Bills listed Kincaid (thumb/ankle) as a limited participant in Thursday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dalton-kincaid-16697",
+      "pub_date": "2026-11-24T02:26:00Z"
     },
     {
       "player_name": "Chig Okonkwo",
@@ -12796,39 +12851,6 @@
       "description": "Stribling (shoulder) won't suit up for Thursday's preseason contest at Las Vegas, David Lombardi of SFStandard.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/dezhaun-stribling-19330",
       "pub_date": "2026-08-27T04:37:00Z"
-    },
-    {
-      "player_name": "TreVeyon Henderson",
-      "sleeper_id": "12529",
-      "gsis_id": "00-0040734",
-      "position": "RB",
-      "team": "NEP",
-      "headline": "On track for Week 1",
-      "description": "Henderson (ankle) is expected to be available for New England's Week 1 matchup with the Steelers, Christopher Price of The Boston Globe reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/treveyon-henderson-18517",
-      "pub_date": "2026-08-27T03:36:00Z"
-    },
-    {
-      "player_name": "Aaron Rodgers",
-      "sleeper_id": "96",
-      "gsis_id": "00-0023459",
-      "position": "QB",
-      "team": "PIT",
-      "headline": "Won't play Thursday",
-      "description": "Rodgers isn't in uniform for Thursday's preseason contest at Buffalo, Alan Saunders of SteelersNow.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/aaron-rodgers-4307",
-      "pub_date": "2026-08-27T03:22:00Z"
-    },
-    {
-      "player_name": "Khalil Shakir",
-      "sleeper_id": "8134",
-      "gsis_id": "00-0037261",
-      "position": "WR",
-      "team": "BUF",
-      "headline": "Not suited up Thursday",
-      "description": "Shakir (undisclosed) isn't in uniform for Thursday's preseason contest against the Steelers, Alex Brasky of SI.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/khalil-shakir-15892",
-      "pub_date": "2026-08-27T03:06:00Z"
     }
   ]
 }
