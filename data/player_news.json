@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T03:54:58Z",
+  "generated_at": "2026-11-25T16:40:52Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -36,6 +36,28 @@
       "description": "Boston didn't take part in the Browns' unofficial practice Tuesday, Daniel Oyefusi of ESPN.com reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/denzel-boston-19298",
       "pub_date": "2026-11-24T10:18:00Z"
+    },
+    {
+      "player_name": "Mason Rudolph",
+      "sleeper_id": "4972",
+      "gsis_id": "00-0034771",
+      "position": "QB",
+      "team": "PIT",
+      "headline": "Will start Friday against Denver",
+      "description": "Rudolph will start Friday's game against the Broncos, Tom Pelissero of The Ringer and Netflix reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mason-rudolph-12629",
+      "pub_date": "2026-11-24T08:25:00Z"
+    },
+    {
+      "player_name": "Aaron Rodgers",
+      "sleeper_id": "96",
+      "gsis_id": "00-0023459",
+      "position": "QB",
+      "team": "PIT",
+      "headline": "Benched by Pittsburgh",
+      "description": "Rodgers has been benched by the Steelers, and Mason Rudolph will start Friday's game against the Broncos, Tom Pelissero of The Ringer and Netflix reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/aaron-rodgers-4307",
+      "pub_date": "2026-11-24T08:21:00Z"
     },
     {
       "player_name": "Dallas Goedert",
@@ -12774,83 +12796,6 @@
       "description": "Croskey-Merritt (lower body) won't suit up for Friday's preseason game at Baltimore. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/jacory-croskey-merritt-18811",
       "pub_date": "2026-08-28T02:44:00Z"
-    },
-    {
-      "player_name": "Ty Simpson",
-      "sleeper_id": "13275",
-      "gsis_id": "00-0041568",
-      "position": "QB",
-      "team": "LAR",
-      "headline": "Extended playing time Thursday",
-      "description": "Simpson completed 18 of 23 passes for 119 yards with one touchdown and no interceptions while also rushing three times for 10 yards in the Rams' 20-18 preseason win over the Chargers on Thursday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/ty-simpson-19275",
-      "pub_date": "2026-08-27T10:54:00Z"
-    },
-    {
-      "player_name": "Justin Herbert",
-      "sleeper_id": "6797",
-      "gsis_id": "00-0036355",
-      "position": "QB",
-      "team": "LAC",
-      "headline": "Stellar in cameo Thursday",
-      "description": "Herbert completed two of three passes for 74 yards and a touchdown, rushed once for no gain and lost a fumble in the Chargers' 20-18 preseason loss to the Rams on Thursday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/justin-herbert-14446",
-      "pub_date": "2026-08-27T10:47:00Z"
-    },
-    {
-      "player_name": "Kaelon Black",
-      "sleeper_id": "13414",
-      "gsis_id": "00-0041052",
-      "position": "RB",
-      "team": "SFO",
-      "headline": "Averages 7.0 yards per carry",
-      "description": "Black rushed four times for 28 yards and failed to bring in his only target in the 49ers' 18-12 preseason win over the Raiders on Thursday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/kaelon-black-19607",
-      "pub_date": "2026-08-27T08:41:00Z"
-    },
-    {
-      "player_name": "Fernando Mendoza",
-      "sleeper_id": "13269",
-      "gsis_id": "00-0041562",
-      "position": "QB",
-      "team": "LVR",
-      "headline": "Still in QB competition",
-      "description": "Mendoza remains in the mix for the Raiders' starting quarterback job along with veteran Kirk Cousins, Vinny Bonsignore of the California Post reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/fernando-mendoza-19281",
-      "pub_date": "2026-08-27T08:37:00Z"
-    },
-    {
-      "player_name": "Mike Washington Jr.",
-      "sleeper_id": null,
-      "gsis_id": "00-0040878",
-      "position": "RB",
-      "team": null,
-      "headline": "Effective in preseason start",
-      "description": "Washington rushed eight times for 49 yards and failed to bring in his only target in the Raiders' 18-12 preseason loss to the 49ers on Thursday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/mike-washington-19300",
-      "pub_date": "2026-08-27T08:32:00Z"
-    },
-    {
-      "player_name": "A.J. Brown",
-      "sleeper_id": "5859",
-      "gsis_id": "00-0035676",
-      "position": "WR",
-      "team": "NEP",
-      "headline": "Not playing Thursday",
-      "description": "Brown isn't in uniform for Thursday's preseason game in Cleveland, Evan Lazar of the Patriots' official site reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/aj-brown-13432",
-      "pub_date": "2026-08-27T04:49:00Z"
-    },
-    {
-      "player_name": "De'Zhaun Stribling",
-      "sleeper_id": "13417",
-      "gsis_id": "00-0041035",
-      "position": "WR",
-      "team": "SFO",
-      "headline": "Not playing in preseason finale",
-      "description": "Stribling (shoulder) won't suit up for Thursday's preseason contest at Las Vegas, David Lombardi of SFStandard.com reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/dezhaun-stribling-19330",
-      "pub_date": "2026-08-27T04:37:00Z"
     }
   ]
 }
