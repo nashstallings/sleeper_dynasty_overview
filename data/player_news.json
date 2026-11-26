@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-26T11:48:29Z",
+  "generated_at": "2026-11-26T20:50:30Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Stefon Diggs",
+      "sleeper_id": "2449",
+      "gsis_id": "00-0031588",
+      "position": "WR",
+      "team": "WAS",
+      "headline": "Off injury report",
+      "description": "Diggs (personal) was removed from the Commanders' injury report Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/stefon-diggs-10133",
+      "pub_date": "2026-11-26T12:42:00Z"
+    },
+    {
+      "player_name": "Bhayshul Tuten",
+      "sleeper_id": "12490",
+      "gsis_id": "00-0040719",
+      "position": "RB",
+      "team": "JAC",
+      "headline": "Logs another 'DNP' on Thursday",
+      "description": "Tuten (ankle/foot) didn't practice Thursday, Ryan O'Halloran of The Florida Times-Union reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bhayshul-tuten-18524",
+      "pub_date": "2026-11-26T12:36:00Z"
+    },
+    {
+      "player_name": "Parker Washington",
+      "sleeper_id": "9487",
+      "gsis_id": "00-0038606",
+      "position": "WR",
+      "team": "JAC",
+      "headline": "Added to Week 12 injury report",
+      "description": "Washington (shoulder) was listed as a limited participant in Thursday's practice, Ryan O'Halloran of The Florida Times-Union reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/parker-washington-16690",
+      "pub_date": "2026-11-26T12:29:00Z"
+    },
+    {
+      "player_name": "Carson Beck",
+      "sleeper_id": "13272",
+      "gsis_id": "00-0041561",
+      "position": "QB",
+      "team": "ARI",
+      "headline": "Stays DNP on Thursday",
+      "description": "Beck (back) was listed as a non-participant on Thursday's injury report, Darren Urban of the Cardinals' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/carson-beck-19287",
+      "pub_date": "2026-11-26T12:11:00Z"
+    },
+    {
+      "player_name": "Juwan Johnson",
+      "sleeper_id": "7002",
+      "gsis_id": "00-0036040",
+      "position": "TE",
+      "team": "NOS",
+      "headline": "Day-to-day ahead of Sunday's contest",
+      "description": "Coach Kellen Moore said Thursday that Johnson (hamstring/wrist) is considered day-to-day ahead of Sunday's game against the Bengals, Katherine Terrell of ESPN reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/juwan-johnson-14630",
+      "pub_date": "2026-11-26T12:06:00Z"
+    },
     {
       "player_name": "Matthew Stafford",
       "sleeper_id": "421",
@@ -12785,17 +12840,6 @@
       "description": "The Dolphins traded Ewers to the Jaguars on Saturday, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/quinn-ewers-18505",
       "pub_date": "2026-08-29T01:46:00Z"
-    },
-    {
-      "player_name": "Emeka Egbuka",
-      "sleeper_id": "12514",
-      "gsis_id": "00-0040129",
-      "position": "WR",
-      "team": "TBB",
-      "headline": "Focus remains on Week 1",
-      "description": "Egbuka (toe) continues to rest and recover with the goal of being ready for Week 1, Greg Auman of Fox Sports reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
-      "pub_date": "2026-08-28T12:49:00Z"
     }
   ]
 }
