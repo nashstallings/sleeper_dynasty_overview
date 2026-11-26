@@ -1,9 +1,64 @@
 {
-  "generated_at": "2026-11-26T01:27:36Z",
+  "generated_at": "2026-11-26T11:48:29Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Matthew Stafford",
+      "sleeper_id": "421",
+      "gsis_id": "00-0026498",
+      "position": "QB",
+      "team": "LAR",
+      "headline": "Modest numbers in Week 12 win",
+      "description": "Stafford completed 16 of 23 passes for 141 yards with no touchdowns and one interception and rushed once for no gain in the Rams' 26-13 win over the Packers on Wednesday night. He also committed a fumble recovered by Los Angeles. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/matthew-stafford-5971",
+      "pub_date": "2026-11-25T09:25:00Z"
+    },
+    {
+      "player_name": "Jordan Love",
+      "sleeper_id": "6804",
+      "gsis_id": "00-0036264",
+      "position": "QB",
+      "team": "GBP",
+      "headline": "Struggles against Rams in loss",
+      "description": "Love completed 17 of 29 passes for 198 yards with one touchdown and two interceptions and rushed once for seven yards in the Packers' 26-13 loss to the Rams on Wednesday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jordan-love-14371",
+      "pub_date": "2026-11-25T09:18:00Z"
+    },
+    {
+      "player_name": "Matthew Golden",
+      "sleeper_id": "12501",
+      "gsis_id": "00-0040667",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Inefficient night in loss",
+      "description": "Golden secured one of five targets for 39 yards in the Packers' 26-13 loss to the Rams on Wednesday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/matthew-golden-18500",
+      "pub_date": "2026-11-25T09:11:00Z"
+    },
+    {
+      "player_name": "Tucker Kraft",
+      "sleeper_id": "9484",
+      "gsis_id": "00-0038996",
+      "position": "TE",
+      "team": "GBP",
+      "headline": "Limited to three catches in loss",
+      "description": "Kraft brought in three of five targets for 24 yards in the Packers' 26-13 loss to the Rams on Wednesday night. He also lost a fumble. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/tucker-kraft-16649",
+      "pub_date": "2026-11-25T09:05:00Z"
+    },
+    {
+      "player_name": "Kyren Williams",
+      "sleeper_id": "8150",
+      "gsis_id": "00-0037840",
+      "position": "RB",
+      "team": "LAR",
+      "headline": "Completely overshadowed by Corum",
+      "description": "Williams rushed 12 times for 46 yards and a touchdown and brought in four of five targets for 19 yards in the Rams' 26-13 win over the Packers on Wednesday night. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kyren-williams-15807",
+      "pub_date": "2026-11-25T09:00:00Z"
+    },
     {
       "player_name": "Christian Watson",
       "sleeper_id": "8167",
@@ -12741,105 +12796,6 @@
       "description": "Egbuka (toe) continues to rest and recover with the goal of being ready for Week 1, Greg Auman of Fox Sports reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
       "pub_date": "2026-08-28T12:49:00Z"
-    },
-    {
-      "player_name": "Wan'Dale Robinson",
-      "sleeper_id": "8126",
-      "gsis_id": "00-0038117",
-      "position": "WR",
-      "team": "TEN",
-      "headline": "Appears to avoid concussion",
-      "description": "Robinson is not believed to have sustained a concussion during Thursday's joint practice with the Bears, Ian Rapoport of ESPN and NFL Network reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/wandale-robinson-15838",
-      "pub_date": "2026-08-28T11:27:00Z"
-    },
-    {
-      "player_name": "Jeremiyah Love",
-      "sleeper_id": "13287",
-      "gsis_id": "00-0041027",
-      "position": "RB",
-      "team": "ARI",
-      "headline": "Continues to progress",
-      "description": "Love (ankle) did not play in Friday's preseason loss to the Packers, but per Cardinals team reporter Zach Gershman, he was able to work out prior to the game. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jeremiyah-love-19235",
-      "pub_date": "2026-08-28T09:13:00Z"
-    },
-    {
-      "player_name": "Xavier Worthy",
-      "sleeper_id": "11624",
-      "gsis_id": "00-0039894",
-      "position": "WR",
-      "team": "KCC",
-      "headline": "One target in preseason debut",
-      "description": "Worthy (shoulder) failed to bring in his only target in the Chiefs' 9-9 preseason tie with the Seahawks on Friday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/xavier-worthy-17687",
-      "pub_date": "2026-08-28T08:32:00Z"
-    },
-    {
-      "player_name": "Travis Kelce",
-      "sleeper_id": "1466",
-      "gsis_id": "00-0030506",
-      "position": "TE",
-      "team": "KCC",
-      "headline": "One catch in preseason finale",
-      "description": "Kelce secured his only target for eight yards in Friday's 9-9 preseason tie with the Seahawks. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/travis-kelce-8783",
-      "pub_date": "2026-08-28T08:28:00Z"
-    },
-    {
-      "player_name": "Makai Lemon",
-      "sleeper_id": "13294",
-      "gsis_id": "00-0040867",
-      "position": "WR",
-      "team": "PHI",
-      "headline": "Three catches in preseason debut",
-      "description": "Lemon brought in three of five targets for five yards and returned one punt for no gain in the Eagles' 30-13 preseason loss to the Bengals on Friday. He also fumbled once but recovered. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/makai-lemon-19231",
-      "pub_date": "2026-08-28T08:24:00Z"
-    },
-    {
-      "player_name": "Brian Robinson",
-      "sleeper_id": "8154",
-      "gsis_id": "00-0037746",
-      "position": "RB",
-      "team": "ATL",
-      "headline": "TD, fumble in preseason finale",
-      "description": "Robinson rushed five times for 14 yards and a touchdown, caught his only target for nine yards and lost a fumble in Friday's 17-12 preseason win over the Dolphins. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/brian-robinson-15907",
-      "pub_date": "2026-08-28T07:30:00Z"
-    },
-    {
-      "player_name": "Malik Nabers",
-      "sleeper_id": "11632",
-      "gsis_id": "00-0039337",
-      "position": "WR",
-      "team": "NYG",
-      "headline": "Not in uniform Friday",
-      "description": "Nabers (knee) isn't suited up for Friday's preseason game versus the Jets, Pat Leonard of the New York Daily News reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/malik-nabers-17704",
-      "pub_date": "2026-08-28T04:18:00Z"
-    },
-    {
-      "player_name": "Rachaad White",
-      "sleeper_id": "8136",
-      "gsis_id": "00-0037256",
-      "position": "RB",
-      "team": "WAS",
-      "headline": "Won't play Friday",
-      "description": "White (hamstring) isn't suited up for Friday's preseason game in Baltimore. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/rachaad-white-15802",
-      "pub_date": "2026-08-28T02:47:00Z"
-    },
-    {
-      "player_name": "Jacory Croskey-Merritt",
-      "sleeper_id": "12533",
-      "gsis_id": "00-0040242",
-      "position": "RB",
-      "team": "WAS",
-      "headline": "Sitting out Friday's preseason game",
-      "description": "Croskey-Merritt (lower body) won't suit up for Friday's preseason game at Baltimore. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/jacory-croskey-merritt-18811",
-      "pub_date": "2026-08-28T02:44:00Z"
     }
   ]
 }
