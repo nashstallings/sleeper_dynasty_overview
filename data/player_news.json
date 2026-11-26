@@ -1,9 +1,53 @@
 {
-  "generated_at": "2026-11-25T16:40:52Z",
+  "generated_at": "2026-11-26T01:27:36Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Christian Watson",
+      "sleeper_id": "8167",
+      "gsis_id": "00-0038124",
+      "position": "WR",
+      "team": "GBP",
+      "headline": "Injures thigh on opening play Wednesday",
+      "description": "Watson (thigh) is questionable to return to Wednesday's game against the Rams. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/christian-watson-15946",
+      "pub_date": "2026-11-25T05:24:00Z"
+    },
+    {
+      "player_name": "Josh Jacobs",
+      "sleeper_id": "5850",
+      "gsis_id": "00-0035700",
+      "position": "RB",
+      "team": "GBP",
+      "headline": "Inactive in Week 12",
+      "description": "Jacobs (finger) is listed as inactive Wednesday at the Rams, Tom Pelissero of Netflix reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-jacobs-13582",
+      "pub_date": "2026-11-25T03:53:00Z"
+    },
+    {
+      "player_name": "Kayshon Boutte",
+      "sleeper_id": "9504",
+      "gsis_id": "00-0038608",
+      "position": "WR",
+      "team": "HOU",
+      "headline": "Doesn't practice Wednesday",
+      "description": "Boutte (hip) didn't participate in Wednesday's practice. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/kayshon-boutte-16795",
+      "pub_date": "2026-11-25T03:51:00Z"
+    },
+    {
+      "player_name": "Sam Darnold",
+      "sleeper_id": "4943",
+      "gsis_id": "00-0034869",
+      "position": "QB",
+      "team": "SEA",
+      "headline": "Full practice Wednesday",
+      "description": "Darnold (quadriceps) practiced fully Wednesday, John Boyle of the Seahawks' official site reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/sam-darnold-12490",
+      "pub_date": "2026-11-25T03:42:00Z"
+    },
     {
       "player_name": "A.J. Brown",
       "sleeper_id": "5859",
