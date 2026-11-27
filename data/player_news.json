@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-11-27T03:26:31Z",
+  "generated_at": "2026-11-27T15:59:22Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
   "items": [
+    {
+      "player_name": "Bhayshul Tuten",
+      "sleeper_id": "12490",
+      "gsis_id": "00-0040719",
+      "position": "RB",
+      "team": "JAC",
+      "headline": "Week 12 status still up in the air",
+      "description": "Head coach Liam Coen said Friday that the team is \"not sure yet\" whether Tuten (ankle/foot) will be available Sunday against the Titans, Demetrius Harvey of the Florida Times-Union reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/bhayshul-tuten-18524",
+      "pub_date": "2026-11-27T07:51:00Z"
+    },
+    {
+      "player_name": "Parker Washington",
+      "sleeper_id": "9487",
+      "gsis_id": "00-0038606",
+      "position": "WR",
+      "team": "JAC",
+      "headline": "Out vs. Titans, considered week-to-week",
+      "description": "Washington (shoulder) will be out for Sunday's game against the Titans and is considered week-to-week moving forward, Demetrius Harvey of the Florida Times-Union reports. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/parker-washington-16690",
+      "pub_date": "2026-11-27T07:44:00Z"
+    },
     {
       "player_name": "Stefon Diggs",
       "sleeper_id": "2449",
@@ -58,6 +80,39 @@
       "description": "Coach Kellen Moore said Thursday that Johnson (hamstring/wrist) is considered day-to-day ahead of Sunday's game against the Bengals, Katherine Terrell of ESPN reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/juwan-johnson-14630",
       "pub_date": "2026-11-26T12:06:00Z"
+    },
+    {
+      "player_name": "Josh Downs",
+      "sleeper_id": "9500",
+      "gsis_id": "00-0038997",
+      "position": "WR",
+      "team": "KCC",
+      "headline": "Limited to one catch Thursday",
+      "description": "Downs secured one of four targets for 13 yards in the Chiefs' 13-10 loss to the Bills on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/josh-downs-16689",
+      "pub_date": "2026-11-26T09:35:00Z"
+    },
+    {
+      "player_name": "DJ Moore",
+      "sleeper_id": "4983",
+      "gsis_id": "00-0034827",
+      "position": "WR",
+      "team": "BUF",
+      "headline": "Pair of grabs in Week 12 win",
+      "description": "Moore hauled in two of six targets for 15 yards in the Bills' 13-10 win over the Chiefs on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dj-moore-12477",
+      "pub_date": "2026-11-26T09:32:00Z"
+    },
+    {
+      "player_name": "Dalton Kincaid",
+      "sleeper_id": "10236",
+      "gsis_id": "00-0038933",
+      "position": "TE",
+      "team": "BUF",
+      "headline": "Two catches in return",
+      "description": "Kincaid brought in both targets for 13 yards in the Bills' 13-10 loss to the Chiefs on Thursday. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dalton-kincaid-16697",
+      "pub_date": "2026-11-26T09:28:00Z"
     },
     {
       "player_name": "DeVonta Smith",
@@ -12818,61 +12873,6 @@
       "description": "Dell (knee) will begin the season on IR with a designation to return, Jonathan M. Alexander of the Houston Chronicle reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/tank-dell-16935",
       "pub_date": "2026-08-30T02:51:00Z"
-    },
-    {
-      "player_name": "Patrick Mahomes",
-      "sleeper_id": "4046",
-      "gsis_id": "00-0033873",
-      "position": "QB",
-      "team": "KCC",
-      "headline": "On track for Week 1",
-      "description": "Mahomes (knee) is on track to start Week 1 against the Broncos, Ian Rapoport of NFL Network reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/patrick-mahomes-11839",
-      "pub_date": "2026-08-29T10:08:00Z"
-    },
-    {
-      "player_name": "Alec Pierce",
-      "sleeper_id": "8142",
-      "gsis_id": "00-0037664",
-      "position": "WR",
-      "team": "IND",
-      "headline": "Working out but will sit Saturday",
-      "description": "Pierce (ankle) is working out prior to Saturday's preseason game against the Lions but will not play, Mike Chappell of Fox 59 News Indianapolis reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/alec-pierce-16022",
-      "pub_date": "2026-08-29T09:43:00Z"
-    },
-    {
-      "player_name": "Emeka Egbuka",
-      "sleeper_id": "12514",
-      "gsis_id": "00-0040129",
-      "position": "WR",
-      "team": "TBB",
-      "headline": "'Hopeful' for Week 1",
-      "description": "Egbuka (toe), per head coach Todd Bowles, will \"hopefully\" be ready for Week 1, Greg Auman of Fox Sports reports. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/emeka-egbuka-18549",
-      "pub_date": "2026-08-29T07:24:00Z"
-    },
-    {
-      "player_name": "Luther Burden III",
-      "sleeper_id": "12519",
-      "gsis_id": "00-0040735",
-      "position": "WR",
-      "team": "CHI",
-      "headline": "Runs routes Saturday",
-      "description": "Burden (groin) did not suit up for Saturday's preseason victory over the Titans but did run routes pregame, according to Brad Biggs of the Chicago Tribune. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/luther-burden-18548",
-      "pub_date": "2026-08-29T06:45:00Z"
-    },
-    {
-      "player_name": "Carnell Tate",
-      "sleeper_id": "13279",
-      "gsis_id": "00-0041438",
-      "position": "WR",
-      "team": "TEN",
-      "headline": "One target to close out preseason",
-      "description": "Tate failed to bring in his only target in the Titans' 24-15 preseason loss to the Bears on Saturday. Visit RotoWire.com for more analysis on this update.",
-      "link": "https://www.rotowire.com//football/player/carnell-tate-19268",
-      "pub_date": "2026-08-29T06:30:00Z"
     }
   ]
 }
