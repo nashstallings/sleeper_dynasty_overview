@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T15:59:22Z",
+  "generated_at": "2026-11-28T00:58:10Z",
   "source": "RotoWire",
   "source_url": "https://www.rotowire.com/rss/",
   "max_age_days": 90,
@@ -25,6 +25,61 @@
       "description": "Washington (shoulder) will be out for Sunday's game against the Titans and is considered week-to-week moving forward, Demetrius Harvey of the Florida Times-Union reports. Visit RotoWire.com for more analysis on this update.",
       "link": "https://www.rotowire.com//football/player/parker-washington-16690",
       "pub_date": "2026-11-27T07:44:00Z"
+    },
+    {
+      "player_name": "Michael Pittman",
+      "sleeper_id": "6819",
+      "gsis_id": "00-0036252",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Just one catch in return to lineup",
+      "description": "Pittman caught one of two targets for seven yards in Friday's 27-5 win over the Broncos. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/michael-pittman-14378",
+      "pub_date": "2026-11-27T04:54:00Z"
+    },
+    {
+      "player_name": "DK Metcalf",
+      "sleeper_id": "5846",
+      "gsis_id": "00-0035640",
+      "position": "WR",
+      "team": "PIT",
+      "headline": "Finds end zone against Broncos",
+      "description": "Metcalf caught three of four targets for 36 yards and a touchdown in Friday's 27-5 win over Denver. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/dk-metcalf-13424",
+      "pub_date": "2026-11-27T04:27:00Z"
+    },
+    {
+      "player_name": "Rico Dowdle",
+      "sleeper_id": "7021",
+      "gsis_id": "00-0036139",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "Leading rusher in Week 12 win",
+      "description": "Dowdle carried the ball 11 times for 71 yards in Friday's 27-5 win over the Broncos. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/rico-dowdle-14657",
+      "pub_date": "2026-11-27T04:22:00Z"
+    },
+    {
+      "player_name": "Jaylen Warren",
+      "sleeper_id": "8228",
+      "gsis_id": "00-0037228",
+      "position": "RB",
+      "team": "PIT",
+      "headline": "Held in check against Denver",
+      "description": "Warren carried the ball 20 times for 46 yards and caught one of two targets for zero yards in Friday's 27-5 win over the Broncos. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/jaylen-warren-15984",
+      "pub_date": "2026-11-27T04:18:00Z"
+    },
+    {
+      "player_name": "Mason Rudolph",
+      "sleeper_id": "4972",
+      "gsis_id": "00-0034771",
+      "position": "QB",
+      "team": "PIT",
+      "headline": "Avoids mistakes in Friday's win",
+      "description": "Rudolph completed nine of 15 passes for 142 yards and a touchdown in Friday's 27-5 win over the Broncos. Visit RotoWire.com for more analysis on this update.",
+      "link": "https://www.rotowire.com//football/player/mason-rudolph-12629",
+      "pub_date": "2026-11-27T04:12:00Z"
     },
     {
       "player_name": "Stefon Diggs",
